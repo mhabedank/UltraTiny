@@ -13,7 +13,7 @@
 
 ## Requirement Completeness
 
-- [ ] No [NEEDS CLARIFICATION] markers remain
+- [x] No [NEEDS CLARIFICATION] markers remain
 - [x] Requirements are testable and unambiguous
 - [x] Success criteria are measurable
 - [x] Success criteria are technology-agnostic (no implementation details)
@@ -34,4 +34,5 @@
 - Hardware-facing terms (classic ESP32, serial console, character-level model, model file in
   flash) are user-stated product constraints of this demo, not implementation choices; no
   programming languages, frameworks, or libraries are named in the requirements.
-- Open: FR-004 (answer language) and FR-005 (kind of demo content) await user clarification.
+- Resolved 2026-11-20: FR-004 → German; FR-005 → Q&A over a fixed knowledge base; training
+  primarily on an Apple Silicon Mac GPU with CPU fallback.

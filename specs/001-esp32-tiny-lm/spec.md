@@ -42,24 +42,29 @@ type a prompt from the demo prompt list, and observe a sensible streamed answer.
 
 ### User Story 2 - Train and export a model on a PC (Priority: P2)
 
-A developer runs one documented command on an ordinary PC (CPU only) that generates the training
-data, trains the model, evaluates it, and exports a versioned model file ready for flashing.
+A developer runs one documented command on their computer — primarily an Apple Silicon Mac (M3)
+using its GPU cores, with a CPU-only fallback on any machine — that generates the training data,
+trains the model, evaluates it, and exports a versioned model file ready for flashing.
 
 **Why this priority**: Without a reproducible training path the demo cannot be rebuilt, improved,
 or verified; it is required to produce the model for Story 1 but the demo can be shown with a
 pre-built model file.
 
 **Independent Test**: On a clean machine, run the documented training command and confirm it
-produces a model file plus an evaluation report, and that repeating it with the same seed yields an
-identical model file.
+produces a model file plus an evaluation report, and that repeating it with the same seed on the
+same machine and device yields an identical model file.
 
 **Acceptance Scenarios**:
 
-1. **Given** a PC with the documented prerequisites and no GPU, **When** the developer runs the
-   training command, **Then** it completes within 2 hours and produces a model file, an evaluation
-   report, and a size/budget report.
-2. **Given** the same data, configuration, and seed, **When** training is run twice, **Then** the
-   exported model files are byte-identical.
+1. **Given** an Apple Silicon Mac (M3) with the documented prerequisites, **When** the developer
+   runs the training command with GPU acceleration, **Then** it completes within 2 hours and
+   produces a model file, an evaluation report, and a size/budget report.
+2. **Given** a machine without a usable GPU, **When** the developer runs the same command, **Then**
+   it falls back to the CPU automatically and still completes (slower is acceptable).
+3. **Given** the same data, configuration, seed, and device type, **When** training is run twice,
+   **Then** the exported model files are byte-identical on CPU; on GPU, where the hardware does not
+   guarantee bit-identical math, the evaluation results MUST be identical within ±1 percentage
+   point.
 
 ---
 
@@ -107,11 +112,12 @@ another, and confirm the banner and answers reflect the currently flashed model.
   generated answer back one character at a time as it is produced.
 - **FR-003**: The model MUST operate on individual characters (character-level), with a fixed
   alphabet documented alongside the model.
-- **FR-004**: The model MUST answer in [NEEDS CLARIFICATION: Which language should the demo model
-  understand and answer in — German, English, or both?].
-- **FR-005**: The demo content MUST be [NEEDS CLARIFICATION: What kind of demo — answering
-  questions about a fixed set of facts (like Tiny-2.1), continuing free text/short stories, or a
-  small chit-chat persona?].
+- **FR-004**: The model MUST understand prompts and answer in German; the alphabet MUST include
+  the German umlauts and ß (ä, ö, ü, Ä, Ö, Ü, ß), and the serial console MUST display them
+  correctly.
+- **FR-005**: The demo content MUST be question answering over a fixed, documented knowledge base
+  of facts (like Tiny-2.1): each fact is asked in many German phrasings during training, and the
+  model answers with the fact in a short German sentence.
 - **FR-006**: Generation MUST stop at an end-of-answer marker or at a configurable maximum answer
   length (default 200 characters), whichever comes first.
 - **FR-007**: The board MUST print a startup banner with model name, model format version,
@@ -122,7 +128,8 @@ another, and confirm the banner and answers reflect the currently flashed model.
 - **FR-010**: Model and firmware MUST fit the constitution's default budgets for the classic
   ESP32: model ≤ 2 MB stored in a dedicated model area, inference working memory ≤ 128 KB.
 - **FR-011**: A single documented command MUST generate training data, train, evaluate, and
-  export the model on a CPU-only PC.
+  export the model; it MUST use the GPU of an Apple Silicon Mac when available and MUST fall back
+  to the CPU on any machine without one.
 - **FR-012**: The exported model file MUST identify itself (magic number, format version, model
   dimensions) so the board can reject incompatible files.
 - **FR-013**: The firmware MUST validate the model file at boot and report a clear error for a
@@ -176,5 +183,10 @@ another, and confirm the banner and answers reflect the currently flashed model.
   expected to be fluent and correct on its training domain only, not a general assistant.
 - Sensors or other peripherals attached to the board are out of scope for this feature.
 - Training uses only data the project generates itself or data with permissive licenses.
+- The knowledge base is a curated list of German facts (topic mix chosen during planning, e.g.
+  geography, science, the ESP32 itself), sized so the model can learn it within the budgets
+  (order of a few thousand facts, like Tiny-2.1's ~3,500).
+- The primary training machine is the developer's Apple Silicon Mac (M3); training must still be
+  possible without it (CPU fallback), per the project constitution.
 - A pre-built model file will be provided with the release so the demo can be shown without
   training.
