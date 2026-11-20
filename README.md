@@ -7,7 +7,7 @@ schreibt die Antwort Buchstabe für Buchstabe zurück. Inspiriert von
 
 ```text
 UltraTiny v0.1.0 — Sprachmodell offline auf dem ESP32
-Modell: starter | Format v1 | 603264 Parameter | 607 KB Flash | 79 KB RAM
+Modell: starter | Format v1 | 602752 Parameter | 607 KB Flash | 79 KB RAM
 Funk: aus. Tippe eine Frage und drücke Enter. /hilfe für Befehle.
 > Was ist die Hauptstadt von Frankreich?
 Die Hauptstadt von Frankreich ist Paris.

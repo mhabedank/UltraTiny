@@ -1,0 +1,61 @@
+{
+  "config": {
+    "name": "starter",
+    "model": {
+      "vocab_size": 96,
+      "d_model": 128,
+      "n_layers": 4,
+      "n_heads": 4,
+      "n_kv_heads": 1,
+      "d_ff": 384,
+      "ctx_len": 256,
+      "norm_eps": 1e-05
+    },
+    "data": {
+      "facts": [
+        "data/facts/starter.tsv"
+      ],
+      "templates": [
+        "data/templates/starter.toml"
+      ],
+      "topics": "data/topics.toml",
+      "demo_prompts": "data/demo_prompts.tsv",
+      "noisy_copies": 3,
+      "max_answer_len": 200
+    },
+    "train": {
+      "steps": 3000,
+      "batch_size": 64,
+      "lr": 0.003,
+      "min_lr": 0.0002,
+      "warmup_steps": 100,
+      "weight_decay": 0.01,
+      "grad_clip": 1.0,
+      "dropout": 0.1,
+      "num_threads": 4,
+      "qat_steps": 0,
+      "qat_trigger_pp": 2.0
+    },
+    "eval": {
+      "demo_min": 0.8,
+      "heldout_min": 0.6,
+      "max_edit_ratio": 0.1,
+      "golden_cases": 24
+    }
+  },
+  "seed": 1234,
+  "data_sha256": "c6c81dd56e82bdc9de5af76f2fd4c5c61ebe49e8ae0b7afd49c99d1cec0d1b66",
+  "git_commit": "164db47e554f84c60a9e1921a00b3d3f49a8171a-dirty",
+  "device": "cpu",
+  "torch": "2.15.0+cpu",
+  "host": "Linux-6.18.44-fc-v726-x86_64-with-glibc2.39",
+  "threads": 4,
+  "steps": 3000,
+  "qat_steps": 0,
+  "qat_check": null,
+  "final_loss": 0.0015249429656250869,
+  "wall_time_s": 581.7,
+  "n_params": 602752,
+  "train_examples": 8212,
+  "date": "2026-11-20"
+}
