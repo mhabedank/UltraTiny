@@ -1,0 +1,10 @@
+# Allowed values for Fact.topic (data-model.md Fact.topic).
+topics = [
+  "geografie",
+  "chemie",
+  "astronomie",
+  "physik",
+  "erfindungen",
+  "deutschland",
+  "ueber_mich",
+]

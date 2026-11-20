@@ -53,13 +53,14 @@ typedef struct {
   int      (*read_byte)(void *user);              /* -1 if no byte available (non-blocking) */
   void     (*write)(void *user, const char *buf, size_t n);
   uint32_t (*millis)(void *user);
+  uint32_t (*free_heap)(void *user);       /* optional (NULL), shown by /info */
   void     *user;
 } ut_console_io;
 
 typedef struct ut_console ut_console;             /* holds Session state, line buffer, stats */
 
-void ut_console_init(ut_console *k, ut_ctx *c, const ut_model *m, const ut_console_io *io,
-                     ut_status model_status);      /* != UT_OK -> HALT_ERROR */
+void ut_console_init(ut_console *k, ut_ctx *c, const ut_model *m, size_t arena_bytes,
+                     const ut_console_io *io, ut_status model_status); /* != UT_OK -> HALT_ERROR */
 void ut_console_banner(ut_console *k);
 void ut_console_poll(ut_console *k);               /* process available input, generate step(s) */
 ```
@@ -71,4 +72,5 @@ Host CLI `utiny-host`:
 ```text
 utiny-host --model model.utny [--prompt "Frage"] [--greedy | --sample SEED TEMP] [--max N]
 utiny-host --model model.utny --golden golden.json   # parity check, exit 0 on match
+utiny-host --model model.utny --info                 # header fields + arena size (JSON)
 ```

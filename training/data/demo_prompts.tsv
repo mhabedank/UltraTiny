@@ -1,0 +1,33 @@
+prompt	expected
+Was ist die Hauptstadt von Frankreich?	Die Hauptstadt von Frankreich ist Paris.
+Was ist die Hauptstadt von Deutschland?	Die Hauptstadt von Deutschland ist Berlin.
+Wie heißt die Hauptstadt von Italien?	Die Hauptstadt von Italien ist Rom.
+Was ist die Hauptstadt von Spanien?	Die Hauptstadt von Spanien ist Madrid.
+Was ist die Hauptstadt von Österreich?	Die Hauptstadt von Österreich ist Wien.
+Wie heißt die Hauptstadt von Japan?	Die Hauptstadt von Japan ist Tokio.
+Was ist die Hauptstadt von Ägypten?	Die Hauptstadt von Ägypten ist Kairo.
+Was ist die Hauptstadt von Kanada?	Die Hauptstadt von Kanada ist Ottawa.
+Was ist die Hauptstadt von Australien?	Die Hauptstadt von Australien ist Canberra.
+Welche Stadt ist die Hauptstadt von Brasilien?	Die Hauptstadt von Brasilien ist Brasilia.
+Was ist die Hauptstadt von Griechenland?	Die Hauptstadt von Griechenland ist Athen.
+Was ist die Hauptstadt von Polen?	Die Hauptstadt von Polen ist Warschau.
+Von welchem Land ist Lissabon die Hauptstadt?	Lissabon ist die Hauptstadt von Portugal.
+Von welchem Land ist Nairobi die Hauptstadt?	Nairobi ist die Hauptstadt von Kenia.
+Was ist das Symbol von Gold?	Das Symbol von Gold ist Au.
+Was ist das Symbol von Eisen?	Das Symbol von Eisen ist Fe.
+Welches Symbol hat Sauerstoff?	Das Symbol von Sauerstoff ist O.
+Welches Symbol hat Silber?	Das Symbol von Silber ist Ag.
+Was ist das Symbol von Natrium?	Das Symbol von Natrium ist Na.
+Welches Element hat das Symbol Hg?	Hg ist das Symbol von Quecksilber.
+Welches Element hat das Symbol Pb?	Pb ist das Symbol von Blei.
+Wofür steht das Symbol Cu?	Cu ist das Symbol von Kupfer.
+Wer bist du?	Ich bin UltraTiny, ein kleines Sprachmodell auf einem ESP32.
+Wie heißt du?	Ich heiße UltraTiny.
+Brauchst du Internet?	Nein, ich laufe komplett offline auf dem Chip.
+Wie viele Parameter hast du?	Ich habe etwa 600000 Parameter.
+Wie viel RAM hat der ESP32?	Der ESP32 hat 520 KB SRAM.
+Wie viele Kerne hat der ESP32?	Der klassische ESP32 hat zwei Kerne.
+Was ist ein Mikrocontroller?	Ein Mikrocontroller ist ein kleiner Computer auf einem einzigen Chip.
+Was kannst du?	Ich kenne Hauptstädte, chemische Elemente und ein paar Fakten über mich.
+Hallo!	Hallo! Stell mir eine Frage.
+Wer hat dich inspiriert?	Ich bin von Tiny-2.1 inspiriert, das auf alten DOS Computern läuft.

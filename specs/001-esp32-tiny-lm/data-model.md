@@ -25,6 +25,12 @@ template expansion) ≤ 200 characters (FR-006).
 | `split` | enum `train` \| `heldout` | held-out templates never appear in training (SC-004) |
 
 Each relation has ≥ 8 question templates (≥ 2 held out) and ≥ 1 answer template.
+A question template may carry its own `answer` template (used for reverse questions such as
+"Von welchem Land ist {object} die Hauptstadt?"); otherwise the relation's answers are used.
+
+Exception — free relations (`free = true`, e.g. `frei` for questions about the device itself):
+`Fact.subject` holds ≥ 2 question phrasings separated by `|` (the last one is held out) and
+`Fact.object` is the literal answer. The ≥ 8-template rule does not apply to them.
 
 ## TrainingExample
 

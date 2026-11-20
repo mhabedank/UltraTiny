@@ -1,0 +1,79 @@
+id	topic	relation	subject	object	source
+wd/Q1017/land	deutschland	stadt_bundesland	Aachen	Nordrhein-Westfalen	wikidata:Q1017
+wd/Q1022/land	deutschland	stadt_bundesland	Stuttgart	Baden-Württemberg	wikidata:Q1022
+wd/Q1040/land	deutschland	stadt_bundesland	Karlsruhe	Baden-Württemberg	wikidata:Q1040
+wd/Q1295/land	deutschland	stadt_bundesland	Dortmund	Nordrhein-Westfalen	wikidata:Q1295
+wd/Q1707/land	deutschland	stadt_bundesland	Kiel	Schleswig-Holstein	wikidata:Q1707
+wd/Q1709/land	deutschland	stadt_bundesland	Schwerin	Mecklenburg-Vorpommern	wikidata:Q1709
+wd/Q1711/land	deutschland	stadt_bundesland	Potsdam	Brandenburg	wikidata:Q1711
+wd/Q1715/land	deutschland	stadt_bundesland	Hannover	Niedersachsen	wikidata:Q1715
+wd/Q1718/land	deutschland	stadt_bundesland	Düsseldorf	Nordrhein-Westfalen	wikidata:Q1718
+wd/Q1720/land	deutschland	stadt_bundesland	Mainz	Rheinland-Pfalz	wikidata:Q1720
+wd/Q1724/land	deutschland	stadt_bundesland	Saarbrücken	Saarland	wikidata:Q1724
+wd/Q1726/land	deutschland	stadt_bundesland	München	Bayern	wikidata:Q1726
+wd/Q1729/land	deutschland	stadt_bundesland	Erfurt	Thüringen	wikidata:Q1729
+wd/Q1731/land	deutschland	stadt_bundesland	Dresden	Sachsen	wikidata:Q1731
+wd/Q1733/land	deutschland	stadt_bundesland	Magdeburg	Sachsen-Anhalt	wikidata:Q1733
+wd/Q1794/land	deutschland	stadt_bundesland	Frankfurt am Main	Hessen	wikidata:Q1794
+wd/Q2066/land	deutschland	stadt_bundesland	Essen	Nordrhein-Westfalen	wikidata:Q2066
+wd/Q2079/land	deutschland	stadt_bundesland	Leipzig	Sachsen	wikidata:Q2079
+wd/Q2090/land	deutschland	stadt_bundesland	Nürnberg	Bayern	wikidata:Q2090
+wd/Q2100/land	deutschland	stadt_bundesland	Duisburg	Nordrhein-Westfalen	wikidata:Q2100
+wd/Q2103/land	deutschland	stadt_bundesland	Bochum	Nordrhein-Westfalen	wikidata:Q2103
+wd/Q2107/land	deutschland	stadt_bundesland	Wuppertal	Nordrhein-Westfalen	wikidata:Q2107
+wd/Q2112/land	deutschland	stadt_bundesland	Bielefeld	Nordrhein-Westfalen	wikidata:Q2112
+wd/Q2119/land	deutschland	stadt_bundesland	Mannheim	Baden-Württemberg	wikidata:Q2119
+wd/Q24879/land	deutschland	stadt_bundesland	Bremen	Freie Hansestadt Bremen	wikidata:Q24879
+wd/Q2706/land	deutschland	stadt_bundesland	Bremerhaven	Freie Hansestadt Bremen	wikidata:Q2706
+wd/Q2742/land	deutschland	stadt_bundesland	Münster	Nordrhein-Westfalen	wikidata:Q2742
+wd/Q2749/land	deutschland	stadt_bundesland	Augsburg	Bayern	wikidata:Q2749
+wd/Q2758/land	deutschland	stadt_bundesland	Mönchengladbach	Nordrhein-Westfalen	wikidata:Q2758
+wd/Q2765/land	deutschland	stadt_bundesland	Gelsenkirchen	Nordrhein-Westfalen	wikidata:Q2765
+wd/Q2773/land	deutschland	stadt_bundesland	Braunschweig	Niedersachsen	wikidata:Q2773
+wd/Q2795/land	deutschland	stadt_bundesland	Chemnitz	Sachsen	wikidata:Q2795
+wd/Q2805/land	deutschland	stadt_bundesland	Krefeld	Nordrhein-Westfalen	wikidata:Q2805
+wd/Q2814/land	deutschland	stadt_bundesland	Halle (Saale)	Sachsen-Anhalt	wikidata:Q2814
+wd/Q2833/land	deutschland	stadt_bundesland	Freiburg im Breisgau	Baden-Württemberg	wikidata:Q2833
+wd/Q2838/land	deutschland	stadt_bundesland	Oberhausen	Nordrhein-Westfalen	wikidata:Q2838
+wd/Q2843/land	deutschland	stadt_bundesland	Lübeck	Schleswig-Holstein	wikidata:Q2843
+wd/Q2865/land	deutschland	stadt_bundesland	Kassel	Hessen	wikidata:Q2865
+wd/Q2871/land	deutschland	stadt_bundesland	Hagen	Nordrhein-Westfalen	wikidata:Q2871
+wd/Q2880/land	deutschland	stadt_bundesland	Hamm	Nordrhein-Westfalen	wikidata:Q2880
+wd/Q2899/land	deutschland	stadt_bundesland	Mülheim an der Ruhr	Nordrhein-Westfalen	wikidata:Q2899
+wd/Q2904/land	deutschland	stadt_bundesland	Herne	Nordrhein-Westfalen	wikidata:Q2904
+wd/Q2910/land	deutschland	stadt_bundesland	Ludwigshafen am Rhein	Rheinland-Pfalz	wikidata:Q2910
+wd/Q2916/land	deutschland	stadt_bundesland	Osnabrück	Niedersachsen	wikidata:Q2916
+wd/Q2936/land	deutschland	stadt_bundesland	Oldenburg	Niedersachsen	wikidata:Q2936
+wd/Q2938/land	deutschland	stadt_bundesland	Leverkusen	Nordrhein-Westfalen	wikidata:Q2938
+wd/Q2942/land	deutschland	stadt_bundesland	Solingen	Nordrhein-Westfalen	wikidata:Q2942
+wd/Q2948/land	deutschland	stadt_bundesland	Neuss	Nordrhein-Westfalen	wikidata:Q2948
+wd/Q2966/land	deutschland	stadt_bundesland	Heidelberg	Baden-Württemberg	wikidata:Q2966
+wd/Q2971/land	deutschland	stadt_bundesland	Paderborn	Nordrhein-Westfalen	wikidata:Q2971
+wd/Q2978/land	deutschland	stadt_bundesland	Regensburg	Bayern	wikidata:Q2978
+wd/Q2999/land	deutschland	stadt_bundesland	Würzburg	Bayern	wikidata:Q2999
+wd/Q3004/land	deutschland	stadt_bundesland	Ingolstadt	Bayern	wikidata:Q3004
+wd/Q3012/land	deutschland	stadt_bundesland	Ulm	Baden-Württemberg	wikidata:Q3012
+wd/Q3014/land	deutschland	stadt_bundesland	Wolfsburg	Niedersachsen	wikidata:Q3014
+wd/Q3033/land	deutschland	stadt_bundesland	Göttingen	Niedersachsen	wikidata:Q3033
+wd/Q3042/land	deutschland	stadt_bundesland	Offenbach am Main	Hessen	wikidata:Q3042
+wd/Q3046/land	deutschland	stadt_bundesland	Pforzheim	Baden-Württemberg	wikidata:Q3046
+wd/Q3050/land	deutschland	stadt_bundesland	Recklinghausen	Nordrhein-Westfalen	wikidata:Q3050
+wd/Q3069/land	deutschland	stadt_bundesland	Bottrop	Nordrhein-Westfalen	wikidata:Q3069
+wd/Q3075/land	deutschland	stadt_bundesland	Fürth	Bayern	wikidata:Q3075
+wd/Q3085/land	deutschland	stadt_bundesland	Reutlingen	Baden-Württemberg	wikidata:Q3085
+wd/Q3097/land	deutschland	stadt_bundesland	Remscheid	Nordrhein-Westfalen	wikidata:Q3097
+wd/Q3104/land	deutschland	stadt_bundesland	Koblenz	Rheinland-Pfalz	wikidata:Q3104
+wd/Q3117/land	deutschland	stadt_bundesland	Bergisch Gladbach	Nordrhein-Westfalen	wikidata:Q3117
+wd/Q3126/land	deutschland	stadt_bundesland	Erlangen	Bayern	wikidata:Q3126
+wd/Q3132/land	deutschland	stadt_bundesland	Moers	Nordrhein-Westfalen	wikidata:Q3132
+wd/Q3138/land	deutschland	stadt_bundesland	Trier	Rheinland-Pfalz	wikidata:Q3138
+wd/Q3150/land	deutschland	stadt_bundesland	Jena	Thüringen	wikidata:Q3150
+wd/Q3167/land	deutschland	stadt_bundesland	Siegen	Nordrhein-Westfalen	wikidata:Q3167
+wd/Q3185/land	deutschland	stadt_bundesland	Hildesheim	Niedersachsen	wikidata:Q3185
+wd/Q3200/land	deutschland	stadt_bundesland	Salzgitter	Niedersachsen	wikidata:Q3200
+wd/Q3214/land	deutschland	stadt_bundesland	Cottbus	Brandenburg	wikidata:Q3214
+wd/Q365/land	deutschland	stadt_bundesland	Köln	Nordrhein-Westfalen	wikidata:Q365
+wd/Q3750/land	deutschland	stadt_bundesland	Gera	Thüringen	wikidata:Q3750
+wd/Q3764/land	deutschland	stadt_bundesland	Witten	Nordrhein-Westfalen	wikidata:Q3764
+wd/Q586/land	deutschland	stadt_bundesland	Bonn	Nordrhein-Westfalen	wikidata:Q586
+wd/Q715/land	deutschland	stadt_bundesland	Heilbronn	Baden-Württemberg	wikidata:Q715

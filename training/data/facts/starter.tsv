@@ -1,0 +1,165 @@
+id	topic	relation	subject	object	source
+hauptstadt/1	geografie	hauptstadt_von	Frankreich	Paris	own
+hauptstadt/2	geografie	hauptstadt_von	Deutschland	Berlin	own
+hauptstadt/3	geografie	hauptstadt_von	Italien	Rom	own
+hauptstadt/4	geografie	hauptstadt_von	Spanien	Madrid	own
+hauptstadt/5	geografie	hauptstadt_von	Portugal	Lissabon	own
+hauptstadt/6	geografie	hauptstadt_von	Polen	Warschau	own
+hauptstadt/7	geografie	hauptstadt_von	Österreich	Wien	own
+hauptstadt/8	geografie	hauptstadt_von	Belgien	Brüssel	own
+hauptstadt/9	geografie	hauptstadt_von	Dänemark	Kopenhagen	own
+hauptstadt/10	geografie	hauptstadt_von	Schweden	Stockholm	own
+hauptstadt/11	geografie	hauptstadt_von	Norwegen	Oslo	own
+hauptstadt/12	geografie	hauptstadt_von	Finnland	Helsinki	own
+hauptstadt/13	geografie	hauptstadt_von	Island	Reykjavik	own
+hauptstadt/14	geografie	hauptstadt_von	Irland	Dublin	own
+hauptstadt/15	geografie	hauptstadt_von	Griechenland	Athen	own
+hauptstadt/16	geografie	hauptstadt_von	Kroatien	Zagreb	own
+hauptstadt/17	geografie	hauptstadt_von	Serbien	Belgrad	own
+hauptstadt/18	geografie	hauptstadt_von	Ungarn	Budapest	own
+hauptstadt/19	geografie	hauptstadt_von	Rumänien	Bukarest	own
+hauptstadt/20	geografie	hauptstadt_von	Bulgarien	Sofia	own
+hauptstadt/21	geografie	hauptstadt_von	Albanien	Tirana	own
+hauptstadt/22	geografie	hauptstadt_von	Estland	Tallinn	own
+hauptstadt/23	geografie	hauptstadt_von	Lettland	Riga	own
+hauptstadt/24	geografie	hauptstadt_von	Litauen	Vilnius	own
+hauptstadt/25	geografie	hauptstadt_von	Luxemburg	Luxemburg	own
+hauptstadt/26	geografie	hauptstadt_von	Slowenien	Ljubljana	own
+hauptstadt/27	geografie	hauptstadt_von	Tschechien	Prag	own
+hauptstadt/28	geografie	hauptstadt_von	Großbritannien	London	own
+hauptstadt/29	geografie	hauptstadt_von	Russland	Moskau	own
+hauptstadt/30	geografie	hauptstadt_von	Belarus	Minsk	own
+hauptstadt/31	geografie	hauptstadt_von	Montenegro	Podgorica	own
+hauptstadt/32	geografie	hauptstadt_von	Bosnien und Herzegowina	Sarajevo	own
+hauptstadt/33	geografie	hauptstadt_von	Nordmazedonien	Skopje	own
+hauptstadt/34	geografie	hauptstadt_von	Malta	Valletta	own
+hauptstadt/35	geografie	hauptstadt_von	Zypern	Nikosia	own
+hauptstadt/36	geografie	hauptstadt_von	Liechtenstein	Vaduz	own
+hauptstadt/37	geografie	hauptstadt_von	Monaco	Monaco	own
+hauptstadt/38	geografie	hauptstadt_von	Andorra	Andorra la Vella	own
+hauptstadt/39	geografie	hauptstadt_von	Japan	Tokio	own
+hauptstadt/40	geografie	hauptstadt_von	China	Peking	own
+hauptstadt/41	geografie	hauptstadt_von	Indien	Neu-Delhi	own
+hauptstadt/42	geografie	hauptstadt_von	Ägypten	Kairo	own
+hauptstadt/43	geografie	hauptstadt_von	Kanada	Ottawa	own
+hauptstadt/44	geografie	hauptstadt_von	Mexiko	Mexiko-Stadt	own
+hauptstadt/45	geografie	hauptstadt_von	Brasilien	Brasilia	own
+hauptstadt/46	geografie	hauptstadt_von	Argentinien	Buenos Aires	own
+hauptstadt/47	geografie	hauptstadt_von	Chile	Santiago de Chile	own
+hauptstadt/48	geografie	hauptstadt_von	Peru	Lima	own
+hauptstadt/49	geografie	hauptstadt_von	Kolumbien	Bogota	own
+hauptstadt/50	geografie	hauptstadt_von	Venezuela	Caracas	own
+hauptstadt/51	geografie	hauptstadt_von	Kuba	Havanna	own
+hauptstadt/52	geografie	hauptstadt_von	Australien	Canberra	own
+hauptstadt/53	geografie	hauptstadt_von	Neuseeland	Wellington	own
+hauptstadt/54	geografie	hauptstadt_von	Kenia	Nairobi	own
+hauptstadt/55	geografie	hauptstadt_von	Nigeria	Abuja	own
+hauptstadt/56	geografie	hauptstadt_von	Ghana	Accra	own
+hauptstadt/57	geografie	hauptstadt_von	Marokko	Rabat	own
+hauptstadt/58	geografie	hauptstadt_von	Tunesien	Tunis	own
+hauptstadt/59	geografie	hauptstadt_von	Algerien	Algier	own
+hauptstadt/60	geografie	hauptstadt_von	Äthiopien	Addis Abeba	own
+hauptstadt/61	geografie	hauptstadt_von	Jordanien	Amman	own
+hauptstadt/62	geografie	hauptstadt_von	Syrien	Damaskus	own
+hauptstadt/63	geografie	hauptstadt_von	Saudi-Arabien	Riad	own
+hauptstadt/64	geografie	hauptstadt_von	Pakistan	Islamabad	own
+hauptstadt/65	geografie	hauptstadt_von	Afghanistan	Kabul	own
+hauptstadt/66	geografie	hauptstadt_von	Thailand	Bangkok	own
+hauptstadt/67	geografie	hauptstadt_von	Vietnam	Hanoi	own
+hauptstadt/68	geografie	hauptstadt_von	Indonesien	Jakarta	own
+hauptstadt/69	geografie	hauptstadt_von	Malaysia	Kuala Lumpur	own
+hauptstadt/70	geografie	hauptstadt_von	Singapur	Singapur	own
+hauptstadt/71	geografie	hauptstadt_von	Südkorea	Seoul	own
+hauptstadt/72	geografie	hauptstadt_von	Nordkorea	Pjöngjang	own
+hauptstadt/73	geografie	hauptstadt_von	Nepal	Kathmandu	own
+hauptstadt/74	geografie	hauptstadt_von	Bangladesch	Dhaka	own
+hauptstadt/75	geografie	hauptstadt_von	Kasachstan	Astana	own
+hauptstadt/76	geografie	hauptstadt_von	Georgien	Tiflis	own
+hauptstadt/77	geografie	hauptstadt_von	Armenien	Eriwan	own
+hauptstadt/78	geografie	hauptstadt_von	Aserbaidschan	Baku	own
+hauptstadt/79	geografie	hauptstadt_von	Ecuador	Quito	own
+hauptstadt/80	geografie	hauptstadt_von	Uruguay	Montevideo	own
+hauptstadt/81	geografie	hauptstadt_von	Panama	Panama-Stadt	own
+hauptstadt/82	geografie	hauptstadt_von	Jamaika	Kingston	own
+hauptstadt/83	geografie	hauptstadt_von	Madagaskar	Antananarivo	own
+hauptstadt/84	geografie	hauptstadt_von	Angola	Luanda	own
+hauptstadt/85	geografie	hauptstadt_von	Simbabwe	Harare	own
+hauptstadt/86	geografie	hauptstadt_von	Kamerun	Jaunde	own
+hauptstadt/87	geografie	hauptstadt_von	Senegal	Dakar	own
+hauptstadt/88	geografie	hauptstadt_von	Ruanda	Kigali	own
+hauptstadt/89	geografie	hauptstadt_von	Uganda	Kampala	own
+hauptstadt/90	geografie	hauptstadt_von	Tansania	Dodoma	own
+hauptstadt/91	geografie	hauptstadt_von	Libyen	Tripolis	own
+hauptstadt/92	geografie	hauptstadt_von	Katar	Doha	own
+hauptstadt/93	geografie	hauptstadt_von	Kuwait	Kuwait-Stadt	own
+hauptstadt/94	geografie	hauptstadt_von	Oman	Maskat	own
+hauptstadt/95	geografie	hauptstadt_von	Bhutan	Thimphu	own
+hauptstadt/96	geografie	hauptstadt_von	Kambodscha	Phnom Penh	own
+hauptstadt/97	geografie	hauptstadt_von	Laos	Vientiane	own
+element/1	chemie	element_symbol	Wasserstoff	H	own
+element/2	chemie	element_symbol	Helium	He	own
+element/3	chemie	element_symbol	Lithium	Li	own
+element/4	chemie	element_symbol	Beryllium	Be	own
+element/5	chemie	element_symbol	Bor	B	own
+element/6	chemie	element_symbol	Kohlenstoff	C	own
+element/7	chemie	element_symbol	Stickstoff	N	own
+element/8	chemie	element_symbol	Sauerstoff	O	own
+element/9	chemie	element_symbol	Fluor	F	own
+element/10	chemie	element_symbol	Neon	Ne	own
+element/11	chemie	element_symbol	Natrium	Na	own
+element/12	chemie	element_symbol	Magnesium	Mg	own
+element/13	chemie	element_symbol	Aluminium	Al	own
+element/14	chemie	element_symbol	Silicium	Si	own
+element/15	chemie	element_symbol	Phosphor	P	own
+element/16	chemie	element_symbol	Schwefel	S	own
+element/17	chemie	element_symbol	Chlor	Cl	own
+element/18	chemie	element_symbol	Argon	Ar	own
+element/19	chemie	element_symbol	Kalium	K	own
+element/20	chemie	element_symbol	Calcium	Ca	own
+element/21	chemie	element_symbol	Titan	Ti	own
+element/22	chemie	element_symbol	Chrom	Cr	own
+element/23	chemie	element_symbol	Mangan	Mn	own
+element/24	chemie	element_symbol	Eisen	Fe	own
+element/25	chemie	element_symbol	Cobalt	Co	own
+element/26	chemie	element_symbol	Nickel	Ni	own
+element/27	chemie	element_symbol	Kupfer	Cu	own
+element/28	chemie	element_symbol	Zink	Zn	own
+element/29	chemie	element_symbol	Gallium	Ga	own
+element/30	chemie	element_symbol	Germanium	Ge	own
+element/31	chemie	element_symbol	Arsen	As	own
+element/32	chemie	element_symbol	Selen	Se	own
+element/33	chemie	element_symbol	Brom	Br	own
+element/34	chemie	element_symbol	Krypton	Kr	own
+element/35	chemie	element_symbol	Strontium	Sr	own
+element/36	chemie	element_symbol	Silber	Ag	own
+element/37	chemie	element_symbol	Zinn	Sn	own
+element/38	chemie	element_symbol	Iod	I	own
+element/39	chemie	element_symbol	Xenon	Xe	own
+element/40	chemie	element_symbol	Barium	Ba	own
+element/41	chemie	element_symbol	Wolfram	W	own
+element/42	chemie	element_symbol	Platin	Pt	own
+element/43	chemie	element_symbol	Gold	Au	own
+element/44	chemie	element_symbol	Quecksilber	Hg	own
+element/45	chemie	element_symbol	Blei	Pb	own
+element/46	chemie	element_symbol	Radon	Rn	own
+element/47	chemie	element_symbol	Uran	U	own
+ich/1	ueber_mich	frei	Wer bist du?|Was bist du?|Stell dich vor.|Wer bist du eigentlich?	Ich bin UltraTiny, ein kleines Sprachmodell auf einem ESP32.	own
+ich/2	ueber_mich	frei	Wie heißt du?|Was ist dein Name?|Hast du einen Namen?|Wie lautet dein Name?	Ich heiße UltraTiny.	own
+ich/3	ueber_mich	frei	Wo läufst du?|Auf welcher Hardware läufst du?|Worauf läufst du?|Auf welchem Chip läufst du?	Ich laufe auf einem ESP32 Mikrocontroller.	own
+ich/4	ueber_mich	frei	Brauchst du Internet?|Bist du online?|Hast du eine Internetverbindung?|Brauchst du eine Verbindung zum Internet?	Nein, ich laufe komplett offline auf dem Chip.	own
+ich/5	ueber_mich	frei	Wie groß bist du?|Wie viele Parameter hast du?|Wie groß ist dein Modell?|Wie viele Gewichte hast du?	Ich habe etwa 600000 Parameter.	own
+ich/6	ueber_mich	frei	Wie viel Speicher hat der ESP32?|Wie viel RAM hat der ESP32?|Wie viel Arbeitsspeicher hat der ESP32?|Wie groß ist der RAM des ESP32?	Der ESP32 hat 520 KB SRAM.	own
+ich/7	ueber_mich	frei	Wie schnell ist der ESP32?|Wie hoch ist der Takt des ESP32?|Mit welchem Takt läuft der ESP32?|Wie schnell taktet der ESP32?	Der ESP32 taktet mit bis zu 240 MHz.	own
+ich/8	ueber_mich	frei	Wie viele Kerne hat der ESP32?|Wie viele Prozessorkerne hat der ESP32?|Hat der ESP32 mehrere Kerne?|Wie viele CPU Kerne hat der ESP32?	Der klassische ESP32 hat zwei Kerne.	own
+ich/9	ueber_mich	frei	Wer hat den ESP32 entwickelt?|Von welcher Firma ist der ESP32?|Wer stellt den ESP32 her?|Welche Firma baut den ESP32?	Der ESP32 kommt von Espressif aus Shanghai.	own
+ich/10	ueber_mich	frei	Wo sind deine Gewichte gespeichert?|Wo liegt dein Modell?|Wo sind deine Parameter gespeichert?|Wo wird dein Modell gespeichert?	Meine Gewichte liegen im Flash Speicher.	own
+ich/11	ueber_mich	frei	Wie liest du Text?|Wie verarbeitest du Text?|Liest du Wörter oder Buchstaben?|Wie liest du meine Frage?	Ich lese und schreibe Buchstabe für Buchstabe.	own
+ich/12	ueber_mich	frei	Was kannst du?|Was weißt du?|Wobei kannst du helfen?|Was kannst du eigentlich?	Ich kenne Hauptstädte, chemische Elemente und ein paar Fakten über mich.	own
+ich/13	ueber_mich	frei	Bist du schlau?|Bist du intelligent?|Weißt du alles?|Bist du klug?	Ich bin sehr klein und kenne nur das, was ich gelernt habe.	own
+ich/14	ueber_mich	frei	Wie wurdest du trainiert?|Wo wurdest du trainiert?|Wer hat dich trainiert?|Wie hast du gelernt?	Ich wurde auf einem Computer trainiert und dann auf den ESP32 kopiert.	own
+ich/15	ueber_mich	frei	Was ist ein Mikrocontroller?|Was ist eigentlich ein Mikrocontroller?|Erkläre einen Mikrocontroller.|Was macht ein Mikrocontroller?	Ein Mikrocontroller ist ein kleiner Computer auf einem einzigen Chip.	own
+ich/16	ueber_mich	frei	Was ist ein Sprachmodell?|Was ist eigentlich ein Sprachmodell?|Erkläre ein Sprachmodell.|Wie funktioniert ein Sprachmodell?	Ein Sprachmodell sagt das nächste Zeichen eines Textes voraus.	own
+ich/17	ueber_mich	frei	Hallo!|Hallo|Hi!|Guten Tag!	Hallo! Stell mir eine Frage.	own
+ich/18	ueber_mich	frei	Wie geht es dir?|Wie geht's?|Geht es dir gut?|Wie fühlst du dich?	Mir geht es gut, mein Chip ist kühl.	own
+ich/19	ueber_mich	frei	Danke!|Danke|Vielen Dank!|Danke schön!	Gern geschehen!	own
+ich/20	ueber_mich	frei	Wer hat dich inspiriert?|Was ist dein Vorbild?|Woher kommt die Idee?|Wovon bist du inspiriert?	Ich bin von Tiny-2.1 inspiriert, das auf alten DOS Computern läuft.	own
