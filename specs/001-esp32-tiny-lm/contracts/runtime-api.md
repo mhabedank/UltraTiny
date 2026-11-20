@@ -1,0 +1,51 @@
+# Contract: Portable Runtime C API (`runtime/include/utiny.h`)
+
+Plain C11, no heap allocation, no global mutable state outside the context struct. Used by the
+firmware and by the host CLI/tests.
+
+```c
+typedef enum {
+  UT_OK = 0,
+  UT_ERR_MAGIC, UT_ERR_VERSION, UT_ERR_HEADER_CRC, UT_ERR_PAYLOAD_CRC,
+  UT_ERR_SIZE, UT_ERR_DIMS, UT_ERR_ARENA, UT_ERR_CONTEXT_FULL
+} ut_status;
+
+typedef struct ut_model ut_model;      /* read-only view into the mapped model file */
+typedef struct ut_ctx   ut_ctx;        /* session: KV cache, activations, pos */
+
+/* Validate and parse a model image (e.g. memory-mapped flash). No copy. */
+ut_status ut_model_open(ut_model *m, const void *data, size_t size);
+
+/* Bytes of arena required for this model (static buffer sized at build time). */
+size_t ut_arena_size(const ut_model *m);
+
+ut_status ut_ctx_init(ut_ctx *c, const ut_model *m, void *arena, size_t arena_size);
+void      ut_ctx_reset(ut_ctx *c);                 /* pos = 0, feeds <bos> */
+
+/* Feed one token at the current position (incremental prefill). */
+ut_status ut_feed(ut_ctx *c, int token);
+void      ut_rewind(ut_ctx *c, int n);             /* backspace: pos -= n */
+
+/* Logits for the last fed position; returns pointer into arena (vocab_size floats). */
+const float *ut_logits(const ut_ctx *c);
+
+int ut_argmax(const float *logits, int n);
+int ut_sample(const float *logits, int n, float temperature, uint32_t *rng_state);
+
+/* Alphabet mapping */
+int      ut_token_from_codepoint(const ut_model *m, uint32_t cp);  /* -> id or UT_TOK_UNK */
+uint32_t ut_codepoint_from_token(const ut_model *m, int token);
+```
+
+Guarantees:
+
+- Same model + same token sequence ⇒ bit-identical `ut_logits` on host and ESP32 (parity tests).
+- `ut_feed` returns `UT_ERR_CONTEXT_FULL` instead of writing past `ctx_len`.
+- All functions are reentrant per `ut_ctx`.
+
+Host CLI `utiny-host`:
+
+```text
+utiny-host --model model.utny [--prompt "Frage"] [--greedy | --sample SEED TEMP] [--max N]
+utiny-host --model model.utny --golden golden.json   # parity check, exit 0 on match
+```
