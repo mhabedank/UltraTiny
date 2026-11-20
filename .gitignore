@@ -22,3 +22,4 @@ training/data/gen/
 .vscode/
 .idea/
 build-*/
+firmware/build-qemu/

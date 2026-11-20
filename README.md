@@ -53,6 +53,22 @@ cmake -S runtime -B build && cmake --build build && ctest --test-dir build
 ./build/utiny-host --model models/starter.utny --prompt "Wer bist du?"
 ```
 
+## Im ESP32-Emulator (QEMU) ausprobieren
+
+Läuft die echte Firmware mit Modell auf einem emulierten ESP32 – ohne Board:
+
+```bash
+. $IDF_PATH/export.sh                                         # ESP-IDF v5.4
+python $IDF_PATH/tools/idf_tools.py install qemu-xtensa       # einmalig
+. $IDF_PATH/export.sh                                         # PATH neu laden
+brew install libgcrypt glib pixman sdl2 libslirp              # nur macOS, einmalig
+make qemu                                                     # oder: make qemu MODEL=training/runs/v1/model.utny
+```
+
+Beenden mit **Strg-A, dann X**. Der Emulator nutzt DIO/40 MHz statt QIO/80 MHz
+(`firmware/sdkconfig.qemu`), weil QEMU QIO nicht kann. Er prüft Funktion und Antworten, nicht die
+Geschwindigkeit – die Werte in `/info` sind dort nicht aussagekräftig.
+
 ## Selbst trainieren
 
 Siehe [`training/README.md`](training/README.md) — ein Befehl erzeugt Daten, trainiert (Apple-GPU

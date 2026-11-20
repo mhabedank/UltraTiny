@@ -4,7 +4,7 @@ MODEL       ?= models/starter.utny
 BUILD_DIR   ?= build
 MODEL_MAX   := 2097152
 
-.PHONY: test test-python test-runtime flash-model monitor budget starter
+.PHONY: test test-python test-runtime flash-model monitor budget starter qemu
 
 test: test-python test-runtime
 
@@ -35,3 +35,7 @@ monitor:
 budget:
 	cd training && uv run python ../tools/budget_report.py --model ../$(MODEL) \
 		$$( [ -d ../firmware/build ] && echo --idf-build ../firmware/build )
+
+# Run firmware + model in QEMU (emulated ESP32, interactive). Quit: Ctrl-A, then X.
+qemu:
+	tools/qemu_run.sh $(abspath $(MODEL))
