@@ -79,14 +79,16 @@ specs/001-esp32-tiny-lm/
 ```text
 training/                      # Python (uv project)
 ├── pyproject.toml
-├── configs/{v1.toml,tiny-test.toml}
+├── configs/{v1.toml,starter.toml,tiny-test.toml}
 ├── data/
 │   ├── facts/*.tsv            # knowledge base (Wikidata CC0 snapshot + own facts)
+│   ├── topics.toml            # allowed Fact.topic values
 │   ├── templates/*.toml       # German question/answer templates (train/heldout split)
 │   └── demo_prompts.tsv       # demo list with expected answers (SC-003)
 ├── tools/fetch_wikidata.py    # one-off snapshot refresh (not part of the pipeline)
 ├── src/ultratiny/
 │   ├── alphabet.py            # symbols, encode/decode
+│   ├── config.py              # ModelConfig + TOML loading
 │   ├── datagen.py             # facts × templates → examples
 │   ├── model.py               # PyTorch model (R1) + fake-quant for QAT
 │   ├── train.py               # MPS/CPU training loop, seeding, run.json
@@ -100,8 +102,8 @@ training/                      # Python (uv project)
 
 runtime/                       # portable C11, no SDK dependencies
 ├── CMakeLists.txt             # IDF component if ESP_PLATFORM, else lib + host CLI + tests
-├── include/utiny.h
-├── src/{model.c,forward.c,mathx.c,alphabet.c,crc32.c}
+├── include/{utiny.h,utiny_console.h}
+├── src/{model.c,forward.c,mathx.c,alphabet.c,crc32.c,console.c}  # console.c: platform-independent console state machine
 ├── host/utiny_host.c          # CLI + golden checker
 └── tests/                     # CTest unit tests + tiny test model fixture
 
@@ -109,10 +111,13 @@ firmware/                      # ESP-IDF project (platform layer only)
 ├── CMakeLists.txt             # EXTRA_COMPONENT_DIRS = ../runtime
 ├── partitions.csv             # R7 layout
 ├── sdkconfig.defaults         # radios off, console UART0 115200, -ffp-contract=off
-└── main/{main.c,console.c,model_partition.c}
+└── main/{main.c,console_uart.c,model_partition.c}
 
 tools/
-├── budget_report.py           # Constitution I gate
+├── budget_report.py           # Constitution I gate (CI from Phase 2)
+├── device_smoke.py            # SC-001/002 on the board
+├── device_parity.py           # SC-006 board vs reference
+├── model_swap_check.py        # User Story 3 on the board
 └── soak.py                    # SC-005 endurance over serial
 
 Makefile                       # flash-model, budget, test shortcuts

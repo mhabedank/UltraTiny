@@ -74,7 +74,7 @@ A developer flashes a newly exported model file into the board's model storage a
 existing firmware picks it up after a reset.
 
 **Why this priority**: Makes iteration on the model fast and keeps firmware and model independent,
-but is not needed for a first demo.
+but is not needed for a first demo. It builds on the firmware delivered by User Story 1.
 
 **Independent Test**: Flash firmware once, then flash two different compatible model files one after
 another, and confirm the banner and answers reflect the currently flashed model.
@@ -158,13 +158,15 @@ another, and confirm the banner and answers reflect the currently flashed model.
 ### Measurable Outcomes
 
 - **SC-001**: On a classic ESP32 board, the first character of an answer appears within 1 second
-  of pressing Enter for prompts from the demo list.
+  of pressing Enter for prompts from the demo list typed at normal human speed (pasted text may
+  take longer and is reported separately).
 - **SC-002**: The board generates at least 10 characters per second on average, so a 100-character
   answer completes in 10 seconds or less.
-- **SC-003**: At least 80% of the demo prompt list produces answers judged correct and readable
-  (exact or near-exact match to the expected answer).
-- **SC-004**: At least 60% of held-out rephrasings of trained prompts produce correct answers,
-  showing the model generalizes beyond memorized wording.
+- **SC-003**: At least 80% of the demo prompt list produces correct answers. An answer counts as
+  correct when, after ignoring case, punctuation and extra spaces, it differs from the expected
+  answer in at most 10% of its characters (normalized edit distance ≤ 0.1).
+- **SC-004**: At least 60% of held-out rephrasings of trained prompts produce correct answers
+  (same rule as SC-003), showing the model generalizes beyond memorized wording.
 - **SC-005**: The board answers 100 consecutive prompts over at least 1 hour without a crash,
   reboot, or growing memory use.
 - **SC-006**: For 100% of evaluation prompts, the board's output matches the PC reference output

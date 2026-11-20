@@ -43,6 +43,29 @@ Guarantees:
 - `ut_feed` returns `UT_ERR_CONTEXT_FULL` instead of writing past `ctx_len`.
 - All functions are reentrant per `ut_ctx`.
 
+## Console (`runtime/include/utiny_console.h`)
+
+Platform-independent console state machine (data-model.md Session); the firmware only supplies
+I/O and time callbacks, so the logic is host-testable.
+
+```c
+typedef struct {
+  int      (*read_byte)(void *user);              /* -1 if no byte available (non-blocking) */
+  void     (*write)(void *user, const char *buf, size_t n);
+  uint32_t (*millis)(void *user);
+  void     *user;
+} ut_console_io;
+
+typedef struct ut_console ut_console;             /* holds Session state, line buffer, stats */
+
+void ut_console_init(ut_console *k, ut_ctx *c, const ut_model *m, const ut_console_io *io,
+                     ut_status model_status);      /* != UT_OK -> HALT_ERROR */
+void ut_console_banner(ut_console *k);
+void ut_console_poll(ut_console *k);               /* process available input, generate step(s) */
+```
+
+Behavior and texts are defined in [serial-console.md](serial-console.md).
+
 Host CLI `utiny-host`:
 
 ```text
