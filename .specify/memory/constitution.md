@@ -66,8 +66,14 @@ Rationale: small, portable code is easier to fit, verify, and port to other micr
 
 ## Technical Constraints
 
-- **Target hardware**: ESP32 family. TODO(TARGET_BOARD): choose the exact variant and record
-  its budgets in the first feature spec.
+- **Target hardware**: classic ESP32 (Xtensa LX6, dual-core up to 240 MHz, single-precision
+  FPU, no SIMD, 520 KB on-chip SRAM, no PSRAM assumed, 4 MB external flash).
+- **Default budgets** (a feature spec MAY tighten them; loosening requires an amendment):
+  - Model weights: ≤ 2 MB in a dedicated flash data partition, memory-mapped, never copied
+    to RAM.
+  - Runtime RAM for inference (arena + KV cache + activations): ≤ 128 KB, statically sized.
+  - Firmware application image: fits the chosen partition table alongside the model partition.
+  - Without PSRAM, nothing in the model design may rely on external RAM.
 - **Firmware**: ESP-IDF (directly or via PlatformIO), C; host build via a standard C compiler
   (e.g. gcc/clang) for tests.
 - **Training**: Python 3 with PyTorch and NumPy; MUST run on a CPU-only machine (GPU optional).
