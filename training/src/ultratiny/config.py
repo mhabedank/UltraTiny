@@ -43,6 +43,11 @@ class DataConfig:
     demo_prompts: str = "data/demo_prompts.tsv"
     noisy_copies: int = 2
     max_answer_len: int = 200
+    # Optional LLM augmentation snapshots (train-only; see ultratiny/augment.py).
+    augment_phrasings: list[str] = field(default_factory=list)
+    augment_templates: list[str] = field(default_factory=list)
+    augment_refusals: list[str] = field(default_factory=list)
+    refusal_relation: str = "abweisen"
 
 
 @dataclass(frozen=True)
@@ -66,6 +71,9 @@ class EvalConfig:
     heldout_min: float = 0.60
     max_edit_ratio: float = 0.10
     golden_cases: int = 24
+    refusal_relation: str = "abweisen"
+    refusal_min: float = 0.0
+    false_refusal_max: float = 1.0
 
 
 @dataclass(frozen=True)

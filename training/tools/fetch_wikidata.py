@@ -121,7 +121,82 @@ def unique(rows: list[dict], key: str, val: str) -> dict[str, dict]:
     return {k: first[k] for k, v in vals.items() if len(v) == 1 and None not in v}
 
 
+CHEMIE_QUERY = """
+SELECT ?e ?eLabel ?sym ?num ?mass ?mp ?bp WHERE {
+  ?e wdt:P31 wd:Q11344 ; wdt:P246 ?sym ; wdt:P1086 ?num .
+  OPTIONAL { ?e wdt:P2067 ?mass }
+  OPTIONAL { ?e p:P2101/psn:P2101/wikibase:quantityAmount ?mp }
+  OPTIONAL { ?e p:P2102/psn:P2102/wikibase:quantityAmount ?bp }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "de". }
+}"""
+
+
+def _celsius(kelvins: set[float]) -> str | None:
+    """Normalized SI values (kelvin) -> rounded degree Celsius, only if sources agree (<= 5 K)."""
+    if not kelvins or max(kelvins) - min(kelvins) > 5:
+        return None
+    k = sorted(kelvins)[len(kelvins) // 2]
+    return str(round(k - 273.15))
+
+
+def _mass(values: set[float], z: int) -> str | None:
+    if len(values) != 1:
+        return None
+    m = next(iter(values))
+    if z > 94 or m == int(m):
+        return str(round(m))  # synthetic elements: mass number of the most stable isotope
+    from decimal import ROUND_HALF_UP, Decimal
+
+    q = Decimal(repr(m)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+    return str(q).replace(".", ",")
+
+
+def main_chemie() -> int:
+    """Element profiles for the chemistry-teacher model (specs/003-chemielehrer)."""
+    sys.path.insert(0, str(Path(__file__).parent))
+    import periodic as pt
+
+    els: dict[int, dict] = {}
+    for r in sparql(CHEMIE_QUERY):
+        z = int(float(r["num"]))
+        if z > 118:
+            continue
+        e = els.setdefault(z, {"q": qid(r["e"]), "name": r["eLabel"], "sym": set(), "mass": set(),
+                               "mp": set(), "bp": set()})  # fmt: skip
+        e["sym"].add(r["sym"])
+        for k in ("mass", "mp", "bp"):
+            if k in r:
+                e[k].add(float(r[k]))
+    rows = []
+    for z, e in sorted(els.items()):
+        name = e["name"]
+        if not ok(name) or len(e["sym"]) != 1:
+            continue
+        sym = next(iter(e["sym"]))
+        src = f"wikidata:{e['q']}"
+        facts = {
+            "element_symbol": sym,
+            "element_ordnungszahl": str(z),
+            "element_atommasse": _mass(e["mass"], z),
+            "element_periode": str(pt.period(z)),
+            "element_gruppe": pt.group_phrase(z),
+            "element_familie": pt.family(z),
+            "element_kategorie": pt.category(z),
+            "element_zustand": pt.state(z),
+            "element_schmelzpunkt": _celsius(e["mp"]) if z <= 103 else None,
+            "element_siedepunkt": _celsius(e["bp"]) if z <= 103 else None,
+        }
+        for rel, obj in facts.items():
+            if obj is not None and ok(obj):
+                rows.append((f"wd/{e['q']}/{rel.split('_', 1)[1]}", "chemie", rel, name, obj, src))
+    n = write("elemente_chemie", rows)
+    print(json.dumps({"elements": len(els), "facts": n}, indent=2))
+    return 0
+
+
 def main() -> int:
+    if "--chemie" in sys.argv:
+        return main_chemie()
     countries = sparql(QUERIES["countries"])
     caps, curs = [], []
     for c in unique(countries, "c", "cap").values():

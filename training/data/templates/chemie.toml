@@ -1,0 +1,190 @@
+# Templates for the chemistry-teacher model (specs/003-chemielehrer).
+# Rules: >= 8 question templates per relation, >= 2 held out. `repeat` oversamples a relation's
+# training lines (FR-006). Free relations: Fact.subject = phrasings separated by "|".
+
+[relations.element_symbol]
+answers = ["Das Symbol von {subject} ist {object}."]
+questions = [
+  { text = "Was ist das Symbol von {subject}?", split = "train" },
+  { text = "Welches Symbol hat {subject}?", split = "train" },
+  { text = "Wie lautet das Elementsymbol von {subject}?", split = "train" },
+  { text = "Symbol von {subject}?", split = "train" },
+  { text = "Welches chemische Zeichen hat {subject}?", split = "train" },
+  { text = "Was ist das chemische Symbol für {subject}?", split = "train" },
+  { text = "Nenne das Symbol von {subject}.", split = "train" },
+  { text = "Welches Element hat das Symbol {object}?", split = "train", answer = "{object} ist das Symbol von {subject}." },
+  { text = "Wofür steht das Symbol {object}?", split = "train", answer = "{object} ist das Symbol von {subject}." },
+  { text = "Welches Element hat das Zeichen {object}?", split = "train", answer = "{object} ist das Symbol von {subject}." },
+  { text = "Was bedeutet das Symbol {object}?", split = "train", answer = "{object} ist das Symbol von {subject}." },
+  { text = "Wie kürzt man {subject} in der Chemie ab?", split = "heldout" },
+  { text = "Welches Elementsymbol hat {subject}?", split = "heldout" },
+  { text = "Für welches Element steht {object}?", split = "heldout", answer = "{object} ist das Symbol von {subject}." },
+]
+
+[relations.element_ordnungszahl]
+answers = ["{subject} hat die Ordnungszahl {object}."]
+questions = [
+  { text = "Welche Ordnungszahl hat {subject}?", split = "train" },
+  { text = "Was ist die Ordnungszahl von {subject}?", split = "train" },
+  { text = "Ordnungszahl von {subject}?", split = "train" },
+  { text = "Wie lautet die Ordnungszahl von {subject}?", split = "train" },
+  { text = "Welche Kernladungszahl hat {subject}?", split = "train" },
+  { text = "Wie viele Protonen hat ein Atom von {subject}?", split = "train" },
+  { text = "Nenne die Ordnungszahl von {subject}.", split = "train" },
+  { text = "Welches Element hat die Ordnungszahl {object}?", split = "train", answer = "Das Element mit der Ordnungszahl {object} ist {subject}." },
+  { text = "Element Nummer {object}?", split = "train", answer = "Das Element mit der Ordnungszahl {object} ist {subject}." },
+  { text = "Welches Element steht an Stelle {object} im Periodensystem?", split = "train", answer = "Das Element mit der Ordnungszahl {object} ist {subject}." },
+  { text = "Welche Nummer hat {subject} im Periodensystem?", split = "heldout" },
+  { text = "Wie viele Protonen sind im Kern von {subject}?", split = "heldout" },
+  { text = "Was ist Element Nummer {object}?", split = "heldout", answer = "Das Element mit der Ordnungszahl {object} ist {subject}." },
+]
+
+[relations.element_atommasse]
+answers = ["Die Atommasse von {subject} beträgt etwa {object} u."]
+questions = [
+  { text = "Welche Atommasse hat {subject}?", split = "train" },
+  { text = "Wie groß ist die Atommasse von {subject}?", split = "train" },
+  { text = "Atommasse von {subject}?", split = "train" },
+  { text = "Was ist die relative Atommasse von {subject}?", split = "train" },
+  { text = "Wie schwer ist ein Atom von {subject}?", split = "train" },
+  { text = "Nenne die Atommasse von {subject}.", split = "train" },
+  { text = "Wie viel wiegt ein {subject}-Atom in u?", split = "train" },
+  { text = "Welche Masse hat ein Atom {subject}?", split = "train" },
+  { text = "Wie lautet die Atommasse von {subject}?", split = "heldout" },
+  { text = "Wie schwer sind {subject}-Atome?", split = "heldout" },
+]
+
+[relations.element_periode]
+answers = ["{subject} steht in der {object}. Periode."]
+questions = [
+  { text = "In welcher Periode steht {subject}?", split = "train" },
+  { text = "Welche Periode hat {subject}?", split = "train" },
+  { text = "Periode von {subject}?", split = "train" },
+  { text = "In welcher Periode findet man {subject}?", split = "train" },
+  { text = "Zu welcher Periode gehört {subject}?", split = "train" },
+  { text = "In welcher Zeile des Periodensystems steht {subject}?", split = "train" },
+  { text = "Nenne die Periode von {subject}.", split = "train" },
+  { text = "Wie viele Schalen hat ein Atom von {subject}?", split = "train", answer = "{subject} steht in der {object}. Periode, also hat das Atom {object} Schalen." },
+  { text = "In welcher Periode liegt {subject}?", split = "heldout" },
+  { text = "Welche Periode im PSE hat {subject}?", split = "heldout" },
+]
+
+[relations.element_gruppe]
+answers = ["{subject} steht in {object}."]
+questions = [
+  { text = "In welcher Gruppe steht {subject}?", split = "train" },
+  { text = "In welcher Hauptgruppe steht {subject}?", split = "train" },
+  { text = "Zu welcher Gruppe gehört {subject}?", split = "train" },
+  { text = "Gruppe von {subject}?", split = "train" },
+  { text = "Wo steht {subject} im Periodensystem?", split = "train" },
+  { text = "In welcher Spalte des Periodensystems steht {subject}?", split = "train" },
+  { text = "Nenne die Gruppe von {subject}.", split = "train" },
+  { text = "Welche Gruppe hat {subject}?", split = "train" },
+  { text = "In welcher Gruppe findet man {subject}?", split = "heldout" },
+  { text = "Wo findet man {subject} im PSE?", split = "heldout" },
+]
+
+[relations.element_familie]
+answers = ["{subject} gehört zu den {object}."]
+questions = [
+  { text = "Zu welcher Elementfamilie gehört {subject}?", split = "train" },
+  { text = "Zu welcher Elementgruppe gehört {subject}?", split = "train" },
+  { text = "Welcher Familie gehört {subject} an?", split = "train" },
+  { text = "Ist {subject} ein Halogen?", split = "train" },
+  { text = "Ist {subject} ein Edelgas?", split = "train" },
+  { text = "Ist {subject} ein Alkalimetall?", split = "train" },
+  { text = "Elementfamilie von {subject}?", split = "train" },
+  { text = "Zu welchen Elementen zählt {subject}?", split = "train" },
+  { text = "Zu welcher Familie zählt {subject}?", split = "heldout" },
+  { text = "Welcher Elementfamilie ist {subject} zugeordnet?", split = "heldout" },
+]
+
+[relations.element_kategorie]
+answers = ["{subject} ist ein {object}."]
+questions = [
+  { text = "Ist {subject} ein Metall oder ein Nichtmetall?", split = "train" },
+  { text = "Ist {subject} ein Metall?", split = "train" },
+  { text = "Ist {subject} ein Nichtmetall?", split = "train" },
+  { text = "Gehört {subject} zu den Metallen?", split = "train" },
+  { text = "Was für ein Element ist {subject}?", split = "train" },
+  { text = "Metall oder Nichtmetall: {subject}?", split = "train" },
+  { text = "Ist {subject} ein Halbmetall?", split = "train" },
+  { text = "Zu welcher Stoffklasse gehört das Element {subject}?", split = "train" },
+  { text = "Zählt {subject} zu den Metallen?", split = "heldout" },
+  { text = "Ist das Element {subject} metallisch?", split = "heldout" },
+]
+
+[relations.element_zustand]
+answers = ["{subject} ist bei Raumtemperatur {object}."]
+questions = [
+  { text = "Ist {subject} bei Raumtemperatur fest, flüssig oder gasförmig?", split = "train" },
+  { text = "Welchen Aggregatzustand hat {subject} bei Raumtemperatur?", split = "train" },
+  { text = "Ist {subject} ein Gas?", split = "train" },
+  { text = "Ist {subject} bei Zimmertemperatur fest?", split = "train" },
+  { text = "In welchem Zustand liegt {subject} bei 20 °C vor?", split = "train" },
+  { text = "Aggregatzustand von {subject}?", split = "train" },
+  { text = "Ist {subject} flüssig?", split = "train" },
+  { text = "Wie liegt {subject} bei Raumtemperatur vor?", split = "train" },
+  { text = "Welchen Zustand hat {subject} bei Zimmertemperatur?", split = "heldout" },
+  { text = "Ist {subject} bei Raumtemperatur ein Feststoff?", split = "heldout" },
+]
+
+[relations.element_schmelzpunkt]
+answers = ["{subject} schmilzt bei etwa {object} °C."]
+questions = [
+  { text = "Wann schmilzt {subject}?", split = "train" },
+  { text = "Welche Schmelztemperatur hat {subject}?", split = "train" },
+  { text = "Was ist der Schmelzpunkt von {subject}?", split = "train" },
+  { text = "Schmelzpunkt von {subject}?", split = "train" },
+  { text = "Bei welcher Temperatur schmilzt {subject}?", split = "train" },
+  { text = "Wie hoch ist der Schmelzpunkt von {subject}?", split = "train" },
+  { text = "Ab wie viel Grad schmilzt {subject}?", split = "train" },
+  { text = "Nenne die Schmelztemperatur von {subject}.", split = "train" },
+  { text = "Bei wie viel Grad wird {subject} flüssig?", split = "heldout" },
+  { text = "Wie lautet die Schmelztemperatur von {subject}?", split = "heldout" },
+]
+
+[relations.element_siedepunkt]
+answers = ["{subject} siedet bei etwa {object} °C."]
+questions = [
+  { text = "Wann siedet {subject}?", split = "train" },
+  { text = "Welche Siedetemperatur hat {subject}?", split = "train" },
+  { text = "Was ist der Siedepunkt von {subject}?", split = "train" },
+  { text = "Siedepunkt von {subject}?", split = "train" },
+  { text = "Bei welcher Temperatur siedet {subject}?", split = "train" },
+  { text = "Wie hoch ist der Siedepunkt von {subject}?", split = "train" },
+  { text = "Ab wie viel Grad siedet {subject}?", split = "train" },
+  { text = "Nenne die Siedetemperatur von {subject}.", split = "train" },
+  { text = "Bei wie viel Grad verdampft {subject}?", split = "heldout" },
+  { text = "Wie lautet die Siedetemperatur von {subject}?", split = "heldout" },
+]
+
+[relations.formel_von]
+answers = ["{subject} hat die Formel {object}."]
+questions = [
+  { text = "Welche Formel hat {subject}?", split = "train" },
+  { text = "Was ist die Formel von {subject}?", split = "train" },
+  { text = "Wie lautet die chemische Formel von {subject}?", split = "train" },
+  { text = "Formel von {subject}?", split = "train" },
+  { text = "Welche Summenformel hat {subject}?", split = "train" },
+  { text = "Wie schreibt man {subject} als Formel?", split = "train" },
+  { text = "Nenne die Formel von {subject}.", split = "train" },
+  { text = "Welcher Stoff hat die Formel {object}?", split = "train", answer = "{object} ist die Formel von {subject}." },
+  { text = "Was ist {object}?", split = "train", answer = "{object} ist die Formel von {subject}." },
+  { text = "Wofür steht die Formel {object}?", split = "train", answer = "{object} ist die Formel von {subject}." },
+  { text = "Was ist die chemische Formel für {subject}?", split = "heldout" },
+  { text = "Wie lautet die Summenformel von {subject}?", split = "heldout" },
+  { text = "Welche Verbindung hat die Formel {object}?", split = "heldout", answer = "{object} ist die Formel von {subject}." },
+]
+
+[relations.frei]
+free = true
+repeat = 3
+answers = ["{object}"]
+questions = [{ text = "{subject}", split = "train" }]
+
+[relations.abweisen]
+free = true
+repeat = 1
+answers = ["{object}"]
+questions = [{ text = "{subject}", split = "train" }]

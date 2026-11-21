@@ -106,6 +106,22 @@ starten (`UT_QEMU_TCP=5555 make qemu`, dann `observe.py --tcp localhost:5555`). 
 Zeiten und CPU-Last emuliert und nur grob aussagekräftig; Speicherwerte und Modell-Trace sind
 echt.
 
+## Chemielehrer (Modell `chemie`)
+
+Ein größeres Modell (6 × 192, ~1,75 Mio. Parameter, 1,79 MB Flash, 91 KB RAM), das nur Chemie
+für die Klassen 7–10 kann – nach dem Rahmenlehrplan Chemie Berlin-Brandenburg (Themenfelder
+3.1–3.12), dazu Steckbriefe aller 118 Elemente, Formeln, Alltagsstoffe und einfache Reaktionen.
+Fragen außerhalb der Chemie beantwortet es ehrlich mit „Das weiß ich leider nicht.“
+
+```bash
+make qemu MODEL=models/chemie.utny                       # im Emulator
+make flash-model MODEL=models/chemie.utny PORT=...       # aufs Board
+cd training && uv run ut pipeline --config configs/chemie.toml --out runs/chemie   # selbst trainieren
+```
+
+Details und Messwerte: [`specs/003-chemielehrer/`](specs/003-chemielehrer/).
+Training und Datenerweiterung auf dem DGX Spark (Ollama + Docker/CUDA): [`training/SPARK.md`](training/SPARK.md).
+
 ## Selbst trainieren
 
 Siehe [`training/README.md`](training/README.md) — ein Befehl erzeugt Daten, trainiert (Apple-GPU
