@@ -58,12 +58,13 @@ cmake -S runtime -B build && cmake --build build && ctest --test-dir build
 Läuft die echte Firmware mit Modell auf einem emulierten ESP32 – ohne Board:
 
 ```bash
-. $IDF_PATH/export.sh                                         # ESP-IDF v5.4
-python $IDF_PATH/tools/idf_tools.py install qemu-xtensa       # einmalig
-. $IDF_PATH/export.sh                                         # PATH neu laden
-brew install libgcrypt glib pixman sdl2 libslirp              # nur macOS, einmalig
-make qemu                                                     # oder: make qemu MODEL=training/runs/v1/model.utny
+make qemu                                        # oder: make qemu MODEL=training/runs/v1/model.utny
 ```
+
+Das Skript richtet beim ersten Mal alles selbst ein und fragt vorher nach: Es findet ESP-IDF über
+`$IDF_PATH` oder `~/esp/esp-idf` (kein manuelles `export.sh` nötig), installiert sonst ESP-IDF
+v5.4.1 nach `~/esp/esp-idf` (~2 GB), danach QEMU für den ESP32 und auf dem Mac die nötigen
+Homebrew-Pakete. `UT_YES=1 make qemu` beantwortet alle Fragen mit Ja.
 
 Beenden mit **Strg-A, dann X**. Der Emulator nutzt DIO/40 MHz statt QIO/80 MHz
 (`firmware/sdkconfig.qemu`), weil QEMU QIO nicht kann. Er prüft Funktion und Antworten, nicht die
