@@ -20,8 +20,15 @@ RUN=(docker run --rm --gpus all --ipc=host --user "$(id -u):$(id -g)" -e HOME=/t
      -v "$REPO:/work" -w /work/training)
 TAG="$(basename "$CONFIG" .toml)"
 
-echo "==> Building training image ($IMAGE)"
-docker build -q -t "$IMAGE" -f "$REPO/training/docker/Dockerfile.spark" "$REPO/training/docker"
+DOCKERFILE="$REPO/training/docker/Dockerfile.spark"
+BASE_IMAGE="${BASE_IMAGE:-$(sed -n 's/^ARG BASE_IMAGE=//p' "$DOCKERFILE")}"
+if ! docker image inspect "$BASE_IMAGE" >/dev/null 2>&1; then
+    echo "==> Pulling base image $BASE_IMAGE (first time only, ~15-20 GB)"
+    docker pull "$BASE_IMAGE"     # shows per-layer download progress
+fi
+echo "==> Building training image ($IMAGE) on $BASE_IMAGE"
+docker build --progress=plain --build-arg BASE_IMAGE="$BASE_IMAGE" -t "$IMAGE" \
+    -f "$DOCKERFILE" "$REPO/training/docker"
 
 echo "==> GPU check"
 "${RUN[@]}" --entrypoint python "$IMAGE" -c \

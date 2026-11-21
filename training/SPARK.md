@@ -66,7 +66,7 @@ git add data/augment && git commit -m "data: LLM augmentation snapshot"
 ```bash
 tools/spark/train.sh                           # configs/chemie-spark.toml, Seeds 1234 2345 3456
 # eigene Seeds:   tools/spark/train.sh configs/chemie-spark.toml 1 2 3 4 5
-# anderes Basis-Image:  docker build --build-arg BASE_IMAGE=nvcr.io/nvidia/pytorch:<tag>-py3 ...
+# anderes Basis-Image:  BASE_IMAGE=nvcr.io/nvidia/pytorch:<tag>-py3 tools/spark/train.sh
 ```
 
 Das Skript
