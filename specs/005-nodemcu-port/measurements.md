@@ -12,8 +12,9 @@ table.
 | `utiny-host --model models/starter.utny --golden models/starter_golden.json` | 24 cases, 886 steps, 0 failed | 24 cases, 886 steps, 0 failed (bit-identical logits) |
 | Golden files / fixtures changed | – | none |
 
-Legacy ESP32 firmware (T011): builds in the CI `firmware` job (ESP-IDF v5.4.1); `ut_model` grows
-by 256 B (meta copy), well inside its static DRAM (112,516 / 180,736 B before the change).
+Legacy ESP32 firmware (T011): the CI `firmware` job (ESP-IDF v5.4.1) builds it with the changed
+runtime and passes its budget report (`--board esp32`); `ut_model` grows by 256 B (meta copy),
+well inside its static DRAM (112,516 / 180,736 B before the change).
 
 ## NodeMCU model (T015, T016)
 
@@ -33,6 +34,14 @@ by 256 B (meta copy), well inside its static DRAM (112,516 / 180,736 B before th
 Held-out is lower than the starter model's 80.8 % (ctx 256), but above the spec threshold. The
 cause was not investigated; the training data also changed (NodeMCU self-description facts, 0.6 %
 of the pairs no longer fit the context).
+
+### Reproducibility (T032)
+
+Second CPU run with the same config and seed (`runs/nodemcu-repro`): alphabet and all tensors
+are **byte-identical**, eval identical (demo 100 %, held-out 70.0 %). The two files differ only in
+the meta JSON field `git` (run 1 at `9fa7193`, run 2 at `16ee1f9`), which records the commit by
+design (constitution IV); at the same commit the whole file is identical (covered by
+`training/tests/test_determinism.py`).
 
 ## NodeMCU firmware build (T026)
 

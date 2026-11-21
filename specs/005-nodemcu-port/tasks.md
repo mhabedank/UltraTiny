@@ -51,7 +51,7 @@ model, and the NodeMCU budget gate in CI. All three block every user story.
 - [X] T008 Read token/position embeddings and all other image-resident int8/float data in the forward pass through `ut_ld32` (no direct dereference of `m->...` image pointers), in runtime/src/forward.c
 - [X] T009 Add an `UT_IMAGE_ACCESS_CHECK` CMake option that builds `test_runtime` and the parity tests a second time with the define, plus a CTest `image_access_lint` that fails if `runtime/src/*.c` dereferences `->w[`, `->scale[`, `->alphabet[` or `tok_emb.w`/`pos_emb.w` outside `mathx.h`, in runtime/CMakeLists.txt
 - [X] T010 Run the baseline commands from T004 again plus the access-check build; all golden cases must stay bit-identical (no change to runtime/tests/fixtures or models/starter_golden.json allowed); record in specs/005-nodemcu-port/measurements.md
-- [ ] T011 [P] Confirm the legacy ESP32 firmware still builds with the changed runtime (`idf.py build` in firmware/ or the CI `firmware` job) and that `sizeof(ut_model)` growth (+256 B) fits its static RAM; note in specs/005-nodemcu-port/measurements.md
+- [X] T011 [P] Confirm the legacy ESP32 firmware still builds with the changed runtime (`idf.py build` in firmware/ or the CI `firmware` job) and that `sizeof(ut_model)` growth (+256 B) fits its static RAM; note in specs/005-nodemcu-port/measurements.md
 
 ### NodeMCU model
 
@@ -103,7 +103,7 @@ gate itself is already in place (T017–T019, T027).
 (byte-identical on CPU), budget report passes for nodemcu.utny and fails for starter.utny.
 
 - [X] T031 [P] [US2] Update the `budget` target to default to the NodeMCU profile and add a `nodemcu` training target (`uv run ut pipeline --config configs/nodemcu.toml --out runs/nodemcu`) in Makefile
-- [ ] T032 [US2] Reproducibility check: run the NodeMCU pipeline twice on CPU with the same seed, confirm byte-identical model files, record in specs/005-nodemcu-port/measurements.md
+- [X] T032 [US2] Reproducibility check: run the NodeMCU pipeline twice on CPU with the same seed, confirm byte-identical model files, record in specs/005-nodemcu-port/measurements.md
 - [X] T033 [P] [US2] Document the NodeMCU config and budgets in training/README.md
 
 **Checkpoint**: NodeMCU models can be reproduced and checked with one command each.
