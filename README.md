@@ -84,6 +84,7 @@ cd training && uv run ut pipeline --config configs/chemie.toml --out runs/chemie
 ```
 
 Details und Messwerte: [`specs/003-chemielehrer/`](specs/003-chemielehrer/).
+Training und Datenerweiterung auf dem DGX Spark (Ollama + Docker/CUDA): [`training/SPARK.md`](training/SPARK.md).
 
 ## Selbst trainieren
 

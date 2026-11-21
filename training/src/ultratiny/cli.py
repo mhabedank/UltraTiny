@@ -22,7 +22,7 @@ HEADROOM = 0.10
 
 def _common(p: argparse.ArgumentParser) -> None:
     p.add_argument("--seed", type=int, default=1234)
-    p.add_argument("--device", choices=["auto", "mps", "cpu"], default="auto")
+    p.add_argument("--device", choices=["auto", "cuda", "mps", "cpu"], default="auto")
 
 
 def cmd_datagen(a) -> int:

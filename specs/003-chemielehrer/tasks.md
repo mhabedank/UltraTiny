@@ -35,6 +35,16 @@
 - [ ] T017 [US3] Commit models/chemie.utny + golden/eval/run.json; host parity (`utiny-host --golden`) and QEMU parity
 - [ ] T018 [US3] Record results in specs/003-chemielehrer/measurements.md; README section "Chemielehrer" (make qemu MODEL=models/chemie.utny)
 
+## Phase 6: DGX Spark (added 2026-11-21)
+
+- [X] T019 CUDA device support (`--device cuda`, auto: CUDA > MPS > CPU) in training/src/ultratiny/train.py
+- [X] T020 Train-only LLM augmentation (phrasings, templates, refusals) with leak/conflict/source filters in training/src/ultratiny/augment.py and training/src/ultratiny/datagen.py; tests in training/tests/test_augment.py
+- [X] T021 Ollama generator with judge pass and resume cache in training/tools/augment_llm.py; wrapper tools/spark/augment.sh
+- [X] T022 Docker image (NGC PyTorch, CUDA on GB10) in training/docker/Dockerfile.spark; multi-seed training + parity + best-run selection in tools/spark/train.sh, tools/spark/select_best.py
+- [X] T023 Config training/configs/chemie-spark.toml (60k steps, batch 128, augmentation) and guide training/SPARK.md
+- [ ] T024 Run augmentation on the Spark, commit training/data/augment/*.tsv (user)
+- [ ] T025 Train on the Spark, commit models/chemie.* and record results in measurements.md (user)
+
 ## Dependencies
 
 T001–T003 → T004–T006 → T007–T014 (parallel) → T012, T015 → T016 → T017 → T018

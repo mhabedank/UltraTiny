@@ -43,6 +43,11 @@ class DataConfig:
     demo_prompts: str = "data/demo_prompts.tsv"
     noisy_copies: int = 2
     max_answer_len: int = 200
+    # Optional LLM augmentation snapshots (train-only; see ultratiny/augment.py).
+    augment_phrasings: list[str] = field(default_factory=list)
+    augment_templates: list[str] = field(default_factory=list)
+    augment_refusals: list[str] = field(default_factory=list)
+    refusal_relation: str = "abweisen"
 
 
 @dataclass(frozen=True)

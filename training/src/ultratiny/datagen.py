@@ -21,6 +21,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from .alphabet import Alphabet
+from .augment import PLACEHOLDER, Augment, load_augment
 from .config import Config
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -221,16 +222,98 @@ def add_noise(q: str, rng: random.Random, protect: tuple[str, ...] = ()) -> str:
     return q
 
 
+def _norm_q(s: str) -> str:
+    return " ".join(re.sub(r"[?.!,]", " ", s.lower()).split())
+
+
+def _aug_ok(text: str, src: str, alphabet: Alphabet, sources: set[str]) -> bool:
+    plain = PLACEHOLDER.sub("", text)
+    return bool(text) and not alphabet.invalid_chars(plain) and src.split(":", 1)[0] in sources
+
+
+def apply_template_augment(rels: dict[str, Relation], aug: Augment, alphabet: Alphabet,
+                           sources: set[str]) -> dict:  # fmt: skip
+    """Append LLM question templates to non-free relations as extra *train* templates."""
+    added = dropped = 0
+    for rel, items in aug.templates.items():
+        r = rels.get(rel)
+        if r is None or r.free:
+            dropped += len(items)
+            continue
+        known = {_norm_q(q.text) for q in r.questions}
+        for text, answer, src in items:
+            ok = _aug_ok(text, src, alphabet, sources) and PLACEHOLDER.search(text)
+            if answer is not None:
+                ok = ok and _aug_ok(answer, src, alphabet, sources)
+            if not ok or _norm_q(text) in known:
+                dropped += 1
+                continue
+            known.add(_norm_q(text))
+            r.questions.append(QTemplate(rel, text, "train", answer))
+            added += 1
+    return {"templates_added": added, "templates_dropped": dropped}
+
+
+def augmented_pairs(facts, rels, aug: Augment, train_pairs, held_pairs, alphabet: Alphabet,
+                    sources: set[str], refusal_relation: str) -> tuple[list, dict]:  # fmt: skip
+    """Extra train pairs from LLM phrasings/refusals; never equal to a held-out prompt and
+    never mapping a question to a different answer than the curated data does."""
+    answer_of: dict[str, str] = {}
+    for q, a, _ in train_pairs + held_pairs:
+        answer_of.setdefault(_norm_q(q), a)
+    held = {_norm_q(q) for q, _, _ in held_pairs}
+    by_id = {f.id: f for f in facts}
+    out, dropped = [], 0
+
+    def take(q: str, a: str, fid: str, src: str) -> None:
+        nonlocal dropped
+        k = _norm_q(q)
+        if not _aug_ok(q, src, alphabet, sources) or k in held or answer_of.get(k, a) != a:
+            dropped += 1
+            return
+        if k in answer_of:  # already present with the same answer
+            return
+        answer_of[k] = a
+        out.append((q, a, fid))
+
+    n_phr = 0
+    for fid, items in aug.phrasings.items():
+        f = by_id.get(fid)
+        if f is None or not rels[f.relation].free:
+            dropped += len(items)
+            continue
+        for q, src in items:
+            take(q, _fill(rels[f.relation].answers[0], f), fid, src)
+        n_phr += len(items)
+    ref_facts = [f for f in facts if f.relation == refusal_relation]
+    if aug.refusals and ref_facts:
+        f0 = ref_facts[0]
+        answer = _fill(rels[refusal_relation].answers[0], f0)
+        for q, src in aug.refusals:
+            take(q, answer, f0.id, src)
+    stats = {"pairs_added": len(out), "pairs_dropped": dropped, "phrasings_in": n_phr,
+             "refusals_in": len(aug.refusals)}  # fmt: skip
+    return out, stats
+
+
 def generate(cfg: Config, out_dir: Path, seed: int, alphabet: Alphabet | None = None) -> dict:
     alphabet = alphabet or Alphabet()
     base = TRAINING_ROOT
     facts = load_facts(_expand(cfg.data.facts, base))
     rels = load_relations(_expand(cfg.data.templates, base))
     topics = load_topics(base / cfg.data.topics)
-    validate(facts, rels, topics, allowed_source_prefixes(), alphabet)
+    sources = allowed_source_prefixes()
+    validate(facts, rels, topics, sources, alphabet)
+    aug = load_augment(cfg.data.augment_phrasings, cfg.data.augment_templates,
+                       cfg.data.augment_refusals, base)  # fmt: skip
+    aug_stats = apply_template_augment(rels, aug, alphabet, sources)
 
     rng = random.Random(seed)
     train_pairs, held_pairs = qa_pairs(facts, rels)
+    extra, extra_stats = augmented_pairs(facts, rels, aug, train_pairs, held_pairs, alphabet,
+                                         sources, cfg.data.refusal_relation)  # fmt: skip
+    train_pairs += extra
+    aug_stats.update(extra_stats)
     max_len = cfg.model.ctx_len
 
     def fits(q: str, a: str) -> bool:
@@ -250,7 +333,7 @@ def generate(cfg: Config, out_dir: Path, seed: int, alphabet: Alphabet | None = 
         protect = (f.object,) if rels[f.relation].free else (f.subject, f.object)
         variants = [q] + [add_noise(q, rng, protect) for _ in range(cfg.data.noisy_copies)]
         for v in dict.fromkeys(variants):  # dedupe, keep order
-            if v != q and norm(v) in held_norm:
+            if norm(v) in held_norm:
                 continue
             if fits(v, a):
                 train_lines.extend([f"{v}\t{a}"] * rels[f.relation].repeat)
@@ -289,6 +372,7 @@ def generate(cfg: Config, out_dir: Path, seed: int, alphabet: Alphabet | None = 
         "heldout": len(held),
         "demo": len(demo),
         "skipped_too_long": skipped,
+        "augment": aug_stats,
         "sha256": sha,
     }
 

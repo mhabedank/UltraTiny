@@ -27,13 +27,21 @@ from .model import TinyLM
 
 
 def pick_device(requested: str = "auto") -> torch.device:
+    """auto: CUDA (e.g. DGX Spark) > MPS (Apple GPU) > CPU."""
     if requested == "cpu":
         return torch.device("cpu")
-    mps_ok = getattr(torch.backends, "mps", None) and torch.backends.mps.is_available()
+    cuda_ok = torch.cuda.is_available()
+    mps_ok = bool(getattr(torch.backends, "mps", None) and torch.backends.mps.is_available())
+    if requested == "cuda":
+        if not cuda_ok:
+            raise RuntimeError("CUDA requested but not available")
+        return torch.device("cuda")
     if requested == "mps":
         if not mps_ok:
             raise RuntimeError("MPS requested but not available")
         return torch.device("mps")
+    if cuda_ok:
+        return torch.device("cuda")
     return torch.device("mps") if mps_ok else torch.device("cpu")
 
 
@@ -43,6 +51,11 @@ def seed_everything(seed: int, device: torch.device) -> None:
     torch.manual_seed(seed)
     if device.type == "mps":
         torch.mps.manual_seed(seed)
+    elif device.type == "cuda":
+        # GPU kernels are not guaranteed bit-identical; spec 001 allows +-1 pp eval drift there.
+        torch.cuda.manual_seed_all(seed)
+        torch.backends.cuda.matmul.allow_tf32 = False
+        torch.backends.cudnn.allow_tf32 = False
     else:
         torch.use_deterministic_algorithms(True)
 
@@ -176,6 +189,7 @@ def train(
         "device": device.type,
         "torch": torch.__version__,
         "host": platform.platform(),
+        "gpu": torch.cuda.get_device_name(0) if device.type == "cuda" else None,
         "threads": torch.get_num_threads(),
         "steps": total,
         "qat_steps": qat_steps,
