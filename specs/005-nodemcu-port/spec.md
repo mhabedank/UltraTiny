@@ -12,11 +12,11 @@
 - Purpose: a proof of concept that the UltraTiny language model (specs 001–003) runs fully offline on a NodeMCU board. The NodeMCU boards are already on hand.
 - Inference runs on the NodeMCU itself, not on a server.
 - PoC model: the **starter model** (~600k parameters, `configs/starter.toml`) with its context shortened to 96–128 characters. The Chemielehrer (1.75 M parameters) is out of scope for this PoC.
-- ESP32 is no longer the target board for new work.
+- ESP32 is no longer the target board for new work (constitution v2.0.0).
 
 ## Target Board and Budgets *(constitution Principle I)*
 
-| Item | ESP32 today (spec 001) | NodeMCU PoC (this spec) |
+| Item | ESP32 (legacy, spec 001) | NodeMCU (constitution v2.0.0 defaults) |
 |------|------------------------|-------------------------|
 | Board | classic ESP32, 520 KB SRAM, 4 MB flash, FPU | NodeMCU v2/v3: ESP8266, ~80 KB data RAM, 4 MB flash, **no FPU** |
 | Model file | ≤ 2 MB | **≤ 700 KB** |
@@ -27,7 +27,7 @@
 | Generation speed | ≥ 10 chars/s | **≥ 5 chars/s** |
 | Headroom | ≥ 10 % of each memory budget | ≥ 10 % of each memory budget |
 
-The NodeMCU budgets replace the ESP32 budgets of spec 001 for this feature only. Per Principle I, this amendment is justified because the board has about a sixth of the ESP32's RAM, no floating-point unit, and can read only about 1 MB of flash in place.
+These are the default budgets of constitution v2.0.0 (amended 2026-11-21), which made the NodeMCU the project's target board. This feature uses them unchanged; no per-feature amendment is needed. The ESP32 column is shown only for comparison.
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -95,8 +95,8 @@ A developer runs the existing parity check against the NodeMCU board and confirm
 - **FR-001**: The NodeMCU (ESP8266, 4 MB flash) MUST be a supported target board, running the complete model locally with Wi-Fi off.
 - **FR-002**: The serial console behaviour of spec 001 (prompt in, streamed answer out, German including umlauts and ß, banner, abort key, deterministic output, empty-input and unknown-character handling) MUST work the same on the NodeMCU.
 - **FR-003**: The project MUST provide a NodeMCU model configuration derived from the starter model with a context of 96–128 characters, trained on the starter knowledge base. The context MUST be chosen so that the working-memory budget keeps its 10 % headroom (expected: about 96–112 characters; 128 characters needs ~42.5 KB and exceeds the 40 KB budget).
-- **FR-004**: The PoC model and firmware MUST meet the NodeMCU budgets in "Target Board and Budgets", with at least 10 % headroom on each memory budget.
-- **FR-005**: The budget report MUST be able to check a model against the NodeMCU budgets and fail when one is exceeded.
+- **FR-004**: The PoC model and firmware MUST meet the constitution's NodeMCU default budgets (see "Target Board and Budgets"), with at least 10 % headroom on each memory budget.
+- **FR-005**: The budget report MUST check models against the NodeMCU default budgets (replacing the ESP32 budgets of 2 MB model and 128 KB working memory) and fail when one is exceeded.
 - **FR-006**: The maximum answer length MUST be limited so that prompt and answer together fit the shortened context.
 - **FR-007**: The model file format and the PC reference MUST stay shared with the ESP32 work; the NodeMCU MUST read the same model file format, and a format change is out of scope.
 - **FR-008**: The NodeMCU MUST produce output identical to the PC reference for every golden case of the PoC model.
