@@ -43,7 +43,7 @@ make monitor PORT=/dev/ttyUSB0          # Strg-] beendet den Monitor
 Auf macOS heißt der Port meist `/dev/cu.usbserial-*` oder `/dev/cu.SLAB_USBtoUART`.
 Demo-Fragen mit erwarteten Antworten: [`training/data/demo_prompts.tsv`](training/data/demo_prompts.tsv).
 
-Konsolenbefehle: `/hilfe`, `/info` (Speicher, Latenz, Zeichen/s), `/modus gierig|zufall [seed] [temp]`,
+Konsolenbefehle: `/hilfe`, `/info` (Speicher, Latenz, Zeichen/s), `/stats`, `/trace aus|an|json`, `/modus gierig|zufall [seed] [temp]`,
 `/max <n>`; Strg-C bricht eine Antwort ab.
 
 ## Ohne Hardware ausprobieren
@@ -69,6 +69,38 @@ Homebrew-Pakete. `UT_YES=1 make qemu` beantwortet alle Fragen mit Ja.
 Beenden mit **Strg-A, dann X**. Der Emulator nutzt DIO/40 MHz statt QIO/80 MHz
 (`firmware/sdkconfig.qemu`), weil QEMU QIO nicht kann. Er prüft Funktion und Antworten, nicht die
 Geschwindigkeit – die Werte in `/info` sind dort nicht aussagekräftig.
+
+## Observability
+
+Zwei Konsolenbefehle zeigen, was auf dem Gerät und im Modell passiert (Details und JSON-Format:
+[`specs/002-observability/contracts/observability.md`](specs/002-observability/contracts/observability.md)):
+
+- **`/stats`** – Heap frei / Minimum seit Boot / größter Block, freier Stack des Inferenz-Tasks,
+  Arena benötigt/Puffer, KV-Cache-Füllstand, CPU-Last je Kern (seit dem letzten `/stats`),
+  Laufzeit und Takt; dazu die Timings der letzten Antwort (Prefill-Länge, erstes Zeichen,
+  Gesamtzeit, Zeichen/s, ms pro Zeichen Ø/min/max) und das Profil des Forward-Pass
+  (embed, norm, qkv, attn, wo, ffn, head in %).
+- **`/trace an`** – nach jeder Antwort eine Tabelle pro Zeichen: Position, Zeichen,
+  Wahrscheinlichkeit, Top-3-Kandidaten, Entropie (bit), ms; dazu Ø/min-Wahrscheinlichkeit und
+  Kontextnutzung. **`/trace json`** liefert dasselbe als `@ut {...}`-Zeilen für Tools,
+  **`/trace aus`** (Standard) die unveränderte Ausgabe.
+
+Am bequemsten mit dem Viewer, der die Demo-Fragen schickt und jede Antwort farbig nach
+Wahrscheinlichkeit (grün = sicher, rot = unsicher) mit Timings, unsicheren Stellen samt
+Alternativen, Profilbalken und Systemwerten zeigt:
+
+```bash
+make observe                              # startet QEMU, fragt 5 Demo-Fragen, beendet QEMU
+make observe OBSERVE_ARGS="--demo"        # alle Demo-Fragen; oder eigene: OBSERVE_ARGS='"Wer bist du?"'
+make observe-host                         # gleiche Ansicht mit der PC-Runtime, ohne Emulator
+cd training && uv run python ../tools/observe.py --port /dev/ttyUSB0 --log out.jsonl   # echtes Board
+```
+
+Ohne Fragen und ohne `--demo` fragt der Viewer interaktiv (`/befehle` werden durchgereicht);
+`--log datei.jsonl` schreibt alle Ereignisse mit. QEMU lässt sich auch separat mit Konsole auf TCP
+starten (`UT_QEMU_TCP=5555 make qemu`, dann `observe.py --tcp localhost:5555`). In QEMU sind
+Zeiten und CPU-Last emuliert und nur grob aussagekräftig; Speicherwerte und Modell-Trace sind
+echt.
 
 ## Selbst trainieren
 

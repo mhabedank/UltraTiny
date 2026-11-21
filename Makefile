@@ -4,7 +4,7 @@ MODEL       ?= models/starter.utny
 BUILD_DIR   ?= build
 MODEL_MAX   := 2097152
 
-.PHONY: test test-python test-runtime flash-model monitor budget starter qemu
+.PHONY: test test-python test-runtime flash-model monitor budget starter qemu observe observe-host
 
 test: test-python test-runtime
 
@@ -39,3 +39,15 @@ budget:
 # Run firmware + model in QEMU (emulated ESP32, interactive). Quit: Ctrl-A, then X.
 qemu:
 	tools/qemu_run.sh $(abspath $(MODEL))
+
+# Observability viewer (specs/002-observability): starts QEMU with the console on TCP, sends the
+# demo prompts with /trace json, shows probabilities, timings, profile and /stats; stops QEMU.
+# Real board: make observe OBSERVE_SRC="--port /dev/ttyUSB0"
+OBSERVE_SRC  ?= --qemu
+OBSERVE_ARGS ?= --demo 5
+observe:
+	cd training && uv run python ../tools/observe.py $(OBSERVE_SRC) --model $(abspath $(MODEL)) $(OBSERVE_ARGS)
+
+# Same viewer against the PC runtime (build/utiny-host --console), no emulator needed.
+observe-host: test-runtime
+	cd training && uv run python ../tools/observe.py --host --model $(abspath $(MODEL)) $(OBSERVE_ARGS)

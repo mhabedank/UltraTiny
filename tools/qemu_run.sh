@@ -10,6 +10,8 @@
 #   - installs QEMU for Xtensa via idf_tools.py if it is missing
 #   - macOS: installs the required Homebrew packages if they are missing
 # Set UT_YES=1 to answer all questions with yes.
+# Set UT_QEMU_TCP=<port> to expose the serial console on TCP (QEMU waits for the first
+# client, e.g. tools/observe.py --tcp localhost:<port>) instead of this terminal.
 #
 # Quit QEMU with: Ctrl-A, then X.
 # QEMU checks function and output, not speed; timings in /info are not representative.
@@ -99,6 +101,12 @@ python -m esptool --chip esp32 merge_bin --fill-flash-size 4MB -o "$FLASH" \
     0x10000 "$BUILD/ultratiny.bin" \
     0x110000 "$MODEL" >/dev/null
 
+if [ -n "${UT_QEMU_TCP:-}" ]; then
+    say "Starte QEMU (ESP32) mit $(basename "$MODEL"); serielle Konsole auf TCP-Port $UT_QEMU_TCP."
+    exec qemu-system-xtensa -nographic -machine esp32 -m 4M \
+        -drive "file=$FLASH,if=mtd,format=raw" -monitor none \
+        -serial "tcp::$UT_QEMU_TCP,server=on,wait=on"
+fi
 say "Starte QEMU (ESP32) mit $(basename "$MODEL"). Beenden: Strg-A, dann X."
 exec qemu-system-xtensa -nographic -machine esp32 -m 4M \
     -drive "file=$FLASH,if=mtd,format=raw" -serial mon:stdio
