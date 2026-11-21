@@ -63,10 +63,13 @@ typedef struct ut_model {
     uint32_t n_params;
     size_t size;
     const uint32_t *alphabet; /* vocab_size code points, index = token id */
-    const char *meta;         /* NUL-terminated JSON */
+    const char *meta;         /* NUL-terminated JSON, points to meta_buf */
     ut_qmat tok_emb, pos_emb;
     ut_layer layers[UT_MAX_LAYERS];
     const float *final_norm;
+    /* RAM copy of the meta JSON: the image may be in flash that only allows 32-bit loads
+     * (specs/005-nodemcu-port/contracts/runtime-image-access.md). */
+    char meta_buf[256];
 } ut_model;
 
 /* Optional profiling (specs/002-observability): stages of one forward pass. */

@@ -3,9 +3,14 @@
 
 Standard library only, so it also runs inside the ESP-IDF CI container.
 
-    python tools/budget_report.py --model models/starter.utny [--idf-build firmware/build] [--json out.json]
+    python tools/budget_report.py --model models/nodemcu.utny [--board nodemcu|esp32]
+        [--pio-build firmware-nodemcu/.pio/build/nodemcuv2] [--idf-build firmware/build]
+        [--json out.json]
 
-Fails (exit 1) when any budget has less than 10% headroom.
+Board profiles: specs/005-nodemcu-port/data-model.md "Board budget profile" and
+contracts/budget-report.md. Default board: nodemcu (constitution v2.0.0); esp32 is legacy.
+Fails (exit 1) when any budget has less than 10% headroom, the model's arena does not fit the
+firmware's arena buffer, or (nodemcu) firmware area + model area exceed the mapped flash window.
 """
 
 from __future__ import annotations
@@ -17,10 +22,28 @@ import subprocess
 import sys
 from pathlib import Path
 
-MODEL_BUDGET = 2 * 1024 * 1024  # model partition (constitution: <= 2 MB)
-ARENA_BUDGET = 128 * 1024  # inference RAM (constitution: <= 128 KB)
-FIRMWARE_ARENA = 96 * 1024  # static arena in firmware/main/main.c (UT_ARENA_MAX)
 HEADROOM = 0.10
+
+# data-model.md "Board budget profile". nodemcu: keep in sync with firmware-nodemcu/include/layout.h
+# and ld/eagle.flash.4m.ultratiny.ld; esp32: firmware/partitions.csv and firmware/main/main.c.
+PROFILES: dict[str, dict] = {
+    "nodemcu": {
+        "model_max": 0xA8000,  # model area 0x58000-0xFFFFF (672 KB)
+        "arena_max": 40 * 1024,  # constitution v2.0.0 default
+        "firmware_arena": 36 * 1024,  # UT_ARENA_MAX in firmware-nodemcu/include/layout.h
+        "firmware_max": 0x58000,  # firmware area 0x0-0x57FFF (352 KB)
+        "mapped_window": 1024 * 1024,  # ESP8266 maps only the first 1 MB of flash
+        "dram_total": 80 * 1024,
+    },
+    "esp32": {
+        "model_max": 2 * 1024 * 1024,  # model partition
+        "arena_max": 128 * 1024,
+        "firmware_arena": 96 * 1024,  # UT_ARENA_MAX in firmware/main/main.c
+        "firmware_max": None,  # factory partition, read from firmware/partitions.csv
+        "mapped_window": None,
+        "dram_total": None,
+    },
+}
 REPO = Path(__file__).resolve().parents[1]
 
 
@@ -82,34 +105,80 @@ def idf_sizes(build: Path) -> dict:
     return out
 
 
+def elf_dram_bytes(elf: Path) -> int | None:
+    """Static DRAM of an ESP8266 ELF: .data + .rodata + .bss (all placed in DRAM by the
+    Arduino core's linker script). Parses the ELF32 section headers with the stdlib only."""
+    try:
+        d = elf.read_bytes()
+    except OSError:
+        return None
+    if d[:4] != b"\x7fELF" or d[4] != 1:
+        return None
+    e_shoff, = struct.unpack_from("<I", d, 0x20)
+    e_shentsize, e_shnum, e_shstrndx = struct.unpack_from("<HHH", d, 0x2E)
+    sh = [struct.unpack_from("<IIIIII", d, e_shoff + i * e_shentsize) for i in range(e_shnum)]
+    str_off = sh[e_shstrndx][4]
+
+    def name(off: int) -> str:
+        end = d.index(b"\0", str_off + off)
+        return d[str_off + off : end].decode()
+
+    return sum(s[5] for s in sh if name(s[0]) in (".data", ".rodata", ".bss"))
+
+
+def pio_sizes(build: Path) -> dict:
+    out: dict = {}
+    fw = build / "firmware.bin"
+    if fw.exists():
+        out["app_bytes"] = fw.stat().st_size
+    dram = elf_dram_bytes(build / "firmware.elf")
+    if dram is not None:
+        out["static_dram_bytes"] = dram
+        out["static_dram_total"] = PROFILES["nodemcu"]["dram_total"]
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--model", required=True, type=Path)
-    ap.add_argument("--idf-build", type=Path)
+    ap.add_argument("--board", choices=sorted(PROFILES), default="nodemcu")
+    ap.add_argument("--pio-build", type=Path, help="PlatformIO build dir (nodemcu firmware)")
+    ap.add_argument("--idf-build", type=Path, help="ESP-IDF build dir (legacy esp32 firmware)")
     ap.add_argument("--json", type=Path)
     a = ap.parse_args()
+    prof = PROFILES[a.board]
 
     h = read_header(a.model)
     arena = arena_size(h)
     rows = [
-        ("model_bytes", h["file_bytes"], MODEL_BUDGET),
-        ("arena_bytes", arena, ARENA_BUDGET),
-        ("arena_vs_firmware_buffer", arena, FIRMWARE_ARENA),
+        ("model_bytes", h["file_bytes"], prof["model_max"]),
+        ("arena_bytes", arena, prof["arena_max"]),
+        ("arena_vs_firmware_buffer", arena, prof["firmware_arena"]),
     ]
-    report = {"model": str(a.model), "n_params": h["n_params"]}
+    report = {"board": a.board, "model": str(a.model), "n_params": h["n_params"]}
+    if a.pio_build:
+        s = pio_sizes(a.pio_build)
+        report.update(s)
+        if "app_bytes" in s:
+            rows.append(("app_bytes", s["app_bytes"], prof["firmware_max"]))
     if a.idf_build:
         s = idf_sizes(a.idf_build)
         report.update(s)
         if "app_bytes" in s:
             rows.append(("app_bytes", s["app_bytes"], factory_partition_size()))
+    if prof["mapped_window"]:
+        areas = prof["firmware_max"] + prof["model_max"]
+        rows.append(("mapped_window", areas, prof["mapped_window"]))
 
     ok = True
-    print(f"Budget report for {a.model} ({h['n_params']} parameters)")
+    print(f"Budget report for {a.model} ({h['n_params']} parameters), board {a.board}")
     print(f"{'item':28s} {'used':>10s} {'budget':>10s} {'use':>6s}  status")
     for name, used, budget in rows:
         frac = used / budget
-        # The arena must merely fit the firmware buffer; real budgets need >= 10% headroom.
-        limit = 1.0 if name == "arena_vs_firmware_buffer" else 1 - HEADROOM
+        # The arena must merely fit the firmware buffer and the two flash areas must fit the
+        # mapped window; real budgets need >= 10% headroom.
+        exact = name in ("arena_vs_firmware_buffer", "mapped_window")
+        limit = 1.0 if exact else 1 - HEADROOM
         good = frac <= limit
         ok &= good
         report[name] = {"used": used, "budget": budget, "ok": good}

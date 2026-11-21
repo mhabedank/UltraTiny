@@ -2,10 +2,11 @@
 """User Story 3 on the board: swap models without rebuilding firmware; corrupt model is
 rejected without a reboot loop.
 
-    uv run python ../tools/model_swap_check.py --port /dev/ttyUSB0 \
-        --model-a ../models/starter.utny --model-b runs/v1/model.utny
+    uv run python ../tools/model_swap_check.py --port /dev/ttyUSB0 [--board nodemcu|esp32] \
+        --model-a ../models/nodemcu.utny --model-b ../runtime/tests/fixtures/tiny.utny
 
-Flashes via `make flash-model` (needs ESP-IDF's parttool.py on PATH).
+Flashes via `make nodemcu-flash-model` (nodemcu, default: esptool.py on PATH) or
+`make flash-model` (legacy esp32: ESP-IDF's parttool.py on PATH).
 """
 
 from __future__ import annotations
@@ -23,8 +24,16 @@ from devlib import Device  # noqa: E402
 REPO = Path(__file__).resolve().parents[1]
 
 
+FLASH = {  # board -> (make target, variable that names the model file)
+    "nodemcu": ("nodemcu-flash-model", "NODEMCU_MODEL"),
+    "esp32": ("flash-model", "MODEL"),
+}
+BOARD = "nodemcu"
+
+
 def flash(port: str, model: Path) -> None:
-    subprocess.run(["make", "-C", str(REPO), "flash-model", f"PORT={port}", f"MODEL={model}"],
+    target, var = FLASH[BOARD]
+    subprocess.run(["make", "-C", str(REPO), target, f"PORT={port}", f"{var}={model.resolve()}"],
                    check=True)  # fmt: skip
 
 
@@ -41,7 +50,10 @@ def main() -> int:
     ap.add_argument("--port", required=True)
     ap.add_argument("--model-a", required=True, type=Path)
     ap.add_argument("--model-b", required=True, type=Path)
+    ap.add_argument("--board", choices=sorted(FLASH), default="nodemcu")
     a = ap.parse_args()
+    global BOARD
+    BOARD = a.board
     ok = True
     for m in (a.model_a, a.model_b):
         flash(a.port, m)

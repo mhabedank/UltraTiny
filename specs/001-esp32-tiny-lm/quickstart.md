@@ -1,5 +1,9 @@
 # Quickstart & Validation: Tiny Language Model Demo on a Classic ESP32
 
+> **Legacy.** Since constitution v2.0.0 the target board is the NodeMCU (ESP8266): see
+> [`specs/005-nodemcu-port/quickstart.md`](../005-nodemcu-port/quickstart.md) and
+> [`firmware-nodemcu/`](../../firmware-nodemcu/). This ESP32 guide stays valid for the legacy firmware.
+
 ## Prerequisites
 
 - Classic ESP32 dev board (4 MB flash, no PSRAM) + USB cable

@@ -107,7 +107,7 @@ runtime/                       # portable C runtime (changed: word-access safe i
 
 firmware-nodemcu/              # NEW: Arduino core / PlatformIO firmware
 ├── platformio.ini             # board nodemcuv2, 160 MHz, pinned platform, -ffp-contract=off
-├── ld/ultratiny.ld            # firmware area 352 KB, model area from 0x58000
+├── ld/eagle.flash.4m.ultratiny.ld # firmware area 352 KB, model area from 0x58000
 ├── include/layout.h           # UT_MODEL_FLASH_OFFSET, UT_ARENA_MAX
 └── src/main.cpp               # Wi-Fi off, UART io callbacks, static arena, loop + yield
 

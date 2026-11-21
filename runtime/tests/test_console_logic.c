@@ -110,9 +110,10 @@ int main(int argc, char **argv) {
     ut_ctx c;
     CHECK(ut_ctx_init(&c, &m, arena, need) == UT_OK);
     fake_io f = {0};
-    ut_console_io io = {f_read, f_write, f_millis, NULL, &f, NULL, NULL};
+    ut_console_io io = {f_read, f_write, f_millis, NULL, &f, NULL, NULL, NULL};
     static ut_console k;
     ut_console_init(&k, &c, &m, need, &io, UT_OK);
+    CHECK(k.max_answer == m.ctx_len - 3); /* default answer cap fits the context */
 
     ut_console_banner(&k);
     CHECK(strstr(f.out, "UltraTiny v") != NULL);
@@ -152,8 +153,12 @@ int main(int argc, char **argv) {
     CHECK(k.gen_count <= 20);
     CHECK(strstr(f.out, "\r\n> ") != NULL);
 
-    /* Ctrl-C during generation aborts. */
+    /* /max above what the context can hold is clamped (specs/005-nodemcu-port FR-006). */
     feed(&k, &f, "/max 200\r");
+    CHECK(k.max_answer == m.ctx_len - 3);
+    CHECK(strstr(f.out, "Grenze des Kontexts") != NULL);
+
+    /* Ctrl-C during generation aborts. */
     f.in = "Wer bist du?\r";
     f.pos = 0;
     f.len = strlen(f.in);
@@ -242,7 +247,7 @@ int main(int argc, char **argv) {
 
     /* Trace off: the answer output is exactly "\r\n" + answer + "\r\n> " (unchanged). */
     static ut_console o;
-    ut_console_io io2 = {f_read, f_write, f_millis, NULL, &f, f_micros, f_sys};
+    ut_console_io io2 = {f_read, f_write, f_millis, NULL, &f, f_micros, f_sys, "Testboard"};
     ut_console_init(&o, &c, &m, need, &io2, UT_OK);
     o.arena_cap = 96 * 1024;
     c.clock_us = fake_clock;

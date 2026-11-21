@@ -43,13 +43,13 @@ Expected: every line `OK` with ≥ 10 % headroom. Negative check: `--model model
 ```bash
 esptool.py --port /dev/ttyUSB0 flash_id
 make nodemcu-flash PORT=/dev/ttyUSB0
-make nodemcu-flash-model PORT=/dev/ttyUSB0 MODEL=models/nodemcu.utny
+make nodemcu-flash-model PORT=/dev/ttyUSB0
 make nodemcu-monitor PORT=/dev/ttyUSB0
 ```
 
 Expected: `flash_id` reports ESP8266EX and 4 MB. The banner shows model `nodemcu`, format
 version 1, parameter count, memory use and `NodeMCU (ESP8266)`, then `> `. Typing
-`Auf welchem Chip läufst du?` answers with the NodeMCU/ESP8266. Time this from a fresh checkout
+the demo prompt `Worauf läufst du?` answers with the ESP8266 (the held-out phrasing `Auf welchem Chip läufst du?` should too, but held-out answers are not guaranteed). Time this from a fresh checkout
 with a pre-built model: target under 30 minutes.
 
 ## 5. On-board checks – SC-001, SC-003, SC-005, FR-009, FR-012

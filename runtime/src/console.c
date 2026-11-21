@@ -50,6 +50,14 @@ static int max_question_len(const ut_console *k) {
     return k->m->ctx_len - 2 - UT_ANSWER_RESERVE;
 }
 
+/* Longest possible answer: <bos> + at least one question character + <sep> must fit too
+ * (FR-006 of specs/005-nodemcu-port); never above UT_MAX_ANSWER. */
+static int answer_cap(const ut_console *k) {
+    int cap = UT_MAX_ANSWER;
+    if (k->m && k->m->ctx_len - 3 < cap) cap = k->m->ctx_len - 3;
+    return cap < 1 ? 1 : cap;
+}
+
 static void prompt(ut_console *k) { out(k, "\r\n> "); }
 
 static void clear_line(ut_console *k) {
@@ -79,13 +87,14 @@ void ut_console_init(ut_console *k, ut_ctx *c, const ut_model *m, size_t arena_b
     k->seed = 1;
     k->rng = 1;
     k->temperature = 0.8f;
-    k->max_answer = UT_MAX_ANSWER;
+    k->max_answer = answer_cap(k);
     k->state = model_status == UT_OK && c ? UT_ST_READY : UT_ST_HALT_ERROR;
     if (k->c) ut_rewind(k->c, k->c->pos);
 }
 
 void ut_console_banner(ut_console *k) {
-    out(k, "\r\nUltraTiny v" UT_FW_VERSION " \xE2\x80\x94 Sprachmodell offline auf dem ESP32\r\n");
+    out(k, "\r\nUltraTiny v" UT_FW_VERSION " \xE2\x80\x94 Sprachmodell offline auf dem Mikrocontroller\r\n");
+    if (k->io.board) outf(k, "Board: %s\r\n", k->io.board);
     if (k->state == UT_ST_HALT_ERROR) {
         outf(k, "FEHLER: Modell ung\xC3\xBCltig (%d: %s). Bitte Modell neu flashen (siehe README).\r\n",
              (int)k->model_status, ut_status_str(k->model_status));
@@ -108,7 +117,7 @@ static void cmd_help(ut_console *k) {
            "  /info                        Modell, Speicher, Geschwindigkeit\r\n"
            "  /modus gierig                immer das wahrscheinlichste Zeichen (Standard)\r\n"
            "  /modus zufall [seed] [temp]  zuf\xC3\xA4llige Auswahl (seed 1, temp 0.8)\r\n"
-           "  /max <n>                     maximale Antwortl\xC3\xA4nge (1-200)\r\n"
+           "  /max <n>                     maximale Antwortl\xC3\xA4nge\r\n"
            "  /stats                       Speicher, CPU-Last, Timings, Profil\r\n"
            "  /trace aus|an|json           Modell-Trace nach jeder Antwort (Standard aus)\r\n"
            "Strg-C bricht eine Antwort ab.");
@@ -169,9 +178,12 @@ static void run_command(ut_console *k) {
         outf(k, "\r\nModus: zufall (seed %lu, temp %.2f)", (unsigned long)k->seed,
              (double)k->temperature);
     } else if (ok_model && !strcmp(argv[0], "/max") && argc >= 2) {
-        int n = atoi(argv[1]);
-        if (n < 1 || n > UT_MAX_ANSWER) {
-            out(k, "\r\n/max erwartet 1-200");
+        int n = atoi(argv[1]), cap = answer_cap(k);
+        if (n < 1) {
+            outf(k, "\r\n/max erwartet 1-%d", cap);
+        } else if (n > cap) {
+            k->max_answer = cap; /* longer answers would not fit the context */
+            outf(k, "\r\nMaximale Antwortl\xC3\xA4nge: %d (Grenze des Kontexts)", cap);
         } else {
             k->max_answer = n;
             outf(k, "\r\nMaximale Antwortl\xC3\xA4nge: %d", n);
@@ -425,10 +437,11 @@ static void cmd_stats(ut_console *k) {
         outf(k, "\r\n  Modellfehler %d: %s", (int)k->model_status, ut_status_str(k->model_status));
     }
     out(k, "\r\n  CPU-Last:");
-    for (int i = 0; i < 2; i++) {
+    const int cores = st.cores == 1 ? 1 : 2;
+    for (int i = 0; i < cores; i++) {
         if (st.cpu_load[i] >= 0) outf(k, " Kern %d %ld %%", i, (long)st.cpu_load[i]);
         else outf(k, " Kern %d ?", i);
-        if (i == 0) out(k, ",");
+        if (i + 1 < cores) out(k, ",");
     }
     out(k, " (seit letztem /stats)");
     if (st.uptime_ms >= 0) outf(k, "\r\n  Laufzeit %.1f s", (double)st.uptime_ms / 1000.0);

@@ -13,9 +13,18 @@ uv sync            # macOS: PyTorch mit MPS (Apple-GPU); Linux: CPU-Wheels
 ## Modell trainieren (ein Befehl)
 
 ```bash
+uv run ut pipeline --config configs/nodemcu.toml --out runs/nodemcu --device cpu   # NodeMCU-Modell
 uv run ut pipeline --config configs/starter.toml --out runs/starter   # Startermodell (~165 Fakten)
-uv run ut pipeline --config configs/v1.toml --out runs/v1             # volles Modell
+uv run ut pipeline --config configs/v1.toml --out runs/v1             # volles Modell (ESP32)
 ```
+
+**NodeMCU (ESP8266, aktuelles Zielboard)**: `configs/nodemcu.toml` ist die Starter-Architektur
+(4 × 128, MQA, d_ff 384) mit **Kontext 104** statt 256 und Antworten bis 72 Zeichen. So bleibt
+die Arena bei 35.520 Bytes und damit unter der NodeMCU-Grenze von 40 KB mit 10 % Reserve
+(`specs/005-nodemcu-port/research.md` R4); 99,4 % der Frage-Antwort-Paare passen in den
+Kontext. Die Budgets des Boards prüft `make budget` (bzw. `tools/budget_report.py --board
+nodemcu`) – die Budgetprüfung in Schritt 6 der Pipeline nutzt noch die großzügigeren
+ESP32-Grenzen. Aufs Board: `make -C .. nodemcu-flash-model PORT=... NODEMCU_MODEL=training/runs/nodemcu/model.utny`.
 
 `--device auto` (Standard) nutzt auf dem Mac die GPU-Kerne über MPS und fällt sonst auf die CPU
 zurück; erzwingen mit `--device mps` bzw. `--device cpu`. Die Pipeline:
@@ -39,7 +48,8 @@ sollen die Auswertungen zweier Läufe innerhalb von ±1 Prozentpunkt liegen.
 ## Neues Modell aufs Board
 
 ```bash
-make -C .. flash-model PORT=/dev/cu.usbserial-XXXX MODEL=training/runs/v1/model.utny
+make -C .. nodemcu-flash-model PORT=/dev/cu.usbserial-XXXX NODEMCU_MODEL=training/runs/nodemcu/model.utny
+make -C .. flash-model PORT=/dev/cu.usbserial-XXXX MODEL=training/runs/v1/model.utny   # ESP32 (Altbestand)
 ```
 
 ## Daten

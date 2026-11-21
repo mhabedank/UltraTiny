@@ -2,7 +2,8 @@
 """On-device parity check (SC-006): the board's greedy answers must equal the reference text
 in golden.json byte for byte.
 
-    uv run python ../tools/device_parity.py --port /dev/ttyUSB0 --golden ../models/starter_golden.json
+    uv run python ../tools/device_parity.py --port /dev/ttyUSB0 \
+        --golden ../models/nodemcu_golden.json
     uv run python ../tools/device_parity.py --tcp localhost:5555 --golden ...  # QEMU
 """
 
@@ -24,6 +25,9 @@ def main() -> int:
     src.add_argument("--tcp", metavar="HOST:PORT")
     ap.add_argument("--golden", required=True)
     ap.add_argument("--char-delay", type=float, default=0.02)
+    # The NodeMCU feeds one typed character per ~0.1 s and answers at ~5-10 chars/s, so allow
+    # generous time per answer (specs/005-nodemcu-port).
+    ap.add_argument("--timeout", type=float, default=180.0, help="seconds per answer")
     a = ap.parse_args()
     cases = json.loads(Path(a.golden).read_text(encoding="utf-8"))["cases"]
     if a.tcp:
@@ -33,7 +37,7 @@ def main() -> int:
         dev.type("\r")
         dev.read_until(PROMPT, timeout=120)
     else:
-        dev = Device(a.port)
+        dev = Device(a.port, timeout=a.timeout)
         dev.reset()
     dev.command("/trace aus")  # plain answers (specs/002-observability)
     dev.command("/modus gierig")

@@ -122,9 +122,12 @@ measurements on a real board (tasks for T-Measure in `tasks.md`).
 
 - **Facts**: the ESP8266 software watchdog fires after ~3.2 s without `yield()`, the hardware
   watchdog after ~8 s.
-- **Decision**: the platform loop calls `ut_console_step` once per token and `yield()` between
-  calls; prefill feeds one token per step, so no call blocks longer than one forward pass
-  (~0.1 s). The abort key is checked between tokens, as on the ESP32.
+- **Decision**: `loop()` calls `ut_console_poll` once and returns (the core feeds the watchdogs
+  between iterations, plus an explicit `yield()`). The console feeds every typed character to the
+  model inside `poll`, so the platform's `read_byte` hands out at most one byte per `loop()`; a
+  pasted prompt waits in a 512-byte UART RX buffer instead of running dozens of forward passes in
+  one call. No call blocks longer than one forward pass (~0.1 s). The abort key is checked
+  between tokens, as on the ESP32.
 
 ## R9 – Testing without an emulator
 
