@@ -129,6 +129,16 @@ def validate(
             errors.append(f"{f.id}: Fact.source '{f.source}' not listed in DATA_LICENSES.md")
         if f.relation in rels and rels[f.relation].free and len(f.subject.split("|")) < 2:
             errors.append(f"{f.id}: free fact needs >= 2 question phrasings")
+    # The same (normalized) question must never map to two different answers.
+    answers_of: dict[str, set[str]] = {}
+    for f in facts:
+        if f.relation in rels and rels[f.relation].free:
+            for q in f.subject.split("|"):
+                key = " ".join(re.sub(r"[?.!,]", " ", q.lower()).split())
+                answers_of.setdefault(key, set()).add(f.object)
+    for key, objs in answers_of.items():
+        if len(objs) > 1:
+            errors.append(f"question {key!r} has {len(objs)} different answers")
     for r in rels.values():
         if r.name not in used_relations:
             errors.append(f"QuestionTemplate.relation '{r.name}' matches no Fact.relation")
