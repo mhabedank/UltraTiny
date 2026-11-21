@@ -43,11 +43,14 @@ qemu:
 # Observability viewer (specs/002-observability): starts QEMU with the console on TCP, sends the
 # demo prompts with /trace json, shows probabilities, timings, profile and /stats; stops QEMU.
 # Real board: make observe OBSERVE_SRC="--port /dev/ttyUSB0"
+# Every run writes a JSONL log to logs/ (OBSERVE_LOG= disables it).
 OBSERVE_SRC  ?= --qemu
 OBSERVE_ARGS ?= --demo 5
+OBSERVE_LOG  ?= logs/observe-$(shell date +%Y%m%d-%H%M%S).jsonl
+OBSERVE_LOGARG = $(if $(OBSERVE_LOG),--log $(abspath $(OBSERVE_LOG)))
 observe:
-	cd training && uv run python ../tools/observe.py $(OBSERVE_SRC) --model $(abspath $(MODEL)) $(OBSERVE_ARGS)
+	cd training && uv run python ../tools/observe.py $(OBSERVE_SRC) --model $(abspath $(MODEL)) $(OBSERVE_LOGARG) $(OBSERVE_ARGS)
 
 # Same viewer against the PC runtime (build/utiny-host --console), no emulator needed.
 observe-host: test-runtime
-	cd training && uv run python ../tools/observe.py --host --model $(abspath $(MODEL)) $(OBSERVE_ARGS)
+	cd training && uv run python ../tools/observe.py --host --model $(abspath $(MODEL)) $(OBSERVE_LOGARG) $(OBSERVE_ARGS)

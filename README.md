@@ -97,7 +97,11 @@ cd training && uv run python ../tools/observe.py --port /dev/ttyUSB0 --log out.j
 ```
 
 Ohne Fragen und ohne `--demo` fragt der Viewer interaktiv (`/befehle` werden durchgereicht);
-`--log datei.jsonl` schreibt alle Ereignisse mit. QEMU lässt sich auch separat mit Konsole auf TCP
+`--log datei.jsonl` schreibt alle Ereignisse mit. `make observe` und `make observe-host`
+protokollieren automatisch nach `logs/observe-<datum>-<zeit>.jsonl` (abschalten mit
+`OBSERVE_LOG=`); der Kopf-Eintrag nennt Quelle (QEMU, Host, Board), Modell und Git-Stand. Damit
+lassen sich Läufe vergleichen, z. B. die Profilanteile:
+`jq -c 'select(.type=="answer") | .prof_us' logs/observe-*.jsonl`. QEMU lässt sich auch separat mit Konsole auf TCP
 starten (`UT_QEMU_TCP=5555 make qemu`, dann `observe.py --tcp localhost:5555`). In QEMU sind
 Zeiten und CPU-Last emuliert und nur grob aussagekräftig; Speicherwerte und Modell-Trace sind
 echt.

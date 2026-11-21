@@ -73,8 +73,15 @@ special tokens appear as `"<eos>"`, `"<sep>"` etc.
 
 (Shown wrapped; on the wire each event is a single line.) Unknown values are `null`.
 `token.stop` is true for the `<eos>` step. `answer.p_min_i` indexes the token events.
-`tools/observe.py --log` adds `ts` (and `prompt` for answer events) and writes a
-`{"type":"result","prompt","answer","expected","match"}` record per question.
+`tools/observe.py --log FILE` writes every event as one JSON line. It adds `ts` to each event,
+and `prompt` to the events of an answer. It also writes these log-only records:
+
+- a `{"type":"session","source","model","git","banner"}` header with source
+  `port|tcp|qemu|host|exec` and the git revision;
+- one `{"type":"result","prompt","answer","expected","match"}` record per question.
+
+`make observe` and `make observe-host` write the log to `logs/observe-<date>-<time>.jsonl` by
+default (`OBSERVE_LOG=` disables it; `logs/` is git-ignored).
 
 ## Runtime API additions (`runtime/include/utiny.h`)
 

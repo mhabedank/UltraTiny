@@ -217,6 +217,17 @@ class Session:
         return res
 
 
+def git_rev() -> str | None:
+    try:
+        r = subprocess.run(
+            ["git", "-C", str(REPO), "rev-parse", "--short", "HEAD"],
+            capture_output=True, text=True, timeout=5, check=True,
+        )  # fmt: skip
+        return r.stdout.strip()
+    except (OSError, subprocess.SubprocessError):
+        return None
+
+
 def load_demo(n: int | None) -> list[tuple[str, str | None]]:
     rows = []
     path = REPO / "training/data/demo_prompts.tsv"
@@ -312,8 +323,21 @@ def main() -> int:
             print(st("2", "Farbe = Wahrscheinlichkeit des Zeichens: 0 ") + scale + st("2", " 1"))
         print()
 
-        log = a.log.open("w", encoding="utf-8") if a.log else None
+        log = None
+        if a.log:
+            a.log.parent.mkdir(parents=True, exist_ok=True)
+            log = a.log.open("w", encoding="utf-8")
         sess = Session(dev, st, log, stats_each=not a.no_stats)
+        source = next(k for k in ("port", "tcp", "qemu", "host", "exec") if getattr(a, k))
+        sess.emit(
+            {
+                "type": "session",
+                "source": source,
+                "model": str(a.model) if source in ("qemu", "host") else None,
+                "git": git_rev(),
+                "banner": banner.strip("\r\n> ").split("\r\n"),
+            }
+        )
         sess.command("/trace json")
         if a.max:
             sess.command(f"/max {a.max}")
@@ -351,6 +375,7 @@ def main() -> int:
         sess.command("/trace aus")  # leave the console as other tools expect it
         if log:
             log.close()
+            print(st("2", f"Log: {a.log}"))
         dev.close()
     except KeyboardInterrupt:
         print("\nabgebrochen")

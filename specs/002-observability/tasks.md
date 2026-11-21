@@ -151,7 +151,8 @@ positions, the profile and system values; it writes an optional JSONL log (FR-00
   - Scenario D: `make observe` 5/5 in QEMU, QEMU stopped afterwards;
   - Scenario C step 4: Ctrl-C in QEMU gives a trace with `Ende: abort` over the 6 produced
     characters.
-- [ ] T026 quickstart.md Scenario F on a real ESP32: measure SC-003 (trace/profiling overhead ≤ 5 %) and the core-1 load while generating; record in specs/002-observability/measurements.md (needs hardware)
+- [X] T027 [P] Default JSONL log for `make observe` / `make observe-host` (`OBSERVE_LOG`, logs/ git-ignored), `session` header event with source/model/git revision, `Log:` hint at the end, in Makefile, tools/observe.py, .gitignore, README.md and contracts/observability.md
+- [ ] T026 **Deferred** (no board available; release gate, not merge gate): quickstart.md Scenario F on a real ESP32. Measure SC-003 (trace/profiling overhead ≤ 5 %) and the core-1 load while generating; record in specs/002-observability/measurements.md. Until then, the emulator logs from T027 serve as the observability record.
 
 ---
 

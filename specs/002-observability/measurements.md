@@ -17,7 +17,8 @@ representative of real hardware; they only show that the values are wired up.
 | Trace overhead, QEMU | not measurable (noise ±30 % between identical runs) |
 | `make observe` in QEMU (5 demo prompts) | 5/5 as expected, QEMU stopped afterwards |
 | Ctrl-C with `/trace an` in QEMU | trace over the 6 produced characters, `Ende: abort` |
-| SC-003 on real hardware | **open** (release gate, needs a board) |
+| Emulator log (`make observe`, 5 prompts) | `logs/observe-*.jsonl`: 1 session, 5 answer, 5 result, 6 sys events, one token event per step |
+| SC-003 on real hardware | **deferred** (no board available; release gate, needs a board) |
 
 Stage profile in QEMU (answer "Die Hauptstadt von Italien ist Rom.", context 39→74):
 embed 0.4 % | norm 1.3 % | qkv 11.1 % | attn 38.3 % | wo 10.6 % | ffn 36.8 % | head 1.6 %.

@@ -68,6 +68,9 @@ Expected:
 - `make observe` ends with `Demo: 5/5 …` and QEMU is gone afterwards (`pgrep qemu-system-xtensa`
   is empty).
 - The parity check reports `device parity: 24 cases, 0 mismatches`.
+- `make observe` prints `Log: logs/observe-<date>-<time>.jsonl`. The file contains one
+  `session` event (`"source": "qemu"`), and per answer the `token` events, one `answer`, one
+  `result` and one `sys` event, plus a final `sys` event (format: contracts/observability.md).
 
 ## Scenario E — Python checks and budget (constitution I/III)
 
@@ -81,7 +84,7 @@ Expected:
 - All tests pass. `test_observe.py` runs end-to-end when `build/utiny-host` exists.
 - The budget report prints `OK`, with static DRAM ≈ 117 KB / 180 KB.
 
-## Scenario F — Real board (SC-003, open)
+## Scenario F — Real board (SC-003, deferred until a board is available)
 
 ```bash
 cd training && uv run python ../tools/observe.py --port /dev/ttyUSB0 --demo --log board.jsonl
