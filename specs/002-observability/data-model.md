@@ -67,7 +67,8 @@ position, mean entropy.
 
 - The mode persists until changed or rebooted, also across serial reconnects. That is why tools
   set it explicitly.
-- `aus` keeps the console output byte-identical to 001 (FR-005).
+- `aus` keeps the answer output, the banner and the 001 commands except `/hilfe` byte-identical
+  to 001 (spec FR-005).
 
 ## State transitions (extension of the 001 session state machine)
 

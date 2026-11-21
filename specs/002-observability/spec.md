@@ -22,8 +22,11 @@ CPU load per core, uptime, clock, and the timings of the last answer (prefill le
 first character, total time, characters/s, ms per character avg/min/max) plus a profile of where
 the forward pass spends its time (embed, norm, qkv, attn, wo, ffn, head).
 
-**Independent Test**: `make qemu`, ask a question, type `/stats`; all values appear and are
-plausible (heap > 0, arena ≤ buffer, core 1 busy while generating).
+**Independent Test**: `make qemu`, ask a question, type `/stats`. All values appear, and:
+heap free > 0 and ≤ 520 KB, minimum ≤ free, arena needed ≤ buffer, CPU load per core in 0–100 %,
+KV position 1 after the answer, and the profile shares add up to 100 % (± rounding). That core 1
+is near 100 % *while* generating is checked on hardware (quickstart Scenario F), because `/stats`
+reports load since its previous call, idle time included.
 
 **Acceptance Scenarios**:
 
@@ -63,7 +66,8 @@ JSON lines. The same viewer works with a real board (`--port`) or the PC runtime
 ### Edge Cases
 
 - Ctrl-C during an answer: timings and trace cover the characters produced so far.
-- Platform without clock / stats callbacks (host): unknown values are shown as `?` / `null`.
+- Platform without clock / stats callbacks (host): in text, unknown values are left out or
+  shown as `?`; in JSON they are `null`.
 - Trace JSON lines exceed the UART speed: they are printed after the answer, so they do not
   distort the per-character timings.
 
@@ -80,7 +84,9 @@ JSON lines. The same viewer works with a real board (`--port`) or the PC runtime
 - **FR-003**: `/trace aus|an|json` MUST switch the model trace; default `aus`.
 - **FR-004**: Trace rows MUST contain position, character, probability (softmax at T = 1),
   top-3 candidates with probabilities, entropy in bit and time in ms.
-- **FR-005**: With trace `aus` the console output MUST be byte-identical to feature 001.
+- **FR-005**: With trace `aus`, the answer output (echo, answer, ` [abgebrochen]`, prompt), the
+  banner and the output of all 001 commands except `/hilfe` MUST be byte-identical to feature 001.
+  `/hilfe` additionally lists `/stats` and `/trace`.
 - **FR-006**: Observability MUST NOT change any computed logit (parity, constitution III).
 - **FR-007**: No heap allocation at inference time; trace buffers are static (≤ `UT_MAX_ANSWER`
   + 1 steps).
@@ -90,21 +96,36 @@ JSON lines. The same viewer works with a real board (`--port`) or the PC runtime
 
 ### Budgets (constitution I)
 
-Target board unchanged (classic ESP32, no PSRAM, 4 MB flash). Model ≤ 2 MB flash, inference RAM
-≤ 128 KB (arena unchanged: 79,888 B). Additional static DRAM for the trace buffer ≤ 8 KB
-(measured: +4.6 KB incl. FreeRTOS run-time stats). Time per token: profiling + trace MUST cost
-≤ 5 % (SC-003).
+The budgets are unchanged from [001](../001-esp32-tiny-lm/spec.md) and restated here.
+
+| Budget | Limit | This feature |
+|--------|-------|--------------|
+| Target board | classic ESP32, 4 MB flash, 520 KB SRAM, **no PSRAM** (nothing may rely on external RAM) | unchanged |
+| Flash: model | ≤ 2 MB data partition, ≥ 10 % headroom | unchanged (621,468 B) |
+| Flash: firmware | app image ≤ 1 MB factory partition, ≥ 10 % headroom | measured 220,544 B (21.0 %) |
+| SRAM: inference | arena + KV + activations ≤ 128 KB static, ≥ 10 % headroom | unchanged (79,888 B) |
+| SRAM: additional static DRAM | trace buffer + run-time stats ≤ 8 KB | measured +4,608 B |
+| Time per token | ≥ 10 characters/s (001 SC-002), first character ≤ 1 s (001 US1) | profiling + trace add ≤ 5 % (SC-003) |
+
+SC-003 is a **release gate**, not a merge gate. Constitution I requires the measurement on real
+hardware before a release; QEMU timings are emulated and cannot show it.
 
 ### Key Entities
 
 - **SysStats**: platform values (heap, stack, CPU load, uptime, MHz); `< 0` = unknown.
 - **TraceStep**: chosen token, top-3 tokens, probabilities (Q16), entropy (millibit), position,
   µs since the previous character.
-- **Stage profile**: µs per forward-pass stage, accumulated per answer.
+- **StageProfile**: µs per forward-pass stage, accumulated per answer.
+- **AnswerSummary**: snapshot of the last answer (characters, end reason, prefill, timings,
+  profile copy).
+- **TraceMode**: `aus` | `an` | `json`, default `aus`.
+
+Fields and rules are defined in [data-model.md](data-model.md).
 
 ## Success Criteria *(mandatory)*
 
 - **SC-001**: `/stats` and `/trace an` work in QEMU (shown in the PR).
 - **SC-002**: Golden parity unchanged: host 24/24 bit-identical, QEMU 24/24 identical text.
-- **SC-003**: Profiling plus trace cost ≤ 5 % generation time on real hardware.
+- **SC-003**: Profiling plus trace cost ≤ 5 % generation time on real hardware (release gate,
+  see Budgets).
 - **SC-004**: Budget report passes with ≥ 10 % headroom.

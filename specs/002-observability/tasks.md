@@ -21,6 +21,10 @@ US3 live viewer P2). Field constraints are cited from [data-model.md](data-model
 template (see plan.md). Completed tasks are marked `[X]`; the Phase 0/1 design documents were
 added afterwards (T024).
 
+**Task IDs**: IDs were kept stable when this list was aligned with the template. Within the
+US1 and US2 phases, the test tasks (T009, T012) are listed first by the template's convention but
+carry higher IDs. The execution order is the order listed.
+
 ## Format: `[ID] [P?] [Story] Description`
 
 - **[P]**: Can run in parallel (different files, no dependencies)
@@ -64,7 +68,11 @@ before and after a question, and also in HALT_ERROR.
 
 ### Tests for User Story 1
 
-- [X] T009 [US1] Tests for `/stats` with fake `sys_stats` and `micros` (system values, arena/KV, last answer, profile, no `@ut` outside json mode, HALT_ERROR) in runtime/tests/test_console_logic.c
+- [X] T009 [US1] Tests for `/stats` with fake `sys_stats` and `micros` in runtime/tests/test_console_logic.c:
+  - before the first answer: "Letzte Antwort: noch keine", no profile (US1 acceptance 1);
+  - system values, arena/KV, last answer and profile;
+  - no `@ut` outside json mode;
+  - HALT_ERROR.
 
 ### Implementation for User Story 1
 
@@ -81,7 +89,7 @@ before and after a question, and also in HALT_ERROR.
 ## Phase 4: User Story 2 – See how sure the model is (Priority: P1)
 
 **Goal**: `/trace aus|an|json` with a per-character table or JSON events. With trace `aus` the
-output is byte-identical to 001 (FR-003, FR-004, FR-005, FR-007).
+answer output is byte-identical to 001 (FR-003, FR-004, FR-005, FR-007).
 
 **Independent Test**: quickstart.md Scenario C, steps 2, 4 and 5, and Scenario A (ctest).
 
@@ -139,7 +147,10 @@ positions, the profile and system values; it writes an optional JSONL log (FR-00
 - [X] T022 Budget report with the firmware build; record the numbers in specs/002-observability/measurements.md
 - [X] T023 [P] "Observability" section in README.md and a pointer from specs/001-esp32-tiny-lm/contracts/serial-console.md
 - [X] T024 [P] Phase 0/1 design documents: specs/002-observability/research.md, data-model.md, quickstart.md; align plan.md with the template
-- [X] T025 Run the quickstart.md validation in the container: Scenarios A, B, D, E, and Scenario C steps 1–3 and 5. Step 4 (Ctrl-C in QEMU) is covered only by the host test in T012.
+- [X] T025 Run the quickstart.md validation in the container: Scenarios A–E. Results:
+  - Scenario D: `make observe` 5/5 in QEMU, QEMU stopped afterwards;
+  - Scenario C step 4: Ctrl-C in QEMU gives a trace with `Ende: abort` over the 6 produced
+    characters.
 - [ ] T026 quickstart.md Scenario F on a real ESP32: measure SC-003 (trace/profiling overhead ≤ 5 %) and the core-1 load while generating; record in specs/002-observability/measurements.md (needs hardware)
 
 ---

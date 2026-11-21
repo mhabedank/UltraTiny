@@ -35,8 +35,8 @@ macOS host for the PC runtime and viewer
 **Performance Goals**: profiling + trace ≤ 5 % generation time (SC-003); `/stats` answers
 immediately (no blocking measurement)
 
-**Constraints**: no heap at inference (II), bit-identical logits (III), byte-identical console
-output with trace off (FR-005), ≤ 8 KB extra static DRAM, ≥ 10 % headroom on all budgets (I)
+**Constraints**: no heap at inference (II), bit-identical logits (III), byte-identical answer
+output, banner and 001 commands except `/hilfe` with trace off (FR-005), ≤ 8 KB extra static DRAM, ≥ 10 % headroom on all budgets (I)
 
 **Scale/Scope**: 2 console commands, 3 event types, 7 profiling stages, ≤ 201 trace steps per
 answer, 1 viewer with 5 transports
@@ -125,4 +125,7 @@ Makefile                         # observe, observe-host
 
 ## Complexity Tracking
 
-None. (`logf` in the console is display-only and not part of the parity-checked path.)
+| Deviation | Why | Mitigation / simpler alternative rejected because |
+|-----------|-----|---------------------------------------------------|
+| **Process (constitution, Development Workflow)**: the code was implemented right after a compact spec/plan. research.md, data-model.md, quickstart.md and the template-aligned tasks.md were written afterwards (`/speckit-plan`, `/speckit-tasks`, `/speckit-analyze` run retroactively). | The task asked for implementation in one pass "without questions, with sensible defaults". The scope was small and additive, and the design decisions were taken during implementation. | The artifacts were added in the same PR before merge, and `/speckit-analyze` findings were resolved. Implementation reports the same files and tests as tasks.md. Future features run specify → plan → tasks → implement in order. |
+| `logf` and float softmax in the console (constitution II: float only where needed) | Probabilities and entropy are display values. | They run only with trace on, are outside the parity-checked path, and cost ≪ 1 % of a forward pass (research.md R5). Fixed-point log tables would add code with no benefit for display. |

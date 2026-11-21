@@ -15,7 +15,9 @@ representative of real hardware; they only show that the values are wired up.
 | Heap (QEMU) | ≈ 190 KB free, minimum ≈ 182 KB, largest block 108 KB |
 | Trace overhead, host (`utiny-host --console`, 45 answers each) | median 0.30 ms/char with and without trace (below the 0.01 ms resolution) |
 | Trace overhead, QEMU | not measurable (noise ±30 % between identical runs) |
-| SC-003 on real hardware | **open** (needs a board) |
+| `make observe` in QEMU (5 demo prompts) | 5/5 as expected, QEMU stopped afterwards |
+| Ctrl-C with `/trace an` in QEMU | trace over the 6 produced characters, `Ende: abort` |
+| SC-003 on real hardware | **open** (release gate, needs a board) |
 
 Stage profile in QEMU (answer "Die Hauptstadt von Italien ist Rom.", context 39→74):
 embed 0.4 % | norm 1.3 % | qkv 11.1 % | attn 38.3 % | wo 10.6 % | ffn 36.8 % | head 1.6 %.

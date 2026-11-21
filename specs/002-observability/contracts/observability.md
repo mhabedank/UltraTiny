@@ -1,8 +1,9 @@
 # Contract: Observability (console commands, events, runtime hooks)
 
 Extends [001 serial-console](../../001-esp32-tiny-lm/contracts/serial-console.md) and
-[001 runtime-api](../../001-esp32-tiny-lm/contracts/runtime-api.md). With `/trace aus` (default)
-all 001 output is unchanged byte for byte.
+[001 runtime-api](../../001-esp32-tiny-lm/contracts/runtime-api.md). With `/trace aus` (default),
+the answer output, the banner and the output of all 001 commands except `/hilfe` are unchanged
+byte for byte (spec FR-005). `/hilfe` additionally lists `/stats` and `/trace`.
 
 ## Commands
 
@@ -30,7 +31,8 @@ Letzte Antwort: 35 Zeichen (Ende: eos), Prefill 39 Token
 Profil (Rechenzeit 162.8 ms): embed 0.4% | norm 1.3% | qkv 11.1% | attn 38.3% | wo 10.6% | ffn 36.8% | head 1.6%
 ```
 
-Values the platform does not provide are omitted or shown as `?`. CPU load is the non-idle share
+Values the platform does not provide are left out or shown as `?` in text, and are `null` in
+JSON. CPU load is the non-idle share
 per core since the previous `/stats` (FreeRTOS idle-task run-time counters).
 
 ### `/trace an`

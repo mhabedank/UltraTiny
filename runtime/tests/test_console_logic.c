@@ -246,6 +246,11 @@ int main(int argc, char **argv) {
     ut_console_init(&o, &c, &m, need, &io2, UT_OK);
     o.arena_cap = 96 * 1024;
     c.clock_us = fake_clock;
+    /* /stats before the first answer (spec US1 acceptance 1). */
+    feed(&o, &f, "/stats\r");
+    CHECK(strstr(f.out, "Heap frei 1000 B") != NULL);
+    CHECK(strstr(f.out, "Letzte Antwort: noch keine") != NULL);
+    CHECK(strstr(f.out, "Profil") == NULL && strstr(f.out, "ms pro Zeichen") == NULL);
     const char *q = "Wer bist du?";
     char expect_ans[1024], expect[1100];
     direct_answer(&c, &m, q, UT_MAX_ANSWER, expect_ans);
