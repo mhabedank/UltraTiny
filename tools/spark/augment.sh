@@ -22,6 +22,6 @@ curl -sf "$HOST/api/tags" >/dev/null || { echo "Ollama not reachable at $HOST"; 
 echo "==> Ollama $HOST, model $MODEL, judge $JUDGE, workers $WORKERS"
 echo "    (more parallelism: start ollama with OLLAMA_NUM_PARALLEL=$WORKERS)"
 cd "$REPO/training"
-python3 tools/augment_llm.py --host "$HOST" --model "$MODEL" --judge-model "$JUDGE" \
+PYTHONUNBUFFERED=1 python3 tools/augment_llm.py --host "$HOST" --model "$MODEL" --judge-model "$JUDGE" \
     --workers "$WORKERS" "${TASK[@]}"
-echo "==> Done. Check with: git diff --stat training/data/augment/"
+echo "==> Done. Log: training/runs/augment.log. Check: git diff --stat training/data/augment/"

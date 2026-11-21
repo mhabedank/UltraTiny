@@ -31,7 +31,9 @@ import random
 import re
 import sys
 import threading
+import time
 import tomllib
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -63,6 +65,29 @@ REFUSAL_TOPICS = [
 ]  # fmt: skip
 
 
+# ---------------------------------------------------------------- logging
+
+LOG_FILE = ROOT / "runs" / "augment.log"
+_log_lock = threading.Lock()
+_tl = threading.local()  # per-item stats: LLM calls, cache hits, LLM seconds
+
+
+def log(msg: str) -> None:
+    line = f"{time.strftime('%H:%M:%S')} {msg}"
+    with _log_lock:
+        print(line, flush=True)
+        LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
+        with LOG_FILE.open("a", encoding="utf-8") as f:
+            f.write(line + "\n")
+
+
+def fmt_dur(sec: float) -> str:
+    sec = int(sec)
+    return (
+        f"{sec // 3600}h{sec % 3600 // 60:02d}m" if sec >= 3600 else f"{sec // 60}m{sec % 60:02d}s"
+    )
+
+
 # ---------------------------------------------------------------- LLM client
 
 
@@ -85,8 +110,12 @@ class Ollama:
             self.host + "/api/chat", data=json.dumps(body).encode(),
             headers={"Content-Type": "application/json"},
         )  # fmt: skip
-        with urllib.request.urlopen(req, timeout=self.timeout) as r:
-            content = json.load(r)["message"]["content"]
+        try:
+            with urllib.request.urlopen(req, timeout=self.timeout) as r:
+                content = json.load(r)["message"]["content"]
+        except urllib.error.HTTPError as e:
+            msg = e.read().decode(errors="replace")[:200]
+            raise RuntimeError(f"Ollama HTTP {e.code}: {msg}") from None
         return json.loads(content)
 
 
@@ -139,9 +168,13 @@ def cached(kind: str, key: str, fn):
         for line in path.read_text(encoding="utf-8").splitlines():
             d = json.loads(line)
             store[d["key"]] = d["value"]
+    _tl.calls = getattr(_tl, "calls", 0) + 1
     if key in store:
+        _tl.hits = getattr(_tl, "hits", 0) + 1
         return store[key]
+    t0 = time.time()
     value = fn()
+    _tl.llm_s = getattr(_tl, "llm_s", 0.0) + time.time() - t0
     with cached.lock:
         store[key] = value
         with path.open("a", encoding="utf-8") as f:
@@ -165,18 +198,35 @@ def judge(llm: Ollama, task: str, candidates: list[str], salt: str) -> list[str]
     ]
 
 
-def run_parallel(items, fn, workers: int):
-    done = 0
+def run_parallel(items, fn, workers: int, label, describe):
+    """Run fn over items in threads; log one line per finished item with progress and ETA."""
+    items = list(items)
+    total, done, fresh, t0 = len(items), 0, 0, time.time()
+
+    def wrapped(it):
+        _tl.calls, _tl.hits, _tl.llm_s = 0, 0, 0.0
+        t = time.time()
+        res = fn(it)
+        return res, _tl.calls, _tl.hits, time.time() - t
+
     with cf.ThreadPoolExecutor(workers) as ex:
-        futs = {ex.submit(fn, it): it for it in items}
+        futs = {ex.submit(wrapped, it): it for it in items}
         for fut in cf.as_completed(futs):
             done += 1
+            it = futs[fut]
             try:
-                yield fut.result()
+                res, calls, hits, dt = fut.result()
             except Exception as e:  # keep going; failed items are retried on the next run
-                print(f"  ! {futs[fut]!r:.60}: {e}", file=sys.stderr)
-            if done % 20 == 0:
-                print(f"  {done}/{len(futs)}", file=sys.stderr)
+                log(f"[{done:>4}/{total}] {label(it)}  FEHLER: {e}")
+                continue
+            from_cache = calls > 0 and hits == calls
+            fresh += not from_cache
+            elapsed = time.time() - t0
+            eta = elapsed / done * (total - done) if fresh else 0
+            src = "Cache" if from_cache else f"{dt:5.1f} s"
+            log(f"[{done:>4}/{total}] {label(it):<28} {describe(res):<26} {src:>8}"
+                f"  | {fmt_dur(elapsed)} vergangen, noch ~{fmt_dur(eta)}")  # fmt: skip
+            yield res
 
 
 # ---------------------------------------------------------------- tasks
@@ -211,17 +261,21 @@ def task_paraphrase(llm: Ollama, judge_llm: Ollama, n: int, workers: int) -> Non
         ok = cached("paraphrase_judge", f["id"], lambda: judge(
             judge_llm, "Prüfe: Passt die folgende Antwort vollständig und korrekt auf die Frage? "
             f"Antwort: {f['object']}", cands, f["id"]))  # fmt: skip
-        return f["id"], [c for c in ok if c in cands]
+        return f["id"], [c for c in ok if c in cands], len(cands)
 
     rows, seen = [], set(taken)
-    for fid, qs in run_parallel(facts, one, workers):
+    log(f"Formulierungen: {len(facts)} Fragen, je {n} neue Vorschläge + Prüfung")
+    for fid, qs, _ in run_parallel(
+        facts, one, workers, label=lambda f: f["id"],
+        describe=lambda r: f"{r[2]:>2} Vorschläge -> {len(r[1]):>2} ok",
+    ):  # fmt: skip
         for q in qs:
             if norm(q) not in seen:
                 seen.add(norm(q))
                 rows.append((fid, q, f"llm:{llm.model}"))
     rows.sort()
     write_tsv(AUG / "paraphrasen.tsv", ["id", "phrasing", "source"], rows)
-    print(f"paraphrasen.tsv: {len(rows)} phrasings for {len({r[0] for r in rows})} facts")
+    log(f"-> paraphrasen.tsv: {len(rows)} Formulierungen für {len({r[0] for r in rows})} Fragen")
 
 
 def task_templates(llm: Ollama, judge_llm: Ollama, n: int, workers: int) -> None:
@@ -260,21 +314,25 @@ def task_templates(llm: Ollama, judge_llm: Ollama, n: int, workers: int) -> None
         cands = list(dict.fromkeys(cands))
         s = sample.get(rel)
         if not s or not cands:
-            return rel, []
+            return rel, [], 0
         filled = [c.replace("{subject}", s["subject"]) for c in cands]
         answer = default.replace("{subject}", s["subject"]).replace("{object}", s["object"])
         ok = cached("templates_judge", rel, lambda: judge(
             judge_llm,
             f"Prüfe: Passt die Antwort '{answer}' vollständig und korrekt auf die Frage?",
             filled, rel))  # fmt: skip
-        return rel, [c for c, fq in zip(cands, filled, strict=True) if fq in ok]
+        return rel, [c for c, fq in zip(cands, filled, strict=True) if fq in ok], len(cands)
 
     rows = []
-    for rel, ts in run_parallel(list(rels.items()), one, workers):
+    log(f"Vorlagen: {len(rels)} Relationen, je {n} neue Vorschläge + Prüfung")
+    for rel, ts, _ in run_parallel(
+        list(rels.items()), one, workers, label=lambda it: it[0],
+        describe=lambda r: f"{r[2]:>2} Vorschläge -> {len(r[1]):>2} ok",
+    ):  # fmt: skip
         rows += [(rel, t, "", f"llm:{llm.model}") for t in ts]
     rows.sort()
     write_tsv(AUG / "vorlagen.tsv", ["relation", "text", "answer", "source"], rows)
-    print(f"vorlagen.tsv: {len(rows)} templates for {len({r[0] for r in rows})} relations")
+    log(f"-> vorlagen.tsv: {len(rows)} Vorlagen für {len({r[0] for r in rows})} Relationen")
 
 
 def task_refusals(llm: Ollama, judge_llm: Ollama, n: int, workers: int) -> None:
@@ -306,17 +364,21 @@ def task_refusals(llm: Ollama, judge_llm: Ollama, n: int, workers: int) -> None:
             judge_llm, "Prüfe: Welche Eingaben haben KEINEN Bezug zu Chemie (keine Frage zu "
             "Stoffen, Elementen, Reaktionen, Atomen, Laborarbeit oder chemischen Begriffen)?",
             cands, key))  # fmt: skip
-        return [c for c in ok if c in cands]
+        return [c for c in ok if c in cands], len(cands)
 
     rows, seen = [], set(existing)
-    for qs in run_parallel(calls, one, workers):
+    log(f"Abweisungen: {len(calls)} Aufrufe, {len(REFUSAL_TOPICS)} Themen, je {per_call} Eingaben")
+    for qs, _ in run_parallel(
+        calls, one, workers, label=lambda c: f"{c[0][:22]} #{c[1] + 1}",
+        describe=lambda r: f"{r[1]:>2} Vorschläge -> {len(r[0]):>2} ok",
+    ):  # fmt: skip
         for q in qs:
             if norm(q) not in seen:
                 seen.add(norm(q))
                 rows.append((q, f"llm:{llm.model}"))
     rows.sort()
     write_tsv(AUG / "abweisen.tsv", ["phrasing", "source"], rows)
-    print(f"abweisen.tsv: {len(rows)} refusal inputs")
+    log(f"-> abweisen.tsv: {len(rows)} Abweisungs-Eingaben")
 
 
 def main() -> int:
@@ -336,12 +398,23 @@ def main() -> int:
     random.seed(a.seed)
     llm = Ollama(a.host, a.model, a.seed)
     judge_llm = Ollama(a.host, a.judge_model or a.model, a.seed)
+    log(f"Start: {a.task}, Modell {llm.model}, Prüfer {judge_llm.model}, {a.workers} parallel, "
+        f"Log: {LOG_FILE}")  # fmt: skip
+    for m in {x.model: x for x in (llm, judge_llm)}.values():
+        t = time.time()
+        try:
+            m.json('Antworte nur mit {"items": ["ok"]}.', LIST_SCHEMA, temperature=0.0)
+        except Exception as e:
+            log(f"Modell {m.model} antwortet nicht: {e}")
+            return 1
+        log(f"Modell {m.model} antwortet ({time.time() - t:.1f} s, inkl. evtl. Laden)")
     if a.task in ("paraphrase", "all"):
         task_paraphrase(llm, judge_llm, a.n or 15, a.workers)
     if a.task in ("templates", "all"):
         task_templates(llm, judge_llm, a.n or 12, a.workers)
     if a.task in ("refusals", "all"):
         task_refusals(llm, judge_llm, a.n or 3000, a.workers)
+    log("Fertig.")
     return 0
 
 
