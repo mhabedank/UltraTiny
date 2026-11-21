@@ -31,7 +31,7 @@
 
 ## Phase 5: User Story 3 – Bigger model, longer training (P2)
 
-- [ ] T016 [US3] Train `runs/chemie` (CPU here or MPS on the M3), check eval + budget, iterate on data if thresholds fail
+- [ ] T016 (paused, see measurements.md) [US3] Train `runs/chemie` (CPU here or MPS on the M3), check eval + budget, iterate on data if thresholds fail
 - [ ] T017 [US3] Commit models/chemie.utny + golden/eval/run.json; host parity (`utiny-host --golden`) and QEMU parity
 - [ ] T018 [US3] Record results in specs/003-chemielehrer/measurements.md; README section "Chemielehrer" (make qemu MODEL=models/chemie.utny)
 
