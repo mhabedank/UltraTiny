@@ -69,6 +69,21 @@ typedef struct ut_model {
     const float *final_norm;
 } ut_model;
 
+/* Optional profiling (specs/002-observability): stages of one forward pass. */
+typedef enum {
+    UT_PROF_EMBED = 0, /* token + position embedding */
+    UT_PROF_NORM,      /* all RMSNorms (attention, FFN, final) */
+    UT_PROF_QKV,       /* Q/K/V projections + KV-cache quantization */
+    UT_PROF_ATTN,      /* scores, softmax, weighted sum over the cache */
+    UT_PROF_WO,        /* output projection + residual */
+    UT_PROF_FFN,       /* w1, ReLU, w2 + residual */
+    UT_PROF_HEAD,      /* logits (tied embedding) */
+    UT_PROF_N
+} ut_prof_stage;
+
+/* Monotonic microsecond clock supplied by the platform (wraps at 2^32). */
+typedef uint32_t (*ut_clock_us_fn)(void);
+
 /* Session: KV cache, activations and position, all inside the arena. */
 typedef struct ut_ctx {
     const ut_model *m;
@@ -78,6 +93,10 @@ typedef struct ut_ctx {
     float *x, *h, *q, *att, *tmp, *k, *v, *ff, *logits, *scores;
     int8_t *aq;      /* int8 activation buffer, max(d_model, d_ff) */
     int8_t *qh;      /* int8 per-head query */
+    /* Profiling: NULL = off. Only reads the clock; results stay bit-identical. Set after
+     * ut_ctx_init (which clears it); prof_us accumulates until ut_prof_reset. */
+    ut_clock_us_fn clock_us;
+    uint32_t prof_us[UT_PROF_N];
 } ut_ctx;
 
 /* Validate and parse a model image. No copy is made; `data` must stay valid. */
@@ -96,7 +115,13 @@ void ut_rewind(ut_ctx *c, int n); /* backspace: pos -= n (never below 1) */
 /* Logits for the last fed position (vocab_size floats inside the arena). */
 const float *ut_logits(const ut_ctx *c);
 
+void ut_prof_reset(ut_ctx *c);
+const char *ut_prof_name(int stage); /* "embed", "norm", ... or "?" */
+
 int ut_argmax(const float *logits, int n);
+/* Softmax probabilities of `logits` (temperature 1) into `out`; logits stay unchanged.
+ * For observability only; not part of the parity-checked path. */
+void ut_softmax_copy(const float *logits, int n, float *out);
 /* Temperature sampling with xorshift32; `scratch` needs n floats. */
 int ut_sample(const float *logits, int n, float temperature, uint32_t *rng_state, float *scratch);
 
