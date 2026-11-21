@@ -55,6 +55,7 @@ class Relation:
     answers: list[str]
     questions: list[QTemplate]
     free: bool
+    repeat: int = 1
 
 
 def _expand(patterns: list[str], base: Path) -> list[Path]:
@@ -96,7 +97,9 @@ def load_relations(paths: list[Path]) -> dict[str, Relation]:
                 QTemplate(name, q["text"], q.get("split", "train"), q.get("answer"))
                 for q in r["questions"]
             ]
-            rels[name] = Relation(name, list(r["answers"]), qs, bool(r.get("free", False)))
+            rels[name] = Relation(
+                name, list(r["answers"]), qs, bool(r.get("free", False)), int(r.get("repeat", 1))
+            )
     return rels
 
 
@@ -240,10 +243,15 @@ def generate(cfg: Config, out_dir: Path, seed: int, alphabet: Alphabet | None = 
             if v != q and norm(v) in held_norm:
                 continue
             if fits(v, a):
-                train_lines.append(f"{v}\t{a}")
+                train_lines.extend([f"{v}\t{a}"] * rels[f.relation].repeat)
             else:
                 skipped += 1
-    held = [{"prompt": q, "expected": a, "fact": fid} for q, a, fid in held_pairs if fits(q, a)]
+    rel_of = {f.id: f.relation for f in facts}
+    held = [
+        {"prompt": q, "expected": a, "fact": fid, "relation": rel_of[fid]}
+        for q, a, fid in held_pairs
+        if fits(q, a)
+    ]
 
     demo: list[dict] = []
     demo_path = base / cfg.data.demo_prompts

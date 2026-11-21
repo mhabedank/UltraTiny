@@ -10,7 +10,7 @@ from pathlib import Path
 from .alphabet import Alphabet
 from .config import load_config
 from .datagen import generate, read_jsonl
-from .evaluate import evaluate
+from .evaluate import evaluate, refusal_metrics
 from .export import read_model, write_model
 from .golden import write_golden
 from .reference import Reference, arena_size
@@ -117,6 +117,17 @@ def cmd_pipeline(a) -> int:
         rows = read_jsonl(data / f"{name}.jsonl")
         results[name] = evaluate(ref, rows, cfg.eval.max_edit_ratio)
         print(f"{name}: {results[name]['accuracy']:.3f} ({results[name]['n']} prompts)")
+    held_rows = read_jsonl(data / "heldout.jsonl")
+    ref_m = refusal_metrics(
+        results["demo"], results["heldout"], held_rows, cfg.eval.refusal_relation
+    )
+    if ref_m:
+        results["refusal"] = ref_m
+        print(
+            f"chemistry held-out: {ref_m['chem_heldout']:.3f} ({ref_m['n_chem_heldout']}), "
+            f"refusal rate: {ref_m['refusal_rate']:.3f} ({ref_m['n_refusal']}), "
+            f"false refusals: {ref_m['false_refusal']:.3f}"
+        )
     (out / "eval.json").write_text(json.dumps(results, indent=2, ensure_ascii=False) + "\n")
     print("== golden")
     prompts = [r["prompt"] for r in read_jsonl(data / "demo.jsonl")]
@@ -129,8 +140,13 @@ def cmd_pipeline(a) -> int:
     failed = []
     if results["demo"]["n"] and results["demo"]["accuracy"] < cfg.eval.demo_min:
         failed.append("demo accuracy")
-    if results["heldout"]["n"] and results["heldout"]["accuracy"] < cfg.eval.heldout_min:
+    held_acc = ref_m["chem_heldout"] if ref_m else results["heldout"]["accuracy"]
+    if results["heldout"]["n"] and held_acc < cfg.eval.heldout_min:
         failed.append("held-out accuracy")
+    if ref_m and ref_m["refusal_rate"] < cfg.eval.refusal_min:
+        failed.append("refusal rate")
+    if ref_m and ref_m["false_refusal"] > cfg.eval.false_refusal_max:
+        failed.append("false refusals")
     if not budget["ok"]:
         failed.append("budget")
     if failed:

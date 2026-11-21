@@ -70,6 +70,21 @@ Beenden mit **Strg-A, dann X**. Der Emulator nutzt DIO/40 MHz statt QIO/80 MHz
 (`firmware/sdkconfig.qemu`), weil QEMU QIO nicht kann. Er prüft Funktion und Antworten, nicht die
 Geschwindigkeit – die Werte in `/info` sind dort nicht aussagekräftig.
 
+## Chemielehrer (Modell `chemie`)
+
+Ein größeres Modell (6 × 192, ~1,75 Mio. Parameter, 1,79 MB Flash, 91 KB RAM), das nur Chemie
+für die Klassen 7–10 kann – nach dem Rahmenlehrplan Chemie Berlin-Brandenburg (Themenfelder
+3.1–3.12), dazu Steckbriefe aller 118 Elemente, Formeln, Alltagsstoffe und einfache Reaktionen.
+Fragen außerhalb der Chemie beantwortet es ehrlich mit „Das weiß ich leider nicht.“
+
+```bash
+make qemu MODEL=models/chemie.utny                       # im Emulator
+make flash-model MODEL=models/chemie.utny PORT=...       # aufs Board
+cd training && uv run ut pipeline --config configs/chemie.toml --out runs/chemie   # selbst trainieren
+```
+
+Details und Messwerte: [`specs/003-chemielehrer/`](specs/003-chemielehrer/).
+
 ## Selbst trainieren
 
 Siehe [`training/README.md`](training/README.md) — ein Befehl erzeugt Daten, trainiert (Apple-GPU

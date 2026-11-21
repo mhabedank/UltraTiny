@@ -66,6 +66,9 @@ class EvalConfig:
     heldout_min: float = 0.60
     max_edit_ratio: float = 0.10
     golden_cases: int = 24
+    refusal_relation: str = "abweisen"
+    refusal_min: float = 0.0
+    false_refusal_max: float = 1.0
 
 
 @dataclass(frozen=True)
