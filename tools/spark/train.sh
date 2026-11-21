@@ -20,7 +20,7 @@ SEEDS=("$@")
 NAME="${NAME:-chemie}"
 IMAGE="${IMAGE:-ultratiny-train:latest}"
 TAG="$(basename "$CONFIG" .toml)"
-read -r -a GPU_ARGS <<< "${DOCKER_GPU:---gpus all}"
+GPU_ARGS=()
 VENV="${UT_VENV:-$HOME/.venvs/ultratiny}"
 
 if [ "${UT_NO_DOCKER:-0}" = "1" ]; then
@@ -52,6 +52,10 @@ if [ "${UT_NO_DOCKER:-0}" = "1" ]; then
     exec python3 "$REPO/tools/spark/select_best.py" --name "$NAME" "$REPO"/training/runs/"$TAG"-s*/
 fi
 
+if [ -n "${DOCKER_GPU:-}" ]; then
+    read -r -a GPU_ARGS <<< "$DOCKER_GPU"
+fi
+
 RUN=(docker run --rm "${GPU_ARGS[@]}" --ipc=host --user "$(id -u):$(id -g)" -e HOME=/tmp
      -v "$REPO:/work" -w /work/training)
 
@@ -65,7 +69,22 @@ echo "==> Building training image ($IMAGE) on $BASE_IMAGE"
 docker build --progress=plain --build-arg BASE_IMAGE="$BASE_IMAGE" -t "$IMAGE" \
     -f "$DOCKERFILE" "$REPO/training/docker"
 
-echo "==> GPU check"
+if [ -z "${DOCKER_GPU:-}" ]; then
+    # Find a way to hand the GPU to Docker that works on this host. "--gpus all" and CDI break
+    # when the NVIDIA toolkit's file list is stale (driver updated, no reboot yet).
+    for mode in "--gpus all" "--runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all" \
+                "--device nvidia.com/gpu=all"; do
+        read -r -a try <<< "$mode"
+        if docker run --rm "${try[@]}" --entrypoint nvidia-smi "$IMAGE" -L >/dev/null 2>&1; then
+            GPU_ARGS=("${try[@]}")
+            break
+        fi
+    done
+    [ ${#GPU_ARGS[@]} -gt 0 ] || { echo "No working Docker GPU mode. Try UT_NO_DOCKER=1 (see SPARK.md)."; exit 1; }
+    RUN=(docker run --rm "${GPU_ARGS[@]}" --ipc=host --user "$(id -u):$(id -g)" -e HOME=/tmp
+         -v "$REPO:/work" -w /work/training)
+fi
+echo "==> GPU check (docker ${GPU_ARGS[*]})"
 "${RUN[@]}" --entrypoint python "$IMAGE" -c \
     "import torch; print('torch', torch.__version__, '| cuda', torch.cuda.is_available(), '|', torch.cuda.get_device_name(0))"
 
