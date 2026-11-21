@@ -37,7 +37,26 @@ confirm() {
 }
 
 load_idf() {
-    # export.sh is not written for `set -u`; also silence its banner.
+    # An active Python venv (e.g. from `uv run`, as in `make observe`) makes ESP-IDF look for a
+    # Python env matching that interpreter (idf5.4_py3.14_env, ...), which usually does not
+    # exist. Drop the venv so export.sh picks the Python it was installed with.
+    if [ -n "${VIRTUAL_ENV:-}" ]; then
+        PATH="$(printf '%s' "$PATH" | tr ':' '\n' | grep -vxF "$VIRTUAL_ENV/bin" | paste -sd: -)"
+        unset VIRTUAL_ENV PYTHONHOME
+        hash -r
+    fi
+    # export.sh is not written for `set -u` and may `exit` on errors, which would end this
+    # script silently. Try it in a subshell first and show its output if it fails.
+    local log
+    log="$(mktemp)"
+    # shellcheck disable=SC1091
+    if ! (set +u; . "$IDF_DIR/export.sh") >"$log" 2>&1 || ! (set +u; . "$IDF_DIR/export.sh" >/dev/null 2>&1; command -v idf.py >/dev/null); then
+        tail -15 "$log" >&2
+        rm -f "$log"
+        echo "ESP-IDF in $IDF_DIR lässt sich nicht laden (Ausgabe von export.sh oben)." >&2
+        exit 1
+    fi
+    rm -f "$log"
     set +u
     # shellcheck disable=SC1091
     . "$IDF_DIR/export.sh" >/dev/null 2>&1 || true
