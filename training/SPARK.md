@@ -21,22 +21,28 @@ git checkout claude/modest-sagan-xrovbt        # oder später: main
 Voraussetzungen auf dem Spark (laut `ollama ls` vorhanden): Ollama mit `gpt-oss:120b`, Docker
 mit NVIDIA Container Toolkit (bei DGX OS Standard), Python 3.
 
-## 1. Trainingsdaten erweitern (Ollama, ~1–3 h mit gpt-oss:120b)
+## 1. Trainingsdaten erweitern (Ollama)
 
 ```bash
 git pull
 OLLAMA_NUM_PARALLEL=4 ollama serve &           # nur nötig, falls Ollama nicht schon so läuft
-tools/spark/augment.sh                         # gpt-oss:120b erzeugt und prüft
-# schneller, z. B.:  MODEL=qwen3.6:35b JUDGE=gpt-oss:120b tools/spark/augment.sh
+tools/spark/augment.sh                         # Standard: qwen3.6:35b ohne "Denken", mit Prüf-Prompt
+JUDGE=none tools/spark/augment.sh              # PoC-schnell: ohne Prüf-Prompt (halb so viele Aufrufe)
+MODEL=gemma4:e4b JUDGE=none tools/spark/augment.sh   # noch kleiner/schneller
+MODEL=gpt-oss:120b tools/spark/augment.sh      # beste Qualität, deutlich langsamer
 ```
+
+Fortschritt: eine Zeile pro Eintrag mit Restzeit, mitlesen auch mit
+`tail -f training/runs/augment.log`. Ohne Prüf-Prompt filtern nur Zeichen-, Leck- und
+Konfliktprüfung in `datagen`; für einen PoC reicht das, ein Blick auf Stichproben lohnt trotzdem.
 
 Ergebnis in `training/data/augment/`:
 
 | Datei | Inhalt | Zielgröße |
 |-------|--------|-----------|
-| `paraphrasen.tsv` | weitere Formulierungen für jede freie Frage (Lehrplan, Reaktionen, Persona) | ~15 je Frage |
-| `vorlagen.tsv` | weitere Fragevorlagen für Element-Steckbriefe und Formeln | ~12 je Relation |
-| `abweisen.tsv` | fachfremde Fragen und Unsinn, über 34 Themen verteilt | ~2.500 |
+| `paraphrasen.tsv` | weitere Formulierungen für jede freie Frage (Lehrplan, Reaktionen, Persona) | ~10 je Frage |
+| `vorlagen.tsv` | weitere Fragevorlagen für Element-Steckbriefe und Formeln | ~10 je Relation |
+| `abweisen.tsv` | fachfremde Fragen und Unsinn, über 34 Themen verteilt | ~1.200 |
 
 Das LLM bekommt die zurückgehaltenen Testfragen nie zu sehen. Jede Ausgabe durchläuft einen
 zweiten Prüf-Prompt („passt die Antwort wirklich?“ bzw. „hat das nichts mit Chemie zu tun?“) und
@@ -52,7 +58,7 @@ for f in ["paraphrasen", "vorlagen", "abweisen"]:
     rows = list(csv.DictReader(open(f"data/augment/{f}.tsv"), delimiter="\t"))
     print(f, len(rows)); [print("  ", r) for r in random.sample(rows, min(5, len(rows)))]
 EOF
-git add data/augment && git commit -m "data: LLM augmentation snapshot (gpt-oss:120b)"
+git add data/augment && git commit -m "data: LLM augmentation snapshot"
 ```
 
 ## 2. Training auf der GPU (Docker)

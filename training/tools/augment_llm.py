@@ -105,7 +105,9 @@ class Ollama:
                 hashlib.sha256(salt.encode()).hexdigest()[:6], 16)},
         }  # fmt: skip
         if self.model.startswith("gpt-oss"):
-            body["think"] = "low"
+            body["think"] = "low"  # gpt-oss always reasons; keep it short
+        elif self.model.startswith("qwen3"):
+            body["think"] = False  # Qwen3 thinks by default -> much slower, not needed here
         req = urllib.request.Request(
             self.host + "/api/chat", data=json.dumps(body).encode(),
             headers={"Content-Type": "application/json"},
@@ -186,9 +188,11 @@ cached.stores = {}
 cached.lock = threading.Lock()
 
 
-def judge(llm: Ollama, task: str, candidates: list[str], salt: str) -> list[str]:
+def judge(llm: Ollama | None, task: str, candidates: list[str], salt: str) -> list[str]:
     if not candidates:
         return []
+    if llm is None:  # --no-judge: rely on the alphabet/leak/conflict filters in datagen only
+        return candidates
     listing = "\n".join(f"{i}: {c}" for i, c in enumerate(candidates))
     prompt = (f"{task}\n\nKandidaten:\n{listing}\n\nGib die Nummern aller Kandidaten zurück, "
               "die die Bedingung erfüllen, als JSON {\"ok\": [...]}.")  # fmt: skip
@@ -386,21 +390,23 @@ def main() -> int:
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
     )
     ap.add_argument("--host", default="http://localhost:11434")
-    ap.add_argument("--model", default="gpt-oss:120b")
+    ap.add_argument("--model", default="qwen3.6:35b")
     ap.add_argument("--judge-model", default=None, help="default: same as --model")
+    ap.add_argument("--no-judge", action="store_true", help="skip the checking prompt (2x faster)")
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--seed", type=int, default=1234)
     sub = ap.add_subparsers(dest="task", required=True)
-    for name, default_n in (("paraphrase", 15), ("templates", 12), ("refusals", 3000), ("all", 0)):
+    for name, default_n in (("paraphrase", 10), ("templates", 10), ("refusals", 1500), ("all", 0)):
         p = sub.add_parser(name)
         p.add_argument("--n", type=int, default=default_n)
     a = ap.parse_args()
     random.seed(a.seed)
     llm = Ollama(a.host, a.model, a.seed)
-    judge_llm = Ollama(a.host, a.judge_model or a.model, a.seed)
-    log(f"Start: {a.task}, Modell {llm.model}, Prüfer {judge_llm.model}, {a.workers} parallel, "
+    judge_llm = None if a.no_judge else Ollama(a.host, a.judge_model or a.model, a.seed)
+    log(f"Start: {a.task}, Modell {llm.model}, "
+        f"Prüfer {judge_llm.model if judge_llm else 'aus'}, {a.workers} parallel, "
         f"Log: {LOG_FILE}")  # fmt: skip
-    for m in {x.model: x for x in (llm, judge_llm)}.values():
+    for m in {x.model: x for x in (llm, judge_llm) if x}.values():
         t = time.time()
         try:
             m.json('Antworte nur mit {"items": ["ok"]}.', LIST_SCHEMA, temperature=0.0)
@@ -409,11 +415,11 @@ def main() -> int:
             return 1
         log(f"Modell {m.model} antwortet ({time.time() - t:.1f} s, inkl. evtl. Laden)")
     if a.task in ("paraphrase", "all"):
-        task_paraphrase(llm, judge_llm, a.n or 15, a.workers)
+        task_paraphrase(llm, judge_llm, a.n or 10, a.workers)
     if a.task in ("templates", "all"):
-        task_templates(llm, judge_llm, a.n or 12, a.workers)
+        task_templates(llm, judge_llm, a.n or 10, a.workers)
     if a.task in ("refusals", "all"):
-        task_refusals(llm, judge_llm, a.n or 3000, a.workers)
+        task_refusals(llm, judge_llm, a.n or 1500, a.workers)
     log("Fertig.")
     return 0
 
