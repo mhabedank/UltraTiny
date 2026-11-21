@@ -82,6 +82,23 @@ Das Skript
 Falls `nvcr.io/nvidia/pytorch:25.10-py3` nicht verfügbar ist, ein aktuelleres Tag nehmen
 (`docker build --build-arg BASE_IMAGE=...`) oder das Tag in `Dockerfile.spark` anpassen.
 
+### Ohne Docker (kein sudo nötig)
+
+Wenn Docker die GPU nicht durchreicht (z. B. `failed to fulfil mount request ... libnvidia-*.so`
+nach einem Treiber-Update ohne Neustart), zuerst den anderen GPU-Modus probieren:
+
+```bash
+DOCKER_GPU="--device nvidia.com/gpu=all" tools/spark/train.sh
+DOCKER_GPU="--runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all" tools/spark/train.sh
+```
+
+Sonst ganz ohne Docker mit einer venv im Home-Verzeichnis:
+
+```bash
+tools/spark/setup_venv.sh              # PyTorch mit CUDA (cu130-Wheels für aarch64), ~2-3 GB
+UT_NO_DOCKER=1 tools/spark/train.sh
+```
+
 ## 3. Ergebnis zurück
 
 ```bash
