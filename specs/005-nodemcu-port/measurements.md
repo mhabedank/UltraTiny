@@ -15,9 +15,24 @@ table.
 Legacy ESP32 firmware (T011): builds in the CI `firmware` job (ESP-IDF v5.4.1); `ut_model` grows
 by 256 B (meta copy), well inside its static DRAM (112,516 / 180,736 B before the change).
 
-## NodeMCU model (T015)
+## NodeMCU model (T015, T016)
 
-_Filled in after training._
+`uv run ut pipeline --config configs/nodemcu.toml --out runs/nodemcu --device cpu`, seed 1234,
+3000 steps, 4 CPU threads, 725 s.
+
+| Item | Value | Target |
+|------|-------|--------|
+| Parameters | 583,296 (4 × 128, MQA, d_ff 384, ctx 104) | |
+| Train examples | 8,137 | |
+| Demo accuracy (quantized reference) | **100 %** (33/33) | ≥ 80 % (SC-002) |
+| Held-out phrasings (quantized reference) | **70.0 %** (450 prompts) | ≥ 60 % (SC-002) |
+| Model file | 601,404 B | model area 688,128 B (87.4 %) |
+| Arena | 35,504 B | 40,960 B (86.7 %); firmware buffer 36,864 B |
+| Host parity (`utiny-host --golden models/nodemcu_golden.json`) | 24 cases, 888 steps, all bit-identical (normal and alignment-checked build) | |
+
+Held-out is lower than the starter model's 80.8 % (ctx 256), but above the spec threshold. The
+cause was not investigated; the training data also changed (NodeMCU self-description facts, 0.6 %
+of the pairs no longer fit the context).
 
 ## NodeMCU firmware build (T026)
 
@@ -26,7 +41,7 @@ PlatformIO `espressif8266@4.2.1` (Arduino core 3.1.2, GCC 10.3), `-O2`, 160 MHz,
 
 | Item | Value | Budget |
 |------|-------|--------|
-| `firmware.bin` | 292,928 B | firmware area 360,448 B (81.3 %) |
+| `firmware.bin` | 293,232 B | firmware area 360,448 B (81.4 %) |
 | Static DRAM (`.data` + `.rodata` + `.bss`) | 74,944 B | 81,920 B DRAM in total |
 | of which arena / console / `ut_model` | 36,864 / 4,176 / 2,008 B | |
 | Heap left at boot (estimate: DRAM − static) | ~7 KB | measured by T028 via `/stats` |

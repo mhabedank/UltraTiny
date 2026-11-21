@@ -1,34 +1,56 @@
 # UltraTiny
 
-Ein kleines deutsches Sprachmodell, das **komplett offline auf einem klassischen ESP32** läuft
-(kein PSRAM, 4 MB Flash, 520 KB SRAM). Du tippst über die serielle Konsole eine Frage, der Chip
-schreibt die Antwort Buchstabe für Buchstabe zurück. Inspiriert von
-[Tiny-2.1](https://github.com/WollyMonjac/Tiny-2.1), das ein ähnliches Modell auf DOS-PCs bringt.
+Ein kleines deutsches Sprachmodell, das **komplett offline auf einer NodeMCU (ESP8266)** läuft –
+einem der kleinsten WLAN-Mikrocontroller (rund 80 KB RAM, keine FPU, 4 MB Flash). Du tippst über
+die serielle Konsole eine Frage, der Chip schreibt die Antwort Buchstabe für Buchstabe zurück.
+Ursprünglich für den klassischen ESP32 gebaut (Firmware dafür bleibt als Altbestand erhalten).
+Inspiriert von [Tiny-2.1](https://github.com/WollyMonjac/Tiny-2.1), das ein ähnliches Modell auf
+DOS-PCs bringt.
 
 ```text
-UltraTiny v0.1.0 — Sprachmodell offline auf dem ESP32
-Modell: starter | Format v1 | 602752 Parameter | 607 KB Flash | 79 KB RAM
+UltraTiny v0.1.0 — Sprachmodell offline auf dem Mikrocontroller
+Board: NodeMCU (ESP8266)
+Modell: nodemcu | Format v1 | 583296 Parameter | 588 KB Flash | 35 KB RAM
 Funk: aus. Tippe eine Frage und drücke Enter. /hilfe für Befehle.
+> Wer bist du?
+Ich bin UltraTiny, ein kleines Sprachmodell auf einer NodeMCU.
 > Was ist die Hauptstadt von Frankreich?
 Die Hauptstadt von Frankreich ist Paris.
-> Welches Element hat das Symbol Hg?
-Hg ist das Symbol von Quecksilber.
 ```
+
+(Antworten mit der PC-Runtime erzeugt, die bitgenau wie der Chip rechnet; die Messung auf dem
+Board steht in [`specs/005-nodemcu-port/measurements.md`](specs/005-nodemcu-port/measurements.md).)
 
 ## Wie es funktioniert
 
 | Teil | Inhalt |
 |------|--------|
 | Modell | Zeichenbasierter Transformer, 4 Schichten × 128, Multi-Query-Attention, ~0,6 Mio. Parameter |
-| Speicher | int8-Gewichte (Skala pro Zeile) in einer eigenen 2-MB-Flash-Partition, direkt aus dem Flash gelesen; ~78 KB statischer RAM (int8-KV-Cache) |
+| Speicher | int8-Gewichte (Skala pro Zeile) in einem eigenen Flash-Bereich, direkt aus dem Flash gelesen (auf dem ESP8266 nur in 32-Bit-Wörtern); NodeMCU: 588 KB Modell, 35 KB Arena (int8-KV-Cache, Kontext 104) |
 | Geschwindigkeit | Prompt wird schon beim Tippen verarbeitet; die Antwort startet direkt nach Enter |
 | Korrektheit | Eine NumPy-Referenz rechnet bit-genau wie der Chip; Golden-Vektoren prüfen PC und Board |
-| Wissen | Fester deutscher Wissensbestand (Hauptstädte, Elementsymbole, Fragen über den ESP32 selbst) |
+| Wissen | Fester deutscher Wissensbestand (Hauptstädte, Elementsymbole, Fragen über den Chip selbst) |
 
-Spezifikation, Plan und Aufgaben: [`specs/001-esp32-tiny-lm/`](specs/001-esp32-tiny-lm/) ·
+Spezifikation, Plan und Aufgaben: NodeMCU [`specs/005-nodemcu-port/`](specs/005-nodemcu-port/),
+ursprünglich ESP32 [`specs/001-esp32-tiny-lm/`](specs/001-esp32-tiny-lm/) ·
 Projektprinzipien: [`.specify/memory/constitution.md`](.specify/memory/constitution.md).
 
-## Schnellstart (fertiges Modell)
+## Schnellstart NodeMCU (fertiges Modell)
+
+Voraussetzungen: NodeMCU v2/v3 mit ESP8266 und 4 MB Flash, [PlatformIO](https://platformio.org/)
+(`pip install platformio`), `esptool.py` (`pip install esptool`), `make`.
+
+```bash
+esptool.py --port /dev/ttyUSB0 flash_id           # erwartet: ESP8266EX, 4MB
+make nodemcu-flash PORT=/dev/ttyUSB0              # Firmware bauen und flashen
+make nodemcu-flash-model PORT=/dev/ttyUSB0        # Modell models/nodemcu.utny nach 0x58000
+make nodemcu-monitor PORT=/dev/ttyUSB0            # Konsole, Strg-C beendet
+```
+
+Details, Treiber und Grenzen (Kontext 104 Zeichen, kein FPU, wenig RAM):
+[`firmware-nodemcu/README.md`](firmware-nodemcu/README.md).
+
+## Schnellstart ESP32 (Altbestand)
 
 Voraussetzungen: ESP32-Devboard (klassisch, 4 MB Flash), [ESP-IDF v5.4](https://docs.espressif.com/projects/esp-idf/),
 `make`.
@@ -50,7 +72,7 @@ Konsolenbefehle: `/hilfe`, `/info` (Speicher, Latenz, Zeichen/s), `/stats`, `/tr
 
 ```bash
 cmake -S runtime -B build && cmake --build build && ctest --test-dir build
-./build/utiny-host --model models/starter.utny --prompt "Wer bist du?"
+./build/utiny-host --model models/nodemcu.utny --prompt "Wer bist du?"
 ```
 
 ## Im ESP32-Emulator (QEMU) ausprobieren
