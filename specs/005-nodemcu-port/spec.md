@@ -11,7 +11,7 @@
 **Clarifications (2026-11-21)**:
 - Purpose: a proof of concept that the UltraTiny language model (specs 001–003) runs fully offline on a NodeMCU board. The NodeMCU boards are already on hand.
 - Inference runs on the NodeMCU itself, not on a server.
-- PoC model: the **starter model** (~600k parameters, `configs/starter.toml`) with its context shortened to 96–128 characters. The Chemielehrer (1.75 M parameters) is out of scope for this PoC.
+- PoC model: the **starter model** (~600k parameters, `configs/starter.toml`) with its context shortened to **104 characters** (plan research R4: the largest context that keeps 10 % arena headroom). The Chemielehrer (1.75 M parameters) is out of scope for this PoC.
 - ESP32 is no longer the target board for new work (constitution v2.0.0).
 
 ## Target Board and Budgets *(constitution Principle I)*
@@ -19,7 +19,7 @@
 | Item | ESP32 (legacy, spec 001) | NodeMCU (constitution v2.0.0 defaults) |
 |------|------------------------|-------------------------|
 | Board | classic ESP32, 520 KB SRAM, 4 MB flash, FPU | NodeMCU v2/v3: ESP8266, ~80 KB data RAM, 4 MB flash, **no FPU** |
-| Model file | ≤ 2 MB | **≤ 700 KB** |
+| Model file | ≤ 2 MB | **≤ 700 KB** (effectively ≤ 672 KB: the size of the model area in the flash layout) |
 | Firmware + model, readable in place | – | together ≤ the board's directly readable flash window (1 MB) |
 | Inference working memory | ≤ 128 KB | **≤ 40 KB** |
 | PSRAM | none | none |
@@ -81,7 +81,7 @@ A developer runs the existing parity check against the NodeMCU board and confirm
 
 ### Edge Cases
 
-- Prompt plus answer longer than the shortened context (96–128 characters): the board stops the answer cleanly at the context limit, or uses only the most recent part of the prompt that fits and says so once; it never crashes.
+- Prompt plus answer longer than the shortened context (104 characters): the board stops the answer cleanly at the context limit, or uses only the most recent part of the prompt that fits and says so once; it never crashes.
 - A model file too big for the board's directly readable flash window, or needing more working memory than the budget: the board prints a clear error at boot and does not reboot-loop.
 - The board's watchdog during a long answer: generation never triggers a watchdog reset.
 - Empty input, characters outside the alphabet, typing during an answer, and the abort key behave as in spec 001.
@@ -94,7 +94,7 @@ A developer runs the existing parity check against the NodeMCU board and confirm
 
 - **FR-001**: The NodeMCU (ESP8266, 4 MB flash) MUST be a supported target board, running the complete model locally with Wi-Fi off.
 - **FR-002**: The serial console behaviour of spec 001 (prompt in, streamed answer out, German including umlauts and ß, banner, abort key, deterministic output, empty-input and unknown-character handling) MUST work the same on the NodeMCU.
-- **FR-003**: The project MUST provide a NodeMCU model configuration derived from the starter model with a context of 96–128 characters, trained on the starter knowledge base. The context MUST be chosen so that the working-memory budget keeps its 10 % headroom (expected: about 96–112 characters; 128 characters needs ~42.5 KB and exceeds the 40 KB budget).
+- **FR-003**: The project MUST provide a NodeMCU model configuration derived from the starter model with a context of 104 characters, trained on the starter knowledge base. This is the largest context that keeps the 10 % working-memory headroom (104 → 35,520 B of 40 KB; 112 would leave only 7.6 %, 128 needs ~42.5 KB and exceeds the budget).
 - **FR-004**: The PoC model and firmware MUST meet the constitution's NodeMCU default budgets (see "Target Board and Budgets"), with at least 10 % headroom on each memory budget.
 - **FR-005**: The budget report MUST check models against the NodeMCU default budgets (replacing the ESP32 budgets of 2 MB model and 128 KB working memory) and fail when one is exceeded.
 - **FR-006**: The maximum answer length MUST be limited so that prompt and answer together fit the shortened context.
@@ -130,5 +130,5 @@ A developer runs the existing parity check against the NodeMCU board and confirm
 - The portable C runtime (`runtime/`) can be reused unchanged or with small platform adjustments; the ESP-IDF firmware for the ESP32 cannot be reused directly and needs a NodeMCU counterpart.
 - Floating-point maths runs in software on the ESP8266. The speed targets above are estimates for the starter model and will be confirmed by measurement; if they can't be met, the plan records the measured values and the reason.
 - Emulated testing (QEMU) as used for the ESP32 is not available for the ESP8266; hardware parity is checked on a real board.
-- Losing context length (from 256 to 96–128 characters) lowers the maximum prompt and answer length; the starter knowledge base has short questions and answers, so this is acceptable for the PoC.
+- Losing context length (from 256 to 104 characters) lowers the maximum prompt and answer length; the starter knowledge base has short questions and answers, so this is acceptable for the PoC.
 - The Chemielehrer model (spec 003) stays ESP32-sized and is not part of this PoC.

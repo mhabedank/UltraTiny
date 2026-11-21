@@ -35,4 +35,5 @@
 - Budgets are derived from `tools/budget_report.py` (arena formula) and `configs/starter.toml`: starter at context 128 needs ~42.5 KB arena, at context 96 ~33 KB; model file ~600 KB.
 - Replaces the earlier draft `specs/001-nodemcu-platform` (written before the existing code on `claude/modest-sagan-xrovbt` was found).
 - Iteration 2 (2026-11-21): aligned with constitution v2.0.0 — NodeMCU budgets are now the project defaults, not a per-feature amendment; FR-004/FR-005 reference the defaults. All items still pass.
+- Iteration 3 (2026-11-21, after /speckit-analyze): context fixed at 104 characters (was 96–128); effective model limit 672 KB noted. All items still pass.
 - Items marked incomplete require spec updates before `/speckit-clarify` or `/speckit-plan`
