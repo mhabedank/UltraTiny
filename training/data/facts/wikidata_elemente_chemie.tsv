@@ -1,0 +1,975 @@
+id	topic	relation	subject	object	source
+wd/Q1038/atommasse	chemie	element_atommasse	Zirconium	91,22	wikidata:Q1038
+wd/Q1046/atommasse	chemie	element_atommasse	Niob	92,91	wikidata:Q1046
+wd/Q1053/atommasse	chemie	element_atommasse	Molybdän	95,95	wikidata:Q1053
+wd/Q1054/atommasse	chemie	element_atommasse	Technetium	97,91	wikidata:Q1054
+wd/Q1086/atommasse	chemie	element_atommasse	Ruthenium	101,07	wikidata:Q1086
+wd/Q1087/atommasse	chemie	element_atommasse	Rhodium	102,91	wikidata:Q1087
+wd/Q1089/atommasse	chemie	element_atommasse	Palladium	106,42	wikidata:Q1089
+wd/Q1090/atommasse	chemie	element_atommasse	Silber	107,87	wikidata:Q1090
+wd/Q1091/atommasse	chemie	element_atommasse	Cadmium	112,41	wikidata:Q1091
+wd/Q1094/atommasse	chemie	element_atommasse	Indium	114,82	wikidata:Q1094
+wd/Q1096/atommasse	chemie	element_atommasse	Zinn	118,71	wikidata:Q1096
+wd/Q1098/atommasse	chemie	element_atommasse	Uran	238,03	wikidata:Q1098
+wd/Q1099/atommasse	chemie	element_atommasse	Antimon	121,76	wikidata:Q1099
+wd/Q1100/atommasse	chemie	element_atommasse	Tellur	127,60	wikidata:Q1100
+wd/Q1102/atommasse	chemie	element_atommasse	Plutonium	244,06	wikidata:Q1102
+wd/Q1103/atommasse	chemie	element_atommasse	Iod	126,90	wikidata:Q1103
+wd/Q1105/atommasse	chemie	element_atommasse	Neptunium	237,05	wikidata:Q1105
+wd/Q1106/atommasse	chemie	element_atommasse	Xenon	131,29	wikidata:Q1106
+wd/Q1108/atommasse	chemie	element_atommasse	Caesium	132,91	wikidata:Q1108
+wd/Q1109/atommasse	chemie	element_atommasse	Protactinium	231,04	wikidata:Q1109
+wd/Q1112/atommasse	chemie	element_atommasse	Barium	137,33	wikidata:Q1112
+wd/Q1115/atommasse	chemie	element_atommasse	Thorium	232,04	wikidata:Q1115
+wd/Q1119/atommasse	chemie	element_atommasse	Hafnium	178,49	wikidata:Q1119
+wd/Q1121/atommasse	chemie	element_atommasse	Actinium	227,03	wikidata:Q1121
+wd/Q1123/atommasse	chemie	element_atommasse	Tantal	180,95	wikidata:Q1123
+wd/Q1128/atommasse	chemie	element_atommasse	Radium	226,03	wikidata:Q1128
+wd/Q1133/atommasse	chemie	element_atommasse	Radon	222,02	wikidata:Q1133
+wd/Q1226/atommasse	chemie	element_atommasse	Rutherfordium	267	wikidata:Q1226
+wd/Q1232/atommasse	chemie	element_atommasse	Dubnium	268	wikidata:Q1232
+wd/Q1234/atommasse	chemie	element_atommasse	Seaborgium	267	wikidata:Q1234
+wd/Q1249/atommasse	chemie	element_atommasse	Bohrium	270	wikidata:Q1249
+wd/Q1252/atommasse	chemie	element_atommasse	Hassium	271	wikidata:Q1252
+wd/Q1258/atommasse	chemie	element_atommasse	Meitnerium	278	wikidata:Q1258
+wd/Q1266/atommasse	chemie	element_atommasse	Darmstadtium	281	wikidata:Q1266
+wd/Q1272/atommasse	chemie	element_atommasse	Roentgenium	282	wikidata:Q1272
+wd/Q1278/atommasse	chemie	element_atommasse	Copernicium	285	wikidata:Q1278
+wd/Q1301/atommasse	chemie	element_atommasse	Nihonium	286	wikidata:Q1301
+wd/Q1302/atommasse	chemie	element_atommasse	Flerovium	289	wikidata:Q1302
+wd/Q1303/atommasse	chemie	element_atommasse	Moscovium	290	wikidata:Q1303
+wd/Q1304/atommasse	chemie	element_atommasse	Livermorium	293	wikidata:Q1304
+wd/Q1306/atommasse	chemie	element_atommasse	Tenness	294	wikidata:Q1306
+wd/Q1307/atommasse	chemie	element_atommasse	Oganesson	294	wikidata:Q1307
+wd/Q1385/atommasse	chemie	element_atommasse	Cer	140,12	wikidata:Q1385
+wd/Q1386/atommasse	chemie	element_atommasse	Praseodym	140,91	wikidata:Q1386
+wd/Q1388/atommasse	chemie	element_atommasse	Neodym	144,24	wikidata:Q1388
+wd/Q1396/atommasse	chemie	element_atommasse	Europium	151,96	wikidata:Q1396
+wd/Q1801/atommasse	chemie	element_atommasse	Lanthan	138,91	wikidata:Q1801
+wd/Q1809/atommasse	chemie	element_atommasse	Promethium	144,91	wikidata:Q1809
+wd/Q1819/atommasse	chemie	element_atommasse	Samarium	150,36	wikidata:Q1819
+wd/Q1832/atommasse	chemie	element_atommasse	Gadolinium	157,25	wikidata:Q1832
+wd/Q1838/atommasse	chemie	element_atommasse	Terbium	158,93	wikidata:Q1838
+wd/Q1843/atommasse	chemie	element_atommasse	Dysprosium	162,50	wikidata:Q1843
+wd/Q1846/atommasse	chemie	element_atommasse	Holmium	164,93	wikidata:Q1846
+wd/Q1849/atommasse	chemie	element_atommasse	Erbium	167,26	wikidata:Q1849
+wd/Q1853/atommasse	chemie	element_atommasse	Thulium	168,93	wikidata:Q1853
+wd/Q1855/atommasse	chemie	element_atommasse	Ytterbium	173,05	wikidata:Q1855
+wd/Q1857/atommasse	chemie	element_atommasse	Lutetium	174,97	wikidata:Q1857
+wd/Q1872/atommasse	chemie	element_atommasse	Americium	243	wikidata:Q1872
+wd/Q1876/atommasse	chemie	element_atommasse	Curium	247	wikidata:Q1876
+wd/Q1882/atommasse	chemie	element_atommasse	Berkelium	247	wikidata:Q1882
+wd/Q1888/atommasse	chemie	element_atommasse	Californium	251	wikidata:Q1888
+wd/Q1892/atommasse	chemie	element_atommasse	Einsteinium	252	wikidata:Q1892
+wd/Q1896/atommasse	chemie	element_atommasse	Fermium	257	wikidata:Q1896
+wd/Q1898/atommasse	chemie	element_atommasse	Mendelevium	258	wikidata:Q1898
+wd/Q1901/atommasse	chemie	element_atommasse	Nobelium	259	wikidata:Q1901
+wd/Q1905/atommasse	chemie	element_atommasse	Lawrencium	266	wikidata:Q1905
+wd/Q556/atommasse	chemie	element_atommasse	Wasserstoff	1,01	wikidata:Q556
+wd/Q560/atommasse	chemie	element_atommasse	Helium	4,00	wikidata:Q560
+wd/Q568/atommasse	chemie	element_atommasse	Lithium	6,94	wikidata:Q568
+wd/Q569/atommasse	chemie	element_atommasse	Beryllium	9,01	wikidata:Q569
+wd/Q618/atommasse	chemie	element_atommasse	Bor	10,81	wikidata:Q618
+wd/Q623/atommasse	chemie	element_atommasse	Kohlenstoff	12,01	wikidata:Q623
+wd/Q627/atommasse	chemie	element_atommasse	Stickstoff	14,01	wikidata:Q627
+wd/Q629/atommasse	chemie	element_atommasse	Sauerstoff	16,00	wikidata:Q629
+wd/Q650/atommasse	chemie	element_atommasse	Fluor	19,00	wikidata:Q650
+wd/Q654/atommasse	chemie	element_atommasse	Neon	20,18	wikidata:Q654
+wd/Q658/atommasse	chemie	element_atommasse	Natrium	22,99	wikidata:Q658
+wd/Q660/atommasse	chemie	element_atommasse	Magnesium	24,31	wikidata:Q660
+wd/Q663/atommasse	chemie	element_atommasse	Aluminium	26,98	wikidata:Q663
+wd/Q670/atommasse	chemie	element_atommasse	Silicium	28,09	wikidata:Q670
+wd/Q671/atommasse	chemie	element_atommasse	Francium	223,02	wikidata:Q671
+wd/Q674/atommasse	chemie	element_atommasse	Phosphor	30,97	wikidata:Q674
+wd/Q677/atommasse	chemie	element_atommasse	Eisen	55,85	wikidata:Q677
+wd/Q682/atommasse	chemie	element_atommasse	Schwefel	32,06	wikidata:Q682
+wd/Q688/atommasse	chemie	element_atommasse	Chlor	35,45	wikidata:Q688
+wd/Q696/atommasse	chemie	element_atommasse	Argon	39,95	wikidata:Q696
+wd/Q703/atommasse	chemie	element_atommasse	Kalium	39,10	wikidata:Q703
+wd/Q706/atommasse	chemie	element_atommasse	Calcium	40,08	wikidata:Q706
+wd/Q708/atommasse	chemie	element_atommasse	Blei	207,20	wikidata:Q708
+wd/Q713/atommasse	chemie	element_atommasse	Scandium	44,96	wikidata:Q713
+wd/Q716/atommasse	chemie	element_atommasse	Titan	47,87	wikidata:Q716
+wd/Q722/atommasse	chemie	element_atommasse	Vanadium	50,94	wikidata:Q722
+wd/Q725/atommasse	chemie	element_atommasse	Chrom	52,00	wikidata:Q725
+wd/Q731/atommasse	chemie	element_atommasse	Mangan	54,94	wikidata:Q731
+wd/Q737/atommasse	chemie	element_atommasse	Rhenium	186,21	wikidata:Q737
+wd/Q740/atommasse	chemie	element_atommasse	Cobalt	58,93	wikidata:Q740
+wd/Q743/atommasse	chemie	element_atommasse	Wolfram	183,84	wikidata:Q743
+wd/Q744/atommasse	chemie	element_atommasse	Nickel	58,69	wikidata:Q744
+wd/Q751/atommasse	chemie	element_atommasse	Osmium	190,23	wikidata:Q751
+wd/Q753/atommasse	chemie	element_atommasse	Kupfer	63,55	wikidata:Q753
+wd/Q758/atommasse	chemie	element_atommasse	Zink	65,38	wikidata:Q758
+wd/Q861/atommasse	chemie	element_atommasse	Gallium	69,72	wikidata:Q861
+wd/Q867/atommasse	chemie	element_atommasse	Germanium	72,63	wikidata:Q867
+wd/Q871/atommasse	chemie	element_atommasse	Arsen	74,92	wikidata:Q871
+wd/Q876/atommasse	chemie	element_atommasse	Selen	78,97	wikidata:Q876
+wd/Q877/atommasse	chemie	element_atommasse	Iridium	192,22	wikidata:Q877
+wd/Q879/atommasse	chemie	element_atommasse	Brom	79,90	wikidata:Q879
+wd/Q880/atommasse	chemie	element_atommasse	Platin	195,08	wikidata:Q880
+wd/Q888/atommasse	chemie	element_atommasse	Krypton	83,80	wikidata:Q888
+wd/Q895/atommasse	chemie	element_atommasse	Rubidium	85,47	wikidata:Q895
+wd/Q897/atommasse	chemie	element_atommasse	Gold	196,97	wikidata:Q897
+wd/Q925/atommasse	chemie	element_atommasse	Quecksilber	200,59	wikidata:Q925
+wd/Q932/atommasse	chemie	element_atommasse	Thallium	204,38	wikidata:Q932
+wd/Q938/atommasse	chemie	element_atommasse	Strontium	87,62	wikidata:Q938
+wd/Q941/atommasse	chemie	element_atommasse	Yttrium	88,91	wikidata:Q941
+wd/Q942/atommasse	chemie	element_atommasse	Bismut	208,98	wikidata:Q942
+wd/Q979/atommasse	chemie	element_atommasse	Polonium	208,98	wikidata:Q979
+wd/Q999/atommasse	chemie	element_atommasse	Astat	209,99	wikidata:Q999
+wd/Q1098/familie	chemie	element_familie	Uran	Actinoiden	wikidata:Q1098
+wd/Q1100/familie	chemie	element_familie	Tellur	Chalkogenen	wikidata:Q1100
+wd/Q1102/familie	chemie	element_familie	Plutonium	Actinoiden	wikidata:Q1102
+wd/Q1103/familie	chemie	element_familie	Iod	Halogenen	wikidata:Q1103
+wd/Q1105/familie	chemie	element_familie	Neptunium	Actinoiden	wikidata:Q1105
+wd/Q1106/familie	chemie	element_familie	Xenon	Edelgasen	wikidata:Q1106
+wd/Q1108/familie	chemie	element_familie	Caesium	Alkalimetallen	wikidata:Q1108
+wd/Q1109/familie	chemie	element_familie	Protactinium	Actinoiden	wikidata:Q1109
+wd/Q1112/familie	chemie	element_familie	Barium	Erdalkalimetallen	wikidata:Q1112
+wd/Q1115/familie	chemie	element_familie	Thorium	Actinoiden	wikidata:Q1115
+wd/Q1121/familie	chemie	element_familie	Actinium	Actinoiden	wikidata:Q1121
+wd/Q1128/familie	chemie	element_familie	Radium	Erdalkalimetallen	wikidata:Q1128
+wd/Q1133/familie	chemie	element_familie	Radon	Edelgasen	wikidata:Q1133
+wd/Q1307/familie	chemie	element_familie	Oganesson	Edelgasen	wikidata:Q1307
+wd/Q1385/familie	chemie	element_familie	Cer	Lanthanoiden	wikidata:Q1385
+wd/Q1386/familie	chemie	element_familie	Praseodym	Lanthanoiden	wikidata:Q1386
+wd/Q1388/familie	chemie	element_familie	Neodym	Lanthanoiden	wikidata:Q1388
+wd/Q1396/familie	chemie	element_familie	Europium	Lanthanoiden	wikidata:Q1396
+wd/Q1801/familie	chemie	element_familie	Lanthan	Lanthanoiden	wikidata:Q1801
+wd/Q1809/familie	chemie	element_familie	Promethium	Lanthanoiden	wikidata:Q1809
+wd/Q1819/familie	chemie	element_familie	Samarium	Lanthanoiden	wikidata:Q1819
+wd/Q1832/familie	chemie	element_familie	Gadolinium	Lanthanoiden	wikidata:Q1832
+wd/Q1838/familie	chemie	element_familie	Terbium	Lanthanoiden	wikidata:Q1838
+wd/Q1843/familie	chemie	element_familie	Dysprosium	Lanthanoiden	wikidata:Q1843
+wd/Q1846/familie	chemie	element_familie	Holmium	Lanthanoiden	wikidata:Q1846
+wd/Q1849/familie	chemie	element_familie	Erbium	Lanthanoiden	wikidata:Q1849
+wd/Q1853/familie	chemie	element_familie	Thulium	Lanthanoiden	wikidata:Q1853
+wd/Q1855/familie	chemie	element_familie	Ytterbium	Lanthanoiden	wikidata:Q1855
+wd/Q1857/familie	chemie	element_familie	Lutetium	Lanthanoiden	wikidata:Q1857
+wd/Q1872/familie	chemie	element_familie	Americium	Actinoiden	wikidata:Q1872
+wd/Q1876/familie	chemie	element_familie	Curium	Actinoiden	wikidata:Q1876
+wd/Q1882/familie	chemie	element_familie	Berkelium	Actinoiden	wikidata:Q1882
+wd/Q1888/familie	chemie	element_familie	Californium	Actinoiden	wikidata:Q1888
+wd/Q1892/familie	chemie	element_familie	Einsteinium	Actinoiden	wikidata:Q1892
+wd/Q1896/familie	chemie	element_familie	Fermium	Actinoiden	wikidata:Q1896
+wd/Q1898/familie	chemie	element_familie	Mendelevium	Actinoiden	wikidata:Q1898
+wd/Q1901/familie	chemie	element_familie	Nobelium	Actinoiden	wikidata:Q1901
+wd/Q1905/familie	chemie	element_familie	Lawrencium	Actinoiden	wikidata:Q1905
+wd/Q560/familie	chemie	element_familie	Helium	Edelgasen	wikidata:Q560
+wd/Q568/familie	chemie	element_familie	Lithium	Alkalimetallen	wikidata:Q568
+wd/Q569/familie	chemie	element_familie	Beryllium	Erdalkalimetallen	wikidata:Q569
+wd/Q629/familie	chemie	element_familie	Sauerstoff	Chalkogenen	wikidata:Q629
+wd/Q650/familie	chemie	element_familie	Fluor	Halogenen	wikidata:Q650
+wd/Q654/familie	chemie	element_familie	Neon	Edelgasen	wikidata:Q654
+wd/Q658/familie	chemie	element_familie	Natrium	Alkalimetallen	wikidata:Q658
+wd/Q660/familie	chemie	element_familie	Magnesium	Erdalkalimetallen	wikidata:Q660
+wd/Q671/familie	chemie	element_familie	Francium	Alkalimetallen	wikidata:Q671
+wd/Q682/familie	chemie	element_familie	Schwefel	Chalkogenen	wikidata:Q682
+wd/Q688/familie	chemie	element_familie	Chlor	Halogenen	wikidata:Q688
+wd/Q696/familie	chemie	element_familie	Argon	Edelgasen	wikidata:Q696
+wd/Q703/familie	chemie	element_familie	Kalium	Alkalimetallen	wikidata:Q703
+wd/Q706/familie	chemie	element_familie	Calcium	Erdalkalimetallen	wikidata:Q706
+wd/Q876/familie	chemie	element_familie	Selen	Chalkogenen	wikidata:Q876
+wd/Q879/familie	chemie	element_familie	Brom	Halogenen	wikidata:Q879
+wd/Q888/familie	chemie	element_familie	Krypton	Edelgasen	wikidata:Q888
+wd/Q895/familie	chemie	element_familie	Rubidium	Alkalimetallen	wikidata:Q895
+wd/Q938/familie	chemie	element_familie	Strontium	Erdalkalimetallen	wikidata:Q938
+wd/Q979/familie	chemie	element_familie	Polonium	Chalkogenen	wikidata:Q979
+wd/Q999/familie	chemie	element_familie	Astat	Halogenen	wikidata:Q999
+wd/Q1038/gruppe	chemie	element_gruppe	Zirconium	der 4. Gruppe, einer Nebengruppe	wikidata:Q1038
+wd/Q1046/gruppe	chemie	element_gruppe	Niob	der 5. Gruppe, einer Nebengruppe	wikidata:Q1046
+wd/Q1053/gruppe	chemie	element_gruppe	Molybdän	der 6. Gruppe, einer Nebengruppe	wikidata:Q1053
+wd/Q1054/gruppe	chemie	element_gruppe	Technetium	der 7. Gruppe, einer Nebengruppe	wikidata:Q1054
+wd/Q1086/gruppe	chemie	element_gruppe	Ruthenium	der 8. Gruppe, einer Nebengruppe	wikidata:Q1086
+wd/Q1087/gruppe	chemie	element_gruppe	Rhodium	der 9. Gruppe, einer Nebengruppe	wikidata:Q1087
+wd/Q1089/gruppe	chemie	element_gruppe	Palladium	der 10. Gruppe, einer Nebengruppe	wikidata:Q1089
+wd/Q1090/gruppe	chemie	element_gruppe	Silber	der 11. Gruppe, einer Nebengruppe	wikidata:Q1090
+wd/Q1091/gruppe	chemie	element_gruppe	Cadmium	der 12. Gruppe, einer Nebengruppe	wikidata:Q1091
+wd/Q1094/gruppe	chemie	element_gruppe	Indium	der 3. Hauptgruppe	wikidata:Q1094
+wd/Q1096/gruppe	chemie	element_gruppe	Zinn	der 4. Hauptgruppe	wikidata:Q1096
+wd/Q1098/gruppe	chemie	element_gruppe	Uran	der Gruppe der Actinoide	wikidata:Q1098
+wd/Q1099/gruppe	chemie	element_gruppe	Antimon	der 5. Hauptgruppe	wikidata:Q1099
+wd/Q1100/gruppe	chemie	element_gruppe	Tellur	der 6. Hauptgruppe	wikidata:Q1100
+wd/Q1102/gruppe	chemie	element_gruppe	Plutonium	der Gruppe der Actinoide	wikidata:Q1102
+wd/Q1103/gruppe	chemie	element_gruppe	Iod	der 7. Hauptgruppe	wikidata:Q1103
+wd/Q1105/gruppe	chemie	element_gruppe	Neptunium	der Gruppe der Actinoide	wikidata:Q1105
+wd/Q1106/gruppe	chemie	element_gruppe	Xenon	der 8. Hauptgruppe	wikidata:Q1106
+wd/Q1108/gruppe	chemie	element_gruppe	Caesium	der 1. Hauptgruppe	wikidata:Q1108
+wd/Q1109/gruppe	chemie	element_gruppe	Protactinium	der Gruppe der Actinoide	wikidata:Q1109
+wd/Q1112/gruppe	chemie	element_gruppe	Barium	der 2. Hauptgruppe	wikidata:Q1112
+wd/Q1115/gruppe	chemie	element_gruppe	Thorium	der Gruppe der Actinoide	wikidata:Q1115
+wd/Q1119/gruppe	chemie	element_gruppe	Hafnium	der 4. Gruppe, einer Nebengruppe	wikidata:Q1119
+wd/Q1121/gruppe	chemie	element_gruppe	Actinium	der Gruppe der Actinoide	wikidata:Q1121
+wd/Q1123/gruppe	chemie	element_gruppe	Tantal	der 5. Gruppe, einer Nebengruppe	wikidata:Q1123
+wd/Q1128/gruppe	chemie	element_gruppe	Radium	der 2. Hauptgruppe	wikidata:Q1128
+wd/Q1133/gruppe	chemie	element_gruppe	Radon	der 8. Hauptgruppe	wikidata:Q1133
+wd/Q1226/gruppe	chemie	element_gruppe	Rutherfordium	der 4. Gruppe, einer Nebengruppe	wikidata:Q1226
+wd/Q1232/gruppe	chemie	element_gruppe	Dubnium	der 5. Gruppe, einer Nebengruppe	wikidata:Q1232
+wd/Q1234/gruppe	chemie	element_gruppe	Seaborgium	der 6. Gruppe, einer Nebengruppe	wikidata:Q1234
+wd/Q1249/gruppe	chemie	element_gruppe	Bohrium	der 7. Gruppe, einer Nebengruppe	wikidata:Q1249
+wd/Q1252/gruppe	chemie	element_gruppe	Hassium	der 8. Gruppe, einer Nebengruppe	wikidata:Q1252
+wd/Q1258/gruppe	chemie	element_gruppe	Meitnerium	der 9. Gruppe, einer Nebengruppe	wikidata:Q1258
+wd/Q1266/gruppe	chemie	element_gruppe	Darmstadtium	der 10. Gruppe, einer Nebengruppe	wikidata:Q1266
+wd/Q1272/gruppe	chemie	element_gruppe	Roentgenium	der 11. Gruppe, einer Nebengruppe	wikidata:Q1272
+wd/Q1278/gruppe	chemie	element_gruppe	Copernicium	der 12. Gruppe, einer Nebengruppe	wikidata:Q1278
+wd/Q1301/gruppe	chemie	element_gruppe	Nihonium	der 3. Hauptgruppe	wikidata:Q1301
+wd/Q1302/gruppe	chemie	element_gruppe	Flerovium	der 4. Hauptgruppe	wikidata:Q1302
+wd/Q1303/gruppe	chemie	element_gruppe	Moscovium	der 5. Hauptgruppe	wikidata:Q1303
+wd/Q1304/gruppe	chemie	element_gruppe	Livermorium	der 6. Hauptgruppe	wikidata:Q1304
+wd/Q1306/gruppe	chemie	element_gruppe	Tenness	der 7. Hauptgruppe	wikidata:Q1306
+wd/Q1307/gruppe	chemie	element_gruppe	Oganesson	der 8. Hauptgruppe	wikidata:Q1307
+wd/Q1385/gruppe	chemie	element_gruppe	Cer	der Gruppe der Lanthanoide	wikidata:Q1385
+wd/Q1386/gruppe	chemie	element_gruppe	Praseodym	der Gruppe der Lanthanoide	wikidata:Q1386
+wd/Q1388/gruppe	chemie	element_gruppe	Neodym	der Gruppe der Lanthanoide	wikidata:Q1388
+wd/Q1396/gruppe	chemie	element_gruppe	Europium	der Gruppe der Lanthanoide	wikidata:Q1396
+wd/Q1801/gruppe	chemie	element_gruppe	Lanthan	der Gruppe der Lanthanoide	wikidata:Q1801
+wd/Q1809/gruppe	chemie	element_gruppe	Promethium	der Gruppe der Lanthanoide	wikidata:Q1809
+wd/Q1819/gruppe	chemie	element_gruppe	Samarium	der Gruppe der Lanthanoide	wikidata:Q1819
+wd/Q1832/gruppe	chemie	element_gruppe	Gadolinium	der Gruppe der Lanthanoide	wikidata:Q1832
+wd/Q1838/gruppe	chemie	element_gruppe	Terbium	der Gruppe der Lanthanoide	wikidata:Q1838
+wd/Q1843/gruppe	chemie	element_gruppe	Dysprosium	der Gruppe der Lanthanoide	wikidata:Q1843
+wd/Q1846/gruppe	chemie	element_gruppe	Holmium	der Gruppe der Lanthanoide	wikidata:Q1846
+wd/Q1849/gruppe	chemie	element_gruppe	Erbium	der Gruppe der Lanthanoide	wikidata:Q1849
+wd/Q1853/gruppe	chemie	element_gruppe	Thulium	der Gruppe der Lanthanoide	wikidata:Q1853
+wd/Q1855/gruppe	chemie	element_gruppe	Ytterbium	der Gruppe der Lanthanoide	wikidata:Q1855
+wd/Q1857/gruppe	chemie	element_gruppe	Lutetium	der Gruppe der Lanthanoide	wikidata:Q1857
+wd/Q1872/gruppe	chemie	element_gruppe	Americium	der Gruppe der Actinoide	wikidata:Q1872
+wd/Q1876/gruppe	chemie	element_gruppe	Curium	der Gruppe der Actinoide	wikidata:Q1876
+wd/Q1882/gruppe	chemie	element_gruppe	Berkelium	der Gruppe der Actinoide	wikidata:Q1882
+wd/Q1888/gruppe	chemie	element_gruppe	Californium	der Gruppe der Actinoide	wikidata:Q1888
+wd/Q1892/gruppe	chemie	element_gruppe	Einsteinium	der Gruppe der Actinoide	wikidata:Q1892
+wd/Q1896/gruppe	chemie	element_gruppe	Fermium	der Gruppe der Actinoide	wikidata:Q1896
+wd/Q1898/gruppe	chemie	element_gruppe	Mendelevium	der Gruppe der Actinoide	wikidata:Q1898
+wd/Q1901/gruppe	chemie	element_gruppe	Nobelium	der Gruppe der Actinoide	wikidata:Q1901
+wd/Q1905/gruppe	chemie	element_gruppe	Lawrencium	der Gruppe der Actinoide	wikidata:Q1905
+wd/Q556/gruppe	chemie	element_gruppe	Wasserstoff	der 1. Hauptgruppe	wikidata:Q556
+wd/Q560/gruppe	chemie	element_gruppe	Helium	der 8. Hauptgruppe	wikidata:Q560
+wd/Q568/gruppe	chemie	element_gruppe	Lithium	der 1. Hauptgruppe	wikidata:Q568
+wd/Q569/gruppe	chemie	element_gruppe	Beryllium	der 2. Hauptgruppe	wikidata:Q569
+wd/Q618/gruppe	chemie	element_gruppe	Bor	der 3. Hauptgruppe	wikidata:Q618
+wd/Q623/gruppe	chemie	element_gruppe	Kohlenstoff	der 4. Hauptgruppe	wikidata:Q623
+wd/Q627/gruppe	chemie	element_gruppe	Stickstoff	der 5. Hauptgruppe	wikidata:Q627
+wd/Q629/gruppe	chemie	element_gruppe	Sauerstoff	der 6. Hauptgruppe	wikidata:Q629
+wd/Q650/gruppe	chemie	element_gruppe	Fluor	der 7. Hauptgruppe	wikidata:Q650
+wd/Q654/gruppe	chemie	element_gruppe	Neon	der 8. Hauptgruppe	wikidata:Q654
+wd/Q658/gruppe	chemie	element_gruppe	Natrium	der 1. Hauptgruppe	wikidata:Q658
+wd/Q660/gruppe	chemie	element_gruppe	Magnesium	der 2. Hauptgruppe	wikidata:Q660
+wd/Q663/gruppe	chemie	element_gruppe	Aluminium	der 3. Hauptgruppe	wikidata:Q663
+wd/Q670/gruppe	chemie	element_gruppe	Silicium	der 4. Hauptgruppe	wikidata:Q670
+wd/Q671/gruppe	chemie	element_gruppe	Francium	der 1. Hauptgruppe	wikidata:Q671
+wd/Q674/gruppe	chemie	element_gruppe	Phosphor	der 5. Hauptgruppe	wikidata:Q674
+wd/Q677/gruppe	chemie	element_gruppe	Eisen	der 8. Gruppe, einer Nebengruppe	wikidata:Q677
+wd/Q682/gruppe	chemie	element_gruppe	Schwefel	der 6. Hauptgruppe	wikidata:Q682
+wd/Q688/gruppe	chemie	element_gruppe	Chlor	der 7. Hauptgruppe	wikidata:Q688
+wd/Q696/gruppe	chemie	element_gruppe	Argon	der 8. Hauptgruppe	wikidata:Q696
+wd/Q703/gruppe	chemie	element_gruppe	Kalium	der 1. Hauptgruppe	wikidata:Q703
+wd/Q706/gruppe	chemie	element_gruppe	Calcium	der 2. Hauptgruppe	wikidata:Q706
+wd/Q708/gruppe	chemie	element_gruppe	Blei	der 4. Hauptgruppe	wikidata:Q708
+wd/Q713/gruppe	chemie	element_gruppe	Scandium	der 3. Gruppe, einer Nebengruppe	wikidata:Q713
+wd/Q716/gruppe	chemie	element_gruppe	Titan	der 4. Gruppe, einer Nebengruppe	wikidata:Q716
+wd/Q722/gruppe	chemie	element_gruppe	Vanadium	der 5. Gruppe, einer Nebengruppe	wikidata:Q722
+wd/Q725/gruppe	chemie	element_gruppe	Chrom	der 6. Gruppe, einer Nebengruppe	wikidata:Q725
+wd/Q731/gruppe	chemie	element_gruppe	Mangan	der 7. Gruppe, einer Nebengruppe	wikidata:Q731
+wd/Q737/gruppe	chemie	element_gruppe	Rhenium	der 7. Gruppe, einer Nebengruppe	wikidata:Q737
+wd/Q740/gruppe	chemie	element_gruppe	Cobalt	der 9. Gruppe, einer Nebengruppe	wikidata:Q740
+wd/Q743/gruppe	chemie	element_gruppe	Wolfram	der 6. Gruppe, einer Nebengruppe	wikidata:Q743
+wd/Q744/gruppe	chemie	element_gruppe	Nickel	der 10. Gruppe, einer Nebengruppe	wikidata:Q744
+wd/Q751/gruppe	chemie	element_gruppe	Osmium	der 8. Gruppe, einer Nebengruppe	wikidata:Q751
+wd/Q753/gruppe	chemie	element_gruppe	Kupfer	der 11. Gruppe, einer Nebengruppe	wikidata:Q753
+wd/Q758/gruppe	chemie	element_gruppe	Zink	der 12. Gruppe, einer Nebengruppe	wikidata:Q758
+wd/Q861/gruppe	chemie	element_gruppe	Gallium	der 3. Hauptgruppe	wikidata:Q861
+wd/Q867/gruppe	chemie	element_gruppe	Germanium	der 4. Hauptgruppe	wikidata:Q867
+wd/Q871/gruppe	chemie	element_gruppe	Arsen	der 5. Hauptgruppe	wikidata:Q871
+wd/Q876/gruppe	chemie	element_gruppe	Selen	der 6. Hauptgruppe	wikidata:Q876
+wd/Q877/gruppe	chemie	element_gruppe	Iridium	der 9. Gruppe, einer Nebengruppe	wikidata:Q877
+wd/Q879/gruppe	chemie	element_gruppe	Brom	der 7. Hauptgruppe	wikidata:Q879
+wd/Q880/gruppe	chemie	element_gruppe	Platin	der 10. Gruppe, einer Nebengruppe	wikidata:Q880
+wd/Q888/gruppe	chemie	element_gruppe	Krypton	der 8. Hauptgruppe	wikidata:Q888
+wd/Q895/gruppe	chemie	element_gruppe	Rubidium	der 1. Hauptgruppe	wikidata:Q895
+wd/Q897/gruppe	chemie	element_gruppe	Gold	der 11. Gruppe, einer Nebengruppe	wikidata:Q897
+wd/Q925/gruppe	chemie	element_gruppe	Quecksilber	der 12. Gruppe, einer Nebengruppe	wikidata:Q925
+wd/Q932/gruppe	chemie	element_gruppe	Thallium	der 3. Hauptgruppe	wikidata:Q932
+wd/Q938/gruppe	chemie	element_gruppe	Strontium	der 2. Hauptgruppe	wikidata:Q938
+wd/Q941/gruppe	chemie	element_gruppe	Yttrium	der 3. Gruppe, einer Nebengruppe	wikidata:Q941
+wd/Q942/gruppe	chemie	element_gruppe	Bismut	der 5. Hauptgruppe	wikidata:Q942
+wd/Q979/gruppe	chemie	element_gruppe	Polonium	der 6. Hauptgruppe	wikidata:Q979
+wd/Q999/gruppe	chemie	element_gruppe	Astat	der 7. Hauptgruppe	wikidata:Q999
+wd/Q1038/kategorie	chemie	element_kategorie	Zirconium	Metall	wikidata:Q1038
+wd/Q1046/kategorie	chemie	element_kategorie	Niob	Metall	wikidata:Q1046
+wd/Q1053/kategorie	chemie	element_kategorie	Molybdän	Metall	wikidata:Q1053
+wd/Q1054/kategorie	chemie	element_kategorie	Technetium	Metall	wikidata:Q1054
+wd/Q1086/kategorie	chemie	element_kategorie	Ruthenium	Metall	wikidata:Q1086
+wd/Q1087/kategorie	chemie	element_kategorie	Rhodium	Metall	wikidata:Q1087
+wd/Q1089/kategorie	chemie	element_kategorie	Palladium	Metall	wikidata:Q1089
+wd/Q1090/kategorie	chemie	element_kategorie	Silber	Metall	wikidata:Q1090
+wd/Q1091/kategorie	chemie	element_kategorie	Cadmium	Metall	wikidata:Q1091
+wd/Q1094/kategorie	chemie	element_kategorie	Indium	Metall	wikidata:Q1094
+wd/Q1096/kategorie	chemie	element_kategorie	Zinn	Metall	wikidata:Q1096
+wd/Q1098/kategorie	chemie	element_kategorie	Uran	Metall	wikidata:Q1098
+wd/Q1099/kategorie	chemie	element_kategorie	Antimon	Halbmetall	wikidata:Q1099
+wd/Q1100/kategorie	chemie	element_kategorie	Tellur	Halbmetall	wikidata:Q1100
+wd/Q1102/kategorie	chemie	element_kategorie	Plutonium	Metall	wikidata:Q1102
+wd/Q1103/kategorie	chemie	element_kategorie	Iod	Nichtmetall	wikidata:Q1103
+wd/Q1105/kategorie	chemie	element_kategorie	Neptunium	Metall	wikidata:Q1105
+wd/Q1106/kategorie	chemie	element_kategorie	Xenon	Nichtmetall	wikidata:Q1106
+wd/Q1108/kategorie	chemie	element_kategorie	Caesium	Metall	wikidata:Q1108
+wd/Q1109/kategorie	chemie	element_kategorie	Protactinium	Metall	wikidata:Q1109
+wd/Q1112/kategorie	chemie	element_kategorie	Barium	Metall	wikidata:Q1112
+wd/Q1115/kategorie	chemie	element_kategorie	Thorium	Metall	wikidata:Q1115
+wd/Q1119/kategorie	chemie	element_kategorie	Hafnium	Metall	wikidata:Q1119
+wd/Q1121/kategorie	chemie	element_kategorie	Actinium	Metall	wikidata:Q1121
+wd/Q1123/kategorie	chemie	element_kategorie	Tantal	Metall	wikidata:Q1123
+wd/Q1128/kategorie	chemie	element_kategorie	Radium	Metall	wikidata:Q1128
+wd/Q1133/kategorie	chemie	element_kategorie	Radon	Nichtmetall	wikidata:Q1133
+wd/Q1385/kategorie	chemie	element_kategorie	Cer	Metall	wikidata:Q1385
+wd/Q1386/kategorie	chemie	element_kategorie	Praseodym	Metall	wikidata:Q1386
+wd/Q1388/kategorie	chemie	element_kategorie	Neodym	Metall	wikidata:Q1388
+wd/Q1396/kategorie	chemie	element_kategorie	Europium	Metall	wikidata:Q1396
+wd/Q1801/kategorie	chemie	element_kategorie	Lanthan	Metall	wikidata:Q1801
+wd/Q1809/kategorie	chemie	element_kategorie	Promethium	Metall	wikidata:Q1809
+wd/Q1819/kategorie	chemie	element_kategorie	Samarium	Metall	wikidata:Q1819
+wd/Q1832/kategorie	chemie	element_kategorie	Gadolinium	Metall	wikidata:Q1832
+wd/Q1838/kategorie	chemie	element_kategorie	Terbium	Metall	wikidata:Q1838
+wd/Q1843/kategorie	chemie	element_kategorie	Dysprosium	Metall	wikidata:Q1843
+wd/Q1846/kategorie	chemie	element_kategorie	Holmium	Metall	wikidata:Q1846
+wd/Q1849/kategorie	chemie	element_kategorie	Erbium	Metall	wikidata:Q1849
+wd/Q1853/kategorie	chemie	element_kategorie	Thulium	Metall	wikidata:Q1853
+wd/Q1855/kategorie	chemie	element_kategorie	Ytterbium	Metall	wikidata:Q1855
+wd/Q1857/kategorie	chemie	element_kategorie	Lutetium	Metall	wikidata:Q1857
+wd/Q1872/kategorie	chemie	element_kategorie	Americium	Metall	wikidata:Q1872
+wd/Q1876/kategorie	chemie	element_kategorie	Curium	Metall	wikidata:Q1876
+wd/Q1882/kategorie	chemie	element_kategorie	Berkelium	Metall	wikidata:Q1882
+wd/Q1888/kategorie	chemie	element_kategorie	Californium	Metall	wikidata:Q1888
+wd/Q1892/kategorie	chemie	element_kategorie	Einsteinium	Metall	wikidata:Q1892
+wd/Q1896/kategorie	chemie	element_kategorie	Fermium	Metall	wikidata:Q1896
+wd/Q1898/kategorie	chemie	element_kategorie	Mendelevium	Metall	wikidata:Q1898
+wd/Q1901/kategorie	chemie	element_kategorie	Nobelium	Metall	wikidata:Q1901
+wd/Q1905/kategorie	chemie	element_kategorie	Lawrencium	Metall	wikidata:Q1905
+wd/Q556/kategorie	chemie	element_kategorie	Wasserstoff	Nichtmetall	wikidata:Q556
+wd/Q560/kategorie	chemie	element_kategorie	Helium	Nichtmetall	wikidata:Q560
+wd/Q568/kategorie	chemie	element_kategorie	Lithium	Metall	wikidata:Q568
+wd/Q569/kategorie	chemie	element_kategorie	Beryllium	Metall	wikidata:Q569
+wd/Q618/kategorie	chemie	element_kategorie	Bor	Halbmetall	wikidata:Q618
+wd/Q623/kategorie	chemie	element_kategorie	Kohlenstoff	Nichtmetall	wikidata:Q623
+wd/Q627/kategorie	chemie	element_kategorie	Stickstoff	Nichtmetall	wikidata:Q627
+wd/Q629/kategorie	chemie	element_kategorie	Sauerstoff	Nichtmetall	wikidata:Q629
+wd/Q650/kategorie	chemie	element_kategorie	Fluor	Nichtmetall	wikidata:Q650
+wd/Q654/kategorie	chemie	element_kategorie	Neon	Nichtmetall	wikidata:Q654
+wd/Q658/kategorie	chemie	element_kategorie	Natrium	Metall	wikidata:Q658
+wd/Q660/kategorie	chemie	element_kategorie	Magnesium	Metall	wikidata:Q660
+wd/Q663/kategorie	chemie	element_kategorie	Aluminium	Metall	wikidata:Q663
+wd/Q670/kategorie	chemie	element_kategorie	Silicium	Halbmetall	wikidata:Q670
+wd/Q671/kategorie	chemie	element_kategorie	Francium	Metall	wikidata:Q671
+wd/Q674/kategorie	chemie	element_kategorie	Phosphor	Nichtmetall	wikidata:Q674
+wd/Q677/kategorie	chemie	element_kategorie	Eisen	Metall	wikidata:Q677
+wd/Q682/kategorie	chemie	element_kategorie	Schwefel	Nichtmetall	wikidata:Q682
+wd/Q688/kategorie	chemie	element_kategorie	Chlor	Nichtmetall	wikidata:Q688
+wd/Q696/kategorie	chemie	element_kategorie	Argon	Nichtmetall	wikidata:Q696
+wd/Q703/kategorie	chemie	element_kategorie	Kalium	Metall	wikidata:Q703
+wd/Q706/kategorie	chemie	element_kategorie	Calcium	Metall	wikidata:Q706
+wd/Q708/kategorie	chemie	element_kategorie	Blei	Metall	wikidata:Q708
+wd/Q713/kategorie	chemie	element_kategorie	Scandium	Metall	wikidata:Q713
+wd/Q716/kategorie	chemie	element_kategorie	Titan	Metall	wikidata:Q716
+wd/Q722/kategorie	chemie	element_kategorie	Vanadium	Metall	wikidata:Q722
+wd/Q725/kategorie	chemie	element_kategorie	Chrom	Metall	wikidata:Q725
+wd/Q731/kategorie	chemie	element_kategorie	Mangan	Metall	wikidata:Q731
+wd/Q737/kategorie	chemie	element_kategorie	Rhenium	Metall	wikidata:Q737
+wd/Q740/kategorie	chemie	element_kategorie	Cobalt	Metall	wikidata:Q740
+wd/Q743/kategorie	chemie	element_kategorie	Wolfram	Metall	wikidata:Q743
+wd/Q744/kategorie	chemie	element_kategorie	Nickel	Metall	wikidata:Q744
+wd/Q751/kategorie	chemie	element_kategorie	Osmium	Metall	wikidata:Q751
+wd/Q753/kategorie	chemie	element_kategorie	Kupfer	Metall	wikidata:Q753
+wd/Q758/kategorie	chemie	element_kategorie	Zink	Metall	wikidata:Q758
+wd/Q861/kategorie	chemie	element_kategorie	Gallium	Metall	wikidata:Q861
+wd/Q867/kategorie	chemie	element_kategorie	Germanium	Halbmetall	wikidata:Q867
+wd/Q871/kategorie	chemie	element_kategorie	Arsen	Halbmetall	wikidata:Q871
+wd/Q876/kategorie	chemie	element_kategorie	Selen	Nichtmetall	wikidata:Q876
+wd/Q877/kategorie	chemie	element_kategorie	Iridium	Metall	wikidata:Q877
+wd/Q879/kategorie	chemie	element_kategorie	Brom	Nichtmetall	wikidata:Q879
+wd/Q880/kategorie	chemie	element_kategorie	Platin	Metall	wikidata:Q880
+wd/Q888/kategorie	chemie	element_kategorie	Krypton	Nichtmetall	wikidata:Q888
+wd/Q895/kategorie	chemie	element_kategorie	Rubidium	Metall	wikidata:Q895
+wd/Q897/kategorie	chemie	element_kategorie	Gold	Metall	wikidata:Q897
+wd/Q925/kategorie	chemie	element_kategorie	Quecksilber	Metall	wikidata:Q925
+wd/Q932/kategorie	chemie	element_kategorie	Thallium	Metall	wikidata:Q932
+wd/Q938/kategorie	chemie	element_kategorie	Strontium	Metall	wikidata:Q938
+wd/Q941/kategorie	chemie	element_kategorie	Yttrium	Metall	wikidata:Q941
+wd/Q942/kategorie	chemie	element_kategorie	Bismut	Metall	wikidata:Q942
+wd/Q979/kategorie	chemie	element_kategorie	Polonium	Metall	wikidata:Q979
+wd/Q999/kategorie	chemie	element_kategorie	Astat	Metall	wikidata:Q999
+wd/Q1038/ordnungszahl	chemie	element_ordnungszahl	Zirconium	40	wikidata:Q1038
+wd/Q1046/ordnungszahl	chemie	element_ordnungszahl	Niob	41	wikidata:Q1046
+wd/Q1053/ordnungszahl	chemie	element_ordnungszahl	Molybdän	42	wikidata:Q1053
+wd/Q1054/ordnungszahl	chemie	element_ordnungszahl	Technetium	43	wikidata:Q1054
+wd/Q1086/ordnungszahl	chemie	element_ordnungszahl	Ruthenium	44	wikidata:Q1086
+wd/Q1087/ordnungszahl	chemie	element_ordnungszahl	Rhodium	45	wikidata:Q1087
+wd/Q1089/ordnungszahl	chemie	element_ordnungszahl	Palladium	46	wikidata:Q1089
+wd/Q1090/ordnungszahl	chemie	element_ordnungszahl	Silber	47	wikidata:Q1090
+wd/Q1091/ordnungszahl	chemie	element_ordnungszahl	Cadmium	48	wikidata:Q1091
+wd/Q1094/ordnungszahl	chemie	element_ordnungszahl	Indium	49	wikidata:Q1094
+wd/Q1096/ordnungszahl	chemie	element_ordnungszahl	Zinn	50	wikidata:Q1096
+wd/Q1098/ordnungszahl	chemie	element_ordnungszahl	Uran	92	wikidata:Q1098
+wd/Q1099/ordnungszahl	chemie	element_ordnungszahl	Antimon	51	wikidata:Q1099
+wd/Q1100/ordnungszahl	chemie	element_ordnungszahl	Tellur	52	wikidata:Q1100
+wd/Q1102/ordnungszahl	chemie	element_ordnungszahl	Plutonium	94	wikidata:Q1102
+wd/Q1103/ordnungszahl	chemie	element_ordnungszahl	Iod	53	wikidata:Q1103
+wd/Q1105/ordnungszahl	chemie	element_ordnungszahl	Neptunium	93	wikidata:Q1105
+wd/Q1106/ordnungszahl	chemie	element_ordnungszahl	Xenon	54	wikidata:Q1106
+wd/Q1108/ordnungszahl	chemie	element_ordnungszahl	Caesium	55	wikidata:Q1108
+wd/Q1109/ordnungszahl	chemie	element_ordnungszahl	Protactinium	91	wikidata:Q1109
+wd/Q1112/ordnungszahl	chemie	element_ordnungszahl	Barium	56	wikidata:Q1112
+wd/Q1115/ordnungszahl	chemie	element_ordnungszahl	Thorium	90	wikidata:Q1115
+wd/Q1119/ordnungszahl	chemie	element_ordnungszahl	Hafnium	72	wikidata:Q1119
+wd/Q1121/ordnungszahl	chemie	element_ordnungszahl	Actinium	89	wikidata:Q1121
+wd/Q1123/ordnungszahl	chemie	element_ordnungszahl	Tantal	73	wikidata:Q1123
+wd/Q1128/ordnungszahl	chemie	element_ordnungszahl	Radium	88	wikidata:Q1128
+wd/Q1133/ordnungszahl	chemie	element_ordnungszahl	Radon	86	wikidata:Q1133
+wd/Q1226/ordnungszahl	chemie	element_ordnungszahl	Rutherfordium	104	wikidata:Q1226
+wd/Q1232/ordnungszahl	chemie	element_ordnungszahl	Dubnium	105	wikidata:Q1232
+wd/Q1234/ordnungszahl	chemie	element_ordnungszahl	Seaborgium	106	wikidata:Q1234
+wd/Q1249/ordnungszahl	chemie	element_ordnungszahl	Bohrium	107	wikidata:Q1249
+wd/Q1252/ordnungszahl	chemie	element_ordnungszahl	Hassium	108	wikidata:Q1252
+wd/Q1258/ordnungszahl	chemie	element_ordnungszahl	Meitnerium	109	wikidata:Q1258
+wd/Q1266/ordnungszahl	chemie	element_ordnungszahl	Darmstadtium	110	wikidata:Q1266
+wd/Q1272/ordnungszahl	chemie	element_ordnungszahl	Roentgenium	111	wikidata:Q1272
+wd/Q1278/ordnungszahl	chemie	element_ordnungszahl	Copernicium	112	wikidata:Q1278
+wd/Q1301/ordnungszahl	chemie	element_ordnungszahl	Nihonium	113	wikidata:Q1301
+wd/Q1302/ordnungszahl	chemie	element_ordnungszahl	Flerovium	114	wikidata:Q1302
+wd/Q1303/ordnungszahl	chemie	element_ordnungszahl	Moscovium	115	wikidata:Q1303
+wd/Q1304/ordnungszahl	chemie	element_ordnungszahl	Livermorium	116	wikidata:Q1304
+wd/Q1306/ordnungszahl	chemie	element_ordnungszahl	Tenness	117	wikidata:Q1306
+wd/Q1307/ordnungszahl	chemie	element_ordnungszahl	Oganesson	118	wikidata:Q1307
+wd/Q1385/ordnungszahl	chemie	element_ordnungszahl	Cer	58	wikidata:Q1385
+wd/Q1386/ordnungszahl	chemie	element_ordnungszahl	Praseodym	59	wikidata:Q1386
+wd/Q1388/ordnungszahl	chemie	element_ordnungszahl	Neodym	60	wikidata:Q1388
+wd/Q1396/ordnungszahl	chemie	element_ordnungszahl	Europium	63	wikidata:Q1396
+wd/Q1801/ordnungszahl	chemie	element_ordnungszahl	Lanthan	57	wikidata:Q1801
+wd/Q1809/ordnungszahl	chemie	element_ordnungszahl	Promethium	61	wikidata:Q1809
+wd/Q1819/ordnungszahl	chemie	element_ordnungszahl	Samarium	62	wikidata:Q1819
+wd/Q1832/ordnungszahl	chemie	element_ordnungszahl	Gadolinium	64	wikidata:Q1832
+wd/Q1838/ordnungszahl	chemie	element_ordnungszahl	Terbium	65	wikidata:Q1838
+wd/Q1843/ordnungszahl	chemie	element_ordnungszahl	Dysprosium	66	wikidata:Q1843
+wd/Q1846/ordnungszahl	chemie	element_ordnungszahl	Holmium	67	wikidata:Q1846
+wd/Q1849/ordnungszahl	chemie	element_ordnungszahl	Erbium	68	wikidata:Q1849
+wd/Q1853/ordnungszahl	chemie	element_ordnungszahl	Thulium	69	wikidata:Q1853
+wd/Q1855/ordnungszahl	chemie	element_ordnungszahl	Ytterbium	70	wikidata:Q1855
+wd/Q1857/ordnungszahl	chemie	element_ordnungszahl	Lutetium	71	wikidata:Q1857
+wd/Q1872/ordnungszahl	chemie	element_ordnungszahl	Americium	95	wikidata:Q1872
+wd/Q1876/ordnungszahl	chemie	element_ordnungszahl	Curium	96	wikidata:Q1876
+wd/Q1882/ordnungszahl	chemie	element_ordnungszahl	Berkelium	97	wikidata:Q1882
+wd/Q1888/ordnungszahl	chemie	element_ordnungszahl	Californium	98	wikidata:Q1888
+wd/Q1892/ordnungszahl	chemie	element_ordnungszahl	Einsteinium	99	wikidata:Q1892
+wd/Q1896/ordnungszahl	chemie	element_ordnungszahl	Fermium	100	wikidata:Q1896
+wd/Q1898/ordnungszahl	chemie	element_ordnungszahl	Mendelevium	101	wikidata:Q1898
+wd/Q1901/ordnungszahl	chemie	element_ordnungszahl	Nobelium	102	wikidata:Q1901
+wd/Q1905/ordnungszahl	chemie	element_ordnungszahl	Lawrencium	103	wikidata:Q1905
+wd/Q556/ordnungszahl	chemie	element_ordnungszahl	Wasserstoff	1	wikidata:Q556
+wd/Q560/ordnungszahl	chemie	element_ordnungszahl	Helium	2	wikidata:Q560
+wd/Q568/ordnungszahl	chemie	element_ordnungszahl	Lithium	3	wikidata:Q568
+wd/Q569/ordnungszahl	chemie	element_ordnungszahl	Beryllium	4	wikidata:Q569
+wd/Q618/ordnungszahl	chemie	element_ordnungszahl	Bor	5	wikidata:Q618
+wd/Q623/ordnungszahl	chemie	element_ordnungszahl	Kohlenstoff	6	wikidata:Q623
+wd/Q627/ordnungszahl	chemie	element_ordnungszahl	Stickstoff	7	wikidata:Q627
+wd/Q629/ordnungszahl	chemie	element_ordnungszahl	Sauerstoff	8	wikidata:Q629
+wd/Q650/ordnungszahl	chemie	element_ordnungszahl	Fluor	9	wikidata:Q650
+wd/Q654/ordnungszahl	chemie	element_ordnungszahl	Neon	10	wikidata:Q654
+wd/Q658/ordnungszahl	chemie	element_ordnungszahl	Natrium	11	wikidata:Q658
+wd/Q660/ordnungszahl	chemie	element_ordnungszahl	Magnesium	12	wikidata:Q660
+wd/Q663/ordnungszahl	chemie	element_ordnungszahl	Aluminium	13	wikidata:Q663
+wd/Q670/ordnungszahl	chemie	element_ordnungszahl	Silicium	14	wikidata:Q670
+wd/Q671/ordnungszahl	chemie	element_ordnungszahl	Francium	87	wikidata:Q671
+wd/Q674/ordnungszahl	chemie	element_ordnungszahl	Phosphor	15	wikidata:Q674
+wd/Q677/ordnungszahl	chemie	element_ordnungszahl	Eisen	26	wikidata:Q677
+wd/Q682/ordnungszahl	chemie	element_ordnungszahl	Schwefel	16	wikidata:Q682
+wd/Q688/ordnungszahl	chemie	element_ordnungszahl	Chlor	17	wikidata:Q688
+wd/Q696/ordnungszahl	chemie	element_ordnungszahl	Argon	18	wikidata:Q696
+wd/Q703/ordnungszahl	chemie	element_ordnungszahl	Kalium	19	wikidata:Q703
+wd/Q706/ordnungszahl	chemie	element_ordnungszahl	Calcium	20	wikidata:Q706
+wd/Q708/ordnungszahl	chemie	element_ordnungszahl	Blei	82	wikidata:Q708
+wd/Q713/ordnungszahl	chemie	element_ordnungszahl	Scandium	21	wikidata:Q713
+wd/Q716/ordnungszahl	chemie	element_ordnungszahl	Titan	22	wikidata:Q716
+wd/Q722/ordnungszahl	chemie	element_ordnungszahl	Vanadium	23	wikidata:Q722
+wd/Q725/ordnungszahl	chemie	element_ordnungszahl	Chrom	24	wikidata:Q725
+wd/Q731/ordnungszahl	chemie	element_ordnungszahl	Mangan	25	wikidata:Q731
+wd/Q737/ordnungszahl	chemie	element_ordnungszahl	Rhenium	75	wikidata:Q737
+wd/Q740/ordnungszahl	chemie	element_ordnungszahl	Cobalt	27	wikidata:Q740
+wd/Q743/ordnungszahl	chemie	element_ordnungszahl	Wolfram	74	wikidata:Q743
+wd/Q744/ordnungszahl	chemie	element_ordnungszahl	Nickel	28	wikidata:Q744
+wd/Q751/ordnungszahl	chemie	element_ordnungszahl	Osmium	76	wikidata:Q751
+wd/Q753/ordnungszahl	chemie	element_ordnungszahl	Kupfer	29	wikidata:Q753
+wd/Q758/ordnungszahl	chemie	element_ordnungszahl	Zink	30	wikidata:Q758
+wd/Q861/ordnungszahl	chemie	element_ordnungszahl	Gallium	31	wikidata:Q861
+wd/Q867/ordnungszahl	chemie	element_ordnungszahl	Germanium	32	wikidata:Q867
+wd/Q871/ordnungszahl	chemie	element_ordnungszahl	Arsen	33	wikidata:Q871
+wd/Q876/ordnungszahl	chemie	element_ordnungszahl	Selen	34	wikidata:Q876
+wd/Q877/ordnungszahl	chemie	element_ordnungszahl	Iridium	77	wikidata:Q877
+wd/Q879/ordnungszahl	chemie	element_ordnungszahl	Brom	35	wikidata:Q879
+wd/Q880/ordnungszahl	chemie	element_ordnungszahl	Platin	78	wikidata:Q880
+wd/Q888/ordnungszahl	chemie	element_ordnungszahl	Krypton	36	wikidata:Q888
+wd/Q895/ordnungszahl	chemie	element_ordnungszahl	Rubidium	37	wikidata:Q895
+wd/Q897/ordnungszahl	chemie	element_ordnungszahl	Gold	79	wikidata:Q897
+wd/Q925/ordnungszahl	chemie	element_ordnungszahl	Quecksilber	80	wikidata:Q925
+wd/Q932/ordnungszahl	chemie	element_ordnungszahl	Thallium	81	wikidata:Q932
+wd/Q938/ordnungszahl	chemie	element_ordnungszahl	Strontium	38	wikidata:Q938
+wd/Q941/ordnungszahl	chemie	element_ordnungszahl	Yttrium	39	wikidata:Q941
+wd/Q942/ordnungszahl	chemie	element_ordnungszahl	Bismut	83	wikidata:Q942
+wd/Q979/ordnungszahl	chemie	element_ordnungszahl	Polonium	84	wikidata:Q979
+wd/Q999/ordnungszahl	chemie	element_ordnungszahl	Astat	85	wikidata:Q999
+wd/Q1038/periode	chemie	element_periode	Zirconium	5	wikidata:Q1038
+wd/Q1046/periode	chemie	element_periode	Niob	5	wikidata:Q1046
+wd/Q1053/periode	chemie	element_periode	Molybdän	5	wikidata:Q1053
+wd/Q1054/periode	chemie	element_periode	Technetium	5	wikidata:Q1054
+wd/Q1086/periode	chemie	element_periode	Ruthenium	5	wikidata:Q1086
+wd/Q1087/periode	chemie	element_periode	Rhodium	5	wikidata:Q1087
+wd/Q1089/periode	chemie	element_periode	Palladium	5	wikidata:Q1089
+wd/Q1090/periode	chemie	element_periode	Silber	5	wikidata:Q1090
+wd/Q1091/periode	chemie	element_periode	Cadmium	5	wikidata:Q1091
+wd/Q1094/periode	chemie	element_periode	Indium	5	wikidata:Q1094
+wd/Q1096/periode	chemie	element_periode	Zinn	5	wikidata:Q1096
+wd/Q1098/periode	chemie	element_periode	Uran	7	wikidata:Q1098
+wd/Q1099/periode	chemie	element_periode	Antimon	5	wikidata:Q1099
+wd/Q1100/periode	chemie	element_periode	Tellur	5	wikidata:Q1100
+wd/Q1102/periode	chemie	element_periode	Plutonium	7	wikidata:Q1102
+wd/Q1103/periode	chemie	element_periode	Iod	5	wikidata:Q1103
+wd/Q1105/periode	chemie	element_periode	Neptunium	7	wikidata:Q1105
+wd/Q1106/periode	chemie	element_periode	Xenon	5	wikidata:Q1106
+wd/Q1108/periode	chemie	element_periode	Caesium	6	wikidata:Q1108
+wd/Q1109/periode	chemie	element_periode	Protactinium	7	wikidata:Q1109
+wd/Q1112/periode	chemie	element_periode	Barium	6	wikidata:Q1112
+wd/Q1115/periode	chemie	element_periode	Thorium	7	wikidata:Q1115
+wd/Q1119/periode	chemie	element_periode	Hafnium	6	wikidata:Q1119
+wd/Q1121/periode	chemie	element_periode	Actinium	7	wikidata:Q1121
+wd/Q1123/periode	chemie	element_periode	Tantal	6	wikidata:Q1123
+wd/Q1128/periode	chemie	element_periode	Radium	7	wikidata:Q1128
+wd/Q1133/periode	chemie	element_periode	Radon	6	wikidata:Q1133
+wd/Q1226/periode	chemie	element_periode	Rutherfordium	7	wikidata:Q1226
+wd/Q1232/periode	chemie	element_periode	Dubnium	7	wikidata:Q1232
+wd/Q1234/periode	chemie	element_periode	Seaborgium	7	wikidata:Q1234
+wd/Q1249/periode	chemie	element_periode	Bohrium	7	wikidata:Q1249
+wd/Q1252/periode	chemie	element_periode	Hassium	7	wikidata:Q1252
+wd/Q1258/periode	chemie	element_periode	Meitnerium	7	wikidata:Q1258
+wd/Q1266/periode	chemie	element_periode	Darmstadtium	7	wikidata:Q1266
+wd/Q1272/periode	chemie	element_periode	Roentgenium	7	wikidata:Q1272
+wd/Q1278/periode	chemie	element_periode	Copernicium	7	wikidata:Q1278
+wd/Q1301/periode	chemie	element_periode	Nihonium	7	wikidata:Q1301
+wd/Q1302/periode	chemie	element_periode	Flerovium	7	wikidata:Q1302
+wd/Q1303/periode	chemie	element_periode	Moscovium	7	wikidata:Q1303
+wd/Q1304/periode	chemie	element_periode	Livermorium	7	wikidata:Q1304
+wd/Q1306/periode	chemie	element_periode	Tenness	7	wikidata:Q1306
+wd/Q1307/periode	chemie	element_periode	Oganesson	7	wikidata:Q1307
+wd/Q1385/periode	chemie	element_periode	Cer	6	wikidata:Q1385
+wd/Q1386/periode	chemie	element_periode	Praseodym	6	wikidata:Q1386
+wd/Q1388/periode	chemie	element_periode	Neodym	6	wikidata:Q1388
+wd/Q1396/periode	chemie	element_periode	Europium	6	wikidata:Q1396
+wd/Q1801/periode	chemie	element_periode	Lanthan	6	wikidata:Q1801
+wd/Q1809/periode	chemie	element_periode	Promethium	6	wikidata:Q1809
+wd/Q1819/periode	chemie	element_periode	Samarium	6	wikidata:Q1819
+wd/Q1832/periode	chemie	element_periode	Gadolinium	6	wikidata:Q1832
+wd/Q1838/periode	chemie	element_periode	Terbium	6	wikidata:Q1838
+wd/Q1843/periode	chemie	element_periode	Dysprosium	6	wikidata:Q1843
+wd/Q1846/periode	chemie	element_periode	Holmium	6	wikidata:Q1846
+wd/Q1849/periode	chemie	element_periode	Erbium	6	wikidata:Q1849
+wd/Q1853/periode	chemie	element_periode	Thulium	6	wikidata:Q1853
+wd/Q1855/periode	chemie	element_periode	Ytterbium	6	wikidata:Q1855
+wd/Q1857/periode	chemie	element_periode	Lutetium	6	wikidata:Q1857
+wd/Q1872/periode	chemie	element_periode	Americium	7	wikidata:Q1872
+wd/Q1876/periode	chemie	element_periode	Curium	7	wikidata:Q1876
+wd/Q1882/periode	chemie	element_periode	Berkelium	7	wikidata:Q1882
+wd/Q1888/periode	chemie	element_periode	Californium	7	wikidata:Q1888
+wd/Q1892/periode	chemie	element_periode	Einsteinium	7	wikidata:Q1892
+wd/Q1896/periode	chemie	element_periode	Fermium	7	wikidata:Q1896
+wd/Q1898/periode	chemie	element_periode	Mendelevium	7	wikidata:Q1898
+wd/Q1901/periode	chemie	element_periode	Nobelium	7	wikidata:Q1901
+wd/Q1905/periode	chemie	element_periode	Lawrencium	7	wikidata:Q1905
+wd/Q556/periode	chemie	element_periode	Wasserstoff	1	wikidata:Q556
+wd/Q560/periode	chemie	element_periode	Helium	1	wikidata:Q560
+wd/Q568/periode	chemie	element_periode	Lithium	2	wikidata:Q568
+wd/Q569/periode	chemie	element_periode	Beryllium	2	wikidata:Q569
+wd/Q618/periode	chemie	element_periode	Bor	2	wikidata:Q618
+wd/Q623/periode	chemie	element_periode	Kohlenstoff	2	wikidata:Q623
+wd/Q627/periode	chemie	element_periode	Stickstoff	2	wikidata:Q627
+wd/Q629/periode	chemie	element_periode	Sauerstoff	2	wikidata:Q629
+wd/Q650/periode	chemie	element_periode	Fluor	2	wikidata:Q650
+wd/Q654/periode	chemie	element_periode	Neon	2	wikidata:Q654
+wd/Q658/periode	chemie	element_periode	Natrium	3	wikidata:Q658
+wd/Q660/periode	chemie	element_periode	Magnesium	3	wikidata:Q660
+wd/Q663/periode	chemie	element_periode	Aluminium	3	wikidata:Q663
+wd/Q670/periode	chemie	element_periode	Silicium	3	wikidata:Q670
+wd/Q671/periode	chemie	element_periode	Francium	7	wikidata:Q671
+wd/Q674/periode	chemie	element_periode	Phosphor	3	wikidata:Q674
+wd/Q677/periode	chemie	element_periode	Eisen	4	wikidata:Q677
+wd/Q682/periode	chemie	element_periode	Schwefel	3	wikidata:Q682
+wd/Q688/periode	chemie	element_periode	Chlor	3	wikidata:Q688
+wd/Q696/periode	chemie	element_periode	Argon	3	wikidata:Q696
+wd/Q703/periode	chemie	element_periode	Kalium	4	wikidata:Q703
+wd/Q706/periode	chemie	element_periode	Calcium	4	wikidata:Q706
+wd/Q708/periode	chemie	element_periode	Blei	6	wikidata:Q708
+wd/Q713/periode	chemie	element_periode	Scandium	4	wikidata:Q713
+wd/Q716/periode	chemie	element_periode	Titan	4	wikidata:Q716
+wd/Q722/periode	chemie	element_periode	Vanadium	4	wikidata:Q722
+wd/Q725/periode	chemie	element_periode	Chrom	4	wikidata:Q725
+wd/Q731/periode	chemie	element_periode	Mangan	4	wikidata:Q731
+wd/Q737/periode	chemie	element_periode	Rhenium	6	wikidata:Q737
+wd/Q740/periode	chemie	element_periode	Cobalt	4	wikidata:Q740
+wd/Q743/periode	chemie	element_periode	Wolfram	6	wikidata:Q743
+wd/Q744/periode	chemie	element_periode	Nickel	4	wikidata:Q744
+wd/Q751/periode	chemie	element_periode	Osmium	6	wikidata:Q751
+wd/Q753/periode	chemie	element_periode	Kupfer	4	wikidata:Q753
+wd/Q758/periode	chemie	element_periode	Zink	4	wikidata:Q758
+wd/Q861/periode	chemie	element_periode	Gallium	4	wikidata:Q861
+wd/Q867/periode	chemie	element_periode	Germanium	4	wikidata:Q867
+wd/Q871/periode	chemie	element_periode	Arsen	4	wikidata:Q871
+wd/Q876/periode	chemie	element_periode	Selen	4	wikidata:Q876
+wd/Q877/periode	chemie	element_periode	Iridium	6	wikidata:Q877
+wd/Q879/periode	chemie	element_periode	Brom	4	wikidata:Q879
+wd/Q880/periode	chemie	element_periode	Platin	6	wikidata:Q880
+wd/Q888/periode	chemie	element_periode	Krypton	4	wikidata:Q888
+wd/Q895/periode	chemie	element_periode	Rubidium	5	wikidata:Q895
+wd/Q897/periode	chemie	element_periode	Gold	6	wikidata:Q897
+wd/Q925/periode	chemie	element_periode	Quecksilber	6	wikidata:Q925
+wd/Q932/periode	chemie	element_periode	Thallium	6	wikidata:Q932
+wd/Q938/periode	chemie	element_periode	Strontium	5	wikidata:Q938
+wd/Q941/periode	chemie	element_periode	Yttrium	5	wikidata:Q941
+wd/Q942/periode	chemie	element_periode	Bismut	6	wikidata:Q942
+wd/Q979/periode	chemie	element_periode	Polonium	6	wikidata:Q979
+wd/Q999/periode	chemie	element_periode	Astat	6	wikidata:Q999
+wd/Q1046/schmelzpunkt	chemie	element_schmelzpunkt	Niob	2477	wikidata:Q1046
+wd/Q1086/schmelzpunkt	chemie	element_schmelzpunkt	Ruthenium	2334	wikidata:Q1086
+wd/Q1089/schmelzpunkt	chemie	element_schmelzpunkt	Palladium	1555	wikidata:Q1089
+wd/Q1091/schmelzpunkt	chemie	element_schmelzpunkt	Cadmium	321	wikidata:Q1091
+wd/Q1098/schmelzpunkt	chemie	element_schmelzpunkt	Uran	1134	wikidata:Q1098
+wd/Q1102/schmelzpunkt	chemie	element_schmelzpunkt	Plutonium	640	wikidata:Q1102
+wd/Q1105/schmelzpunkt	chemie	element_schmelzpunkt	Neptunium	640	wikidata:Q1105
+wd/Q1106/schmelzpunkt	chemie	element_schmelzpunkt	Xenon	-112	wikidata:Q1106
+wd/Q1108/schmelzpunkt	chemie	element_schmelzpunkt	Caesium	29	wikidata:Q1108
+wd/Q1109/schmelzpunkt	chemie	element_schmelzpunkt	Protactinium	1570	wikidata:Q1109
+wd/Q1115/schmelzpunkt	chemie	element_schmelzpunkt	Thorium	1747	wikidata:Q1115
+wd/Q1121/schmelzpunkt	chemie	element_schmelzpunkt	Actinium	1227	wikidata:Q1121
+wd/Q1128/schmelzpunkt	chemie	element_schmelzpunkt	Radium	700	wikidata:Q1128
+wd/Q1133/schmelzpunkt	chemie	element_schmelzpunkt	Radon	-71	wikidata:Q1133
+wd/Q1385/schmelzpunkt	chemie	element_schmelzpunkt	Cer	797	wikidata:Q1385
+wd/Q1386/schmelzpunkt	chemie	element_schmelzpunkt	Praseodym	935	wikidata:Q1386
+wd/Q1388/schmelzpunkt	chemie	element_schmelzpunkt	Neodym	1025	wikidata:Q1388
+wd/Q1396/schmelzpunkt	chemie	element_schmelzpunkt	Europium	822	wikidata:Q1396
+wd/Q1801/schmelzpunkt	chemie	element_schmelzpunkt	Lanthan	919	wikidata:Q1801
+wd/Q1809/schmelzpunkt	chemie	element_schmelzpunkt	Promethium	1080	wikidata:Q1809
+wd/Q1819/schmelzpunkt	chemie	element_schmelzpunkt	Samarium	1073	wikidata:Q1819
+wd/Q1832/schmelzpunkt	chemie	element_schmelzpunkt	Gadolinium	1318	wikidata:Q1832
+wd/Q1838/schmelzpunkt	chemie	element_schmelzpunkt	Terbium	1351	wikidata:Q1838
+wd/Q1843/schmelzpunkt	chemie	element_schmelzpunkt	Dysprosium	1410	wikidata:Q1843
+wd/Q1846/schmelzpunkt	chemie	element_schmelzpunkt	Holmium	1461	wikidata:Q1846
+wd/Q1849/schmelzpunkt	chemie	element_schmelzpunkt	Erbium	1522	wikidata:Q1849
+wd/Q1853/schmelzpunkt	chemie	element_schmelzpunkt	Thulium	1549	wikidata:Q1853
+wd/Q1855/schmelzpunkt	chemie	element_schmelzpunkt	Ytterbium	818	wikidata:Q1855
+wd/Q1857/schmelzpunkt	chemie	element_schmelzpunkt	Lutetium	1677	wikidata:Q1857
+wd/Q1872/schmelzpunkt	chemie	element_schmelzpunkt	Americium	1176	wikidata:Q1872
+wd/Q1876/schmelzpunkt	chemie	element_schmelzpunkt	Curium	1346	wikidata:Q1876
+wd/Q1882/schmelzpunkt	chemie	element_schmelzpunkt	Berkelium	1050	wikidata:Q1882
+wd/Q1888/schmelzpunkt	chemie	element_schmelzpunkt	Californium	900	wikidata:Q1888
+wd/Q1892/schmelzpunkt	chemie	element_schmelzpunkt	Einsteinium	860	wikidata:Q1892
+wd/Q1896/schmelzpunkt	chemie	element_schmelzpunkt	Fermium	852	wikidata:Q1896
+wd/Q1898/schmelzpunkt	chemie	element_schmelzpunkt	Mendelevium	827	wikidata:Q1898
+wd/Q1901/schmelzpunkt	chemie	element_schmelzpunkt	Nobelium	827	wikidata:Q1901
+wd/Q1905/schmelzpunkt	chemie	element_schmelzpunkt	Lawrencium	1627	wikidata:Q1905
+wd/Q560/schmelzpunkt	chemie	element_schmelzpunkt	Helium	-272	wikidata:Q560
+wd/Q568/schmelzpunkt	chemie	element_schmelzpunkt	Lithium	181	wikidata:Q568
+wd/Q627/schmelzpunkt	chemie	element_schmelzpunkt	Stickstoff	-210	wikidata:Q627
+wd/Q629/schmelzpunkt	chemie	element_schmelzpunkt	Sauerstoff	-218	wikidata:Q629
+wd/Q671/schmelzpunkt	chemie	element_schmelzpunkt	Francium	27	wikidata:Q671
+wd/Q682/schmelzpunkt	chemie	element_schmelzpunkt	Schwefel	115	wikidata:Q682
+wd/Q688/schmelzpunkt	chemie	element_schmelzpunkt	Chlor	-102	wikidata:Q688
+wd/Q703/schmelzpunkt	chemie	element_schmelzpunkt	Kalium	63	wikidata:Q703
+wd/Q716/schmelzpunkt	chemie	element_schmelzpunkt	Titan	1668	wikidata:Q716
+wd/Q737/schmelzpunkt	chemie	element_schmelzpunkt	Rhenium	3186	wikidata:Q737
+wd/Q740/schmelzpunkt	chemie	element_schmelzpunkt	Cobalt	1495	wikidata:Q740
+wd/Q744/schmelzpunkt	chemie	element_schmelzpunkt	Nickel	1455	wikidata:Q744
+wd/Q751/schmelzpunkt	chemie	element_schmelzpunkt	Osmium	3127	wikidata:Q751
+wd/Q861/schmelzpunkt	chemie	element_schmelzpunkt	Gallium	30	wikidata:Q861
+wd/Q867/schmelzpunkt	chemie	element_schmelzpunkt	Germanium	938	wikidata:Q867
+wd/Q877/schmelzpunkt	chemie	element_schmelzpunkt	Iridium	2466	wikidata:Q877
+wd/Q879/schmelzpunkt	chemie	element_schmelzpunkt	Brom	-7	wikidata:Q879
+wd/Q880/schmelzpunkt	chemie	element_schmelzpunkt	Platin	1768	wikidata:Q880
+wd/Q888/schmelzpunkt	chemie	element_schmelzpunkt	Krypton	-157	wikidata:Q888
+wd/Q895/schmelzpunkt	chemie	element_schmelzpunkt	Rubidium	39	wikidata:Q895
+wd/Q932/schmelzpunkt	chemie	element_schmelzpunkt	Thallium	304	wikidata:Q932
+wd/Q938/schmelzpunkt	chemie	element_schmelzpunkt	Strontium	777	wikidata:Q938
+wd/Q942/schmelzpunkt	chemie	element_schmelzpunkt	Bismut	271	wikidata:Q942
+wd/Q979/schmelzpunkt	chemie	element_schmelzpunkt	Polonium	254	wikidata:Q979
+wd/Q999/schmelzpunkt	chemie	element_schmelzpunkt	Astat	302	wikidata:Q999
+wd/Q1046/siedepunkt	chemie	element_siedepunkt	Niob	4744	wikidata:Q1046
+wd/Q1054/siedepunkt	chemie	element_siedepunkt	Technetium	4265	wikidata:Q1054
+wd/Q1086/siedepunkt	chemie	element_siedepunkt	Ruthenium	4150	wikidata:Q1086
+wd/Q1089/siedepunkt	chemie	element_siedepunkt	Palladium	2960	wikidata:Q1089
+wd/Q1091/siedepunkt	chemie	element_siedepunkt	Cadmium	765	wikidata:Q1091
+wd/Q1098/siedepunkt	chemie	element_siedepunkt	Uran	3930	wikidata:Q1098
+wd/Q1102/siedepunkt	chemie	element_siedepunkt	Plutonium	3236	wikidata:Q1102
+wd/Q1105/siedepunkt	chemie	element_siedepunkt	Neptunium	3902	wikidata:Q1105
+wd/Q1106/siedepunkt	chemie	element_siedepunkt	Xenon	-108	wikidata:Q1106
+wd/Q1108/siedepunkt	chemie	element_siedepunkt	Caesium	668	wikidata:Q1108
+wd/Q1109/siedepunkt	chemie	element_siedepunkt	Protactinium	4027	wikidata:Q1109
+wd/Q1115/siedepunkt	chemie	element_siedepunkt	Thorium	4788	wikidata:Q1115
+wd/Q1121/siedepunkt	chemie	element_siedepunkt	Actinium	3300	wikidata:Q1121
+wd/Q1128/siedepunkt	chemie	element_siedepunkt	Radium	1737	wikidata:Q1128
+wd/Q1133/siedepunkt	chemie	element_siedepunkt	Radon	-62	wikidata:Q1133
+wd/Q1385/siedepunkt	chemie	element_siedepunkt	Cer	3470	wikidata:Q1385
+wd/Q1386/siedepunkt	chemie	element_siedepunkt	Praseodym	3130	wikidata:Q1386
+wd/Q1388/siedepunkt	chemie	element_siedepunkt	Neodym	3030	wikidata:Q1388
+wd/Q1396/siedepunkt	chemie	element_siedepunkt	Europium	1440	wikidata:Q1396
+wd/Q1801/siedepunkt	chemie	element_siedepunkt	Lanthan	3470	wikidata:Q1801
+wd/Q1809/siedepunkt	chemie	element_siedepunkt	Promethium	3000	wikidata:Q1809
+wd/Q1819/siedepunkt	chemie	element_siedepunkt	Samarium	1900	wikidata:Q1819
+wd/Q1832/siedepunkt	chemie	element_siedepunkt	Gadolinium	3000	wikidata:Q1832
+wd/Q1838/siedepunkt	chemie	element_siedepunkt	Terbium	3123	wikidata:Q1838
+wd/Q1843/siedepunkt	chemie	element_siedepunkt	Dysprosium	2600	wikidata:Q1843
+wd/Q1846/siedepunkt	chemie	element_siedepunkt	Holmium	2600	wikidata:Q1846
+wd/Q1849/siedepunkt	chemie	element_siedepunkt	Erbium	2900	wikidata:Q1849
+wd/Q1853/siedepunkt	chemie	element_siedepunkt	Thulium	1950	wikidata:Q1853
+wd/Q1855/siedepunkt	chemie	element_siedepunkt	Ytterbium	1430	wikidata:Q1855
+wd/Q1857/siedepunkt	chemie	element_siedepunkt	Lutetium	3330	wikidata:Q1857
+wd/Q1872/siedepunkt	chemie	element_siedepunkt	Americium	2607	wikidata:Q1872
+wd/Q1876/siedepunkt	chemie	element_siedepunkt	Curium	3110	wikidata:Q1876
+wd/Q1888/siedepunkt	chemie	element_siedepunkt	Californium	1470	wikidata:Q1888
+wd/Q1892/siedepunkt	chemie	element_siedepunkt	Einsteinium	996	wikidata:Q1892
+wd/Q627/siedepunkt	chemie	element_siedepunkt	Stickstoff	-196	wikidata:Q627
+wd/Q629/siedepunkt	chemie	element_siedepunkt	Sauerstoff	-183	wikidata:Q629
+wd/Q682/siedepunkt	chemie	element_siedepunkt	Schwefel	445	wikidata:Q682
+wd/Q688/siedepunkt	chemie	element_siedepunkt	Chlor	-35	wikidata:Q688
+wd/Q703/siedepunkt	chemie	element_siedepunkt	Kalium	766	wikidata:Q703
+wd/Q725/siedepunkt	chemie	element_siedepunkt	Chrom	2672	wikidata:Q725
+wd/Q737/siedepunkt	chemie	element_siedepunkt	Rhenium	5630	wikidata:Q737
+wd/Q740/siedepunkt	chemie	element_siedepunkt	Cobalt	2927	wikidata:Q740
+wd/Q744/siedepunkt	chemie	element_siedepunkt	Nickel	2913	wikidata:Q744
+wd/Q751/siedepunkt	chemie	element_siedepunkt	Osmium	5000	wikidata:Q751
+wd/Q861/siedepunkt	chemie	element_siedepunkt	Gallium	2400	wikidata:Q861
+wd/Q867/siedepunkt	chemie	element_siedepunkt	Germanium	2833	wikidata:Q867
+wd/Q877/siedepunkt	chemie	element_siedepunkt	Iridium	4130	wikidata:Q877
+wd/Q879/siedepunkt	chemie	element_siedepunkt	Brom	59	wikidata:Q879
+wd/Q880/siedepunkt	chemie	element_siedepunkt	Platin	3827	wikidata:Q880
+wd/Q888/siedepunkt	chemie	element_siedepunkt	Krypton	-152	wikidata:Q888
+wd/Q895/siedepunkt	chemie	element_siedepunkt	Rubidium	687	wikidata:Q895
+wd/Q932/siedepunkt	chemie	element_siedepunkt	Thallium	1460	wikidata:Q932
+wd/Q938/siedepunkt	chemie	element_siedepunkt	Strontium	1380	wikidata:Q938
+wd/Q942/siedepunkt	chemie	element_siedepunkt	Bismut	1560	wikidata:Q942
+wd/Q979/siedepunkt	chemie	element_siedepunkt	Polonium	962	wikidata:Q979
+wd/Q999/siedepunkt	chemie	element_siedepunkt	Astat	230	wikidata:Q999
+wd/Q1038/symbol	chemie	element_symbol	Zirconium	Zr	wikidata:Q1038
+wd/Q1046/symbol	chemie	element_symbol	Niob	Nb	wikidata:Q1046
+wd/Q1053/symbol	chemie	element_symbol	Molybdän	Mo	wikidata:Q1053
+wd/Q1054/symbol	chemie	element_symbol	Technetium	Tc	wikidata:Q1054
+wd/Q1086/symbol	chemie	element_symbol	Ruthenium	Ru	wikidata:Q1086
+wd/Q1087/symbol	chemie	element_symbol	Rhodium	Rh	wikidata:Q1087
+wd/Q1089/symbol	chemie	element_symbol	Palladium	Pd	wikidata:Q1089
+wd/Q1090/symbol	chemie	element_symbol	Silber	Ag	wikidata:Q1090
+wd/Q1091/symbol	chemie	element_symbol	Cadmium	Cd	wikidata:Q1091
+wd/Q1094/symbol	chemie	element_symbol	Indium	In	wikidata:Q1094
+wd/Q1096/symbol	chemie	element_symbol	Zinn	Sn	wikidata:Q1096
+wd/Q1098/symbol	chemie	element_symbol	Uran	U	wikidata:Q1098
+wd/Q1099/symbol	chemie	element_symbol	Antimon	Sb	wikidata:Q1099
+wd/Q1100/symbol	chemie	element_symbol	Tellur	Te	wikidata:Q1100
+wd/Q1102/symbol	chemie	element_symbol	Plutonium	Pu	wikidata:Q1102
+wd/Q1103/symbol	chemie	element_symbol	Iod	I	wikidata:Q1103
+wd/Q1105/symbol	chemie	element_symbol	Neptunium	Np	wikidata:Q1105
+wd/Q1106/symbol	chemie	element_symbol	Xenon	Xe	wikidata:Q1106
+wd/Q1108/symbol	chemie	element_symbol	Caesium	Cs	wikidata:Q1108
+wd/Q1109/symbol	chemie	element_symbol	Protactinium	Pa	wikidata:Q1109
+wd/Q1112/symbol	chemie	element_symbol	Barium	Ba	wikidata:Q1112
+wd/Q1115/symbol	chemie	element_symbol	Thorium	Th	wikidata:Q1115
+wd/Q1119/symbol	chemie	element_symbol	Hafnium	Hf	wikidata:Q1119
+wd/Q1121/symbol	chemie	element_symbol	Actinium	Ac	wikidata:Q1121
+wd/Q1123/symbol	chemie	element_symbol	Tantal	Ta	wikidata:Q1123
+wd/Q1128/symbol	chemie	element_symbol	Radium	Ra	wikidata:Q1128
+wd/Q1133/symbol	chemie	element_symbol	Radon	Rn	wikidata:Q1133
+wd/Q1226/symbol	chemie	element_symbol	Rutherfordium	Rf	wikidata:Q1226
+wd/Q1232/symbol	chemie	element_symbol	Dubnium	Db	wikidata:Q1232
+wd/Q1234/symbol	chemie	element_symbol	Seaborgium	Sg	wikidata:Q1234
+wd/Q1249/symbol	chemie	element_symbol	Bohrium	Bh	wikidata:Q1249
+wd/Q1252/symbol	chemie	element_symbol	Hassium	Hs	wikidata:Q1252
+wd/Q1258/symbol	chemie	element_symbol	Meitnerium	Mt	wikidata:Q1258
+wd/Q1266/symbol	chemie	element_symbol	Darmstadtium	Ds	wikidata:Q1266
+wd/Q1272/symbol	chemie	element_symbol	Roentgenium	Rg	wikidata:Q1272
+wd/Q1278/symbol	chemie	element_symbol	Copernicium	Cn	wikidata:Q1278
+wd/Q1301/symbol	chemie	element_symbol	Nihonium	Nh	wikidata:Q1301
+wd/Q1302/symbol	chemie	element_symbol	Flerovium	Fl	wikidata:Q1302
+wd/Q1303/symbol	chemie	element_symbol	Moscovium	Mc	wikidata:Q1303
+wd/Q1304/symbol	chemie	element_symbol	Livermorium	Lv	wikidata:Q1304
+wd/Q1306/symbol	chemie	element_symbol	Tenness	Ts	wikidata:Q1306
+wd/Q1307/symbol	chemie	element_symbol	Oganesson	Og	wikidata:Q1307
+wd/Q1385/symbol	chemie	element_symbol	Cer	Ce	wikidata:Q1385
+wd/Q1386/symbol	chemie	element_symbol	Praseodym	Pr	wikidata:Q1386
+wd/Q1388/symbol	chemie	element_symbol	Neodym	Nd	wikidata:Q1388
+wd/Q1396/symbol	chemie	element_symbol	Europium	Eu	wikidata:Q1396
+wd/Q1801/symbol	chemie	element_symbol	Lanthan	La	wikidata:Q1801
+wd/Q1809/symbol	chemie	element_symbol	Promethium	Pm	wikidata:Q1809
+wd/Q1819/symbol	chemie	element_symbol	Samarium	Sm	wikidata:Q1819
+wd/Q1832/symbol	chemie	element_symbol	Gadolinium	Gd	wikidata:Q1832
+wd/Q1838/symbol	chemie	element_symbol	Terbium	Tb	wikidata:Q1838
+wd/Q1843/symbol	chemie	element_symbol	Dysprosium	Dy	wikidata:Q1843
+wd/Q1846/symbol	chemie	element_symbol	Holmium	Ho	wikidata:Q1846
+wd/Q1849/symbol	chemie	element_symbol	Erbium	Er	wikidata:Q1849
+wd/Q1853/symbol	chemie	element_symbol	Thulium	Tm	wikidata:Q1853
+wd/Q1855/symbol	chemie	element_symbol	Ytterbium	Yb	wikidata:Q1855
+wd/Q1857/symbol	chemie	element_symbol	Lutetium	Lu	wikidata:Q1857
+wd/Q1872/symbol	chemie	element_symbol	Americium	Am	wikidata:Q1872
+wd/Q1876/symbol	chemie	element_symbol	Curium	Cm	wikidata:Q1876
+wd/Q1882/symbol	chemie	element_symbol	Berkelium	Bk	wikidata:Q1882
+wd/Q1888/symbol	chemie	element_symbol	Californium	Cf	wikidata:Q1888
+wd/Q1892/symbol	chemie	element_symbol	Einsteinium	Es	wikidata:Q1892
+wd/Q1896/symbol	chemie	element_symbol	Fermium	Fm	wikidata:Q1896
+wd/Q1898/symbol	chemie	element_symbol	Mendelevium	Md	wikidata:Q1898
+wd/Q1901/symbol	chemie	element_symbol	Nobelium	No	wikidata:Q1901
+wd/Q1905/symbol	chemie	element_symbol	Lawrencium	Lr	wikidata:Q1905
+wd/Q556/symbol	chemie	element_symbol	Wasserstoff	H	wikidata:Q556
+wd/Q560/symbol	chemie	element_symbol	Helium	He	wikidata:Q560
+wd/Q568/symbol	chemie	element_symbol	Lithium	Li	wikidata:Q568
+wd/Q569/symbol	chemie	element_symbol	Beryllium	Be	wikidata:Q569
+wd/Q618/symbol	chemie	element_symbol	Bor	B	wikidata:Q618
+wd/Q623/symbol	chemie	element_symbol	Kohlenstoff	C	wikidata:Q623
+wd/Q627/symbol	chemie	element_symbol	Stickstoff	N	wikidata:Q627
+wd/Q629/symbol	chemie	element_symbol	Sauerstoff	O	wikidata:Q629
+wd/Q650/symbol	chemie	element_symbol	Fluor	F	wikidata:Q650
+wd/Q654/symbol	chemie	element_symbol	Neon	Ne	wikidata:Q654
+wd/Q658/symbol	chemie	element_symbol	Natrium	Na	wikidata:Q658
+wd/Q660/symbol	chemie	element_symbol	Magnesium	Mg	wikidata:Q660
+wd/Q663/symbol	chemie	element_symbol	Aluminium	Al	wikidata:Q663
+wd/Q670/symbol	chemie	element_symbol	Silicium	Si	wikidata:Q670
+wd/Q671/symbol	chemie	element_symbol	Francium	Fr	wikidata:Q671
+wd/Q674/symbol	chemie	element_symbol	Phosphor	P	wikidata:Q674
+wd/Q677/symbol	chemie	element_symbol	Eisen	Fe	wikidata:Q677
+wd/Q682/symbol	chemie	element_symbol	Schwefel	S	wikidata:Q682
+wd/Q688/symbol	chemie	element_symbol	Chlor	Cl	wikidata:Q688
+wd/Q696/symbol	chemie	element_symbol	Argon	Ar	wikidata:Q696
+wd/Q703/symbol	chemie	element_symbol	Kalium	K	wikidata:Q703
+wd/Q706/symbol	chemie	element_symbol	Calcium	Ca	wikidata:Q706
+wd/Q708/symbol	chemie	element_symbol	Blei	Pb	wikidata:Q708
+wd/Q713/symbol	chemie	element_symbol	Scandium	Sc	wikidata:Q713
+wd/Q716/symbol	chemie	element_symbol	Titan	Ti	wikidata:Q716
+wd/Q722/symbol	chemie	element_symbol	Vanadium	V	wikidata:Q722
+wd/Q725/symbol	chemie	element_symbol	Chrom	Cr	wikidata:Q725
+wd/Q731/symbol	chemie	element_symbol	Mangan	Mn	wikidata:Q731
+wd/Q737/symbol	chemie	element_symbol	Rhenium	Re	wikidata:Q737
+wd/Q740/symbol	chemie	element_symbol	Cobalt	Co	wikidata:Q740
+wd/Q743/symbol	chemie	element_symbol	Wolfram	W	wikidata:Q743
+wd/Q744/symbol	chemie	element_symbol	Nickel	Ni	wikidata:Q744
+wd/Q751/symbol	chemie	element_symbol	Osmium	Os	wikidata:Q751
+wd/Q753/symbol	chemie	element_symbol	Kupfer	Cu	wikidata:Q753
+wd/Q758/symbol	chemie	element_symbol	Zink	Zn	wikidata:Q758
+wd/Q861/symbol	chemie	element_symbol	Gallium	Ga	wikidata:Q861
+wd/Q867/symbol	chemie	element_symbol	Germanium	Ge	wikidata:Q867
+wd/Q871/symbol	chemie	element_symbol	Arsen	As	wikidata:Q871
+wd/Q876/symbol	chemie	element_symbol	Selen	Se	wikidata:Q876
+wd/Q877/symbol	chemie	element_symbol	Iridium	Ir	wikidata:Q877
+wd/Q879/symbol	chemie	element_symbol	Brom	Br	wikidata:Q879
+wd/Q880/symbol	chemie	element_symbol	Platin	Pt	wikidata:Q880
+wd/Q888/symbol	chemie	element_symbol	Krypton	Kr	wikidata:Q888
+wd/Q895/symbol	chemie	element_symbol	Rubidium	Rb	wikidata:Q895
+wd/Q897/symbol	chemie	element_symbol	Gold	Au	wikidata:Q897
+wd/Q925/symbol	chemie	element_symbol	Quecksilber	Hg	wikidata:Q925
+wd/Q932/symbol	chemie	element_symbol	Thallium	Tl	wikidata:Q932
+wd/Q938/symbol	chemie	element_symbol	Strontium	Sr	wikidata:Q938
+wd/Q941/symbol	chemie	element_symbol	Yttrium	Y	wikidata:Q941
+wd/Q942/symbol	chemie	element_symbol	Bismut	Bi	wikidata:Q942
+wd/Q979/symbol	chemie	element_symbol	Polonium	Po	wikidata:Q979
+wd/Q999/symbol	chemie	element_symbol	Astat	At	wikidata:Q999
+wd/Q1038/zustand	chemie	element_zustand	Zirconium	fest	wikidata:Q1038
+wd/Q1046/zustand	chemie	element_zustand	Niob	fest	wikidata:Q1046
+wd/Q1053/zustand	chemie	element_zustand	Molybdän	fest	wikidata:Q1053
+wd/Q1054/zustand	chemie	element_zustand	Technetium	fest	wikidata:Q1054
+wd/Q1086/zustand	chemie	element_zustand	Ruthenium	fest	wikidata:Q1086
+wd/Q1087/zustand	chemie	element_zustand	Rhodium	fest	wikidata:Q1087
+wd/Q1089/zustand	chemie	element_zustand	Palladium	fest	wikidata:Q1089
+wd/Q1090/zustand	chemie	element_zustand	Silber	fest	wikidata:Q1090
+wd/Q1091/zustand	chemie	element_zustand	Cadmium	fest	wikidata:Q1091
+wd/Q1094/zustand	chemie	element_zustand	Indium	fest	wikidata:Q1094
+wd/Q1096/zustand	chemie	element_zustand	Zinn	fest	wikidata:Q1096
+wd/Q1098/zustand	chemie	element_zustand	Uran	fest	wikidata:Q1098
+wd/Q1099/zustand	chemie	element_zustand	Antimon	fest	wikidata:Q1099
+wd/Q1100/zustand	chemie	element_zustand	Tellur	fest	wikidata:Q1100
+wd/Q1102/zustand	chemie	element_zustand	Plutonium	fest	wikidata:Q1102
+wd/Q1103/zustand	chemie	element_zustand	Iod	fest	wikidata:Q1103
+wd/Q1105/zustand	chemie	element_zustand	Neptunium	fest	wikidata:Q1105
+wd/Q1106/zustand	chemie	element_zustand	Xenon	gasförmig	wikidata:Q1106
+wd/Q1108/zustand	chemie	element_zustand	Caesium	fest	wikidata:Q1108
+wd/Q1109/zustand	chemie	element_zustand	Protactinium	fest	wikidata:Q1109
+wd/Q1112/zustand	chemie	element_zustand	Barium	fest	wikidata:Q1112
+wd/Q1115/zustand	chemie	element_zustand	Thorium	fest	wikidata:Q1115
+wd/Q1119/zustand	chemie	element_zustand	Hafnium	fest	wikidata:Q1119
+wd/Q1121/zustand	chemie	element_zustand	Actinium	fest	wikidata:Q1121
+wd/Q1123/zustand	chemie	element_zustand	Tantal	fest	wikidata:Q1123
+wd/Q1128/zustand	chemie	element_zustand	Radium	fest	wikidata:Q1128
+wd/Q1133/zustand	chemie	element_zustand	Radon	gasförmig	wikidata:Q1133
+wd/Q1385/zustand	chemie	element_zustand	Cer	fest	wikidata:Q1385
+wd/Q1386/zustand	chemie	element_zustand	Praseodym	fest	wikidata:Q1386
+wd/Q1388/zustand	chemie	element_zustand	Neodym	fest	wikidata:Q1388
+wd/Q1396/zustand	chemie	element_zustand	Europium	fest	wikidata:Q1396
+wd/Q1801/zustand	chemie	element_zustand	Lanthan	fest	wikidata:Q1801
+wd/Q1809/zustand	chemie	element_zustand	Promethium	fest	wikidata:Q1809
+wd/Q1819/zustand	chemie	element_zustand	Samarium	fest	wikidata:Q1819
+wd/Q1832/zustand	chemie	element_zustand	Gadolinium	fest	wikidata:Q1832
+wd/Q1838/zustand	chemie	element_zustand	Terbium	fest	wikidata:Q1838
+wd/Q1843/zustand	chemie	element_zustand	Dysprosium	fest	wikidata:Q1843
+wd/Q1846/zustand	chemie	element_zustand	Holmium	fest	wikidata:Q1846
+wd/Q1849/zustand	chemie	element_zustand	Erbium	fest	wikidata:Q1849
+wd/Q1853/zustand	chemie	element_zustand	Thulium	fest	wikidata:Q1853
+wd/Q1855/zustand	chemie	element_zustand	Ytterbium	fest	wikidata:Q1855
+wd/Q1857/zustand	chemie	element_zustand	Lutetium	fest	wikidata:Q1857
+wd/Q1872/zustand	chemie	element_zustand	Americium	fest	wikidata:Q1872
+wd/Q1876/zustand	chemie	element_zustand	Curium	fest	wikidata:Q1876
+wd/Q1882/zustand	chemie	element_zustand	Berkelium	fest	wikidata:Q1882
+wd/Q1888/zustand	chemie	element_zustand	Californium	fest	wikidata:Q1888
+wd/Q1892/zustand	chemie	element_zustand	Einsteinium	fest	wikidata:Q1892
+wd/Q1896/zustand	chemie	element_zustand	Fermium	fest	wikidata:Q1896
+wd/Q1898/zustand	chemie	element_zustand	Mendelevium	fest	wikidata:Q1898
+wd/Q1901/zustand	chemie	element_zustand	Nobelium	fest	wikidata:Q1901
+wd/Q1905/zustand	chemie	element_zustand	Lawrencium	fest	wikidata:Q1905
+wd/Q556/zustand	chemie	element_zustand	Wasserstoff	gasförmig	wikidata:Q556
+wd/Q560/zustand	chemie	element_zustand	Helium	gasförmig	wikidata:Q560
+wd/Q568/zustand	chemie	element_zustand	Lithium	fest	wikidata:Q568
+wd/Q569/zustand	chemie	element_zustand	Beryllium	fest	wikidata:Q569
+wd/Q618/zustand	chemie	element_zustand	Bor	fest	wikidata:Q618
+wd/Q623/zustand	chemie	element_zustand	Kohlenstoff	fest	wikidata:Q623
+wd/Q627/zustand	chemie	element_zustand	Stickstoff	gasförmig	wikidata:Q627
+wd/Q629/zustand	chemie	element_zustand	Sauerstoff	gasförmig	wikidata:Q629
+wd/Q650/zustand	chemie	element_zustand	Fluor	gasförmig	wikidata:Q650
+wd/Q654/zustand	chemie	element_zustand	Neon	gasförmig	wikidata:Q654
+wd/Q658/zustand	chemie	element_zustand	Natrium	fest	wikidata:Q658
+wd/Q660/zustand	chemie	element_zustand	Magnesium	fest	wikidata:Q660
+wd/Q663/zustand	chemie	element_zustand	Aluminium	fest	wikidata:Q663
+wd/Q670/zustand	chemie	element_zustand	Silicium	fest	wikidata:Q670
+wd/Q671/zustand	chemie	element_zustand	Francium	fest	wikidata:Q671
+wd/Q674/zustand	chemie	element_zustand	Phosphor	fest	wikidata:Q674
+wd/Q677/zustand	chemie	element_zustand	Eisen	fest	wikidata:Q677
+wd/Q682/zustand	chemie	element_zustand	Schwefel	fest	wikidata:Q682
+wd/Q688/zustand	chemie	element_zustand	Chlor	gasförmig	wikidata:Q688
+wd/Q696/zustand	chemie	element_zustand	Argon	gasförmig	wikidata:Q696
+wd/Q703/zustand	chemie	element_zustand	Kalium	fest	wikidata:Q703
+wd/Q706/zustand	chemie	element_zustand	Calcium	fest	wikidata:Q706
+wd/Q708/zustand	chemie	element_zustand	Blei	fest	wikidata:Q708
+wd/Q713/zustand	chemie	element_zustand	Scandium	fest	wikidata:Q713
+wd/Q716/zustand	chemie	element_zustand	Titan	fest	wikidata:Q716
+wd/Q722/zustand	chemie	element_zustand	Vanadium	fest	wikidata:Q722
+wd/Q725/zustand	chemie	element_zustand	Chrom	fest	wikidata:Q725
+wd/Q731/zustand	chemie	element_zustand	Mangan	fest	wikidata:Q731
+wd/Q737/zustand	chemie	element_zustand	Rhenium	fest	wikidata:Q737
+wd/Q740/zustand	chemie	element_zustand	Cobalt	fest	wikidata:Q740
+wd/Q743/zustand	chemie	element_zustand	Wolfram	fest	wikidata:Q743
+wd/Q744/zustand	chemie	element_zustand	Nickel	fest	wikidata:Q744
+wd/Q751/zustand	chemie	element_zustand	Osmium	fest	wikidata:Q751
+wd/Q753/zustand	chemie	element_zustand	Kupfer	fest	wikidata:Q753
+wd/Q758/zustand	chemie	element_zustand	Zink	fest	wikidata:Q758
+wd/Q861/zustand	chemie	element_zustand	Gallium	fest	wikidata:Q861
+wd/Q867/zustand	chemie	element_zustand	Germanium	fest	wikidata:Q867
+wd/Q871/zustand	chemie	element_zustand	Arsen	fest	wikidata:Q871
+wd/Q876/zustand	chemie	element_zustand	Selen	fest	wikidata:Q876
+wd/Q877/zustand	chemie	element_zustand	Iridium	fest	wikidata:Q877
+wd/Q879/zustand	chemie	element_zustand	Brom	flüssig	wikidata:Q879
+wd/Q880/zustand	chemie	element_zustand	Platin	fest	wikidata:Q880
+wd/Q888/zustand	chemie	element_zustand	Krypton	gasförmig	wikidata:Q888
+wd/Q895/zustand	chemie	element_zustand	Rubidium	fest	wikidata:Q895
+wd/Q897/zustand	chemie	element_zustand	Gold	fest	wikidata:Q897
+wd/Q925/zustand	chemie	element_zustand	Quecksilber	flüssig	wikidata:Q925
+wd/Q932/zustand	chemie	element_zustand	Thallium	fest	wikidata:Q932
+wd/Q938/zustand	chemie	element_zustand	Strontium	fest	wikidata:Q938
+wd/Q941/zustand	chemie	element_zustand	Yttrium	fest	wikidata:Q941
+wd/Q942/zustand	chemie	element_zustand	Bismut	fest	wikidata:Q942
+wd/Q979/zustand	chemie	element_zustand	Polonium	fest	wikidata:Q979
+wd/Q999/zustand	chemie	element_zustand	Astat	fest	wikidata:Q999

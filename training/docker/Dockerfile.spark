@@ -1,0 +1,17 @@
+# Training image for the NVIDIA DGX Spark (GB10, ARM64 + CUDA).
+#
+# Based on NVIDIA's NGC PyTorch container, which ships a CUDA build of PyTorch for the Spark.
+# The repository is mounted at /work at run time (nothing is copied into the image), so code
+# and data changes need no rebuild. Use a newer tag if available (any 25.x/26.x works).
+ARG BASE_IMAGE=nvcr.io/nvidia/pytorch:25.10-py3
+FROM ${BASE_IMAGE}
+
+# Training needs only numpy (>= 2, same float32 promotion rules as on the Mac/CI) and tomli-w;
+# torch comes from the base image. cmake + a C compiler (for the parity check) are included.
+RUN pip install --no-cache-dir "numpy>=2.0,<3" "tomli-w>=1.0"
+
+ENV PYTHONPATH=/work/training/src \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+WORKDIR /work/training
+ENTRYPOINT ["python", "-m", "ultratiny.cli"]

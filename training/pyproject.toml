@@ -1,0 +1,42 @@
+[project]
+name = "ultratiny"
+version = "0.1.0"
+description = "Training, export and bit-exact reference for the UltraTiny ESP32 language model"
+requires-python = ">=3.12"
+dependencies = [
+  "numpy>=2.0",
+  "torch>=2.5",
+  "tomli-w>=1.0",
+]
+
+[project.scripts]
+ut = "ultratiny.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6", "pyserial>=3.5"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ultratiny"]
+
+# Linux (CI, containers): CPU-only torch wheels. macOS uses PyPI torch with MPS.
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

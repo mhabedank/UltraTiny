@@ -1,0 +1,43 @@
+# Quick end-to-end run on the DGX Spark: chemie-spark data and model, only 6,000 steps.
+# For a first "Durchstich" (train -> evaluate -> parity -> QEMU/board); then the full run.
+
+[model]
+d_model = 192
+n_layers = 6
+n_heads = 6
+n_kv_heads = 1
+d_ff = 512
+ctx_len = 192
+
+[data]
+facts = [
+  "data/facts/wikidata_elemente_chemie.tsv",
+  "data/facts/chemie_rlp_*.tsv",
+  "data/facts/chemie_verbindungen.tsv",
+  "data/facts/chemie_reaktionen.tsv",
+  "data/facts/chemie_persona.tsv",
+  "data/facts/abweisen.tsv",
+]
+templates = ["data/templates/chemie.toml"]
+demo_prompts = "data/demo_chemie.tsv"
+noisy_copies = 3
+max_answer_len = 160
+augment_phrasings = ["data/augment/paraphrasen.tsv"]
+augment_templates = ["data/augment/vorlagen.tsv"]
+augment_refusals = ["data/augment/abweisen.tsv"]
+
+[train]
+steps = 6000
+batch_size = 128
+lr = 2e-3
+min_lr = 1e-4
+warmup_steps = 200
+dropout = 0.1
+qat_steps = 1000  # only if int8 costs > 2 pp (see train.py)
+
+[eval]
+demo_min = 0.95          # SC-001
+heldout_min = 0.75       # SC-002 (chemistry held-out)
+refusal_min = 0.80       # SC-003
+false_refusal_max = 0.03 # SC-004
+golden_cases = 32

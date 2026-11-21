@@ -1,0 +1,5 @@
+# Overrides for running the firmware in QEMU (tools/qemu_run.sh).
+# QEMU's ESP32 flash model does not support QIO / 80 MHz, so use DIO / 40 MHz.
+# Not used for real boards.
+CONFIG_ESPTOOLPY_FLASHMODE_DIO=y
+CONFIG_ESPTOOLPY_FLASHFREQ_40M=y

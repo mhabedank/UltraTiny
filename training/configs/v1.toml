@@ -1,0 +1,28 @@
+# Release model (research.md R1) on the full knowledge base.
+name = "v1"
+
+[model]
+d_model = 128
+n_layers = 4
+n_heads = 4
+n_kv_heads = 1
+d_ff = 384
+ctx_len = 256
+
+[data]
+facts = ["data/facts/wikidata_*.tsv", "data/facts/esp32_projekt.tsv"]
+templates = ["data/templates/starter.toml", "data/templates/v1.toml"]
+noisy_copies = 2
+
+[train]
+steps = 20000
+batch_size = 128
+lr = 2e-3
+min_lr = 1e-4
+warmup_steps = 500
+qat_steps = 2000  # only if int8 costs > 2 pp (see train.py)
+
+[eval]
+demo_min = 0.80
+heldout_min = 0.60
+golden_cases = 32

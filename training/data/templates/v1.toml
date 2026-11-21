@@ -1,0 +1,66 @@
+# Templates for the relations of the full knowledge base (v1). Rules: see starter.toml.
+
+[relations.landeshauptstadt_von]
+answers = ["Die Hauptstadt von {subject} ist {object}."]
+questions = [
+  { text = "Was ist die Landeshauptstadt von {subject}?", split = "train" },
+  { text = "Wie heißt die Landeshauptstadt von {subject}?", split = "train" },
+  { text = "Was ist die Hauptstadt von {subject}?", split = "train" },
+  { text = "Welche Stadt ist die Landeshauptstadt von {subject}?", split = "train" },
+  { text = "Landeshauptstadt von {subject}?", split = "train" },
+  { text = "Nenne die Landeshauptstadt von {subject}.", split = "train" },
+  { text = "Wie lautet die Landeshauptstadt von {subject}?", split = "train" },
+  { text = "Von welchem Bundesland ist {object} die Hauptstadt?", split = "train", answer = "{object} ist die Hauptstadt von {subject}." },
+  { text = "Welches Bundesland hat die Hauptstadt {object}?", split = "train", answer = "{object} ist die Hauptstadt von {subject}." },
+  { text = "{object} ist die Hauptstadt von welchem Bundesland?", split = "train", answer = "{object} ist die Hauptstadt von {subject}." },
+  { text = "Kennst du die Landeshauptstadt von {subject}?", split = "heldout" },
+  { text = "Sag mir die Landeshauptstadt von {subject}.", split = "heldout" },
+  { text = "Wessen Landeshauptstadt ist {object}?", split = "heldout", answer = "{object} ist die Hauptstadt von {subject}." },
+]
+
+[relations.stadt_bundesland]
+answers = ["{subject} liegt in {object}."]
+questions = [
+  { text = "In welchem Bundesland liegt {subject}?", split = "train" },
+  { text = "Wo liegt {subject}?", split = "train" },
+  { text = "In welchem Bundesland ist {subject}?", split = "train" },
+  { text = "Zu welchem Bundesland gehört {subject}?", split = "train" },
+  { text = "Bundesland von {subject}?", split = "train" },
+  { text = "Nenne das Bundesland von {subject}.", split = "train" },
+  { text = "In welchem Teil von Deutschland liegt {subject}?", split = "train" },
+  { text = "Welches Bundesland hat die Stadt {subject}?", split = "train" },
+  { text = "Wo befindet sich {subject}?", split = "heldout" },
+  { text = "In welchem Bundesland befindet sich {subject}?", split = "heldout" },
+]
+
+[relations.element_ordnungszahl]
+answers = ["{subject} hat die Ordnungszahl {object}."]
+questions = [
+  { text = "Welche Ordnungszahl hat {subject}?", split = "train" },
+  { text = "Was ist die Ordnungszahl von {subject}?", split = "train" },
+  { text = "Ordnungszahl von {subject}?", split = "train" },
+  { text = "Wie lautet die Ordnungszahl von {subject}?", split = "train" },
+  { text = "Welche Kernladungszahl hat {subject}?", split = "train" },
+  { text = "Nenne die Ordnungszahl von {subject}.", split = "train" },
+  { text = "Welches Element hat die Ordnungszahl {object}?", split = "train", answer = "Das Element mit der Ordnungszahl {object} ist {subject}." },
+  { text = "Element Nummer {object}?", split = "train", answer = "Das Element mit der Ordnungszahl {object} ist {subject}." },
+  { text = "Welches Element steht an Stelle {object} im Periodensystem?", split = "train", answer = "Das Element mit der Ordnungszahl {object} ist {subject}." },
+  { text = "Welche Nummer hat {subject} im Periodensystem?", split = "heldout" },
+  { text = "Was ist die Kernladungszahl von {subject}?", split = "heldout" },
+  { text = "Was ist Element Nummer {object}?", split = "heldout", answer = "Das Element mit der Ordnungszahl {object} ist {subject}." },
+]
+
+[relations.waehrung_von]
+answers = ["Die Währung von {subject} ist {object}."]
+questions = [
+  { text = "Welche Währung hat {subject}?", split = "train" },
+  { text = "Was ist die Währung von {subject}?", split = "train" },
+  { text = "Womit bezahlt man in {subject}?", split = "train" },
+  { text = "Wie heißt die Währung von {subject}?", split = "train" },
+  { text = "Währung von {subject}?", split = "train" },
+  { text = "Welches Geld benutzt man in {subject}?", split = "train" },
+  { text = "Nenne die Währung von {subject}.", split = "train" },
+  { text = "Was für eine Währung gibt es in {subject}?", split = "train" },
+  { text = "Mit welcher Währung zahlt man in {subject}?", split = "heldout" },
+  { text = "Welche Währung gilt in {subject}?", split = "heldout" },
+]
