@@ -1,2 +1,28 @@
 .claude/settings.local.json
 .claude/*.local.*
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+# Build outputs
+build/
+firmware/build/
+firmware/sdkconfig
+firmware/sdkconfig.old
+firmware/managed_components/
+# Training outputs
+training/runs/
+training/data/gen/
+# OS / editors
+.DS_Store
+*.swp
+.vscode/
+.idea/
+build-*/
+firmware/build-qemu/
+firmware/build-qemu.log
+# observability logs (make observe)
+logs/

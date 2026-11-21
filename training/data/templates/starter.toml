@@ -1,0 +1,54 @@
+# German question/answer templates (data-model.md QuestionTemplate / AnswerTemplate).
+# Each relation: >= 8 question templates, >= 2 with split = "heldout", >= 1 answer template.
+# A question may carry its own `answer` (e.g. reverse questions); otherwise the relation's
+# answers are used. Relation `frei` is special (free = true): Fact.subject holds the question
+# phrasings separated by "|", the last one is held out; Fact.object is the answer.
+
+[relations.hauptstadt_von]
+answers = ["Die Hauptstadt von {subject} ist {object}."]
+questions = [
+  { text = "Was ist die Hauptstadt von {subject}?", split = "train" },
+  { text = "Wie heißt die Hauptstadt von {subject}?", split = "train" },
+  { text = "Welche Stadt ist die Hauptstadt von {subject}?", split = "train" },
+  { text = "Hauptstadt von {subject}?", split = "train" },
+  { text = "Nenne die Hauptstadt von {subject}.", split = "train" },
+  { text = "Kennst du die Hauptstadt von {subject}?", split = "train" },
+  { text = "Sag mir die Hauptstadt von {subject}.", split = "train" },
+  { text = "Wie lautet die Hauptstadt von {subject}?", split = "train" },
+  { text = "Von welchem Land ist {object} die Hauptstadt?", split = "train", answer = "{object} ist die Hauptstadt von {subject}." },
+  { text = "{object} ist die Hauptstadt von welchem Land?", split = "train", answer = "{object} ist die Hauptstadt von {subject}." },
+  { text = "In welchem Land liegt die Hauptstadt {object}?", split = "train", answer = "{object} ist die Hauptstadt von {subject}." },
+  { text = "Welches Land hat die Hauptstadt {object}?", split = "train", answer = "{object} ist die Hauptstadt von {subject}." },
+  { text = "Wessen Hauptstadt ist {object}?", split = "train", answer = "{object} ist die Hauptstadt von {subject}." },
+  { text = "Zu welchem Land gehört die Hauptstadt {object}?", split = "train", answer = "{object} ist die Hauptstadt von {subject}." },
+  { text = "{object} ist Hauptstadt von welchem Staat?", split = "train", answer = "{object} ist die Hauptstadt von {subject}." },
+  { text = "Was ist eigentlich die Hauptstadt von {subject}?", split = "heldout" },
+  { text = "Welche Stadt ist Hauptstadt von {subject}?", split = "heldout" },
+  { text = "Wovon ist {object} die Hauptstadt?", split = "heldout", answer = "{object} ist die Hauptstadt von {subject}." },
+]
+
+[relations.element_symbol]
+answers = ["Das Symbol von {subject} ist {object}."]
+questions = [
+  { text = "Was ist das Symbol von {subject}?", split = "train" },
+  { text = "Welches Symbol hat {subject}?", split = "train" },
+  { text = "Wie lautet das Elementsymbol von {subject}?", split = "train" },
+  { text = "Symbol von {subject}?", split = "train" },
+  { text = "Welches chemische Zeichen hat {subject}?", split = "train" },
+  { text = "Was ist das chemische Symbol für {subject}?", split = "train" },
+  { text = "Nenne das Symbol von {subject}.", split = "train" },
+  { text = "Welches Element hat das Symbol {object}?", split = "train", answer = "{object} ist das Symbol von {subject}." },
+  { text = "Wofür steht das Symbol {object}?", split = "train", answer = "{object} ist das Symbol von {subject}." },
+  { text = "Welches Element hat das Zeichen {object}?", split = "train", answer = "{object} ist das Symbol von {subject}." },
+  { text = "Welches chemische Element ist {object}?", split = "train", answer = "{object} ist das Symbol von {subject}." },
+  { text = "Was bedeutet das Symbol {object}?", split = "train", answer = "{object} ist das Symbol von {subject}." },
+  { text = "{object} ist das Symbol von welchem Element?", split = "train", answer = "{object} ist das Symbol von {subject}." },
+  { text = "Wie kürzt man {subject} in der Chemie ab?", split = "heldout" },
+  { text = "Welches Elementsymbol hat {subject}?", split = "heldout" },
+  { text = "Für welches Element steht {object}?", split = "heldout", answer = "{object} ist das Symbol von {subject}." },
+]
+
+[relations.frei]
+free = true
+answers = ["{object}"]
+questions = [{ text = "{subject}", split = "train" }]

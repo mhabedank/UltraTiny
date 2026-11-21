@@ -1,0 +1,176 @@
+id	topic	relation	subject	object	source
+wd/Q1000/cap	geografie	hauptstadt_von	Gabun	Libreville	wikidata:Q1000
+wd/Q1005/cap	geografie	hauptstadt_von	Gambia	Banjul	wikidata:Q1005
+wd/Q1006/cap	geografie	hauptstadt_von	Guinea	Conakry	wikidata:Q1006
+wd/Q1007/cap	geografie	hauptstadt_von	Guinea-Bissau	Bissau	wikidata:Q1007
+wd/Q1008/cap	geografie	hauptstadt_von	der Elfenbeinküste	Yamoussoukro	wikidata:Q1008
+wd/Q1011/cap	geografie	hauptstadt_von	Kap Verde	Praia	wikidata:Q1011
+wd/Q1013/cap	geografie	hauptstadt_von	Lesotho	Maseru	wikidata:Q1013
+wd/Q1014/cap	geografie	hauptstadt_von	Liberia	Monrovia	wikidata:Q1014
+wd/Q1016/cap	geografie	hauptstadt_von	Libyen	Tripolis	wikidata:Q1016
+wd/Q1019/cap	geografie	hauptstadt_von	Madagaskar	Antananarivo	wikidata:Q1019
+wd/Q1020/cap	geografie	hauptstadt_von	Malawi	Lilongwe	wikidata:Q1020
+wd/Q1025/cap	geografie	hauptstadt_von	Mauretanien	Nouakchott	wikidata:Q1025
+wd/Q1027/cap	geografie	hauptstadt_von	Mauritius	Port Louis	wikidata:Q1027
+wd/Q1028/cap	geografie	hauptstadt_von	Marokko	Rabat	wikidata:Q1028
+wd/Q1029/cap	geografie	hauptstadt_von	Mosambik	Maputo	wikidata:Q1029
+wd/Q1030/cap	geografie	hauptstadt_von	Namibia	Windhoek	wikidata:Q1030
+wd/Q1032/cap	geografie	hauptstadt_von	dem Niger	Niamey	wikidata:Q1032
+wd/Q1036/cap	geografie	hauptstadt_von	Uganda	Kampala	wikidata:Q1036
+wd/Q1037/cap	geografie	hauptstadt_von	Ruanda	Kigali	wikidata:Q1037
+wd/Q1041/cap	geografie	hauptstadt_von	Senegal	Dakar	wikidata:Q1041
+wd/Q1042/cap	geografie	hauptstadt_von	den Seychellen	Victoria	wikidata:Q1042
+wd/Q1044/cap	geografie	hauptstadt_von	Sierra Leone	Freetown	wikidata:Q1044
+wd/Q1045/cap	geografie	hauptstadt_von	Somalia	Mogadischu	wikidata:Q1045
+wd/Q1049/cap	geografie	hauptstadt_von	dem Sudan	Chartum	wikidata:Q1049
+wd/Q114/cap	geografie	hauptstadt_von	Kenia	Nairobi	wikidata:Q114
+wd/Q115/cap	geografie	hauptstadt_von	Äthiopien	Addis Abeba	wikidata:Q115
+wd/Q117/cap	geografie	hauptstadt_von	Ghana	Accra	wikidata:Q117
+wd/Q1246/cap	geografie	hauptstadt_von	dem Kosovo	Pristina	wikidata:Q1246
+wd/Q142/cap	geografie	hauptstadt_von	Frankreich	Paris	wikidata:Q142
+wd/Q145/cap	geografie	hauptstadt_von	dem Vereinigten Königreich	London	wikidata:Q145
+wd/Q148/cap	geografie	hauptstadt_von	China	Peking	wikidata:Q148
+wd/Q159/cap	geografie	hauptstadt_von	Russland	Moskau	wikidata:Q159
+wd/Q16/cap	geografie	hauptstadt_von	Kanada	Ottawa	wikidata:Q16
+wd/Q17/cap	geografie	hauptstadt_von	Japan	Tokio	wikidata:Q17
+wd/Q183/cap	geografie	hauptstadt_von	Deutschland	Berlin	wikidata:Q183
+wd/Q184/cap	geografie	hauptstadt_von	Belarus	Minsk	wikidata:Q184
+wd/Q191/cap	geografie	hauptstadt_von	Estland	Tallinn	wikidata:Q191
+wd/Q211/cap	geografie	hauptstadt_von	Lettland	Riga	wikidata:Q211
+wd/Q212/cap	geografie	hauptstadt_von	der Ukraine	Kiew	wikidata:Q212
+wd/Q213/cap	geografie	hauptstadt_von	Tschechien	Prag	wikidata:Q213
+wd/Q214/cap	geografie	hauptstadt_von	der Slowakei	Bratislava	wikidata:Q214
+wd/Q215/cap	geografie	hauptstadt_von	Slowenien	Ljubljana	wikidata:Q215
+wd/Q217/cap	geografie	hauptstadt_von	Moldau	Kischinau	wikidata:Q217
+wd/Q218/cap	geografie	hauptstadt_von	Rumänien	Bukarest	wikidata:Q218
+wd/Q219/cap	geografie	hauptstadt_von	Bulgarien	Sofia	wikidata:Q219
+wd/Q221/cap	geografie	hauptstadt_von	Nordmazedonien	Skopje	wikidata:Q221
+wd/Q222/cap	geografie	hauptstadt_von	Albanien	Tirana	wikidata:Q222
+wd/Q224/cap	geografie	hauptstadt_von	Kroatien	Zagreb	wikidata:Q224
+wd/Q225/cap	geografie	hauptstadt_von	Bosnien und Herzegowina	Sarajevo	wikidata:Q225
+wd/Q227/cap	geografie	hauptstadt_von	Aserbaidschan	Baku	wikidata:Q227
+wd/Q228/cap	geografie	hauptstadt_von	Andorra	Andorra la Vella	wikidata:Q228
+wd/Q229/cap	geografie	hauptstadt_von	Zypern	Nikosia	wikidata:Q229
+wd/Q230/cap	geografie	hauptstadt_von	Georgien	Tiflis	wikidata:Q230
+wd/Q232/cap	geografie	hauptstadt_von	Kasachstan	Astana	wikidata:Q232
+wd/Q233/cap	geografie	hauptstadt_von	Malta	Valletta	wikidata:Q233
+wd/Q235/cap	geografie	hauptstadt_von	Monaco	Monaco	wikidata:Q235
+wd/Q236/cap	geografie	hauptstadt_von	Montenegro	Podgorica	wikidata:Q236
+wd/Q237/cap	geografie	hauptstadt_von	der Vatikanstadt	Vatikanstadt	wikidata:Q237
+wd/Q238/cap	geografie	hauptstadt_von	San Marino	San Marino	wikidata:Q238
+wd/Q241/cap	geografie	hauptstadt_von	Kuba	Havanna	wikidata:Q241
+wd/Q242/cap	geografie	hauptstadt_von	Belize	Belmopan	wikidata:Q242
+wd/Q244/cap	geografie	hauptstadt_von	Barbados	Bridgetown	wikidata:Q244
+wd/Q252/cap	geografie	hauptstadt_von	Indonesien	Jakarta	wikidata:Q252
+wd/Q262/cap	geografie	hauptstadt_von	Algerien	Algier	wikidata:Q262
+wd/Q265/cap	geografie	hauptstadt_von	Usbekistan	Taschkent	wikidata:Q265
+wd/Q27/cap	geografie	hauptstadt_von	Irland	Dublin	wikidata:Q27
+wd/Q28/cap	geografie	hauptstadt_von	Ungarn	Budapest	wikidata:Q28
+wd/Q29/cap	geografie	hauptstadt_von	Spanien	Madrid	wikidata:Q29
+wd/Q298/cap	geografie	hauptstadt_von	Chile	Santiago de Chile	wikidata:Q298
+wd/Q29999/cap	geografie	hauptstadt_von	Königreich der Niederlande	Amsterdam	wikidata:Q29999
+wd/Q30/cap	geografie	hauptstadt_von	den Vereinigten Staaten	Washington, D.C.	wikidata:Q30
+wd/Q31/cap	geografie	hauptstadt_von	Belgien	Brüssel	wikidata:Q31
+wd/Q32/cap	geografie	hauptstadt_von	Luxemburg	Luxemburg	wikidata:Q32
+wd/Q33/cap	geografie	hauptstadt_von	Finnland	Helsinki	wikidata:Q33
+wd/Q334/cap	geografie	hauptstadt_von	Singapur	Singapur	wikidata:Q334
+wd/Q34/cap	geografie	hauptstadt_von	Schweden	Stockholm	wikidata:Q34
+wd/Q347/cap	geografie	hauptstadt_von	Liechtenstein	Vaduz	wikidata:Q347
+wd/Q36/cap	geografie	hauptstadt_von	Polen	Warschau	wikidata:Q36
+wd/Q37/cap	geografie	hauptstadt_von	Litauen	Vilnius	wikidata:Q37
+wd/Q38/cap	geografie	hauptstadt_von	Italien	Rom	wikidata:Q38
+wd/Q39/cap	geografie	hauptstadt_von	der Schweiz	Bern	wikidata:Q39
+wd/Q398/cap	geografie	hauptstadt_von	Bahrain	Manama	wikidata:Q398
+wd/Q399/cap	geografie	hauptstadt_von	Armenien	Jerewan	wikidata:Q399
+wd/Q40/cap	geografie	hauptstadt_von	Österreich	Wien	wikidata:Q40
+wd/Q403/cap	geografie	hauptstadt_von	Serbien	Belgrad	wikidata:Q403
+wd/Q408/cap	geografie	hauptstadt_von	Australien	Canberra	wikidata:Q408
+wd/Q41/cap	geografie	hauptstadt_von	Griechenland	Athen	wikidata:Q41
+wd/Q414/cap	geografie	hauptstadt_von	Argentinien	Buenos Aires	wikidata:Q414
+wd/Q419/cap	geografie	hauptstadt_von	Peru	Lima	wikidata:Q419
+wd/Q423/cap	geografie	hauptstadt_von	Nordkorea	Pjöngjang	wikidata:Q423
+wd/Q424/cap	geografie	hauptstadt_von	Kambodscha	Phnom Penh	wikidata:Q424
+wd/Q43/cap	geografie	hauptstadt_von	der Türkei	Ankara	wikidata:Q43
+wd/Q45/cap	geografie	hauptstadt_von	Portugal	Lissabon	wikidata:Q45
+wd/Q574/cap	geografie	hauptstadt_von	Osttimor	Dili	wikidata:Q574
+wd/Q664/cap	geografie	hauptstadt_von	Neuseeland	Wellington	wikidata:Q664
+wd/Q668/cap	geografie	hauptstadt_von	Indien	Neu-Delhi	wikidata:Q668
+wd/Q672/cap	geografie	hauptstadt_von	Tuvalu	Funafuti	wikidata:Q672
+wd/Q683/cap	geografie	hauptstadt_von	Samoa	Apia	wikidata:Q683
+wd/Q685/cap	geografie	hauptstadt_von	den Salomonen	Honiara	wikidata:Q685
+wd/Q686/cap	geografie	hauptstadt_von	Vanuatu	Port Vila	wikidata:Q686
+wd/Q691/cap	geografie	hauptstadt_von	Papua-Neuguinea	Port Moresby	wikidata:Q691
+wd/Q695/cap	geografie	hauptstadt_von	Palau	Ngerulmud	wikidata:Q695
+wd/Q697/cap	geografie	hauptstadt_von	Naoero	Yaren	wikidata:Q697
+wd/Q702/cap	geografie	hauptstadt_von	Mikronesien	Palikir	wikidata:Q702
+wd/Q709/cap	geografie	hauptstadt_von	den Marshallinseln	Majuro	wikidata:Q709
+wd/Q710/cap	geografie	hauptstadt_von	Kiribati	South Tarawa	wikidata:Q710
+wd/Q711/cap	geografie	hauptstadt_von	der Mongolei	Ulaanbaatar	wikidata:Q711
+wd/Q712/cap	geografie	hauptstadt_von	Fidschi	Suva	wikidata:Q712
+wd/Q717/cap	geografie	hauptstadt_von	Venezuela	Caracas	wikidata:Q717
+wd/Q730/cap	geografie	hauptstadt_von	Suriname	Paramaribo	wikidata:Q730
+wd/Q734/cap	geografie	hauptstadt_von	Guyana	Georgetown	wikidata:Q734
+wd/Q736/cap	geografie	hauptstadt_von	Ecuador	Quito	wikidata:Q736
+wd/Q754/cap	geografie	hauptstadt_von	Trinidad und Tobago	Port of Spain	wikidata:Q754
+wd/Q756617/cap	geografie	hauptstadt_von	Königreich Dänemark	Kopenhagen	wikidata:Q756617
+wd/Q757/cap	geografie	hauptstadt_von	St. Vincent und die Grenadinen	Kingstown	wikidata:Q757
+wd/Q760/cap	geografie	hauptstadt_von	St. Lucia	Castries	wikidata:Q760
+wd/Q763/cap	geografie	hauptstadt_von	St. Kitts und Nevis	Basseterre	wikidata:Q763
+wd/Q766/cap	geografie	hauptstadt_von	Jamaika	Kingston	wikidata:Q766
+wd/Q77/cap	geografie	hauptstadt_von	Uruguay	Montevideo	wikidata:Q77
+wd/Q774/cap	geografie	hauptstadt_von	Guatemala	Guatemala-Stadt	wikidata:Q774
+wd/Q778/cap	geografie	hauptstadt_von	den Bahamas	Nassau	wikidata:Q778
+wd/Q783/cap	geografie	hauptstadt_von	Honduras	Tegucigalpa	wikidata:Q783
+wd/Q784/cap	geografie	hauptstadt_von	Dominica	Roseau	wikidata:Q784
+wd/Q786/cap	geografie	hauptstadt_von	der Dominikanischen Republik	Santo Domingo	wikidata:Q786
+wd/Q79/cap	geografie	hauptstadt_von	Ägypten	Kairo	wikidata:Q79
+wd/Q790/cap	geografie	hauptstadt_von	Haiti	Port-au-Prince	wikidata:Q790
+wd/Q792/cap	geografie	hauptstadt_von	El Salvador	San Salvador	wikidata:Q792
+wd/Q794/cap	geografie	hauptstadt_von	dem Iran	Teheran	wikidata:Q794
+wd/Q796/cap	geografie	hauptstadt_von	dem Irak	Bagdad	wikidata:Q796
+wd/Q801/cap	geografie	hauptstadt_von	Israel	Jerusalem	wikidata:Q801
+wd/Q804/cap	geografie	hauptstadt_von	Panama	Panama-Stadt	wikidata:Q804
+wd/Q810/cap	geografie	hauptstadt_von	Jordanien	Amman	wikidata:Q810
+wd/Q811/cap	geografie	hauptstadt_von	Nicaragua	Managua	wikidata:Q811
+wd/Q813/cap	geografie	hauptstadt_von	Kirgisistan	Bischkek	wikidata:Q813
+wd/Q817/cap	geografie	hauptstadt_von	Kuwait	Kuweit-Stadt	wikidata:Q817
+wd/Q819/cap	geografie	hauptstadt_von	Laos	Vientiane	wikidata:Q819
+wd/Q822/cap	geografie	hauptstadt_von	dem Libanon	Beirut	wikidata:Q822
+wd/Q833/cap	geografie	hauptstadt_von	Malaysia	Kuala Lumpur	wikidata:Q833
+wd/Q836/cap	geografie	hauptstadt_von	Myanmar	Naypyidaw	wikidata:Q836
+wd/Q837/cap	geografie	hauptstadt_von	Nepal	Kathmandu	wikidata:Q837
+wd/Q842/cap	geografie	hauptstadt_von	Oman	Maskat	wikidata:Q842
+wd/Q843/cap	geografie	hauptstadt_von	Pakistan	Islamabad	wikidata:Q843
+wd/Q846/cap	geografie	hauptstadt_von	Katar	Doha	wikidata:Q846
+wd/Q851/cap	geografie	hauptstadt_von	Saudi-Arabien	Riad	wikidata:Q851
+wd/Q858/cap	geografie	hauptstadt_von	Syrien	Damaskus	wikidata:Q858
+wd/Q863/cap	geografie	hauptstadt_von	Tadschikistan	Duschanbe	wikidata:Q863
+wd/Q865/cap	geografie	hauptstadt_von	Taiwan	Taipeh	wikidata:Q865
+wd/Q869/cap	geografie	hauptstadt_von	Thailand	Bangkok	wikidata:Q869
+wd/Q878/cap	geografie	hauptstadt_von	den Vereinigten Arabischen Emiraten	Abu Dhabi	wikidata:Q878
+wd/Q881/cap	geografie	hauptstadt_von	Vietnam	Hanoi	wikidata:Q881
+wd/Q884/cap	geografie	hauptstadt_von	Südkorea	Seoul	wikidata:Q884
+wd/Q889/cap	geografie	hauptstadt_von	Afghanistan	Kabul	wikidata:Q889
+wd/Q902/cap	geografie	hauptstadt_von	Bangladesch	Dhaka	wikidata:Q902
+wd/Q912/cap	geografie	hauptstadt_von	Mali	Bamako	wikidata:Q912
+wd/Q916/cap	geografie	hauptstadt_von	Angola	Luanda	wikidata:Q916
+wd/Q917/cap	geografie	hauptstadt_von	Bhutan	Thimphu	wikidata:Q917
+wd/Q921/cap	geografie	hauptstadt_von	Brunei	Bandar Seri Begawan	wikidata:Q921
+wd/Q924/cap	geografie	hauptstadt_von	Tansania	Dodoma	wikidata:Q924
+wd/Q928/cap	geografie	hauptstadt_von	den Philippinen	Manila	wikidata:Q928
+wd/Q929/cap	geografie	hauptstadt_von	der Zentralafrikanischen Republik	Bangui	wikidata:Q929
+wd/Q948/cap	geografie	hauptstadt_von	Tunesien	Tunis	wikidata:Q948
+wd/Q953/cap	geografie	hauptstadt_von	Sambia	Lusaka	wikidata:Q953
+wd/Q954/cap	geografie	hauptstadt_von	Simbabwe	Harare	wikidata:Q954
+wd/Q958/cap	geografie	hauptstadt_von	dem Südsudan	Juba	wikidata:Q958
+wd/Q96/cap	geografie	hauptstadt_von	Mexiko	Mexiko-Stadt	wikidata:Q96
+wd/Q962/cap	geografie	hauptstadt_von	Benin	Porto-Novo	wikidata:Q962
+wd/Q963/cap	geografie	hauptstadt_von	Botswana	Gaborone	wikidata:Q963
+wd/Q965/cap	geografie	hauptstadt_von	Burkina Faso	Ouagadougou	wikidata:Q965
+wd/Q967/cap	geografie	hauptstadt_von	Burundi	Gitega	wikidata:Q967
+wd/Q970/cap	geografie	hauptstadt_von	den Komoren	Moroni	wikidata:Q970
+wd/Q971/cap	geografie	hauptstadt_von	der Republik Kongo	Brazzaville	wikidata:Q971
+wd/Q974/cap	geografie	hauptstadt_von	der Demokratischen Republik Kongo	Kinshasa	wikidata:Q974
+wd/Q977/cap	geografie	hauptstadt_von	Dschibuti	Dschibuti	wikidata:Q977
+wd/Q983/cap	geografie	hauptstadt_von	Äquatorialguinea	Ciudad de la Paz	wikidata:Q983
+wd/Q986/cap	geografie	hauptstadt_von	Eritrea	Asmara	wikidata:Q986
