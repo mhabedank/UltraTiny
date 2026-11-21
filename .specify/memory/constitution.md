@@ -1,8 +1,9 @@
 # UltraTiny Constitution
 
-UltraTiny builds a tiny language model that is trained on a PC and runs fully offline on an
-ESP32 microcontroller (inspired by Tiny-2.1, a ~367k-parameter character-level transformer
-with 8-bit row-scaled weights running on DOS-era PCs).
+UltraTiny builds a tiny language model that is trained on a PC and runs fully offline on a
+NodeMCU board (ESP8266 microcontroller), as a proof of concept that a language model fits on
+one of the smallest Wi-Fi microcontrollers (inspired by Tiny-2.1, a ~367k-parameter
+character-level transformer with 8-bit row-scaled weights running on DOS-era PCs).
 
 ## Core Principles
 
@@ -26,8 +27,10 @@ Rationale: on a microcontroller, memory is the product constraint; everything el
 - The on-device inference path MUST NOT allocate heap memory at runtime: all buffers come from
   a statically sized arena whose size is computed from the model header.
 - Integer / fixed-point arithmetic is preferred; float use MUST be limited to places where it is
-  measured to be necessary or cheaper on the target.
-- Weights MUST be read in place from flash (memory-mapped) where possible, not copied to RAM.
+  measured to be necessary or cheaper on the target. The target has no FPU, so every float
+  operation in the per-token path is software-emulated and MUST be justified by measurement.
+- Weights MUST be read in place from flash (memory-mapped), not copied to RAM; the model MUST
+  therefore fit, together with the firmware, in the flash window the target can map at once.
 
 Rationale: predictable memory and timing on a device with no OS-level safety net.
 
@@ -35,6 +38,8 @@ Rationale: predictable memory and timing on a device with no OS-level safety net
 
 - A Python reference implementation MUST replicate the exact quantized on-device math.
 - The C inference code MUST be buildable and testable on the host (Linux) without hardware.
+- Because no emulator for the target is used, parity on the device MUST be shown on a real
+  board before a release (same golden cases, identical output text).
 - Golden test vectors (input tokens → logits/next token) produced by the reference MUST pass
   against the C implementation within a stated tolerance (bit-exact for integer paths).
 - Every change to model math, export format, or runtime MUST be covered by these parity tests
@@ -66,16 +71,21 @@ Rationale: small, portable code is easier to fit, verify, and port to other micr
 
 ## Technical Constraints
 
-- **Target hardware**: classic ESP32 (Xtensa LX6, dual-core up to 240 MHz, single-precision
-  FPU, no SIMD, 520 KB on-chip SRAM, no PSRAM assumed, 4 MB external flash).
+- **Target hardware**: NodeMCU v2/v3 board with an ESP8266 (Xtensa LX106, single core,
+  80/160 MHz, **no FPU**, no SIMD, ~80 KB data RAM of which roughly 40–50 KB is free at
+  runtime, no PSRAM, 4 MB external flash of which about 1 MB can be memory-mapped at once).
+- **Legacy hardware**: the classic ESP32 (specs 001–003) is no longer a target for new work.
+  Its firmware MAY stay in the repository but MUST NOT constrain NodeMCU design decisions.
 - **Default budgets** (a feature spec MAY tighten them; loosening requires an amendment):
-  - Model weights: ≤ 2 MB in a dedicated flash data partition, memory-mapped, never copied
-    to RAM.
-  - Runtime RAM for inference (arena + KV cache + activations): ≤ 128 KB, statically sized.
-  - Firmware application image: fits the chosen partition table alongside the model partition.
+  - Model weights: ≤ 700 KB in a dedicated flash area, memory-mapped, never copied to RAM.
+  - Firmware image + model: together inside the flash window the ESP8266 can map at once
+    (1 MB).
+  - Runtime RAM for inference (arena + KV cache + activations): ≤ 40 KB, statically sized.
+  - Time per token: first answer character ≤ 2 s after Enter, generation ≥ 5 chars/s.
   - Without PSRAM, nothing in the model design may rely on external RAM.
-- **Firmware**: ESP-IDF (directly or via PlatformIO), C; host build via a standard C compiler
-  (e.g. gcc/clang) for tests.
+- **Firmware**: an ESP8266 SDK (ESP8266_RTOS_SDK or the Arduino core, directly or via
+  PlatformIO), C; the choice is made and justified in the plan. Host build via a standard C
+  compiler (e.g. gcc/clang) for tests.
 - **Training**: Python 3 with PyTorch and NumPy; MUST run on a CPU-only machine (GPU optional).
 - **Interfaces**: the device exposes the model through a simple, documented text interface
   (e.g. serial console); additional interfaces are specified per feature.
@@ -87,7 +97,8 @@ Rationale: small, portable code is easier to fit, verify, and port to other micr
 - Features follow the Spec Kit flow: specify → (clarify) → plan → tasks → implement.
 - Every plan MUST include a Constitution Check covering Principles I–V.
 - Every pull request MUST pass: host build of the runtime, unit tests, parity tests
-  (Principle III), and the size/budget report (Principle I).
+  (Principle III), the size/budget report against the NodeMCU budgets (Principle I), and,
+  once NodeMCU firmware exists, a firmware build for the ESP8266.
 - Changes to the model binary format MUST update the format version, the exporter, the
   runtime loader, and the parity vectors in the same change.
 - Model quality is reported with a fixed evaluation set and metric defined in the spec, so
@@ -103,4 +114,4 @@ Rationale: small, portable code is easier to fit, verify, and port to other micr
 - Plans and reviews MUST verify compliance; any deviation MUST be recorded with justification
   in the plan's Complexity Tracking section.
 
-**Version**: 1.0.0 | **Ratified**: 2026-11-20 | **Last Amended**: 2026-11-20
+**Version**: 2.0.0 | **Ratified**: 2026-11-20 | **Last Amended**: 2026-11-21
