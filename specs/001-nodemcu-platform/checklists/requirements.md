@@ -1,4 +1,4 @@
-# Specification Quality Checklist: Switch Controller Board from ESP32 to NodeMCU
+# Specification Quality Checklist: NodeMCU as the UltraTiny Hardware Platform
 
 **Purpose**: Validate specification completeness and quality before proceeding to planning
 **Created**: 2026-11-21
@@ -13,7 +13,7 @@
 
 ## Requirement Completeness
 
-- [ ] No [NEEDS CLARIFICATION] markers remain
+- [x] No [NEEDS CLARIFICATION] markers remain
 - [x] Requirements are testable and unambiguous
 - [x] Success criteria are measurable
 - [x] Success criteria are technology-agnostic (no implementation details)
@@ -31,6 +31,7 @@
 
 ## Notes
 
-- Iteration 1: Three [NEEDS CLARIFICATION] markers remain (FR-009 ESP32 support model, SC-005 motivation, Assumptions: location of ESP32 baseline). Pending user answers.
+- Iteration 1: Three [NEEDS CLARIFICATION] markers (ESP32 support model, motivation, ESP32 baseline location).
+- Iteration 2 (2026-11-21): Answered: drop ESP32 completely; boards already on hand; no ESP32 design exists, so this is a new project. Spec rewritten as the NodeMCU platform foundation (directory renamed to 001-nodemcu-platform). All items pass.
 - Board names (ESP32, NodeMCU/ESP8266) appear because they are the subject of the feature, not an implementation choice; firmware toolchain/language is intentionally deferred to planning.
 - Items marked incomplete require spec updates before `/speckit-clarify` or `/speckit-plan`
