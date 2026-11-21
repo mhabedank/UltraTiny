@@ -3,6 +3,7 @@
 in golden.json byte for byte.
 
     uv run python ../tools/device_parity.py --port /dev/ttyUSB0 --golden ../models/starter_golden.json
+    uv run python ../tools/device_parity.py --tcp localhost:5555 --golden ...  # QEMU
 """
 
 from __future__ import annotations
@@ -13,18 +14,28 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from devlib import Device  # noqa: E402
+from devlib import PROMPT, Device, TcpLink  # noqa: E402
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--port", required=True)
+    src = ap.add_mutually_exclusive_group(required=True)
+    src.add_argument("--port")
+    src.add_argument("--tcp", metavar="HOST:PORT")
     ap.add_argument("--golden", required=True)
     ap.add_argument("--char-delay", type=float, default=0.02)
     a = ap.parse_args()
     cases = json.loads(Path(a.golden).read_text(encoding="utf-8"))["cases"]
-    dev = Device(a.port)
-    dev.reset()
+    if a.tcp:
+        host, port = a.tcp.rsplit(":", 1)
+        dev = Device(link=TcpLink(host, int(port), connect_timeout=30))
+        dev.drain(1.0)
+        dev.type("\r")
+        dev.read_until(PROMPT, timeout=120)
+    else:
+        dev = Device(a.port)
+        dev.reset()
+    dev.command("/trace aus")  # plain answers (specs/002-observability)
     dev.command("/modus gierig")
     fails = 0
     for i, c in enumerate(cases):

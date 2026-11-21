@@ -24,3 +24,5 @@ training/data/gen/
 build-*/
 firmware/build-qemu/
 firmware/build-qemu.log
+# observability logs (make observe)
+logs/

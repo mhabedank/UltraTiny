@@ -60,8 +60,28 @@ static void qmatvec(ut_ctx *c, const ut_qmat *w, const float *x, float *y) {
     ut_matvec(w->w, w->scale, w->rows, w->cols, c->aq, xs, y);
 }
 
+void ut_prof_reset(ut_ctx *c) { memset(c->prof_us, 0, sizeof c->prof_us); }
+
+const char *ut_prof_name(int stage) {
+    static const char *const names[UT_PROF_N] = {"embed", "norm", "qkv", "attn",
+                                                 "wo",    "ffn",  "head"};
+    return stage >= 0 && stage < UT_PROF_N ? names[stage] : "?";
+}
+
+/* Adds the time since the previous mark to `stage`. Reads the clock only. */
+#define PROF(stage)                                   \
+    do {                                              \
+        if (clk) {                                    \
+            uint32_t now_ = clk();                    \
+            c->prof_us[(stage)] += now_ - t_prof;     \
+            t_prof = now_;                            \
+        }                                             \
+    } while (0)
+
 ut_status ut_feed(ut_ctx *c, int token) {
     const ut_model *m = c->m;
+    const ut_clock_us_fn clk = c->clock_us;
+    uint32_t t_prof = clk ? clk() : 0;
     if (c->pos >= m->ctx_len) return UT_ERR_CONTEXT_FULL;
     if (token < 0 || token >= m->vocab_size) return UT_ERR_TOKEN;
     const int d = m->d_model, hd = m->head_dim, nh = m->n_heads, p = c->pos;
@@ -72,6 +92,7 @@ ut_status ut_feed(ut_ctx *c, int token) {
     const int8_t *pe = m->pos_emb.w + (size_t)p * d;
     float ts = m->tok_emb.scale[token], ps = m->pos_emb.scale[p];
     for (int i = 0; i < d; i++) c->x[i] = (float)te[i] * ts + (float)pe[i] * ps;
+    PROF(UT_PROF_EMBED);
 
     for (int l = 0; l < m->n_layers; l++) {
         const ut_layer *L = &m->layers[l];
@@ -81,12 +102,14 @@ ut_status ut_feed(ut_ctx *c, int token) {
         float *vs = c->vs + (size_t)l * m->ctx_len;
 
         ut_rmsnorm(c->x, L->attn_norm, d, m->norm_eps, c->h);
+        PROF(UT_PROF_NORM);
         float hs = ut_quantize(c->h, d, c->aq);
         ut_matvec(L->wq.w, L->wq.scale, d, d, c->aq, hs, c->q);
         ut_matvec(L->wk.w, L->wk.scale, hd, d, c->aq, hs, c->k);
         ut_matvec(L->wv.w, L->wv.scale, hd, d, c->aq, hs, c->v);
         ks[p] = ut_quantize(c->k, hd, kq + (size_t)p * hd);
         vs[p] = ut_quantize(c->v, hd, vq + (size_t)p * hd);
+        PROF(UT_PROF_QKV);
 
         for (int h = 0; h < nh; h++) {
             float qs = ut_quantize(c->q + h * hd, hd, c->qh);
@@ -103,18 +126,24 @@ ut_status ut_feed(ut_ctx *c, int token) {
                 out[j] = acc;
             }
         }
+        PROF(UT_PROF_ATTN);
         qmatvec(c, &L->wo, c->att, c->tmp);
         for (int i = 0; i < d; i++) c->x[i] = c->x[i] + c->tmp[i];
+        PROF(UT_PROF_WO);
 
         ut_rmsnorm(c->x, L->ffn_norm, d, m->norm_eps, c->h);
+        PROF(UT_PROF_NORM);
         qmatvec(c, &L->w1, c->h, c->ff);
         for (int i = 0; i < m->d_ff; i++)
             if (c->ff[i] < 0.0f) c->ff[i] = 0.0f;
         qmatvec(c, &L->w2, c->ff, c->tmp);
         for (int i = 0; i < d; i++) c->x[i] = c->x[i] + c->tmp[i];
+        PROF(UT_PROF_FFN);
     }
     ut_rmsnorm(c->x, m->final_norm, d, m->norm_eps, c->h);
+    PROF(UT_PROF_NORM);
     qmatvec(c, &m->tok_emb, c->h, c->logits);
+    PROF(UT_PROF_HEAD);
     c->pos = p + 1;
     return UT_OK;
 }
@@ -124,6 +153,18 @@ int ut_argmax(const float *logits, int n) {
     for (int i = 1; i < n; i++)
         if (logits[i] > logits[best]) best = i;
     return best;
+}
+
+void ut_softmax_copy(const float *logits, int n, float *out) {
+    float mx = logits[0];
+    for (int i = 1; i < n; i++)
+        if (logits[i] > mx) mx = logits[i];
+    float total = 0.0f;
+    for (int i = 0; i < n; i++) {
+        out[i] = ut_expf(logits[i] - mx);
+        total += out[i];
+    }
+    for (int i = 0; i < n; i++) out[i] /= total;
 }
 
 static uint32_t xorshift32(uint32_t x) {
