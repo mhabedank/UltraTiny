@@ -1,4 +1,4 @@
-# Specification Quality Checklist: NodeMCU as the UltraTiny Hardware Platform
+# Specification Quality Checklist: UltraTiny PoC on NodeMCU (ESP8266)
 
 **Purpose**: Validate specification completeness and quality before proceeding to planning
 **Created**: 2026-11-21
@@ -31,7 +31,7 @@
 
 ## Notes
 
-- Iteration 1: Three [NEEDS CLARIFICATION] markers (ESP32 support model, motivation, ESP32 baseline location).
-- Iteration 2 (2026-11-21): Answered: drop ESP32 completely; boards already on hand; no ESP32 design exists, so this is a new project. Spec rewritten as the NodeMCU platform foundation (directory renamed to 001-nodemcu-platform). All items pass.
-- Board names (ESP32, NodeMCU/ESP8266) appear because they are the subject of the feature, not an implementation choice; firmware toolchain/language is intentionally deferred to planning.
+- Board names, memory budgets and speed targets appear on purpose: constitution Principle I requires every feature spec to state the target board and explicit budgets. The ESP8266 SDK/toolchain is deferred to planning.
+- Budgets are derived from `tools/budget_report.py` (arena formula) and `configs/starter.toml`: starter at context 128 needs ~42.5 KB arena, at context 96 ~33 KB; model file ~600 KB.
+- Replaces the earlier draft `specs/001-nodemcu-platform` (written before the existing code on `claude/modest-sagan-xrovbt` was found).
 - Items marked incomplete require spec updates before `/speckit-clarify` or `/speckit-plan`
