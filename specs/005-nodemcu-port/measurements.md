@@ -65,7 +65,8 @@ board (T028); fallback: research R5 (IRAM heap) or a smaller console trace buffe
 |------|--------|----------|
 | First answer character after Enter (typed demo prompt) | ≤ 2000 ms | |
 | Generation speed | ≥ 5 chars/s | |
-| Free heap / free loop stack after boot | > 0, stable | |
+| Free heap / free loop stack after boot | > 0, stable | 4,960 B / 2,716 B (2026-11-22, NodeMCU v2 with CP2102, 160 MHz; boot banner OK, reset reason "External System") |
+| Spot check board vs. host (`Was ist Kohlenstoff`) | identical | identical ("Das Symbol von Stickstoff ist N."; wrong answer is model knowledge, the starter KB only asks for element symbols) |
 | Board vs. reference (`tools/device_parity.py`) | 24/24 | |
 | FR-002 console checks (umlauts, abort, empty input, emoji, determinism) | all OK | |
 | Erased / corrupted / oversized model → HALT_ERROR, single boot | all OK | |
