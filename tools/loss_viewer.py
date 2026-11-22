@@ -29,13 +29,22 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 # Runs on the training machine: follows every file matching the pattern (also files created
 # later, e.g. the next seed) and prints "<file>\t<line>" for each new line, from the beginning.
+# A new run with the same config truncates or replaces its log: then it prints "<file>\t\x00RESET"
+# and reads the file again from the start.
 FOLLOWER = r"""
 import glob, os, sys, time
 d, pat = os.path.expanduser(sys.argv[1]), sys.argv[2]
-pos, buf = {}, {}
+pos, buf, ino = {}, {}, {}
+sys.stdout.write("\t\x00HELLO " + os.path.join(d, pat) + "\n")
+sys.stdout.flush()
 while True:
     for f in sorted(glob.glob(os.path.join(d, pat))):
         try:
+            st = os.stat(f)
+            if f in pos and (st.st_size < pos[f] or st.st_ino != ino.get(f)):
+                pos[f], buf[f] = 0, ""
+                sys.stdout.write(os.path.basename(f) + "\t\x00RESET\n")
+            ino[f] = st.st_ino
             with open(f, "rb") as fh:
                 fh.seek(pos.get(f, 0))
                 data = fh.read()
@@ -65,6 +74,12 @@ class State:
 
     def add(self, run: str, line: str) -> None:
         with self.lock:
+            if line.startswith("\x00HELLO "):
+                self.status = "verbunden, beobachte " + line[7:]
+                return
+            if line == "\x00RESET":  # the log was restarted by a new run
+                self.runs.pop(run, None)
+                return
             r = self.runs.setdefault(run, {"points": [], "qat_from": None, "eval": {}})
             m = STEP_RE.search(line)
             if m:
@@ -86,7 +101,7 @@ def follow(cmd: list[str], state: State, follower_stdin: bool) -> None:
     """Run the follower, feed its lines into state, reconnect when it ends (e.g. ssh drops)."""
     while True:
         with state.lock:
-            state.status = "connected: " + " ".join(cmd[:3])
+            state.status = "verbinde: " + " ".join(cmd[:4])
             state.runs.clear()  # the follower replays every file from the start
         try:
             p = subprocess.Popen(cmd, stdin=subprocess.PIPE if follower_stdin else None,
