@@ -1,7 +1,8 @@
 [project]
 name = "ultratiny"
 version = "0.1.0"
-description = "Training, export and bit-exact reference for the UltraTiny ESP32 language model"
+description = "Training, export and bit-exact reference for the UltraTiny microcontroller language model (PoC)"
+license = "MIT"
 requires-python = ">=3.12"
 dependencies = [
   "numpy>=2.0",

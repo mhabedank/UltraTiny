@@ -8,7 +8,7 @@ Every training fact carries a `source` value. Only the sources listed here may b
 | `own` | Facts and templates written for this project | MIT (same as the code) |
 | `computed` | Values computed by deterministic rules in `training/src/ultratiny/factgen.py` / `periodic.py` from other listed sources (atomic structure, ions, ionic formulas, molar masses, bond types) | MIT (same as the code) |
 | `wikidata` | Snapshot of Wikidata statements (`wikidata:<QID>`) | CC0 1.0 |
-| `llm` | Questions/paraphrases/off-topic inputs generated with a locally run open-weight LLM (`llm:<model>` per row, e.g. `llm:gpt-oss:120b`, `llm:qwen3.6:35b`); answers are never LLM-generated, they stay curated | Apache 2.0 models only (gpt-oss, Qwen3) |
+| `llm` | Questions/paraphrases/off-topic inputs generated with a locally run open-weight LLM (`llm:<model>` per row, currently only `llm:gemma4:e4b`; also allowed: `llm:gpt-oss:*`, `llm:qwen3*`); answers are never LLM-generated, they stay curated | Apache 2.0 models only (Gemma 4, gpt-oss, Qwen3); model output carries no further license terms |
 
 LLM output is only used for *questions* (training-only augmentation in `training/data/augment/`),
 filtered by a judge prompt, the alphabet check and the held-out leak/conflict checks in `datagen`.
@@ -19,3 +19,14 @@ short (<= 60 characters) versions of the curated `own` explanations, *proposed* 
 numbers or formulas, key term present, table facts excluded) and is reviewed by a person
 (`reviewed = yes`) before it is used for training. No fact value comes from an LLM; facts are
 answered from the fact table (`own`, `wikidata`, `computed`).
+
+Models trained from this data (`models/*.utny`) are released under MIT, like the code.
+
+## Notes
+
+- The Gemma 4 family (incl. `gemma4:e4b`, run locally via Ollama) is released by Google under
+  Apache 2.0. Earlier Gemma generations (1–3) use the Gemma Terms of Use and MUST NOT be used.
+- Chemistry facts (`chemie_*.tsv`, `source = own`) are written for this project. The
+  Rahmenlehrplan Chemie Berlin-Brandenburg only serves as a topic list (Themenfelder 3.1–3.12);
+  no curriculum text is copied.
+- Tiny-2.1 inspired the approach; no code or data from it is used.
