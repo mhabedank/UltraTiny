@@ -62,11 +62,23 @@ int32_t ut_dot_i8(const int8_t *a, const int8_t *b, int n) {
     int32_t acc = 0;
     int i = 0;
     for (; i + 4 <= n; i += 4) {
-        acc += (int32_t)a[i] * b[i] + (int32_t)a[i + 1] * b[i + 1] +
-               (int32_t)a[i + 2] * b[i + 2] + (int32_t)a[i + 3] * b[i + 3];
+        uint32_t wa = ut_ld32(a + i), wb = ut_ld32(b + i);
+        acc += (int32_t)ut_i8_of(wa, 0) * ut_i8_of(wb, 0) +
+               (int32_t)ut_i8_of(wa, 1) * ut_i8_of(wb, 1) +
+               (int32_t)ut_i8_of(wa, 2) * ut_i8_of(wb, 2) +
+               (int32_t)ut_i8_of(wa, 3) * ut_i8_of(wb, 3);
     }
     for (; i < n; i++) acc += (int32_t)a[i] * b[i];
     return acc;
+}
+
+void ut_copy_words(void *dst, const void *src, size_t n) {
+    uint8_t *d = (uint8_t *)dst;
+    const uint8_t *s = (const uint8_t *)src;
+    for (size_t i = 0; i < n; i += 4) {
+        uint32_t w = ut_ld32(s + i);
+        for (size_t k = 0; k < 4 && i + k < n; k++) d[i + k] = (uint8_t)(w >> (8 * k));
+    }
 }
 
 void ut_matvec(const int8_t *w, const float *w_scale, int rows, int cols, const int8_t *xq,

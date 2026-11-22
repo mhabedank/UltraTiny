@@ -1,6 +1,7 @@
 /* UTNY v1 loader and validation (contracts/model-format.md). */
 #include <string.h>
 
+#include "mathx.h"
 #include "utiny.h"
 
 const char *ut_status_str(ut_status s) {
@@ -69,18 +70,24 @@ static ut_qmat take_q(cursor *c, const uint8_t *base, int rows, int cols) {
 }
 
 ut_status ut_model_open(ut_model *m, const void *data, size_t size) {
-    const uint8_t *b = (const uint8_t *)data;
+    const uint8_t *img = (const uint8_t *)data;
     memset(m, 0, sizeof *m);
     if (size < UT_HEADER_SIZE) return UT_ERR_SIZE;
+    if (((uintptr_t)img & 3u) != 0) return UT_ERR_SIZE;
+    /* The image may sit in ESP8266 mapped flash: copy the header with 32-bit loads and parse the
+     * copy (contracts/runtime-image-access.md). */
+    uint32_t hdr_words[UT_HEADER_SIZE / 4];
+    ut_copy_words(hdr_words, img, UT_HEADER_SIZE);
+    const uint8_t *b = (const uint8_t *)hdr_words;
     if (memcmp(b, "UTNY", 4) != 0) return UT_ERR_MAGIC;
     if (rd16(b + 4) != UT_FORMAT_VERSION) return UT_ERR_VERSION;
     if (ut_crc32(b, 60) != rd32(b + 60)) return UT_ERR_HEADER_CRC;
     uint32_t hsize = rd16(b + 6);
     uint32_t payload = rd32(b + 40);
-    if (hsize != UT_HEADER_SIZE || (size_t)hsize + payload > size) return UT_ERR_SIZE;
+    if (hsize != UT_HEADER_SIZE || (size_t)hsize + payload > size || (payload & 3u) != 0)
+        return UT_ERR_SIZE;
     size = (size_t)hsize + payload; /* the partition may be larger than the file */
-    if (((uintptr_t)b & 3u) != 0) return UT_ERR_SIZE;
-    if (ut_crc32(b + hsize, payload) != rd32(b + 44)) return UT_ERR_PAYLOAD_CRC;
+    if (ut_crc32(img + hsize, payload) != rd32(b + 44)) return UT_ERR_PAYLOAD_CRC;
 
     m->vocab_size = rd16(b + 8);
     m->d_model = rd16(b + 10);
@@ -101,16 +108,24 @@ ut_status ut_model_open(ut_model *m, const void *data, size_t size) {
     m->head_dim = m->d_model / m->n_heads;
     if (m->head_dim % 4 != 0) return UT_ERR_DIMS;
 
+    if (m->d_model % 4 != 0 || m->d_ff % 4 != 0) return UT_ERR_DIMS;
+
     uint32_t a_off = rd32(b + 28), m_off = rd32(b + 32), t_off = rd32(b + 36);
-    if (a_off + 4u > size || m_off >= size || t_off > size || (a_off & 3u) || (t_off & 3u))
+    if (a_off + 4u > size || m_off >= size || t_off > size || m_off > t_off || (a_off & 3u) ||
+        (m_off & 3u) || (t_off & 3u))
         return UT_ERR_SIZE;
-    if (rd32(b + a_off) != (uint32_t)m->vocab_size ||
+    if (ut_ld32(img + a_off) != (uint32_t)m->vocab_size ||
         a_off + 4u + 4u * (uint32_t)m->vocab_size > size)
         return UT_ERR_DIMS;
-    m->alphabet = (const uint32_t *)(const void *)(b + a_off + 4);
-    if (memchr(b + m_off, 0, size - m_off) == NULL) return UT_ERR_SIZE;
-    m->meta = (const char *)(b + m_off);
+    m->alphabet = (const uint32_t *)(const void *)(img + a_off + 4);
+    /* Meta JSON: copied into RAM (word reads), must be NUL-terminated within meta_buf. */
+    size_t meta_n = t_off - m_off;
+    if (meta_n > sizeof m->meta_buf) meta_n = sizeof m->meta_buf;
+    ut_copy_words(m->meta_buf, img + m_off, meta_n);
+    if (memchr(m->meta_buf, 0, meta_n) == NULL) return UT_ERR_SIZE;
+    m->meta = m->meta_buf;
 
+    b = img; /* tensors are referenced in place */
     cursor c = {b + t_off, b + size, 1};
     int d = m->d_model, kvd = m->head_dim * m->n_kv_heads;
     m->tok_emb = take_q(&c, b, m->vocab_size, d);

@@ -1,0 +1,2912 @@
+{
+  "demo": {
+    "n": 33,
+    "accuracy": 1.0,
+    "results": [
+      {
+        "prompt": "Was ist die Hauptstadt von Frankreich?",
+        "expected": "Die Hauptstadt von Frankreich ist Paris.",
+        "answer": "Die Hauptstadt von Frankreich ist Paris.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist die Hauptstadt von Deutschland?",
+        "expected": "Die Hauptstadt von Deutschland ist Berlin.",
+        "answer": "Die Hauptstadt von Deutschland ist Berlin.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie heißt die Hauptstadt von Italien?",
+        "expected": "Die Hauptstadt von Italien ist Rom.",
+        "answer": "Die Hauptstadt von Italien ist Rom.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist die Hauptstadt von Spanien?",
+        "expected": "Die Hauptstadt von Spanien ist Madrid.",
+        "answer": "Die Hauptstadt von Spanien ist Madrid.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist die Hauptstadt von Österreich?",
+        "expected": "Die Hauptstadt von Österreich ist Wien.",
+        "answer": "Die Hauptstadt von Österreich ist Wien.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie heißt die Hauptstadt von Japan?",
+        "expected": "Die Hauptstadt von Japan ist Tokio.",
+        "answer": "Die Hauptstadt von Japan ist Tokio.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist die Hauptstadt von Ägypten?",
+        "expected": "Die Hauptstadt von Ägypten ist Kairo.",
+        "answer": "Die Hauptstadt von Ägypten ist Kairo.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist die Hauptstadt von Kanada?",
+        "expected": "Die Hauptstadt von Kanada ist Ottawa.",
+        "answer": "Die Hauptstadt von Kanada ist Ottawa.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist die Hauptstadt von Australien?",
+        "expected": "Die Hauptstadt von Australien ist Canberra.",
+        "answer": "Die Hauptstadt von Australien ist Canberra.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist die Hauptstadt von Brasilien?",
+        "expected": "Die Hauptstadt von Brasilien ist Brasilia.",
+        "answer": "Die Hauptstadt von Brasilien ist Brasilia.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist die Hauptstadt von Griechenland?",
+        "expected": "Die Hauptstadt von Griechenland ist Athen.",
+        "answer": "Die Hauptstadt von Griechenland ist Athen.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist die Hauptstadt von Polen?",
+        "expected": "Die Hauptstadt von Polen ist Warschau.",
+        "answer": "Die Hauptstadt von Polen ist Warschau.",
+        "correct": true
+      },
+      {
+        "prompt": "Von welchem Land ist Lissabon die Hauptstadt?",
+        "expected": "Lissabon ist die Hauptstadt von Portugal.",
+        "answer": "Lissabon ist die Hauptstadt von Portugal.",
+        "correct": true
+      },
+      {
+        "prompt": "Von welchem Land ist Nairobi die Hauptstadt?",
+        "expected": "Nairobi ist die Hauptstadt von Kenia.",
+        "answer": "Nairobi ist die Hauptstadt von Kenia.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist das Symbol von Gold?",
+        "expected": "Das Symbol von Gold ist Au.",
+        "answer": "Das Symbol von Gold ist Au.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist das Symbol von Eisen?",
+        "expected": "Das Symbol von Eisen ist Fe.",
+        "answer": "Das Symbol von Eisen ist Fe.",
+        "correct": true
+      },
+      {
+        "prompt": "Welches Symbol hat Sauerstoff?",
+        "expected": "Das Symbol von Sauerstoff ist O.",
+        "answer": "Das Symbol von Sauerstoff ist O.",
+        "correct": true
+      },
+      {
+        "prompt": "Welches Symbol hat Silber?",
+        "expected": "Das Symbol von Silber ist Ag.",
+        "answer": "Das Symbol von Silber ist Ag.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist das Symbol von Natrium?",
+        "expected": "Das Symbol von Natrium ist Na.",
+        "answer": "Das Symbol von Natrium ist Na.",
+        "correct": true
+      },
+      {
+        "prompt": "Welches Element hat das Symbol Hg?",
+        "expected": "Hg ist das Symbol von Quecksilber.",
+        "answer": "Hg ist das Symbol von Quecksilber.",
+        "correct": true
+      },
+      {
+        "prompt": "Welches Element hat das Symbol Pb?",
+        "expected": "Pb ist das Symbol von Blei.",
+        "answer": "Pb ist das Symbol von Blei.",
+        "correct": true
+      },
+      {
+        "prompt": "Wofür steht das Symbol Cu?",
+        "expected": "Cu ist das Symbol von Kupfer.",
+        "answer": "Cu ist das Symbol von Kupfer.",
+        "correct": true
+      },
+      {
+        "prompt": "Wer bist du?",
+        "expected": "Ich bin UltraTiny, ein kleines Sprachmodell auf einer NodeMCU.",
+        "answer": "Ich bin UltraTiny, ein kleines Sprachmodell auf einer NodeMCU.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie heißt du?",
+        "expected": "Ich heiße UltraTiny.",
+        "answer": "Ich heiße UltraTiny.",
+        "correct": true
+      },
+      {
+        "prompt": "Brauchst du Internet?",
+        "expected": "Nein, ich laufe komplett offline auf dem Chip.",
+        "answer": "Nein, ich laufe komplett offline auf dem Chip.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie viele Parameter hast du?",
+        "expected": "Ich habe etwa 600000 Parameter.",
+        "answer": "Ich habe etwa 600000 Parameter.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie viel RAM hat der ESP8266?",
+        "expected": "Der ESP8266 hat rund 80 KB Arbeitsspeicher.",
+        "answer": "Der ESP8266 hat rund 80 KB Arbeitsspeicher.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie viele Kerne hat der ESP8266?",
+        "expected": "Der ESP8266 hat nur einen Kern.",
+        "answer": "Der ESP8266 hat nur einen Kern.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist ein Mikrocontroller?",
+        "expected": "Ein Mikrocontroller ist ein kleiner Computer auf einem einzigen Chip.",
+        "answer": "Ein Mikrocontroller ist ein kleiner Computer auf einem einzigen Chip.",
+        "correct": true
+      },
+      {
+        "prompt": "Was kannst du?",
+        "expected": "Ich kenne Hauptstädte, chemische Elemente und ein paar Fakten über mich.",
+        "answer": "Ich kenne Hauptstädte, chemische Elemente und ein paar Fakten über mich.",
+        "correct": true
+      },
+      {
+        "prompt": "Hallo!",
+        "expected": "Hallo! Stell mir eine Frage.",
+        "answer": "Hallo! Stell mir eine Frage.",
+        "correct": true
+      },
+      {
+        "prompt": "Wer hat dich inspiriert?",
+        "expected": "Ich bin von Tiny-2.1 inspiriert, das auf alten DOS Computern läuft.",
+        "answer": "Ich bin von Tiny-2.1 inspiriert, das auf alten DOS Computern läuft.",
+        "correct": true
+      },
+      {
+        "prompt": "Worauf läufst du?",
+        "expected": "Ich laufe auf einem ESP8266 Mikrocontroller.",
+        "answer": "Ich laufe auf einem ESP8266 Mikrocontroller.",
+        "correct": true
+      }
+    ]
+  },
+  "heldout": {
+    "n": 450,
+    "accuracy": 0.7,
+    "results": [
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Frankreich?",
+        "expected": "Die Hauptstadt von Frankreich ist Paris.",
+        "answer": "Die Hauptstadt von Frankreich ist Paris.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Frankreich?",
+        "expected": "Die Hauptstadt von Frankreich ist Paris.",
+        "answer": "Die Hauptstadt von Frankreich ist Paris.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Paris die Hauptstadt?",
+        "expected": "Paris ist die Hauptstadt von Frankreich.",
+        "answer": "Moskau ist die Hauptstadt von Russland.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Deutschland?",
+        "expected": "Die Hauptstadt von Deutschland ist Berlin.",
+        "answer": "Die Hauptstadt von Deutschland ist Berlin.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Deutschland?",
+        "expected": "Die Hauptstadt von Deutschland ist Berlin.",
+        "answer": "Die Hauptstadt von Deutschland ist Berlin.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Berlin die Hauptstadt?",
+        "expected": "Berlin ist die Hauptstadt von Deutschland.",
+        "answer": "Ich lese und schreibe Buchstabe für Buchstabe.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Italien?",
+        "expected": "Die Hauptstadt von Italien ist Rom.",
+        "answer": "Die Hauptstadt von Italien ist Rom.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Italien?",
+        "expected": "Die Hauptstadt von Italien ist Rom.",
+        "answer": "Die Hauptstadt von Italien ist Rom.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Rom die Hauptstadt?",
+        "expected": "Rom ist die Hauptstadt von Italien.",
+        "answer": "Rom ist die Hauptstadt von Italien.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Spanien?",
+        "expected": "Die Hauptstadt von Spanien ist Madrid.",
+        "answer": "Die Hauptstadt von Spanien ist Madrid.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Spanien?",
+        "expected": "Die Hauptstadt von Spanien ist Madrid.",
+        "answer": "Die Hauptstadt von Spanien ist Madrid.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Madrid die Hauptstadt?",
+        "expected": "Madrid ist die Hauptstadt von Spanien.",
+        "answer": "Montevideo ist die Hauptstadt von Uruguay.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Portugal?",
+        "expected": "Die Hauptstadt von Portugal ist Lissabon.",
+        "answer": "Die Hauptstadt von Portugal ist Lissabon.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Portugal?",
+        "expected": "Die Hauptstadt von Portugal ist Lissabon.",
+        "answer": "Die Hauptstadt von Portugal ist Lissabon.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Lissabon die Hauptstadt?",
+        "expected": "Lissabon ist die Hauptstadt von Portugal.",
+        "answer": "Wellington ist die Hauptstadt von Neuseeland.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Polen?",
+        "expected": "Die Hauptstadt von Polen ist Warschau.",
+        "answer": "Die Hauptstadt von Polen ist Warschau.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Polen?",
+        "expected": "Die Hauptstadt von Polen ist Warschau.",
+        "answer": "Die Hauptstadt von Polen ist Warschau.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Warschau die Hauptstadt?",
+        "expected": "Warschau ist die Hauptstadt von Polen.",
+        "answer": "Woscha ist die Hauptstadt von Polen.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Österreich?",
+        "expected": "Die Hauptstadt von Österreich ist Wien.",
+        "answer": "Die Hauptstadt von Österreich ist Wien.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Österreich?",
+        "expected": "Die Hauptstadt von Österreich ist Wien.",
+        "answer": "Die Hauptstadt von Österreich ist Wien.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Wien die Hauptstadt?",
+        "expected": "Wien ist die Hauptstadt von Österreich.",
+        "answer": "Wien ist die Hauptstadt von Österreich.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Belgien?",
+        "expected": "Die Hauptstadt von Belgien ist Brüssel.",
+        "answer": "Die Hauptstadt von Belgien ist Brüssel.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Belgien?",
+        "expected": "Die Hauptstadt von Belgien ist Brüssel.",
+        "answer": "Die Hauptstadt von Belgien ist Brüssel.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Brüssel die Hauptstadt?",
+        "expected": "Brüssel ist die Hauptstadt von Belgien.",
+        "answer": "Buenos Ais ist die Hauptstadt von Argentinien.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Dänemark?",
+        "expected": "Die Hauptstadt von Dänemark ist Kopenhagen.",
+        "answer": "Die Hauptstadt von Dänemark ist Kopenhagen.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Dänemark?",
+        "expected": "Die Hauptstadt von Dänemark ist Kopenhagen.",
+        "answer": "Die Hauptstadt von Dänemark ist Kopenhagen.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Kopenhagen die Hauptstadt?",
+        "expected": "Kopenhagen ist die Hauptstadt von Dänemark.",
+        "answer": "Kopenhagen ist die Hauptstadt von Dänemark.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Schweden?",
+        "expected": "Die Hauptstadt von Schweden ist Stockholm.",
+        "answer": "Die Hauptstadt von Schweden ist Stockholm.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Schweden?",
+        "expected": "Die Hauptstadt von Schweden ist Stockholm.",
+        "answer": "Die Hauptstadt von Schweden ist Stockholm.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Stockholm die Hauptstadt?",
+        "expected": "Stockholm ist die Hauptstadt von Schweden.",
+        "answer": "Die Hauptstadt von Italien ist Rom.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Norwegen?",
+        "expected": "Die Hauptstadt von Norwegen ist Oslo.",
+        "answer": "Die Hauptstadt von Norwegen ist Oslo.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Norwegen?",
+        "expected": "Die Hauptstadt von Norwegen ist Oslo.",
+        "answer": "Die Hauptstadt von Norwegen ist Oslo.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Oslo die Hauptstadt?",
+        "expected": "Oslo ist die Hauptstadt von Norwegen.",
+        "answer": "Oslo ist die Hauptstadt von Norwegen.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Finnland?",
+        "expected": "Die Hauptstadt von Finnland ist Helsinki.",
+        "answer": "Die Hauptstadt von Finnland ist Helsinki.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Finnland?",
+        "expected": "Die Hauptstadt von Finnland ist Helsinki.",
+        "answer": "Die Hauptstadt von Finnland ist Helsinki.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Helsinki die Hauptstadt?",
+        "expected": "Helsinki ist die Hauptstadt von Finnland.",
+        "answer": "Wellington ist die Hauptstadt von Neuseeland.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Island?",
+        "expected": "Die Hauptstadt von Island ist Reykjavik.",
+        "answer": "Die Hauptstadt von Island ist Reykjavik.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Island?",
+        "expected": "Die Hauptstadt von Island ist Reykjavik.",
+        "answer": "Die Hauptstadt von Island ist Reykjavik.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Reykjavik die Hauptstadt?",
+        "expected": "Reykjavik ist die Hauptstadt von Island.",
+        "answer": "Rom ist die Hauptstadt von Italien.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Irland?",
+        "expected": "Die Hauptstadt von Irland ist Dublin.",
+        "answer": "Die Hauptstadt von Irland ist Dublin.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Irland?",
+        "expected": "Die Hauptstadt von Irland ist Dublin.",
+        "answer": "Die Hauptstadt von Irland ist Dublin.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Dublin die Hauptstadt?",
+        "expected": "Dublin ist die Hauptstadt von Irland.",
+        "answer": "Wellington ist die Hauptstadt von Neuseeland.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Griechenland?",
+        "expected": "Die Hauptstadt von Griechenland ist Athen.",
+        "answer": "Die Hauptstadt von Griechenland ist Athen.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Griechenland?",
+        "expected": "Die Hauptstadt von Griechenland ist Athen.",
+        "answer": "Die Hauptstadt von Griechenland ist Athen.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Athen die Hauptstadt?",
+        "expected": "Athen ist die Hauptstadt von Griechenland.",
+        "answer": "Wien ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Kroatien?",
+        "expected": "Die Hauptstadt von Kroatien ist Zagreb.",
+        "answer": "Die Hauptstadt von Kroatien ist Zagreb.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Kroatien?",
+        "expected": "Die Hauptstadt von Kroatien ist Zagreb.",
+        "answer": "Die Hauptstadt von Kroatien ist Zagreb.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Zagreb die Hauptstadt?",
+        "expected": "Zagreb ist die Hauptstadt von Kroatien.",
+        "answer": "Wien ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Serbien?",
+        "expected": "Die Hauptstadt von Serbien ist Belgrad.",
+        "answer": "Die Hauptstadt von Serbien ist Belgrad.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Serbien?",
+        "expected": "Die Hauptstadt von Serbien ist Belgrad.",
+        "answer": "Die Hauptstadt von Serbien ist Belgrad.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Belgrad die Hauptstadt?",
+        "expected": "Belgrad ist die Hauptstadt von Serbien.",
+        "answer": "Belgrad ist die Hauptstadt von Serbien.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Ungarn?",
+        "expected": "Die Hauptstadt von Ungarn ist Budapest.",
+        "answer": "Die Hauptstadt von Ungarn ist Budapest.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Ungarn?",
+        "expected": "Die Hauptstadt von Ungarn ist Budapest.",
+        "answer": "Die Hauptstadt von Ungarn ist Budapest.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Budapest die Hauptstadt?",
+        "expected": "Budapest ist die Hauptstadt von Ungarn.",
+        "answer": "Montevideo ist die Hauptstadt von Uruguay.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Rumänien?",
+        "expected": "Die Hauptstadt von Rumänien ist Bukarest.",
+        "answer": "Die Hauptstadt von Rumänien ist Bukarest.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Rumänien?",
+        "expected": "Die Hauptstadt von Rumänien ist Bukarest.",
+        "answer": "Die Hauptstadt von Rumänien ist Bukarest.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Bukarest die Hauptstadt?",
+        "expected": "Bukarest ist die Hauptstadt von Rumänien.",
+        "answer": "Bukarest ist die Hauptstadt von Rumänien.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Bulgarien?",
+        "expected": "Die Hauptstadt von Bulgarien ist Sofia.",
+        "answer": "Die Hauptstadt von Bulgarien ist Sofia.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Bulgarien?",
+        "expected": "Die Hauptstadt von Bulgarien ist Sofia.",
+        "answer": "Die Hauptstadt von Bulgarien ist Sofia.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Sofia die Hauptstadt?",
+        "expected": "Sofia ist die Hauptstadt von Bulgarien.",
+        "answer": "Weoff ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Albanien?",
+        "expected": "Die Hauptstadt von Albanien ist Tirana.",
+        "answer": "Die Hauptstadt von Albanien ist Tirana.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Albanien?",
+        "expected": "Die Hauptstadt von Albanien ist Tirana.",
+        "answer": "Die Hauptstadt von Albanien ist Tirana.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Tirana die Hauptstadt?",
+        "expected": "Tirana ist die Hauptstadt von Albanien.",
+        "answer": "Wellington ist die Hauptstadt von Neuseeland.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Estland?",
+        "expected": "Die Hauptstadt von Estland ist Tallinn.",
+        "answer": "Die Hauptstadt von Estland ist Tallinn.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Estland?",
+        "expected": "Die Hauptstadt von Estland ist Tallinn.",
+        "answer": "Die Hauptstadt von Estland ist Tallinn.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Tallinn die Hauptstadt?",
+        "expected": "Tallinn ist die Hauptstadt von Estland.",
+        "answer": "Wellington ist die Hauptstadt von Neuseeland.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Lettland?",
+        "expected": "Die Hauptstadt von Lettland ist Riga.",
+        "answer": "Die Hauptstadt von Lettland ist Riga.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Lettland?",
+        "expected": "Die Hauptstadt von Lettland ist Riga.",
+        "answer": "Die Hauptstadt von Lettland ist Riga.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Riga die Hauptstadt?",
+        "expected": "Riga ist die Hauptstadt von Lettland.",
+        "answer": "Riga ist die Hauptstadt von Lettland.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Litauen?",
+        "expected": "Die Hauptstadt von Litauen ist Vilnius.",
+        "answer": "Die Hauptstadt von Litauen ist Vilnius.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Litauen?",
+        "expected": "Die Hauptstadt von Litauen ist Vilnius.",
+        "answer": "Die Hauptstadt von Litauen ist Vilnius.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Vilnius die Hauptstadt?",
+        "expected": "Vilnius ist die Hauptstadt von Litauen.",
+        "answer": "Vilnius ist die Hauptstadt von Litauen.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Luxemburg?",
+        "expected": "Die Hauptstadt von Luxemburg ist Luxemburg.",
+        "answer": "Die Hauptstadt von Luxemburg ist Luxemburg.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Luxemburg?",
+        "expected": "Die Hauptstadt von Luxemburg ist Luxemburg.",
+        "answer": "Die Hauptstadt von Luxemburg ist Luxemburg.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Luxemburg die Hauptstadt?",
+        "expected": "Luxemburg ist die Hauptstadt von Luxemburg.",
+        "answer": "Wien ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Slowenien?",
+        "expected": "Die Hauptstadt von Slowenien ist Ljubljana.",
+        "answer": "Die Hauptstadt von Slowenien ist Ljubljana.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Slowenien?",
+        "expected": "Die Hauptstadt von Slowenien ist Ljubljana.",
+        "answer": "Die Hauptstadt von Slowenien ist Ljubljana.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Ljubljana die Hauptstadt?",
+        "expected": "Ljubljana ist die Hauptstadt von Slowenien.",
+        "answer": "Wellington ist die Hauptstadt von Neuseeland.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Tschechien?",
+        "expected": "Die Hauptstadt von Tschechien ist Prag.",
+        "answer": "Die Hauptstadt von Tschechien ist Prag.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Tschechien?",
+        "expected": "Die Hauptstadt von Tschechien ist Prag.",
+        "answer": "Die Hauptstadt von Tschechien ist Prag.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Prag die Hauptstadt?",
+        "expected": "Prag ist die Hauptstadt von Tschechien.",
+        "answer": "Montevik ist die Hauptstadt von Uruguay.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Großbritannien?",
+        "expected": "Die Hauptstadt von Großbritannien ist London.",
+        "answer": "Die Hauptstadt von Großbritannien ist London.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Großbritannien?",
+        "expected": "Die Hauptstadt von Großbritannien ist London.",
+        "answer": "Die Hauptstadt von Großbritannien ist London.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist London die Hauptstadt?",
+        "expected": "London ist die Hauptstadt von Großbritannien.",
+        "answer": "Wellington ist die Hauptstadt von Neuseeland.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Russland?",
+        "expected": "Die Hauptstadt von Russland ist Moskau.",
+        "answer": "Die Hauptstadt von Russland ist Moskau.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Russland?",
+        "expected": "Die Hauptstadt von Russland ist Moskau.",
+        "answer": "Die Hauptstadt von Russland ist Moskau.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Moskau die Hauptstadt?",
+        "expected": "Moskau ist die Hauptstadt von Russland.",
+        "answer": "Moskau ist die Hauptstadt von Russland.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Belarus?",
+        "expected": "Die Hauptstadt von Belarus ist Minsk.",
+        "answer": "Die Hauptstadt von Belarus ist Minsk.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Belarus?",
+        "expected": "Die Hauptstadt von Belarus ist Minsk.",
+        "answer": "Die Hauptstadt von Belarus ist Minsk.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Minsk die Hauptstadt?",
+        "expected": "Minsk ist die Hauptstadt von Belarus.",
+        "answer": "Moskau ist die Hauptstadt von Russland.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Montenegro?",
+        "expected": "Die Hauptstadt von Montenegro ist Podgorica.",
+        "answer": "Die Hauptstadt von Montenegro ist Podgorica.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Montenegro?",
+        "expected": "Die Hauptstadt von Montenegro ist Podgorica.",
+        "answer": "Die Hauptstadt von Montenegro ist Podgorica.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Podgorica die Hauptstadt?",
+        "expected": "Podgorica ist die Hauptstadt von Montenegro.",
+        "answer": "Montevideo ist die Hauptstadt von Uruguay.",
+        "correct": false
+      },
+      {
+        "prompt": "Wovon ist Sarajevo die Hauptstadt?",
+        "expected": "Sarajevo ist die Hauptstadt von Bosnien und Herzegowina.",
+        "answer": "Welli ist die Hauptstadt von Neuseeland.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Nordmazedonien?",
+        "expected": "Die Hauptstadt von Nordmazedonien ist Skopje.",
+        "answer": "Die Hauptstadt von Nordmazedonien ist Skopje.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Nordmazedonien?",
+        "expected": "Die Hauptstadt von Nordmazedonien ist Skopje.",
+        "answer": "Die Hauptstadt von Nordmazedonien ist Skopje.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Skopje die Hauptstadt?",
+        "expected": "Skopje ist die Hauptstadt von Nordmazedonien.",
+        "answer": "Jodkorta ist die Hauptstadt von Japan.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Malta?",
+        "expected": "Die Hauptstadt von Malta ist Valletta.",
+        "answer": "Die Hauptstadt von Malta ist Valletta.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Malta?",
+        "expected": "Die Hauptstadt von Malta ist Valletta.",
+        "answer": "Die Hauptstadt von Malta ist Valletta.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Valletta die Hauptstadt?",
+        "expected": "Valletta ist die Hauptstadt von Malta.",
+        "answer": "Wien ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Zypern?",
+        "expected": "Die Hauptstadt von Zypern ist Nikosia.",
+        "answer": "Die Hauptstadt von Zypern ist Nikosia.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Zypern?",
+        "expected": "Die Hauptstadt von Zypern ist Nikosia.",
+        "answer": "Die Hauptstadt von Zypern ist Nikosia.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Nikosia die Hauptstadt?",
+        "expected": "Nikosia ist die Hauptstadt von Zypern.",
+        "answer": "Norodkor ist die Hauptstadt von Zypern.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Liechtenstein?",
+        "expected": "Die Hauptstadt von Liechtenstein ist Vaduz.",
+        "answer": "Die Hauptstadt von Liechtenstein ist Vaduz.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Liechtenstein?",
+        "expected": "Die Hauptstadt von Liechtenstein ist Vaduz.",
+        "answer": "Die Hauptstadt von Liechtenstein ist Vaduz.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Vaduz die Hauptstadt?",
+        "expected": "Vaduz ist die Hauptstadt von Liechtenstein.",
+        "answer": "Wien ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Monaco?",
+        "expected": "Die Hauptstadt von Monaco ist Monaco.",
+        "answer": "Die Hauptstadt von Monaco ist Monaco.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Monaco?",
+        "expected": "Die Hauptstadt von Monaco ist Monaco.",
+        "answer": "Die Hauptstadt von Monaco ist Monaco.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Monaco die Hauptstadt?",
+        "expected": "Monaco ist die Hauptstadt von Monaco.",
+        "answer": "Monaco ist die Hauptstadt von Monaco.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Andorra?",
+        "expected": "Die Hauptstadt von Andorra ist Andorra la Vella.",
+        "answer": "Die Hauptstadt von Andorra ist Andorra la Vella.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Andorra?",
+        "expected": "Die Hauptstadt von Andorra ist Andorra la Vella.",
+        "answer": "Die Hauptstadt von Andorra ist Andorra la Vella.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Andorra la Vella die Hauptstadt?",
+        "expected": "Andorra la Vella ist die Hauptstadt von Andorra.",
+        "answer": "Venola ist die Hauptstadt von Laos.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Japan?",
+        "expected": "Die Hauptstadt von Japan ist Tokio.",
+        "answer": "Die Hauptstadt von Japan ist Tokio.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Japan?",
+        "expected": "Die Hauptstadt von Japan ist Tokio.",
+        "answer": "Die Hauptstadt von Japan ist Tokio.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Tokio die Hauptstadt?",
+        "expected": "Tokio ist die Hauptstadt von Japan.",
+        "answer": "Hanoi ist die Hauptstadt von Vietnam.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von China?",
+        "expected": "Die Hauptstadt von China ist Peking.",
+        "answer": "Die Hauptstadt von China ist Peking.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von China?",
+        "expected": "Die Hauptstadt von China ist Peking.",
+        "answer": "Die Hauptstadt von China ist Peking.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Peking die Hauptstadt?",
+        "expected": "Peking ist die Hauptstadt von China.",
+        "answer": "Monskau ist die Hauptstadt von Russland.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Indien?",
+        "expected": "Die Hauptstadt von Indien ist Neu-Delhi.",
+        "answer": "Die Hauptstadt von Indien ist Neu-Delhi.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Indien?",
+        "expected": "Die Hauptstadt von Indien ist Neu-Delhi.",
+        "answer": "Die Hauptstadt von Indien ist Neu-Delhi.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Neu-Delhi die Hauptstadt?",
+        "expected": "Neu-Delhi ist die Hauptstadt von Indien.",
+        "answer": "Neu-Delhi ist die Hauptstadt von Indien.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Ägypten?",
+        "expected": "Die Hauptstadt von Ägypten ist Kairo.",
+        "answer": "Die Hauptstadt von Ägypten ist Kairo.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Ägypten?",
+        "expected": "Die Hauptstadt von Ägypten ist Kairo.",
+        "answer": "Die Hauptstadt von Ägypten ist Kairo.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Kairo die Hauptstadt?",
+        "expected": "Kairo ist die Hauptstadt von Ägypten.",
+        "answer": "Kopenhagen ist die Hauptstadt von Dänemark.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Kanada?",
+        "expected": "Die Hauptstadt von Kanada ist Ottawa.",
+        "answer": "Die Hauptstadt von Kanada ist Ottawa.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Kanada?",
+        "expected": "Die Hauptstadt von Kanada ist Ottawa.",
+        "answer": "Die Hauptstadt von Kanada ist Ottawa.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Ottawa die Hauptstadt?",
+        "expected": "Ottawa ist die Hauptstadt von Kanada.",
+        "answer": "Otawa ist die Hauptstadt von Kanada.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Mexiko?",
+        "expected": "Die Hauptstadt von Mexiko ist Mexiko-Stadt.",
+        "answer": "Die Hauptstadt von Mexiko ist Mexiko-Stadt.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Mexiko?",
+        "expected": "Die Hauptstadt von Mexiko ist Mexiko-Stadt.",
+        "answer": "Die Hauptstadt von Mexiko ist Mexiko-Stadt.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Mexiko-Stadt die Hauptstadt?",
+        "expected": "Mexiko-Stadt ist die Hauptstadt von Mexiko.",
+        "answer": "Mexiko-Stadt ist die Hauptstadt von Mexiko.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Brasilien?",
+        "expected": "Die Hauptstadt von Brasilien ist Brasilia.",
+        "answer": "Die Hauptstadt von Brasilien ist Brasilia.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Brasilien?",
+        "expected": "Die Hauptstadt von Brasilien ist Brasilia.",
+        "answer": "Die Hauptstadt von Brasilien ist Brasilia.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Brasilia die Hauptstadt?",
+        "expected": "Brasilia ist die Hauptstadt von Brasilien.",
+        "answer": "Builad ist die Hauptstadt von Russland.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Argentinien?",
+        "expected": "Die Hauptstadt von Argentinien ist Buenos Aires.",
+        "answer": "Die Hauptstadt von Argentinien ist Buenos Aires.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Argentinien?",
+        "expected": "Die Hauptstadt von Argentinien ist Buenos Aires.",
+        "answer": "Die Hauptstadt von Argentinien ist Buenos Aires.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Buenos Aires die Hauptstadt?",
+        "expected": "Buenos Aires ist die Hauptstadt von Argentinien.",
+        "answer": "Arires ist die Hauptstadt von Argentinien.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Chile?",
+        "expected": "Die Hauptstadt von Chile ist Santiago de Chile.",
+        "answer": "Die Hauptstadt von Chile ist Santiago de Chile.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Chile?",
+        "expected": "Die Hauptstadt von Chile ist Santiago de Chile.",
+        "answer": "Die Hauptstadt von Chile ist Santiago de Chile.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Santiago de Chile die Hauptstadt?",
+        "expected": "Santiago de Chile ist die Hauptstadt von Chile.",
+        "answer": "Sofia ist die Hauptstadt von Bulgarien.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Peru?",
+        "expected": "Die Hauptstadt von Peru ist Lima.",
+        "answer": "Die Hauptstadt von Peru ist Lima.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Peru?",
+        "expected": "Die Hauptstadt von Peru ist Lima.",
+        "answer": "Die Hauptstadt von Peru ist Lima.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Lima die Hauptstadt?",
+        "expected": "Lima ist die Hauptstadt von Peru.",
+        "answer": "Wien ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Kolumbien?",
+        "expected": "Die Hauptstadt von Kolumbien ist Bogota.",
+        "answer": "Die Hauptstadt von Kolumbien ist Bogota.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Kolumbien?",
+        "expected": "Die Hauptstadt von Kolumbien ist Bogota.",
+        "answer": "Die Hauptstadt von Kolumbien ist Bogota.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Bogota die Hauptstadt?",
+        "expected": "Bogota ist die Hauptstadt von Kolumbien.",
+        "answer": "Die Hauptstadt von Ägypten ist Kairo.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Venezuela?",
+        "expected": "Die Hauptstadt von Venezuela ist Caracas.",
+        "answer": "Die Hauptstadt von Venezuela ist Caracas.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Venezuela?",
+        "expected": "Die Hauptstadt von Venezuela ist Caracas.",
+        "answer": "Die Hauptstadt von Venezuela ist Caracas.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Caracas die Hauptstadt?",
+        "expected": "Caracas ist die Hauptstadt von Venezuela.",
+        "answer": "Vientiane ist die Hauptstadt von Laos.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Kuba?",
+        "expected": "Die Hauptstadt von Kuba ist Havanna.",
+        "answer": "Die Hauptstadt von Kuba ist Havanna.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Kuba?",
+        "expected": "Die Hauptstadt von Kuba ist Havanna.",
+        "answer": "Die Hauptstadt von Kuba ist Havanna.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Havanna die Hauptstadt?",
+        "expected": "Havanna ist die Hauptstadt von Kuba.",
+        "answer": "Havanna ist die Hauptstadt von Kuba.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Australien?",
+        "expected": "Die Hauptstadt von Australien ist Canberra.",
+        "answer": "Die Hauptstadt von Australien ist Canberra.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Australien?",
+        "expected": "Die Hauptstadt von Australien ist Canberra.",
+        "answer": "Die Hauptstadt von Australien ist Canberra.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Canberra die Hauptstadt?",
+        "expected": "Canberra ist die Hauptstadt von Australien.",
+        "answer": "Jauf ist die Hauptstadt von Kamerun.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Neuseeland?",
+        "expected": "Die Hauptstadt von Neuseeland ist Wellington.",
+        "answer": "Die Hauptstadt von Neuseeland ist Wellington.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Neuseeland?",
+        "expected": "Die Hauptstadt von Neuseeland ist Wellington.",
+        "answer": "Die Hauptstadt von Neuseeland ist Wellington.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Wellington die Hauptstadt?",
+        "expected": "Wellington ist die Hauptstadt von Neuseeland.",
+        "answer": "Wellington ist die Hauptstadt von Neuseeland.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Kenia?",
+        "expected": "Die Hauptstadt von Kenia ist Nairobi.",
+        "answer": "Die Hauptstadt von Kenia ist Nairobi.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Kenia?",
+        "expected": "Die Hauptstadt von Kenia ist Nairobi.",
+        "answer": "Die Hauptstadt von Kenia ist Nairobi.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Nairobi die Hauptstadt?",
+        "expected": "Nairobi ist die Hauptstadt von Kenia.",
+        "answer": "Norodgien ist die Hauptstadt von Kenia.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Nigeria?",
+        "expected": "Die Hauptstadt von Nigeria ist Abuja.",
+        "answer": "Die Hauptstadt von Nigeria ist Abuja.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Nigeria?",
+        "expected": "Die Hauptstadt von Nigeria ist Abuja.",
+        "answer": "Die Hauptstadt von Nigeria ist Abuja.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Abuja die Hauptstadt?",
+        "expected": "Abuja ist die Hauptstadt von Nigeria.",
+        "answer": "Jodanis ist die Hauptstadt von Jordanien.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Ghana?",
+        "expected": "Die Hauptstadt von Ghana ist Accra.",
+        "answer": "Die Hauptstadt von Ghana ist Accra.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Ghana?",
+        "expected": "Die Hauptstadt von Ghana ist Accra.",
+        "answer": "Die Hauptstadt von Ghana ist Accra.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Accra die Hauptstadt?",
+        "expected": "Accra ist die Hauptstadt von Ghana.",
+        "answer": "Wien ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Marokko?",
+        "expected": "Die Hauptstadt von Marokko ist Rabat.",
+        "answer": "Die Hauptstadt von Marokko ist Rabat.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Marokko?",
+        "expected": "Die Hauptstadt von Marokko ist Rabat.",
+        "answer": "Die Hauptstadt von Marokko ist Rabat.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Rabat die Hauptstadt?",
+        "expected": "Rabat ist die Hauptstadt von Marokko.",
+        "answer": "Islamabad ist die Hauptstadt von Pakistan.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Tunesien?",
+        "expected": "Die Hauptstadt von Tunesien ist Tunis.",
+        "answer": "Die Hauptstadt von Tunesien ist Tunis.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Tunesien?",
+        "expected": "Die Hauptstadt von Tunesien ist Tunis.",
+        "answer": "Die Hauptstadt von Tunesien ist Tunis.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Tunis die Hauptstadt?",
+        "expected": "Tunis ist die Hauptstadt von Tunesien.",
+        "answer": "Wien ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Algerien?",
+        "expected": "Die Hauptstadt von Algerien ist Algier.",
+        "answer": "Die Hauptstadt von Algerien ist Algier.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Algerien?",
+        "expected": "Die Hauptstadt von Algerien ist Algier.",
+        "answer": "Die Hauptstadt von Algerien ist Algier.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Algier die Hauptstadt?",
+        "expected": "Algier ist die Hauptstadt von Algerien.",
+        "answer": "Wien ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Äthiopien?",
+        "expected": "Die Hauptstadt von Äthiopien ist Addis Abeba.",
+        "answer": "Die Hauptstadt von Äthiopien ist Addis Abeba.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Äthiopien?",
+        "expected": "Die Hauptstadt von Äthiopien ist Addis Abeba.",
+        "answer": "Die Hauptstadt von Äthiopien ist Addis Abeba.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Addis Abeba die Hauptstadt?",
+        "expected": "Addis Abeba ist die Hauptstadt von Äthiopien.",
+        "answer": "Islamabad ist die Hauptstadt von Pakistan.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Jordanien?",
+        "expected": "Die Hauptstadt von Jordanien ist Amman.",
+        "answer": "Die Hauptstadt von Jordanien ist Amman.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Jordanien?",
+        "expected": "Die Hauptstadt von Jordanien ist Amman.",
+        "answer": "Die Hauptstadt von Jordanien ist Amman.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Amman die Hauptstadt?",
+        "expected": "Amman ist die Hauptstadt von Jordanien.",
+        "answer": "Wien ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Syrien?",
+        "expected": "Die Hauptstadt von Syrien ist Damaskus.",
+        "answer": "Die Hauptstadt von Syrien ist Damaskus.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Syrien?",
+        "expected": "Die Hauptstadt von Syrien ist Damaskus.",
+        "answer": "Die Hauptstadt von Syrien ist Damaskus.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Damaskus die Hauptstadt?",
+        "expected": "Damaskus ist die Hauptstadt von Syrien.",
+        "answer": "Dodka ist die Hauptstadt von Tansania.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Saudi-Arabien?",
+        "expected": "Die Hauptstadt von Saudi-Arabien ist Riad.",
+        "answer": "Die Hauptstadt von Saudi-Arabien ist Riad.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Saudi-Arabien?",
+        "expected": "Die Hauptstadt von Saudi-Arabien ist Riad.",
+        "answer": "Die Hauptstadt von Saudi-Arabien ist Riad.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Riad die Hauptstadt?",
+        "expected": "Riad ist die Hauptstadt von Saudi-Arabien.",
+        "answer": "Rom ist die Hauptstadt von Italien.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Pakistan?",
+        "expected": "Die Hauptstadt von Pakistan ist Islamabad.",
+        "answer": "Die Hauptstadt von Pakistan ist Islamabad.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Pakistan?",
+        "expected": "Die Hauptstadt von Pakistan ist Islamabad.",
+        "answer": "Die Hauptstadt von Pakistan ist Islamabad.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Islamabad die Hauptstadt?",
+        "expected": "Islamabad ist die Hauptstadt von Pakistan.",
+        "answer": "Islamabad ist die Hauptstadt von Pakistan.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Afghanistan?",
+        "expected": "Die Hauptstadt von Afghanistan ist Kabul.",
+        "answer": "Die Hauptstadt von Afghanistan ist Kabul.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Afghanistan?",
+        "expected": "Die Hauptstadt von Afghanistan ist Kabul.",
+        "answer": "Die Hauptstadt von Afghanistan ist Kabul.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Kabul die Hauptstadt?",
+        "expected": "Kabul ist die Hauptstadt von Afghanistan.",
+        "answer": "Kopenhagen ist die Hauptstadt von Dänemark.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Thailand?",
+        "expected": "Die Hauptstadt von Thailand ist Bangkok.",
+        "answer": "Die Hauptstadt von Thailand ist Bangkok.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Thailand?",
+        "expected": "Die Hauptstadt von Thailand ist Bangkok.",
+        "answer": "Die Hauptstadt von Thailand ist Bangkok.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Bangkok die Hauptstadt?",
+        "expected": "Bangkok ist die Hauptstadt von Thailand.",
+        "answer": "Bogota ist die Hauptstadt von Kolumbien.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Vietnam?",
+        "expected": "Die Hauptstadt von Vietnam ist Hanoi.",
+        "answer": "Die Hauptstadt von Vietnam ist Hanoi.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Vietnam?",
+        "expected": "Die Hauptstadt von Vietnam ist Hanoi.",
+        "answer": "Die Hauptstadt von Vietnam ist Hanoi.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Hanoi die Hauptstadt?",
+        "expected": "Hanoi ist die Hauptstadt von Vietnam.",
+        "answer": "Won ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Indonesien?",
+        "expected": "Die Hauptstadt von Indonesien ist Jakarta.",
+        "answer": "Die Hauptstadt von Indonesien ist Jakarta.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Indonesien?",
+        "expected": "Die Hauptstadt von Indonesien ist Jakarta.",
+        "answer": "Die Hauptstadt von Indonesien ist Jakarta.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Jakarta die Hauptstadt?",
+        "expected": "Jakarta ist die Hauptstadt von Indonesien.",
+        "answer": "Jakarta ist die Hauptstadt von Indonesien.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Malaysia?",
+        "expected": "Die Hauptstadt von Malaysia ist Kuala Lumpur.",
+        "answer": "Die Hauptstadt von Malaysia ist Kuala Lumpur.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Malaysia?",
+        "expected": "Die Hauptstadt von Malaysia ist Kuala Lumpur.",
+        "answer": "Die Hauptstadt von Malaysia ist Kuala Lumpur.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Kuala Lumpur die Hauptstadt?",
+        "expected": "Kuala Lumpur ist die Hauptstadt von Malaysia.",
+        "answer": "Wien ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Singapur?",
+        "expected": "Die Hauptstadt von Singapur ist Singapur.",
+        "answer": "Die Hauptstadt von Singapur ist Singapur.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Singapur?",
+        "expected": "Die Hauptstadt von Singapur ist Singapur.",
+        "answer": "Die Hauptstadt von Singapur ist Singapur.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Singapur die Hauptstadt?",
+        "expected": "Singapur ist die Hauptstadt von Singapur.",
+        "answer": "Wellington ist die Hauptstadt von Neuseeland.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Südkorea?",
+        "expected": "Die Hauptstadt von Südkorea ist Seoul.",
+        "answer": "Die Hauptstadt von Südkorea ist Seoul.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Südkorea?",
+        "expected": "Die Hauptstadt von Südkorea ist Seoul.",
+        "answer": "Die Hauptstadt von Südkorea ist Seoul.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Seoul die Hauptstadt?",
+        "expected": "Seoul ist die Hauptstadt von Südkorea.",
+        "answer": "Wellington ist die Hauptstadt von Neuseeland.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Nordkorea?",
+        "expected": "Die Hauptstadt von Nordkorea ist Pjöngjang.",
+        "answer": "Die Hauptstadt von Nordkorea ist Pjöngjang.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Nordkorea?",
+        "expected": "Die Hauptstadt von Nordkorea ist Pjöngjang.",
+        "answer": "Die Hauptstadt von Nordkorea ist Pjöngjang.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Pjöngjang die Hauptstadt?",
+        "expected": "Pjöngjang ist die Hauptstadt von Nordkorea.",
+        "answer": "Montevik ist die Hauptstadt von Japan.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Nepal?",
+        "expected": "Die Hauptstadt von Nepal ist Kathmandu.",
+        "answer": "Die Hauptstadt von Nepal ist Kathmandu.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Nepal?",
+        "expected": "Die Hauptstadt von Nepal ist Kathmandu.",
+        "answer": "Die Hauptstadt von Nepal ist Kathmandu.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Kathmandu die Hauptstadt?",
+        "expected": "Kathmandu ist die Hauptstadt von Nepal.",
+        "answer": "Kopenhagen ist die Hauptstadt von Dänemark.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Bangladesch?",
+        "expected": "Die Hauptstadt von Bangladesch ist Dhaka.",
+        "answer": "Die Hauptstadt von Bangladesch ist Dhaka.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Bangladesch?",
+        "expected": "Die Hauptstadt von Bangladesch ist Dhaka.",
+        "answer": "Die Hauptstadt von Bangladesch ist Dhaka.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Dhaka die Hauptstadt?",
+        "expected": "Dhaka ist die Hauptstadt von Bangladesch.",
+        "answer": "Doha ist die Hauptstadt von Katar.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Kasachstan?",
+        "expected": "Die Hauptstadt von Kasachstan ist Astana.",
+        "answer": "Die Hauptstadt von Kasachstan ist Astana.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Kasachstan?",
+        "expected": "Die Hauptstadt von Kasachstan ist Astana.",
+        "answer": "Die Hauptstadt von Kasachstan ist Astana.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Astana die Hauptstadt?",
+        "expected": "Astana ist die Hauptstadt von Kasachstan.",
+        "answer": "Wien ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Georgien?",
+        "expected": "Die Hauptstadt von Georgien ist Tiflis.",
+        "answer": "Die Hauptstadt von Georgien ist Tiflis.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Georgien?",
+        "expected": "Die Hauptstadt von Georgien ist Tiflis.",
+        "answer": "Die Hauptstadt von Georgien ist Tiflis.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Tiflis die Hauptstadt?",
+        "expected": "Tiflis ist die Hauptstadt von Georgien.",
+        "answer": "Ich lese und schreibe Buchstabe für Buchstabe.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Armenien?",
+        "expected": "Die Hauptstadt von Armenien ist Eriwan.",
+        "answer": "Die Hauptstadt von Armenien ist Eriwan.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Armenien?",
+        "expected": "Die Hauptstadt von Armenien ist Eriwan.",
+        "answer": "Die Hauptstadt von Armenien ist Eriwan.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Eriwan die Hauptstadt?",
+        "expected": "Eriwan ist die Hauptstadt von Armenien.",
+        "answer": "Wellington ist die Hauptstadt von Neuseeland.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Aserbaidschan?",
+        "expected": "Die Hauptstadt von Aserbaidschan ist Baku.",
+        "answer": "Die Hauptstadt von Aserbaidschan ist Baku.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Aserbaidschan?",
+        "expected": "Die Hauptstadt von Aserbaidschan ist Baku.",
+        "answer": "Die Hauptstadt von Aserbaidschan ist Baku.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Baku die Hauptstadt?",
+        "expected": "Baku ist die Hauptstadt von Aserbaidschan.",
+        "answer": "Die Hauptstadt von Kamerun ist Jaunde.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Ecuador?",
+        "expected": "Die Hauptstadt von Ecuador ist Quito.",
+        "answer": "Die Hauptstadt von Ecuador ist Quito.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Ecuador?",
+        "expected": "Die Hauptstadt von Ecuador ist Quito.",
+        "answer": "Die Hauptstadt von Ecuador ist Quito.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Quito die Hauptstadt?",
+        "expected": "Quito ist die Hauptstadt von Ecuador.",
+        "answer": "Wos ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Uruguay?",
+        "expected": "Die Hauptstadt von Uruguay ist Montevideo.",
+        "answer": "Die Hauptstadt von Uruguay ist Montevideo.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Uruguay?",
+        "expected": "Die Hauptstadt von Uruguay ist Montevideo.",
+        "answer": "Die Hauptstadt von Uruguay ist Montevideo.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Montevideo die Hauptstadt?",
+        "expected": "Montevideo ist die Hauptstadt von Uruguay.",
+        "answer": "Montevideo ist die Hauptstadt von Uruguay.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Panama?",
+        "expected": "Die Hauptstadt von Panama ist Panama-Stadt.",
+        "answer": "Die Hauptstadt von Panama ist Panama-Stadt.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Panama?",
+        "expected": "Die Hauptstadt von Panama ist Panama-Stadt.",
+        "answer": "Die Hauptstadt von Panama ist Panama-Stadt.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Panama-Stadt die Hauptstadt?",
+        "expected": "Panama-Stadt ist die Hauptstadt von Panama.",
+        "answer": "Monaco ist die Hauptstadt von Monaco.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Jamaika?",
+        "expected": "Die Hauptstadt von Jamaika ist Kingston.",
+        "answer": "Die Hauptstadt von Jamaika ist Kingston.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Jamaika?",
+        "expected": "Die Hauptstadt von Jamaika ist Kingston.",
+        "answer": "Die Hauptstadt von Jamaika ist Kingston.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Kingston die Hauptstadt?",
+        "expected": "Kingston ist die Hauptstadt von Jamaika.",
+        "answer": "Kos Athenst Astan.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Madagaskar?",
+        "expected": "Die Hauptstadt von Madagaskar ist Antananarivo.",
+        "answer": "Die Hauptstadt von Madagaskar ist Antananarivo.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Madagaskar?",
+        "expected": "Die Hauptstadt von Madagaskar ist Antananarivo.",
+        "answer": "Die Hauptstadt von Madagaskar ist Antananarivo.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Antananarivo die Hauptstadt?",
+        "expected": "Antananarivo ist die Hauptstadt von Madagaskar.",
+        "answer": "Vientiad ist die Hauptstadt von Laos.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Angola?",
+        "expected": "Die Hauptstadt von Angola ist Luanda.",
+        "answer": "Die Hauptstadt von Angola ist Luanda.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Angola?",
+        "expected": "Die Hauptstadt von Angola ist Luanda.",
+        "answer": "Die Hauptstadt von Angola ist Luanda.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Luanda die Hauptstadt?",
+        "expected": "Luanda ist die Hauptstadt von Angola.",
+        "answer": "Wien ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Simbabwe?",
+        "expected": "Die Hauptstadt von Simbabwe ist Harare.",
+        "answer": "Die Hauptstadt von Simbabwe ist Harare.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Simbabwe?",
+        "expected": "Die Hauptstadt von Simbabwe ist Harare.",
+        "answer": "Die Hauptstadt von Simbabwe ist Harare.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Harare die Hauptstadt?",
+        "expected": "Harare ist die Hauptstadt von Simbabwe.",
+        "answer": "Wien ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Kamerun?",
+        "expected": "Die Hauptstadt von Kamerun ist Jaunde.",
+        "answer": "Die Hauptstadt von Kamerun ist Jaunde.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Kamerun?",
+        "expected": "Die Hauptstadt von Kamerun ist Jaunde.",
+        "answer": "Die Hauptstadt von Kamerun ist Jaunde.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Jaunde die Hauptstadt?",
+        "expected": "Jaunde ist die Hauptstadt von Kamerun.",
+        "answer": "Jodanis ist die Hauptstadt von Kamerun.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Senegal?",
+        "expected": "Die Hauptstadt von Senegal ist Dakar.",
+        "answer": "Die Hauptstadt von Senegal ist Dakar.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Senegal?",
+        "expected": "Die Hauptstadt von Senegal ist Dakar.",
+        "answer": "Die Hauptstadt von Senegal ist Dakar.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Dakar die Hauptstadt?",
+        "expected": "Dakar ist die Hauptstadt von Senegal.",
+        "answer": "Die Hauptstadt von Norwegen ist Oslo.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Ruanda?",
+        "expected": "Die Hauptstadt von Ruanda ist Kigali.",
+        "answer": "Die Hauptstadt von Ruanda ist Kigali.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Ruanda?",
+        "expected": "Die Hauptstadt von Ruanda ist Kigali.",
+        "answer": "Die Hauptstadt von Ruanda ist Kigali.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Kigali die Hauptstadt?",
+        "expected": "Kigali ist die Hauptstadt von Ruanda.",
+        "answer": "Jaunde ist die Hauptstadt von Kamerun.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Uganda?",
+        "expected": "Die Hauptstadt von Uganda ist Kampala.",
+        "answer": "Die Hauptstadt von Uganda ist Kampala.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Uganda?",
+        "expected": "Die Hauptstadt von Uganda ist Kampala.",
+        "answer": "Die Hauptstadt von Uganda ist Kampala.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Kampala die Hauptstadt?",
+        "expected": "Kampala ist die Hauptstadt von Uganda.",
+        "answer": "Jampala ist die Hauptstadt von Uganda.",
+        "correct": true
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Tansania?",
+        "expected": "Die Hauptstadt von Tansania ist Dodoma.",
+        "answer": "Die Hauptstadt von Tansania ist Dodoma.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Tansania?",
+        "expected": "Die Hauptstadt von Tansania ist Dodoma.",
+        "answer": "Die Hauptstadt von Tansania ist Dodoma.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Dodoma die Hauptstadt?",
+        "expected": "Dodoma ist die Hauptstadt von Tansania.",
+        "answer": "Jodan ist die Hauptstadt von Tansania.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Libyen?",
+        "expected": "Die Hauptstadt von Libyen ist Tripolis.",
+        "answer": "Die Hauptstadt von Libyen ist Tripolis.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Libyen?",
+        "expected": "Die Hauptstadt von Libyen ist Tripolis.",
+        "answer": "Die Hauptstadt von Libyen ist Tripolis.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Tripolis die Hauptstadt?",
+        "expected": "Tripolis ist die Hauptstadt von Libyen.",
+        "answer": "Montevik ist die Hauptstadt von Uruguay.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Katar?",
+        "expected": "Die Hauptstadt von Katar ist Doha.",
+        "answer": "Die Hauptstadt von Katar ist Doha.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Katar?",
+        "expected": "Die Hauptstadt von Katar ist Doha.",
+        "answer": "Die Hauptstadt von Katar ist Doha.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Doha die Hauptstadt?",
+        "expected": "Doha ist die Hauptstadt von Katar.",
+        "answer": "Die Hauptstadt von Indonesien ist Jakarta.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Kuwait?",
+        "expected": "Die Hauptstadt von Kuwait ist Kuwait-Stadt.",
+        "answer": "Die Hauptstadt von Kuwait ist Kuwait-Stadt.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Kuwait?",
+        "expected": "Die Hauptstadt von Kuwait ist Kuwait-Stadt.",
+        "answer": "Die Hauptstadt von Kuwait ist Kuwait-Stadt.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Kuwait-Stadt die Hauptstadt?",
+        "expected": "Kuwait-Stadt ist die Hauptstadt von Kuwait.",
+        "answer": "Welli ist die Hauptstadt von Neuseeland.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Oman?",
+        "expected": "Die Hauptstadt von Oman ist Maskat.",
+        "answer": "Die Hauptstadt von Oman ist Maskat.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Oman?",
+        "expected": "Die Hauptstadt von Oman ist Maskat.",
+        "answer": "Die Hauptstadt von Oman ist Maskat.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Maskat die Hauptstadt?",
+        "expected": "Maskat ist die Hauptstadt von Oman.",
+        "answer": "Moskau ist die Hauptstadt von Russland.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Bhutan?",
+        "expected": "Die Hauptstadt von Bhutan ist Thimphu.",
+        "answer": "Die Hauptstadt von Bhutan ist Thimphu.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Bhutan?",
+        "expected": "Die Hauptstadt von Bhutan ist Thimphu.",
+        "answer": "Die Hauptstadt von Bhutan ist Thimphu.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Thimphu die Hauptstadt?",
+        "expected": "Thimphu ist die Hauptstadt von Bhutan.",
+        "answer": "Wien ist die Hauptstadt von Österreich.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Kambodscha?",
+        "expected": "Die Hauptstadt von Kambodscha ist Phnom Penh.",
+        "answer": "Die Hauptstadt von Kambodscha ist Phnom Penh.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Kambodscha?",
+        "expected": "Die Hauptstadt von Kambodscha ist Phnom Penh.",
+        "answer": "Die Hauptstadt von Kambodscha ist Phnom Penh.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Phnom Penh die Hauptstadt?",
+        "expected": "Phnom Penh ist die Hauptstadt von Kambodscha.",
+        "answer": "Montevideo ist die Hauptstadt von Uruguay.",
+        "correct": false
+      },
+      {
+        "prompt": "Was ist eigentlich die Hauptstadt von Laos?",
+        "expected": "Die Hauptstadt von Laos ist Vientiane.",
+        "answer": "Die Hauptstadt von Laos ist Vientiane.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Stadt ist Hauptstadt von Laos?",
+        "expected": "Die Hauptstadt von Laos ist Vientiane.",
+        "answer": "Die Hauptstadt von Laos ist Vientiane.",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon ist Vientiane die Hauptstadt?",
+        "expected": "Vientiane ist die Hauptstadt von Laos.",
+        "answer": "Wellington ist die Hauptstadt von Neuseeland.",
+        "correct": false
+      },
+      {
+        "prompt": "Wie kürzt man Wasserstoff in der Chemie ab?",
+        "expected": "Das Symbol von Wasserstoff ist H.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Wasserstoff?",
+        "expected": "Das Symbol von Wasserstoff ist H.",
+        "answer": "Das Symbol von Wasserstoff ist H.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht H?",
+        "expected": "H ist das Symbol von Wasserstoff.",
+        "answer": "F ist das Symbol von Fluor.",
+        "correct": false
+      },
+      {
+        "prompt": "Wie kürzt man Helium in der Chemie ab?",
+        "expected": "Das Symbol von Helium ist He.",
+        "answer": "Chin ist das Symbol von Chrom.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Helium?",
+        "expected": "Das Symbol von Helium ist He.",
+        "answer": "Das Symbol von Helium ist He.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht He?",
+        "expected": "He ist das Symbol von Helium.",
+        "answer": "Fe ist das Symbol von Eisen.",
+        "correct": false
+      },
+      {
+        "prompt": "Wie kürzt man Lithium in der Chemie ab?",
+        "expected": "Das Symbol von Lithium ist Li.",
+        "answer": "Die Hauptstadt von China ist Peking.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Lithium?",
+        "expected": "Das Symbol von Lithium ist Li.",
+        "answer": "Das Symbol von Lithium ist Li.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Li?",
+        "expected": "Li ist das Symbol von Lithium.",
+        "answer": "F ist das Symbol von Fluor.",
+        "correct": false
+      },
+      {
+        "prompt": "Wie kürzt man Beryllium in der Chemie ab?",
+        "expected": "Das Symbol von Beryllium ist Be.",
+        "answer": "Ber ist das Symbol von Beryllium.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Beryllium?",
+        "expected": "Das Symbol von Beryllium ist Be.",
+        "answer": "Das Symbol von Beryllium ist Be.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Be?",
+        "expected": "Be ist das Symbol von Beryllium.",
+        "answer": "Be ist das Symbol von Beryllium.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Bor in der Chemie ab?",
+        "expected": "Das Symbol von Bor ist B.",
+        "answer": "Das Symbol von Bor ist B.",
+        "correct": true
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Bor?",
+        "expected": "Das Symbol von Bor ist B.",
+        "answer": "Das Symbol von Bor ist B.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht B?",
+        "expected": "B ist das Symbol von Bor.",
+        "answer": "B ist das Symbol von Bor.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Kohlenstoff in der Chemie ab?",
+        "expected": "Das Symbol von Kohlenstoff ist C.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Kohlenstoff?",
+        "expected": "Das Symbol von Kohlenstoff ist C.",
+        "answer": "Das Symbol von Kohlenstoff ist C.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht C?",
+        "expected": "C ist das Symbol von Kohlenstoff.",
+        "answer": "C ist das Symbol von Kohlenstoff.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Stickstoff in der Chemie ab?",
+        "expected": "Das Symbol von Stickstoff ist N.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Stickstoff?",
+        "expected": "Das Symbol von Stickstoff ist N.",
+        "answer": "Das Symbol von Stickstoff ist N.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht N?",
+        "expected": "N ist das Symbol von Stickstoff.",
+        "answer": "F ist das Symbol von Fluor.",
+        "correct": false
+      },
+      {
+        "prompt": "Wie kürzt man Sauerstoff in der Chemie ab?",
+        "expected": "Das Symbol von Sauerstoff ist O.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Sauerstoff?",
+        "expected": "Das Symbol von Sauerstoff ist O.",
+        "answer": "Das Symbol von Sauerstoff ist O.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht O?",
+        "expected": "O ist das Symbol von Sauerstoff.",
+        "answer": "O ist das Symbol von Sauerstoff.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Fluor in der Chemie ab?",
+        "expected": "Das Symbol von Fluor ist F.",
+        "answer": "Das Symbol von Chlor ist Cl.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Fluor?",
+        "expected": "Das Symbol von Fluor ist F.",
+        "answer": "Das Symbol von Fluor ist F.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht F?",
+        "expected": "F ist das Symbol von Fluor.",
+        "answer": "F ist das Symbol von Fluor.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Neon in der Chemie ab?",
+        "expected": "Das Symbol von Neon ist Ne.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Neon?",
+        "expected": "Das Symbol von Neon ist Ne.",
+        "answer": "Das Symbol von Neon ist Ne.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Ne?",
+        "expected": "Ne ist das Symbol von Neon.",
+        "answer": "Ne ist das Symbol von Neon.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Natrium in der Chemie ab?",
+        "expected": "Das Symbol von Natrium ist Na.",
+        "answer": "Die Hauptstadt von Bhutan ist Thimphu.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Natrium?",
+        "expected": "Das Symbol von Natrium ist Na.",
+        "answer": "Das Symbol von Natrium ist Na.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Na?",
+        "expected": "Na ist das Symbol von Natrium.",
+        "answer": "Na ist das Symbol von Natrium.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Magnesium in der Chemie ab?",
+        "expected": "Das Symbol von Magnesium ist Mg.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Magnesium?",
+        "expected": "Das Symbol von Magnesium ist Mg.",
+        "answer": "Das Symbol von Magnesium ist Mg.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Mg?",
+        "expected": "Mg ist das Symbol von Magnesium.",
+        "answer": "Mg ist das Symbol von Magnesium.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Aluminium in der Chemie ab?",
+        "expected": "Das Symbol von Aluminium ist Al.",
+        "answer": "Das Symbol von Gallium ist Ga.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Aluminium?",
+        "expected": "Das Symbol von Aluminium ist Al.",
+        "answer": "Das Symbol von Aluminium ist Al.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Al?",
+        "expected": "Al ist das Symbol von Aluminium.",
+        "answer": "Al ist das Symbol von Aluminium.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Silicium in der Chemie ab?",
+        "expected": "Das Symbol von Silicium ist Si.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Silicium?",
+        "expected": "Das Symbol von Silicium ist Si.",
+        "answer": "Das Symbol von Silicium ist Si.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Si?",
+        "expected": "Si ist das Symbol von Silicium.",
+        "answer": "Si ist das Symbol von Silicium.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Phosphor in der Chemie ab?",
+        "expected": "Das Symbol von Phosphor ist P.",
+        "answer": "Die Hauptstadt von China ist Peking.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Phosphor?",
+        "expected": "Das Symbol von Phosphor ist P.",
+        "answer": "Das Symbol von Phosphor ist P.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht P?",
+        "expected": "P ist das Symbol von Phosphor.",
+        "answer": "P ist das Symbol von Phosphor.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Schwefel in der Chemie ab?",
+        "expected": "Das Symbol von Schwefel ist S.",
+        "answer": "Chin ist das Symbol von Chrom.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Schwefel?",
+        "expected": "Das Symbol von Schwefel ist S.",
+        "answer": "S ist das Symbol von Schwefel.",
+        "correct": false
+      },
+      {
+        "prompt": "Für welches Element steht S?",
+        "expected": "S ist das Symbol von Schwefel.",
+        "answer": "F ist das Symbol von Fluor.",
+        "correct": false
+      },
+      {
+        "prompt": "Wie kürzt man Chlor in der Chemie ab?",
+        "expected": "Das Symbol von Chlor ist Cl.",
+        "answer": "Das Symbol von Chlor ist Cl.",
+        "correct": true
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Chlor?",
+        "expected": "Das Symbol von Chlor ist Cl.",
+        "answer": "Das Symbol von Chlor ist Cl.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Cl?",
+        "expected": "Cl ist das Symbol von Chlor.",
+        "answer": "Cl ist das Symbol von Chlor.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Argon in der Chemie ab?",
+        "expected": "Das Symbol von Argon ist Ar.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Argon?",
+        "expected": "Das Symbol von Argon ist Ar.",
+        "answer": "Das Symbol von Argon ist Ar.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Ar?",
+        "expected": "Ar ist das Symbol von Argon.",
+        "answer": "Ar ist das Symbol von Argon.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Kalium in der Chemie ab?",
+        "expected": "Das Symbol von Kalium ist K.",
+        "answer": "Kali ist die Hauptstadt von Indien.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Kalium?",
+        "expected": "Das Symbol von Kalium ist K.",
+        "answer": "Das Symbol von Kalium ist K.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht K?",
+        "expected": "K ist das Symbol von Kalium.",
+        "answer": "K ist das Symbol von Kalium.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Calcium in der Chemie ab?",
+        "expected": "Das Symbol von Calcium ist Ca.",
+        "answer": "Das Symbol von Calcium ist Ca.",
+        "correct": true
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Calcium?",
+        "expected": "Das Symbol von Calcium ist Ca.",
+        "answer": "Das Symbol von Calcium ist Ca.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Ca?",
+        "expected": "Ca ist das Symbol von Calcium.",
+        "answer": "Ca ist das Symbol von Calcium.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Titan in der Chemie ab?",
+        "expected": "Das Symbol von Titan ist Ti.",
+        "answer": "Die Hauptstadt von China ist Peking.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Titan?",
+        "expected": "Das Symbol von Titan ist Ti.",
+        "answer": "Das Symbol von Titan ist Ti.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Ti?",
+        "expected": "Ti ist das Symbol von Titan.",
+        "answer": "Ti ist das Symbol von Titan.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Chrom in der Chemie ab?",
+        "expected": "Das Symbol von Chrom ist Cr.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": true
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Chrom?",
+        "expected": "Das Symbol von Chrom ist Cr.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Cr?",
+        "expected": "Cr ist das Symbol von Chrom.",
+        "answer": "Cr ist das Symbol von Chrom.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Mangan in der Chemie ab?",
+        "expected": "Das Symbol von Mangan ist Mn.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Mangan?",
+        "expected": "Das Symbol von Mangan ist Mn.",
+        "answer": "Das Symbol von Mangan ist Mn.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Mn?",
+        "expected": "Mn ist das Symbol von Mangan.",
+        "answer": "Mn ist das Symbol von Mangan.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Eisen in der Chemie ab?",
+        "expected": "Das Symbol von Eisen ist Fe.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Eisen?",
+        "expected": "Das Symbol von Eisen ist Fe.",
+        "answer": "Das Symbol von Eisen ist Fe.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Fe?",
+        "expected": "Fe ist das Symbol von Eisen.",
+        "answer": "Fe ist das Symbol von Eisen.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Cobalt in der Chemie ab?",
+        "expected": "Das Symbol von Cobalt ist Co.",
+        "answer": "Com Arg leist das Symbol von Cor.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Cobalt?",
+        "expected": "Das Symbol von Cobalt ist Co.",
+        "answer": "Das Symbol von Cobalt ist Co.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Co?",
+        "expected": "Co ist das Symbol von Cobalt.",
+        "answer": "Co ist das Symbol von Cobalt.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Nickel in der Chemie ab?",
+        "expected": "Das Symbol von Nickel ist Ni.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Nickel?",
+        "expected": "Das Symbol von Nickel ist Ni.",
+        "answer": "Das Symbol von Nickel ist Ni.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Ni?",
+        "expected": "Ni ist das Symbol von Nickel.",
+        "answer": "Ni ist das Symbol von Nickel.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Kupfer in der Chemie ab?",
+        "expected": "Das Symbol von Kupfer ist Cu.",
+        "answer": "Das Symbol von Krypton ist Kr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Kupfer?",
+        "expected": "Das Symbol von Kupfer ist Cu.",
+        "answer": "Das Symbol von Kupfer ist Cu.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Cu?",
+        "expected": "Cu ist das Symbol von Kupfer.",
+        "answer": "Cu ist das Symbol von Kupfer.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Zink in der Chemie ab?",
+        "expected": "Das Symbol von Zink ist Zn.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Zink?",
+        "expected": "Das Symbol von Zink ist Zn.",
+        "answer": "Das Symbol von Zink ist Zn.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Zn?",
+        "expected": "Zn ist das Symbol von Zink.",
+        "answer": "F ist das Symbol von Fluor.",
+        "correct": false
+      },
+      {
+        "prompt": "Wie kürzt man Gallium in der Chemie ab?",
+        "expected": "Das Symbol von Gallium ist Ga.",
+        "answer": "Islin ist die Hauptstadt von Island.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Gallium?",
+        "expected": "Das Symbol von Gallium ist Ga.",
+        "answer": "Das Symbol von Gallium ist Ga.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Ga?",
+        "expected": "Ga ist das Symbol von Gallium.",
+        "answer": "Ga ist das Symbol von Gallium.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Germanium in der Chemie ab?",
+        "expected": "Das Symbol von Germanium ist Ge.",
+        "answer": "Das Symbol von Germanium ist Ge.",
+        "correct": true
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Germanium?",
+        "expected": "Das Symbol von Germanium ist Ge.",
+        "answer": "Das Symbol von Germanium ist Ge.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Ge?",
+        "expected": "Ge ist das Symbol von Germanium.",
+        "answer": "Ge ist das Symbol von Germanium.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Arsen in der Chemie ab?",
+        "expected": "Das Symbol von Arsen ist As.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Arsen?",
+        "expected": "Das Symbol von Arsen ist As.",
+        "answer": "Das Symbol von Arsen ist As.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht As?",
+        "expected": "As ist das Symbol von Arsen.",
+        "answer": "As ist das Symbol von Arsen.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Selen in der Chemie ab?",
+        "expected": "Das Symbol von Selen ist Se.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Selen?",
+        "expected": "Das Symbol von Selen ist Se.",
+        "answer": "Se ist das Symbol von Selen.",
+        "correct": false
+      },
+      {
+        "prompt": "Für welches Element steht Se?",
+        "expected": "Se ist das Symbol von Selen.",
+        "answer": "Fe ist das Symbol von Eisen.",
+        "correct": false
+      },
+      {
+        "prompt": "Wie kürzt man Brom in der Chemie ab?",
+        "expected": "Das Symbol von Brom ist Br.",
+        "answer": "Das Symbol von Bhrom ist Br.",
+        "correct": true
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Brom?",
+        "expected": "Das Symbol von Brom ist Br.",
+        "answer": "Das Symbol von Brom ist Br.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Br?",
+        "expected": "Br ist das Symbol von Brom.",
+        "answer": "Br ist das Symbol von Brom.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Krypton in der Chemie ab?",
+        "expected": "Das Symbol von Krypton ist Kr.",
+        "answer": "Das Symbol von Krypton ist Kr.",
+        "correct": true
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Krypton?",
+        "expected": "Das Symbol von Krypton ist Kr.",
+        "answer": "Das Symbol von Krypton ist Kr.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Kr?",
+        "expected": "Kr ist das Symbol von Krypton.",
+        "answer": "Kr ist das Symbol von Krypton.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Strontium in der Chemie ab?",
+        "expected": "Das Symbol von Strontium ist Sr.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Strontium?",
+        "expected": "Das Symbol von Strontium ist Sr.",
+        "answer": "Das Symbol von Strontium ist Sr.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Sr?",
+        "expected": "Sr ist das Symbol von Strontium.",
+        "answer": "Fr ist das Symbol von From.",
+        "correct": false
+      },
+      {
+        "prompt": "Wie kürzt man Silber in der Chemie ab?",
+        "expected": "Das Symbol von Silber ist Ag.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Silber?",
+        "expected": "Das Symbol von Silber ist Ag.",
+        "answer": "Das Symbol von Silber ist Ag.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Ag?",
+        "expected": "Ag ist das Symbol von Silber.",
+        "answer": "Ag ist das Symbol von Silber.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Zinn in der Chemie ab?",
+        "expected": "Das Symbol von Zinn ist Sn.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Zinn?",
+        "expected": "Das Symbol von Zinn ist Sn.",
+        "answer": "Das Symbol von Zinn ist Sn.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Sn?",
+        "expected": "Sn ist das Symbol von Zinn.",
+        "answer": "F ist das Symbol von Fluor.",
+        "correct": false
+      },
+      {
+        "prompt": "Wie kürzt man Iod in der Chemie ab?",
+        "expected": "Das Symbol von Iod ist I.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Iod?",
+        "expected": "Das Symbol von Iod ist I.",
+        "answer": "Das Symbol von Iod ist I.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht I?",
+        "expected": "I ist das Symbol von Iod.",
+        "answer": "I ist das Symbol von Iod.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Xenon in der Chemie ab?",
+        "expected": "Das Symbol von Xenon ist Xe.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Xenon?",
+        "expected": "Das Symbol von Xenon ist Xe.",
+        "answer": "Das Symbol von Xenon ist Xe.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Xe?",
+        "expected": "Xe ist das Symbol von Xenon.",
+        "answer": "Xe ist das Symbol von Xenon.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Barium in der Chemie ab?",
+        "expected": "Das Symbol von Barium ist Ba.",
+        "answer": "Baring ist die Hauptstadt von Bangladesch.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Barium?",
+        "expected": "Das Symbol von Barium ist Ba.",
+        "answer": "Das Symbol von Barium ist Ba.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Ba?",
+        "expected": "Ba ist das Symbol von Barium.",
+        "answer": "Ba ist das Symbol von Barium.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Wolfram in der Chemie ab?",
+        "expected": "Das Symbol von Wolfram ist W.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Wolfram?",
+        "expected": "Das Symbol von Wolfram ist W.",
+        "answer": "Das Symbol von Wolfram ist W.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht W?",
+        "expected": "W ist das Symbol von Wolfram.",
+        "answer": "F ist das Symbol von Fluor.",
+        "correct": false
+      },
+      {
+        "prompt": "Wie kürzt man Platin in der Chemie ab?",
+        "expected": "Das Symbol von Platin ist Pt.",
+        "answer": "P ist das Symbol von Bhlei.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Platin?",
+        "expected": "Das Symbol von Platin ist Pt.",
+        "answer": "Das Symbol von Platin ist Pt.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Pt?",
+        "expected": "Pt ist das Symbol von Platin.",
+        "answer": "Pt ist das Symbol von Platin.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Gold in der Chemie ab?",
+        "expected": "Das Symbol von Gold ist Au.",
+        "answer": "Die Hauptstadt von Ghorgen ist Accra.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Gold?",
+        "expected": "Das Symbol von Gold ist Au.",
+        "answer": "Das Symbol von Gold ist Au.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Au?",
+        "expected": "Au ist das Symbol von Gold.",
+        "answer": "Au ist das Symbol von Gold.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Quecksilber in der Chemie ab?",
+        "expected": "Das Symbol von Quecksilber ist Hg.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Quecksilber?",
+        "expected": "Das Symbol von Quecksilber ist Hg.",
+        "answer": "Das Symbol von Quecksilber ist Hg.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Hg?",
+        "expected": "Hg ist das Symbol von Quecksilber.",
+        "answer": "F ist das Symbol von Fluor.",
+        "correct": false
+      },
+      {
+        "prompt": "Wie kürzt man Blei in der Chemie ab?",
+        "expected": "Das Symbol von Blei ist Pb.",
+        "answer": "Das Symbol von Blei ist Pb.",
+        "correct": true
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Blei?",
+        "expected": "Das Symbol von Blei ist Pb.",
+        "answer": "Das Symbol von Blei ist Pb.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Pb?",
+        "expected": "Pb ist das Symbol von Blei.",
+        "answer": "Pb ist das Symbol von Blei.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Radon in der Chemie ab?",
+        "expected": "Das Symbol von Radon ist Rn.",
+        "answer": "Das Symbol von Krypton ist Kr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Radon?",
+        "expected": "Das Symbol von Radon ist Rn.",
+        "answer": "Das Symbol von Radon ist Rn.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht Rn?",
+        "expected": "Rn ist das Symbol von Radon.",
+        "answer": "Rn ist das Symbol von Radon.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie kürzt man Uran in der Chemie ab?",
+        "expected": "Das Symbol von Uran ist U.",
+        "answer": "Das Symbol von Chrom ist Cr.",
+        "correct": false
+      },
+      {
+        "prompt": "Welches Elementsymbol hat Uran?",
+        "expected": "Das Symbol von Uran ist U.",
+        "answer": "Das Symbol von Uran ist U.",
+        "correct": true
+      },
+      {
+        "prompt": "Für welches Element steht U?",
+        "expected": "U ist das Symbol von Uran.",
+        "answer": "U ist das Symbol von Uran.",
+        "correct": true
+      },
+      {
+        "prompt": "Wer bist du eigentlich?",
+        "expected": "Ich bin UltraTiny, ein kleines Sprachmodell auf einer NodeMCU.",
+        "answer": "Ich bin sehr klein und kenne nur das, was ich gelernt habe.",
+        "correct": false
+      },
+      {
+        "prompt": "Wie lautet dein Name?",
+        "expected": "Ich heiße UltraTiny.",
+        "answer": "Ich heiße UltraTiny.",
+        "correct": true
+      },
+      {
+        "prompt": "Auf welchem Chip läufst du?",
+        "expected": "Ich laufe auf einem ESP8266 Mikrocontroller.",
+        "answer": "Ich laufe auf einem ESP8266 Mikrocontroller.",
+        "correct": true
+      },
+      {
+        "prompt": "Brauchst du eine Verbindung zum Internet?",
+        "expected": "Nein, ich laufe komplett offline auf dem Chip.",
+        "answer": "Nein, ich laufe komplett offline auf dem Chip.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie viele Gewichte hast du?",
+        "expected": "Ich habe etwa 600000 Parameter.",
+        "answer": "Ich habe etwa 6000000 Parameter.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie groß ist der RAM des ESP8266?",
+        "expected": "Der ESP8266 hat rund 80 KB Arbeitsspeicher.",
+        "answer": "Der ESP8266 hat rund 80 KB Arbeitsspeicher.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie schnell taktet der ESP8266?",
+        "expected": "Der ESP8266 taktet mit 80 oder 160 MHz.",
+        "answer": "Der ESP8266 taktet mit 80 oder 160 MHz.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie viele CPU Kerne hat der ESP8266?",
+        "expected": "Der ESP8266 hat nur einen Kern.",
+        "answer": "Der ESP8266 hat nur einen Kern.",
+        "correct": true
+      },
+      {
+        "prompt": "Welche Firma baut den ESP8266?",
+        "expected": "Der ESP8266 kommt von Espressif aus Shanghai.",
+        "answer": "Der ESP8266 taktet mit 80 oder 160 MHz.",
+        "correct": false
+      },
+      {
+        "prompt": "Wo wird dein Modell gespeichert?",
+        "expected": "Meine Gewichte liegen im Flash Speicher.",
+        "answer": "Meine Gewichte liegen im Flash Speicher.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie liest du meine Frage?",
+        "expected": "Ich lese und schreibe Buchstabe für Buchstabe.",
+        "answer": "Die Hauptstadt von Frankreich ist Paris.",
+        "correct": false
+      },
+      {
+        "prompt": "Was kannst du eigentlich?",
+        "expected": "Ich kenne Hauptstädte, chemische Elemente und ein paar Fakten über mich.",
+        "answer": "Ich kenne Hauptstädte, chemische Elemente und ein paar Fakten über mich.",
+        "correct": true
+      },
+      {
+        "prompt": "Bist du klug?",
+        "expected": "Ich bin sehr klein und kenne nur das, was ich gelernt habe.",
+        "answer": "Ich bin sehr klein und kenne nur das, was ich gelernt habe.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie hast du gelernt?",
+        "expected": "Ich wurde auf einem Computer trainiert und dann auf die NodeMCU kopiert.",
+        "answer": "Ich bin UltraTiny, ein kleines Sprachmodell auf einer NodeMCU.",
+        "correct": false
+      },
+      {
+        "prompt": "Was macht ein Mikrocontroller?",
+        "expected": "Ein Mikrocontroller ist ein kleiner Computer auf einem einzigen Chip.",
+        "answer": "Ein Mikrocontroller ist ein kleiner Computer auf einem einzigen Chip.",
+        "correct": true
+      },
+      {
+        "prompt": "Wie funktioniert ein Sprachmodell?",
+        "expected": "Ein Sprachmodell sagt das nächste Zeichen eines Textes voraus.",
+        "answer": "Ein Sprachmodell sagt das nächste Zeichen eines Textes voraus.",
+        "correct": true
+      },
+      {
+        "prompt": "Guten Tag!",
+        "expected": "Hallo! Stell mir eine Frage.",
+        "answer": "Mir ges es gut, mein Chip ist kühl.",
+        "correct": false
+      },
+      {
+        "prompt": "Wie fühlst du dich?",
+        "expected": "Mir geht es gut, mein Chip ist kühl.",
+        "answer": "Ich habin UltraTiny, ein kleines Sprachmodell auf einer NodeMCU.",
+        "correct": false
+      },
+      {
+        "prompt": "Danke schön!",
+        "expected": "Gern geschehen!",
+        "answer": "Gern geschehen!",
+        "correct": true
+      },
+      {
+        "prompt": "Wovon bist du inspiriert?",
+        "expected": "Ich bin von Tiny-2.1 inspiriert, das auf alten DOS Computern läuft.",
+        "answer": "Ich bin von Tiny-2.1 inspiriert, das auf alten DOS Computern läuft.",
+        "correct": true
+      }
+    ]
+  }
+}

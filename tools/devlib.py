@@ -2,6 +2,8 @@
 
 Requires pyserial for real boards (`uv sync` in training/ installs it as a dev dependency).
 Run the scripts from training/ with `uv run python ../tools/<script>.py --port /dev/ttyUSB0 ...`.
+Works with the NodeMCU (ESP8266, default board) and the legacy ESP32: both use the same console
+protocol and the RTS/DTR auto-reset circuit of the dev boards.
 Besides a serial port, a Device can talk to QEMU over TCP (TcpLink) or to a local process such
 as `utiny-host --console` (ExecLink).
 """

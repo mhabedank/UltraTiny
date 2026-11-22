@@ -16,7 +16,11 @@ extern "C" {
 #define UT_LINE_MAX 256
 #define UT_CMD_MAX 64
 #define UT_ANSWER_RESERVE 32 /* positions kept free for the answer */
+/* Upper bound for /max and the size of the trace buffer; boards with little RAM may lower it
+ * (the NodeMCU build uses its context length, specs/005-nodemcu-port). */
+#ifndef UT_MAX_ANSWER
 #define UT_MAX_ANSWER 200
+#endif
 
 /* Platform values for /stats (specs/002-observability). Any field < 0 means unknown. */
 typedef struct {
@@ -27,6 +31,7 @@ typedef struct {
     int32_t cpu_load[2];  /* percent per core since the previous call */
     int32_t uptime_ms;
     int32_t cpu_mhz;
+    int32_t cores; /* number of CPU cores for the CPU-load line; < 0 = unknown (2 assumed) */
 } ut_sys_stats;
 
 typedef enum { UT_TRACE_OFF = 0, UT_TRACE_ON, UT_TRACE_JSON } ut_trace_mode;
@@ -51,6 +56,7 @@ typedef struct {
     /* optional (NULL), appended for specs/002-observability */
     uint32_t (*micros)(void *user);                       /* finer timings; else millis*1000 */
     void (*sys_stats)(void *user, ut_sys_stats *out);     /* /stats system values */
+    const char *board; /* optional (NULL): board name for the banner, specs/005-nodemcu-port */
 } ut_console_io;
 
 typedef enum { UT_ST_READY, UT_ST_TYPING, UT_ST_GENERATING, UT_ST_HALT_ERROR } ut_console_state;

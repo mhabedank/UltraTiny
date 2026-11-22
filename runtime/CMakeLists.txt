@@ -51,3 +51,40 @@ add_test(NAME console_logic COMMAND test_console_logic ${FIXTURES})
 
 add_test(NAME parity_tiny
          COMMAND utiny-host --model ${FIXTURES}/tiny.utny --golden ${FIXTURES}/tiny_golden.json)
+
+# Word-access check (specs/005-nodemcu-port/contracts/runtime-image-access.md): a second build in
+# which every ut_ld32 traps on an unaligned address, plus a lint against byte reads of the image.
+option(UT_IMAGE_ACCESS_CHECK "Also build and test the runtime with alignment-checked image reads" ON)
+set(MODELS ${CMAKE_CURRENT_SOURCE_DIR}/../models)
+if(UT_IMAGE_ACCESS_CHECK)
+    add_library(utiny_checked STATIC ${UT_SRCS})
+    target_include_directories(utiny_checked PUBLIC include)
+    target_compile_definitions(utiny_checked PUBLIC UT_IMAGE_ACCESS_CHECK)
+    target_link_libraries(utiny_checked PUBLIC m)
+
+    add_executable(utiny-host-checked host/utiny_host.c host/json.c)
+    target_include_directories(utiny-host-checked PRIVATE host)
+    target_link_libraries(utiny-host-checked PRIVATE utiny_checked)
+
+    add_executable(test_runtime_checked tests/test_runtime.c host/json.c)
+    target_include_directories(test_runtime_checked PRIVATE host)
+    target_link_libraries(test_runtime_checked PRIVATE utiny_checked)
+    add_test(NAME runtime_checked COMMAND test_runtime_checked ${FIXTURES})
+    add_test(NAME parity_tiny_checked
+             COMMAND utiny-host-checked --model ${FIXTURES}/tiny.utny
+                     --golden ${FIXTURES}/tiny_golden.json)
+    add_test(NAME parity_starter_checked
+             COMMAND utiny-host-checked --model ${MODELS}/starter.utny
+                     --golden ${MODELS}/starter_golden.json)
+    add_test(NAME parity_nodemcu_checked
+             COMMAND utiny-host-checked --model ${MODELS}/nodemcu.utny
+                     --golden ${MODELS}/nodemcu_golden.json)
+endif()
+
+# NodeMCU PoC model (specs/005-nodemcu-port): host parity with the committed golden file.
+add_test(NAME parity_nodemcu
+         COMMAND utiny-host --model ${MODELS}/nodemcu.utny --golden ${MODELS}/nodemcu_golden.json)
+
+add_test(NAME image_access_lint
+         COMMAND sh ${CMAKE_CURRENT_SOURCE_DIR}/tests/image_access_lint.sh
+                 ${CMAKE_CURRENT_SOURCE_DIR}/src)

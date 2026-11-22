@@ -1,0 +1,10 @@
+{
+  "name": "utiny",
+  "version": "0.1.0",
+  "description": "UltraTiny portable C runtime (../../../runtime), built for the ESP8266",
+  "build": {
+    "srcDir": "../../../runtime/src",
+    "includeDir": "../../../runtime/include",
+    "flags": ["-ffp-contract=off", "-fno-fast-math", "-fsingle-precision-constant", "-std=gnu11"]
+  }
+}

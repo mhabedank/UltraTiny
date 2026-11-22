@@ -13,6 +13,8 @@ firmware/build/
 firmware/sdkconfig
 firmware/sdkconfig.old
 firmware/managed_components/
+firmware-nodemcu/.pio/
+firmware-nodemcu/.pio-cache/
 # Training outputs
 training/runs/
 training/data/gen/
@@ -26,3 +28,4 @@ firmware/build-qemu/
 firmware/build-qemu.log
 # observability logs (make observe)
 logs/
+training/runs_*.log

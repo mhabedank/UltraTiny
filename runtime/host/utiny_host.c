@@ -98,7 +98,7 @@ static void h_sys(void *u, ut_sys_stats *s) {
 
 static int run_console(ut_ctx *c, const ut_model *m, size_t arena_size) {
     static ut_console k;
-    ut_console_io io = {h_read, h_write, h_millis, NULL, NULL, h_micros, h_sys};
+    ut_console_io io = {h_read, h_write, h_millis, NULL, NULL, h_micros, h_sys, "Host (utiny-host)"};
     c->clock_us = h_clock_us;
     h_sys(NULL, &(ut_sys_stats){0});
     ut_console_init(&k, c, m, arena_size, &io, UT_OK);
