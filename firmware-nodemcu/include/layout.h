@@ -10,4 +10,10 @@
 #define UT_MODEL_ADDR (UT_FLASH_MAP_BASE + UT_MODEL_FLASH_OFFSET) /* 0x40258000 */
 #define UT_ARENA_MAX (36 * 1024)         /* 40 KB budget minus 10 % headroom */
 
+/* Fact table (UTFT, specs/006-hybrid-chemielehrer/contracts/fact-table-format.md): first byte after
+ * the mapped megabyte, read with ESP.flashRead (not memory-mapped). Flash: make nodemcu-flash-facts. */
+#define UT_FACTS_FLASH_OFFSET 0x100000u
+#define UT_FACTS_AREA_SIZE 0x10000u    /* 64 KB */
+#define UT_FACTS_MAX 58982u            /* 90 % of the area (10 % headroom) */
+
 #endif

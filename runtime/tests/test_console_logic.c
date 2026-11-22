@@ -87,6 +87,117 @@ static void feed(ut_console *k, fake_io *f, const char *s) {
     }
 }
 
+/* ---- function output (specs/006-hybrid-chemielehrer, task T025) ---- */
+
+static uint8_t *load(const char *dir, const char *name, size_t *n) {
+    char path[512];
+    snprintf(path, sizeof path, "%s/%s", dir, name);
+    FILE *fp = fopen(path, "rb");
+    if (!fp) return NULL;
+    fseek(fp, 0, SEEK_END);
+    *n = (size_t)ftell(fp);
+    fseek(fp, 0, SEEK_SET);
+    uint8_t *d = aligned_alloc(16, (*n + 15) & ~(size_t)15);
+    if (fread(d, 1, *n, fp) != *n) *n = 0;
+    fclose(fp);
+    return d;
+}
+
+static uint8_t facts_area[0x10000];
+static int facts_read(void *u, uint32_t off, void *buf, uint32_t n) {
+    (void)u;
+    if (off > sizeof facts_area || n > sizeof facts_area - off) return -1;
+    memcpy(buf, facts_area + off, n);
+    return 0;
+}
+
+/* The tiny v2 fixture answers "Ordnungszahl Kupfer?" with <fn>OCu (tiny_v2_golden.json). */
+static void test_fn_console(const char *dir) {
+    size_t n = 0, nf = 0;
+    uint8_t *data = load(dir, "tiny_v2.utny", &n);
+    uint8_t *fdata = load(dir, "facts_small.utft", &nf);
+    CHECK(data && fdata && n && nf);
+    if (!data || !fdata) return;
+    memset(facts_area, 0xFF, sizeof facts_area);
+    memcpy(facts_area, fdata, nf);
+    static ut_facts facts;
+    CHECK(ut_facts_open(&facts, facts_read, NULL, sizeof facts_area) == UT_FACTS_OK);
+    ut_model m;
+    CHECK(ut_model_open(&m, data, n) == UT_OK);
+    CHECK(m.has_fn == 1 && m.n_special == 6);
+    size_t need = ut_arena_size(&m);
+    void *arena = aligned_alloc(16, (need + 15) & ~(size_t)15);
+    ut_ctx c;
+    CHECK(ut_ctx_init(&c, &m, arena, need) == UT_OK);
+    static fake_io f;
+    memset(&f, 0, sizeof f);
+    ut_console_io io = {f_read, f_write, f_millis, NULL, &f, NULL, NULL, NULL, &facts};
+    static ut_console k;
+    ut_console_init(&k, &c, &m, need, &io, UT_OK);
+
+    /* full answer from the table; the raw function output is not printed by default */
+    feed(&k, &f, "Ordnungszahl Kupfer?\r");
+    CHECK(strstr(f.out, "\r\nDie Ordnungszahl von Kupfer ist 29.\r\n> ") != NULL);
+    CHECK(strstr(f.out, "OCu") == NULL);
+
+    /* prefix is printed as soon as the type letter is generated, before the key is complete */
+    feed(&k, &f, "Ordnungszahl Kupfer?");
+    f.in = "\r";
+    f.pos = 0;
+    f.len = 1;
+    f.out_len = 0;
+    f.out[0] = 0;
+    int saw_prefix_only = 0;
+    for (int i = 0; i < 100 && (f.pos < f.len || k.state == UT_ST_GENERATING || i == 0); i++) {
+        ut_console_poll(&k);
+        if (strstr(f.out, "Die Ordnungszahl von ") && !strstr(f.out, "Kupfer")) saw_prefix_only = 1;
+    }
+    CHECK(saw_prefix_only);
+    CHECK(strstr(f.out, "Kupfer ist 29.") != NULL);
+
+    /* /raw an shows the function output after the answer */
+    feed(&k, &f, "/raw an\r");
+    feed(&k, &f, "Ordnungszahl Kupfer?\r");
+    CHECK(strstr(f.out, "29.  [\xE2\x9F\xA8" "fn" "\xE2\x9F\xA9" "OCu]") != NULL);
+    feed(&k, &f, "/raw aus\r");
+
+    /* /info shows the fact table */
+    feed(&k, &f, "/info\r");
+    CHECK(strstr(f.out, "Faktentabelle: OK v1") != NULL);
+    CHECK(strstr(f.out, "Format v2") == NULL); /* banner line, not /info */
+
+    /* Ctrl-C after the prefix: nothing more is printed */
+    feed(&k, &f, "Ordnungszahl Kupfer?");
+    f.in = "\r";
+    f.pos = 0;
+    f.len = 1;
+    f.out_len = 0;
+    for (int i = 0; i < 100; i++) {
+        ut_console_poll(&k);
+        if (strstr(f.out, "Die Ordnungszahl von ")) break;
+    }
+    f.in = "\x03";
+    f.pos = 0;
+    f.len = 1;
+    ut_console_poll(&k);
+    CHECK(strstr(f.out, "[abgebrochen]") != NULL);
+    CHECK(strstr(f.out, "Kupfer") == NULL);
+    CHECK(k.state != UT_ST_GENERATING);
+
+    /* missing table: model text still works, factual answers say the table is missing */
+    io.facts = NULL;
+    ut_console_init(&k, &c, &m, need, &io, UT_OK);
+    feed(&k, &f, "Ordnungszahl Kupfer?\r");
+    CHECK(strstr(f.out, "Die Faktentabelle fehlt") != NULL);
+    feed(&k, &f, "Hi\r");
+    CHECK(strstr(f.out, "Hallo!") != NULL);
+    feed(&k, &f, "/info\r");
+    CHECK(strstr(f.out, "Faktentabelle: fehlt") != NULL);
+    free(arena);
+    free(data);
+    free(fdata);
+}
+
 int main(int argc, char **argv) {
     const char *dir = argc > 1 ? argv[1] : "tests/fixtures";
     char path[512];
@@ -337,6 +448,7 @@ int main(int argc, char **argv) {
 
     free(arena);
     free(data);
+    test_fn_console(dir);
     if (failures) {
         fprintf(stderr, "%d check(s) failed\n", failures);
         return 1;

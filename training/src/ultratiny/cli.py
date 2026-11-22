@@ -177,9 +177,13 @@ def cmd_pipeline_hybrid(a, cfg) -> int:
     (out / "eval.json").write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n")
     (out / "eval_results.json").write_text(json.dumps(results, ensure_ascii=False) + "\n")
     print("== golden")
-    prompts = [r["prompt"] for name in ("kurzarbeit", "heldout_family", "heldout_combo",
-                                        "heldout_refusal") for r in hybrid.read_jsonl(data /
-                                        f"{name}.jsonl")]  # fmt: skip
+    max_q = cfg.model.ctx_len - 2 - hybrid.UT_ANSWER_RESERVE  # the console types these in full
+    prompts = [
+        r["prompt"]
+        for name in ("kurzarbeit", "heldout_family", "heldout_combo", "heldout_refusal")
+        for r in hybrid.read_jsonl(data / f"{name}.jsonl")
+        if len(r["prompt"]) <= max_q
+    ]
     write_golden(model, prompts[: cfg.eval.golden_cases], out / "golden.json",
                  max_len=cfg.model.ctx_len - 3, facts_bytes=facts_bytes)  # fmt: skip
     print("== budget")

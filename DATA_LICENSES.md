@@ -12,3 +12,10 @@ Every training fact carries a `source` value. Only the sources listed here may b
 
 LLM output is only used for *questions* (training-only augmentation in `training/data/augment/`),
 filtered by a judge prompt, the alphabet check and the held-out leak/conflict checks in `datagen`.
+
+Exception (specs/006-hybrid-chemielehrer, FR-008): `training/data/facts/chemie_kurz.tsv` holds
+short (<= 60 characters) versions of the curated `own` explanations, *proposed* by a local LLM
+(`tools/shorten_llm.py`, source `llm:<model>`). Each row must pass the automatic check (no new
+numbers or formulas, key term present, table facts excluded) and is reviewed by a person
+(`reviewed = yes`) before it is used for training. No fact value comes from an LLM; facts are
+answered from the fact table (`own`, `wikidata`, `computed`).

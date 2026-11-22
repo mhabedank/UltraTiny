@@ -15,7 +15,9 @@ e.g. training/runs/<config>-s<seed>.log from tools/spark/train.sh:
   "train_examples": N (datagen summary)
   "step   1200  loss 0.0510" (" (qat)" during quantization-aware fine-tuning)
   "quantization check: float 0.912, int8 0.880 (3.2 pp)"
-  "demo: 1.000 (33 prompts)", "heldout: 0.700 (450 prompts)", "chemistry held-out: ..., refusal
+  "demo: 1.000 (33 prompts)", "heldout: 0.700 (450 prompts)", hybrid (specs/006):
+  "heldout_family/heldout_combo/kurzarbeit: ...", "refusal rate: ..., wrong facts (all): ...",
+  "chemistry held-out: ..., refusal
   rate: ..., false refusals: ...", "wrote ... (601404 bytes)", "ok": true|false, "OK"/"FAILED: ..."
 The total number of steps comes from training/configs/<config>.toml next to the runs directory.
 """
@@ -90,6 +92,15 @@ while True:
 
 STEP_RE = re.compile(r"step\s+(\d+)\s+loss\s+([0-9.eE+-]+)(\s*\(qat\))?")
 EVAL_RE = re.compile(r"^(demo|heldout):\s*([0-9.]+)\s*\((\d+)")
+# Hybrid pipeline (specs/006): per-set eval lines and the refusal / wrong-fact summary.
+HYB_EVAL_RE = re.compile(
+    r"^(trained_sample|heldout_family|heldout_combo|kurzarbeit|heldout_explain):\s*([0-9.]+)\s*\((\d+)"
+)
+HYB_KEYS = {"trained_sample": "demo", "heldout_family": "chem", "heldout_combo": "combo",
+            "kurzarbeit": "kurz", "heldout_explain": "explain"}  # fmt: skip
+HYB_REF_RE = re.compile(
+    r"^refusal rate:\s*([0-9.]+).*false refusals:\s*([0-9.]+).*wrong facts \(all\):\s*([0-9.]+)"
+)
 CHEM_RE = re.compile(r"chemistry held-out:\s*([0-9.]+).*refusal rate:\s*([0-9.]+).*false refusals:\s*([0-9.]+)")
 QUANT_RE = re.compile(r"quantization check: float ([0-9.]+), int8 ([0-9.]+) \(([-0-9.]+) pp\)")
 DATA_RE = re.compile(r'^\s*"(train_examples|heldout|demo|facts|skipped_too_long)":\s*(\d+)')
@@ -144,6 +155,13 @@ class State:
             if (m := EVAL_RE.match(s)) and r["phase"] == "Auswertung":
                 r["eval"][m.group(1)] = float(m.group(2))
                 r["eval"][m.group(1) + "_n"] = int(m.group(3))
+            elif (m := HYB_EVAL_RE.match(s)) and r["phase"] == "Auswertung":
+                key = HYB_KEYS[m.group(1)]
+                r["eval"][key] = float(m.group(2))
+                r["eval"][key + "_n"] = int(m.group(3))
+            elif m := HYB_REF_RE.search(s):
+                r["eval"].update(refusal=float(m.group(1)), false_refusal=float(m.group(2)),
+                                 wrong_fact=float(m.group(3)))  # fmt: skip
             elif m := CHEM_RE.search(s):
                 r["eval"].update(chem=float(m.group(1)), refusal=float(m.group(2)),
                                  false_refusal=float(m.group(3)))  # fmt: skip
@@ -312,7 +330,7 @@ function card(s){const r=s.r,c=COL[s.i%COL.length],ev=r.eval;let note="";
  else if(s.silent!=null&&!r.result&&s.silent>Math.max(120,s.rt?300/s.rt:0))note=`<div class="note warn">Seit ${dur(s.silent)} keine neue Zeile – läuft das Training noch?</div>`;
  else if(s.tr!=null&&Math.abs(s.tr)<0.01&&r.phase==="Training")note=`<div class="note warn">Plateau: weniger als 1 % Änderung in 1.000 Schritten.</div>`;
  const evs=ev.demo!=null?`<div><div class="k">demo</div><div class="v">${pc(ev.demo)}</div></div><div><div class="k">held-out</div><div class="v">${pc(ev.chem??ev.heldout)}</div></div>`+
-  (ev.refusal!=null?`<div><div class="k">Abweisen</div><div class="v">${pc(ev.refusal)}</div></div>`:`<div><div class="k">Modell</div><div class="v">${kb(r.model_bytes)}</div></div>`):"";
+  (ev.kurz!=null?`<div><div class="k">Kurzarbeit</div><div class="v">${pc(ev.kurz)}</div></div>`:ev.refusal!=null?`<div><div class="k">Abweisen</div><div class="v">${pc(ev.refusal)}</div></div>`:`<div><div class="k">Modell</div><div class="v">${kb(r.model_bytes)}</div></div>`):"";
  return`<div class="card"><div class="rh"><span class="sw" style="background:${c}"></span><span class="rn" title="${esc(s.name)}">${esc(s.name)}</span>${badge(s)}</div>
  <div class="bar"><i style="width:${(s.prog??0)*100}%;background:${c}"></i></div>
  <div class="kv"><div><div class="k">Schritt</div><div class="v" title="${s.total?nf(s.total)+" Schritte insgesamt":""}">${s.last?nf(s.last[0]):"–"}${s.total?` <span style="color:var(--muted);font-weight:400">/ ${s.total>=10000?Math.round(s.total/1000)+"k":nf(s.total)}</span>`:""}</div></div>
@@ -365,7 +383,9 @@ function compare(S){if(!S.length){$("cmp").innerHTML='<tr><td class="empty">noch
  const rows=[["Status",s=>s.r.result==="ok"?"OK":s.r.result==="failed"?"Ziele verfehlt":s.r.result==="error"?"Fehler":s.r.phase],
   ["Schritte",s=>s.last?nf(s.last[0]):"–"],["letzter Loss",s=>f4(s.last&&s.last[1])],["bester Loss",s=>f4(s.best)],
   ["float → int8",s=>s.r.quant?`${pc(s.r.quant[0])} → ${pc(s.r.quant[1])}`:"–"],["demo",s=>pc(s.r.eval.demo)],
-  ["held-out",s=>pc(s.r.eval.chem??s.r.eval.heldout)],["Abweisen",s=>pc(s.r.eval.refusal)],["falsch abgewiesen",s=>pc(s.r.eval.false_refusal)],
+  ["held-out",s=>pc(s.r.eval.chem??s.r.eval.heldout)],["Kombis (zurückgehalten)",s=>pc(s.r.eval.combo)],
+  ["Kurzarbeit",s=>pc(s.r.eval.kurz)],["falsche Fakten",s=>pc(s.r.eval.wrong_fact)],
+  ["Abweisen",s=>pc(s.r.eval.refusal)],["falsch abgewiesen",s=>pc(s.r.eval.false_refusal)],
   ["Modell",s=>kb(s.r.model_bytes)],["Budget (Pipeline)",s=>s.r.budget_ok==null?"–":s.r.budget_ok?"OK":"FAIL"],
   ["Beispiele",s=>nf(s.r.data.train_examples)]];
  let t="<tr><th></th>"+S.map(s=>`<th><span class="sw" style="background:${COL[s.i%COL.length]}"></span> ${esc(s.name.replace(/^.*-(s\d+)$/,"$1"))}</th>`).join("")+"</tr>";

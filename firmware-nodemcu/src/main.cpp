@@ -9,6 +9,9 @@
  * - An invalid or too large model puts the console into HALT_ERROR: no panic, no reboot loop.
  * - loop() performs one console step (at most one generated token) and returns, so the SDK and
  *   the watchdogs get the CPU between tokens (research.md R8).
+ * - Hybrid models (UTNY v2, specs/006-hybrid-chemielehrer) answer factual questions from the fact
+ *   table at flash 0x100000 (outside the mapped megabyte), read with ESP.flashRead. A missing or
+ *   corrupt table only disables factual answers; model-written answers keep working (FR-013).
  */
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
@@ -16,6 +19,7 @@
 extern "C" {
 #include "utiny.h"
 #include "utiny_console.h"
+#include "utiny_facts.h"
 }
 
 #include "layout.h"
@@ -24,6 +28,21 @@ static uint8_t arena[UT_ARENA_MAX] __attribute__((aligned(16)));
 static ut_model model;
 static ut_ctx ctx;
 static ut_console console;
+static ut_facts facts;
+
+/* Fact table reads: aligned offset, length and buffer, as ESP.flashRead requires. Yields every
+ * 4 KB so the boot-time CRC over the whole table does not starve the watchdog. */
+static uint32_t facts_bytes_read = 0;
+static int facts_read(void *, uint32_t off, void *buf, uint32_t n) {
+    if (off > UT_FACTS_AREA_SIZE || n > UT_FACTS_AREA_SIZE - off) return -1;
+    if (!ESP.flashRead(UT_FACTS_FLASH_OFFSET + off, (uint32_t *)buf, n)) return -1;
+    facts_bytes_read += n;
+    if (facts_bytes_read >= 4096) {
+        facts_bytes_read = 0;
+        yield();
+    }
+    return 0;
+}
 
 /* At most one input byte per loop(): every typed character is fed to the model (~0.1 s), so a
  * pasted prompt processed in one go would starve the software watchdog (~3.2 s). The rest waits
@@ -70,6 +89,7 @@ void setup() {
     io.micros = io_micros;
     io.sys_stats = io_sys_stats;
     io.board = "NodeMCU (ESP8266)";
+    io.facts = &facts;
 
     ut_status st = ut_model_open(&model, (const void *)UT_MODEL_ADDR, UT_MODEL_AREA_SIZE);
     size_t need = st == UT_OK ? ut_arena_size(&model) : 0;
@@ -82,6 +102,13 @@ void setup() {
     console.arena_cap = sizeof arena;
     /* Reset reason first, so the banner still ends with the prompt (tools/devlib.py reset()). */
     Serial.printf("\r\nLetzter Reset: %s", ESP.getResetReason().c_str());
+    if (st == UT_OK && model.has_fn) {
+        ut_facts_status fs = ut_facts_open(&facts, facts_read, nullptr, UT_FACTS_AREA_SIZE);
+        if (fs == UT_FACTS_OK)
+            Serial.printf("\r\nFaktentabelle: OK, %lu Eintraege", (unsigned long)facts.n_records);
+        else
+            Serial.printf("\r\nFaktentabelle: %s (make nodemcu-flash-facts)", ut_facts_status_str(fs));
+    }
     ut_console_banner(&console);
 }
 

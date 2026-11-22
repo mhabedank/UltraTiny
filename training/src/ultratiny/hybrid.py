@@ -260,7 +260,7 @@ def generate(cfg: Config, out_dir: Path, seed: int) -> dict:
     for pat in d.explanations:
         for path in sorted(TRAINING_ROOT.glob(pat)):
             for r in _read_tsv(path):
-                if r.get("reviewed", "").lower() != "yes":
+                if r.get("reviewed", "").lower() != "yes" or r.get("check", "ok") != "ok":
                     n_unreviewed += 1
                     continue
                 n_explain_rows += 1

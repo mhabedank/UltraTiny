@@ -38,6 +38,7 @@ jobs:
         run: |
           uv sync
           uv run python ../tools/budget_report.py --board nodemcu --model ../models/nodemcu.utny
+          uv run python ../tools/budget_report.py --board nodemcu --model ../runtime/tests/fixtures/tiny_v2.utny --facts ../runtime/tests/fixtures/facts_small.utft
           uv run python ../tools/budget_report.py --board esp32 --model ../models/starter.utny
 
   firmware:
@@ -78,3 +79,4 @@ jobs:
         run: >-
           python tools/budget_report.py --board nodemcu --model models/nodemcu.utny
           --pio-build firmware-nodemcu/.pio/build/nodemcuv2
+          --facts runtime/tests/fixtures/facts_small.utft

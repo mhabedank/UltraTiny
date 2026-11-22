@@ -39,7 +39,7 @@ No other test tasks.
 
 **Purpose**: Constants, configs and file skeletons that later tasks fill in
 
-- [ ] T001 [P] Define `UT_FACTS_FLASH_OFFSET 0x100000`, `UT_FACTS_AREA_SIZE 0x10000` and `UT_FACTS_MAX` (90 % of the area) per contracts/fact-table-format.md "Placement" in firmware-nodemcu/include/layout.h. Update the flash map comment in firmware-nodemcu/ld/eagle.flash.4m.ultratiny.ld (comment only, no section change).
+- [X] T001 [P] Define `UT_FACTS_FLASH_OFFSET 0x100000`, `UT_FACTS_AREA_SIZE 0x10000` and `UT_FACTS_MAX` (90 % of the area) per contracts/fact-table-format.md "Placement" in firmware-nodemcu/include/layout.h. Update the flash map comment in firmware-nodemcu/ld/eagle.flash.4m.ultratiny.ld (comment only, no section change).
 - [X] T002 [P] Create training/configs/chemie-hybrid.toml:
   - NodeMCU dims as configs/chemie-nodemcu-spark.toml, `ctx_len` 104, 30000 steps, `qat_steps` 3000
   - `[data]`: `facts`, `templates = ["data/templates/hybrid.toml"]`, `explanations = "data/facts/chemie_kurz.tsv"`, `kurzarbeit = "data/eval/kurzarbeit.tsv"`, `kurzarbeit_sha256`, mix weights per research R7
@@ -164,21 +164,21 @@ verified answer from the fact table (FR-001, FR-002, FR-004, FR-006, FR-007, FR-
   - the ` – ` fallback after a printed prefix, Ctrl-C abort
   - a `facts` handle in `ut_console_io`; update every `ut_console_io` initializer so the `-Wextra -Werror` builds stay green: runtime/host/utiny_host.c, runtime/tests/test_console_logic.c and the legacy firmware/main/console_uart.c (`facts = NULL`)
   - `/info` facts line, `/raw on|off`, `/trace` label `⟨fn⟩`
-- [ ] T025 [US1] Add console tests in runtime/tests/test_console_logic.c, with a fake model output stream and a fixture table:
+- [X] T025 [US1] Add console tests in runtime/tests/test_console_logic.c, with a fake model output stream and a fixture table:
   - prefix timing (printed before the key is complete)
   - each fallback
   - missing table
   - Ctrl-C in FN_KEY
   - a `<fn>` that is not the first token is treated as `<eos>`
 - [X] T026 [US1] Add `--facts FILE` to runtime/host/utiny_host.c. Golden checking compares tokens **and** the `text` field; `text` is optional, so existing golden files (starter, nodemcu) keep passing on tokens only. Update training/src/ultratiny/golden.py to write `facts_sha256` and the per-case `text` (contracts/function-output.md "Host and reference").
-- [ ] T027 [US1] Board glue in firmware-nodemcu/src/main.cpp:
+- [X] T027 [US1] Board glue in firmware-nodemcu/src/main.cpp:
   - flash-read callback via `ESP.flashRead` at `UT_FACTS_FLASH_OFFSET` (aligned)
   - `ut_facts_open` at boot, with a `yield()` every 4 KB of the CRC
   - boot status line, `io.facts`
   - Static DRAM growth ≤ 1 KB (check with tools/budget_report.py `--pio-build`).
-- [ ] T028 [P] [US1] Add `FACTS ?=`, `NODEMCU_FACTS_ADDR 0x100000`, `NODEMCU_FACTS_MAX 58982` and the target `nodemcu-flash-facts` (size check, then `$(ESPTOOL) write_flash 0x100000`) to the Makefile. Document it in firmware-nodemcu/README.md.
-- [ ] T029 [P] [US1] Add the `facts` budget entry (file size ≤ 90 % of the 64 KB area, outside the mapped window) to tools/budget_report.py, with tests in training/tests/test_budget_report.py. Add `--facts FILE` to the CI budget step in .github/workflows/ci.yml.
-- [ ] T030 [P] [US1] Make tools/device_parity.py compare printed answer text from the golden `text` field, and tools/device_smoke.py check the `/info` facts line.
+- [X] T028 [P] [US1] Add `FACTS ?=`, `NODEMCU_FACTS_ADDR 0x100000`, `NODEMCU_FACTS_MAX 58982` and the target `nodemcu-flash-facts` (size check, then `$(ESPTOOL) write_flash 0x100000`) to the Makefile. Document it in firmware-nodemcu/README.md.
+- [X] T029 [P] [US1] Add the `facts` budget entry (file size ≤ 90 % of the 64 KB area, outside the mapped window) to tools/budget_report.py, with tests in training/tests/test_budget_report.py. Add `--facts FILE` to the CI budget step in .github/workflows/ci.yml.
+- [X] T030 [P] [US1] Make tools/device_parity.py compare printed answer text from the golden `text` field, and tools/device_smoke.py check the `/info` facts line.
 
 **Checkpoint**: `hybrid-smoke` trains on CPU. `utiny-host --facts` renders function outputs from the
 table, with golden tokens and text bit-identical in the normal and the checked build.
@@ -193,13 +193,13 @@ table, with golden tokens and text bit-identical in the normal and the checked b
 - Explanation and off-topic questions in the smoke and full model produce plain text (no `<fn>`).
 - Explanations are ≤ 60 chars and contain the keywords; off-topic questions are refused (quickstart §7).
 
-- [ ] T031 [US2] Write training/tools/shorten_llm.py (🖥️ Spark, reusing the client and prompt handling of training/tools/augment_llm.py):
+- [X] T031 [US2] Write training/tools/shorten_llm.py (🖥️ Spark, reusing the client and prompt handling of training/tools/augment_llm.py):
   - For each `frei` entry of chemie_rlp_*.tsv and chemie_reaktionen.tsv, propose an answer ≤ 60 chars ("keine neuen Fakten")
   - Write the proposals to training/data/facts/chemie_kurz.tsv, with columns per data-model.md `Short explanation.id`, `Short explanation.questions` and `Short explanation.answer`, plus `reviewed` = `no`
-- [ ] T032 [US2] Implement the automatic check of research R8 in training/src/ultratiny/augment.py (`check_short_explanation`), with tests in training/tests/test_augment.py. It rejects a proposal that is longer than 60 characters, uses characters outside the alphabet, adds a number, formula or symbol, or lacks the key term, or contains a value the fact table holds as a fact (FR-002). Entries whose content is a table fact (e.g. "Was ist Kalk chemisch?") are marked `to_fact` and turned into factual questions with an alias.
+- [X] T032 [US2] Implement the automatic check of research R8 in training/src/ultratiny/augment.py (`check_short_explanation`), with tests in training/tests/test_augment.py. It rejects a proposal that is longer than 60 characters, uses characters outside the alphabet, adds a number, formula or symbol, or lacks the key term, or contains a value the fact table holds as a fact (FR-002). Entries whose content is a table fact (e.g. "Was ist Kalk chemisch?") are marked `to_fact` and turned into factual questions with an alias.
 - [ ] T033 [US2] 🖥️ Run shorten_llm.py on the Spark and the check locally, then commit training/data/facts/chemie_kurz.tsv with check results. Record its source (own curriculum text, shortened by an LLM, reviewed) in DATA_LICENSES.md.
 - [ ] T034 [US2] 👤 The user reviews training/data/facts/chemie_kurz.tsv in the PR and sets `reviewed = yes`. Datagen uses only reviewed rows.
-- [ ] T035 [US2] Generate explanation, greeting and refusal pairs in training/src/ultratiny/datagen.py:
+- [X] T035 [US2] Generate explanation, greeting and refusal pairs in training/src/ultratiny/datagen.py:
   - reviewed short explanations with their phrasings and paraphrases
   - chemie_persona.tsv and the refusal data as today
   - repeat weights from the config `mix` (research R7: ~55 % facts, 30 % explanations, 15 % other)
@@ -225,14 +225,14 @@ contracts/eval-sets.md, and two runs with the same seed are identical (quickstar
   - drop normalised prompts equal to a short-test question
   - write the files of contracts/eval-sets.md, including `heldback.json` and a `dataset.sha256` that covers `facts.utft`
 - [X] T039 [US3] Extend the datagen report in training/src/ultratiny/datagen.py: types, forms and families per type, two-way coverage, sizes of all sets, dropped short-test matches. Fail if SC-006 is not met (≥ 20 types × ≥ 10 forms).
-- [ ] T040 [US3] Implement the scoring and report of contracts/eval-sets.md in training/src/ultratiny/evaluate.py:
+- [X] T040 [US3] Implement the scoring and report of contracts/eval-sets.md in training/src/ultratiny/evaluate.py:
   - function-output match, or the same rendered answer
   - wrong-fact and decline rules, explanation keyword and length check, refusal and false refusal
   - per-type and per-kind breakdowns
   - Tests in training/tests/test_evaluate_hybrid.py (one case per row of the scoring table).
 - [X] T041 [US3] Rewire `cmd_pipeline` in training/src/ultratiny/cli.py: facts → datagen → train → export (v2) → eval (all sets) → golden (with text) → budget (model + facts). It copies `facts.utft` into the run and fails on any `[eval]` threshold. Record the facts hash and held-back hash in the model meta (training/src/ultratiny/train.py / export.py).
-- [ ] T042 [US3] Add a determinism test for the hybrid path in training/tests/test_determinism.py: two `hybrid-smoke` datagen runs and a short train give byte-identical data, `facts.utft` and model (apart from the meta `git`).
-- [ ] T043 [P] [US3] Show the new eval lines (combo, family, kurzarbeit, wrong fact) in the run cards and the all-values table of tools/loss_viewer.py.
+- [X] T042 [US3] Add a determinism test for the hybrid path in training/tests/test_determinism.py: two `hybrid-smoke` datagen runs and a short train give byte-identical data, `facts.utft` and model (apart from the meta `git`).
+- [X] T043 [P] [US3] Show the new eval lines (combo, family, kurzarbeit, wrong fact) in the run cards and the all-values table of tools/loss_viewer.py.
 
 **Checkpoint**: The smoke pipeline runs end to end on CPU, with a per-set report, deterministic outputs and budgets OK.
 

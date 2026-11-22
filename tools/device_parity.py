@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """On-device parity check (SC-006): the board's greedy answers must equal the reference text
-in golden.json byte for byte.
+in golden.json byte for byte. For hybrid models (specs/006) the golden case's `printed` field
+(the answer the console prints, incl. fact-table lookups) is compared instead of `text`.
 
     uv run python ../tools/device_parity.py --port /dev/ttyUSB0 \
         --golden ../models/nodemcu_golden.json
@@ -45,9 +46,10 @@ def main() -> int:
     for i, c in enumerate(cases):
         dev.command(f"/max {c['max']}")
         got = dev.ask(c["prompt"], a.char_delay)
-        if got != c["text"]:
+        want = c.get("printed", c["text"])
+        if got != want:
             fails += 1
-            print(f"MISMATCH case {i}: {c['prompt']!r}\n  board: {got!r}\n  ref:   {c['text']!r}")
+            print(f"MISMATCH case {i}: {c['prompt']!r}\n  board: {got!r}\n  ref:   {want!r}")
     dev.close()
     print(f"device parity: {len(cases)} cases, {fails} mismatches")
     return 1 if fails else 0
