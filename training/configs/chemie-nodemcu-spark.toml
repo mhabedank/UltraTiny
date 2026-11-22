@@ -1,0 +1,49 @@
+# Chemielehrer at NodeMCU size, trained on the DGX Spark (CUDA): chemie-spark data incl. the LLM
+# augmentation (data/augment/, PR #7), but the NodeMCU architecture of configs/nodemcu.toml
+# (4 x 128, context 104 -> arena 35,520 B within the 40 KB budget, specs/005-nodemcu-port).
+# Pairs longer than the context are dropped by datagen (about 18 % of the chemistry pairs).
+#   tools/spark/train.sh configs/chemie-nodemcu-spark.toml   (with NAME=chemie-nodemcu)
+name = "chemie-nodemcu"
+
+[model]
+d_model = 128
+n_layers = 4
+n_heads = 4
+n_kv_heads = 1
+d_ff = 384
+ctx_len = 104
+
+[data]
+facts = [
+  "data/facts/wikidata_elemente_chemie.tsv",
+  "data/facts/chemie_rlp_*.tsv",
+  "data/facts/chemie_verbindungen.tsv",
+  "data/facts/chemie_reaktionen.tsv",
+  "data/facts/chemie_persona.tsv",
+  "data/facts/abweisen.tsv",
+]
+templates = ["data/templates/chemie.toml"]
+demo_prompts = "data/demo_chemie.tsv"
+noisy_copies = 3
+max_answer_len = 100
+augment_phrasings = ["data/augment/paraphrasen.tsv"]
+augment_templates = ["data/augment/vorlagen.tsv"]
+augment_refusals = ["data/augment/abweisen.tsv"]
+
+[train]
+steps = 30000
+batch_size = 128
+lr = 2e-3
+min_lr = 1e-4
+warmup_steps = 300
+dropout = 0.1
+qat_steps = 3000  # only if int8 costs > 2 pp (see train.py)
+
+[eval]
+# PoC targets for the small model (below the ESP32 Chemielehrer's 0.95 / 0.75 / 0.80 / 0.03);
+# the Spark run measures what this size can do.
+demo_min = 0.80
+heldout_min = 0.50
+refusal_min = 0.70
+false_refusal_max = 0.05
+golden_cases = 32

@@ -414,8 +414,12 @@ static void cmd_stats(ut_console *k) {
     const int ok = k->state != UT_ST_HALT_ERROR;
     out(k, "\r\nSystem:");
     if (st.heap_free >= 0)
-        outf(k, "\r\n  Heap frei %ld B, Minimum %ld B, gr\xC3\xB6\xC3\x9F" "ter Block %ld B",
-             (long)st.heap_free, (long)st.heap_min, (long)st.heap_largest);
+    {
+        outf(k, "\r\n  Heap frei %ld B", (long)st.heap_free);
+        if (st.heap_min >= 0) outf(k, ", Minimum %ld B", (long)st.heap_min); /* unknown on ESP8266 */
+        if (st.heap_largest >= 0)
+            outf(k, ", gr\xC3\xB6\xC3\x9F" "ter Block %ld B", (long)st.heap_largest);
+    }
     else if (k->io.free_heap)
         outf(k, "\r\n  Heap frei %lu B", (unsigned long)k->io.free_heap(k->io.user));
     else

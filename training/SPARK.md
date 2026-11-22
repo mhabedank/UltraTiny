@@ -99,6 +99,18 @@ tools/spark/setup_venv.sh              # PyTorch mit CUDA (cu130-Wheels für aar
 UT_NO_DOCKER=1 tools/spark/train.sh
 ```
 
+### Chemielehrer für die NodeMCU
+
+Dieselben Chemie-Daten (inkl. Augmentierung), aber in der NodeMCU-Größe (4 × 128, Kontext 104,
+siehe `specs/005-nodemcu-port/`). Paare, die nicht in 104 Zeichen passen (~18 %), fallen weg.
+
+```bash
+NAME=chemie-nodemcu tools/spark/train.sh configs/chemie-nodemcu-spark.toml
+python3 tools/budget_report.py --board nodemcu --model models/chemie-nodemcu.utny   # NodeMCU-Grenzen
+```
+
+Aufs Board: `make nodemcu-flash-model PORT=... NODEMCU_MODEL=models/chemie-nodemcu.utny`.
+
 ## 3. Ergebnis zurück
 
 ```bash

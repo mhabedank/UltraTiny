@@ -44,3 +44,11 @@ def test_no_esp32_in_self_description():
     text = (ROOT / "data/facts/starter.tsv").read_text(encoding="utf-8")
     assert "ESP32" not in text
     assert "ESP8266" in text and "NodeMCU" in text
+
+
+def test_chemie_nodemcu_config_fits_budget():
+    cfg = load_config(ROOT / "configs/chemie-nodemcu-spark.toml")
+    nodemcu = _cfg()
+    for f in ("d_model", "n_layers", "n_heads", "n_kv_heads", "d_ff", "ctx_len"):
+        assert getattr(cfg.model, f) == getattr(nodemcu.model, f)
+    assert arena_size(cfg.model) <= ARENA_MAX
