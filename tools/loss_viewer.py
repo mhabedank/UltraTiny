@@ -218,7 +218,7 @@ h1{font-size:20px;margin:0;font-weight:650;letter-spacing:-.01em}h2{font-size:15
 .badge.ok{background:color-mix(in srgb,var(--ok) 18%,transparent);color:var(--ok)}.badge.bad{background:color-mix(in srgb,var(--bad) 18%,transparent);color:var(--bad)}
 .badge.run{background:color-mix(in srgb,var(--acc) 16%,transparent);color:var(--acc)}
 .bar{height:6px;background:var(--grid);border-radius:99px;overflow:hidden;margin:6px 0 10px}.bar>i{display:block;height:100%;border-radius:99px}
-.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 10px}.kv div{min-width:0}
+.kv{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:8px 10px}.kv div{min-width:0}
 .k{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.04em}.v{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .down{color:var(--ok)}.up{color:var(--bad)}.flat{color:var(--warn)}
 .note{margin-top:8px;font-size:12px;color:var(--mut)}.note.warn{color:var(--warn)}.note.bad{color:var(--bad)}
@@ -269,10 +269,12 @@ function stats(name,r,i){const p=r.points,sm=ema(p,opts.smooth),last=p[p.length-
  const silent=r.last_seen&&D?D.now-r.last_seen:null;
  const prog=r.result?1:total?Math.min(1,(step+100)/total):null;
  return{name,r,i,last,total,rt,remain,best,tr,sm:sm.length?sm[sm.length-1]:null,silent,prog}}
-function badge(s){const r=s.r;if(r.result==="ok")return'<span class="badge ok">fertig · OK</span>';
+function badge(s){const r=s.r;if(s.stale)return'<span class="badge">alter Lauf</span>';if(r.result==="ok")return'<span class="badge ok">fertig · OK</span>';
  if(r.result==="failed")return'<span class="badge bad">fertig · Ziele verfehlt</span>';if(r.result==="error")return'<span class="badge bad">Fehler</span>';
  return`<span class="badge run">${r.phase}</span>`}
 function card(s){const r=s.r,c=COL[s.i%COL.length],ev=r.eval;let note="";
+ if(s.stale)return`<div class="card" style="opacity:.6"><div class="rh"><span class="sw" style="background:${c}"></span><span class="rn" title="${s.name}">${s.name}</span>${badge(s)}</div>
+  <div class="note">Log eines früheren Versuchs${r.result==="error"?" (endete mit einem Fehler)":""}. Es wird ersetzt, sobald dieser Seed im laufenden Training startet.</div></div>`;
  const tr=s.tr==null?"–":`<span class="${s.tr<-0.02?"down":s.tr>0.02?"up":"flat"}">${s.tr<0?"▼":"▲"} ${Math.abs(s.tr*100).toFixed(1)} %</span>`;
  if(r.result==="failed")note=`<div class="note bad">Verfehlt: ${r.failed}</div>`;
  else if(r.result==="error")note=`<div class="note bad">${r.failed}</div>`;
@@ -282,7 +284,7 @@ function card(s){const r=s.r,c=COL[s.i%COL.length],ev=r.eval;let note="";
   (ev.refusal!=null?`<div><div class="k">Abweisen</div><div class="v">${pc(ev.refusal)}</div></div>`:`<div><div class="k">Modell</div><div class="v">${kb(r.model_bytes)}</div></div>`):"";
  return`<div class="card"><div class="rh"><span class="sw" style="background:${c}"></span><span class="rn" title="${s.name}">${s.name}</span>${badge(s)}</div>
  <div class="bar"><i style="width:${(s.prog??0)*100}%;background:${c}"></i></div>
- <div class="kv"><div><div class="k">Schritt</div><div class="v">${s.last?nf(s.last[0]):"–"}${s.total?" / "+nf(s.total):""}</div></div>
+ <div class="kv"><div><div class="k">Schritt</div><div class="v" title="${s.total?nf(s.total)+" Schritte insgesamt":""}">${s.last?nf(s.last[0]):"–"}${s.total?` <span style="color:var(--mut);font-weight:400">/ ${s.total>=10000?Math.round(s.total/1000)+"k":nf(s.total)}</span>`:""}</div></div>
  <div><div class="k">Tempo</div><div class="v">${s.rt?s.rt.toFixed(1)+" /s":"–"}</div></div><div><div class="k">Rest</div><div class="v">${r.result?"–":dur(s.remain)}</div></div>
  <div><div class="k">Loss</div><div class="v">${f4(s.last&&s.last[1])}</div></div><div><div class="k">geglättet</div><div class="v">${f4(s.sm)}</div></div><div><div class="k">Trend 1k</div><div class="v">${tr}</div></div>
  <div><div class="k">bester</div><div class="v">${f4(s.best)}</div></div><div><div class="k">Beispiele</div><div class="v">${nf(r.data.train_examples)}</div></div>
@@ -318,7 +320,7 @@ function chart(S){const svg=$("c"),W=1000,H=420,L=64,R=18,T=14,B=42;
  hit.onmouseleave=()=>{tip.style.display="none";xh.setAttribute("visibility","hidden")}}
 function legend(S){$("legend").innerHTML=S.map(s=>`<span data-n="${s.name}" class="${hidden.has(s.name)?"off":""}"><span class="sw" style="background:${COL[s.i%COL.length]}"></span>${s.name}</span>`).join("")+(S.length>1?'<span style="color:var(--mut)">· Klick blendet aus/ein</span>':"");
  $("legend").querySelectorAll("[data-n]").forEach(e=>e.onclick=()=>{const n=e.dataset.n;hidden.has(n)?hidden.delete(n):hidden.add(n);render()})}
-function values(S){const names=S.map(s=>s.name);if(!names.includes(sel))sel=names[names.length-1]??null;
+function values(S){const names=S.map(s=>s.name);if(!names.includes(sel)){const cur=S.find(s=>s.r.last_seen&&!s.r.result)||[...S].reverse().find(s=>s.r.points.length);sel=cur?cur.name:names[0]??null}
  $("sel").innerHTML=names.map(n=>`<option ${n===sel?"selected":""}>${n}</option>`).join("");
  const s=S.find(x=>x.name===sel);if(!s||!s.r.points.length){$("vals").innerHTML='<tr><td class="empty">keine Werte</td></tr>';return}
  const p=s.r.points,sm=ema(p,opts.smooth),q=s.r.qat_from;let t="<tr><th>Schritt</th><th>Loss</th><th>geglättet</th><th>Δ zum Vorwert</th><th>Phase</th></tr>";
@@ -326,7 +328,7 @@ function values(S){const names=S.map(s=>s.name);if(!names.includes(sel))sel=name
   t+=`<tr><td>${nf(p[j][0])}</td><td>${p[j][1].toFixed(4)}</td><td>${sm[j].toFixed(4)}</td><td class="${d==null?"":d<0?"down":"up"}">${d==null?"–":(d>0?"+":"")+d.toFixed(4)}</td><td>${q!=null&&j>=q?"QAT":"Training"}</td></tr>`}
  $("vals").innerHTML=t}
 function compare(S){if(!S.length){$("cmp").innerHTML='<tr><td class="empty">noch keine Läufe</td></tr>';return}
- const rows=[["Status",s=>s.r.result==="ok"?"OK":s.r.result==="failed"?"Ziele verfehlt":s.r.result==="error"?"Fehler":s.r.phase],
+ const rows=[["Status",s=>s.stale?"alter Lauf":s.r.result==="ok"?"OK":s.r.result==="failed"?"Ziele verfehlt":s.r.result==="error"?"Fehler":s.r.phase],
   ["Schritte",s=>s.last?nf(s.last[0]):"–"],["letzter Loss",s=>f4(s.last&&s.last[1])],["bester Loss",s=>f4(s.best)],
   ["float → int8",s=>s.r.quant?`${pc(s.r.quant[0])} → ${pc(s.r.quant[1])}`:"–"],["demo",s=>pc(s.r.eval.demo)],
   ["held-out",s=>pc(s.r.eval.chem??s.r.eval.heldout)],["Abweisen",s=>pc(s.r.eval.refusal)],["falsch abgewiesen",s=>pc(s.r.eval.false_refusal)],
@@ -336,6 +338,7 @@ function compare(S){if(!S.length){$("cmp").innerHTML='<tr><td class="empty">noch
  rows.forEach(([k,fn])=>t+=`<tr><td>${k}</td>${S.map(s=>`<td>${fn(s)}</td>`).join("")}</tr>`);$("cmp").innerHTML=t}
 function render(){if(!D)return;$("st").textContent=D.status;$("dot").className="dot"+(D.connected?" on":"");
  const S=Object.entries(D.runs).map(([n,r],i)=>stats(n,r,i));
+ const live=S.some(s=>s.r.last_seen&&!s.r.result);S.forEach(s=>s.stale=live&&!s.r.last_seen&&s.r.result==="error");
  $("runs").innerHTML=S.length?S.map(card).join(""):'<div class="card empty">Noch keine Läufe gefunden.</div>';
  chart(S);legend(S);values(S);compare(S)}
 function csv(){if(!D)return;let c="run,step,loss,phase\n";Object.entries(D.runs).forEach(([n,r])=>r.points.forEach((p,j)=>c+=`${n},${p[0]},${p[1]},${r.qat_from!=null&&j>=r.qat_from?"qat":"train"}\n`));
