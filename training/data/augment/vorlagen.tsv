@@ -1,0 +1,109 @@
+relation	text	answer	source
+element_atommasse	Atommasse von {subject} in u?		llm:gemma4:e4b
+element_atommasse	Atommasse {subject}?		llm:gemma4:e4b
+element_atommasse	Die Masse von {subject}? (in u)		llm:gemma4:e4b
+element_atommasse	Gib mir die Atommasse von {subject}.		llm:gemma4:e4b
+element_atommasse	Was ist der Wert der Atommasse von {subject}?		llm:gemma4:e4b
+element_atommasse	Welchen Massenwert hat {subject}?		llm:gemma4:e4b
+element_atommasse	Welcher relative Massenwert hat {subject}?		llm:gemma4:e4b
+element_atommasse	Wie groß ist die Masse von {subject}?		llm:gemma4:e4b
+element_atommasse	Wie schwer ist {subject}? (Atommasse)		llm:gemma4:e4b
+element_atommasse	Wie viel wiegt {subject} in atomaren Einheiten (u)?		llm:gemma4:e4b
+element_familie	In welche Gruppe fällt {subject}?		llm:gemma4:e4b
+element_familie	Was ist die Elementfamilie von {subject}?		llm:gemma4:e4b
+element_familie	Welche Kategorie ist {subject}?		llm:gemma4:e4b
+element_familie	Welchen Klassenzugehörigkeit hat {subject}?		llm:gemma4:e4b
+element_familie	Welcher Typ ist {subject}?		llm:gemma4:e4b
+element_familie	Wo steht {subject} in der Gruppe?		llm:gemma4:e4b
+element_familie	Zu welchen Elementen gehört {subject}?		llm:gemma4:e4b
+element_familie	Zu welcher chemischen Familie gehört {subject}?		llm:gemma4:e4b
+element_familie	Zugehörigkeit von {subject}?		llm:gemma4:e4b
+element_familie	{subject} - in welche Familie?		llm:gemma4:e4b
+element_gruppe	Bitte die Gruppe von {subject} nennen.		llm:gemma4:e4b
+element_gruppe	Finden wir {subject} in welcher Gruppe?		llm:gemma4:e4b
+element_gruppe	Gib mir die Gruppenzuordnung von {subject}.		llm:gemma4:e4b
+element_gruppe	In welche Spalte fällt {subject}?		llm:gemma4:e4b
+element_gruppe	Welche Gruppe ist {subject}? (Einfach)		llm:gemma4:e4b
+element_gruppe	Welcher Gruppe gehört {subject}? (Kurz)		llm:gemma4:e4b
+element_gruppe	Wie ist die Gruppenposition von {subject}?		llm:gemma4:e4b
+element_gruppe	Wo befindet sich {subject} im Periodensystem?		llm:gemma4:e4b
+element_gruppe	Zu welchem Gitter gehört {subject}? (Umgangssprache)		llm:gemma4:e4b
+element_gruppe	{subject} gehört zu welcher Gruppe?		llm:gemma4:e4b
+element_kategorie	Ist {subject} Metall oder Nichtmetall?		llm:gemma4:e4b
+element_kategorie	Ist {subject} ein Metall oder ein Nichtmetall?		llm:gemma4:e4b
+element_kategorie	Mit welcher Stoffklasse lässt sich {subject} beschreiben?		llm:gemma4:e4b
+element_kategorie	Was ist die Stoffart von {subject}?		llm:gemma4:e4b
+element_kategorie	Welche Klasse besitzt {subject}?		llm:gemma4:e4b
+element_kategorie	Welcher Typ ist {subject}: Metall oder Nichtmetall?		llm:gemma4:e4b
+element_kategorie	Wie wird {subject} klassifiziert?		llm:gemma4:e4b
+element_kategorie	Zu welcher Gruppe zählt {subject}?		llm:gemma4:e4b
+element_ordnungszahl	Bestimme die Ordnungszahl von {subject}.		llm:gemma4:e4b
+element_ordnungszahl	Die Ordnungszahl von {subject} - was ist das?		llm:gemma4:e4b
+element_ordnungszahl	Finde die Ordnungszahl von {subject}.		llm:gemma4:e4b
+element_ordnungszahl	Ordnungszahl bei {subject}?		llm:gemma4:e4b
+element_ordnungszahl	Was ist die Kernladung von {subject}?		llm:gemma4:e4b
+element_ordnungszahl	Welche Zahl repräsentiert die Ordnungszahl von {subject}?		llm:gemma4:e4b
+element_ordnungszahl	Welcher Wert ist die Ordnungszahl von {subject}?		llm:gemma4:e4b
+element_ordnungszahl	Wie groß ist die Kernladungszahl von {subject}?		llm:gemma4:e4b
+element_ordnungszahl	Wie viele Protonen hat ein Atom von {subject}?		llm:gemma4:e4b
+element_ordnungszahl	Wie viele Protonen hat {subject}?		llm:gemma4:e4b
+element_periode	Gib mir die Periode für {subject}.		llm:gemma4:e4b
+element_periode	In welcher Reihe ist {subject}?		llm:gemma4:e4b
+element_periode	Können Sie die Periode von {subject} nennen?		llm:gemma4:e4b
+element_periode	Periode von {subject} - Info!		llm:gemma4:e4b
+element_periode	Welche Zahl zeigt die Periode von {subject}?		llm:gemma4:e4b
+element_periode	Welche Zeilennummer hat {subject}?		llm:gemma4:e4b
+element_periode	Welcher Periode ist {subject} zugeordnet?		llm:gemma4:e4b
+element_periode	Wo in der Periodentabelle steht {subject}?		llm:gemma4:e4b
+element_periode	Wo ist {subject} periodisch eingeordnet?		llm:gemma4:e4b
+element_periode	Zu welcher Periode gehört {subject}?		llm:gemma4:e4b
+element_schmelzpunkt	Bei welcher Temperatur beginnt {subject} zu schmelzen?		llm:gemma4:e4b
+element_schmelzpunkt	Bitte nennen Sie den Schmelzpunkt von {subject}.		llm:gemma4:e4b
+element_schmelzpunkt	Ich brauche den Schmelzpunkt von {subject}.		llm:gemma4:e4b
+element_schmelzpunkt	MP von {subject}?		llm:gemma4:e4b
+element_schmelzpunkt	Schmelzpunkt von {subject} abfragen.		llm:gemma4:e4b
+element_schmelzpunkt	Wann fängt {subject} an zu schmelzen?		llm:gemma4:e4b
+element_schmelzpunkt	Was ist die Schmelztemperatur von {subject}?		llm:gemma4:e4b
+element_schmelzpunkt	Welche Temperatur ist für {subject} der Schmelzpunkt?		llm:gemma4:e4b
+element_schmelzpunkt	Wie viel Grad braucht {subject}, um zu schmelzen?		llm:gemma4:e4b
+element_schmelzpunkt	Wie warm wird es, damit {subject} schmilzt?		llm:gemma4:e4b
+element_siedepunkt	Beginnt {subject} zu sieden bei welcher Temperatur?		llm:gemma4:e4b
+element_siedepunkt	Bei welcher Hitze siedet {subject}?		llm:gemma4:e4b
+element_siedepunkt	Siedet {subject} bei wie vielen Grad?		llm:gemma4:e4b
+element_siedepunkt	Welche Gradzahl erreicht {subject} beim Sieden?		llm:gemma4:e4b
+element_siedepunkt	Welche Temperatur ist für das Sieden von {subject} nötig?		llm:gemma4:e4b
+element_siedepunkt	Welchen Siedepunkt hat {subject}?		llm:gemma4:e4b
+element_siedepunkt	Wie hoch ist die Siedetemperatur von {subject}?		llm:gemma4:e4b
+element_siedepunkt	Wie viel Grad braucht {subject}, um zu sieden?		llm:gemma4:e4b
+element_siedepunkt	Zu welchem Grad wird {subject} heiß, um zu sieden?		llm:gemma4:e4b
+element_siedepunkt	{subject} Siedepunkt?		llm:gemma4:e4b
+element_symbol	Abkürzung für {subject}?		llm:gemma4:e4b
+element_symbol	Chemische Kennung von {subject}?		llm:gemma4:e4b
+element_symbol	Gib mir das Symbol von {subject}.		llm:gemma4:e4b
+element_symbol	Was ist der {subject}-Code?		llm:gemma4:e4b
+element_symbol	Welcher Code hat {subject}?		llm:gemma4:e4b
+element_symbol	Welches Symbol benutzt man für {subject}?		llm:gemma4:e4b
+element_symbol	Welches Zeichen repräsentiert {subject}?		llm:gemma4:e4b
+element_symbol	Wie stellst du {subject} chemisch dar?		llm:gemma4:e4b
+element_symbol	Wie wird {subject} in der Tabelle dargestellt?		llm:gemma4:e4b
+element_symbol	{subject}: Das chemische Zeichen?		llm:gemma4:e4b
+element_zustand	Aggregatzustand von {subject} bei 20 °C?		llm:gemma4:e4b
+element_zustand	In welcher Form befindet sich {subject} bei Raumtemperatur?		llm:gemma4:e4b
+element_zustand	Was ist der Zustand von {subject} bei Raumtemperatur?		llm:gemma4:e4b
+element_zustand	Was ist die Form von {subject} bei Raumtemperatur?		llm:gemma4:e4b
+element_zustand	Welche Phase hat {subject} bei 20 °C?		llm:gemma4:e4b
+element_zustand	Welches Aggregat zeigt {subject} bei Raumtemperatur?		llm:gemma4:e4b
+element_zustand	Wie liegt {subject} bei normaler Temperatur vor?		llm:gemma4:e4b
+element_zustand	Wie sieht {subject} bei Zimmertemperatur aus?		llm:gemma4:e4b
+element_zustand	Wie verhält sich {subject} bei Raumtemperatur?		llm:gemma4:e4b
+element_zustand	{subject}: Zustand bei Raumtemperatur?		llm:gemma4:e4b
+formel_von	Formel für {subject}?		llm:gemma4:e4b
+formel_von	Gib mir die Formel von {subject}.		llm:gemma4:e4b
+formel_von	Kennst du die Formel von {subject}?		llm:gemma4:e4b
+formel_von	Was ist die chemische Kennung von {subject}?		llm:gemma4:e4b
+formel_von	Welche chemische Formel besitzt {subject}?		llm:gemma4:e4b
+formel_von	Welchen chemischen Code hat {subject}?		llm:gemma4:e4b
+formel_von	Wie sieht die Formel von {subject} aus?		llm:gemma4:e4b
+formel_von	Wie stellt man {subject} chemisch dar?		llm:gemma4:e4b
+formel_von	Zeig mir die Formel von {subject}.		llm:gemma4:e4b
+formel_von	{subject} - Formel?		llm:gemma4:e4b
