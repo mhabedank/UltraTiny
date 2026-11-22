@@ -48,6 +48,25 @@ class DataConfig:
     augment_templates: list[str] = field(default_factory=list)
     augment_refusals: list[str] = field(default_factory=list)
     refusal_relation: str = "abweisen"
+    # Hybrid chemistry teacher (specs/006-hybrid-chemielehrer): function output + fact table.
+    hybrid: bool = False
+    hybrid_templates: str = "data/templates/hybrid.toml"
+    element_facts: str = "data/facts/wikidata_elemente_chemie.tsv"
+    compound_facts: list[str] = field(default_factory=list)  # name/formula TSVs (formel_von)
+    acidbase_facts: str = ""
+    equation_facts: str = ""
+    test_facts: str = ""
+    alias_facts: str = ""
+    explanations: list[str] = field(default_factory=list)  # reviewed short explanations
+    free_facts: list[str] = field(default_factory=list)  # persona + refusals (free relations)
+    kurzarbeit: str = ""
+    kurzarbeit_sha256: str = ""
+    forms_per_combo: int = 4
+    combo_holdout: float = 0.10
+    explain_holdout: float = 0.10
+    # Share of training lines per kind (research R7); the rest is greetings/refusals/unknown.
+    mix_facts: float = 0.55
+    mix_explain: float = 0.30
 
 
 @dataclass(frozen=True)
@@ -74,6 +93,12 @@ class EvalConfig:
     refusal_relation: str = "abweisen"
     refusal_min: float = 0.0
     false_refusal_max: float = 1.0
+    # Hybrid thresholds (contracts/eval-sets.md); 0 / 1 disable a check.
+    combo_min: float = 0.0
+    family_min: float = 0.0
+    kurzarbeit_min: float = 0.0
+    wrong_fact_max: float = 1.0
+    explain_min: float = 0.0
 
 
 @dataclass(frozen=True)

@@ -44,7 +44,9 @@ static ut_status open_copy(const char *data, size_t n, void (*mutate)(uint8_t *,
 }
 
 static void m_magic(uint8_t *b, size_t *n) { (void)n; b[0] = 'X'; }
-static void m_version(uint8_t *b, size_t *n) { (void)n; b[4] = 2; }
+static void m_version(uint8_t *b, size_t *n) { (void)n; b[4] = 3; }
+/* v2 header on a v1 alphabet (no <fn> entry): the specials table check must fail. */
+static void m_v2alpha(uint8_t *b, size_t *n) { (void)n; b[4] = 2; fix_header_crc(b); }
 static void m_hcrc(uint8_t *b, size_t *n) { (void)n; b[61] ^= 0x55; }
 static void m_payload(uint8_t *b, size_t *n) { b[*n - 5] ^= 0x01; }
 static void m_trunc(uint8_t *b, size_t *n) { (void)b; *n -= 100; }
@@ -65,6 +67,7 @@ static void test_loader(const char *data, size_t n) {
     free(b);
     CHECK(open_copy(data, n, m_magic, NULL) == UT_ERR_MAGIC);
     CHECK(open_copy(data, n, m_version, NULL) == UT_ERR_VERSION);
+    CHECK(open_copy(data, n, m_v2alpha, NULL) == UT_ERR_DIMS);
     CHECK(open_copy(data, n, m_hcrc, NULL) == UT_ERR_HEADER_CRC);
     CHECK(open_copy(data, n, m_payload, NULL) == UT_ERR_PAYLOAD_CRC);
     CHECK(open_copy(data, n, m_trunc, NULL) == UT_ERR_SIZE);

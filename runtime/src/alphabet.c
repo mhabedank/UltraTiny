@@ -2,13 +2,13 @@
 #include "utiny.h"
 
 int ut_token_from_codepoint(const ut_model *m, uint32_t cp) {
-    for (int i = UT_TOK_UNK + 1; i < m->vocab_size; i++)
+    for (int i = m->n_special; i < m->vocab_size; i++)
         if (m->alphabet[i] == cp) return i;
     return UT_TOK_UNK;
 }
 
 uint32_t ut_codepoint_from_token(const ut_model *m, int token) {
-    if (token <= UT_TOK_UNK || token >= m->vocab_size) return 0;
+    if (token < m->n_special || token >= m->vocab_size) return 0;
     return m->alphabet[token];
 }
 

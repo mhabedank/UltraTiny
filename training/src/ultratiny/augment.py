@@ -65,3 +65,39 @@ def load_augment(phrasings: list[str], templates: list[str], refusals: list[str]
     for r in _rows(refusals, base):
         aug.refusals.append((r["phrasing"], r["source"]))
     return aug
+
+
+# ---------------------------------------------------------------- short explanations (specs/006)
+
+SHORT_MAX = 60  # FR-003: question + answer must fit context 104
+_VALUE_TOKEN = re.compile(r"\b[\wÄÖÜäöüß]*\d[\wÄÖÜäöüß]*\b|\b(?:[A-Z][a-z]?\d*){2,}\b")
+_QWORDS = {"Was", "Wie", "Warum", "Wieso", "Welche", "Welcher", "Welches", "Wann", "Wo", "Wozu",
+           "Erkläre", "Erklär", "Nenne", "Beschreibe", "Definiere", "Gib"}  # fmt: skip
+
+
+def key_terms(question: str) -> list[str]:
+    """Capitalized words of the question that are not question words (topic candidates)."""
+    words = re.findall(r"[A-ZÄÖÜ][\wÄÖÜäöüß-]+", question)
+    return [w for w in words if w not in _QWORDS]
+
+
+def check_short_explanation(long_answer: str, short: str, questions: list[str],
+                            fact_tokens: set[str], alphabet) -> str:  # fmt: skip
+    """Automatic check of an LLM-shortened explanation (research R8, FR-002/FR-008).
+
+    Returns "ok", "to_fact" (the text states a value the fact table holds; the entry becomes a
+    factual question instead) or "reject: <reason>".
+    """
+    if not short or len(short) > SHORT_MAX:
+        return f"reject: empty or > {SHORT_MAX} chars"
+    if alphabet.invalid_chars(short):
+        return "reject: characters outside the alphabet"
+    values = set(_VALUE_TOKEN.findall(short))
+    if any(v not in long_answer for v in values):
+        return "reject: number/formula not in the long answer"
+    if values & fact_tokens:
+        return "to_fact"
+    terms = [t for q in questions[:2] for t in key_terms(q)]
+    if terms and not any(t[:5].lower() in short.lower() for t in terms):
+        return "reject: key term missing"
+    return "ok"

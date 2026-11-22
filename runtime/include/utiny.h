@@ -15,7 +15,7 @@
 extern "C" {
 #endif
 
-#define UT_FORMAT_VERSION 1
+#define UT_FORMAT_VERSION 2 /* newest version read; v1 models load too */
 #define UT_HEADER_SIZE 64
 #define UT_MAX_VOCAB 96
 #define UT_MAX_LAYERS 16
@@ -26,6 +26,7 @@ extern "C" {
 #define UT_TOK_SEP 2
 #define UT_TOK_EOS 3
 #define UT_TOK_UNK 4
+#define UT_TOK_FN 5 /* v2 only: function output follows (specs/006) */
 
 typedef enum {
     UT_OK = 0,
@@ -59,6 +60,8 @@ typedef struct {
 /* Read-only view into a model image. */
 typedef struct ut_model {
     int vocab_size, d_model, n_layers, n_heads, n_kv_heads, head_dim, d_ff, ctx_len;
+    int n_special; /* 5 (v1) or 6 (v2, with <fn>) */
+    int has_fn;    /* 1 for v2 models */
     float norm_eps;
     uint32_t n_params;
     size_t size;
@@ -144,6 +147,7 @@ int ut_utf8_feed(ut_utf8_dec *d, uint8_t byte, uint32_t *cp);
 
 /* CRC-32 (IEEE 802.3), as used by the model file. */
 uint32_t ut_crc32(const void *data, size_t n);
+uint32_t ut_crc32_update(uint32_t crc, const void *data, size_t n); /* raw state, no final xor */
 
 #ifdef __cplusplus
 }

@@ -105,7 +105,7 @@ void ut_console_banner(ut_console *k) {
     char name[48];
     meta_str(k->m->meta, "name", name, sizeof name);
     outf(k, "Modell: %s | Format v%d | %lu Parameter | %lu KB Flash | %lu KB RAM\r\n",
-         name[0] ? name : "?", UT_FORMAT_VERSION, (unsigned long)k->m->n_params,
+         name[0] ? name : "?", k->m->has_fn ? 2 : 1, (unsigned long)k->m->n_params,
          (unsigned long)((k->m->size + 1023) / 1024), (unsigned long)((k->arena_bytes + 1023) / 1024));
     out(k, "Funk: aus. Tippe eine Frage und dr\xC3\xBC" "cke Enter. /hilfe f\xC3\xBCr Befehle.");
     prompt(k);
@@ -120,6 +120,7 @@ static void cmd_help(ut_console *k) {
            "  /max <n>                     maximale Antwortl\xC3\xA4nge\r\n"
            "  /stats                       Speicher, CPU-Last, Timings, Profil\r\n"
            "  /trace aus|an|json           Modell-Trace nach jeder Antwort (Standard aus)\r\n"
+           "  /raw an|aus                  Funktionsausgabe zus\xC3\xA4tzlich roh zeigen\r\n"
            "Strg-C bricht eine Antwort ab.");
 }
 
@@ -141,6 +142,15 @@ static void cmd_info(ut_console *k) {
              k->max_answer);
         outf(k, "\r\nLetzte Antwort: erstes Zeichen nach %lu ms, %.1f Zeichen/s",
              (unsigned long)k->last_first_ms, (double)k->last_cps);
+        if (m->has_fn) {
+            const ut_facts *f = k->io.facts;
+            if (f && f->status == UT_FACTS_OK)
+                outf(k, "\r\nFaktentabelle: OK v%d, %lu Eintr\xC3\xA4ge, data %08lx", UT_FACTS_VERSION,
+                     (unsigned long)f->n_records, (unsigned long)f->sha4);
+            else
+                outf(k, "\r\nFaktentabelle: %s",
+                     ut_facts_status_str(f ? f->status : UT_FACTS_MISSING));
+        }
     }
     if (k->io.free_heap)
         outf(k, "\r\nFreier Heap: %lu Bytes", (unsigned long)k->io.free_heap(k->io.user));
@@ -177,6 +187,9 @@ static void run_command(ut_console *k) {
         if (!(k->temperature > 0.0f)) k->temperature = 0.8f;
         outf(k, "\r\nModus: zufall (seed %lu, temp %.2f)", (unsigned long)k->seed,
              (double)k->temperature);
+    } else if (!strcmp(argv[0], "/raw") && argc >= 2) {
+        k->raw = !strcmp(argv[1], "an");
+        outf(k, "\r\nRohausgabe: %s", k->raw ? "an" : "aus");
     } else if (ok_model && !strcmp(argv[0], "/max") && argc >= 2) {
         int n = atoi(argv[1]), cap = answer_cap(k);
         if (n < 1) {
@@ -202,7 +215,9 @@ static int tok_label(const ut_console *k, int tok, char *buf, int visible_space)
     static const char *const specials[] = {"<pad>", "<bos>", "<sep>", "<eos>", "<unk>"};
     uint32_t cp = ut_codepoint_from_token(k->m, tok);
     if (cp == 0) {
-        const char *s = tok >= 0 && tok <= UT_TOK_UNK ? specials[tok] : "<?>";
+        const char *s = tok >= 0 && tok <= UT_TOK_UNK ? specials[tok]
+                        : (tok == UT_TOK_FN && k->m->has_fn) ? "\xE2\x9F\xA8" "fn" "\xE2\x9F\xA9"
+                                                            : "<?>";
         strcpy(buf, s);
         return (int)strlen(s);
     }
@@ -538,6 +553,11 @@ static void on_enter(ut_console *k) {
     k->us_last = k->us_enter;
     k->gen_count = 0;
     k->n_steps = 0;
+    k->fn_mode = 0;
+    k->fn_has_type = 0;
+    k->fn_prefix = 0;
+    k->fn_key_len = 0;
+    k->fn_code = 0;
     k->rng = k->seed;
     ut_prof_reset(k->c); /* profile covers <sep> + the answer, not typing-time prefill */
     ut_feed(k->c, UT_TOK_SEP);
@@ -625,6 +645,24 @@ static void on_byte(ut_console *k, uint8_t b) {
     }
 }
 
+static void fn_write(void *u, const char *s, size_t n) {
+    ut_console *k = (ut_console *)u;
+    k->io.write(k->io.user, s, n);
+}
+
+/* End of a function answer: lookup and print the rest (contracts/function-output.md). */
+static void fn_finish(ut_console *k) {
+    ut_facts_finish(k->io.facts, k->fn_has_type ? &k->fn_type : NULL, k->fn_prefix, k->fn_key,
+                    (size_t)k->fn_key_len, fn_write, k);
+    if (k->raw) {
+        out(k, "  [");
+        out(k, "\xE2\x9F\xA8" "fn" "\xE2\x9F\xA9");
+        if (k->fn_code) k->io.write(k->io.user, &k->fn_code, 1);
+        k->io.write(k->io.user, k->fn_key, (size_t)k->fn_key_len);
+        out(k, "]");
+    }
+}
+
 static void generate_step(ut_console *k) {
     ut_ctx *c = k->c;
     const float *lg = ut_logits(c);
@@ -632,21 +670,39 @@ static void generate_step(ut_console *k) {
                   ? ut_sample(lg, k->m->vocab_size, k->temperature, &k->rng, k->scratch)
                   : ut_argmax(lg, k->m->vocab_size);
     const int pos = c->pos;
-    if (tok == UT_TOK_EOS) {
+    const int is_fn = k->m->has_fn && tok == UT_TOK_FN;
+    if (tok == UT_TOK_EOS || (is_fn && k->gen_count > 0)) {
+        /* <eos>, or a <fn> that is not the first token (treated as <eos>) */
         uint32_t t = now_us(k);
         record_step(k, lg, tok, pos, t - k->us_last);
+        if (k->fn_mode) fn_finish(k);
         finish_answer(k, 0, "eos");
         return;
     }
     uint32_t cp = ut_codepoint_from_token(k->m, tok);
-    if (cp) out_cp(k, cp);
+    if (is_fn) {
+        k->fn_mode = 1;
+    } else if (k->fn_mode == 1) {
+        char code = (cp >= 'A' && cp <= 'Z') || (cp >= 'a' && cp <= 'z') ? (char)cp : 0;
+        k->fn_code = code;
+        k->fn_has_type = code && ut_facts_type(k->io.facts, code, &k->fn_type);
+        if (k->fn_has_type) k->fn_prefix = ut_facts_prefix(k->io.facts, &k->fn_type, fn_write, k);
+        k->fn_mode = 2;
+    } else if (k->fn_mode == 2) {
+        if (cp && k->fn_key_len + 4 <= (int)sizeof k->fn_key)
+            k->fn_key_len += ut_utf8_encode(cp, k->fn_key + k->fn_key_len);
+    } else if (cp) {
+        out_cp(k, cp);
+    }
     if (k->gen_count == 0) k->t_first = now(k);
     uint32_t t = now_us(k);
     record_step(k, lg, tok, pos, t - k->us_last);
     k->us_last = t;
     k->gen_count++;
-    if (k->gen_count >= k->max_answer || c->pos >= k->m->ctx_len) {
-        finish_answer(k, 0, k->gen_count >= k->max_answer ? "max" : "ctx");
+    const int fn_full = k->fn_mode && k->gen_count >= 2 + UT_FACTS_KEY_MAX;
+    if (k->gen_count >= k->max_answer || c->pos >= k->m->ctx_len || fn_full) {
+        if (k->fn_mode) fn_finish(k);
+        finish_answer(k, 0, k->gen_count >= k->max_answer ? "max" : (fn_full ? "eos" : "ctx"));
         return;
     }
     ut_feed(c, tok);

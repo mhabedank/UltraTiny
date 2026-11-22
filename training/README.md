@@ -14,6 +14,8 @@ uv sync            # macOS: PyTorch mit MPS (Apple-GPU); Linux: CPU-Wheels
 
 ```bash
 uv run ut pipeline --config configs/nodemcu.toml --out runs/nodemcu --device cpu   # NodeMCU-Modell
+uv run ut pipeline --config configs/hybrid-smoke.toml --out runs/hybrid-smoke --device cpu   # Hybrid, Mini
+uv run ut facts --config configs/chemie-hybrid.toml --out runs/facts   # nur Faktentabelle (specs/006)
 uv run ut pipeline --config configs/starter.toml --out runs/starter   # Startermodell (~165 Fakten)
 uv run ut pipeline --config configs/v1.toml --out runs/v1             # volles Modell (ESP32)
 ```
@@ -39,6 +41,14 @@ zurück; erzwingen mit `--device mps` bzw. `--device cpu`. Die Pipeline:
 Gemessen im Container (4 CPU-Kerne): Startermodell 3000 Schritte ≈ 7 min. Auf dem M3 mit MPS
 sollte es deutlich schneller gehen (bitte messen und in `specs/001-esp32-tiny-lm/measurements.md` eintragen).
 
+**Hybrid-Chemielehrer** (`data.hybrid = true`, `specs/006-hybrid-chemielehrer/`): Die Pipeline
+baut zuerst die Faktentabelle (`factgen.py`, `facttable.py`, Prüfungen wie ausgeglichene
+Gleichungen, neutrale Ionenformeln, stimmige molare Massen). Danach erzeugt sie die Daten aus
+`data/templates/hybrid.toml` (26 Fragetypen mit je ≥ 12 Formen in Formulierungsgruppen) und hält
+ganze Kombinationen aus Fragetyp × Objekt sowie je Typ eine ganze Formulierungsgruppe zurück.
+Ausgewertet wird je Testset (`eval.json`), die Budgets gelten für die NodeMCU (Modell, Arena,
+Faktentabelle). Das Modell nutzt Format v2 mit dem Spezialzeichen `<fn>`.
+
 ## Reproduzierbarkeit
 
 Gleicher Seed + gleiche Daten + CPU ⇒ byte-identische `model.utny`
@@ -58,6 +68,10 @@ make -C .. flash-model PORT=/dev/cu.usbserial-XXXX MODEL=training/runs/v1/model.
 - `data/templates/*.toml` – deutsche Frage-/Antwortvorlagen (≥ 8 je Relation, ≥ 2 zurückgehalten)
 - `data/topics.toml` – erlaubte Themen
 - `data/demo_prompts.tsv` – Demo-Fragen mit erwarteten Antworten
+- Hybrid (specs/006): `data/templates/hybrid.toml` (Fragetypen, Antwortvorlagen, Frageformen),
+  `data/facts/chemie_{gleichungen,saeuren_basen,nachweise,aliase}.tsv` (kuratiert),
+  `data/facts/chemie_kurz.tsv` (gekürzte Erklärungen, nur `reviewed = yes`),
+  `data/eval/kurzarbeit.tsv` (eingefrorenes Kurzarbeits-Testset, nie im Training)
 
 Nur Quellen aus [`DATA_LICENSES.md`](../DATA_LICENSES.md) sind erlaubt; `datagen` prüft das.
 

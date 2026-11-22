@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import re
 import sys
 from pathlib import Path
 
@@ -43,7 +44,11 @@ def main() -> int:
     dev = Device(a.port)
     banner = dev.reset()
     print(banner.strip())
-    ok = "Funk: aus" in banner and "Format v1" in banner
+    ok = "Funk: aus" in banner and re.search(r"Format v[12]", banner) is not None
+    facts = dev.info().get("facts")  # hybrid models (UTNY v2, specs/006): table must be OK
+    if facts is not None:
+        print(f"fact table: {facts}")
+        ok &= facts.startswith("OK")
     dev.command("/modus gierig")
     worst_ms, slowest = 0, 1e9
     for r in rows:

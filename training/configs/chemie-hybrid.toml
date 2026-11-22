@@ -1,0 +1,57 @@
+# Hybrid chemistry teacher on the NodeMCU (specs/006-hybrid-chemielehrer).
+# Factual questions -> function output (<fn> + type letter + key), answered by the board from the
+# fact table (UTFT at flash 0x100000); greetings, refusals and <= 60-char explanations are written
+# by the model. NodeMCU dims as configs/chemie-nodemcu-spark.toml (arena within the 40 KB budget).
+#   cd training && NAME=chemie-hybrid tools/spark/train.sh configs/chemie-hybrid.toml 1234
+#   CPU: uv run ut pipeline --config configs/chemie-hybrid.toml --out runs/chemie-hybrid --device cpu
+name = "chemie-hybrid"
+
+[model]
+d_model = 128
+n_layers = 4
+n_heads = 4
+n_kv_heads = 1
+d_ff = 384
+ctx_len = 104
+
+[data]
+hybrid = true
+hybrid_templates = "data/templates/hybrid.toml"
+element_facts = "data/facts/wikidata_elemente_chemie.tsv"
+compound_facts = ["data/facts/chemie_verbindungen.tsv"]
+acidbase_facts = "data/facts/chemie_saeuren_basen.tsv"
+equation_facts = "data/facts/chemie_gleichungen.tsv"
+test_facts = "data/facts/chemie_nachweise.tsv"
+alias_facts = "data/facts/chemie_aliase.tsv"
+explanations = ["data/facts/chemie_kurz.tsv"]
+free_facts = ["data/facts/chemie_persona_nodemcu.tsv", "data/facts/abweisen.tsv"]
+augment_refusals = ["data/augment/abweisen.tsv"]
+kurzarbeit = "data/eval/kurzarbeit.tsv"
+kurzarbeit_sha256 = ""
+noisy_copies = 2
+max_answer_len = 60
+forms_per_combo = 4
+combo_holdout = 0.10
+explain_holdout = 0.10
+mix_facts = 0.55
+mix_explain = 0.30
+
+[train]
+steps = 30000
+batch_size = 128
+lr = 2e-3
+min_lr = 1e-4
+warmup_steps = 300
+dropout = 0.1
+qat_steps = 3000  # only if int8 costs > 2 pp (see train.py)
+
+[eval]
+# Success criteria of spec 006 (contracts/eval-sets.md); may be adjusted after a baseline run.
+combo_min = 0.85
+family_min = 0.85
+kurzarbeit_min = 0.80
+wrong_fact_max = 0.03
+refusal_min = 0.90
+false_refusal_max = 0.05
+explain_min = 0.0
+golden_cases = 32

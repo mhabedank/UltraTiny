@@ -5,6 +5,7 @@ Standard library only, so it also runs inside the ESP-IDF CI container.
 
     python tools/budget_report.py --model models/nodemcu.utny [--board nodemcu|esp32]
         [--pio-build firmware-nodemcu/.pio/build/nodemcuv2] [--idf-build firmware/build]
+        [--facts models/chemie-hybrid.utft]
         [--json out.json]
 
 Board profiles: specs/005-nodemcu-port/data-model.md "Board budget profile" and
@@ -34,6 +35,7 @@ PROFILES: dict[str, dict] = {
         "firmware_max": 0x58000,  # firmware area 0x0-0x57FFF (352 KB)
         "mapped_window": 1024 * 1024,  # ESP8266 maps only the first 1 MB of flash
         "dram_total": 80 * 1024,
+        "facts_max": 0x10000,  # fact table area 0x100000-0x10FFFF (specs/006), outside the window
     },
     "esp32": {
         "model_max": 2 * 1024 * 1024,  # model partition
@@ -42,6 +44,7 @@ PROFILES: dict[str, dict] = {
         "firmware_max": None,  # factory partition, read from firmware/partitions.csv
         "mapped_window": None,
         "dram_total": None,
+        "facts_max": None,
     },
 }
 REPO = Path(__file__).resolve().parents[1]
@@ -144,6 +147,7 @@ def main() -> int:
     ap.add_argument("--board", choices=sorted(PROFILES), default="nodemcu")
     ap.add_argument("--pio-build", type=Path, help="PlatformIO build dir (nodemcu firmware)")
     ap.add_argument("--idf-build", type=Path, help="ESP-IDF build dir (legacy esp32 firmware)")
+    ap.add_argument("--facts", type=Path, help="UTFT fact table of a hybrid model (specs/006)")
     ap.add_argument("--json", type=Path)
     a = ap.parse_args()
     prof = PROFILES[a.board]
@@ -166,6 +170,13 @@ def main() -> int:
         report.update(s)
         if "app_bytes" in s:
             rows.append(("app_bytes", s["app_bytes"], factory_partition_size()))
+    if a.facts:
+        if not prof["facts_max"]:
+            raise SystemExit(f"board {a.board} has no fact table area")
+        if a.facts.read_bytes()[:4] != b"UTFT":
+            raise SystemExit(f"{a.facts}: not a UTFT fact table")
+        report["facts"] = str(a.facts)
+        rows.append(("facts_bytes", a.facts.stat().st_size, prof["facts_max"]))
     if prof["mapped_window"]:
         areas = prof["firmware_max"] + prof["model_max"]
         rows.append(("mapped_window", areas, prof["mapped_window"]))

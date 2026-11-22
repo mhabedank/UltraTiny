@@ -176,4 +176,7 @@ class Device:
         m = re.search(r"Freier Heap: (\d+)", txt)
         if m:
             out["free_heap"] = int(m.group(1))
+        m = re.search(r"Faktentabelle: ([^\r\n]+)", txt)  # hybrid models (specs/006)
+        if m:
+            out["facts"] = m.group(1).strip()
         return out

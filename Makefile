@@ -9,12 +9,17 @@ MODEL_MAX   := 2097152
 NODEMCU_MODEL      ?= models/nodemcu.utny
 NODEMCU_MODEL_ADDR := 0x58000
 NODEMCU_MODEL_MAX  := 688128
+# Fact table of hybrid models (specs/006-hybrid-chemielehrer/contracts/fact-table-format.md)
+FACTS              ?= models/chemie-hybrid.utft
+NODEMCU_FACTS_ADDR := 0x100000
+NODEMCU_FACTS_MAX  := 58982
 ESPTOOL            ?= esptool.py
 PIO_BUILD          := firmware-nodemcu/.pio/build/nodemcuv2
 BOARD              ?= nodemcu
 
 .PHONY: test test-python test-runtime flash-model monitor budget starter nodemcu qemu observe \
-	observe-host nodemcu-build nodemcu-flash nodemcu-flash-model nodemcu-monitor spark-loss
+	observe-host nodemcu-build nodemcu-flash nodemcu-flash-model nodemcu-flash-facts nodemcu-monitor \
+	spark-loss hybrid-smoke
 
 test: test-python test-runtime
 
@@ -27,6 +32,10 @@ test-runtime:
 # Train the starter model end to end (Foundational, T035).
 starter:
 	cd training && uv run ut pipeline --config configs/starter.toml --out runs/starter
+
+# Hybrid pipeline smoke run on CPU (specs/006-hybrid-chemielehrer quickstart §4).
+hybrid-smoke:
+	cd training && uv run ut pipeline --config configs/hybrid-smoke.toml --out runs/hybrid-smoke --device cpu
 
 # Train the NodeMCU PoC model (specs/005-nodemcu-port): starter architecture, context 104.
 nodemcu:
@@ -54,6 +63,16 @@ nodemcu-flash-model:
 		echo "Not a UTNY model file (magic '$$magic')"; exit 1; fi
 	$(ESPTOOL) --port $(PORT) write_flash $(NODEMCU_MODEL_ADDR) "$(NODEMCU_MODEL)"
 
+# Flash only the fact table (0x100000, outside the mapped megabyte) for hybrid models (UTNY v2).
+# FACTS=... picks the file; 90 % of the 64 KB area at most (constitution I headroom).
+nodemcu-flash-facts:
+	@test -f "$(FACTS)" || { echo "Fact table not found: $(FACTS)"; exit 1; }
+	@size=$$(wc -c < "$(FACTS)"); if [ $$size -gt $(NODEMCU_FACTS_MAX) ]; then \
+		echo "Fact table too large: $$size > $(NODEMCU_FACTS_MAX) bytes"; exit 1; fi
+	@magic=$$(head -c 4 "$(FACTS)"); if [ "$$magic" != "UTFT" ]; then \
+		echo "Not a UTFT fact table: $(FACTS)"; exit 1; fi
+	$(ESPTOOL) --port $(PORT) write_flash $(NODEMCU_FACTS_ADDR) "$(FACTS)"
+
 nodemcu-monitor:
 	cd firmware-nodemcu && pio device monitor -p $(PORT) -b 115200
 
@@ -76,7 +95,7 @@ monitor:
 ifeq ($(BOARD),esp32)
 BUDGET_ARGS = --board esp32 --model ../$(MODEL) $(if $(wildcard firmware/build),--idf-build ../firmware/build)
 else
-BUDGET_ARGS = --board nodemcu --model ../$(NODEMCU_MODEL) $(if $(wildcard $(PIO_BUILD)/firmware.bin),--pio-build ../$(PIO_BUILD))
+BUDGET_ARGS = --board nodemcu --model ../$(NODEMCU_MODEL) $(if $(wildcard $(PIO_BUILD)/firmware.bin),--pio-build ../$(PIO_BUILD)) $(if $(wildcard $(FACTS)),--facts ../$(FACTS))
 endif
 budget:
 	cd training && uv run python ../tools/budget_report.py $(BUDGET_ARGS)

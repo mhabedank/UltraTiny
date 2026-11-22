@@ -14,11 +14,12 @@ from pathlib import Path
 
 import numpy as np
 
-from .alphabet import EOS
+from .alphabet import EOS, FN
 from .export import ModelFile, read_model
 from .quant import quantize_vector
 
 F32 = np.float32
+FN_KEY_MAX = 12  # key characters after <fn> + type (contracts/function-output.md)
 
 # exp(x) for x <= 0, see runtime/src/mathx.c ut_expf
 # Exact float32 constants (hex), identical to the hex literals in mathx.c.
@@ -193,6 +194,8 @@ class Reference:
             out.append(tok)
             if tok == EOS or len(out) >= max_len or self.pos >= self.cfg.ctx_len:
                 break
+            if ab.fn and fn_done(out):
+                break
             logits = self.feed(tok)
         return {
             "prompt_tokens": prompt_ids,
@@ -200,6 +203,14 @@ class Reference:
             "text": ab.decode([t for t in out if t != EOS]),
             "logits": all_logits,
         }
+
+
+def fn_done(out: list[int]) -> bool:
+    """Function-output stop rules of the console: a later <fn> ends the answer like <eos>; after
+    <fn> + type, at most FN_KEY_MAX key characters are generated."""
+    if out[-1] == FN and len(out) > 1:
+        return True
+    return out[0] == FN and len(out) >= 2 + FN_KEY_MAX
 
 
 def arena_size(cfg) -> int:

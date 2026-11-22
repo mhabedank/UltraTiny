@@ -1,0 +1,32 @@
+key	name	value	source
+knallgas	Knallgasreaktion	2 H2 + O2 → 2 H2O	own
+elektrolyse	Elektrolyse von Wasser	2 H2O → 2 H2 + O2	own
+kohlebrand	Verbrennung von Kohlenstoff	C + O2 → CO2	own
+methanbrand	Verbrennung von Methan	CH4 + 2 O2 → CO2 + 2 H2O	own
+mgbrand	Verbrennung von Magnesium	2 Mg + O2 → 2 MgO	own
+eisenschwef	Reaktion von Eisen mit Schwefel	Fe + S → FeS	own
+kupferschwef	Reaktion von Kupfer mit Schwefel	2 Cu + S → Cu2S	own
+nachlor	Reaktion von Natrium mit Chlor	2 Na + Cl2 → 2 NaCl	own
+nawasser	Reaktion von Natrium mit Wasser	2 Na + 2 H2O → 2 NaOH + H2	own
+kwasser	Reaktion von Kalium mit Wasser	2 K + 2 H2O → 2 KOH + H2	own
+cawasser	Reaktion von Calcium mit Wasser	Ca + 2 H2O → Ca(OH)2 + H2	own
+neutral	Neutralisation von Salzsäure	HCl + NaOH → NaCl + H2O	own
+kalkbrennen	Kalkbrennen	CaCO3 → CaO + CO2	own
+kalkloeschen	Kalklöschen	CaO + H2O → Ca(OH)2	own
+kalkwasser	Kalkwasserprobe	Ca(OH)2 + CO2 → CaCO3 + H2O	own
+fotosynthese	Fotosynthese	6 CO2 + 6 H2O → C6H12O6 + 6 O2	own
+zellatmung	Zellatmung	C6H12O6 + 6 O2 → 6 CO2 + 6 H2O	own
+thermit	Thermitverfahren	Fe2O3 + 2 Al → Al2O3 + 2 Fe	own
+hochofen	Reduktion im Hochofen	Fe2O3 + 3 CO → 2 Fe + 3 CO2	own
+cuoreduktion	Reduktion von Kupferoxid	CuO + H2 → Cu + H2O	own
+znsalzsaeure	Reaktion von Zink mit Salzsäure	Zn + 2 HCl → ZnCl2 + H2	own
+mgsalzsaeure	Reaktion von Magnesium mit Salzsäure	Mg + 2 HCl → MgCl2 + H2	own
+nh3synthese	Ammoniaksynthese	N2 + 3 H2 → 2 NH3	own
+sbrand	Verbrennung von Schwefel	S + O2 → SO2	own
+chlorknall	Chlorknallgasreaktion	H2 + Cl2 → 2 HCl	own
+albrand	Verbrennung von Aluminium	4 Al + 3 O2 → 2 Al2O3	own
+eisenbrand	Verbrennung von Eisen	3 Fe + 2 O2 → Fe3O4	own
+kohlensaeure	Bildung von Kohlensäure	CO2 + H2O → H2CO3	own
+agcl	Fällung von Silberchlorid	AgNO3 + NaCl → AgCl + NaNO3	own
+ethanolbrand	Verbrennung von Ethanol	C2H5OH + 3 O2 → 2 CO2 + 3 H2O	own
+propanbrand	Verbrennung von Propan	C3H8 + 5 O2 → 3 CO2 + 4 H2O	own
