@@ -1,4 +1,8 @@
-"""UTNY v1 model file writer/reader (contracts/model-format.md)."""
+"""UTNY model file writer/reader (contracts/model-format.md).
+
+Version 1: five special tokens. Version 2 (specs/006-hybrid-chemielehrer, research R12): the
+alphabet table has a sixth special `<fn>` (id 5); the rest of the layout is unchanged.
+"""
 
 from __future__ import annotations
 
@@ -15,7 +19,7 @@ from .config import ModelConfig
 from .quant import quantize_rows
 
 MAGIC = b"UTNY"
-FORMAT_VERSION = 1
+FORMAT_VERSION = 2  # newest version written; v1 is still read and written for v1 alphabets
 HEADER_SIZE = 64
 FLAG_TIED = 1
 # magic, 10 x u16, f32, 6 x u32, 8 reserved bytes  (header_crc32 appended separately)
@@ -54,7 +58,7 @@ def write_model(
     alphabet: Alphabet,
     meta: dict,
 ) -> int:
-    """Write a UTNY v1 file from float32 weights. Returns the file size."""
+    """Write a UTNY file (v2 for alphabets with <fn>, else v1). Returns the file size."""
     if alphabet.vocab_size != cfg.vocab_size:
         raise ValueError("alphabet size does not match vocab_size")
     payload = bytearray()
@@ -83,7 +87,7 @@ def write_model(
     header = struct.pack(
         _HEADER_FMT,
         MAGIC,
-        FORMAT_VERSION,
+        2 if alphabet.fn else 1,
         HEADER_SIZE,
         cfg.vocab_size,
         cfg.d_model,
@@ -129,7 +133,7 @@ def read_model(path: Path | bytes) -> ModelFile:
      a_off, m_off, t_off, p_size, p_crc, n_params, _res) = f  # fmt: skip
     if magic != MAGIC:
         raise ValueError("bad magic")
-    if version != FORMAT_VERSION:
+    if version not in (1, 2):
         raise ValueError(f"unsupported format version {version}")
     (h_crc,) = struct.unpack("<I", data[60:64])
     if zlib.crc32(data[:60]) & 0xFFFFFFFF != h_crc:
@@ -146,6 +150,8 @@ def read_model(path: Path | bytes) -> ModelFile:
     (count,) = struct.unpack_from("<I", data, a_off)
     cps = list(struct.unpack_from(f"<{count}I", data, a_off + 4))
     alphabet = Alphabet.from_code_points(cps)
+    if alphabet.fn != (version == 2):
+        raise ValueError("alphabet does not match format version")
     meta_end = data.index(b"\0", m_off)
     meta = json.loads(data[m_off:meta_end].decode("utf-8"))
 

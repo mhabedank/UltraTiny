@@ -13,8 +13,13 @@ static uint32_t crc_byte(uint32_t crc, uint8_t b) {
 }
 
 uint32_t ut_crc32(const void *data, size_t n) {
+    return ut_crc32_update(0xFFFFFFFFu, data, n) ^ 0xFFFFFFFFu;
+}
+
+/* Incremental form: start with 0xFFFFFFFF, finish with ^ 0xFFFFFFFF (used for the fact table,
+ * which is read in chunks). */
+uint32_t ut_crc32_update(uint32_t crc, const void *data, size_t n) {
     const uint8_t *p = (const uint8_t *)data;
-    uint32_t crc = 0xFFFFFFFFu;
     size_t i = 0;
     if (((uintptr_t)p & 3u) == 0) {
         for (; i + 4 <= n; i += 4) {
@@ -23,5 +28,5 @@ uint32_t ut_crc32(const void *data, size_t n) {
         }
     }
     for (; i < n; i++) crc = crc_byte(crc, p[i]);
-    return crc ^ 0xFFFFFFFFu;
+    return crc;
 }

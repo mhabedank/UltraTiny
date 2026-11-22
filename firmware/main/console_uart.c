@@ -87,6 +87,7 @@ void console_uart_init(ut_console_io *io) {
     io->micros = uart_micros;
     io->sys_stats = sys_stats;
     io->board = "ESP32";
+    io->facts = NULL; /* legacy board: no fact table (specs/006 targets the NodeMCU) */
     int32_t dummy[2];
     cpu_load(dummy); /* baseline for the first /stats */
 }

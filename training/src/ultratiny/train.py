@@ -126,7 +126,7 @@ def train(
     if device.type == "cpu":
         torch.set_num_threads(cfg.train.num_threads)
     seed_everything(seed, device)
-    ab = Alphabet()
+    ab = Alphabet(fn=cfg.data.hybrid)
     mcfg = model_config_for(cfg, ab)
     pairs = read_train(data_dir / "train.txt")
     examples = encode_pairs(pairs, ab)

@@ -6,6 +6,7 @@ Every training fact carries a `source` value. Only the sources listed here may b
 | Source prefix | Description | License |
 |---------------|-------------|---------|
 | `own` | Facts and templates written for this project | MIT (same as the code) |
+| `computed` | Values computed by deterministic rules in `training/src/ultratiny/factgen.py` / `periodic.py` from other listed sources (atomic structure, ions, ionic formulas, molar masses, bond types) | MIT (same as the code) |
 | `wikidata` | Snapshot of Wikidata statements (`wikidata:<QID>`) | CC0 1.0 |
 | `llm` | Questions/paraphrases/off-topic inputs generated with a locally run open-weight LLM (`llm:<model>` per row, e.g. `llm:gpt-oss:120b`, `llm:qwen3.6:35b`); answers are never LLM-generated, they stay curated | Apache 2.0 models only (gpt-oss, Qwen3) |
 

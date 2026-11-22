@@ -18,6 +18,10 @@ from .reference import Reference, arena_size
 MODEL_BUDGET = 2 * 1024 * 1024
 ARENA_BUDGET = 128 * 1024
 HEADROOM = 0.10
+# NodeMCU budgets (constitution v2.0.0, specs/005 + 006): model area, arena, fact table area.
+NODEMCU_MODEL_AREA = 688128
+NODEMCU_ARENA_BUDGET = 40 * 1024
+NODEMCU_FACTS_AREA = 0x10000
 
 
 def _common(p: argparse.ArgumentParser) -> None:
@@ -25,8 +29,23 @@ def _common(p: argparse.ArgumentParser) -> None:
     p.add_argument("--device", choices=["auto", "cuda", "mps", "cpu"], default="auto")
 
 
+def cmd_facts(a) -> int:
+    from .hybrid import build_facts
+
+    cfg = load_config(a.config)
+    _, _, summary = build_facts(cfg, Path(a.out))
+    print(json.dumps(summary, indent=2, ensure_ascii=False))
+    return 0
+
+
 def cmd_datagen(a) -> int:
     cfg = load_config(a.config)
+    if cfg.data.hybrid:
+        from . import hybrid
+
+        stats = hybrid.generate(cfg, Path(a.out), a.seed)
+        print(json.dumps(stats, indent=2, ensure_ascii=False))
+        return 0
     stats = generate(cfg, Path(a.out), a.seed)
     print(json.dumps(stats, indent=2))
     return 0
@@ -56,7 +75,12 @@ def cmd_export(a) -> int:
         "device": run.get("device", ""),
         "seed": run.get("seed"),
     }
-    size = write_model(Path(a.out), mcfg, state, Alphabet(), meta)
+    facts = getattr(a, "facts", None)
+    if facts and Path(facts).exists():
+        import hashlib
+
+        meta["facts"] = hashlib.sha256(Path(facts).read_bytes()).hexdigest()[:12]
+    size = write_model(Path(a.out), mcfg, state, Alphabet.for_vocab(mcfg.vocab_size), meta)
     print(f"wrote {a.out} ({size} bytes)")
     return 0
 
@@ -97,10 +121,87 @@ def cmd_golden(a) -> int:
     return 0
 
 
+def budget_check_nodemcu(model_path: Path, facts_path: Path | None) -> dict:
+    m = read_model(model_path)
+    arena = arena_size(m.cfg)
+    facts = facts_path.stat().st_size if facts_path and facts_path.exists() else 0
+    report = {
+        "board": "nodemcu",
+        "model_bytes": m.size,
+        "model_budget": NODEMCU_MODEL_AREA,
+        "arena_bytes": arena,
+        "arena_budget": NODEMCU_ARENA_BUDGET,
+        "facts_bytes": facts,
+        "facts_budget": NODEMCU_FACTS_AREA,
+        "model_ok": m.size <= NODEMCU_MODEL_AREA * (1 - HEADROOM),
+        "arena_ok": arena <= NODEMCU_ARENA_BUDGET * (1 - HEADROOM),
+        "facts_ok": facts <= NODEMCU_FACTS_AREA * (1 - HEADROOM),
+    }
+    report["ok"] = report["model_ok"] and report["arena_ok"] and report["facts_ok"]
+    return report
+
+
+def cmd_pipeline_hybrid(a, cfg) -> int:
+    """facts -> datagen -> train -> export (v2) -> eval (all sets) -> golden -> budget."""
+    from . import hybrid
+    from .train import train
+
+    out = Path(a.out)
+    data = out / "data"
+    print("== facts + datagen")
+    stats = hybrid.generate(cfg, data, a.seed)
+    print(json.dumps(stats, indent=2, ensure_ascii=False))
+    facts_path = out / "facts.utft"
+    facts_bytes = (data / "facts.utft").read_bytes()
+    facts_path.write_bytes(facts_bytes)
+    print("== train")
+    train(cfg, data, out, a.seed, a.device)
+    print("== export")
+    cmd_export(argparse.Namespace(ckpt=str(out / "ckpt.pt"), out=str(out / "model.utny"),
+                                  facts=str(facts_path)))  # fmt: skip
+    model = out / "model.utny"
+    print("== eval (quantized reference + fact table)")
+    report = hybrid.evaluate_sets(model, data, facts_bytes)
+    results = report.pop("_results")
+    for name in ("trained_sample", "heldout_family", "heldout_combo", "kurzarbeit",
+                 "heldout_explain"):  # fmt: skip
+        r = report[name]
+        extra = f", wrong fact {r['wrong_fact']:.3f}" if "wrong_fact" in r else ""
+        print(f"{name}: {r['accuracy']:.3f} ({r['n']} prompts{extra})")
+    rf = report["refusal"]
+    print(f"refusal rate: {rf['refusal_rate']:.3f} ({rf['n_refusal']}), "
+          f"false refusals: {rf['false_refusal']:.3f}, wrong facts (all): "
+          f"{report['wrong_fact_all']:.3f}")  # fmt: skip
+    report["facts"] = stats["facts"]
+    report["thresholds"] = {k: v for k, v in vars(cfg.eval).items() if k.endswith(("_min", "_max"))}
+    (out / "eval.json").write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n")
+    (out / "eval_results.json").write_text(json.dumps(results, ensure_ascii=False) + "\n")
+    print("== golden")
+    prompts = [r["prompt"] for name in ("kurzarbeit", "heldout_family", "heldout_combo",
+                                        "heldout_refusal") for r in hybrid.read_jsonl(data /
+                                        f"{name}.jsonl")]  # fmt: skip
+    write_golden(model, prompts[: cfg.eval.golden_cases], out / "golden.json",
+                 max_len=cfg.model.ctx_len - 3, facts_bytes=facts_bytes)  # fmt: skip
+    print("== budget")
+    budget = budget_check_nodemcu(model, facts_path)
+    (out / "budget.json").write_text(json.dumps(budget, indent=2) + "\n")
+    print(json.dumps(budget, indent=2))
+    failed = hybrid.check_thresholds(report, cfg)
+    if not budget["ok"]:
+        failed.append("budget")
+    if failed:
+        print("FAILED: " + ", ".join(failed), file=sys.stderr)
+        return 1
+    print("OK")
+    return 0
+
+
 def cmd_pipeline(a) -> int:
     from .train import train
 
     cfg = load_config(a.config)
+    if cfg.data.hybrid:
+        return cmd_pipeline_hybrid(a, cfg)
     out = Path(a.out)
     data = out / "data"
     print("== datagen")
@@ -160,6 +261,12 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="ut", description="UltraTiny training toolkit")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
+    p = sub.add_parser("facts", help="build and check the fact table (specs/006)")
+    p.add_argument("--config", required=True)
+    p.add_argument("--out", required=True)
+    _common(p)
+    p.set_defaults(func=cmd_facts)
+
     p = sub.add_parser("datagen")
     p.add_argument("--config", required=True)
     p.add_argument("--out", required=True)
@@ -176,6 +283,7 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("export")
     p.add_argument("--ckpt", required=True)
     p.add_argument("--out", required=True)
+    p.add_argument("--facts", help="fact table whose hash is recorded in the model meta")
     _common(p)
     p.set_defaults(func=cmd_export)
 

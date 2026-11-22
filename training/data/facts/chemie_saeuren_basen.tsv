@@ -1,0 +1,14 @@
+formula	value	source
+HCl	Säure (pH unter 7)	own
+H2SO4	Säure (pH unter 7)	own
+HNO3	Säure (pH unter 7)	own
+H3PO4	Säure (pH unter 7)	own
+H2CO3	schwache Säure (pH unter 7)	own
+H2SO3	Säure (pH unter 7)	own
+CH3COOH	schwache Säure (pH unter 7)	own
+HCOOH	schwache Säure (pH unter 7)	own
+NaOH	Lauge (pH über 7), gelöst Natronlauge	own
+KOH	Lauge (pH über 7), gelöst Kalilauge	own
+Ca(OH)2	Lauge (pH über 7), gelöst Kalkwasser	own
+Mg(OH)2	schwache Lauge (pH über 7)	own
+NH3	Lauge (pH über 7), gelöst Ammoniakwasser	own

@@ -1,0 +1,42 @@
+# Tiny CPU run of the hybrid pipeline (specs/006-hybrid-chemielehrer, quickstart §4): same data as
+# chemie-hybrid.toml, a tiny model and no quality thresholds. Checks that the pipeline runs end to
+# end and is deterministic.
+#   cd training && uv run ut pipeline --config configs/hybrid-smoke.toml --out runs/hybrid-smoke --device cpu
+name = "hybrid-smoke"
+
+[model]
+d_model = 64
+n_layers = 2
+n_heads = 4
+n_kv_heads = 1
+d_ff = 128
+ctx_len = 104
+
+[data]
+hybrid = true
+hybrid_templates = "data/templates/hybrid.toml"
+element_facts = "data/facts/wikidata_elemente_chemie.tsv"
+compound_facts = ["data/facts/chemie_verbindungen.tsv"]
+acidbase_facts = "data/facts/chemie_saeuren_basen.tsv"
+equation_facts = "data/facts/chemie_gleichungen.tsv"
+test_facts = "data/facts/chemie_nachweise.tsv"
+alias_facts = "data/facts/chemie_aliase.tsv"
+explanations = ["data/facts/chemie_kurz.tsv"]
+free_facts = ["data/facts/chemie_persona.tsv", "data/facts/abweisen.tsv"]
+augment_refusals = ["data/augment/abweisen.tsv"]
+kurzarbeit = "data/eval/kurzarbeit.tsv"
+kurzarbeit_sha256 = ""
+noisy_copies = 1
+max_answer_len = 60
+forms_per_combo = 2
+
+[train]
+steps = 200
+batch_size = 32
+lr = 3e-3
+warmup_steps = 20
+dropout = 0.0
+num_threads = 4
+
+[eval]
+golden_cases = 8

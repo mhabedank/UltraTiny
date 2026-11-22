@@ -5,6 +5,8 @@
  *   utiny-host --model m.utny --golden golden.json   # bit-exact parity check, exit 0 on match
  *   utiny-host --model m.utny --info                 # header fields + arena size
  *   utiny-host --model m.utny --console              # serial console on stdin/stdout (POSIX)
+ *   --facts table.utft                               # fact table for UTNY v2 function output
+ *                                                    # (specs/006-hybrid-chemielehrer)
  */
 #define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
@@ -18,6 +20,35 @@
 #include "json.h"
 #include "utiny.h"
 #include "utiny_console.h"
+#include "utiny_facts.h"
+
+/* Fact table as the board sees it: a 64 KB flash area, erased bytes 0xFF after the file. Reads
+ * must be 4-byte aligned like ESP.flashRead (trap otherwise). */
+#define FACTS_AREA 0x10000u
+static uint8_t *facts_area;
+static int facts_read(void *u, uint32_t off, void *buf, uint32_t n) {
+    (void)u;
+    if (((off | n) & 3u) != 0 || ((uintptr_t)buf & 3u) != 0) __builtin_trap();
+    if (off > FACTS_AREA || n > FACTS_AREA - off) return -1;
+    memcpy(buf, facts_area + off, n);
+    return 0;
+}
+static ut_facts *open_facts(const char *path, ut_facts *f) {
+    facts_area = malloc(FACTS_AREA);
+    memset(facts_area, 0xFF, FACTS_AREA);
+    if (path) {
+        size_t n = 0;
+        char *d = read_file(path, &n);
+        if (!d) {
+            fprintf(stderr, "cannot read %s\n", path);
+            exit(2);
+        }
+        memcpy(facts_area, d, n < FACTS_AREA ? n : FACTS_AREA);
+        free(d);
+    }
+    ut_facts_open(f, facts_read, NULL, FACTS_AREA);
+    return f;
+}
 
 static int feed_prompt(ut_ctx *c, const ut_model *m, const char *text) {
     ut_ctx_reset(c);
@@ -96,9 +127,9 @@ static void h_sys(void *u, ut_sys_stats *s) {
     s->uptime_ms = (int32_t)((mono_us() - t0) / 1000u);
 }
 
-static int run_console(ut_ctx *c, const ut_model *m, size_t arena_size) {
+static int run_console(ut_ctx *c, const ut_model *m, size_t arena_size, ut_facts *facts) {
     static ut_console k;
-    ut_console_io io = {h_read, h_write, h_millis, NULL, NULL, h_micros, h_sys, "Host (utiny-host)"};
+    ut_console_io io = {h_read, h_write, h_millis, NULL, NULL, h_micros, h_sys, "Host (utiny-host)", facts};
     c->clock_us = h_clock_us;
     h_sys(NULL, &(ut_sys_stats){0});
     ut_console_init(&k, c, m, arena_size, &io, UT_OK);
@@ -116,8 +147,53 @@ static int run_console(ut_ctx *c, const ut_model *m, size_t arena_size) {
 
 static int u32_of(const jval *v) { return (int)v->i; }
 
+/* Console with scripted input and captured output, for the printed-answer check. */
+static struct {
+    const char *in;
+    size_t pos;
+    char out[4096];
+    size_t n;
+} cap;
+static int cap_read(void *u) {
+    (void)u;
+    return cap.in && cap.in[cap.pos] ? (unsigned char)cap.in[cap.pos++] : -1;
+}
+static void cap_write(void *u, const char *b, size_t n) {
+    (void)u;
+    if (cap.n + n < sizeof cap.out) {
+        memcpy(cap.out + cap.n, b, n);
+        cap.n += n;
+    }
+}
+
+/* What the console prints for `prompt` (between Enter's "\r\n" and the next prompt). */
+static const char *console_answer(ut_ctx *c, const ut_model *m, ut_facts *facts, const char *prompt,
+                                  int max) {
+    static ut_console k;
+    static char line[1024];
+    ut_console_io io = {cap_read, cap_write, h_millis, NULL, NULL, h_micros, NULL, NULL, facts};
+    ut_console_init(&k, c, m, 0, &io, UT_OK);
+    k.max_answer = max;
+    snprintf(line, sizeof line, "%s", prompt);
+    cap.in = line;
+    cap.pos = 0;
+    ut_console_poll(&k); /* types the prompt */
+    cap.n = 0;
+    cap.in = "\r";
+    cap.pos = 0;
+    do ut_console_poll(&k);
+    while (k.state == UT_ST_GENERATING);
+    cap.out[cap.n] = 0;
+    char *a = cap.out;
+    if (!strncmp(a, "\r\n", 2)) a += 2;
+    char *end = strstr(a, "\r\n> ");
+    if (end) *end = 0;
+    return a;
+}
+
 /* Compares every logit bit pattern and every generated token against the reference. */
-static int run_golden(ut_ctx *c, const ut_model *m, const char *path) {
+static int run_golden(ut_ctx *c, const ut_model *m, const char *path, ut_facts *facts,
+                      int have_facts) {
     char *text = read_file(path, NULL);
     if (!text) {
         fprintf(stderr, "cannot read %s\n", path);
@@ -131,7 +207,12 @@ static int run_golden(ut_ctx *c, const ut_model *m, const char *path) {
         json_free(g);
         return 2;
     }
-    int fails = 0;
+    if (json_get(g, "facts_sha256") && !have_facts) {
+        fprintf(stderr, "golden file has printed answers: pass --facts FILE\n");
+        json_free(g);
+        return 2;
+    }
+    int fails = 0, printed = 0;
     size_t steps = 0;
     for (size_t ci = 0; ci < cases->n; ci++) {
         const jval *cs = cases->items[ci];
@@ -165,15 +246,27 @@ static int run_golden(ut_ctx *c, const ut_model *m, const char *path) {
             steps++;
             if (ok && s + 1 < toks->n) ok = ut_feed(c, tok) == UT_OK;
         }
+        /* Printed answer (specs/006): optional "printed" field, checked through the console. */
+        const jval *pr = json_get(cs, "printed"), *pp = json_get(cs, "prompt");
+        const jval *mx = json_get(cs, "max");
+        if (ok && pr && pr->type == J_STR && pp && pp->type == J_STR) {
+            const char *got = console_answer(c, m, facts, pp->s, mx ? (int)mx->i : 200);
+            printed++;
+            if (strcmp(got, pr->s) != 0) {
+                fprintf(stderr, "case %zu: printed \"%s\" != \"%s\"\n", ci, got, pr->s);
+                ok = 0;
+            }
+        }
         if (!ok) fails++;
     }
-    printf("golden: %zu cases, %zu steps, %d failed\n", cases->n, steps, fails);
+    printf("golden: %zu cases, %zu steps, %d printed, %d failed\n", cases->n, steps, printed,
+           fails);
     json_free(g);
     return fails ? 1 : 0;
 }
 
 int main(int argc, char **argv) {
-    const char *model_path = NULL, *prompt = NULL, *golden = NULL;
+    const char *model_path = NULL, *prompt = NULL, *golden = NULL, *facts_path = NULL;
     int sampling = 0, max = 200, info = 0, console = 0;
     uint32_t seed = 1;
     float temp = 0.8f;
@@ -181,6 +274,7 @@ int main(int argc, char **argv) {
         if (!strcmp(argv[i], "--model") && i + 1 < argc) model_path = argv[++i];
         else if (!strcmp(argv[i], "--prompt") && i + 1 < argc) prompt = argv[++i];
         else if (!strcmp(argv[i], "--golden") && i + 1 < argc) golden = argv[++i];
+        else if (!strcmp(argv[i], "--facts") && i + 1 < argc) facts_path = argv[++i];
         else if (!strcmp(argv[i], "--max") && i + 1 < argc) max = atoi(argv[++i]);
         else if (!strcmp(argv[i], "--greedy")) sampling = 0;
         else if (!strcmp(argv[i], "--info")) info = 1;
@@ -191,7 +285,7 @@ int main(int argc, char **argv) {
             temp = (float)atof(argv[++i]);
         } else {
             fprintf(stderr, "usage: %s --model FILE [--prompt TEXT | --golden FILE | --info | --console] "
-                            "[--greedy | --sample SEED TEMP] [--max N]\n", argv[0]);
+                            "[--facts FILE] [--greedy | --sample SEED TEMP] [--max N]\n", argv[0]);
             return 2;
         }
     }
@@ -219,6 +313,10 @@ int main(int argc, char **argv) {
         fprintf(stderr, "arena init failed\n");
         return 3;
     }
+    static ut_facts facts;
+    open_facts(facts_path, &facts);
+    if (facts_path && facts.status != UT_FACTS_OK)
+        fprintf(stderr, "fact table: %s\n", ut_facts_status_str(facts.status));
     int rc = 0;
     if (info) {
         printf("{\"vocab\": %d, \"d_model\": %d, \"n_layers\": %d, \"n_heads\": %d, "
@@ -227,9 +325,9 @@ int main(int argc, char **argv) {
                m.vocab_size, m.d_model, m.n_layers, m.n_heads, m.d_ff, m.ctx_len, m.n_params,
                m.size, arena_size, m.meta);
     } else if (console) {
-        rc = run_console(&c, &m, arena_size);
+        rc = run_console(&c, &m, arena_size, &facts);
     } else if (golden) {
-        rc = run_golden(&c, &m, golden);
+        rc = run_golden(&c, &m, golden, &facts, facts_path != NULL);
     } else if (prompt) {
         rc = run_prompt(&c, &m, prompt, sampling, seed, temp, max);
     } else {
@@ -238,5 +336,6 @@ int main(int argc, char **argv) {
     }
     free(arena);
     free(data);
+    free(facts_area);
     return rc;
 }

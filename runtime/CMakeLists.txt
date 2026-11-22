@@ -8,7 +8,8 @@ set(UT_SRCS
     src/model.c
     src/forward.c
     src/alphabet.c
-    src/console.c)
+    src/console.c
+    src/facts.c)
 
 # Deterministic float math: no FMA contraction, no fast-math, float literals.
 set(UT_FLAGS -ffp-contract=off -fno-fast-math -fsingle-precision-constant)
@@ -52,6 +53,15 @@ add_test(NAME console_logic COMMAND test_console_logic ${FIXTURES})
 add_test(NAME parity_tiny
          COMMAND utiny-host --model ${FIXTURES}/tiny.utny --golden ${FIXTURES}/tiny_golden.json)
 
+# Hybrid chemistry teacher (specs/006): UTNY v2 with <fn>, fact table rendering (C vs. Python).
+add_executable(test_facts tests/test_facts.c host/json.c)
+target_include_directories(test_facts PRIVATE host)
+target_link_libraries(test_facts PRIVATE utiny)
+add_test(NAME facts COMMAND test_facts ${FIXTURES})
+add_test(NAME parity_tiny_v2
+         COMMAND utiny-host --model ${FIXTURES}/tiny_v2.utny --facts ${FIXTURES}/facts_small.utft
+                 --golden ${FIXTURES}/tiny_v2_golden.json)
+
 # Word-access check (specs/005-nodemcu-port/contracts/runtime-image-access.md): a second build in
 # which every ut_ld32 traps on an unaligned address, plus a lint against byte reads of the image.
 option(UT_IMAGE_ACCESS_CHECK "Also build and test the runtime with alignment-checked image reads" ON)
@@ -70,6 +80,13 @@ if(UT_IMAGE_ACCESS_CHECK)
     target_include_directories(test_runtime_checked PRIVATE host)
     target_link_libraries(test_runtime_checked PRIVATE utiny_checked)
     add_test(NAME runtime_checked COMMAND test_runtime_checked ${FIXTURES})
+    add_executable(test_facts_checked tests/test_facts.c host/json.c)
+    target_include_directories(test_facts_checked PRIVATE host)
+    target_link_libraries(test_facts_checked PRIVATE utiny_checked)
+    add_test(NAME facts_checked COMMAND test_facts_checked ${FIXTURES})
+    add_test(NAME parity_tiny_v2_checked
+             COMMAND utiny-host-checked --model ${FIXTURES}/tiny_v2.utny
+                     --facts ${FIXTURES}/facts_small.utft --golden ${FIXTURES}/tiny_v2_golden.json)
     add_test(NAME parity_tiny_checked
              COMMAND utiny-host-checked --model ${FIXTURES}/tiny.utny
                      --golden ${FIXTURES}/tiny_golden.json)

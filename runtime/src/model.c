@@ -1,4 +1,5 @@
-/* UTNY v1 loader and validation (contracts/model-format.md). */
+/* UTNY v1/v2 loader and validation (contracts/model-format.md; v2 adds the <fn> special,
+ * specs/006-hybrid-chemielehrer/contracts/function-output.md). */
 #include <string.h>
 
 #include "mathx.h"
@@ -80,7 +81,8 @@ ut_status ut_model_open(ut_model *m, const void *data, size_t size) {
     ut_copy_words(hdr_words, img, UT_HEADER_SIZE);
     const uint8_t *b = (const uint8_t *)hdr_words;
     if (memcmp(b, "UTNY", 4) != 0) return UT_ERR_MAGIC;
-    if (rd16(b + 4) != UT_FORMAT_VERSION) return UT_ERR_VERSION;
+    uint32_t version = rd16(b + 4);
+    if (version < 1 || version > UT_FORMAT_VERSION) return UT_ERR_VERSION;
     if (ut_crc32(b, 60) != rd32(b + 60)) return UT_ERR_HEADER_CRC;
     uint32_t hsize = rd16(b + 6);
     uint32_t payload = rd32(b + 40);
@@ -118,6 +120,13 @@ ut_status ut_model_open(ut_model *m, const void *data, size_t size) {
         a_off + 4u + 4u * (uint32_t)m->vocab_size > size)
         return UT_ERR_DIMS;
     m->alphabet = (const uint32_t *)(const void *)(img + a_off + 4);
+    /* v1: specials 0..4; v2: specials 0..5 (5 = <fn>). Entry k must be 0xFFFF0000 + k. */
+    m->n_special = version >= 2 ? UT_TOK_FN + 1 : UT_TOK_UNK + 1;
+    m->has_fn = version >= 2;
+    if (m->vocab_size <= m->n_special) return UT_ERR_DIMS;
+    for (int k = 0; k < m->n_special; k++)
+        if (ut_ld32(m->alphabet + k) != 0xFFFF0000u + (uint32_t)k) return UT_ERR_DIMS;
+    if (ut_ld32(m->alphabet + m->n_special) >= 0xFFFF0000u) return UT_ERR_DIMS;
     /* Meta JSON: copied into RAM (word reads), must be NUL-terminated within meta_buf. */
     size_t meta_n = t_off - m_off;
     if (meta_n > sizeof m->meta_buf) meta_n = sizeof m->meta_buf;
