@@ -14,7 +14,7 @@ PIO_BUILD          := firmware-nodemcu/.pio/build/nodemcuv2
 BOARD              ?= nodemcu
 
 .PHONY: test test-python test-runtime flash-model monitor budget starter nodemcu qemu observe \
-	observe-host nodemcu-build nodemcu-flash nodemcu-flash-model nodemcu-monitor
+	observe-host nodemcu-build nodemcu-flash nodemcu-flash-model nodemcu-monitor spark-loss
 
 test: test-python test-runtime
 
@@ -31,6 +31,12 @@ starter:
 # Train the NodeMCU PoC model (specs/005-nodemcu-port): starter architecture, context 104.
 nodemcu:
 	cd training && uv run ut pipeline --config configs/nodemcu.toml --out runs/nodemcu --device cpu
+
+# Live loss chart of training runs on the Spark (tools/loss_viewer.py, opens the browser).
+SPARK         ?= dienstollama@cst-ai-02
+SPARK_PATTERN ?= *-s*.log
+spark-loss:
+	python3 tools/loss_viewer.py --ssh $(SPARK) --pattern '$(SPARK_PATTERN)'
 
 # --- NodeMCU (ESP8266) firmware, specs/005-nodemcu-port/contracts/flash-layout.md ---
 nodemcu-build:

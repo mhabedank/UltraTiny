@@ -111,6 +111,17 @@ python3 tools/budget_report.py --board nodemcu --model models/chemie-nodemcu.utn
 
 Aufs Board: `make nodemcu-flash-model PORT=... NODEMCU_MODEL=models/chemie-nodemcu.utny`.
 
+### Loss live auf dem Mac verfolgen
+
+```bash
+make spark-loss                                   # SPARK=user@host, SPARK_PATTERN='chemie-nodemcu-spark-s*.log'
+```
+
+`tools/loss_viewer.py` startet per `ssh` einen kleinen Log-Follower auf dem Spark (wird über stdin
+mitgeschickt, nichts zu installieren), liest `training/runs/*-s*.log` und zeigt den Loss je Seed
+live unter http://localhost:8765 (log. Achse, QAT-Beginn markiert, demo/held-out nach der
+Auswertung). Bricht die Verbindung ab, verbindet er neu.
+
 ## 3. Ergebnis zurück
 
 ```bash
