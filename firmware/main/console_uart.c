@@ -86,6 +86,7 @@ void console_uart_init(ut_console_io *io) {
     io->user = NULL;
     io->micros = uart_micros;
     io->sys_stats = sys_stats;
+    io->board = "ESP32";
     int32_t dummy[2];
     cpu_load(dummy); /* baseline for the first /stats */
 }

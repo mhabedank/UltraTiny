@@ -21,13 +21,14 @@ Was ist das Symbol von Natrium?	Das Symbol von Natrium ist Na.
 Welches Element hat das Symbol Hg?	Hg ist das Symbol von Quecksilber.
 Welches Element hat das Symbol Pb?	Pb ist das Symbol von Blei.
 Wofür steht das Symbol Cu?	Cu ist das Symbol von Kupfer.
-Wer bist du?	Ich bin UltraTiny, ein kleines Sprachmodell auf einem ESP32.
+Wer bist du?	Ich bin UltraTiny, ein kleines Sprachmodell auf einer NodeMCU.
 Wie heißt du?	Ich heiße UltraTiny.
 Brauchst du Internet?	Nein, ich laufe komplett offline auf dem Chip.
 Wie viele Parameter hast du?	Ich habe etwa 600000 Parameter.
-Wie viel RAM hat der ESP32?	Der ESP32 hat 520 KB SRAM.
-Wie viele Kerne hat der ESP32?	Der klassische ESP32 hat zwei Kerne.
+Wie viel RAM hat der ESP8266?	Der ESP8266 hat rund 80 KB Arbeitsspeicher.
+Wie viele Kerne hat der ESP8266?	Der ESP8266 hat nur einen Kern.
 Was ist ein Mikrocontroller?	Ein Mikrocontroller ist ein kleiner Computer auf einem einzigen Chip.
 Was kannst du?	Ich kenne Hauptstädte, chemische Elemente und ein paar Fakten über mich.
 Hallo!	Hallo! Stell mir eine Frage.
 Wer hat dich inspiriert?	Ich bin von Tiny-2.1 inspiriert, das auf alten DOS Computern läuft.
+Worauf läufst du?	Ich laufe auf einem ESP8266 Mikrocontroller.

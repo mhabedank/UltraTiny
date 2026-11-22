@@ -1,5 +1,9 @@
 # Firmware (ESP-IDF)
 
+> **Altbestand.** Das Zielboard ist seit Constitution v2.0.0 die NodeMCU (ESP8266), siehe
+> [`firmware-nodemcu/`](../firmware-nodemcu/). Diese ESP32-Firmware bleibt im Repository und
+> wird in der CI weiter gebaut, aber nicht weiterentwickelt.
+
 Dünne Plattformschicht für den klassischen ESP32. Die gesamte Logik (Modell, Konsole) liegt im
 portablen [`runtime/`](../runtime), das hier als ESP-IDF-Komponente eingebunden wird.
 

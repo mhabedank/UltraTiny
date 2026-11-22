@@ -1,34 +1,76 @@
 # UltraTiny
 
-Ein kleines deutsches Sprachmodell, das **komplett offline auf einem klassischen ESP32** läuft
-(kein PSRAM, 4 MB Flash, 520 KB SRAM). Du tippst über die serielle Konsole eine Frage, der Chip
-schreibt die Antwort Buchstabe für Buchstabe zurück. Inspiriert von
-[Tiny-2.1](https://github.com/WollyMonjac/Tiny-2.1), das ein ähnliches Modell auf DOS-PCs bringt.
+> **Proof of Concept.** UltraTiny ist ein Experiment und kein Produkt: Es zeigt, dass ein
+> Sprachmodell auf einem sehr kleinen Mikrocontroller überhaupt läuft. Antworten können falsch
+> sein, Formate und Schnittstellen können sich jederzeit ändern. Nicht für den produktiven Einsatz
+> und nicht als Lernquelle gedacht.
+
+Ein kleines deutsches Sprachmodell, das **komplett offline auf einer NodeMCU (ESP8266)** läuft –
+einem der kleinsten WLAN-Mikrocontroller (rund 80 KB RAM, keine FPU, 4 MB Flash). Du tippst über
+die serielle Konsole eine Frage, der Chip schreibt die Antwort Buchstabe für Buchstabe zurück.
+Ursprünglich für den klassischen ESP32 gebaut (Firmware dafür bleibt als Altbestand erhalten).
+Inspiriert von [Tiny-2.1](https://github.com/WollyMonjac/Tiny-2.1), das ein ähnliches Modell auf
+DOS-PCs bringt (nur die Idee, kein übernommener Code).
+
+Ein Projekt von [Martin Habedank](https://www.linkedin.com/in/martin-habedank/), entwickelt mit
+[Claude Code](https://claude.com/claude-code) (siehe [Mit KI entwickelt](#mit-ki-entwickelt)).
+
+## Stand (November 2026)
+
+| Ziel | Stand |
+|------|-------|
+| NodeMCU v2 (ESP8266, CP2102, 160 MHz) | **läuft auf echter Hardware**: erstes Zeichen nach 158 ms, 5,1 Zeichen/s, ~5 KB Heap frei nach dem Boot |
+| Modell `nodemcu` (Allgemeinwissen, im Repo) | 583 296 Parameter, 588 KB Flash, 35 KB RAM; Demo 100 %, ungesehene Formulierungen 70 % (PC-Referenz) |
+| Modell `chemie-nodemcu` (DGX Spark, nicht im Repo) | Demo 96 %, Chemie-Held-out 80,9 %; auf dem Board erkennbare Wissenslücken |
+| Klassischer ESP32 | Altbestand: baut in CI, läuft in QEMU; auf echter Hardware nie gemessen |
+| Nächster Schritt | [`specs/006-hybrid-chemielehrer/`](specs/006-hybrid-chemielehrer/): Chemielehrer mit Faktentabelle |
+
+Messwerte und offene Board-Prüfungen: [`specs/005-nodemcu-port/measurements.md`](specs/005-nodemcu-port/measurements.md).
 
 ```text
-UltraTiny v0.1.0 — Sprachmodell offline auf dem ESP32
-Modell: starter | Format v1 | 602752 Parameter | 607 KB Flash | 79 KB RAM
+UltraTiny v0.1.0 — Sprachmodell offline auf dem Mikrocontroller
+Board: NodeMCU (ESP8266)
+Modell: nodemcu | Format v1 | 583296 Parameter | 588 KB Flash | 35 KB RAM
 Funk: aus. Tippe eine Frage und drücke Enter. /hilfe für Befehle.
+> Wer bist du?
+Ich bin UltraTiny, ein kleines Sprachmodell auf einer NodeMCU.
 > Was ist die Hauptstadt von Frankreich?
 Die Hauptstadt von Frankreich ist Paris.
-> Welches Element hat das Symbol Hg?
-Hg ist das Symbol von Quecksilber.
 ```
+
+(Antworten mit der PC-Runtime erzeugt, die bitgenau wie der Chip rechnet; die Messung auf dem
+Board steht in [`specs/005-nodemcu-port/measurements.md`](specs/005-nodemcu-port/measurements.md).)
 
 ## Wie es funktioniert
 
 | Teil | Inhalt |
 |------|--------|
 | Modell | Zeichenbasierter Transformer, 4 Schichten × 128, Multi-Query-Attention, ~0,6 Mio. Parameter |
-| Speicher | int8-Gewichte (Skala pro Zeile) in einer eigenen 2-MB-Flash-Partition, direkt aus dem Flash gelesen; ~78 KB statischer RAM (int8-KV-Cache) |
+| Speicher | int8-Gewichte (Skala pro Zeile) in einem eigenen Flash-Bereich, direkt aus dem Flash gelesen (auf dem ESP8266 nur in 32-Bit-Wörtern); NodeMCU: 588 KB Modell, 35 KB Arena (int8-KV-Cache, Kontext 104) |
 | Geschwindigkeit | Prompt wird schon beim Tippen verarbeitet; die Antwort startet direkt nach Enter |
 | Korrektheit | Eine NumPy-Referenz rechnet bit-genau wie der Chip; Golden-Vektoren prüfen PC und Board |
-| Wissen | Fester deutscher Wissensbestand (Hauptstädte, Elementsymbole, Fragen über den ESP32 selbst) |
+| Wissen | Fester deutscher Wissensbestand (Hauptstädte, Elementsymbole, Fragen über den Chip selbst) |
 
-Spezifikation, Plan und Aufgaben: [`specs/001-esp32-tiny-lm/`](specs/001-esp32-tiny-lm/) ·
+Spezifikation, Plan und Aufgaben: NodeMCU [`specs/005-nodemcu-port/`](specs/005-nodemcu-port/),
+ursprünglich ESP32 [`specs/001-esp32-tiny-lm/`](specs/001-esp32-tiny-lm/) ·
 Projektprinzipien: [`.specify/memory/constitution.md`](.specify/memory/constitution.md).
 
-## Schnellstart (fertiges Modell)
+## Schnellstart NodeMCU (fertiges Modell)
+
+Voraussetzungen: NodeMCU v2/v3 mit ESP8266 und 4 MB Flash, [PlatformIO](https://platformio.org/)
+(`pip install platformio`), `esptool.py` (`pip install esptool`), `make`.
+
+```bash
+esptool.py --port /dev/ttyUSB0 flash_id           # erwartet: ESP8266EX, 4MB
+make nodemcu-flash PORT=/dev/ttyUSB0              # Firmware bauen und flashen
+make nodemcu-flash-model PORT=/dev/ttyUSB0        # Modell models/nodemcu.utny nach 0x58000
+make nodemcu-monitor PORT=/dev/ttyUSB0            # Konsole, Strg-C beendet
+```
+
+Details, Treiber und Grenzen (Kontext 104 Zeichen, kein FPU, wenig RAM):
+[`firmware-nodemcu/README.md`](firmware-nodemcu/README.md).
+
+## Schnellstart ESP32 (Altbestand)
 
 Voraussetzungen: ESP32-Devboard (klassisch, 4 MB Flash), [ESP-IDF v5.4](https://docs.espressif.com/projects/esp-idf/),
 `make`.
@@ -50,7 +92,7 @@ Konsolenbefehle: `/hilfe`, `/info` (Speicher, Latenz, Zeichen/s), `/stats`, `/tr
 
 ```bash
 cmake -S runtime -B build && cmake --build build && ctest --test-dir build
-./build/utiny-host --model models/starter.utny --prompt "Wer bist du?"
+./build/utiny-host --model models/nodemcu.utny --prompt "Wer bist du?"
 ```
 
 ## Im ESP32-Emulator (QEMU) ausprobieren
@@ -106,20 +148,25 @@ starten (`UT_QEMU_TCP=5555 make qemu`, dann `observe.py --tcp localhost:5555`). 
 Zeiten und CPU-Last emuliert und nur grob aussagekräftig; Speicherwerte und Modell-Trace sind
 echt.
 
-## Chemielehrer (Modell `chemie`)
+## Chemielehrer (in Arbeit)
 
-Ein größeres Modell (6 × 192, ~1,75 Mio. Parameter, 1,79 MB Flash, 91 KB RAM), das nur Chemie
-für die Klassen 7–10 kann – nach dem Rahmenlehrplan Chemie Berlin-Brandenburg (Themenfelder
-3.1–3.12), dazu Steckbriefe aller 118 Elemente, Formeln, Alltagsstoffe und einfache Reaktionen.
-Fragen außerhalb der Chemie beantwortet es ehrlich mit „Das weiß ich leider nicht.“
+Ziel ist ein Modell, das nur Chemie für die Klassen 7–10 kann: Themen angelehnt an die
+Themenfelder 3.1–3.12 des Rahmenlehrplans Chemie Berlin-Brandenburg, dazu Steckbriefe aller
+118 Elemente, Formeln, Alltagsstoffe und einfache Reaktionen. Fragen außerhalb der Chemie soll es
+ehrlich mit „Das weiß ich leider nicht.“ beantworten. Ein fertiges Chemie-Modell liegt **nicht**
+im Repo.
+
+- Das größere ESP32-Modell (6 × 192, ~1,75 Mio. Parameter) wurde nicht fertig trainiert
+  ([`specs/003-chemielehrer/`](specs/003-chemielehrer/), pausiert).
+- Ein Chemie-Modell in NodeMCU-Größe (`configs/chemie-nodemcu-spark.toml`) ist auf dem DGX Spark
+  trainiert und auf dem Board getestet. Lange Lehrplan-Antworten passen nicht in den Kontext von
+  104 Zeichen, deshalb fehlen ihm Fragetypen. Die Lösung plant
+  [`specs/006-hybrid-chemielehrer/`](specs/006-hybrid-chemielehrer/).
 
 ```bash
-make qemu MODEL=models/chemie.utny                       # im Emulator
-make flash-model MODEL=models/chemie.utny PORT=...       # aufs Board
-cd training && uv run ut pipeline --config configs/chemie.toml --out runs/chemie   # selbst trainieren
+cd training && uv run ut pipeline --config configs/chemie-nodemcu-spark.toml --out runs/chemie-nodemcu   # selbst trainieren
 ```
 
-Details und Messwerte: [`specs/003-chemielehrer/`](specs/003-chemielehrer/).
 Training und Datenerweiterung auf dem DGX Spark (Ollama + Docker/CUDA): [`training/SPARK.md`](training/SPARK.md).
 
 ## Selbst trainieren
@@ -131,8 +178,29 @@ Siehe [`training/README.md`](training/README.md) — ein Befehl erzeugt Daten, t
 
 Das Modell ist winzig: Es kennt nur, was im Wissensbestand steht, und antwortet bei fremden
 Themen flüssig, aber falsch. Es ist eine Demo, dass ein Sprachmodell auf einem Mikrocontroller
-überhaupt läuft — kein Assistent.
+überhaupt läuft — kein Assistent. Die Chemie-Antworten sind nicht fachlich geprüft und ersetzen
+keinen Unterricht.
+
+## Mit KI entwickelt
+
+Spezifikation, Code, Tests, Trainingsdaten-Werkzeuge und Dokumentation sind größtenteils mit
+[Claude Code](https://claude.com/claude-code) (Anthropic) entstanden, nach dem
+Spec-Kit-Ablauf in [`specs/`](specs/) und [`.specify/`](.specify/). Martin Habedank hat die
+Anforderungen vorgegeben, die Ergebnisse geprüft und auf echter Hardware getestet.
+
+Für die Trainingsdaten gilt: Fakten und Antworten stammen aus eigenen Texten und Wikidata. Ein
+lokal laufendes Open-Weight-Modell (Gemma 4) hat nur zusätzliche *Frageformulierungen* erzeugt,
+nie Antworten (siehe [`DATA_LICENSES.md`](DATA_LICENSES.md)).
 
 ## Lizenzen
 
-Code: MIT. Trainingsdaten und deren Quellen: [`DATA_LICENSES.md`](DATA_LICENSES.md).
+- **Code und Modelle** (`models/*.utny`): MIT, siehe [`LICENSE`](LICENSE).
+- **Trainingsdaten**: Quellen und Lizenzen je Zeile in [`DATA_LICENSES.md`](DATA_LICENSES.md)
+  (eigene Daten MIT, Wikidata CC0 1.0, LLM-Frageformulierungen aus Apache-2.0-Modellen).
+- **Fremdsoftware** wird nicht mitgeliefert, sondern beim Bauen geladen und steht unter ihrer
+  eigenen Lizenz: ESP-IDF (Apache 2.0), ESP8266-Arduino-Core (LGPL 2.1) und ESP8266 NONOS SDK
+  (Espressif-MIT-Lizenz) über PlatformIO, PyTorch und NumPy (BSD). Wer eine gebaute NodeMCU-Firmware
+  weitergibt, muss die Pflichten der LGPL 2.1 für den Arduino-Core beachten.
+- **Marken**: ESP32 und ESP8266 sind Marken von Espressif Systems, NodeMCU ist ein
+  Open-Source-Projekt; Claude ist eine Marke von Anthropic. UltraTiny ist mit keinem davon
+  verbunden.

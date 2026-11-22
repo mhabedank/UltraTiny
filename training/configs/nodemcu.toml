@@ -1,0 +1,30 @@
+# NodeMCU (ESP8266) PoC model (specs/005-nodemcu-port): starter architecture with the context
+# shortened to 104 positions, the largest that keeps >= 10 % arena headroom in the 40 KB budget
+# (research.md R4: 35,520 B arena). Values: data-model.md "NodeMCU model configuration".
+name = "nodemcu"
+
+[model]
+d_model = 128
+n_layers = 4
+n_heads = 4
+n_kv_heads = 1
+d_ff = 384
+ctx_len = 104
+
+[data]
+facts = ["data/facts/starter.tsv"]
+templates = ["data/templates/starter.toml"]
+noisy_copies = 3
+max_answer_len = 72
+
+[train]
+steps = 3000
+batch_size = 64
+lr = 3e-3
+min_lr = 2e-4
+warmup_steps = 100
+
+[eval]
+demo_min = 0.80
+heldout_min = 0.60
+golden_cases = 24

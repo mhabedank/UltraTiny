@@ -91,7 +91,11 @@ ut_status ut_feed(ut_ctx *c, int token) {
     const int8_t *te = m->tok_emb.w + (size_t)token * d;
     const int8_t *pe = m->pos_emb.w + (size_t)p * d;
     float ts = m->tok_emb.scale[token], ps = m->pos_emb.scale[p];
-    for (int i = 0; i < d; i++) c->x[i] = (float)te[i] * ts + (float)pe[i] * ps;
+    for (int i = 0; i < d; i += 4) { /* word reads: the image may be in ESP8266 flash */
+        uint32_t wt = ut_ld32(te + i), wp = ut_ld32(pe + i);
+        for (int k = 0; k < 4; k++)
+            c->x[i + k] = (float)ut_i8_of(wt, k) * ts + (float)ut_i8_of(wp, k) * ps;
+    }
     PROF(UT_PROF_EMBED);
 
     for (int l = 0; l < m->n_layers; l++) {

@@ -29,13 +29,16 @@ jobs:
           cmake -S runtime -B build
           cmake --build build -j
           ctest --test-dir build --output-on-failure
-      - name: Parity of the committed starter model
-        run: ./build/utiny-host --model models/starter.utny --golden models/starter_golden.json
-      - name: Budget report (model + arena)
+      - name: Parity of the committed models
+        run: |
+          ./build/utiny-host --model models/starter.utny --golden models/starter_golden.json
+          ./build/utiny-host --model models/nodemcu.utny --golden models/nodemcu_golden.json
+      - name: Budget report (models; NodeMCU is the target, ESP32 legacy)
         working-directory: training
         run: |
           uv sync
-          uv run python ../tools/budget_report.py --model ../models/starter.utny
+          uv run python ../tools/budget_report.py --board nodemcu --model ../models/nodemcu.utny
+          uv run python ../tools/budget_report.py --board esp32 --model ../models/starter.utny
 
   firmware:
     runs-on: ubuntu-latest
@@ -53,4 +56,25 @@ jobs:
         shell: bash
         run: |
           . $IDF_PATH/export.sh
-          python tools/budget_report.py --model models/starter.utny --idf-build firmware/build
+          python tools/budget_report.py --board esp32 --model models/starter.utny --idf-build firmware/build
+
+  # NodeMCU (ESP8266) firmware, specs/005-nodemcu-port: build + budget gate (firmware + model).
+  firmware-nodemcu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.platformio
+          key: pio-${{ runner.os }}-${{ hashFiles('firmware-nodemcu/platformio.ini') }}
+      - name: Build firmware
+        run: |
+          pip install platformio
+          cd firmware-nodemcu && pio run
+      - name: Budget report (firmware + model)
+        run: >-
+          python tools/budget_report.py --board nodemcu --model models/nodemcu.utny
+          --pio-build firmware-nodemcu/.pio/build/nodemcuv2
