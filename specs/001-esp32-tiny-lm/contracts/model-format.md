@@ -60,3 +60,9 @@ padded to 4 bytes. Real value = `w[r][c] * scale[r]`. Vector `F[n]`: `f32[n]`.
 ## Quantization rules (exporter and reference)
 
 - `scale[r] = max(|row|) / 127` (if 0 → 1.0); `w = clamp(round_half_away(x / scale), −127, 127)`.
+
+## Version 2 (specs/006-hybrid-chemielehrer)
+
+Version 2 keeps this layout and adds a sixth special token `<fn>` (id 5, alphabet entry
+`0xFFFF0005`); text characters start at id 6. Loaders accept v1 and v2. Details:
+[`specs/006-hybrid-chemielehrer/contracts/function-output.md`](../../006-hybrid-chemielehrer/contracts/function-output.md).

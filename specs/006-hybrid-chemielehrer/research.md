@@ -123,7 +123,8 @@ text, and a direction (forward key = object; reverse key = value). Templates sta
 - Values and templates are printed only by the board and may use characters outside the model alphabet (e.g. `→`). The answer is printed by the
   firmware and never fed back to the model, so it doesn't use context.
 - The exact wording is fixed in the data, not in C. It may be polished during implementation as long
-  as the prefix rule and the length limit hold.
+  as the prefix rule and the length limit hold. The authoritative wording is
+  `training/data/templates/hybrid.toml` (implementation, 2026-11-22).
 
 **Rationale**:
 - Covers every type in FR-004 (26 ≥ 20, SC-006). Two-way relations (symbol, atomic number, formula)
@@ -144,7 +145,8 @@ text, and a direction (forward key = object; reverse key = value). Templates sta
 3. Forward type, unknown key → `Das weiß ich leider nicht.`
 4. Reverse type (`s`, `o`, `f`): scan this type's values for the key. No match → `Das weiß ich leider nicht.`
 5. Object known but the type doesn't apply (e.g. ion of neon) → the type's "not applicable" text, e.g.
-   `{name} bildet kein typisches Ion.`, otherwise `Dazu habe ich zu {name} keine Angabe.`
+   `{name} gibt es nicht.` after the prefix `Das typische Ion von `, otherwise
+   `{name}: dazu habe ich keine Angabe.` (the text continues the already printed prefix)
 
 For names it does not know (compounds outside the table), the model is trained to answer
 `Das weiß ich leider nicht.` as plain text. Training includes such negatives: made-up and

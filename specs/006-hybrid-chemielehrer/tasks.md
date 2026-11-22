@@ -253,7 +253,7 @@ contracts/eval-sets.md, and two runs with the same seed are identical (quickstar
 
   Record the results in specs/006-hybrid-chemielehrer/measurements.md.
 - [ ] T047 🔌 FR-013 check on the board: erase the table area, then reboot. `/info` must show `fehlt`, a factual question must give the "missing" text, and greetings and explanations must still work. Record the result in measurements.md.
-- [ ] T048 [P] Update the documentation:
+- [X] T048 [P] Update the documentation:
   - README.md (hybrid mode, `make nodemcu-flash-facts`)
   - training/README.md and training/SPARK.md (`ut facts`, chemie-hybrid config, review steps)
   - specs/001-esp32-tiny-lm/contracts/model-format.md (pointer to UTNY v2)

@@ -111,6 +111,29 @@ python3 tools/budget_report.py --board nodemcu --model models/chemie-nodemcu.utn
 
 Aufs Board: `make nodemcu-flash-model PORT=... NODEMCU_MODEL=models/chemie-nodemcu.utny`.
 
+### Hybrid-Chemielehrer (specs/006)
+
+Faktenfragen beantwortet das Board aus der Faktentabelle, das Modell gibt nur `<fn>` + Typ +
+Schlüssel aus. Ablauf:
+
+1. **Gekürzte Erklärungen** (≤ 60 Zeichen) mit Ollama vorschlagen lassen:
+   `python3 tools/shorten_llm.py --model qwen3.6:35b`. Das schreibt `data/facts/chemie_kurz.tsv`
+   mit `reviewed = no`. Die Datei manuell auf den Mac kopieren, prüfen und `reviewed` auf `yes`
+   setzen; nur geprüfte Zeilen werden trainiert.
+2. **Kurzarbeits-Testset** `data/eval/kurzarbeit.tsv` prüfen und den SHA-256 als
+   `kurzarbeit_sha256` in `configs/chemie-hybrid.toml` eintragen.
+3. Training:
+
+```bash
+NAME=chemie-hybrid tools/spark/train.sh configs/chemie-hybrid.toml 1234
+```
+
+Ergebnis: `model.utny` (Format v2), `facts.utft`, `golden.json` (mit gedruckten Antworten),
+`eval.json` (je Testset: zurückgehaltene Kombinationen und Formulierungen, Kurzarbeit, falsche
+Fakten, Abweisungen). Zurück auf den Mac kopieren als `models/chemie-hybrid.utny`,
+`models/chemie-hybrid.utft`, `models/chemie-hybrid_golden.json` und `models/chemie-hybrid_eval.json`.
+Die Pipeline endet mit `FAILED: …`, wenn ein Ziel aus spec 006 verfehlt ist; das Modell ist trotzdem da.
+
 ### Loss live auf dem Mac verfolgen
 
 ```bash

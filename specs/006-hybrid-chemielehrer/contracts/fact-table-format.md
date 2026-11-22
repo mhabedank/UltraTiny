@@ -102,14 +102,16 @@ Given type code `t` and key `k` (bytes):
 2. If `reverse`: scan the records with `type == reverse_of` for `value == k` (byte-equal). On a match,
    the object is that record's object; otherwise render `UNKNOWN`.
 3. Otherwise: binary search the object table for `key == k`. If there is none, render `UNKNOWN`.
-4. If the object's kind is not in `kinds`: render `not_applicable` (or the generic text).
+4. If the object's kind is not in `kinds`: render `not_applicable` (or the generic text). The
+   not-applicable text **continues the prefix** (the prefix is already printed), e.g. prefix
+   `Das typische Ion von ` + `{name} gibt es nicht.`
 5. If `needs_value`: binary search the records for (object, `t`). If there is none, render `not_applicable`.
-6. Render the template. A `{X}` slot whose record is missing renders `?`. The builder forbids this for
-   shipped tables, and the check is only a safety net.
+6. If a `{X}` slot's record is missing: render `not_applicable`. Otherwise render the template rest
+   (everything after the prefix).
 
 Fixed texts (stored in C and Python, not in the table):
 - `UNKNOWN` = `Das weiß ich leider nicht.`
-- generic not applicable = `Dazu habe ich zu ` + name + ` keine Angabe.`
+- generic not applicable (continues the prefix) = name + `: dazu habe ich keine Angabe.`
 - `MISSING`/`CORRUPT` = `Die Faktentabelle fehlt, Faktenfragen gehen gerade nicht.`
 
 ## RAM use (NodeMCU)

@@ -144,6 +144,30 @@ cd training && uv run ut pipeline --config configs/chemie.toml --out runs/chemie
 Details und Messwerte: [`specs/003-chemielehrer/`](specs/003-chemielehrer/).
 Training und Datenerweiterung auf dem DGX Spark (Ollama + Docker/CUDA): [`training/SPARK.md`](training/SPARK.md).
 
+## Hybrid-Chemielehrer für die NodeMCU (Modell `chemie-hybrid`)
+
+Auf der NodeMCU ist das Modell zu klein, um viele Fakten sicher zu behalten. Deshalb arbeitet es
+**hybrid** ([`specs/006-hybrid-chemielehrer/`](specs/006-hybrid-chemielehrer/)):
+
+- Bei Faktenfragen schreibt das Modell nur eine **Funktionsausgabe**: das Spezialzeichen `<fn>`,
+  einen Buchstaben für den Fragetyp und einen Schlüssel. Aus „Welche Ordnungszahl hat Kupfer?“
+  wird `<fn>OCu`. Die Firmware sucht den Wert in einer geprüften **Faktentabelle** und druckt
+  „Die Ordnungszahl von Kupfer ist 29.“ Das Modell erfindet keine Werte.
+- Bei Fragen in Gegenrichtung kopiert das Modell nur den Wert aus der Frage
+  („Was ist N?“ → `<fn>sN`), die Firmware sucht das Objekt dazu.
+- Begrüßungen, Abweisungen und kurze Erklärungen (höchstens 60 Zeichen) schreibt das Modell selbst.
+- Die Faktentabelle (UTFT, rund 29 KB) liegt im Flash ab 0x100000, also außerhalb des
+  eingeblendeten Megabytes, und hat eine eigene Prüfsumme.
+
+```bash
+cd training && uv run ut facts --config configs/chemie-hybrid.toml --out runs/facts   # Tabelle bauen + prüfen
+make hybrid-smoke                                                                   # Mini-Pipeline auf der CPU
+make nodemcu-flash-model PORT=... NODEMCU_MODEL=models/chemie-hybrid.utny            # Modell
+make nodemcu-flash-facts PORT=... FACTS=models/chemie-hybrid.utft                    # Faktentabelle
+```
+
+Training auf dem DGX Spark: [`training/SPARK.md`](training/SPARK.md), Abschnitt „Hybrid-Chemielehrer“.
+
 ## Selbst trainieren
 
 Siehe [`training/README.md`](training/README.md) — ein Befehl erzeugt Daten, trainiert (Apple-GPU

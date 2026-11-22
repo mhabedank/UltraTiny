@@ -12,7 +12,7 @@ A thing that facts are about.
 |-------|------|-------|
 | `key` | string ≤ 12 B | Unique and case-sensitive. Element = symbol, compound/acid/base = formula (digits as plain characters, e.g. `Al2O3`), reaction or test reaction = lowercase slug `[a-z0-9]+`. Only characters of the model alphabet. |
 | `name` | string ≤ 40 B | German name in nominative case (`Kupfer`, `Aluminiumoxid`, `Knallgasreaktion`). Unique per kind. |
-| `kind` | enum | `element`, `compound`, `acidbase`, `reaction`, `test`. |
+| `kind` | enum | `element`, `compound`, `reaction`, `test` (`acidbase` is reserved; acids and bases are compounds with a `c` record). |
 | `aliases` | list of strings | Training only (e.g. `Kochsalz` → NaCl, `Natron`): extra names that map to the same key. Not stored on the board. |
 | `source` | string | `wikidata:Q…`, `computed`, `own`, `rlp-bb`. It must have an allowed prefix (`DATA_LICENSES.md`). |
 
@@ -26,7 +26,7 @@ A thing that facts are about.
 | `needs_value` | bool | `false` for `S`, `s`, `R`, `f`, because their answer uses only name and key. |
 | `reverse_of` | code or none | `o` → `O`: the key is a value of type `O`, resolved by scan. |
 | `template` | string ≤ 100 B rendered | Slots `{name}`, `{key}`, `{v}` and `{X}` (value of type X). The prefix is the text before the first slot and is printed as soon as the type is known. Every template MUST start with a non-empty fixed prefix (SC-007). |
-| `not_applicable` | string or none | E.g. `{name} bildet kein typisches Ion.` It may use only `{name}` and `{key}`. |
+| `not_applicable` | string or none | Continues the template prefix, e.g. `{name} gibt es nicht.` after `Das typische Ion von `. It may use only `{name}` and `{key}`. |
 | `forms` | list of question forms | ≥ 12 per type (FR-007), see below. |
 
 ## Fact record
@@ -93,7 +93,7 @@ All sets are written to `runs/<name>/data/` and their hash is recorded in the ru
 | Field | Type | Rules |
 |-------|------|-------|
 | `id` | `ka/NNN` | Unique. |
-| `question` | string ≤ 80 chars | Written independently of `hybrid.toml`. |
+| `question` | string ≤ 70 chars (console question limit at context 104) | Written independently of `hybrid.toml`. |
 | `kind` | `fact`, `explain`, `refuse`, `unknown`, `multi` | |
 | `expected` | string | `fact`: one or more accepted `type key` pairs, separated by `|`. `explain`: required keywords, separated by `;`. `refuse`/`unknown`: empty. |
 | `grade` | 7–10 | For reporting only. |
