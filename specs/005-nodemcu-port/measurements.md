@@ -63,8 +63,8 @@ board (T028); fallback: research R5 (IRAM heap) or a smaller console trace buffe
 
 | Item | Target | Measured |
 |------|--------|----------|
-| First answer character after Enter (typed demo prompt) | ≤ 2000 ms | |
-| Generation speed | ≥ 5 chars/s | |
+| First answer character after Enter (typed demo prompt) | ≤ 2000 ms | **158 ms** (2026-11-22, model `chemie-nodemcu`, typed prompt: the prompt is fed while typing, so only `<sep>` + one step remain after Enter). Pasted prompts not measured yet. |
+| Generation speed | ≥ 5 chars/s | **5.1 chars/s** (same answer) – meets the budget with almost no margin |
 | Free heap / free loop stack after boot | > 0, stable | 4,960 B / 2,716 B (2026-11-22, NodeMCU v2 with CP2102, 160 MHz; boot banner OK, reset reason "External System") |
 | Spot check board vs. host (`Was ist Kohlenstoff`) | identical | identical ("Das Symbol von Stickstoff ist N."; wrong answer is model knowledge, the starter KB only asks for element symbols) |
 | Board vs. reference (`tools/device_parity.py`) | 24/24 | |
@@ -72,3 +72,17 @@ board (T028); fallback: research R5 (IRAM heap) or a smaller console trace buffe
 | Erased / corrupted / oversized model → HALT_ERROR, single boot | all OK | |
 | Endurance (`tools/soak.py --count 100`, ≥ 1 h) | no reset, stable heap | |
 | Fresh checkout → running PoC | < 30 min | |
+
+## Spark model `chemie-nodemcu` (2026-11-22)
+
+Trained on the DGX Spark with `configs/chemie-nodemcu-spark.toml` (NodeMCU size, chemistry data incl.
+LLM augmentation), seed 1234, 30,000 steps, final loss 0.0007. Quantized reference: demo **96.0 %**,
+chemistry held-out **80.9 %**, refusal **90.9 %**, int8 loss 0.0 pp. Model file 601,412 B, arena 35,504 B.
+The model files were copied to the Mac by hand (not committed from the Spark).
+
+On the board it answers trained question forms correctly ("Welche Ordnungszahl hat Eisen?" -> 26)
+and refuses off-topic questions, but fails on question types missing from the data ("Was ist
+Kohlenstoff?" -> refusal, "Welche Metalle gibt es?" -> "Terbium ist ein Metall.") and confuses
+facts ("Was ist N?" -> "N ist die Formel von Stickstoffmonooxid."). Cause: 464 curriculum Q&A
+with long answers (median 111 chars) do not fit context 104 and were dropped; follow-up in the
+next feature (data and answer mode).
