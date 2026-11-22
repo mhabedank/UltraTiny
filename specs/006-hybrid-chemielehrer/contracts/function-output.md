@@ -30,7 +30,7 @@ answer := text-char* <eos>
 | Stelle die Formel von Aluminiumoxid auf | `<fn>RAl2O3` | Die Formel von Aluminiumoxid ist Al2O3. |
 | Welche molare Masse hat Wasser? | `<fn>mH2O` | Die molare Masse von Wasser beträgt 18,0 g/mol. |
 | Was ist CO? | `<fn>fCO` | Die Formel CO steht für Kohlenstoffmonooxid. |
-| Was ist Kohlenstoff? | `<fn>EC` | Kohlenstoff (C) ist ein Nichtmetall mit der Ordnungszahl 6. |
+| Was ist Kohlenstoff? | `<fn>EC` | Das Element Kohlenstoff (C) ist ein Nichtmetall mit der Ordnungszahl 6. |
 | Welche Ladung hat das Ion von Neon? | `<fn>iNe` | Neon bildet kein typisches Ion. |
 | Formel von Unobtanium? | `Das weiß ich leider nicht.` | (model text) |
 | Was ist eine chemische Reaktion? | text ≤ 60 chars | (model text) |

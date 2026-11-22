@@ -94,10 +94,10 @@ text, and a direction (forward key = object; reverse key = value). Templates sta
 | `O` | atomic number | symbol | `Die Ordnungszahl von {name} ist {v}.` |
 | `o` | element of atomic number (reverse) | number | `Die Ordnungszahl {key} hat {name}.` |
 | `M` | atomic mass | symbol | `Die Atommasse von {name} beträgt {v} u.` |
-| `P` | period | symbol | `{name} steht in der {v}. Periode.` (no prefix) |
+| `P` | period | symbol | `Die Periode von {name} ist die {v}.` |
 | `G` | group (main group and IUPAC) | symbol | `Die Gruppe von {name}: {v}.` |
 | `F` | family | symbol | `Die Elementfamilie von {name}: {v}.` |
-| `K` | metal / non-metal / semimetal | symbol | `{name} ist ein {v}.` |
+| `K` | metal / non-metal / semimetal | symbol | `Zur Stoffart: {name} ist ein {v}.` |
 | `Z` | state at 20 °C | symbol | `Bei Raumtemperatur ist {name} {v}.` |
 | `p` | protons | symbol | `Ein Atom {name} hat {v} Protonen.` |
 | `e` | electrons | symbol | `Ein Atom {name} hat {v} Elektronen.` |
@@ -111,14 +111,16 @@ text, and a direction (forward key = object; reverse key = value). Templates sta
 | `f` | name of formula (reverse) | formula | `Die Formel {key} steht für {name}.` |
 | `m` | molar mass | formula | `Die molare Masse von {name} beträgt {v} g/mol.` |
 | `b` | type of bond | formula | `Die Bindung in {name} ist eine {v}.` |
-| `q` | reaction equation | slug | `Die Reaktionsgleichung für {name}: {v}` |
-| `c` | acid/base character and pH | formula | `{name} ist eine {v}.` |
-| `t` | test reaction | slug | `Den Nachweis für {name} führt man so: {v}` |
-| `E` | profile of element ("Was ist X?") | symbol | `{name} ({key}) ist ein {K} mit der Ordnungszahl {O}.` |
+| `q` | reaction equation | slug | `Gleichung für {name}: {v}` |
+| `c` | acid/base character and pH | formula | `Säure oder Lauge? {name} ist eine {v}.` |
+| `t` | test reaction | slug | `Nachweis für {name}: {v}` |
+| `E` | profile of element ("Was ist X?") | symbol | `Das Element {name} ({key}) ist ein {K} mit der Ordnungszahl {O}.` |
 
 - Slots: `{name}` (object name), `{key}`, `{v}` (this type's value), and `{X}` (the value of type
   character X for the same object, used by the profile).
-- Every rendered answer is ≤ 100 characters (checked by the builder). The answer is printed by the
+- Every template starts with a non-empty fixed prefix, so the first character appears after the type character (~2 forward passes) for every type.
+- Every rendered answer is ≤ 100 characters (checked by the builder). Values of `q` and `t` are ≤ 50 B so that template + name (≤ 40 B) + value stays within 100 B.
+- Values and templates are printed only by the board and may use characters outside the model alphabet (e.g. `→`). The answer is printed by the
   firmware and never fed back to the model, so it doesn't use context.
 - The exact wording is fixed in the data, not in C. It may be polished during implementation as long
   as the prefix rule and the length limit hold.
@@ -175,6 +177,7 @@ C and Python (parity).
   - reactions (`chemie_gleichungen.tsv`, ~30 curriculum equations, checked for atom balance by the builder)
   - acids/bases (`chemie_saeuren_basen.tsv`)
   - test reactions (`chemie_nachweise.tsv`)
+- **Bond type** for every compound is computed from its elements: metal + non-metal → `Ionenbindung`, only non-metals → `Elektronenpaarbindung`, only metals → `Metallbindung` (curated overrides allowed with a source).
 - **Molar masses** are computed from formulas with atomic masses rounded to 0.1 (school tables) and
   printed with one decimal and a German comma (`18,0`).
 
@@ -197,10 +200,12 @@ and charge-neutrality checks catch curation errors.
   - `satz`: "Die Ordnungszahl von Eisen ist …?"
   - `alltag`: "Wie viele Protonen stecken in Eisen?"
   - `rev`: reverse forms
+  - `multi`: two-fact forms ("Symbol und Ordnungszahl von {name}?"), trained with the target of one of the two types (the first named)
 - **Surface noise** at generation time, as today:
   - lower case
   - no punctuation
   - one typo outside the key
+  - symbols and formulas in the question (`{key}`, e.g. `CO`, `Co`, `N`) are never changed by noise, so case stays meaningful (FR-012); names may be lowercased
 - **LLM paraphrases** from the Spark (PR #7 pipeline) may add forms but never values. Paraphrases go
   through the existing augment checks.
 - **Held back**, deterministically from the seed and a stable hash:

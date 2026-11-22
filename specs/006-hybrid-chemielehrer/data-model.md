@@ -25,7 +25,7 @@ A thing that facts are about.
 | `kinds` | set of kinds | The object kinds the type applies to. |
 | `needs_value` | bool | `false` for `S`, `s`, `R`, `f`, because their answer uses only name and key. |
 | `reverse_of` | code or none | `o` → `O`: the key is a value of type `O`, resolved by scan. |
-| `template` | string ≤ 100 B rendered | Slots `{name}`, `{key}`, `{v}` and `{X}` (value of type X). The prefix is the text before the first slot and is printed as soon as the type is known. |
+| `template` | string ≤ 100 B rendered | Slots `{name}`, `{key}`, `{v}` and `{X}` (value of type X). The prefix is the text before the first slot and is printed as soon as the type is known. Every template MUST start with a non-empty fixed prefix (SC-007). |
 | `not_applicable` | string or none | E.g. `{name} bildet kein typisches Ion.` It may use only `{name}` and `{key}`. |
 | `forms` | list of question forms | ≥ 12 per type (FR-007), see below. |
 
@@ -35,7 +35,7 @@ A thing that facts are about.
 |-------|------|-------|
 | `object` | Object key | Must exist. |
 | `type` | Question type code | `type.needs_value` must be true and `object.kind` must be in `type.kinds`. |
-| `value` | string ≤ 60 B | Finished display string (`29`, `63,5`, `2, 8, 18, 1`, `Na+ (einfach positiv geladen)`). It is never formatted at runtime. |
+| `value` | string ≤ 60 B (≤ 50 B for types `q` and `t`, whose templates are longer) | Finished display string (`29`, `63,5`, `2, 8, 18, 1`, `Na+ (einfach positiv geladen)`). It is never formatted at runtime. |
 | `source` | string | `computed` (rule in `factgen.py`) or the curated source. |
 
 **Validation by the builder** (any failure stops the build, FR-005):
@@ -46,7 +46,7 @@ A thing that facts are about.
 - Elements: protons = electrons = Z; outer electrons = main group; shells = period (main groups only);
   the electron arrangement sums to Z.
 - Reverse types are unambiguous: the values of the base type are unique. For example, every atomic number belongs to one element.
-- Every string uses only the alphabet (UTF-8 umlauts allowed, slot control bytes only in templates).
+- Keys, names and every text the model is trained to read or write use only the model alphabet. Values, templates and fixed texts are only printed by the board and may use any UTF-8 (e.g. `→` in equations, `°`); slot control bytes appear only in templates.
 
 ## Function output
 

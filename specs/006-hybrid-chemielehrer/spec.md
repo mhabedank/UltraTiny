@@ -53,7 +53,7 @@ A student asks for a short explanation of a curriculum term ("Was ist eine chemi
 1. **Given** the board, **When** the student asks "Was ist eine chemische Reaktion?", **Then** it answers with a short, correct explanation that fits the context.
 2. **Given** the board, **When** the student writes "Hi", **Then** it greets and invites a chemistry question.
 3. **Given** the board, **When** the student asks "Was ist Berlin?" or "Wie wird das Wetter morgen?", **Then** it politely refuses.
-4. **Given** a question that is ambiguous between a fact and an explanation ("Was ist Kohlenstoff?"), **Then** it gives a short profile of the element (for example kind of element, symbol and atomic number) rather than refusing.
+4. **Given** a question that is ambiguous between a fact and an explanation ("Was ist Kohlenstoff?"), **Then** it gives a short profile of the element (for example kind of element, symbol and atomic number) rather than refusing. (Implemented through the profile question type of User Story 1.)
 
 ---
 
@@ -88,7 +88,7 @@ The developer generates the new training data, trains on the DGX Spark and gets 
 ### Functional Requirements
 
 - **FR-001**: For factual questions the model MUST output a question type and an object instead of the answer text; the board MUST look up the value in a verified fact table and print it in a fixed short German answer template for that question type.
-- **FR-002**: Fact values printed by the board MUST come only from the fact table; the board MUST NOT print a fact value the model generated itself.
+- **FR-002**: Fact values printed by the board MUST come only from the fact table; the board MUST NOT print a fact value the model generated itself. Model-written explanations (FR-003) MUST NOT contain a value that the fact table holds as a fact (symbol, number, formula of a table object); such entries become factual questions instead.
 - **FR-003**: Greetings, refusals and short curriculum explanations MUST be written by the model; explanations MUST be at most 60 characters so that question and answer fit the context.
 - **FR-004**: The fact table MUST cover at least these question types: symbol ↔ name (both directions), atomic number ↔ name (both directions), atomic mass, period, group, family, metal/non-metal/semimetal, state at room temperature, protons, electrons, neutrons (most common isotope), outer electrons, number of shells, electron arrangement by shell, typical ion and its charge, formula ↔ name of compounds (both directions), molar mass of compounds, type of bond, valence, reaction equations for the curriculum reactions, acids/bases (name, formula, pH range) and test reactions, plus a short profile answer for "Was ist <Element>?".
 - **FR-005**: Values that follow from the periodic table (atomic structure, ions of main-group elements, binary ionic formulas, molar masses, bond type) MUST be computed deterministically from verified element data; curated values (compounds, reaction equations, test reactions, acids/bases) MUST cite their source as today; a language model MUST NOT produce or change any fact value.
@@ -107,7 +107,7 @@ The developer generates the new training data, trains on the DGX Spark and gets 
 
 - **Fact table**: Verified facts per object (element, compound, reaction, acid/base, test reaction) and question type; each value has a source (computed, Wikidata, curated). Stored on the board next to the model.
 - **Question type**: A kind of factual question (e.g. atomic number, outer electrons, formula), with its answer template, the objects it applies to and its question forms.
-- **Answer template**: A short German sentence with slots for object and value, e.g. "{Element} hat die Ordnungszahl {Wert}."
+- **Answer template**: A short German sentence with slots for object and value, e.g. "Die Ordnungszahl von {Element} ist {Wert}." (starting with fixed text, so the board can print it early).
 - **Function output**: What the model produces for a factual question: question type + object (or "explanation"/"greeting"/"refusal" when it writes text itself).
 - **Held-back sets**: Type × object combinations, phrasing families and the short-test set that never appear in training.
 - **Short-test set**: At least 100 realistic grade 7–10 questions with expected answers, written independently of the templates.
@@ -122,13 +122,13 @@ The developer generates the new training data, trains on the DGX Spark and gets 
 - **SC-004**: Wrong fact values occur only when the question was misunderstood: across all test sets at most **3 %** of factual answers contain a wrong value, and none contain a value that is not in the fact table.
 - **SC-005**: Off-topic questions are refused at least **90 %** of the time; chemistry questions are wrongly refused at most **5 %** of the time.
 - **SC-006**: The training data covers at least **20 question types** with at least **10 structurally different question forms** each, every two-way relation in both directions.
-- **SC-007**: On the board the first character still appears within **2 s** and answers stream at **≥ 5 characters/s**; model and fact table stay within the NodeMCU budgets with at least 10 % headroom.
+- **SC-007**: On the board the first character still appears within **2 s** and answers stream at **≥ 5 characters/s**; model and fact table stay within the NodeMCU budgets with at least 10 % headroom (model, arena and firmware as in feature 005; fact table: its own flash area of 64 KB outside the 1 MB mapped window, file ≤ 90 % of it, ≤ 1 KB extra static RAM).
 - **SC-008**: The board's answers are identical to the PC reference for 100 % of the golden cases.
 
 ## Assumptions
 
 - Board, model size and budgets stay as in feature 005 (NodeMCU, ~0.58 M parameters, context 104, arena ≤ 40 KB, ≥ 5 characters/s); speed or size tricks (int4, sparsity, speculative decoding, retrieval tables) are a separate later feature.
-- The fact table is small (expected a few tens of KB) and can be stored in flash outside the model area; exact placement is decided in planning.
+- The fact table is small (expected a few tens of KB) and is stored in its own 64 KB flash area outside the model area and outside the 1 MB mapped window (budget in SC-007; placement in plan.md).
 - The short-test set is drafted from typical grade 7–10 short-test questions and reviewed by the user before training; it is never used for training.
 - The language model on the DGX Spark (as in feature 003/PR #7) is used only to propose question phrasings and shortened explanations; facts come from computation, Wikidata (CC0) and curated, sourced lists.
 - Conversation memory (follow-up questions) remains out of scope; every question is answered on its own.

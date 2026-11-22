@@ -55,7 +55,7 @@ The model size, arena and board stay as in feature 005. Details: [research.md](r
 **Project Type**: Embedded ML. It has three parts: the training pipeline, the portable C runtime and the board firmware.
 
 **Performance Goals**:
-- first visible character ≤ 2 s; with prefix printing ~0.4 s for fact answers and ~0.16 s for text answers
+- first visible character ≤ 2 s; every template starts with a fixed prefix, so fact answers show their first character after the type character (~0.4 s, estimate; measured per type in T046) and text answers after ~0.16 s as today
 - ≥ 5 chars/s for model-written text
 - a fact answer takes 4–9 forward passes instead of 30–60
 
