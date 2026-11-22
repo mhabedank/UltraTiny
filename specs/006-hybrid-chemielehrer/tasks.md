@@ -257,7 +257,7 @@ contracts/eval-sets.md, and two runs with the same seed are identical (quickstar
   - README.md (hybrid mode, `make nodemcu-flash-facts`)
   - training/README.md and training/SPARK.md (`ut facts`, chemie-hybrid config, review steps)
   - specs/001-esp32-tiny-lm/contracts/model-format.md (pointer to UTNY v2)
-- [ ] T049 Run `make budget BOARD=nodemcu`, the full CTest suite and pytest. Confirm CI is green, including the `firmware-nodemcu` job with the facts budget entry.
+- [X] T049 Run `make budget BOARD=nodemcu`, the full CTest suite and pytest. Confirm CI is green, including the `firmware-nodemcu` job with the facts budget entry.
 
 ---
 
