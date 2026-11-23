@@ -18,6 +18,7 @@ from . import factgen
 from . import facttable as ft
 from .alphabet import FN_CHAR, Alphabet
 from .augment import load_augment
+from .bench.suite import all_questions
 from .config import Config
 from .datagen import (
     TRAINING_ROOT,
@@ -325,7 +326,8 @@ def generate(cfg: Config, out_dir: Path, seed: int) -> dict:
 
     held_norm = {norm_q(r["prompt"]) for r in heldout_combo + heldout_family + heldout_explain
                  + heldout_refusal}  # fmt: skip
-    lines, dropped_kurz, dropped_held, skipped = [], 0, 0, 0
+    bench_norm = all_questions() - kurz_norm  # specs/007 FR-005; kurzarbeit is counted above
+    lines, dropped_kurz, dropped_held, dropped_bench, skipped = [], 0, 0, 0, 0
     mix = (fact_lines + repeat(explain_lines, d.mix_explain)
            + repeat(other_lines, 1.0 - d.mix_facts - d.mix_explain))  # fmt: skip
     for q, a in mix:
@@ -334,6 +336,8 @@ def generate(cfg: Config, out_dir: Path, seed: int) -> dict:
             dropped_kurz += 1
         elif n in held_norm:
             dropped_held += 1
+        elif n in bench_norm:
+            dropped_bench += 1
         elif not fits(q, a):
             skipped += 1
         else:
@@ -399,6 +403,7 @@ def generate(cfg: Config, out_dir: Path, seed: int) -> dict:
         "kurzarbeit": kurz_status,
         "dropped_kurzarbeit_match": dropped_kurz,
         "dropped_heldout_match": dropped_held,
+        "dropped_bench_match": dropped_bench,
         "skipped_too_long": skipped,
         "too_long": too_long[:20],
         "sha256": sha,

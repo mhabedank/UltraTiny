@@ -105,3 +105,15 @@ def test_datagen_is_deterministic(tmp_path):
     a = generate(cfg, tmp_path / "a", seed=5)
     b = generate(cfg, tmp_path / "b", seed=5)
     assert a["sha256"] == b["sha256"]
+
+
+def test_benchmark_questions_never_in_train(tmp_path, monkeypatch):
+    """specs/007-benchmark-kpi-bericht FR-005: questions of bench/suites are dropped."""
+    import ultratiny.datagen as dg
+
+    q = "Was ist die Hauptstadt von Frankreich?"
+    monkeypatch.setattr(dg, "bench_questions", lambda: {"was ist die hauptstadt von frankreich"})
+    cfg = load_config(ROOT / "configs" / "starter.toml")
+    stats = generate(cfg, tmp_path, seed=1)
+    assert stats["dropped_bench_match"] >= 1
+    assert all(p != q for p, _ in read_train(tmp_path / "train.txt"))

@@ -43,7 +43,7 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 - [X] T002 [P] Create the package skeleton `training/src/ultratiny/bench/__init__.py` with empty modules:
   - `suite.py`, `scoring.py`, `subject.py`, `lm.py`, `pc.py`, `board.py`, `report.py`, `demo.py`
   - each with a module docstring naming its research entry (R2–R10)
-- [ ] T003 [P] Create the entry points with argument parsing only (help text, exit codes 0/1/2 per contracts/cli.md):
+- [X] T003 [P] Create the entry points with argument parsing only (help text, exit codes 0/1/2 per contracts/cli.md):
   - `tools/bench.py` (subcommands `pc`, `board`)
   - `tools/bench_report.py`, `tools/bench_demo.py`, `tools/bench_s2.py`, `tools/bench_export_facts.py`
   - each imports `ultratiny.bench` like the other tools import `ultratiny`
@@ -198,7 +198,7 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 ### Tests for User Story 2
 
-- [ ] T029 [P] [US2] Write `training/tests/test_bench_report.py`:
+- [X] T029 [P] [US2] Write `training/tests/test_bench_report.py`:
   - **verdicts**: F1 +2 points gives "unchanged" and +4 gives "better"; with 3 seeds a change counts only above 2 × spread; exact KPIs count any change
   - **not comparable**: shown on different test-set versions
   - **budget**: a model above the area limit or an arena above 35 KB shows "budget broken"
@@ -208,22 +208,22 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 ### Implementation for User Story 2
 
-- [ ] T030 [US2] Implement the report model in `training/src/ultratiny/bench/report.py` per research.md R9 and contracts/result-format.md "Report":
+- [X] T030 [US2] Implement the report model in `training/src/ultratiny/bench/report.py` per research.md R9 and contracts/result-format.md "Report":
   - group results by `label` and `kind`, merging PC and board results of one label
   - seeds: mean and sample spread
   - Δ to the baseline and to the predecessor
   - verdicts per data-model.md "Comparison report" (better, worse, unchanged, not comparable, not measured, not applicable) using `Suite.thresholds` from the result's suite
   - the changed-answers list
   - overlap and incomplete-run notes
-- [ ] T031 [US2] Implement the budget section in `training/src/ultratiny/bench/report.py`:
+- [X] T031 [US2] Implement the budget section in `training/src/ultratiny/bench/report.py`:
   - limits from `tools/budget_report.py` `PROFILES["nodemcu"]` and `HEADROOM`, plus the roadmap gate arena ≤ 35 KB
   - rows: model, arena and reserve, firmware (when given), fact area, each with value, limit and ok/broken
   - summary flags "budget broken" and "parity broken"
-- [ ] T032 [US2] Implement Markdown and HTML rendering in `training/src/ultratiny/bench/report.py` per research.md R10:
+- [X] T032 [US2] Implement Markdown and HTML rendering in `training/src/ultratiny/bench/report.py` per research.md R10:
   - the same sections in both formats
   - HTML: one self-contained file with inline CSS and light/dark colours, inline SVG for the S2 curve and F1 per property, no JavaScript
   - sorted output with a single "generated" line
-- [ ] T033 [US2] Wire `tools/bench_report.py` per contracts/cli.md (`--baseline`, `--predecessor`, `--ratings`, `--md`, `--html`, `--strict`) and run quickstart §4
+- [X] T033 [US2] Wire `tools/bench_report.py` per contracts/cli.md (`--baseline`, `--predecessor`, `--ratings`, `--md`, `--html`, `--strict`) and run quickstart §4
 
 **Checkpoint**: Any set of result files gives an honest comparison report.
 
@@ -241,7 +241,7 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 ### Tests for User Story 4
 
-- [ ] T034 [P] [US4] Write `training/tests/test_bench_board.py` with a scripted fake link (devlib-compatible `read`/`write`):
+- [X] T034 [P] [US4] Write `training/tests/test_bench_board.py` with a scripted fake link (devlib-compatible `read`/`write`):
   - parse `/info`, `/stats` (`@ut {"type":"sys"…}`) and `/trace json` lines
   - T3 from steps with `pos ≥ 0.9 × ctx_len`
   - an identity mismatch stops the run (exit 2)
@@ -253,7 +253,7 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 ### Implementation for User Story 4
 
-- [ ] T035 [US4] Implement the board run in `training/src/ultratiny/bench/board.py` per research.md R8:
+- [X] T035 [US4] Implement the board run in `training/src/ultratiny/bench/board.py` per research.md R8:
   - with `--port`: RTS reset first (no flashing), so the first `/stats` gives R1 after boot
   - identity check from `/info` against `--model`/`--facts` (data-model.md "Result file" `board`)
   - `/trace json` on for the whole run; pasted pass over the board sample; typed pass for the first `typed` items at 100 ms per character; the T3 prompts; `/trace aus` at the end
@@ -262,11 +262,11 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
   - per-item parity against the PC adapter
   - events for resets, hangs and timeouts (data-model.md "Result file" `events`, `complete`)
   - never sends flash or erase commands
-- [ ] T036 [US4] Wire `tools/bench.py board` per contracts/cli.md (`--port` or `--exec` via `devlib.ExecLink`, `--firmware`, `--sample all|parity`):
+- [X] T036 [US4] Wire `tools/bench.py board` per contracts/cli.md (`--port` or `--exec` via `devlib.ExecLink`, `--firmware`, `--sample all|parity`):
   - T1 typed/pasted median and max, T2 median, T3, R1
   - write the board result JSON
   - exit 1 on any parity mismatch
-- [ ] T037 [US4] Run quickstart §6 (`--exec` against `build/utiny-host --console`, allgemein suite, `--sample parity`) and fix any console parsing differences between host and board output
+- [X] T037 [US4] Run quickstart §6 (`--exec` against `build/utiny-host --console`, allgemein suite, `--sample parity`) and fix any console parsing differences between host and board output
 - [ ] T038 [US4] 🔌 Run quickstart §7 on the NodeMCU with `nodemcu` flashed, with `--firmware ../firmware-nodemcu/.pio/build/nodemcuv2/firmware.bin`:
   - commit `bench/results/nodemcu_allgemein_board_<date>.json`
   - record T1, T2, R1 and the run time (≤ 30 min) in `specs/007-benchmark-kpi-bericht/measurements.md`; the SC-003 comparison with spec 005 is made in T040 with `chemie-nodemcu`
@@ -283,7 +283,7 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 - [ ] T039 [US3] 🖥️ On the Spark, run `tools/bench.py pc --suite ../bench/suites/chemie --model <chemie-nodemcu.utny> --label chemie-nodemcu` (with `--train-data` of its run, if still present) and commit `bench/results/chemie-nodemcu_chemie_pc_<date>.json`
 - [ ] T040 [US3] 🔌 Flash `chemie-nodemcu` (specs/005 quickstart), run `tools/bench.py board --suite ../bench/suites/chemie … --firmware ../firmware-nodemcu/.pio/build/nodemcuv2/firmware.bin` and commit `bench/results/chemie-nodemcu_chemie_board_<date>.json`. Check SC-003: T1 typed and T2 within 10 % of spec 005 (158 ms, 5.1 chars/s) or the difference explained in `specs/007-benchmark-kpi-bericht/measurements.md`. If the board is not available, the baseline report shows the board KPIs as "not measured" with the reason in measurements.md.
-- [ ] T041 [US3] 👤 The user fills in the S3 rating sheets `bench/results/chemie-nodemcu_chemie_pc_<date>.json.s3.tsv` and `bench/results/nodemcu_allgemein_pc.json.s3.tsv` (20 answers each, `grammar_ok` = `ja`/`nein`, data-model.md `Rating sheet.grammar_ok`), so S3 has a value in the baseline (SC-004).
+- [ ] T041 [US3] 👤 The user fills in the S3 rating sheets `bench/results/chemie-nodemcu_chemie_pc_<date>.s3.tsv` and `bench/results/nodemcu_allgemein_pc.s3.tsv` (20 answers each, `grammar_ok` = `ja`/`nein`, data-model.md `Rating sheet.grammar_ok`), so S3 has a value in the baseline (SC-004).
 - [ ] T042 [US3] Generate and commit `bench/results/baseline.md` and `bench/results/baseline.html` with `tools/bench_report.py` from the four results. Check in a clean clone without `models/` and `runs/` that the same command reproduces them (SC-001), and that every KPI shows a value, "not applicable" or a stated reason (SC-004).
 
 **Checkpoint**: The roadmap's comparison point exists in the repository.
@@ -296,8 +296,8 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 **Independent Test**: Quickstart §9 with `chemie-nodemcu` and `nodemcu`: two boards, or one board with `--single` twice and `--merge`.
 
-- [ ] T043 [P] [US5] Write the demo script for this step `bench/demo/007.tsv` (12 questions: chemistry facts, a reverse question, a refusal, a greeting, one capital) per data-model.md "Demo script" (10–15 rows)
-- [ ] T044 [US5] Implement `training/src/ultratiny/bench/demo.py` and wire `tools/bench_demo.py` per contracts/cli.md:
+- [X] T043 [P] [US5] Write the demo script for this step `bench/demo/007.tsv` (12 questions: chemistry facts, a reverse question, a refusal, a greeting, one capital) per data-model.md "Demo script" (10–15 rows)
+- [X] T044 [US5] Implement `training/src/ultratiny/bench/demo.py` and wire `tools/bench_demo.py` per contracts/cli.md:
   - two-board mode, `--single` run JSON and `--merge`
   - Markdown table with #, question, answer A/B and first character A/B (ms)
   - test with two `--a-exec`/`--b-exec` host consoles in `training/tests/test_bench_board.py`
@@ -313,12 +313,12 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 **Independent Test**: Quickstart §5: exit 0 unchanged; exit 1 with the question listed after a simulated change (SC-007).
 
-- [ ] T046 [US6] Implement `--check FILE` in `training/src/ultratiny/bench/pc.py`:
+- [X] T046 [US6] Implement `--check FILE` in `training/src/ultratiny/bench/pc.py`:
   - compare F1–F6, S1, S2, the S3 answers and every `items[].class` with the committed result; ignore `env`, timings and identity
   - print each changed KPI and question
   - exit 1 on any difference, exit 2 on a pin mismatch
-- [ ] T047 [P] [US6] Add a test in `training/tests/test_bench_pc.py`: checking against a copy with one changed item class fails, names that item, and an unchanged copy passes
-- [ ] T048 [US6] Add the CI steps in `.github/workflows/ci.yml`:
+- [X] T047 [P] [US6] Add a test in `training/tests/test_bench_pc.py`: checking against a copy with one changed item class fails, names that item, and an unchanged copy passes
+- [ ] T048 [US6] Add the CI steps in `.github/workflows/ci.yml` (the `runtime-host` host-console step is in; the `python` `--check` step follows once T023 has committed the reference result):
   - `python` job after pytest: `uv run python ../tools/bench.py pc --suite ../bench/suites/allgemein --model ../models/nodemcu.utny --check ../bench/results/nodemcu_allgemein_pc.json`
   - `runtime-host` job after the parity step: `tools/bench.py board --exec "../build/utiny-host --model ../models/nodemcu.utny --console" --sample parity`
   - confirm the python step finishes within 10 min (FR-024) and record its time in measurements.md
@@ -331,13 +331,13 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 **Purpose**: Training exclusion, licenses, documentation
 
-- [ ] T049 Drop benchmark questions from training data (FR-005):
+- [X] T049 Drop benchmark questions from training data (FR-005):
   - in `training/src/ultratiny/datagen.py` (v1 pipeline) and `training/src/ultratiny/hybrid.py` (beside the `kurzarbeit` drop), remove every training prompt whose normalised form equals one from `ultratiny.bench.suite.all_questions()`
   - report the count as `dropped_bench_match` in the data summary
   - add a test in `training/tests/test_datagen.py`
   - check that `make hybrid-smoke` and `test_determinism.py` still pass
 - [ ] T050 [P] Update `DATA_LICENSES.md`: add a `public-domain` row for the S1 general text (work, author, source URL); note that everything under `bench/` is evaluation-only, that its questions and topic texts were proposed by an allowed local LLM (`llm:<model>` per row in `bench/suites/*/proposals/`, spec FR-006) and spot-checked by the user, and that expected answers never come from the LLM
-- [ ] T051 [P] Complete `bench/README.md` with the commands of contracts/cli.md, the re-pin procedure (suite version bump), the rating-sheet workflow for S3 and the rule that test sets never enter training
+- [X] T051 [P] Complete `bench/README.md` with the commands of contracts/cli.md, the re-pin procedure (suite version bump), the rating-sheet workflow for S3 and the rule that test sets never enter training
 - [ ] T052 [P] Update `specs/ROADMAP.md` step 1: mark spec 007 as done once T042 is committed, link `bench/results/baseline.md`, and replace the KPI draft table with a link to contracts/result-format.md "KPI definitions"
 - [ ] T053 Run the whole quickstart.md (§1–§6, plus §7–§9 where hardware was available), check that `ruff check`, `ruff format --check` and `pytest -q` pass, and complete `specs/007-benchmark-kpi-bericht/measurements.md`
 

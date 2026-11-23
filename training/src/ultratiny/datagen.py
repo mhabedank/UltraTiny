@@ -296,6 +296,13 @@ def augmented_pairs(facts, rels, aug: Augment, train_pairs, held_pairs, alphabet
     return out, stats
 
 
+def bench_questions() -> set[str]:
+    """Normalised questions of all benchmark suites (specs/007-benchmark-kpi-bericht FR-005)."""
+    from .bench.suite import all_questions
+
+    return all_questions()
+
+
 def generate(cfg: Config, out_dir: Path, seed: int, alphabet: Alphabet | None = None) -> dict:
     alphabet = alphabet or Alphabet()
     base = TRAINING_ROOT
@@ -327,6 +334,9 @@ def generate(cfg: Config, out_dir: Path, seed: int, alphabet: Alphabet | None = 
 
     # Noisy variants must never reproduce a held-out prompt (would leak into SC-004).
     held_norm = {norm(q) for q, _, _ in held_pairs}
+    # Benchmark questions (bench/suites, specs/007 FR-005) never enter training.
+    bench_norm = bench_questions()
+    dropped_bench = 0
     by_id = {f.id: f for f in facts}
     for q, a, fid in train_pairs:
         f = by_id[fid]
@@ -334,6 +344,9 @@ def generate(cfg: Config, out_dir: Path, seed: int, alphabet: Alphabet | None = 
         variants = [q] + [add_noise(q, rng, protect) for _ in range(cfg.data.noisy_copies)]
         for v in dict.fromkeys(variants):  # dedupe, keep order
             if norm(v) in held_norm:
+                continue
+            if norm(v) in bench_norm:
+                dropped_bench += 1
                 continue
             if fits(v, a):
                 train_lines.extend([f"{v}\t{a}"] * rels[f.relation].repeat)
@@ -372,6 +385,7 @@ def generate(cfg: Config, out_dir: Path, seed: int, alphabet: Alphabet | None = 
         "heldout": len(held),
         "demo": len(demo),
         "skipped_too_long": skipped,
+        "dropped_bench_match": dropped_bench,
         "augment": aug_stats,
         "sha256": sha,
     }

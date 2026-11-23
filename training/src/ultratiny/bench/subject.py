@@ -18,7 +18,7 @@ from pathlib import Path
 import numpy as np
 
 from .. import facttable as ft
-from ..reference import Reference
+from ..reference import Reference, arena_size
 
 ANSWER_RESERVE = 32  # UT_ANSWER_RESERVE in runtime/include/utiny_console.h
 
@@ -54,7 +54,13 @@ class TransformerSubject:
         """Console limit: <bos> + question + <sep> + 32 reserved answer positions (console.c)."""
         return self.ctx_len - 2 - ANSWER_RESERVE
 
+    def console_text(self, question: str) -> str:
+        """What the console keeps of a typed question: characters outside the alphabet are
+        ignored (console.c "Zeichen ... unbekannt, ignoriert"), so the reference drops them too."""
+        return "".join(ch for ch in question if ch in self.alphabet)
+
     def answer(self, question: str) -> tuple[str, bool]:
+        question = self.console_text(question)
         if len(question) > self.max_question():
             return "", True  # the console refuses the extra characters
         toks = self.ref.generate(question, max_len=self.ctx_len - 3)["tokens"]
@@ -80,6 +86,7 @@ class TransformerSubject:
                 "params": int(m.n_params),
                 "ctx_len": int(self.ctx_len),
                 "vocab": int(m.cfg.vocab_size),
+                "arena": int(arena_size(m.cfg)),
                 "arch": "transformer",
                 "name": meta.get("name"),
                 "git": meta.get("git"),

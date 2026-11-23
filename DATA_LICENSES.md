@@ -20,6 +20,13 @@ numbers or formulas, key term present, table facts excluded) and is reviewed by 
 (`reviewed = yes`) before it is used for training. No fact value comes from an LLM; facts are
 answered from the fact table (`own`, `wikidata`, `computed`).
 
+Benchmark data (specs/007-benchmark-kpi-bericht): everything under `bench/` is evaluation-only and
+never used for training (the data generators drop benchmark questions). Its questions and topic
+texts are proposed by one of the local models listed under `llm` (`llm:<model>` per row in
+`bench/suites/*/proposals/`) and spot-checked by the user; expected answers come from the project's
+own fact data, never from an LLM. Public-domain texts used as S1 test text are listed below with
+work, author and source.
+
 Models trained from this data (`models/*.utny`) are released under MIT, like the code.
 
 ## Notes

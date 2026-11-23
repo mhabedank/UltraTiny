@@ -154,6 +154,8 @@ class Suite:
             "version": self.version,
             "files": dict(sorted(self.pins.items())),
             "sets": self.versions(),
+            "thresholds": dict(sorted(self.thresholds.items())),
+            "s2_distances": list(self.s2_cfg.get("distances", [])),
         }
 
 
