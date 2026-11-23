@@ -1,0 +1,19 @@
+question	kind	source
+Hi there	Begrüßungen	llm:qwen3.6:35b
+Moin moin	Begrüßungen	llm:qwen3.6:35b
+Gruß Gott	Begrüßungen	llm:qwen3.6:35b
+Hey dir	Begrüßungen	llm:qwen3.6:35b
+Bist du ein Bot?	Fragen, wer oder was der Chatbot ist	llm:qwen3.6:35b
+Hallo, wer fragst du?	Fragen, wer oder was der Chatbot ist	llm:qwen3.6:35b
+Kennst du Berlin?	Fragen, wer oder was der Chatbot ist	llm:qwen3.6:35b
+Welches Land ist Paris?	Fragen, wer oder was der Chatbot ist	llm:qwen3.6:35b
+Hauptstadt Frankreich?	Fragen, worauf der Chatbot läuft	llm:qwen3.6:35b
+Symb. Element Eisen?	Fragen, worauf der Chatbot läuft	llm:qwen3.6:35b
+Hauptstadt Spanien?	Fragen, worauf der Chatbot läuft	llm:qwen3.6:35b
+Chem. Kürzel Sauerstoff?	Fragen, worauf der Chatbot läuft	llm:qwen3.6:35b
+Danke, auf Wiedersehen!	Dank und Verabschiedung	llm:qwen3.6:35b
+Vielen Dank, tschüss.	Dank und Verabschiedung	llm:qwen3.6:35b
+Dankeschön, bis bald.	Dank und Verabschiedung	llm:qwen3.6:35b
+Danke, ich verabschiede mich.	Dank und Verabschiedung	llm:qwen3.6:35b
+Land mit Berlin als Hauptstad.	Bitten um einen kurzen Satz über ein Land	llm:qwen3.6:35b
+Welches Land hat Paris als Hauptstad?	Bitten um einen kurzen Satz über ein Land	llm:qwen3.6:35b

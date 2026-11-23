@@ -1,0 +1,18 @@
+question	kind	source
+Hallöchen	Begrüßungen	llm:qwen3.6:35b
+Grüß Gott	Begrüßungen	llm:qwen3.6:35b
+Bist du ein Lehrer?	Fragen, wer oder was der Chatbot ist	llm:qwen3.6:35b
+Kannst du Chemie?	Fragen, wer oder was der Chatbot ist	llm:qwen3.6:35b
+Bist du menschlich?	Fragen, wer oder was der Chatbot ist	llm:qwen3.6:35b
+Erkläre Isomere	Bitten, einen Chemie-Begriff kurz zu erklären	llm:qwen3.6:35b
+Wat ist ein Katalysator?	Bitten, einen Chemie-Begriff kurz zu erklären	llm:qwen3.6:35b
+Molekül vs Atom?	Bitten, einen Chemie-Begriff kurz zu erklären	llm:qwen3.6:35b
+Puffersystem erklären	Bitten, einen Chemie-Begriff kurz zu erklären	llm:qwen3.6:35b
+Tschüss, danke!	Dank und Verabschiedung	llm:qwen3.6:35b
+Bis bald, danke.	Dank und Verabschiedung	llm:qwen3.6:35b
+Dankeschön, ciao.	Dank und Verabschiedung	llm:qwen3.6:35b
+Tschüs und danke.	Dank und Verabschiedung	llm:qwen3.6:35b
+Hilf mir bei den Hausaufgaben.	Fragen, die der Chatbot höflich ablehnen sollte	llm:qwen3.6:35b
+Lösung für Test morgen?	Fragen, die der Chatbot höflich ablehnen sollte	llm:qwen3.6:35b
+Ich will das Ergebnis haben.	Fragen, die der Chatbot höflich ablehnen sollte	llm:qwen3.6:35b
+Mach die Arbeit für mich fertig.	Fragen, die der Chatbot höflich ablehnen sollte	llm:qwen3.6:35b
