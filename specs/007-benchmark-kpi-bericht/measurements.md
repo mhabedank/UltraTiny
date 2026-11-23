@@ -89,3 +89,28 @@ Measured by the user on a Mac (`uv run`, `--jobs 8`): 2,891 questions + S1 + S2 
 
 Baseline report: `bench/results/baseline.md` / `.html` from the two committed PC results. Board KPIs
 (T1-T3, R1) and S3 stay "nicht gemessen" until T038, T040 and T041.
+
+## Board run `chemie-nodemcu` (T040, first attempt)
+
+NodeMCU v2 (CP2102, `/dev/tty.usbserial-0001`), firmware 293,232 B, run by the user on 2026-11-23;
+170 questions in 62 min. Result: `bench/results/chemie-nodemcu_chemie_board_20261123.json`.
+
+| KPI | Value | Spec 005 (hand measurement) |
+|-----|-------|------------------------------|
+| T1 typed (median of 15) | 179 ms (max 188) | 158 ms, one typed prompt: +13 % |
+| T1 pasted (median) | 184 ms (max 225) | not measured |
+| T2 (characters 2…n) | 4.7 chars/s | 5.1 chars/s (counted from Enter): −8 % |
+| T3 (steps at ≥ 94 of 104 positions) | 3.8 chars/s | not measured |
+| R1 | arena 35,504 / 36,864 B, free heap 4,960 B at boot and at the end | 4,960 B |
+
+SC-003 (± 10 %): T2 holds; T1 is 13 % above the single spec-005 sample. The benchmark uses the median
+of 15 different questions (longer ones need more prefill after Enter), so the gap is a different
+sample, not a slower board; it is kept as the new reference.
+
+Serial problems in this run: 4 "hangs" (the answer stopped mid-way, no prompt within 60 s) and one
+answer with trace JSON spliced into it (`… 10 hoch 23 Tei` + `s":256356,…`): bytes were lost on the
+serial line while the board sent `/trace json` output (≈ 200 bytes per character). Board and PC agreed
+on all 165 other answers. Fix (after this run): the JSON trace is switched on only for the 10 T3
+prompts and for the R1 reading, T2 comes from the `/stats` text, and a question whose answer is lost or
+differs is asked once more (event `retry_ok` when the second answer matches). A re-run with this
+version replaces the result.

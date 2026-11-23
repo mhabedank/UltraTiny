@@ -82,6 +82,21 @@ def split_answer(raw: str) -> tuple[str, list[dict]]:
     return "\n".join(ans).strip(), parse_ut(text)
 
 
+def parse_stats_text(txt: str) -> dict:
+    """/stats text: characters, first step and mean step time of the last answer (no trace)."""
+    out: dict = {}
+    if m := re.search(r"Letzte Antwort: (\d+) Zeichen", txt):
+        out["n"] = int(m.group(1))
+    if m := re.search(r"erstes Zeichen nach ([\d.]+) ms, gesamt ([\d.]+) ms", txt):
+        out["first_step_ms"], out["total_ms"] = float(m.group(1)), float(m.group(2))
+    if m := re.search(r"ms pro Zeichen: \S+ ([\d.]+), min", txt):
+        out["avg_ms"] = float(m.group(1))
+    n, avg, first = out.get("n"), out.get("avg_ms"), out.get("first_step_ms")
+    if n and n >= 2 and avg and first is not None and avg * n - first > 0:
+        out["t2"] = (n - 1) * 1000.0 / (avg * n - first)
+    return out
+
+
 def step_rates(records: list[dict], ctx_len: int) -> dict:
     """T2 over characters 2..n (no first-character wait), T3 over steps at pos >= 0.9 ctx."""
     steps = [r for r in records if r.get("type") == "token" and not r.get("stop")]
@@ -129,15 +144,19 @@ class BoardRun:
                 self.dev.drain(1.0)
                 self.dev.type("\r")
                 self.dev.read_until(self.dev_prompt(), timeout=30)
-            self.command("/trace json")
+            self.command("/trace aus")
         except Exception as e:  # noqa: BLE001 - keep measuring the rest
             self.events.append({"id": item_id, "event": "recover_failed", "detail": str(e)[:200]})
 
     def dev_prompt(self) -> str:
         return devlib().PROMPT
 
-    def ask(self, it: Item, typed: bool) -> dict:
+    def ask(self, it: Item, typed: bool, trace: bool = False) -> dict:
+        """One question. Without trace, T2 comes from the /stats text (small output); the JSON
+        trace (~200 bytes per character) is only switched on for the T3 prompts."""
         rec: dict = {"set": it.set, "id": it.id, "question": it.question, "typed": typed}
+        if trace:
+            self.command("/trace json")
         try:
             q = self.subject.console_text(it.question)  # the console would drop the rest
             raw = self.dev.ask(q, TYPED_DELAY if typed else 0.0)
@@ -150,13 +169,23 @@ class BoardRun:
             rec["error"] = "reset"
             return rec
         answer, records = split_answer(raw)
+        if trace:
+            self.command("/trace aus")
         info = parse_info(self.command("/info"))
         rec.update(answer=answer, first_ms=info.get("first_ms"), cps=info.get("cps"))
-        rec.update(step_rates(records, self.subject.ctx_len))
+        if trace:
+            rec.update(step_rates(records, self.subject.ctx_len))
+        else:
+            st = parse_stats_text(self.command("/stats"))
+            if "t2" in st:
+                rec["t2"] = st["t2"]
         return rec
 
     def stats(self) -> dict:
+        """R1 from the /stats JSON line, which the console prints only in trace json mode."""
+        self.command("/trace json")
         recs = parse_ut(self.command("/stats"))
+        self.command("/trace aus")
         return next((r for r in recs if r.get("type") == "sys"), {})
 
 
@@ -213,7 +242,6 @@ def run_board(
     probs = identity_problems(info, ident, facts_sha4(facts))
     if probs:
         raise SuiteError("board runs a different model or fact table:\n  " + "\n  ".join(probs))
-    run.command("/trace json")
     sys_start = run.stats()
     items, n_typed, t3_ids = sample_items(suite, mode)
     scorer = Scorer(suite)
@@ -221,9 +249,22 @@ def run_board(
     records = []
     prog = Progress("Board-Fragen", len(items), log)
     for i, it in enumerate(items):
-        rec = run.ask(it, typed=False)
+        t3 = it.id in t3_ids
+        rec = run.ask(it, typed=False, trace=t3)
+        pc_answer, _ = subject.answer(it.question)
+        ok = "answer" in rec and norm_answer(rec["answer"]) == norm_answer(pc_answer)
+        if not ok:  # ask once more: a lost byte on the serial line is no parity break
+            first = rec
+            rec = run.ask(it, typed=False, trace=t3)
+            if "answer" in rec and norm_answer(rec["answer"]) == norm_answer(pc_answer):
+                run.events.append(
+                    {
+                        "id": it.id,
+                        "event": "retry_ok",
+                        "detail": str(first.get("answer", first.get("error")))[-200:],
+                    }
+                )
         if "answer" in rec:
-            pc_answer, _ = subject.answer(it.question)
             rec["parity"] = norm_answer(rec["answer"]) == norm_answer(pc_answer)
             if not rec["parity"]:
                 rec["pc_answer"] = pc_answer
@@ -236,7 +277,6 @@ def run_board(
                 rec["first_ms_typed"] = t["first_ms"]
         prog.step()
     sys_end = run.stats()
-    run.command("/trace aus")
 
     def med(xs):
         return round(statistics.median(xs), 1) if xs else None
@@ -283,7 +323,8 @@ def run_board(
     for k in ("F1", "F2", "F3", "F4", "F5", "F6", "R2", "R3", "R4", "S1", "S2", "S3"):
         kpis[k] = not_measured("PC KPI")
     fw = Path(firmware).stat().st_size if firmware else None
-    complete = not run.events and all("answer" in r for r in records)
+    lost = [e for e in run.events if e["event"] != "retry_ok"]
+    complete = not lost and all("answer" in r for r in records)
     return {
         "format": RESULT_FORMAT,
         "kind": "board",

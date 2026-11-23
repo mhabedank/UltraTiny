@@ -25,6 +25,7 @@ class FakeConsole:
         self.out = bytearray(b"\r\nUltraTiny v0 \xe2\x80\x94 " + board.BANNER.encode() + b"\r\n> ")
         self.line = ""
         self.json = False
+        self.last_n = 0
 
     def read(self):
         data, self.out = bytes(self.out), bytearray()
@@ -64,9 +65,13 @@ class FakeConsole:
                 "arena_need": 35504,
                 "arena_buf": 36864,
             }
-            self.say(
-                "\r\n  Heap ok" + (f"\r\n@ut {json.dumps(sysj)}" if self.json else "") + "\r\n> "
+            last = (
+                f"\r\nLetzte Antwort: {self.last_n} Zeichen (Ende: eos), Prefill 10 Token"
+                f"\r\n  erstes Zeichen nach 200.00 ms, gesamt {200.0 * self.last_n:.1f} ms"
+                ", 5.0 Zeichen/s\r\n  ms pro Zeichen: Ø 200.00, min 200.00, max 200.00"
             )
+            js = f"\r\n@ut {json.dumps(sysj)}" if self.json else ""
+            self.say("\r\n  Heap ok" + last + js + "\r\n> ")
         elif line == self.hang_on:
             return
         elif line == self.reset_on:
@@ -81,6 +86,7 @@ class FakeConsole:
             ans = self.answers.get(line, "?")
             if line == self.wrong_on:
                 ans += "x"
+            self.last_n = len(ans)
             self.say("\r\n" + ans)
             if self.json:
                 for k, ch in enumerate(ans):
@@ -202,3 +208,34 @@ def test_demo_on_two_host_consoles(tmp_path):
             dev.close()
     assert [r["answer"] for r in runs[0]["rows"]] == [r["answer"] for r in runs[1]["rows"]]
     assert "Paris" in demo.merge_markdown(*runs)
+
+
+def test_stats_text_gives_t2_without_trace():
+    txt = (
+        "Letzte Antwort: 41 Zeichen (Ende: eos), Prefill 40 Token\r\n  erstes Zeichen nach "
+        "250.00 ms, gesamt 8450.0 ms, 4.9 Zeichen/s\r\n  ms pro Zeichen: \u00d8 206.10, min 1"
+    )
+    st = board.parse_stats_text(txt)
+    assert st["n"] == 41 and st["first_step_ms"] == 250.0
+    assert st["t2"] == pytest.approx(40 * 1000 / (206.10 * 41 - 250.0))
+
+
+def test_transmission_glitch_is_retried(setup):
+    """A garbled answer that is right on the second try counts as parity ok (event retry_ok)."""
+    suite, ident, answers, items = setup
+
+    class Flaky(FakeConsole):
+        glitched = False
+
+        def handle(self, line):
+            if line == items[0].question and not self.glitched:
+                self.glitched = True
+                self.say("\r\nkaputt\r\n> ")
+                return
+            super().handle(line)
+
+    dl = board.devlib()
+    dev = dl.Device(link=Flaky(ident, answers), timeout=1.0)
+    r = board.run_board(suite, MODEL, None, dev, "fake", log=lambda *_: None)
+    assert r["items"][0]["parity"] is True
+    assert [e["event"] for e in r["events"]] == ["retry_ok"] and r["complete"]

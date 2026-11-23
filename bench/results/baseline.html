@@ -22,10 +22,11 @@ svg text{fill:var(--muted);font-size:11px}svg .grid{stroke:var(--line)}
 .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px}
 details{margin:8px 0}summary{cursor:pointer}
 </style></head><body><main>
-<h1>Benchmark-Bericht</h1><p class='muted'>erzeugt 2026-11-23 17:43 · Baseline <b>chemie-nodemcu</b></p>
+<h1>Benchmark-Bericht</h1><p class='muted'>erzeugt 2026-11-23 19:06 · Baseline <b>chemie-nodemcu</b></p>
+<p><span class='flag'>parity broken</span></p>
 <ul><li>nodemcu gegen chemie-nodemcu: <span class='besser'>1 besser</span>, <span class='schlechter'>0 schlechter</span>, 1 unverändert (andere Suite, nur Ressourcen vergleichbar)</li></ul>
 <h2>Schritte</h2><div class='wrap'><table><tr><th>Schritt</th><th>Suite</th><th>Seeds</th><th>Board</th><th>Datum</th><th>Modell</th></tr>
-<tr><td>chemie-nodemcu</td><td>chemie v1</td><td class='n'>1</td><td>nein</td><td>2026-11-23</td><td><code>7de799937683</code></td></tr>
+<tr><td>chemie-nodemcu</td><td>chemie v1</td><td class='n'>1</td><td>ja</td><td>2026-11-23</td><td><code>7de799937683</code></td></tr>
 <tr><td>nodemcu</td><td>allgemein v1</td><td class='n'>1</td><td>nein</td><td>2026-11-23</td><td><code>ef7ab9be0ff6</code></td></tr>
 </table></div><h2>Kennzahlen</h2><div class='wrap'><table><tr><th>KPI</th><th></th>
 <th>chemie-nodemcu</th>
@@ -65,23 +66,23 @@ details{margin:8px 0}summary{cursor:pointer}
 <td></td></tr>
 <tr><th colspan='7'>Tempo</th></tr>
 <tr><td><b>T1</b> erstes Zeichen, getippt (ms)</td><td>↓</td>
-<td class='n'>nicht gemessen</td>
+<td class='n'>179</td>
 <td class='n'>nicht gemessen</td>
 <td class='n nicht gemessen'>nicht gemessen</td>
 <td></td></tr>
 <tr><td><b>T2</b> Zeichen/s</td><td>↑</td>
-<td class='n'>nicht gemessen</td>
+<td class='n'>4.7</td>
 <td class='n'>nicht gemessen</td>
 <td class='n nicht gemessen'>nicht gemessen</td>
 <td></td></tr>
 <tr><td><b>T3</b> Zeichen/s bei vollem Kontext</td><td>↑</td>
-<td class='n'>nicht gemessen</td>
+<td class='n'>3.8</td>
 <td class='n'>nicht gemessen</td>
 <td class='n nicht gemessen'>nicht gemessen</td>
 <td></td></tr>
 <tr><th colspan='7'>Ressourcen</th></tr>
 <tr><td><b>R1</b> Arena (B)</td><td>↓</td>
-<td class='n'>nicht gemessen</td>
+<td class='n'>35.504</td>
 <td class='n'>nicht gemessen</td>
 <td class='n nicht gemessen'>nicht gemessen</td>
 <td></td></tr>
@@ -119,6 +120,7 @@ details{margin:8px 0}summary{cursor:pointer}
 </table></div><h2>Budget</h2><div class='wrap'><table><tr><th>Schritt</th><th>Posten</th><th>Wert (B)</th><th>Grenze (B)</th><th>Status</th><th>Regel</th></tr>
 <tr><td>chemie-nodemcu</td><td>Modell (Flash)</td><td class='n'>601.412</td><td class='n'>619.315</td><td><span class='ok'>ok</span></td><td>Modellbereich − 10 %</td></tr>
 <tr><td>chemie-nodemcu</td><td>Arena (RAM)</td><td class='n'>35.504</td><td class='n'>35.840</td><td><span class='ok'>ok</span></td><td>≤ 35 KB und ≥ 10 % Reserve</td></tr>
+<tr><td>chemie-nodemcu</td><td>Firmware</td><td class='n'>293.232</td><td class='n'>324.403</td><td><span class='ok'>ok</span></td><td>Firmwarebereich − 10 %</td></tr>
 <tr><td>nodemcu</td><td>Modell (Flash)</td><td class='n'>601.404</td><td class='n'>619.315</td><td><span class='ok'>ok</span></td><td>Modellbereich − 10 %</td></tr>
 <tr><td>nodemcu</td><td>Arena (RAM)</td><td class='n'>35.504</td><td class='n'>35.840</td><td><span class='ok'>ok</span></td><td>≤ 35 KB und ≥ 10 % Reserve</td></tr>
 </table></div>
