@@ -15,6 +15,9 @@ Exit codes: 0 ok, 1 measured but a check failed (--check, parity), 2 usage or in
 from __future__ import annotations
 
 import argparse
+import os
+import shutil
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -89,6 +92,14 @@ def cmd_pin(a) -> int:
     return 0
 
 
+def keep_awake() -> None:
+    """macOS: keep the Mac awake while this process runs (a sleeping Mac stops reading the serial
+    port, so board answers get lost). `caffeinate -w` ends together with this process."""
+    if sys.platform == "darwin" and shutil.which("caffeinate"):
+        subprocess.Popen(["caffeinate", "-dims", "-w", str(os.getpid())])
+        print("bench: caffeinate is keeping the Mac awake during the run", file=sys.stderr)
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
@@ -126,6 +137,7 @@ def main(argv=None) -> int:
     p.add_argument("--suite", required=True)
     p.set_defaults(fn=cmd_pin)
     a = ap.parse_args(argv)
+    keep_awake()
     return a.fn(a)
 
 

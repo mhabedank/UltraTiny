@@ -15,7 +15,10 @@ The runner never flashes; it asks the questions on whatever is running on the bo
 from __future__ import annotations
 
 import argparse
+import os
 import shlex
+import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -29,6 +32,14 @@ def device(port: str | None, cmd: str | None, timeout: float):
     if port:
         return dl.Device(port, timeout=timeout), True
     return dl.Device(link=dl.ExecLink(shlex.split(cmd)), timeout=timeout), False
+
+
+def keep_awake() -> None:
+    """macOS: keep the Mac awake while this process runs (a sleeping Mac stops reading the serial
+    port, so board answers get lost). `caffeinate -w` ends together with this process."""
+    if sys.platform == "darwin" and shutil.which("caffeinate"):
+        subprocess.Popen(["caffeinate", "-dims", "-w", str(os.getpid())])
+        print("bench: caffeinate is keeping the Mac awake during the run", file=sys.stderr)
 
 
 def main(argv=None) -> int:
@@ -49,6 +60,7 @@ def main(argv=None) -> int:
     ap.add_argument("--out", required=True)
     ap.add_argument("--timeout", type=float, default=60.0)
     a = ap.parse_args(argv)
+    keep_awake()
     if a.merge:
         ra, rb = (demo.load_run(Path(p)) for p in a.merge)
         Path(a.out).write_text(demo.merge_markdown(ra, rb), encoding="utf-8")
