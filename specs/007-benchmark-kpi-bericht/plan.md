@@ -193,7 +193,7 @@ same hash.
 | Value matching misclassifies free-text answers (e.g. a wrong element named in a sentence) | Subject-name rule (R5), hand-labelled sample with ≥ 49/50 agreement in pytest (SC-008); every class is visible per question in the report |
 | PC run too slow for CI | allgemein suite small; `--jobs`; measured in phase 3 before the CI step is enabled |
 | NumPy update changes floats | `uv.lock` pins NumPy; `--check` fails loudly, which is the desired signal |
-| Board answers differ in whitespace/line endings | Compare after the same console normalisation `device_parity.py` uses |
+| Board answers differ in whitespace/line endings | Compare after one fixed normalisation (CRLF → LF, trailing spaces removed), defined in `board.py` and tested |
 | `chemie-nodemcu` not reachable for the board run | Board KPIs stay "not measured" in the baseline with the reason; PC baseline is enough for later PC comparisons |
 
 ## Complexity Tracking
