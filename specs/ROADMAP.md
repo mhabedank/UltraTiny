@@ -56,6 +56,8 @@ Spec 007 legt Definition, Testmenge und Messverfahren jeder Kennzahl fest. Entwu
 
 ## Die Schritte
 
+Jeder Schritt nennt unter **Grundlage** die Befunde aus der Recherche, auf die er sich stützt (§ = Nummer des Befunds im jeweiligen Bericht). Eine neue Spec liest diese Stellen vor dem Schreiben.
+
 ```text
  007 Benchmark ──┬── 006 abschließen ── 008 Wissens-Compiler ── 009 Fragen verstehen ── 010 Antworten bauen
                  │                                                                         │
@@ -67,6 +69,8 @@ trainiert werden. Spec 011 kann starten, sobald 007 steht; es ist ein Labor-Schr
 Entscheidungen für 012 und 013 liefert.
 
 ### Schritt 1 · Spec 007: Benchmark und KPI-Bericht
+
+**Grundlage:** [01 §8 Methodik](../research/2026-11-architektur/01-performance-boost.md) (Budget zuerst, mehrere Seeds, Rauschschwelle), [04 Offene Fragen](../research/2026-11-architektur/04-architekturen.md#offene-fragen) (S1/S2 als Messgrößen)
 
 - **Ziel:** Fortschritt sichtbar machen. Ein Befehl misst ein Modell (mit oder ohne Wissens-Image)
   auf dem PC, ein zweiter auf dem Board; ein dritter erzeugt den Vergleichsbericht.
@@ -84,6 +88,8 @@ Entscheidungen für 012 und 013 liefert.
 
 ### Schritt 2 · Spec 006 abschließen: Hybrid-Chemielehrer
 
+**Grundlage:** [01 §6 Wissensgrenze 2 Bit/Parameter](../research/2026-11-architektur/01-performance-boost.md), [02 §5 Vorlage plus Lücken](../research/2026-11-architektur/02-domaenenmodell.md), [02 §6 Faktenauswahl fest programmieren](../research/2026-11-architektur/02-domaenenmodell.md)
+
 - **Ziel:** Die offenen Aufgaben T033 bis T047 erledigen: Kurzerklärungen prüfen, Kurzarbeit
   pinnen, `chemie-hybrid` auf dem Spark trainieren, Parität, Board-Messung.
 - **Neu dazu:** Messung zusätzlich mit dem Benchmark aus 007.
@@ -92,6 +98,8 @@ Entscheidungen für 012 und 013 liefert.
 - **Fertig, wenn:** SC-001 bis SC-006 aus Spec 006 gemessen (erreicht oder mit vereinbarter Anpassung).
 
 ### Schritt 3 · Spec 008: Wissens-Compiler (themenunabhängig)
+
+**Grundlage:** [02 §1–2 Faktenspeicher und Bytes pro Fakt](../research/2026-11-architektur/02-domaenenmodell.md), [03 §1–3 Regeln am PC ausrechnen](../research/2026-11-architektur/03-baukasten-potenzial.md), [03 §4–6 Wörterbuch und IDs pro Beziehung](../research/2026-11-architektur/03-baukasten-potenzial.md)
 
 - **Ziel:** Aus der Chemie-Faktentabelle wird ein allgemeiner Baukasten: Thema rein, Wissens-Image raus.
 - **Inhalt:**
@@ -107,6 +115,8 @@ Entscheidungen für 012 und 013 liefert.
 
 ### Schritt 4 · Spec 009: Fragen verstehen
 
+**Grundlage:** [02 §3–5 kleiner Parser, knappe Ausgabesprache, Vorlagen](../research/2026-11-architektur/02-domaenenmodell.md), [03 §9 HDC als unscharfer Index](../research/2026-11-architektur/03-baukasten-potenzial.md)
+
 - **Ziel:** Frageart und Begriffe zuverlässiger erkennen, auch bei neuen Formulierungen, Tippfehlern
   und gebeugten Formen („Natriums“).
 - **Inhalt:**
@@ -120,6 +130,8 @@ Entscheidungen für 012 und 013 liefert.
 
 ### Schritt 5 · Spec 010: Antworten bauen
 
+**Grundlage:** [02 §5–6](../research/2026-11-architektur/02-domaenenmodell.md); deutsche Grammatik-Vorlagen sind in der Recherche unbelegt ([03 Vorbehalte](../research/2026-11-architektur/03-baukasten-potenzial.md#vorbehalte)), also selbst messen
+
 - **Ziel:** Korrekte deutsche Sätze aus Fakten: Artikel, Fälle, Einheiten, mehrere Fakten in einer
   Antwort, Definitionen aus dem Wörterbuch.
 - **Inhalt:** Grammatik-Vorlagen mit Beugungsregeln, themenunabhängig; Sprachmodell nur noch für
@@ -127,6 +139,8 @@ Entscheidungen für 012 und 013 liefert.
 - **Demo:** Antworten auf zusammengesetzte Fragen („Ordnungszahl und Masse von Natrium?“), S3 rauf.
 
 ### Schritt 6 · Spec 011: Kern-Labor
+
+**Grundlage:** [04 §1–3 minGRU, RWKV, xLSTM](../research/2026-11-architektur/04-architekturen.md), [04 §5 Kompression als Vorhersage](../research/2026-11-architektur/04-architekturen.md), [01 §3–5 Bit-Tricks und Speicherbandbreite](../research/2026-11-architektur/01-performance-boost.md), [01 §8 Methodik](../research/2026-11-architektur/01-performance-boost.md)
 
 - **Ziel:** Entscheiden, welcher Modellkern den Transformer ersetzt, bevor gebaut wird.
 - **Inhalt:**
@@ -139,12 +153,16 @@ Entscheidungen für 012 und 013 liefert.
 
 ### Schritt 7 · Spec 012: Neuer Kern auf dem Board
 
+**Grundlage:** [04 §1 minGRU](../research/2026-11-architektur/04-architekturen.md), [01 §1 fester Zustand statt KV-Cache](../research/2026-11-architektur/01-performance-boost.md)
+
 - **Ziel:** Der Gewinner aus 011 (Arbeitshypothese: minGRU) ersetzt den Transformer als Sprachteil.
 - **Inhalt:** neues Modellformat mit Architektur-Feld, C-Kernel, Parität, Training auf dem Spark.
 - **Demo:** gleiche Faktenqualität, Kontext nicht mehr auf 104 Zeichen begrenzt (S2), T3 so schnell
   wie T2, weniger RAM.
 
 ### Schritt 8 · Spec 013: Flash-Gedächtnis und Mischer
+
+**Grundlage:** [04 §4 Mischer zwischen Zähl- und Netzmodell](../research/2026-11-architektur/04-architekturen.md), [04 §6 Engram, Tabellen in langsamem Speicher](../research/2026-11-architektur/04-architekturen.md)
 
 - **Ziel:** Die neue Bauart aus Recherche 4: gehashtes N-Gramm-Gedächtnis im Flash plus winziger Mischer.
 - **Demo:** besseres S1 bei gleichem RAM; Tempo-Kosten der Flash-Zugriffe gemessen.
@@ -163,3 +181,14 @@ fehlender Fakten; Tsetlin-Maschine als Vorlagen-Klassifikator; Logikgatter-Netze
 - **Baseline-Zugang:** Für Board-Vergleiche muss `chemie-nodemcu` einmal vom Spark auf das zweite
   Board oder als Firmware-Image bereitliegen.
 - **Zweites Testthema:** Welches Thema als Mini-Test in Spec 008 dient, wird dort entschieden.
+
+## Eine Spec starten
+
+`/speckit-specify` in einer neuen Session, zum Beispiel für Schritt 1:
+
+```text
+/speckit-specify Schritt 1 aus specs/ROADMAP.md (Spec 007: Benchmark und KPI-Bericht).
+Lies vorher specs/ROADMAP.md (Entscheidungen, Regeln, KPI-Entwurf), die dort unter
+„Grundlage“ verlinkten Befunde in research/2026-11-architektur/ und
+specs/006-hybrid-chemielehrer/ (vorhandene Testmengen und Messungen).
+```
