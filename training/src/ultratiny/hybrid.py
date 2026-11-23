@@ -188,8 +188,20 @@ def generate(cfg: Config, out_dir: Path, seed: int) -> dict:
             raise DataError(f"{d.kurzarbeit} changed (sha256 {digest}); re-pin kurzarbeit_sha256 "
                             "after the review")  # fmt: skip
         kurz_status = "pinned" if d.kurzarbeit_sha256 else "UNPINNED"
+        code_of = {t.name: code for code, t in fs.types.items()}
         for r in _read_tsv(kpath):
-            exp = [e for e in r.get("expected", "").replace(";", "|").split("|") if e]
+            exp = [e.strip() for e in r.get("expected", "").replace(";", "|").split("|")]
+            exp = [e for e in exp if e]
+            if r["kind"] in ("fact", "multi"):
+                # Readable form "element_symbol: Na" -> function output "SNa".
+                parsed = []
+                for e in exp:
+                    tname, sep, key = (s.strip() for s in e.partition(":"))
+                    if not sep or tname not in code_of or not key:
+                        raise DataError(f"{d.kurzarbeit} {r['id']}: expected entry {e!r} must be "
+                                        "'<question type name>: <key>'")  # fmt: skip
+                    parsed.append(code_of[tname] + key)
+                exp = parsed
             kurz_rows.append({"id": r["id"], "prompt": r["question"], "kind": r["kind"],
                               "expected": exp, "grade": r.get("grade", "")})  # fmt: skip
     kurz_norm = {norm_q(r["prompt"]) for r in kurz_rows}

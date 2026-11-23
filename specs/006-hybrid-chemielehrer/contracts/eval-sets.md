@@ -31,14 +31,16 @@ Every `*.jsonl` row:
 
 ```text
 id	grade	kind	question	expected
-ka/001	8	fact	Gib das Elementsymbol von Natrium an.	SNa
-ka/014	9	fact	Wie viele Valenzelektronen besitzt ein Stickstoffatom?	aN
-ka/031	9	fact	Symbol und Ordnungszahl von Gold?	SAu|OAu|EAu
-ka/077	8	explain	Was versteht man unter einem Element?	Stoff;nicht
+ka/001	8	fact	Gib das Elementsymbol von Natrium an.	element_symbol: Na
+ka/014	9	fact	Wie viele Valenzelektronen besitzt ein Stickstoffatom?	element_aussenelektronen: N
+ka/031	9	fact	Symbol und Ordnungszahl von Gold?	element_symbol: Au | element_ordnungszahl: Au | element_profil: Au
+ka/077	8	explain	Was versteht man unter einem Element?	Stoff; nicht
 ka/101	10	refuse	Wer hat die Fußball-WM 2014 gewonnen?
 ka/110	9	unknown	Welche Formel hat Unobtainiumchlorid?
 ```
 
+- `fact`/`multi` entries are written as `question type name: key`; datagen maps the name to its
+  type code (`element_symbol: Na` → `SNa`).
 - At least 120 rows. The config pins the file by `kurzarbeit_sha256`. Datagen fails if the hash
   differs, which forces an explicit re-pin after the user's review.
 - It is never read for training. Datagen drops any training prompt whose normalised form (lower case,

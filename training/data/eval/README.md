@@ -10,7 +10,9 @@ every training prompt whose normalised form equals one of its questions.
 | `grade` | 7–10 (reporting only) |
 | `kind` | `fact`, `multi`, `explain`, `refuse`, `unknown` |
 | `question` | at most 70 characters (the console's question limit at context 104) |
-| `expected` | `fact`/`multi`: accepted function outputs `type+key`, separated by `\|` (first = canonical); `explain`: required keywords, separated by `;`; `refuse`/`unknown`: empty |
+| `expected` | `fact`/`multi`: accepted answers as `question type name: key` (type names from `data/templates/hybrid.toml`, e.g. `element_symbol: Na`), separated by ` \| ` (first = canonical); `explain`: required keywords, separated by `; `; `refuse`/`unknown`: empty |
+
+Datagen translates `element_symbol: Na` into the function output `SNa` (type code + key) and fails on an unknown type name.
 
 After the user's review the file's SHA-256 is pinned as `kurzarbeit_sha256` in
 `configs/chemie-hybrid.toml` and `configs/hybrid-smoke.toml`; datagen refuses to run if the file
