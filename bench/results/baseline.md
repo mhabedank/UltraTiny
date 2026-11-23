@@ -1,6 +1,6 @@
 # Benchmark-Bericht
 
-_erzeugt 2026-11-23 17:39_
+_erzeugt 2026-11-23 17:43_
 
 | Schritt | Rolle | Suite | Seeds | Board | Datum | Modell |
 |---|---|---|---|---|---|---|
@@ -30,7 +30,7 @@ _erzeugt 2026-11-23 17:39_
 | Ressourcen | **R4** Bytes pro Fakt | ↓ | 428.4 | 2095.5 | nicht vergleichbar |  |
 | Sprache | **S1** Bit pro Zeichen | ↓ | 13.314 | 13.505 | nicht vergleichbar |  |
 | Sprache | **S2** nutzbarer Kontext (Zeichen) | ↑ | 0 | 0 | nicht vergleichbar |  |
-| Sprache | **S3** Grammatik ok (%) | ↑ | nicht gemessen | nicht gemessen | nicht gemessen |  |
+| Sprache | **S3** Grammatik ok (%) | ↑ | 100 | 65 | nicht vergleichbar |  |
 
 ## Budget
 

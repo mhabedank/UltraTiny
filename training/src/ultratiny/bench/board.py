@@ -321,7 +321,21 @@ def main(a) -> int:
         return 2
     dl = devlib()
     if a.port:
-        dev = dl.Device(a.port, timeout=a.timeout)
+        try:
+            dev = dl.Device(a.port, timeout=a.timeout)
+        except Exception as e:  # noqa: BLE001 - pyserial raises its own exception types
+            print(f"bench: cannot open {a.port}: {e}", file=sys.stderr)
+            try:
+                from serial.tools import list_ports
+
+                ports = [p.device for p in list_ports.comports()]
+            except ImportError:
+                ports = []
+            print(
+                "bench: available ports: " + (", ".join(ports) or "none (board plugged in?)"),
+                file=sys.stderr,
+            )
+            return 2
         name, has_reset = f"serial {a.port}", True
     else:
         dev = dl.Device(link=dl.ExecLink(shlex.split(a.exec_cmd)), timeout=a.timeout)
