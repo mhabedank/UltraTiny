@@ -1,0 +1,535 @@
+<title>Transformer oder Mamba</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column; two lanes side by side (stacked on phones) for the live comparison */
+:root{
+  --bg:#f6f7f4; --surface:#ffffff; --fg:#1c2120; --muted:#5c6663; --line:#d9ddd7;
+  --tf:#3550c8; --tf-soft:#e4e9fb; --mb:#4f7a17; --mb-soft:#e8f0dc; --warn:#b4231b;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121615; --surface:#1b201f; --fg:#e6ebe8; --muted:#9aa5a1; --line:#2f3634;
+  --tf:#8ea2ff; --tf-soft:#232b4a; --mb:#a3cf5f; --mb-soft:#25301a; --warn:#ff7a6e; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121615; --surface:#1b201f; --fg:#e6ebe8; --muted:#9aa5a1; --line:#2f3634;
+  --tf:#8ea2ff; --tf-soft:#232b4a; --mb:#a3cf5f; --mb-soft:#25301a; --warn:#ff7a6e; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:17px/1.6 var(--body)}
+.wrap{max-width:1040px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:56px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.1;margin:0}
+h1{font-size:clamp(2.2rem,6vw,3.8rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800}
+h3{font-size:1.2rem;font-weight:600}
+p{margin:0;max-width:65ch}
+.tf{color:var(--tf)} .mb{color:var(--mb)}
+.lede{font-size:1.15rem;color:var(--muted);margin-top:16px}
+section{display:grid;gap:20px}
+.eyebrow{font:600 .75rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.lanes{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:760px){.lanes{grid-template-columns:1fr}}
+.lane{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;display:grid;gap:14px;min-width:0}
+.lane.t{border-top:4px solid var(--tf)} .lane.m{border-top:4px solid var(--mb)}
+.lane svg{width:100%;height:auto;display:block}
+.cap{font-size:.95rem;color:var(--muted)}
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+button{font:600 .95rem var(--body);padding:8px 16px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+button.primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--tf);outline-offset:2px}
+.readout{font:400 .9rem var(--mono);font-variant-numeric:tabular-nums;color:var(--muted)}
+.mem{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;display:grid;gap:16px}
+.mem label{font-weight:700}
+input[type=range]{width:100%;accent-color:var(--fg)}
+.chartbox{overflow-x:auto}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.97rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--display);font-weight:600}
+td:first-child{color:var(--muted);font-weight:700;width:22%}
+.verdict{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.verdict div{display:grid;gap:8px}
+.verdict ul{margin:0;padding-left:1.1em;display:grid;gap:6px}
+code{font-family:var(--mono);font-size:.9em}
+.note{font-size:.9rem;color:var(--muted)}
+.pipe{overflow-x:auto}
+.pipe svg{min-width:720px;width:100%;height:auto;display:block}
+.pipe .box{fill:var(--surface);stroke:var(--line);stroke-width:1.5}
+.pipe .nn{fill:var(--tf-soft);stroke:var(--tf);stroke-width:2}
+.pipe .sym{fill:var(--mb-soft);stroke:var(--mb);stroke-width:2}
+.pipe .t{fill:var(--fg);font:700 13px var(--body)}
+.pipe .s{fill:var(--muted);font:11px var(--mono)}
+.pipe .ar{stroke:var(--muted);stroke-width:1.6;fill:none}
+.pipe .ah{fill:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:.9rem;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.legend .ln::before{background:var(--tf-soft);border:2px solid var(--tf)}
+.legend .ls::before{background:var(--mb-soft);border:2px solid var(--mb)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:8px;align-content:start}
+.fact .num{font:800 1.9rem var(--display);font-variant-numeric:tabular-nums}
+.conf{font:600 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sources{font-size:.85rem;color:var(--muted);display:grid;gap:4px}
+.sources a{color:var(--tf)}
+hr.part{border:0;border-top:2px solid var(--line);margin:0}
+.hr-table td:first-child{width:18%}
+.gain{font:600 .85rem var(--mono);color:var(--mb);white-space:nowrap}
+.pill{display:inline-block;font:600 .72rem var(--mono);letter-spacing:.04em;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.pill.ok{background:var(--mb-soft);color:var(--mb)}
+.pill.mid{background:var(--tf-soft);color:var(--tf)}
+.pill.open{background:transparent;color:var(--muted);border:1px dashed var(--muted)}
+.pipe .fl{fill:var(--bg);stroke:var(--muted);stroke-width:1.5;stroke-dasharray:5 4}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">UltraTiny · Architektur</div>
+    <h1>Transformer schaut zurück.<br><span class="mb">Mamba</span> trägt mit.</h1>
+    <p class="lede">Beide Modelle lesen Text Zeichen für Zeichen und sagen das nächste voraus. Der Unterschied liegt darin, wie sie sich an das Bisherige erinnern: Der <b class="tf">Transformer</b> hebt jedes Zeichen auf und schaut bei jedem Schritt auf alle zurück. <b class="mb">Mamba</b> fasst alles in einem Zustand fester Größe zusammen und schreibt ihn bei jedem Zeichen fort.</p>
+  </header>
+
+  <section aria-labelledby="live">
+    <div class="eyebrow">Live-Vergleich</div>
+    <h2 id="live">Ein Satz, zwei Arten zu lesen</h2>
+    <div class="controls">
+      <button id="play" class="primary" type="button">Abspielen</button>
+      <button id="step" type="button">Ein Zeichen weiter</button>
+      <button id="reset" type="button">Von vorn</button>
+      <span class="readout" id="pos"></span>
+    </div>
+    <div class="lanes">
+      <div class="lane t">
+        <h3 class="tf">Transformer</h3>
+        <svg id="svgT" viewBox="0 0 460 250" role="img" aria-label="Transformer: das aktuelle Zeichen verbindet sich mit allen früheren Zeichen; der KV-Cache wächst"></svg>
+        <p class="cap">Jedes neue Zeichen vergleicht sich mit <b>allen</b> früheren (Attention). Dafür liegen Key und Value jedes Zeichens im <b>KV-Cache</b>, der mit jedem Zeichen länger wird. Ist er voll, fällt das älteste Zeichen heraus.</p>
+      </div>
+      <div class="lane m">
+        <h3 class="mb">Mamba (Zustandsraum-Modell)</h3>
+        <svg id="svgM" viewBox="0 0 460 250" role="img" aria-label="Mamba: jedes Zeichen aktualisiert einen Zustand fester Größe; frühere Zeichen werden nicht aufgehoben"></svg>
+        <p class="cap">Jedes Zeichen wird in einen <b>Zustand fester Größe</b> eingerechnet und dann vergessen. Ein gelerntes Tor entscheidet pro Zeichen, wie viel Altes bleibt und wie viel Neues hinein darf (die „Selektion“ von Mamba).</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="ram">
+    <div class="eyebrow">Was das im RAM bedeutet</div>
+    <h2 id="ram">Speicherbedarf bei UltraTiny-Größe</h2>
+    <p>Gerechnet mit den Maßen des NodeMCU-Modells: 4 Schichten, Breite 128, ein Key/Value-Kopf mit 32 Werten, alles int8. Der Transformer braucht damit <b class="tf">256 Byte pro Zeichen</b> Kontext. Eine Mamba-Schicht derselben Breite (Erweiterung 2, Zustandsgröße 16, Faltung 4) braucht rund <b class="mb">4,9 KB pro Schicht, egal wie lang der Text ist</b>.</p>
+    <div class="mem">
+      <label for="len">Textlänge: <span id="lenOut" class="readout"></span></label>
+      <input id="len" type="range" min="8" max="400" value="104">
+      <div class="chartbox"><svg id="chart" viewBox="0 0 640 230" style="min-width:420px;width:100%;height:auto" role="img" aria-label="Balkendiagramm Speicherbedarf Transformer gegen Mamba"></svg></div>
+      <p class="note">Das 35-KB-Arena-Limit gilt für alles zusammen, also auch Aktivierungen. Bei kurzen Texten ist der Transformer sparsamer; ab etwa 77 Zeichen kippt es. Mit kleinerem Zustand (z. B. Zustandsgröße 8) liegt Mamba bei rund 11 KB. Das sind Rechenbeispiele, keine Messungen auf dem Board.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="cmp">
+    <div class="eyebrow">Gegenüberstellung</div>
+    <h2 id="cmp">Die Unterschiede im Überblick</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th></th><th class="tf">Transformer</th><th class="mb">Mamba</th></tr></thead>
+      <tbody>
+        <tr><td>Gedächtnis</td><td>Alle bisherigen Zeichen als Keys und Values (KV-Cache)</td><td>Ein Zustand fester Größe, laufend überschrieben</td></tr>
+        <tr><td>RAM bei längerem Text</td><td>Wächst linear mit der Länge</td><td>Bleibt gleich</td></tr>
+        <tr><td>Arbeit pro neuem Zeichen</td><td>Wächst mit der Länge (Vergleich mit allen Vorgängern)</td><td>Immer gleich viel</td></tr>
+        <tr><td>Exaktes Nachschlagen</td><td>Stark: kann ein bestimmtes frühes Zeichen gezielt wiederfinden, etwa um ein Wort aus der Frage zu kopieren</td><td>Schwächer: was nicht im Zustand gelandet ist, ist weg</td></tr>
+        <tr><td>Kontextgrenze</td><td>Hart (bei UltraTiny 104 Zeichen)</td><td>Weich: Ältere Inhalte verblassen allmählich</td></tr>
+        <tr><td>Training</td><td>Gut erforscht, einfach parallel</td><td>Parallel über einen „Scan“, etwas aufwendiger</td></tr>
+        <tr><td>Auf Mikrocontrollern</td><td>Läuft bei UltraTiny auf echter Hardware</td><td>MambaLite-Micro läuft auf ESP32-S3 und STM32H7, bisher nur für Klassifikation</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="ut">
+    <div class="eyebrow">Für UltraTiny</div>
+    <h2 id="ut">Was spricht wofür?</h2>
+    <div class="verdict">
+      <div><h3 class="tf">Beim Transformer bleiben, wenn …</h3><ul>
+        <li>Fragen und Antworten kurz bleiben (unter etwa 100 Zeichen).</li>
+        <li>das Modell Wörter aus der Frage oder aus der Faktentabelle genau kopieren soll.</li>
+        <li>die vorhandene, auf dem Board gemessene Runtime weiter genutzt werden soll.</li>
+      </ul></div>
+      <div><h3 class="mb">Mamba oder RWKV testen, wenn …</h3><ul>
+        <li>längere Gespräche oder Texte gebraucht werden.</li>
+        <li>die Antwortgeschwindigkeit auch am Ende eines langen Textes gleich bleiben soll.</li>
+        <li>der freie RAM für einen festen Zustand reicht. Bei Winzlingsmodellen schnitten Zustandsmodelle in einer Studie über 20 % besser ab.</li>
+      </ul></div>
+    </div>
+    <p class="note">Mischformen gibt es auch: wenige Attention-Schichten mit kurzem Fenster plus Zustandsschichten. Sie verbinden exaktes Nachschlagen mit festem Speicher.</p>
+  </section>
+
+  <hr class="part">
+
+  <section aria-labelledby="dom">
+    <div class="eyebrow">Deep Research 2 · Domänenmodell</div>
+    <h2 id="dom">Das Konzept umdrehen: Wissen in Struktur, Sprache im Netz</h2>
+    <p>Ein reines Sprachmodell muss Sprache <i>und</i> Fakten in seinen Gewichten speichern, und dafür sind 0,6 Mio. Parameter sehr wenig (höchstens etwa 2 Bit Wissen pro Parameter). Die Idee: Die Fakten, Beziehungen und Definitionen der Domäne liegen als Struktur im Flash. Das kleine Netz übernimmt nur noch zwei Aufgaben: die Frage verstehen und die Antwort formulieren. Die Recherche stützt diese Umkehr, mit 22 ausgewerteten Quellen und 23 von 25 gegengeprüften Aussagen bestätigt.</p>
+    <div class="pipe">
+      <svg viewBox="0 0 960 250" role="img" aria-label="Pipeline: Frage, Absicht erkennen, Begriffe zuordnen, Abfrage, Faktenspeicher, Antwort aus Vorlage">
+        <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" class="ah"/></marker></defs>
+        <rect class="box" x="6" y="30" width="130" height="96" rx="8"/>
+        <text class="t" x="18" y="56">Frage</text>
+        <text class="s" x="18" y="80">„Welche Ordnungs-</text><text class="s" x="18" y="96">zahl hat Natrium?“</text>
+        <path class="ar" d="M136 78 H164" marker-end="url(#arr)"/>
+        <rect class="nn" x="166" y="30" width="150" height="96" rx="8"/>
+        <text class="t" x="178" y="56">1 Absicht erkennen</text>
+        <text class="s" x="178" y="80">Vorlage wählen:</text><text class="s" x="178" y="96">EIGENSCHAFT(x, p)</text><text class="s" x="178" y="112">kleines Netz</text>
+        <path class="ar" d="M316 78 H344" marker-end="url(#arr)"/>
+        <rect class="sym" x="346" y="30" width="150" height="96" rx="8"/>
+        <text class="t" x="358" y="56">2 Begriffe zuordnen</text>
+        <text class="s" x="358" y="80">Natrium → Na</text><text class="s" x="358" y="96">Ordnungszahl → Z</text><text class="s" x="358" y="112">Lexikon, fest</text>
+        <path class="ar" d="M496 78 H524" marker-end="url(#arr)"/>
+        <rect class="sym" x="526" y="30" width="130" height="96" rx="8"/>
+        <text class="t" x="538" y="56">3 Abfrage</text>
+        <text class="s" x="538" y="80">Mini-Sprache:</text><text class="s" x="538" y="96">?Na Z</text><text class="s" x="538" y="112">kurze Zeichen</text>
+        <path class="ar" d="M656 78 H684" marker-end="url(#arr)"/>
+        <rect class="sym" x="686" y="30" width="130" height="96" rx="8"/>
+        <text class="t" x="698" y="56">4 Faktenspeicher</text>
+        <text class="s" x="698" y="80">(Na, Z, 11)</text><text class="s" x="698" y="96">Tripel im Flash</text><text class="s" x="698" y="112">&lt; 20 ms</text>
+        <path class="ar" d="M751 126 V170 H640" marker-end="url(#arr)"/>
+        <rect class="nn" x="346" y="146" width="292" height="80" rx="8"/>
+        <text class="t" x="358" y="172">5 Antwort formulieren</text>
+        <text class="s" x="358" y="196">Vorlage: „{x} hat die Ordnungszahl {v}.“</text>
+        <text class="s" x="358" y="212">optional glättet das Netz den Satz</text>
+        <path class="ar" d="M346 186 H150" marker-end="url(#arr)"/>
+        <rect class="box" x="6" y="146" width="142" height="80" rx="8"/>
+        <text class="t" x="18" y="172">Antwort</text>
+        <text class="s" x="18" y="196">„Natrium hat die</text><text class="s" x="18" y="212">Ordnungszahl 11.“</text>
+      </svg>
+    </div>
+    <div class="legend"><span class="ln">Neuronal (kleines Netz, lernt)</span><span class="ls">Symbolisch (fest, nachschlagbar, prüfbar)</span></div>
+
+    <h3>Was die Recherche belegt</h3>
+    <div class="facts">
+      <div class="fact"><span class="conf">Sicherheit hoch</span><span class="num mb">&lt; 20 ms</span><p><b>Ein Faktenspeicher läuft schon auf dem ESP8266.</b> µRDF hält Tripel im RAM und beantwortet Muster-Abfragen ähnlich wie SPARQL; alle 14 Abfragen des LUBM-Benchmarks liefen unter 20 ms. Ein minimaler Tripel-Speicher (Wiselib) braucht nur etwa 1,5 KB Code und 14 Byte festen RAM. Grenze: getestet mit bis zu 10 000 Tripeln und 64 KB RAM, also mehr als eure Arena. Für UltraTiny gehört der Speicher deshalb ins Flash.</p></div>
+      <div class="fact"><span class="conf">Sicherheit hoch</span><span class="num mb">1–11 Byte</span><p><b>Eine Beziehung kostet fast nichts, die Wörter kosten.</b> Ein Fakt als drei Zahlen-IDs braucht etwa 11 Byte, stark komprimiert (k2-Bäume) 1,1 bis 3,7 Byte. Den Großteil des Platzes belegen Namen und Definitionstexte. Huffman-Codierung spart dort 30 bis 35 %. Grobe Schätzung: einige Tausend Chemie-Fakten passen in einige Dutzend KB.</p></div>
+      <div class="fact"><span class="conf">Sicherheit mittel</span><span class="num tf">60 M ≈ 220 M</span><p><b>Bei einem engen Schema reicht ein kleines Netz.</b> Fragen in Abfragen übersetzen: T5-small (60 Mio. Parameter) schafft F1 0,90 bis 0,92, genauso gut wie das 3,7-mal größere T5-base. In einer engen Domäne reichten 53 Trainingsbeispiele für 13 von 16 richtige Abfragen. Bei offenem Weltwissen (Wikidata) scheiterten dieselben Modelle fast völlig.</p></div>
+      <div class="fact"><span class="conf">Sicherheit mittel</span><span class="num tf">+18 Punkte</span><p><b>Die Ausgabesprache zählt mehr als die Modellgröße.</b> Wurden die SPARQL-Schlüsselwörter durch einzelne Zeichen ersetzt, stieg die Trefferquote von 74 % auf 92 %, und das kleine Modell holte das große fast ein. Für UltraTiny heißt das: eine knappe eigene Abfragesprache (DSL) als Ausgabe statt freiem Text.</p></div>
+      <div class="fact"><span class="conf">Sicherheit mittel</span><span class="num tf">83 %</span><p><b>Die Aufgabe schrumpft auf „Vorlage wählen und Lücken füllen“.</b> Ein kleiner Klassifikator traf unter 38 Vorlagen in 83 % der Fälle die richtige (95 %, wenn die zwei besten zählen). Die Gesamtqualität lag trotzdem nur bei 0,42, weil das Zuordnen von Begriffen (Natrium → Na) scheiterte. In einer geschlossenen Domäne löst das ein festes Lexikon mit Namen, Formeln und Synonymen.</p></div>
+      <div class="fact"><span class="conf">Sicherheit mittel</span><span class="num tf">0,22 → 0,22</span><p><b>Kleine Modelle sollen nicht selbst im Wissen suchen.</b> Modelle mit 0,5 bis 8 Mrd. Parametern wurden nicht besser, wenn sie selbst durch einen Wissensgraphen navigierten. Übernahm ein einfacher Suchbaustein die Auswahl der Fakten, stieg die Trefferquote deutlich (z. B. 0,38 → 0,51). Faktenauswahl also fest programmieren, das Netz nur formulieren lassen.</p></div>
+    </div>
+
+    <h3>Was das für UltraTiny bedeutet</h3>
+    <ul>
+      <li><b>Das Netz wird kleiner und anders trainiert.</b> Es lernt nur noch Fragetypen erkennen und Sätze bauen, kein Chemiewissen. Ein Teil der 588 KB wird für Fakten frei.</li>
+      <li><b>Antworten werden prüfbar.</b> Jeder Fakt kommt aus einer Tabelle, die ein Mensch lesen und korrigieren kann. Halluzinierte Ordnungszahlen gibt es nicht mehr.</li>
+      <li><b>Neues Wissen braucht kein neues Training.</b> Ein Fakt in der Tabelle reicht, solange die Frageart schon bekannt ist.</li>
+      <li><b>Der Preis:</b> Fragen außerhalb der Vorlagen beantwortet das System nicht. Es braucht also eine ehrliche Antwort wie „Das weiß ich nicht“.</li>
+    </ul>
+
+    <h3>Noch nicht belegt</h3>
+    <p>Alle Netz-Ergebnisse stammen von Modellen, die 100- bis 10 000-mal größer sind als UltraTiny. Ob ein Netz mit 0,6 Mio. Parametern deutsche Chemiefragen zuverlässig in Vorlagen einordnet, muss ein eigener Versuch zeigen. Zu diesen Richtungen hat die Recherche keine geprüften Belege gefunden (also offen, nicht widerlegt): Ontologien wie OWL und SKOS, Regelbasen und Expertensysteme, Graph-Einbettungen wie TransE, Hyperdimensional Computing, Tsetlin-Maschinen, fallbasiertes Schließen, Absichtserkennung auf Mikrocontrollern, Chemie-Quellen wie ChEBI und Methoden zum Entwurf eines Domänenschemas. Widerlegt wurden zwei Aussagen: dass Modelle unter 1 Mrd. Parametern allgemein Fragen in SPARQL übersetzen können, und eine Zahl dazu, wie wenige Vorlagen einen Benchmark abdecken.</p>
+
+    <h3>Empfohlene erste Versuche</h3>
+    <ol>
+      <li>20 bis 40 typische Schülerfragen sammeln und daraus die Vorlagen ableiten. Diese „Kompetenzfragen“ legen fest, was das System können muss.</li>
+      <li>Periodensystem und einige Hundert Verbindungen als Tripel ins Flash legen und den echten Platzbedarf mit Namen und Texten messen.</li>
+      <li>Ein winziges Netz nur auf Vorlagen-Erkennung trainieren und gegen das heutige Modell testen: Ziel über 90 % richtige Vorlage.</li>
+      <li>Antworten aus Vorlagen gegen Antworten vom Netz vergleichen.</li>
+    </ol>
+
+    <div class="sources">
+      <b>Quellen</b>
+      <a href="https://vcharpenay.github.io/publications/2017-eswc.pdf">µRDF auf dem ESP8266 (ESWC 2017)</a>
+      <a href="https://arxiv.org/pdf/1402.7228">Wiselib TupleStore</a>
+      <a href="https://arxiv.org/pdf/1105.4004">k2-Triples</a>
+      <a href="https://arxiv.org/pdf/2002.11622">BMatrix</a>
+      <a href="https://aic.ai.wu.ac.at/~polleres/publications/fern-etal-2013-HDT-JWS.pdf">HDT</a>
+      <a href="https://arxiv.org/pdf/2204.12793">T5 für SPARQL (LC-QuAD)</a>
+      <a href="https://arxiv.org/html/2405.17076v1">Kleine Modelle für Abfragen in enger Domäne</a>
+      <a href="https://arxiv.org/pdf/2305.15108">Ausgabevokabular für SPARQL</a>
+      <a href="https://arxiv.org/pdf/2004.13843">Vorlagen-Klassifikation für KGQA</a>
+      <a href="https://www.ccs.neu.edu/home/mirek/papers/2017-WWW-QUINT.pdf">QUINT</a>
+      <a href="https://arxiv.org/html/2509.07399v1">Kleine LMs und Graph-Suche</a>
+    </div>
+  </section>
+
+  <hr class="part">
+
+  <section aria-labelledby="kit">
+    <div class="eyebrow">Deep Research 3 · Baukasten für jedes Thema</div>
+    <h2 id="kit">Ein Baukasten für jedes Fachgebiet und wo in jedem Baustein noch Luft ist</h2>
+    <p>Chemie war nur ein Beispiel. Derselbe Aufbau soll für Biologie, Geschichte, ein Handbuch, ein Spielregelwerk oder den Nahverkehr funktionieren. Die wichtigste neue Erkenntnis: <b>Das Denken passiert am PC, der Chip schlägt nur nach.</b> Regeln und Ontologien sind auf dem Chip zu teuer, ihre Ergebnisse lassen sich aber vorab ausrechnen und als fertige Fakten ins Flash legen. Ausgewertet wurden 22 Quellen; von 25 gegengeprüften Aussagen hielten 22.</p>
+    <div class="pipe">
+      <svg viewBox="0 0 960 300" role="img" aria-label="Zwei Stufen: am PC wird ein Thema in ein kompaktes Wissens-Image übersetzt, auf dem Chip wird nur nachgeschlagen">
+        <text class="s" x="10" y="18">AM PC · EINMAL PRO THEMA</text>
+        <rect class="box" x="6" y="30" width="140" height="86" rx="8"/><text class="t" x="18" y="56">Thema</text><text class="s" x="18" y="78">Texte, Tabellen,</text><text class="s" x="18" y="94">Lehrplan, Handbuch</text>
+        <path class="ar" d="M146 73 H170" marker-end="url(#arr)"/>
+        <rect class="sym" x="172" y="30" width="150" height="86" rx="8"/><text class="t" x="184" y="56">Schema</text><text class="s" x="184" y="78">Kompetenzfragen →</text><text class="s" x="184" y="94">Begriffe, Beziehungen</text>
+        <path class="ar" d="M322 73 H346" marker-end="url(#arr)"/>
+        <rect class="nn" x="348" y="30" width="150" height="86" rx="8"/><text class="t" x="360" y="56">Fakten extrahieren</text><text class="s" x="360" y="78">großes LLM füllt</text><text class="s" x="360" y="94">Schema, Mensch prüft</text>
+        <path class="ar" d="M498 73 H522" marker-end="url(#arr)"/>
+        <rect class="sym" x="524" y="30" width="150" height="86" rx="8"/><text class="t" x="536" y="56">Regeln ausrechnen</text><text class="s" x="536" y="78">abgeleitete Fakten</text><text class="s" x="536" y="94">vorab erzeugen</text>
+        <path class="ar" d="M674 73 H698" marker-end="url(#arr)"/>
+        <rect class="sym" x="700" y="30" width="150" height="86" rx="8"/><text class="t" x="712" y="56">Kompilieren</text><text class="s" x="712" y="78">Wörterbuch packen,</text><text class="s" x="712" y="94">lokale IDs, Index</text>
+        <path class="ar" d="M775 116 V160" marker-end="url(#arr)"/>
+        <rect class="box" x="700" y="162" width="150" height="50" rx="8"/><text class="t" x="712" y="184">Wissens-Image</text><text class="s" x="712" y="202">eine Datei im Flash</text>
+        <text class="s" x="10" y="178">AUF DEM CHIP · BEI JEDER FRAGE</text>
+        <rect class="box" x="6" y="190" width="120" height="86" rx="8"/><text class="t" x="18" y="216">Frage</text>
+        <path class="ar" d="M126 233 H150" marker-end="url(#arr)"/>
+        <rect class="nn" x="152" y="190" width="130" height="86" rx="8"/><text class="t" x="164" y="216">Vorlage wählen</text><text class="s" x="164" y="238">winziges Netz</text>
+        <path class="ar" d="M282 233 H306" marker-end="url(#arr)"/>
+        <rect class="sym" x="308" y="190" width="130" height="86" rx="8"/><text class="t" x="320" y="216">Begriffe finden</text><text class="s" x="320" y="238">Lexikon, evtl.</text><text class="s" x="320" y="254">unscharf (HDC)</text>
+        <path class="ar" d="M438 233 H462" marker-end="url(#arr)"/>
+        <rect class="sym" x="464" y="190" width="110" height="86" rx="8"/><text class="t" x="476" y="216">Nachschlagen</text><text class="s" x="476" y="238">im Image</text>
+        <path class="ar" d="M698 187 H600 V233 H576" marker-end="url(#arr)"/>
+        <path class="ar" d="M519 276 V290 H860"/>
+        <rect class="nn" x="862" y="190" width="92" height="86" rx="8"/><text class="t" x="872" y="216">Antwort</text><text class="s" x="872" y="238">aus Vorlage</text>
+        <path class="ar" d="M908 290 V280" marker-end="url(#arr)"/>
+      </svg>
+    </div>
+    <div class="legend"><span class="ln">Neuronal</span><span class="ls">Symbolisch</span></div>
+
+    <h3>Ungenutztes Potenzial je Baustein</h3>
+    <p>Deine Annahme bestätigt sich: In jedem Baustein, zu dem es Belege gab, liegen die Standardlösungen messbar unter dem Machbaren.</p>
+    <div class="table-wrap"><table class="hr-table">
+      <thead><tr><th>Baustein</th><th>Stand heute</th><th>Nachgewiesene Luft nach oben</th><th>Gewinn</th></tr></thead>
+      <tbody>
+        <tr><td>Regel-Engine (RETE)</td><td>Auf dem ESP32 mit 520 KB RAM passen nur 509 Fakten. Hochgerechnet auf 35 KB wären es rund 100.</td><td>Ähnliche Bedingungen zusammenlegen und Begriffe nur einmal speichern. Weitere Reserven: Zahlen-IDs, kein Löschen, Regeln vorab kompilieren.</td><td class="gain">+45–49 % Fakten</td></tr>
+        <tr><td>Ontologien (OWL)</td><td>Der beste Reasoner auf einem Mikrocontroller schafft etwa 400 Axiome und scheitert bei 500 meist an Speichermangel.</td><td>Eingeschränktes Profil (OWL 2 RL) als Regeln am PC ausrechnen und nur die Ergebnisse ausliefern.</td><td class="gain">auf dem Chip: 0 Rechenaufwand</td></tr>
+        <tr><td>Wörterbuch (Namen, Texte)</td><td>Ist 2- bis 5-mal größer als die Beziehungsstruktur und damit der größte Posten.</td><td>Jeden Teil mit eigenem Verfahren packen. Gemeinsames Packen von Wörterbuch und Struktur hat noch niemand versucht, ebenso wenig eine abfragbare Variante im Flash.</td><td class="gain">3–4× kleiner, 20–45 % besser als gzip-artige Packer</td></tr>
+        <tr><td>Beziehungsstruktur</td><td>Standard-Codierung gibt jedem Objekt eine globale ID.</td><td>IDs pro Beziehung vergeben (HDT++): Die meisten Werte gehören nur zu einer Beziehung, brauchen also weniger Bits.</td><td class="gain">bis 2× kleiner</td></tr>
+        <tr><td>Fehlende Fakten erschließen (Graph-Einbettungen)</td><td>Gleitkomma-Vektoren mit 12 800 Bit pro Begriff.</td><td>Quantisierung schon beim Training: 400 Bit reichen bei gleicher Qualität. Codebuch-Codes: 50 Bit pro Begriff. Nachträgliches Quantisieren dagegen bricht ein.</td><td class="gain">32× bis über 400×</td></tr>
+        <tr><td>Hyperdimensional Computing</td><td>Einfache Umsetzungen verschwenden Speicher und Rechenzeit.</td><td>Algebraische Umformungen sparen 52 % Speicher und bis 98 % Rechenschritte. Als Faktenspeicher ist ein assoziatives Gedächtnis (SDM) einem einzelnen überlagerten Vektor weit überlegen.</td><td class="gain">bis 98 % weniger Rechenschritte, 15–35× weniger Speicher</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">Alle Zahlen stammen von größeren Chips (Arduino Due, ESP32, STM32U5) oder von großen Web-Datensätzen. Für einen kleinen Themen-Graphen mit einigen Tausend Fakten müssen sie neu gemessen werden.</p>
+
+    <h3>Vielversprechende Kombinationen</h3>
+    <ul>
+      <li><b>Unscharfer Index vor exaktem Speicher:</b> Ein HDC-Gedächtnis, dessen Grundvektoren aus einem Startwert neu erzeugt werden (also keinen Speicher kosten), findet Begriffe auch bei Tippfehlern oder Beugungen („Natriums“). Die Fakten selbst kommen exakt aus der Tabelle.</li>
+      <li><b>Wissen am PC vervollständigen:</b> Fehlende Fakten erschließt ein großes LLM oder eine Graph-Einbettung vorab. Ein Mensch prüft, das Ergebnis wird als normale Fakten ausgeliefert.</li>
+      <li><b>Schema bestimmt die Codierung:</b> Weil jede Vorlage feste Beziehungen nutzt, passen IDs pro Beziehung genau zu den Frage-Vorlagen.</li>
+    </ul>
+
+    <h3>Weiterhin ohne geprüfte Belege</h3>
+    <p>Auch im dritten Lauf hielt keine Aussage zu diesen Themen der Gegenprüfung stand: Tsetlin-Maschinen, Absichts- und Begriffserkennung auf Mikrocontrollern, deutsche Antworten aus Grammatiken, fallbasiertes Schließen, das Kompilieren von SKOS oder Frames und Methoden, um ein Thema in ein Schema zu übersetzen. Diese Punkte müssen wir selbst messen. Widerlegt wurden drei Aussagen, unter anderem die Zahl von unter einem Byte pro Fakt für die Struktur.</p>
+
+    <h3>Offene Fragen für eigene Versuche</h3>
+    <ol>
+      <li>Wie viele Bits kostet ein Fakt in einem kleinen Themen-Graphen (500 bis 5 000 Fakten) mit allen Packtricks zusammen?</li>
+      <li>Was erkennt deutsche Fragevorlagen am besten bei 35 KB RAM: Tsetlin-Maschine, HDC oder winziges int8-Netz? Gemessen über mehrere Themen.</li>
+      <li>Lohnt sich eine Graph-Einbettung auf dem Chip, oder reicht es, fehlende Fakten am PC zu ergänzen?</li>
+      <li>Wie viel RAM braucht ein unscharfer HDC-Index für Begriffe auf dem ESP8266?</li>
+    </ol>
+
+    <div class="sources">
+      <b>Quellen</b>
+      <a href="https://2022.eswc-conferences.org/wp-content/uploads/2022/05/paper_39_Bento_et_al.pdf">LiRoT: RETE auf Mikrocontrollern (ESWC 2022)</a>
+      <a href="https://link.springer.com/doi/10.1007/978-3-642-25093-4_16">OWL 2 RL auf eingebetteter Hardware</a>
+      <a href="https://iris.poliba.it/bitstream/11589/269380/1/36%20ciclo-BILENCHI%20Ivano.pdf">Tiny-ME (Dissertation Bilenchi 2024)</a>
+      <a href="https://aic.ai.wu.ac.at/~polleres/publications/fern-etal-2013-HDT-JWS.pdf">HDT</a>
+      <a href="https://aic.ai.wu.ac.at/qadlod/docs/dcc15.pdf">HDT++</a>
+      <a href="https://arxiv.org/pdf/1902.02970">Binäre Graph-Einbettungen (B-CP)</a>
+      <a href="https://preview.aclanthology.org/fix_video/2020.acl-main.238.pdf">KD-Codes für Graph-Einbettungen</a>
+      <a href="https://ceur-ws.org/Vol-4313/kgnesy-paper3.pdf">Komprimierte KG-Einbettungen 2025</a>
+      <a href="https://arxiv.org/abs/2301.10352">Kapazität von HDC-Bündeln</a>
+      <a href="https://redwood.berkeley.edu/wp-content/uploads/2025/06/teeters2023separating.pdf">Superposition gegen SDM</a>
+      <a href="https://arxiv.org/html/2501.10547v1">HyperCam (HDC auf Cortex-M33)</a>
+    </div>
+  </section>
+
+  <hr class="part">
+
+  <section aria-labelledby="arch">
+    <div class="eyebrow">Deep Research 4 · Andere und neue Architekturen</div>
+    <h2 id="arch">Weg vom Transformer, hin zu einem Flash-Gedächtnis</h2>
+    <p>Zwei Fragen: Gibt es bessere Bauarten als Transformer und Mamba? Und lässt sich aus den besonderen Bedingungen von UltraTiny etwas ganz Neues ableiten? Flash ist rund 100-mal größer als RAM, es gibt keine Gleitkomma-Einheit, und das Thema ist eng. Ausgewertet wurden 21 Quellen; von 25 gegengeprüften Aussagen hielten 22.</p>
+
+    <h3>Kandidaten für den Kern</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Bauart</th><th>Was die Belege zeigen</th><th>Passt aufs ESP8266?</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>minGRU / minLSTM</td><td>Im Zeichen-Sprachmodell praktisch gleich gut wie ein Transformer (Fehlerwert 1,548 gegen 1,547; Mamba 1,575). Die Tore hängen nur vom aktuellen Zeichen ab, die Rekurrenz ist eine einfache Mischung pro Element.</td><td>Sehr gut: fester Zustand von etwa 512 Werten für 4 × 128, keine Matrixmultiplikation mit dem Zustand, Sigmoid als Ganzzahl-Tabelle.</td><td><span class="pill ok">bester Kandidat</span></td></tr>
+        <tr><td>RWKV-4</td><td>Auf enwik8 nur 0,04 Bit pro Zeichen schlechter als ein Transformer und besser als alle effizienten Attention-Varianten.</td><td>Gut: Vektor-Zustand.</td><td><span class="pill ok">belegt</span></td></tr>
+        <tr><td>RWKV-7</td><td>Kann nachweislich Zustände verfolgen, was Transformer theoretisch nicht können.</td><td>Knapp: Der Matrix-Zustand wäre bei 4 × 128 rund 32 KB in int8. Nur mit kleineren Köpfen (16 bis 32).</td><td><span class="pill mid">mit Abstrichen</span></td></tr>
+        <tr><td>xLSTM</td><td>Bei 400 Mio. Parametern besser als Mamba, Llama, RWKV und RetNet.</td><td>Nur die sLSTM-Variante (Vektor-Zustand, wenige KB). mLSTM ist zu groß, und die exponentiellen Tore sind ohne FPU unhandlich.</td><td><span class="pill mid">teilweise</span></td></tr>
+        <tr><td>Logikgatter- und LUT-Netze, Tsetlin, HDC-Sprachmodelle, Hopfield, Reservoir, Liquid-Netze, Product-Key-Speicher, Experten aus dem Flash, frühes Abbrechen, Ausgabe per Grammatik</td><td>Keine Aussage hat die Gegenprüfung überstanden.</td><td>Unbekannt</td><td><span class="pill open">offen, nicht widerlegt</span></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Die neue Idee: Kern plus Flash-Gedächtnis plus Mischer</h3>
+    <p>Die stärksten Belege gibt es für Mischformen aus einem zählenden Modell und einem neuronalen Modell. Daraus ergibt sich eine Bauart, die genau zu UltraTiny passt: Die meisten Parameter liegen als Nachschlagetabelle im Flash, pro Zeichen werden nur wenige Zeilen gelesen. Der RAM hält nur einen kleinen rekurrenten Zustand.</p>
+    <div class="pipe">
+      <svg viewBox="0 0 960 300" role="img" aria-label="Neue Architektur: Zeichen gehen in einen kleinen rekurrenten Kern und in eine gehashte N-Gramm-Tabelle im Flash; ein winziger Mischer kombiniert beide Vorhersagen">
+        <rect class="box" x="6" y="120" width="120" height="70" rx="8"/><text class="t" x="18" y="146">Letzte Zeichen</text><text class="s" x="18" y="170">…„Natriu“</text>
+        <path class="ar" d="M126 140 C 170 140, 170 64, 210 64" marker-end="url(#arr)"/>
+        <path class="ar" d="M126 170 C 170 170, 170 236, 210 236" marker-end="url(#arr)"/>
+        <rect class="nn" x="212" y="20" width="260" height="92" rx="8"/><text class="t" x="224" y="46">Rekurrenter Kern (minGRU)</text><text class="s" x="224" y="70">Zustand ~512 Byte im RAM</text><text class="s" x="224" y="88">versteht Satzbau und Frageart</text><text class="s" x="224" y="104">klein: z. B. 4 × 64</text>
+        <rect class="fl" x="212" y="184" width="260" height="104" rx="8"/><text class="t" x="224" y="210">N-Gramm-Gedächtnis im Flash</text><text class="s" x="224" y="234">„iu“ „riu“ „triu“ … → Hash</text><text class="s" x="224" y="252">z. B. 64K Zeilen ≈ 2 MB</text><text class="s" x="224" y="270">pro Zeichen 8 Zeilen ≈ 256 B lesen</text>
+        <path class="ar" d="M472 66 C 530 66, 530 140, 586 140" marker-end="url(#arr)"/>
+        <path class="ar" d="M472 236 C 530 236, 530 170, 586 170" marker-end="url(#arr)"/>
+        <rect class="sym" x="588" y="110" width="170" height="90" rx="8"/><text class="t" x="600" y="136">Winziger Mischer</text><text class="s" x="600" y="160">&lt; 1 000 Parameter</text><text class="s" x="600" y="178">nutzt Zähl-Merkmale</text>
+        <path class="ar" d="M758 155 H800" marker-end="url(#arr)"/>
+        <rect class="box" x="802" y="120" width="152" height="70" rx="8"/><text class="t" x="814" y="146">Nächstes Zeichen</text><text class="s" x="814" y="170">„m“</text>
+      </svg>
+    </div>
+    <div class="legend"><span class="ln">Neuronal, im RAM</span><span class="ls">Symbolisch / zählend</span><span>gestrichelt: liegt im Flash</span></div>
+
+    <div class="facts">
+      <div class="fact"><span class="conf">Sicherheit hoch</span><span class="num mb">2 572</span><p><b>Ein winziger Mischer reicht.</b> Ein Tor mit höchstens 2 572 Parametern, das pro Wort zwischen einem 5-Gramm-Modell und einem LSTM wählt, schlägt beide allein und auch ihre feste Mischung. Schon 11 billige Zähl-Merkmale reichen als Entscheidungsgrundlage. Mit großen Textspeichern sank die Perplexität im besten Fall um 73 %, und zwar vor allem dann, wenn die Daten zum Thema passen. Genau das ist bei einer engen Domäne der Fall.</p></div>
+      <div class="fact"><span class="conf">Sicherheit mittel</span><span class="num mb">&lt; 3 %</span><p><b>Große Tabellen in langsamem Speicher kosten kaum Tempo.</b> Engram (DeepSeek, Januar 2026) legt eine 100-Mrd.-Parameter-Tabelle mit gehashten N-Grammen in den langsameren Hauptspeicher und verliert unter 3 % Durchsatz. Das ist das Gegenstück zu unserem Flash. Allerdings: gemessen auf GPUs, wo Lesen und Rechnen parallel laufen. Auf dem ESP8266 addieren sich Flash-Zugriffe direkt zur Rechenzeit.</p></div>
+      <div class="fact"><span class="conf">Sicherheit mittel</span><span class="num tf">1,19 = 1,19</span><p><b>Kompression ist Vorhersage.</b> Context-Mixing-Kompressoren wie cmix sagen Zeichen auf 100 MB Text genauso gut voraus wie ein Transformer (beide 1,19 Bit pro Byte). Das neuronale Netz gewinnt erst bei viel mehr Daten. Bei 0,6 Mio. Parametern und wenigen MB Fachtext spricht das dafür, ein zählendes Modell als Basis zu nehmen und das Netz nur mischen oder korrigieren zu lassen.</p></div>
+    </div>
+
+    <h3>Können nur wir das bauen?</h3>
+    <p>Beweisen lässt sich das nicht. Belegt ist: Keine geprüfte Quelle hat die Kombination aus rekurrentem Kern mit kleinem Zustand, gehashtem N-Gramm-Gedächtnis im Flash und winzigem Mischer auf einem Mikrocontroller unter 1 Mio. Parametern untersucht. Das ist eine echte Forschungslücke. UltraTiny hat dafür gute Voraussetzungen: eine bitgenaue PC-Runtime, echte Board-Messungen und eine enge Domäne, in der zählende Modelle am meisten bringen. Dazu kommt die Faktentabelle aus Recherche 2 und 3, die das Netz von Wissen entlastet.</p>
+
+    <h3>Drei Versuche, die das klären</h3>
+    <ol>
+      <li><b>Kern-Vergleich:</b> Transformer (heute), minGRU, sLSTM und RWKV-7 mit kleinen Köpfen bei 60K, 200K und 600K Parametern auf eurem deutschen Korpus, int8 und in Ganzzahl-Arithmetik simuliert. Gemessen: Bit pro Zeichen, Zustand in Byte, Zeichen pro Sekunde auf dem Board.</li>
+      <li><b>Flash-Gedächtnis:</b> Ein kleiner Kern mit und ohne gehashte N-Gramm-Tabelle (0,5 bis 3 MB) bei gleicher Größe im RAM. Dazu messen, ob zufällige 32-Byte-Zugriffe aufs Flash mehr Zeit kosten, als die eingesparte Rechnung bringt.</li>
+      <li><b>Kompressions-Hybrid:</b> Ein PPM- oder N-Gramm-Modell der Ordnung 5 bis 8 im Flash, gemischt mit einem RNN der Größe 4 × 64 über ein Tor mit unter 1 000 Parametern, gegen das heutige 0,6M-Modell.</li>
+    </ol>
+    <p class="note">Alle Zahlen stammen aus Modellen mit 5 Mio. bis 10 Mrd. Parametern auf PCs und GPUs. Unter 1 Mio. Parametern, ohne FPU und auf einem Mikrocontroller hat keine Quelle gemessen. Die Zustandsgrößen für RWKV-7 und mLSTM haben die Prüf-Agenten selbst überschlagen. Widerlegt wurden drei Aussagen, darunter die, dass ein ∞-Gramm-Modell 47 % der Wörter richtig vorhersagt.</p>
+
+    <div class="sources">
+      <b>Quellen</b>
+      <a href="https://arxiv.org/abs/2410.01201">minGRU / minLSTM (Were RNNs All We Needed?)</a>
+      <a href="https://arxiv.org/pdf/2305.13048">RWKV</a>
+      <a href="https://arxiv.org/pdf/2503.14456v2">RWKV-7 „Goose“</a>
+      <a href="https://arxiv.org/pdf/2405.04517">xLSTM</a>
+      <a href="https://arxiv.org/abs/2401.17377">Infini-gram</a>
+      <a href="https://arxiv.org/pdf/1804.07705v2.pdf">Gate zwischen N-Gramm und LSTM</a>
+      <a href="https://bellard.org/nncp/">NNCP</a>
+      <a href="https://gwern.net/doc/www/www.byronknoll.com/2fcab2e668d671915958f32dc7e5d4607a1bd18b.html">cmix</a>
+      <a href="https://arxiv.org/html/2602.19626v2">Nacrith</a>
+      <a href="https://arxiv.org/html/2601.07372v1">Engram (DeepSeek 2026)</a>
+      <a href="https://arxiv.org/html/2412.10856v3">RWKV-lite</a>
+    </div>
+  </section>
+</div>
+
+<script>
+const TEXT = "Was ist die Hauptstadt von Frankreich?";
+const WIN = 12;                 // visible cells
+const NS = "http://www.w3.org/2000/svg";
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+let i = 0, timer = null;
+let state = Array.from({length:16}, () => 0);
+
+function el(tag, attrs, parent, text){
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (text !== undefined) e.textContent = text;
+  parent.appendChild(e); return e;
+}
+function show(ch){ return ch === " " ? "␣" : ch; }
+
+function drawT(){
+  const s = document.getElementById("svgT"); s.innerHTML = "";
+  const tf = css("--tf"), soft = css("--tf-soft"), fg = css("--fg"), mu = css("--muted"), line = css("--line");
+  const start = Math.max(0, i - WIN + 1), cw = 34, x0 = 26, yC = 40;
+  el("text",{x:10,y:16,fill:mu,"font-size":11,"font-family":"JetBrains Mono"},s,"Eingabe");
+  for (let k = start; k <= i && k < TEXT.length; k++){
+    const x = x0 + (k - start) * cw, cur = k === i;
+    el("rect",{x:x,y:yC-16,width:28,height:28,rx:4,fill:cur?tf:soft,stroke:line},s);
+    el("text",{x:x+14,y:yC+3,"text-anchor":"middle",fill:cur?css("--bg"):fg,"font-size":14,"font-family":"JetBrains Mono"},s,show(TEXT[k]));
+  }
+  // attention arcs from current char to all previous visible
+  const cx = x0 + (i - start) * cw + 14;
+  for (let k = start; k < i; k++){
+    const x = x0 + (k - start) * cw + 14, h = 18 + (i - k) * 5;
+    el("path",{d:`M${cx} ${yC+14} Q ${(cx+x)/2} ${yC+14+h} ${x} ${yC+14}`,fill:"none",stroke:tf,"stroke-opacity":.55,"stroke-width":1.4},s);
+  }
+  // KV cache
+  const used = Math.min(i + 1, 104), yK = 170;
+  el("text",{x:10,y:yK-12,fill:mu,"font-size":11,"font-family":"JetBrains Mono"},s,`KV-Cache: ${used} / 104 Zeichen · ${used*256} Byte`);
+  const cells = 26, filled = Math.round(used / 104 * cells);
+  for (let c = 0; c < cells; c++){
+    el("rect",{x:10 + c*17,y:yK,width:14,height:32,rx:2,fill:c<filled?tf:soft,stroke:line},s);
+  }
+  el("text",{x:10,y:yK+56,fill:mu,"font-size":11,"font-family":"JetBrains Mono"},s,`Vergleiche in diesem Schritt: ${Math.min(i+1,104)} × 4 Schichten`);
+}
+
+function drawM(){
+  const s = document.getElementById("svgM"); s.innerHTML = "";
+  const mb = css("--mb"), soft = css("--mb-soft"), fg = css("--fg"), mu = css("--muted"), line = css("--line"), bg = css("--bg");
+  const start = Math.max(0, i - WIN + 1), cw = 34, x0 = 26, yC = 40;
+  el("text",{x:10,y:16,fill:mu,"font-size":11,"font-family":"JetBrains Mono"},s,"Eingabe");
+  for (let k = start; k <= i && k < TEXT.length; k++){
+    const x = x0 + (k - start) * cw, cur = k === i;
+    const g = el("g",{opacity: cur ? 1 : .28},s);
+    el("rect",{x:x,y:yC-16,width:28,height:28,rx:4,fill:cur?mb:soft,stroke:line},g);
+    el("text",{x:x+14,y:yC+3,"text-anchor":"middle",fill:cur?bg:fg,"font-size":14,"font-family":"JetBrains Mono"},g,show(TEXT[k]));
+  }
+  const cx = x0 + (i - start) * cw + 14;
+  // arrow from current char into state
+  el("path",{d:`M${cx} ${yC+14} C ${cx} 100, 230 90, 230 118`,fill:"none",stroke:mb,"stroke-width":2},s);
+  el("polygon",{points:"224,112 236,112 230,122",fill:mb},s);
+  // state grid 2 x 8
+  const yS = 126;
+  el("rect",{x:94,y:yS-4,width:272,height:80,rx:8,fill:"none",stroke:mb,"stroke-width":2},s);
+  for (let r = 0; r < 2; r++) for (let c = 0; c < 8; c++){
+    const v = state[r*8+c];
+    el("rect",{x:104 + c*32,y:yS+6 + r*34,width:26,height:26,rx:3,fill:mb,"fill-opacity":(0.12 + 0.88*v).toFixed(2),stroke:line},s);
+  }
+  // loop arrow: state feeds itself
+  el("path",{d:"M366 166 C 420 166, 420 120, 380 120",fill:"none",stroke:mb,"stroke-width":1.6,"stroke-dasharray":"4 3"},s);
+  el("text",{x:384,y:110,fill:mu,"font-size":10,"font-family":"JetBrains Mono"},s,"neuer Zustand");
+  el("text",{x:10,y:236,fill:mu,"font-size":11,"font-family":"JetBrains Mono"},s,`Zustand: immer gleich groß · Zeichen gelesen: ${i+1}`);
+}
+
+function hash(str){ let h = 2166136261; for (const c of str){ h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
+function updateState(){
+  const ch = TEXT[i], h = hash(ch + i);
+  const gate = 0.55 + (h % 30) / 100;      // how much to keep
+  state = state.map((v, k) => {
+    const inp = ((h >> (k % 24)) & 7) / 7;
+    return Math.min(1, gate * v + (1 - gate) * inp);
+  });
+}
+
+function render(){
+  drawT(); drawM();
+  document.getElementById("pos").textContent = `Zeichen ${i+1} von ${TEXT.length}: „${TEXT[i]}“`;
+}
+function next(){
+  if (i >= TEXT.length - 1){ stop(); return; }
+  i++; updateState(); render();
+}
+function stop(){ clearInterval(timer); timer = null; document.getElementById("play").textContent = "Abspielen"; }
+document.getElementById("play").onclick = () => {
+  if (timer){ stop(); return; }
+  if (i >= TEXT.length - 1){ i = 0; state = state.map(() => 0); updateState(); }
+  document.getElementById("play").textContent = "Anhalten";
+  timer = setInterval(next, matchMedia("(prefers-reduced-motion: reduce)").matches ? 900 : 380);
+};
+document.getElementById("step").onclick = () => { stop(); next(); };
+document.getElementById("reset").onclick = () => { stop(); i = 0; state = state.map(() => 0); updateState(); render(); };
+
+// memory chart
+const TF_PER = 256, MB_LAYER = 256*16 + 256*3 + 0; // int8 bytes: ssm state + conv state
+const MB_TOTAL = MB_LAYER * 4, ARENA = 35 * 1024;
+function kb(b){ return (b/1024).toLocaleString("de-DE",{maximumFractionDigits:1}) + " KB"; }
+function drawChart(){
+  const n = +document.getElementById("len").value;
+  document.getElementById("lenOut").textContent = `${n} Zeichen`;
+  const s = document.getElementById("chart"); s.innerHTML = "";
+  const fg = css("--fg"), mu = css("--muted"), line = css("--line"), warn = css("--warn");
+  const max = 110 * 1024, x0 = 130, w = 470, sc = v => x0 + Math.min(v, max) / max * w;
+  // grid
+  for (let t = 0; t <= 100; t += 25){
+    const x = sc(t*1024);
+    el("line",{x1:x,x2:x,y1:20,y2:180,stroke:line},s);
+    el("text",{x:x,y:200,"text-anchor":"middle",fill:mu,"font-size":11,"font-family":"JetBrains Mono"},s,`${t} KB`);
+  }
+  const rows = [["Transformer", n*TF_PER, css("--tf")], ["Mamba", MB_TOTAL, css("--mb")]];
+  rows.forEach(([name, v, col], r) => {
+    const y = 40 + r*70;
+    el("text",{x:0,y:y+22,fill:fg,"font-size":14,"font-weight":700,"font-family":"Atkinson Hyperlegible"},s,name);
+    el("rect",{x:x0,y:y,width:Math.max(2, sc(v)-x0),height:34,rx:3,fill:col},s);
+    const lx = Math.min(sc(v) + 8, 560);
+    el("text",{x:lx,y:y+22,fill:fg,"font-size":12,"font-family":"JetBrains Mono"},s,(v>max?"> ":"") + kb(v));
+  });
+  const ax = sc(ARENA);
+  el("line",{x1:ax,x2:ax,y1:14,y2:180,stroke:warn,"stroke-width":2,"stroke-dasharray":"5 4"},s);
+  el("text",{x:ax+4,y:14,fill:warn,"font-size":11,"font-family":"JetBrains Mono"},s,"Arena 35 KB");
+}
+document.getElementById("len").addEventListener("input", drawChart);
+
+updateState(); render(); drawChart();
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { render(); drawChart(); });
+new MutationObserver(() => { render(); drawChart(); }).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+</script>
