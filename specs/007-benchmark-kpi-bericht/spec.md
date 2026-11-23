@@ -261,9 +261,10 @@ re-pinning), run the CI step and see it fail with a clear message.
   (e) the **S1 test text**: at least 20,000 characters of German text not used in training, half
   topic text and half general German, with recorded source and license;
   (f) the **S2 recall test**: at least 100 probes, each a text in which a rare word is named early
-  and appears again later, at distances in steps from 16 characters up to at least four times the
-  largest context used by any model in the roadmap, each with a control text that is identical
-  except that the first mention is replaced by another word of the same length;
+  and appears again later, at fixed distances from 16 to 416 characters (four times today's
+  largest context of 104), each with a control text that is identical except that the first
+  mention is replaced by another word of the same length; a model that recalls at the largest
+  distance gets S2 "≥ 416", and adding larger distances later is a new suite version;
   (g) the **S3 sample**: 20 fixed prompts that need a free-text answer (greeting, explanation,
   refusal).
   The general-knowledge suite MUST contain at least (a), (b), (c), (e) and (f), sized for its
@@ -306,10 +307,12 @@ re-pinning), run the CI step and see it fail with a clear message.
   - **T1** time from sending the end of the question to the first visible answer character, for a
     typed question (characters at human speed) and for a pasted question (all at once), median and
     worst value;
-  - **T2** answer characters per second after the first character, median over the board sample;
-  - **T3** answer characters per second for prompts whose question and answer fill at least 90 %
-    of the model's context;
-  - **R1** peak arena use and free heap after boot, as reported by the board;
+  - **T2** answer characters per second after the first character (generation time of characters
+    2…n, without the wait for the first character), median over the board sample;
+  - **T3** characters per second over the generation steps at context positions of at least 90 %
+    of the model's context, measured on fixed long prompts of the board sample;
+  - **R1** peak arena use and free heap after boot (the board run starts with a reset), as
+    reported by the board;
   - **R2** flash size of the model, **R3** flash size of the knowledge image (0 if none);
   - **R4** (R2 + R3) / F6, bytes per answerable fact;
   - **S1** bits per character of the model on the S1 test text, for the topic half, the general
@@ -331,7 +334,8 @@ re-pinning), run the CI step and see it fail with a clear message.
   image content hashes, suite and test-set versions, firmware identity (board), git commit, seed(s)
   of the training run if known, date and machine or board.
 - **FR-012**: Result files MUST be stored under `bench/results/` with a name that identifies model,
-  suite and date; committed results MUST be readable without the model file.
+  suite and date; committed results MUST be readable without the model file. Exception: the
+  reference result that the CI checks against (FR-024) has a fixed name without a date.
 - **FR-013**: The board measurement MUST use the firmware and model already on the board, MUST NOT
   flash or erase anything on its own, MUST compare every board answer with the PC reference and
   MUST record resets, hangs and timeouts per question instead of aborting the whole run.
@@ -414,8 +418,8 @@ re-pinning), run the CI step and see it fail with a clear message.
   chemistry suite, without any code change (topic-independence check).
 - **SC-006**: All test sets are pinned; changing one byte of any test set makes the benchmark and
   the CI fail with a message that names the file.
-- **SC-007**: On a deliberately changed answer of the repo model, the CI fails and the report lists
-  the changed question within its per-question change list.
+- **SC-007**: On a deliberately changed answer of the repo model, the CI fails and its output lists
+  the changed question.
 - **SC-008**: For a sample of 50 scored answers, a person's own classification (correct, wrong
   fact, refused, no usable answer) agrees with the benchmark's classification in at least 49 cases.
 

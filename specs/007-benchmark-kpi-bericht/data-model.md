@@ -16,7 +16,7 @@ Entities from [spec.md](spec.md) "Key Entities". File formats are fixed in
 | `refusal_forms` | list of string | Prefixes or full texts that count as "refused" |
 | `thresholds` | map KPI → Threshold | Fixed before the first comparison (FR-018) |
 | `board_sample` | Board sample | |
-| `kpis_not_applicable` | list of KPI id | E.g. nothing for chemie; listed KPIs show "not applicable" |
+| `not_applicable` | list of KPI id | E.g. nothing for chemie; listed KPIs show "not applicable" |
 
 ## Value class
 
@@ -54,6 +54,7 @@ asked).
 | Field | Rules |
 |-------|-------|
 | `id` | Unique within the set (`un/001`, `ka/001`) |
+| `grade` | Informative only: 7–10 or `-` |
 | `kind` | `fact`, `multi`, `explain`, `refuse`, `unknown` |
 | `question` | ≤ the console's question limit for the smallest model in the roadmap (70 characters) |
 | `expected` | `fact`/`multi`: `property: object` entries separated by ` \| `; `explain`: keywords separated by `; `; else empty |

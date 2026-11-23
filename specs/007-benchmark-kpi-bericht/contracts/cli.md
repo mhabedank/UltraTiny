@@ -35,9 +35,11 @@ bench.py board --suite DIR --model FILE.utny [--facts FILE.utft] --label NAME
                [--out FILE.json] [--firmware FILE.bin] [--sample all|parity]
 ```
 
-- Never flashes or erases. First reads `/info` and stops (exit 2) if parameters, file size, git/date or
+- Never flashes or erases. With `--port` it first resets the board through RTS (as `device_smoke.py`),
+  so R1 is read right after boot. Then it reads `/info` and stops (exit 2) if parameters, file size, git/date or
   the fact table `sha4` do not match `--model`/`--facts`.
-- Runs the board sample: pasted pass (all), typed pass (first 15), trace pass (T3 prompts), `/stats`.
+- Switches `/trace json` on for the whole run (per-step times for T2/T3), then runs the board sample:
+  pasted pass (all), typed pass (first 15), T3 prompts, `/stats` at start and end.
 - Compares every answer with the PC adapter; mismatches go to `items[].parity = false` and the
   summary (exit 1).
 - `--firmware` adds the firmware size for the budget section.

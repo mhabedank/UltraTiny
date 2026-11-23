@@ -81,7 +81,8 @@ uv run python ../tools/bench.py board --suite ../bench/suites/allgemein --model 
 
 Expected:
 - Finishes within 30 min.
-- T1 typed is close to 158 ms and T2 close to 5.1 chars/s (spec 005), each within 10 %.
+- T1, T2 and R1 are recorded. The comparison with spec 005 (158 ms, 5.1 chars/s, SC-003) is made
+  with `chemie-nodemcu` in §8, because spec 005 measured that model.
 - R1 shows an arena of 35,504 B and a free heap of about 4,960 B.
 - No parity mismatch.
 

@@ -143,10 +143,17 @@ way to evaluate a fixed-window model; scoring every position with full history w
 **Alternatives**: Non-overlapping windows (rejected: the first characters of each window have almost
 no history and inflate bits); stride 1 (too slow).
 
-**Text**: 10,000 characters of chemistry text for grades 7–10 written for this project (source `own`,
-drafted with assistant help and reviewed by the user; it covers curriculum topics but is not copied
-from `chemie_rlp_*.tsv`) and 10,000 characters of public-domain German prose (Project Gutenberg, author
-dead > 70 years, e.g. Kafka, *Die Verwandlung*, 1915). A check verifies that no 40-character span of
+**Text**: Each suite has its own topic half and shares the general half:
+- **Topic half, chemie**: 10,000 characters of chemistry text for grades 7–10, written for this
+  project and reviewed by the user. It covers curriculum topics but is not copied from
+  `chemie_rlp_*.tsv`.
+- **Topic half, allgemein**: 10,000 characters of geography and general-knowledge text (countries,
+  capitals, currencies), written the same way.
+- **General half, both suites**: 10,000 characters of public-domain German prose (Project Gutenberg,
+  author dead > 70 years, e.g. Kafka, *Die Verwandlung*, 1915).
+
+How the project-written text is sourced and recorded is decided in T047 (see the open licence
+question). A check verifies that no 40-character span of
 the S1 text occurs in the training data files. `DATA_LICENSES.md` gets a `public-domain` row and a
 note that `bench/` data is evaluation-only.
 
@@ -161,6 +168,8 @@ note that `bench/` data is evaluation-only.
 - **Control text**: the same text, except the first mention is replaced by a different invented
   word of the same length.
 - **Size**: distances d ∈ {16, 32, 64, 96, 128, 192, 256, 416}, 13 probes each, 104 probes in total.
+  These distances are fixed. A model that recalls at 416 gets S2 "≥ 416"; larger distances for later
+  cores (spec 012) are a new suite version, so S2 then reads "not comparable" against older results.
 
 Scoring: bits of the second occurrence, using the adapter's full-history rule (for the transformer:
 the window ends at the target, at most `ctx_len − 1` characters of history). A probe is recalled when
@@ -184,13 +193,14 @@ commands that already exist:
 |------|---------------------|
 | identity | `/info`: parameters, file size, training git and date, fact table `data <sha4>` |
 | T1 | `/info` "erstes Zeichen nach … ms" after each question; typed pass with 100 ms per character (as `device_smoke.py`), pasted pass all at once |
-| T2 | `/info` chars/s, median over the sample |
-| T3 | `/trace json`: per-step `pos` and `us`; T3 = chars/s over steps with `pos ≥ 0.9 × ctx_len` |
+| T2 | `/trace json` (on for the whole run; printed after the answer, so it does not slow it): per-step `us`; T2 = (n − 1) / Σ step time of characters 2…n, median over the sample. `/info` chars/s (counted from Enter, so it includes the first-character wait) is kept as information only |
+| T3 | same per-step data; T3 = characters / Σ step time over steps with `pos ≥ 0.9 × ctx_len`, on the T3 prompts |
 | R1 | `/stats` JSON line `@ut {"type":"sys",…}`: `arena_need`, `arena_buf`, `heap_free`, `heap_min` |
 | parity | answer text vs. the PC adapter's answer for the same question |
 
-The arena is static (constitution II), so its peak equals `arena_need`; heap is read after boot and
-again at the end of the run (`heap_min` shows the low point).
+The arena is static (constitution II), so its peak equals `arena_need`. With `--port` the run starts
+with an RTS reset (no flashing), so the first `/stats` gives the heap after boot; it is read again at
+the end of the run (`heap_min` shows the low point). With `--exec` there is no reset.
 
 - **Board sample** (`suite.toml`): 30 F1 questions, the whole short-test set (130), and 10 T3 prompts.
   T3 prompts are long questions with long answers.

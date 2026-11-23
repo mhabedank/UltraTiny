@@ -2,6 +2,9 @@
 
 ## Result file (`bench/results/<label>_<suite>_<pc|board>_<YYYYMMDD>.json`)
 
+Exception (spec FR-012): the CI reference result has a fixed name without a date,
+`bench/results/nodemcu_allgemein_pc.json`.
+
 UTF-8 JSON, keys sorted, two-space indent, so diffs stay readable in pull requests.
 
 ```json
@@ -50,13 +53,13 @@ UTF-8 JSON, keys sorted, two-space indent, so diffs stay readable in pull reques
 | F5 | correct / all (%), spec 006 rules per kind | kurzarbeit |
 | F6 | count of facts answered correctly with the canonical question | facts.tsv |
 | T1 | ms, median and max, typed and pasted | board sample |
-| T2 | chars/s, median | board sample |
-| T3 | chars/s over steps at pos ≥ 0.9 ctx | T3 prompts |
-| R1 | `arena_need`, `arena_buf`, `heap_free` after boot, `heap_min` | board `/stats` |
+| T2 | (n − 1) / step time of characters 2…n, chars/s, median | board sample, `/trace json` |
+| T3 | characters / step time over steps at pos ≥ 0.9 ctx | T3 prompts, `/trace json` |
+| R1 | `arena_need`, `arena_buf`, `heap_free` after boot (run starts with a reset), `heap_min` | board `/stats` |
 | R2 / R3 | bytes of model / knowledge image | files |
 | R4 | (R2 + R3) / F6 | — |
 | S1 | bits per character: topic, general, all; coverage % | s1 |
-| S2 | largest distance with ≥ 80 % recalled; curve | s2 |
+| S2 | largest distance with ≥ 80 % recalled ("≥ 416" when the largest distance passes); curve | s2 |
 | S3 | % of rated answers with `grammar_ok = ja` | s3 + rating sheet |
 
 ## Report (`bench_report.py`)
