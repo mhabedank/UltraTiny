@@ -34,7 +34,6 @@
 - The spec names existing project artefacts (`kurzarbeit.tsv`, `abweisen.tsv`, `bench/results/`,
   `devlib.py`/`device_smoke.py`, model names) because the roadmap fixes them; it does not choose
   languages, libraries or file formats. Same convention as specs 005/006.
-- Noise thresholds are given as defaults in Assumptions and must be confirmed in the plan before
-  the first comparison (FR-018).
+- Noise thresholds were confirmed in /speckit-clarify (2026-11-23) and are fixed in FR-018.
 - No clarification markers: open choices (thresholds, test-set sizes, one vs. two boards) were
   resolved with documented defaults.

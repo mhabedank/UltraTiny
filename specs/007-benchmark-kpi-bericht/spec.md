@@ -37,6 +37,16 @@ The baseline model `chemie-nodemcu` (spec 005, trained on the DGX Spark) exists 
 The repo model `nodemcu` (`models/nodemcu.utny`) is trained on general knowledge (capitals,
 element symbols, self-description), not on the chemistry curriculum.
 
+## Clarifications
+
+### Session 2026-11-23
+
+- Q: Wie soll F1 mit Fragearten umgehen, die ein Modell nie gelernt hat? → A: Eine Zahl über alle Fragen des Sets; nicht gelernte Fragearten zählen als nicht beantwortet (keine zweite Zahl „nur gelernte Fragearten“).
+- Q: Wie soll S2 (Merk-Test) gemessen werden? → A: Über die Vorhersage-Güte: Wie viel besser sagt das Modell das zweite Vorkommen eines früh genannten Worts vorher als im gleichen Text ohne die erste Nennung; keine generierte Antwort nötig.
+- Q: Wie streng soll die CI-Prüfung des Repo-Modells sein? → A: Rot bei jeder Änderung einer Kennzahl oder Antwort-Klasse gegenüber dem committeten Ergebnis; Fix = neu messen und im selben PR committen.
+- Q: Passen die vorgeschlagenen Rauschschwellen? → A: Ja, so festlegen: F1/F3/F4/F5 ±3 Pkt., F2 ±0,5 Pkt., F6 ±1 %, T1–T3 ±5 %, R1–R4 exakt, S1 ±0,02 Bit/Zeichen, S2 eine Abstandsstufe, S3 ±2 Antworten.
+- Q: Wie wird kurzarbeit.tsv (noch ungeprüft) übernommen? → A: Erst prüfen, dann pinnen: Der Nutzer prüft die Datei einmal als Teil von 007; derselbe Hash gilt für den Benchmark und für Spec 006.
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Measure a model on the PC with one command (Priority: P1)
@@ -246,12 +256,14 @@ re-pinning), run the CI step and see it fail with a clear message.
   that are not in the reference facts (e.g. invented or out-of-curriculum substances);
   (c) **off-topic questions** for F3: at least 40 questions outside the topic, none of them taken
   from the refusal training data (`abweisen.tsv`);
-  (d) the **short-test set** `kurzarbeit.tsv` of spec 006 for F5;
+  (d) the **short-test set** `kurzarbeit.tsv` of spec 006 for F5, reviewed once by the user as
+  part of this spec and then pinned; the same pin is used by spec 006's data generator;
   (e) the **S1 test text**: at least 20,000 characters of German text not used in training, half
   topic text and half general German, with recorded source and license;
-  (f) the **S2 recall test**: at least 100 probes in which a word named early in a text is asked
-  for later, at distances in steps from 16 characters up to at least four times the largest
-  context used by any model in the roadmap;
+  (f) the **S2 recall test**: at least 100 probes, each a text in which a rare word is named early
+  and appears again later, at distances in steps from 16 characters up to at least four times the
+  largest context used by any model in the roadmap, each with a control text that is identical
+  except that the first mention is replaced by another word of the same length;
   (g) the **S3 sample**: 20 fixed prompts that need a free-text answer (greeting, explanation,
   refusal).
   The general-knowledge suite MUST contain at least (a), (b), (c), (e) and (f), sized for its
@@ -281,6 +293,8 @@ re-pinning), run the CI step and see it fail with a clear message.
 - **FR-009**: The KPIs MUST be defined as follows (all rates in percent with the count behind
   them):
   - **F1** correct / all questions of the unseen-phrasings set, also broken down per question type;
+    question types a model never learned stay in the denominator (their questions count as not
+    correct); there is no separate rate restricted to learned types;
   - **F2** wrong fact / all fact questions of the unseen-phrasings and short-test sets (target
     ≤ 1 %);
   - **F3** refused / all questions of the unknown-objects and off-topic sets, also per set;
@@ -300,8 +314,11 @@ re-pinning), run the CI step and see it fail with a clear message.
   - **R4** (R2 + R3) / F6, bytes per answerable fact;
   - **S1** bits per character of the model on the S1 test text, for the topic half, the general
     half and both, with the share of characters the model's alphabet covers;
-  - **S2** the largest distance at which the recall probes are answered correctly at least 80 % of
-    the time, plus the full accuracy-by-distance curve;
+  - **S2** the largest distance at which at least 80 % of the recall probes are recalled, plus the
+    full recall-by-distance curve; a probe counts as recalled when the model needs at most half as
+    many bits for the second occurrence of the word as for the same position in its control text
+    (measured on prediction quality, so any language model can be measured without being trained
+    to answer recall questions);
   - **S3** share of the 20 S3 answers rated "grammar ok" by a person.
 - **FR-010**: Quality KPIs (F, S) MUST be measured through the PC reference that is bit-exact with
   the board (constitution III); the board sample MUST confirm this with identical answers.
@@ -333,7 +350,10 @@ re-pinning), run the CI step and see it fail with a clear message.
 - **FR-018**: Each KPI MUST have a noise threshold that is fixed in the suite before the first
   comparison is made. A change MUST count as better or worse only when it is larger than the noise
   threshold and, when several seeds are present, larger than twice the seed spread (research 1 §8,
-  roadmap rule 5). Changing a threshold later MUST be a versioned change of the suite.
+  roadmap rule 5). Changing a threshold later MUST be a versioned change of the suite. The
+  thresholds are: F1, F3, F4, F5 ± 3 percentage points (about one binomial standard error at 200
+  questions); F2 ± 0.5 points; F6 ± 1 % of its value; T1–T3 ± 5 %; R1–R4 exact (any change
+  counts); S1 ± 0.02 bits per character; S2 one distance step; S3 ± 2 answers.
 - **FR-019**: The report MUST contain a budget section that checks R1–R3 and the firmware size
   against the constitution's budgets and the roadmap's gate (arena ≤ 35 KB, ≥ 10 % reserve) and
   marks every breach; the report summary MUST state "budget broken" if any budget is broken, and
@@ -353,8 +373,9 @@ re-pinning), run the CI step and see it fail with a clear message.
   all four result files and the resulting baseline report MUST be committed.
 - **FR-024**: The CI MUST run the PC benchmark of the repo model with its suite on every pull
   request and fail when its quality KPIs or per-question classes differ from the committed result
-  or when a test-set pin does not match. The CI step MUST finish within 10 minutes on the CI
-  machine.
+  or when a test-set pin does not match. Any difference fails, including improvements and changes
+  inside the noise threshold; the fix is to re-measure and commit the result in the same pull
+  request. The CI step MUST finish within 10 minutes on the CI machine.
 
 ### Key Entities
 
@@ -401,16 +422,11 @@ re-pinning), run the CI step and see it fail with a clear message.
 ## Assumptions
 
 - Spec 007 is written and built before spec 006 is finished (roadmap order); spec 006's step 2
-  then measures `chemie-hybrid` with this benchmark. The short-test set `kurzarbeit.tsv` is taken
-  over in its state at the time of pinning; if spec 006's review still changes it, that is a new
-  test-set version (FR-004).
+  then measures `chemie-hybrid` with this benchmark. The review of `kurzarbeit.tsv` that spec 006
+  planned happens in this spec (FR-003 d), so both specs share one pinned version.
 - The baseline is measured with one seed, because `chemie-nodemcu` exists only once; later steps
   measure three seeds where training cost allows (roadmap rule 5). For KPIs without seed spread the
   fixed noise threshold decides alone.
-- Default noise thresholds, to be confirmed in the plan and fixed in the suite before the first
-  comparison: rates F1, F3, F4, F5 ± 3 percentage points (about one binomial standard error at
-  200 questions), F2 ± 0.5 points, F6 ± 1 % of its value, T1–T3 ± 5 %, R1–R4 exact (any change
-  counts), S1 ± 0.02 bits per character, S2 one distance step, S3 ± 2 answers.
 - The board mode reuses the serial protocol and console commands that `devlib.py`,
   `device_smoke.py` and `device_parity.py` already use (`/info`, `/stats`, timing lines); if R1 or
   the knowledge-image identity is not yet reported by the firmware, adding that to the console
