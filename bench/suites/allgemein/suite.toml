@@ -1,0 +1,97 @@
+# Benchmark suite "allgemein" (specs/007-benchmark-kpi-bericht): the topic of the repo model
+# models/nodemcu.utny (capitals, element symbols, self-description). Topic-independence test (FR-002)
+# and CI check (FR-024). Re-pin with `tools/bench.py pin --suite ../bench/suites/allgemein`.
+name = "allgemein"
+version = 1
+max_question = 70
+explain_max = 60
+# The starter model was never trained to refuse; these are the generic forms of later models.
+refusal_forms = ["Das weiß ich leider nicht.", "Frag mich etwas"]
+not_applicable = []
+
+[files]
+"facts.tsv" = "01743fdfa3844b8bf3d74c05484d4c831c7d1c5382a3ebbafdbd160976ed9b21"
+
+[sets]
+# filled by T019 (proposals from tools on the Spark, reviewed): unseen, unknown, offtopic, s3,
+# s1 = "text/s1.txt", s2 = "text/s2.tsv"
+
+[value_classes.city]
+kind = "vocab"
+case_sensitive = false
+
+[value_classes.country]
+kind = "vocab"
+case_sensitive = false
+
+[value_classes.symbol]
+kind = "vocab"
+case_sensitive = true
+
+[value_classes.element_name]
+kind = "vocab"
+case_sensitive = false
+
+[properties.hauptstadt_von]
+value_class = "city"
+canonical = "Was ist die Hauptstadt von {name}?"
+
+[properties.hauptstadt_land]
+value_class = "country"
+canonical = "Von welchem Land ist {key} die Hauptstadt?"
+reverse = true
+
+[properties.element_symbol]
+value_class = "symbol"
+canonical = "Was ist das Symbol von {name}?"
+
+[properties.symbol_element]
+value_class = "element_name"
+canonical = "Welches Element hat das Symbol {key}?"
+reverse = true
+
+[propose]   # tools/bench_propose_llm.py (Spark); wording only, no answers
+topic = "Hauptstädte, Länder und chemische Elementsymbole"
+unknown_objects = "Länder"
+offtopic_themes = [
+  "Fußball und andere Sportarten", "Musik und Konzerte", "Filme und Serien", "Kochen", "Tiere",
+  "Mathe-Rechenaufgaben", "Computer und Programmieren", "Videospiele", "Witze und Rätsel",
+  "Uhrzeit und Datum", "Wetter", "Autos",
+]
+s3_kinds = ["Begrüßungen", "Fragen, wer oder was der Chatbot ist", "Fragen, worauf der Chatbot läuft",
+            "Dank und Verabschiedung", "Bitten um einen kurzen Satz über ein Land"]
+text_themes = [
+  "Hauptstädte in Europa", "die Länder Südamerikas", "Reisen durch Asien", "Afrika und seine Länder",
+  "Flüsse und Gebirge Europas", "große Städte der Welt", "Grenzen und Nachbarländer",
+  "Währungen und Geld in verschiedenen Ländern", "Sprachen der Welt", "Inseln und Inselstaaten",
+  "Klimazonen der Erde", "berühmte Bauwerke in Hauptstädten", "die Ozeane", "Landkarten und Atlanten",
+]
+
+[thresholds]   # spec FR-018 (clarified 2026-11-23); percentages are percentage points
+F1 = 3.0
+F2 = 0.5
+F3 = 3.0
+F4 = 3.0
+F5 = 3.0
+F6 = "1%"
+T1 = "5%"
+T2 = "5%"
+T3 = "5%"
+R1 = "exact"
+R2 = "exact"
+R3 = "exact"
+R4 = "exact"
+S1 = 0.02
+S2 = "1 step"
+S3 = 2
+
+[board_sample]
+unseen = 30
+kurzarbeit = "all"
+typed = 15
+t3 = []
+
+[s2]
+distances = [16, 32, 64, 96, 128, 192, 256, 416]
+recall_ratio = 0.5
+recall_min = 0.8

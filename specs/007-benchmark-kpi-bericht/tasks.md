@@ -37,10 +37,10 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 **Purpose**: Directories, package skeleton and documentation stubs
 
-- [ ] T001 Create the `bench/` tree per plan.md "Source Code":
+- [X] T001 Create the `bench/` tree per plan.md "Source Code":
   - `bench/suites/chemie/{sets,text}/`, `bench/suites/allgemein/{sets,text}/`, `bench/results/`, `bench/demo/`
   - `bench/README.md`: what lives here, that nothing in `bench/` is ever trained (FR-005), how to run and how to re-pin
-- [ ] T002 [P] Create the package skeleton `training/src/ultratiny/bench/__init__.py` with empty modules:
+- [X] T002 [P] Create the package skeleton `training/src/ultratiny/bench/__init__.py` with empty modules:
   - `suite.py`, `scoring.py`, `subject.py`, `lm.py`, `pc.py`, `board.py`, `report.py`, `demo.py`
   - each with a module docstring naming its research entry (R2–R10)
 - [ ] T003 [P] Create the entry points with argument parsing only (help text, exit codes 0/1/2 per contracts/cli.md):
@@ -56,7 +56,7 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T004 Implement suite loading in `training/src/ultratiny/bench/suite.py` per contracts/suite-format.md:
+- [X] T004 Implement suite loading in `training/src/ultratiny/bench/suite.py` per contracts/suite-format.md:
   - parse `suite.toml` with `tomllib`; resolve paths relative to the suite, allowing outside paths only when pinned
   - check every pin before anything else and fail with the file name, both hashes and exit code 2 (data-model.md `Suite.files`)
   - load value classes (data-model.md `Value class.kind`, `Value class.case_sensitive`, `Value class.decimals`, `Value class.units`)
@@ -66,22 +66,22 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
   - load question sets, validating data-model.md `Test item.kind`, `Test item.question` (≤ 70 characters) and `Test item.expected` (every property and object must exist); derive `Test item.type`
   - expose the test-set version (suite version + file SHA-256, data-model.md `Suite.version`)
   - `all_questions()` lists every question of every suite under `bench/suites/` (for FR-005)
-- [ ] T005 Implement answer scoring in `training/src/ultratiny/bench/scoring.py` per research.md R5:
+- [X] T005 Implement answer scoring in `training/src/ultratiny/bench/scoring.py` per research.md R5:
   - normalisation (NFC, collapse spaces, keep case) and refusal detection from `refusal_forms`
   - known-value extraction per value class: whole tokens; case-sensitive where data-model.md `Value class.case_sensitive` says so; numbers with `,`/`.`, rounding to `Value class.decimals`, optional `Value class.units`
   - the subject-name rule (the question's object name is not a wrong value)
   - the four classes `correct`, `wrong_fact`, `refused`, `no_answer` for `fact`/`multi`
   - spec 006 rules for `explain` (all keywords, ≤ `explain_max`, not refused) and for `refuse`/`unknown` (correct when refused; a known value counts as a wrong fact)
-- [ ] T006 Implement KPI aggregation in `training/src/ultratiny/bench/scoring.py` per contracts/result-format.md "KPI definitions":
+- [X] T006 Implement KPI aggregation in `training/src/ultratiny/bench/scoring.py` per contracts/result-format.md "KPI definitions":
   - F1 with per-property detail, F2, F3 with per-set detail, F4, F5, F6
   - R2–R4 from file sizes
   - each KPI value with `value`, `n`, `detail` and `status` (data-model.md "KPI value")
   - F1 keeps never-learned question types in the denominator (spec clarification 2026-11-23)
-- [ ] T007 [P] Write `training/tests/test_bench_suite.py`:
+- [X] T007 [P] Write `training/tests/test_bench_suite.py`:
   - a tiny suite fixture under `training/tests/fixtures/bench_mini/` loads
   - one changed byte gives a pin error naming the file (SC-006)
   - unknown property or object in `expected`, duplicate fact and a too-long question are rejected
-- [ ] T008 [P] Write `training/tests/test_bench_scoring.py`:
+- [X] T008 [P] Write `training/tests/test_bench_scoring.py`:
   - a hand-labelled sample of 50 answers in `training/tests/fixtures/bench_scoring_sample.tsv` (columns: question, expected, answer, class by hand) covering free-text and template answers, Co/CO, N/Na, decimal comma, units, refusal forms, subject name, two values of one class, multi, explain, unknown
   - assert ≥ 49/50 agreement (SC-008) and exact agreement on the listed edge cases from spec "Edge Cases"
 
@@ -99,12 +99,12 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 ### Tests for User Story 1
 
-- [ ] T009 [P] [US1] Write `training/tests/test_bench_lm.py` with the fixture model `runtime/tests/fixtures/tiny_v2.utny`:
+- [X] T009 [P] [US1] Write `training/tests/test_bench_lm.py` with the fixture model `runtime/tests/fixtures/tiny_v2.utny`:
   - S1 sliding-window bits are finite, and coverage counts characters outside the alphabet
   - stride and window follow research.md R6
   - for a synthetic S2 probe, the control text and the recall rule give the expected recalled/not-recalled split
   - a distance beyond `ctx_len` is never recalled
-- [ ] T010 [P] [US1] Write `training/tests/test_bench_pc.py`:
+- [X] T010 [P] [US1] Write `training/tests/test_bench_pc.py`:
   - a PC run on the mini suite with `tiny_v2.utny` produces every KPI key of contracts/result-format.md
   - two runs give byte-identical `kpis` and `items`
   - `--jobs 2` gives the same result as `--jobs 1`
@@ -112,24 +112,24 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 ### Implementation for User Story 1
 
-- [ ] T011 [US1] Implement the subject adapter in `training/src/ultratiny/bench/subject.py` per research.md R2:
+- [X] T011 [US1] Implement the subject adapter in `training/src/ultratiny/bench/subject.py` per research.md R2:
   - an interface with `answer(question)` and `bits(text, positions)`
   - the transformer adapter wraps `ultratiny.reference.Reference`
     - renders v2 answers with `facttable.answer_bytes()` when a fact table is given
     - greedy, `max_len = ctx_len − 3`
     - flags `too_long` questions
   - identity (data-model.md "Result file" `model`, `knowledge`): SHA-256, size, params, ctx, meta git/date/seed
-- [ ] T012 [US1] Implement S1 and S2 in `training/src/ultratiny/bench/lm.py`:
+- [X] T012 [US1] Implement S1 and S2 in `training/src/ultratiny/bench/lm.py`:
   - S1 per research.md R6: window `ctx_len`, stride `ctx_len/2`, scores the second half, bits from float64 softmax, topic, general and total, coverage
   - S2 per research.md R7 and spec FR-009: bits on the target span with full history up to `ctx_len − 1`; recalled when ≤ `recall_ratio` × the control bits; S2 = largest distance with ≥ `recall_min` recalled, plus the curve
   - fields per data-model.md `S2 probe.distance`, `S2 probe.target_start`, `S2 probe.target_len`, `S2 probe.text`, `S2 probe.control`
-- [ ] T013 [P] [US1] Implement the S2 probe generator in `tools/bench_s2.py` per research.md R7:
+- [X] T013 [P] [US1] Implement the S2 probe generator in `tools/bench_s2.py` per research.md R7:
   - invented target words of 6–8 letters from the alphabet, fixed seed
   - filler from the general half of the S1 text
   - distances from `suite.toml` `[s2]`, 13 probes each
   - each control text has the same length as its probe text (data-model.md `S2 probe.control`)
   - the output TSV is deterministic
-- [ ] T014 [US1] Implement the PC run in `training/src/ultratiny/bench/pc.py` and wire `tools/bench.py pc` per contracts/cli.md:
+- [X] T014 [US1] Implement the PC run in `training/src/ultratiny/bench/pc.py` and wire `tools/bench.py pc` per contracts/cli.md:
   - check pins, then load the subject and ask every set
   - F6 via the canonical questions over `facts.tsv`
   - S1, S2, and the S3 answers
@@ -137,14 +137,14 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
   - `--jobs N` over fresh-context questions
   - `--only` marks the result partial
   - write the result JSON (keys sorted, two-space indent, data-model.md "Result file" `kind`, `label`, `suite`, `env`, `overlap`, `complete`, `items`) and a one-line-per-KPI summary
-- [ ] T015 [US1] Implement the S3 rating sheet in `training/src/ultratiny/bench/pc.py`:
+- [X] T015 [US1] Implement the S3 rating sheet in `training/src/ultratiny/bench/pc.py`:
   - write `<out>.s3.tsv` with `id`, `answer_sha256`, `answer`, `grammar_ok`
   - keep existing ratings only where data-model.md `Rating sheet.answer_sha256` still matches
   - S3 = share of `ja` among rated answers, else "not rated"
-- [ ] T016 [P] [US1] Write the allgemein suite configuration in `bench/suites/allgemein/` (deterministic, no LLM):
+- [X] T016 [P] [US1] Write the allgemein suite configuration in `bench/suites/allgemein/` (deterministic, no LLM):
   - `facts.tsv` from `training/data/facts/starter.tsv`: capitals and element symbols, in both directions where the template set has both
   - `suite.toml` with value classes (`city`, `country`, `symbol`, `element_name`), properties with canonical questions, refusal forms of the starter model, thresholds from spec FR-018, board sample, `[s2]`
-- [ ] T017 [P] [US1] Implement the proposal generator `training/tools/bench_propose_llm.py`, reusing the Ollama client, judge prompt, alphabet check and cache of `training/tools/augment_llm.py`:
+- [X] T017 [P] [US1] Implement the proposal generator `training/tools/bench_propose_llm.py`, reusing the Ollama client, judge prompt, alphabet check and cache of `training/tools/augment_llm.py`:
   - subcommands `questions` (new phrasings per property, given the canonical question and object names), `unknown` (invented or out-of-topic objects in the topic's question forms), `offtopic`, `s3` (greetings, explanations, refusals) and `text` (topic text in short paragraphs)
   - `--suite DIR` reads properties and objects from the suite's `facts.tsv`/`suite.toml`; nothing is topic-specific in the code
   - drops every candidate whose normalised form equals a training prompt (`training/data/**`, `kurzarbeit.tsv`) or another proposal
@@ -167,8 +167,8 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 - [ ] T023 [US1] Run quickstart §1 and §2 on `models/nodemcu.utny`:
   - commit `bench/results/nodemcu_allgemein_pc.json` (stable name used by CI) and its `.s3.tsv`
   - record the run time and the S2 sanity check (recall up to ≤ 96, none at ≥ 128) in `specs/007-benchmark-kpi-bericht/measurements.md`
-- [ ] T024 [US1] Implement `tools/bench_export_facts.py` per research.md R4: build the spec 006 fact set with `ultratiny.factgen.build` and write `bench/suites/chemie/facts.tsv` (`object`, `object_name`, `property`, `value`, property names = question type names of `data/templates/hybrid.toml`)
-- [ ] T025 [US1] Write the chemie suite configuration `bench/suites/chemie/suite.toml`:
+- [X] T024 [US1] Implement `tools/bench_export_facts.py` per research.md R4: build the spec 006 fact set with `ultratiny.factgen.build` and write `bench/suites/chemie/facts.tsv` (`object`, `object_name`, `property`, `value`, property names = question type names of `data/templates/hybrid.toml`)
+- [X] T025 [US1] Write the chemie suite configuration `bench/suites/chemie/suite.toml`:
   - value classes for every property of `facts.tsv`, including numbers with decimals and units
   - canonical questions per property and refusal forms (`UNKNOWN`, `REFUSAL_ANSWER`, the not-applicable form)
   - thresholds from spec FR-018 and `explain_max = 60`

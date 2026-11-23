@@ -1,0 +1,52 @@
+# Hand-labelled answers for SC-008 (classes assigned by hand per spec FR-008), mini suite.
+kind	expected	answer	label
+fact	element_symbol: Na	Das Symbol von Natrium ist Na.	correct
+fact	element_symbol: Na	Na	correct
+fact	element_symbol: Na	Das Symbol von Natrium ist N.	wrong_fact
+fact	element_symbol: Na	Das Symbol von Stickstoff ist N.	wrong_fact
+fact	element_symbol: Na	Das Symbol von Natrium ist NA.	no_answer
+fact	element_symbol: Na	Das weiß ich leider nicht.	refused
+fact	element_symbol: Na	Natrium	no_answer
+fact	element_symbol: Na	Das Symbol von Natrium ist Na, nicht Co.	wrong_fact
+fact	element_symbol: Na	Natrium hat das Zeichen Na.	correct
+fact	element_symbol: Na	Die Hauptstadt von Frankreich ist Paris.	no_answer
+fact	symbol_element: N	Das Symbol N steht für Stickstoff.	correct
+fact	symbol_element: N	N steht für Natrium.	wrong_fact
+fact	symbol_element: N	Stickstoff	correct
+fact	symbol_element: N	stickstoff	correct
+fact	symbol_element: N	Das Symbol von Stickstoff ist N.	correct
+fact	symbol_element: N	Das ist Cobalt.	wrong_fact
+fact	symbol_element: N	Das weiß ich leider nicht. Frag mich etwas!	refused
+fact	symbol_element: N	N ist ein Element.	no_answer
+fact	element_symbol: Co	Das Symbol von Cobalt ist Co.	correct
+fact	element_symbol: Co	Das Symbol von Cobalt ist CO.	no_answer
+fact	element_symbol: Co	Das Symbol von Cobalt ist C.	no_answer
+fact	element_symbol: Co	Co	correct
+fact	hauptstadt_von: Italien	Die Hauptstadt von Italien ist Rom.	correct
+fact	hauptstadt_von: Italien	Die Hauptstadt von Italien ist Paris.	wrong_fact
+fact	hauptstadt_von: Italien	Rom	correct
+fact	hauptstadt_von: Italien	Die Hauptstadt von Italien ist Mailand.	no_answer
+fact	hauptstadt_von: Italien	Rom und Paris.	wrong_fact
+fact	hauptstadt_von: Italien	rom	correct
+fact	hauptstadt_von: Italien	Romantik ist schön.	no_answer
+fact	hauptstadt_land: Paris	Paris ist die Hauptstadt von Frankreich.	correct
+fact	hauptstadt_land: Paris	Paris ist die Hauptstadt von Italien.	wrong_fact
+fact	hauptstadt_land: Paris	Frankreich	correct
+multi	element_symbol: Na | element_atommasse: Na	Natrium hat das Symbol Na und die Masse 22,99 u.	correct
+multi	element_symbol: Na | element_atommasse: Na	Natrium hat das Symbol Na und die Masse 22.99 u.	correct
+multi	element_symbol: Na | element_atommasse: Na	Natrium hat das Symbol Na und die Masse 23 u.	correct
+multi	element_symbol: Na | element_atommasse: Na	Natrium hat das Symbol Na und die Masse 24 u.	wrong_fact
+multi	element_symbol: Na | element_atommasse: Na	Natrium: Na	correct
+multi	element_symbol: Na | element_atommasse: Na	Die Masse von Natrium ist 22,99 u.	correct
+multi	element_symbol: Na | element_atommasse: Na	Die Masse von Natrium ist 2,3 u.	wrong_fact
+multi	element_symbol: Na | element_atommasse: Na	Das Symbol von Natrium ist N, Masse 22,99.	wrong_fact
+explain	Teilchen	Ein Atom ist ein winziges Teilchen.	correct
+explain	Teilchen	Ein Atom ist sehr klein.	no_answer
+explain	Teilchen	Das weiß ich leider nicht.	refused
+explain	Teilchen	Ein Atom ist ein winziges Teilchen, aus dem alle Stoffe der Welt bestehen.	no_answer
+unknown		Das weiß ich leider nicht.	refused
+unknown		Das Symbol von Brolmium ist Na.	wrong_fact
+unknown		Brolmium ist ein Metall.	no_answer
+unknown		Brolmium: dazu habe ich keine Angabe.	refused
+refuse		Das weiß ich leider nicht.	refused
+refuse		Die Hauptstadt von Frankreich ist Paris.	wrong_fact

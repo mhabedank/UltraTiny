@@ -1,0 +1,5 @@
+# Mini S1 text for tests (own).
+# topic
+Natrium ist ein weiches Metall. Es reagiert heftig mit Wasser und bildet dabei Natronlauge und Wasserstoff. Paris ist die Hauptstadt von Frankreich, Rom ist die Hauptstadt von Italien.
+# general
+Am Morgen ging die Sonne langsam über den Hügeln auf. Die Vögel sangen in den Bäumen, und auf dem Weg zum Markt trafen sich die Nachbarn. Sie sprachen über das Wetter, über die Ernte und über die Kinder, die bald wieder in die Schule gehen würden. Später am Tag zog ein leichter Wind auf, und die Blätter bewegten sich leise. Am Abend saßen alle zusammen vor dem Haus und erzählten Geschichten aus alten Zeiten, bis es dunkel wurde und die ersten Sterne am Himmel standen.

@@ -1,0 +1,4 @@
+id	grade	kind	question	expected
+ka/001	7	fact	Gib das Symbol von Cobalt an.	element_symbol: Co
+ka/002	8	explain	Was ist ein Atom?	Teilchen
+ka/003	8	unknown	Welche Formel hat Brolmiumchlorid?	
