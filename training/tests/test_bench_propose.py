@@ -45,6 +45,12 @@ def mini_suite(tmp_path, monkeypatch):
     monkeypatch.setattr(aug, "LOG_FILE", tmp_path / "log.txt")
     monkeypatch.setattr(aug.cached, "stores", {})
     monkeypatch.setattr(aug, "Ollama", FakeLLM)
+
+    class _Ok:
+        def close(self):
+            pass
+
+    monkeypatch.setattr(bp.urllib.request, "urlopen", lambda *a, **k: _Ok())
     return d
 
 
@@ -62,3 +68,12 @@ def test_all_tasks_write_proposals(mini_suite):
 
 def test_disallowed_model_is_refused(mini_suite):
     assert bp.main(["--suite", str(mini_suite), "--model", "llama3:8b", "s3"]) == 2
+
+
+def test_unreachable_ollama_gives_clear_error(mini_suite, monkeypatch, capsys):
+    def refuse(*a, **k):
+        raise OSError("Connection refused")
+
+    monkeypatch.setattr(bp.urllib.request, "urlopen", refuse)
+    assert bp.main(["--suite", str(mini_suite), "--model", "qwen3:8b", "all"]) == 2
+    assert "Ollama not reachable" in capsys.readouterr().err

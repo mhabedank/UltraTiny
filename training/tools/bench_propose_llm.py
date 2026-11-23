@@ -24,6 +24,7 @@ import random
 import re
 import sys
 import tomllib
+import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -136,25 +137,51 @@ P_TEXT = (
 MAX_Q = 70  # console question limit at context 104 (data-model.md Test item.question)
 
 
+def _parallel(jobs: list, fn, a, what: str) -> list:
+    """Run fn over jobs in parallel with one log line per finished job (progress and ETA, as
+    augment_llm.py). Returns results in job order; a failed job gives None (rerun resumes)."""
+    if not jobs:
+        return []
+    aug.log(f"bench_propose_llm: {what}: {len(jobs)} LLM-Aufträge, {a.workers} parallel")
+    done: dict[int, object] = {}
+    indexed = list(enumerate(jobs))
+    for i, res in aug.run_parallel(
+        indexed,
+        lambda it: (it[0], fn(it[1])),
+        a.workers,
+        label=lambda it: f"{what} {it[1][0]}"[:28],
+        describe=lambda r: f"{len(r[1])} Kandidaten" if isinstance(r[1], list) else "ok",
+    ):
+        done[i] = res
+    return [done.get(i) for i in range(len(jobs))]
+
+
 def task_questions(suite, cfg, llm, jl, excl, a) -> list[tuple]:
     rng = random.Random(a.seed)
     by_prop: dict[str, list] = {}
     for (_obj, prop), f in sorted(suite.facts.items()):
         by_prop.setdefault(prop, []).append(f)
-    seen: set[str] = set()
-    rows = []
+    jobs = []
     for prop in sorted(by_prop):
         p = suite.properties[prop]
         for f in rng.sample(by_prop[prop], min(a.per_property, len(by_prop[prop]))):
             meaning = p.canonical.format(name=f.object_name, key=f.object)
             term = f.object if p.reverse else f.object_name
-            prompt = P_QUESTIONS.format(topic=cfg["topic"], n=a.n, q=meaning, max=MAX_Q, term=term)
-            key = f"q|{suite.name}|{prop}|{f.object}|{a.n}"
-            cands = _list(llm, prompt, "bench_questions", key)
-            cond = f'Bedingung: Die Frage fragt eindeutig dasselbe wie "{meaning}".'
-            cands = aug.judge(jl, cond, cands, key)
-            for q in _filter(cands, excl, seen, MAX_Q)[: a.keep]:
-                rows.append((prop, f.object, q, f"llm:{a.model}"))
+            jobs.append((f"{prop}:{f.object}", prop, f.object, meaning, term))
+
+    def one(job):
+        _label, prop, obj, meaning, term = job
+        prompt = P_QUESTIONS.format(topic=cfg["topic"], n=a.n, q=meaning, max=MAX_Q, term=term)
+        key = f"q|{suite.name}|{prop}|{obj}|{a.n}"
+        cands = _list(llm, prompt, "bench_questions", key)
+        cond = f'Bedingung: Die Frage fragt eindeutig dasselbe wie "{meaning}".'
+        return aug.judge(jl, cond, cands, key)
+
+    seen: set[str] = set()
+    rows = []
+    for job, cands in zip(jobs, _parallel(jobs, one, a, "Fragen"), strict=True):
+        for q in _filter(cands or [], excl, seen, MAX_Q)[: a.keep]:
+            rows.append((job[1], job[2], q, f"llm:{a.model}"))
     return rows
 
 
@@ -162,8 +189,14 @@ def task_unknown(suite, cfg, llm, jl, excl, a) -> list[tuple]:
     known = {f.object_name.lower() for f in suite.facts.values()}
     known |= {o.lower() for o, _ in suite.facts}
     prompt = P_UNKNOWN.format(n=a.n_unknown * 2, what=cfg["unknown_objects"])
-    cands = _list(llm, prompt, "bench_unknown", f"u|{suite.name}|{a.n_unknown}")
-    names = [n for n in cands if n.lower() not in known and len(n) <= 30]
+    jobs = [("Fantasienamen", prompt)]
+    (cands,) = _parallel(
+        jobs,
+        lambda j: _list(llm, j[1], "bench_unknown", f"u|{suite.name}|{a.n_unknown}"),
+        a,
+        "Unbekannte",
+    )
+    names = [n for n in cands or [] if n.lower() not in known and len(n) <= 30]
     rng = random.Random(a.seed)
     forms = [p.canonical for p in suite.properties.values() if "{name}" in p.canonical]
     rows, seen = [], set()
@@ -176,41 +209,51 @@ def task_unknown(suite, cfg, llm, jl, excl, a) -> list[tuple]:
 
 
 def task_offtopic(suite, cfg, llm, jl, excl, a) -> list[tuple]:
-    rows, seen = [], set()
-    for theme in cfg["offtopic_themes"]:
-        prompt = P_OFFTOPIC.format(n=a.n, theme=theme, topic=cfg["topic"], max=MAX_Q)
-        key = f"o|{suite.name}|{theme}|{a.n}"
+    jobs = [(theme,) for theme in cfg["offtopic_themes"]]
+
+    def one(job):
+        prompt = P_OFFTOPIC.format(n=a.n, theme=job[0], topic=cfg["topic"], max=MAX_Q)
+        key = f"o|{suite.name}|{job[0]}|{a.n}"
         cands = _list(llm, prompt, "bench_offtopic", key)
         cond = f"Bedingung: Die Eingabe hat nichts mit {cfg['topic']} zu tun."
-        cands = aug.judge(jl, cond, cands, key)
-        rows += [(q, theme, f"llm:{a.model}") for q in _filter(cands, excl, seen, MAX_Q)[:3]]
+        return aug.judge(jl, cond, cands, key)
+
+    rows, seen = [], set()
+    for job, cands in zip(jobs, _parallel(jobs, one, a, "Fachfremd"), strict=True):
+        rows += [(q, job[0], f"llm:{a.model}") for q in _filter(cands or [], excl, seen, MAX_Q)[:3]]
     return rows
 
 
 def task_s3(suite, cfg, llm, jl, excl, a) -> list[tuple]:
+    jobs = [(kind,) for kind in cfg["s3_kinds"]]
+
+    def one(job):
+        prompt = P_S3.format(n=a.n, topic=cfg["topic"], kind=job[0], max=MAX_Q)
+        return _list(llm, prompt, "bench_s3", f"s|{suite.name}|{job[0]}|{a.n}")
+
     rows, seen = [], set()
-    for kind in cfg["s3_kinds"]:
-        prompt = P_S3.format(n=a.n, topic=cfg["topic"], kind=kind, max=MAX_Q)
-        key = f"s|{suite.name}|{kind}|{a.n}"
-        cands = _filter(_list(llm, prompt, "bench_s3", key), excl, seen, MAX_Q)
-        rows += [(q, kind, f"llm:{a.model}") for q in cands[:4]]
+    for job, cands in zip(jobs, _parallel(jobs, one, a, "S3"), strict=True):
+        rows += [(q, job[0], f"llm:{a.model}") for q in _filter(cands or [], excl, seen, MAX_Q)[:4]]
     return rows
 
 
 def task_text(suite, cfg, llm, jl, excl, a) -> list[tuple]:
-    rows = []
     audience = cfg.get("audience", "Schüler der Klassen 7 bis 10")
-    for theme in cfg["text_themes"]:
-        prompt = P_TEXT.format(theme=theme, audience=audience)
-        key = f"t|{suite.name}|{theme}"
+    jobs = [(theme,) for theme in cfg["text_themes"]]
 
-        def ask(p=prompt, k=key):
-            return llm.json(p, aug.LIST_SCHEMA, salt=k).get("items", [])
+    def one(job):
+        prompt = P_TEXT.format(theme=job[0], audience=audience)
+        key = f"t|{suite.name}|{job[0]}"
+        return aug.cached(
+            "bench_text", key, lambda: llm.json(prompt, aug.LIST_SCHEMA, salt=key).get("items", [])
+        )
 
-        for para in aug.cached("bench_text", key, ask)[:1]:
+    rows = []
+    for job, paras in zip(jobs, _parallel(jobs, one, a, "Text"), strict=True):
+        for para in (paras or [])[:1]:
             t = "".join(ch for ch in aug.sanitize(para) if ch in aug.AB)
             if len(t) >= 300:
-                rows.append((theme, t, f"llm:{a.model}"))
+                rows.append((job[0], t, f"llm:{a.model}"))
     return rows
 
 
@@ -237,6 +280,7 @@ def main(argv=None) -> int:
     ap.add_argument("--keep", type=int, default=1, help="questions kept per object")
     ap.add_argument("--per-property", type=int, default=10, help="objects sampled per property")
     ap.add_argument("--n-unknown", type=int, default=50)
+    ap.add_argument("--workers", type=int, default=4, help="parallel LLM requests")
     ap.add_argument("task", choices=[*TASKS, "all"])
     a = ap.parse_args(argv)
     for m in (a.model, a.judge_model or a.model):
@@ -251,6 +295,20 @@ def main(argv=None) -> int:
     if not cfg:
         print("bench_propose_llm: suite.toml has no [propose] section", file=sys.stderr)
         return 2
+    try:
+        urllib.request.urlopen(a.host.rstrip("/") + "/api/tags", timeout=5).close()
+    except OSError as e:
+        print(
+            f"bench_propose_llm: Ollama not reachable at {a.host} ({e}). Start it (see "
+            "training/SPARK.md) or pass --host http://<spark>:11434",
+            file=sys.stderr,
+        )
+        return 2
+    aug.log(
+        f"bench_propose_llm: suite {suite.name}, model {a.model}, judge "
+        f"{'aus' if a.no_judge else (a.judge_model or a.model)}, host {a.host}, "
+        f"{a.workers} parallel (Log: {aug.LOG_FILE})"
+    )
     llm = aug.Ollama(a.host, a.model, a.seed)
     jl = None if a.no_judge else aug.Ollama(a.host, a.judge_model or a.model, a.seed)
     excl = Exclusion()
