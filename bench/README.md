@@ -53,3 +53,10 @@ answer; when the answer changes, the next run empties that row. The report reads
   the Spark (`source = llm:<model>` in `proposals/`), selected deterministically and spot-checked by
   the user before pinning (FR-006). Expected answers come from `facts.tsv`, never from the LLM.
   Reviews are recorded here with date and scope.
+
+Reviews:
+
+| Date | Scope | Result |
+|------|-------|--------|
+| 2026-11-23 | `training/data/eval/kurzarbeit.tsv` (spot checks) | accepted, pinned `cd2a36bf…` |
+| 2026-11-23 | allgemein and chemie: `sets/*.tsv`, `text/s1.txt` (spot checks; assembled from the `qwen3.6:35b` proposals of T018) | accepted unchanged, pins of commit d238a94 |

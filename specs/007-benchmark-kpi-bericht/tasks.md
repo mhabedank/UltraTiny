@@ -163,7 +163,7 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
   - general half, the same in both suites: 10,000 characters of public-domain German prose with the source named in a `#` comment line
   - add a check in `training/tests/test_bench_suite.py` that no 40-character span of either text occurs in `training/data/**`
 - [X] T021 [US1] Generate `bench/suites/allgemein/text/s2.tsv` and `bench/suites/chemie/text/s2.tsv` with `tools/bench_s2.py`, then pin all allgemein files in `bench/suites/allgemein/suite.toml`
-- [ ] T022 [US1] 👤 The user spot-checks `bench/suites/allgemein/sets/*.tsv` and both `text/s1.txt` files (and agrees to the public-domain source). Record the review in `bench/README.md` (FR-006), then re-pin in `bench/suites/allgemein/suite.toml` if anything changed.
+- [X] T022 [US1] 👤 The user spot-checks `bench/suites/allgemein/sets/*.tsv` and both `text/s1.txt` files (and agrees to the public-domain source). Record the review in `bench/README.md` (FR-006), then re-pin in `bench/suites/allgemein/suite.toml` if anything changed.
 - [X] T023 [US1] Run quickstart §1 and §2 on `models/nodemcu.utny`:
   - commit `bench/results/nodemcu_allgemein_pc.json` (stable name used by CI) and its `.s3.tsv`
   - record the run time and the S2 sanity check (recall up to ≤ 96, none at ≥ 128) in `specs/007-benchmark-kpi-bericht/measurements.md`
@@ -178,7 +178,7 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
   - `sets/unknown.tsv` (≥ 40) and `sets/offtopic.tsv` (≥ 40, none from `data/facts/abweisen.tsv` or `data/augment/abweisen.tsv`)
   - `sets/s3.tsv` (20 prompts)
   - 10 long T3 prompts appended to `unseen.tsv` and listed in `[board_sample] t3`
-- [ ] T027 [US1] 👤 The user reviews the chemie sets (spot checks, as for `kurzarbeit.tsv`). Record the review (date, scope) in `bench/README.md` (FR-006). Then pin all chemie files in `bench/suites/chemie/suite.toml`.
+- [X] T027 [US1] 👤 The user reviews the chemie sets (spot checks, as for `kurzarbeit.tsv`). Record the review (date, scope) in `bench/README.md` (FR-006). Then pin all chemie files in `bench/suites/chemie/suite.toml`.
 - [X] T028 [US1] Run quickstart §3:
   - `make hybrid-smoke`, then `tools/bench.py pc` on the smoke model with and without `--facts`
   - check that `items[].answer` are printed sentences
