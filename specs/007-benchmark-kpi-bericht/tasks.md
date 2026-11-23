@@ -141,36 +141,45 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
   - write `<out>.s3.tsv` with `id`, `answer_sha256`, `answer`, `grammar_ok`
   - keep existing ratings only where data-model.md `Rating sheet.answer_sha256` still matches
   - S3 = share of `ja` among rated answers, else "not rated"
-- [ ] T016 [P] [US1] Write the allgemein suite data in `bench/suites/allgemein/`:
+- [ ] T016 [P] [US1] Write the allgemein suite configuration in `bench/suites/allgemein/` (deterministic, no LLM):
   - `facts.tsv` from `training/data/facts/starter.tsv`: capitals and element symbols, in both directions where the template set has both
   - `suite.toml` with value classes (`city`, `country`, `symbol`, `element_name`), properties with canonical questions, refusal forms of the starter model, thresholds from spec FR-018, board sample, `[s2]`
-  - `sets/unseen.tsv` (≥ 60 questions not in `data/templates/starter.toml` or the augment files)
-  - `sets/unknown.tsv` and `sets/offtopic.tsv` (≥ 20 each)
-  - `sets/s3.tsv` (20 prompts incl. self-description)
-- [ ] T017 [US1] Write the S1 texts per research.md R6:
+- [ ] T017 [P] [US1] Implement the proposal generator `training/tools/bench_propose_llm.py`, reusing the Ollama client, judge prompt, alphabet check and cache of `training/tools/augment_llm.py`:
+  - subcommands `questions` (new phrasings per property, given the canonical question and object names), `unknown` (invented or out-of-topic objects in the topic's question forms), `offtopic`, `s3` (greetings, explanations, refusals) and `text` (topic text in short paragraphs)
+  - `--suite DIR` reads properties and objects from the suite's `facts.tsv`/`suite.toml`; nothing is topic-specific in the code
+  - drops every candidate whose normalised form equals a training prompt (`training/data/**`, `kurzarbeit.tsv`) or another proposal
+  - the LLM only proposes question text; the expected answer (`property: object`) comes from the request, never from the LLM
+  - writes `bench/suites/<suite>/proposals/<kind>.tsv` with a `source = llm:<model>` column; it never writes `sets/` or `text/`
+  - only models allowed by `DATA_LICENSES.md` (`gemma4:*`, `gpt-oss:*`, `qwen3*`); others are refused
+- [ ] T018 [US1] 🖥️ On the Spark, run `bench_propose_llm.py` for both suites (all subcommands) with an allowed local model and commit `bench/suites/*/proposals/*.tsv`
+- [ ] T019 [US1] Assemble the allgemein sets from the proposals in `bench/suites/allgemein/sets/`:
+  - `unseen.tsv` (≥ 60 questions over all properties)
+  - `unknown.tsv` and `offtopic.tsv` (≥ 20 each)
+  - `s3.tsv` (20 prompts incl. self-description)
+  - the selection is a deterministic script step (fixed seed, balanced per property), so the sets can be rebuilt from the proposals
+- [ ] T020 [US1] Write the S1 texts per research.md R6:
   - `bench/suites/allgemein/text/s1.txt` and `bench/suites/chemie/text/s1.txt`
-  - topic half per suite: chemie gets 10,000 characters of grade 7–10 chemistry text, allgemein gets 10,000 characters of geography and general-knowledge text (countries, capitals, currencies), both written for the project
+  - topic half per suite (10,000 characters each) from the `text` proposals: chemie gets grade 7–10 chemistry text, allgemein gets geography and general-knowledge text (countries, capitals, currencies)
   - general half, the same in both suites: 10,000 characters of public-domain German prose with the source named in a `#` comment line
   - add a check in `training/tests/test_bench_suite.py` that no 40-character span of either text occurs in `training/data/**`
-- [ ] T018 [US1] Generate `bench/suites/allgemein/text/s2.tsv` and `bench/suites/chemie/text/s2.tsv` with `tools/bench_s2.py`, then pin all allgemein files in `bench/suites/allgemein/suite.toml`
-- [ ] T019 [US1] 👤 The user spot-checks `bench/suites/allgemein/sets/*.tsv` and both `text/s1.txt` files (and agrees to the public-domain source). Then re-pin in `bench/suites/allgemein/suite.toml` if anything changed.
-- [ ] T020 [US1] Run quickstart §1 and §2 on `models/nodemcu.utny`:
+- [ ] T021 [US1] Generate `bench/suites/allgemein/text/s2.tsv` and `bench/suites/chemie/text/s2.tsv` with `tools/bench_s2.py`, then pin all allgemein files in `bench/suites/allgemein/suite.toml`
+- [ ] T022 [US1] 👤 The user spot-checks `bench/suites/allgemein/sets/*.tsv` and both `text/s1.txt` files (and agrees to the public-domain source). Record the review in `bench/README.md` (FR-006), then re-pin in `bench/suites/allgemein/suite.toml` if anything changed.
+- [ ] T023 [US1] Run quickstart §1 and §2 on `models/nodemcu.utny`:
   - commit `bench/results/nodemcu_allgemein_pc.json` (stable name used by CI) and its `.s3.tsv`
   - record the run time and the S2 sanity check (recall up to ≤ 96, none at ≥ 128) in `specs/007-benchmark-kpi-bericht/measurements.md`
-- [ ] T021 [US1] Implement `tools/bench_export_facts.py` per research.md R4: build the spec 006 fact set with `ultratiny.factgen.build` and write `bench/suites/chemie/facts.tsv` (`object`, `object_name`, `property`, `value`, property names = question type names of `data/templates/hybrid.toml`)
-- [ ] T022 [US1] Write the chemie suite configuration `bench/suites/chemie/suite.toml`:
+- [ ] T024 [US1] Implement `tools/bench_export_facts.py` per research.md R4: build the spec 006 fact set with `ultratiny.factgen.build` and write `bench/suites/chemie/facts.tsv` (`object`, `object_name`, `property`, `value`, property names = question type names of `data/templates/hybrid.toml`)
+- [ ] T025 [US1] Write the chemie suite configuration `bench/suites/chemie/suite.toml`:
   - value classes for every property of `facts.tsv`, including numbers with decimals and units
   - canonical questions per property and refusal forms (`UNKNOWN`, `REFUSAL_ANSWER`, the not-applicable form)
   - thresholds from spec FR-018 and `explain_max = 60`
   - `[sets]` with `kurzarbeit = "../../../training/data/eval/kurzarbeit.tsv"`, pinned to `cd2a36bf…`
-- [ ] T023 [US1] Draft the chemie question sets:
-  - `bench/suites/chemie/sets/unseen.tsv`: ≥ 200 fact questions covering every property, written independently of `data/templates/*.toml` and `data/augment/*`
-  - `sets/unknown.tsv` (≥ 40, invented or out-of-curriculum objects) and `sets/offtopic.tsv` (≥ 40, none from `data/facts/abweisen.tsv` or `data/augment/abweisen.tsv`)
-  - `sets/s3.tsv` (20 prompts: greetings, explanations, refusals)
+- [ ] T026 [US1] Assemble the chemie sets from the proposals (same deterministic step as T019):
+  - `bench/suites/chemie/sets/unseen.tsv`: ≥ 200 fact questions covering every property
+  - `sets/unknown.tsv` (≥ 40) and `sets/offtopic.tsv` (≥ 40, none from `data/facts/abweisen.tsv` or `data/augment/abweisen.tsv`)
+  - `sets/s3.tsv` (20 prompts)
   - 10 long T3 prompts appended to `unseen.tsv` and listed in `[board_sample] t3`
-  - mark the rows in `bench/README.md` as LLM-proposed (FR-006)
-- [ ] T024 [US1] 👤 The user reviews the chemie sets (spot checks, as for `kurzarbeit.tsv`). Record the review (date, scope) in `bench/README.md` (FR-006). Then pin all chemie files in `bench/suites/chemie/suite.toml`.
-- [ ] T025 [US1] Run quickstart §3:
+- [ ] T027 [US1] 👤 The user reviews the chemie sets (spot checks, as for `kurzarbeit.tsv`). Record the review (date, scope) in `bench/README.md` (FR-006). Then pin all chemie files in `bench/suites/chemie/suite.toml`.
+- [ ] T028 [US1] Run quickstart §3:
   - `make hybrid-smoke`, then `tools/bench.py pc` on the smoke model with and without `--facts`
   - check that `items[].answer` are printed sentences
   - record the chemie run time (SC-002 ≤ 15 min) in `specs/007-benchmark-kpi-bericht/measurements.md`
@@ -189,7 +198,7 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 ### Tests for User Story 2
 
-- [ ] T026 [P] [US2] Write `training/tests/test_bench_report.py`:
+- [ ] T029 [P] [US2] Write `training/tests/test_bench_report.py`:
   - **verdicts**: F1 +2 points gives "unchanged" and +4 gives "better"; with 3 seeds a change counts only above 2 × spread; exact KPIs count any change
   - **not comparable**: shown on different test-set versions
   - **budget**: a model above the area limit or an arena above 35 KB shows "budget broken"
@@ -199,22 +208,22 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 ### Implementation for User Story 2
 
-- [ ] T027 [US2] Implement the report model in `training/src/ultratiny/bench/report.py` per research.md R9 and contracts/result-format.md "Report":
+- [ ] T030 [US2] Implement the report model in `training/src/ultratiny/bench/report.py` per research.md R9 and contracts/result-format.md "Report":
   - group results by `label` and `kind`, merging PC and board results of one label
   - seeds: mean and sample spread
   - Δ to the baseline and to the predecessor
   - verdicts per data-model.md "Comparison report" (better, worse, unchanged, not comparable, not measured, not applicable) using `Suite.thresholds` from the result's suite
   - the changed-answers list
   - overlap and incomplete-run notes
-- [ ] T028 [US2] Implement the budget section in `training/src/ultratiny/bench/report.py`:
+- [ ] T031 [US2] Implement the budget section in `training/src/ultratiny/bench/report.py`:
   - limits from `tools/budget_report.py` `PROFILES["nodemcu"]` and `HEADROOM`, plus the roadmap gate arena ≤ 35 KB
   - rows: model, arena and reserve, firmware (when given), fact area, each with value, limit and ok/broken
   - summary flags "budget broken" and "parity broken"
-- [ ] T029 [US2] Implement Markdown and HTML rendering in `training/src/ultratiny/bench/report.py` per research.md R10:
+- [ ] T032 [US2] Implement Markdown and HTML rendering in `training/src/ultratiny/bench/report.py` per research.md R10:
   - the same sections in both formats
   - HTML: one self-contained file with inline CSS and light/dark colours, inline SVG for the S2 curve and F1 per property, no JavaScript
   - sorted output with a single "generated" line
-- [ ] T030 [US2] Wire `tools/bench_report.py` per contracts/cli.md (`--baseline`, `--predecessor`, `--ratings`, `--md`, `--html`, `--strict`) and run quickstart §4
+- [ ] T033 [US2] Wire `tools/bench_report.py` per contracts/cli.md (`--baseline`, `--predecessor`, `--ratings`, `--md`, `--html`, `--strict`) and run quickstart §4
 
 **Checkpoint**: Any set of result files gives an honest comparison report.
 
@@ -232,7 +241,7 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 ### Tests for User Story 4
 
-- [ ] T031 [P] [US4] Write `training/tests/test_bench_board.py` with a scripted fake link (devlib-compatible `read`/`write`):
+- [ ] T034 [P] [US4] Write `training/tests/test_bench_board.py` with a scripted fake link (devlib-compatible `read`/`write`):
   - parse `/info`, `/stats` (`@ut {"type":"sys"…}`) and `/trace json` lines
   - T3 from steps with `pos ≥ 0.9 × ctx_len`
   - an identity mismatch stops the run (exit 2)
@@ -244,7 +253,7 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 ### Implementation for User Story 4
 
-- [ ] T032 [US4] Implement the board run in `training/src/ultratiny/bench/board.py` per research.md R8:
+- [ ] T035 [US4] Implement the board run in `training/src/ultratiny/bench/board.py` per research.md R8:
   - with `--port`: RTS reset first (no flashing), so the first `/stats` gives R1 after boot
   - identity check from `/info` against `--model`/`--facts` (data-model.md "Result file" `board`)
   - `/trace json` on for the whole run; pasted pass over the board sample; typed pass for the first `typed` items at 100 ms per character; the T3 prompts; `/trace aus` at the end
@@ -253,14 +262,14 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
   - per-item parity against the PC adapter
   - events for resets, hangs and timeouts (data-model.md "Result file" `events`, `complete`)
   - never sends flash or erase commands
-- [ ] T033 [US4] Wire `tools/bench.py board` per contracts/cli.md (`--port` or `--exec` via `devlib.ExecLink`, `--firmware`, `--sample all|parity`):
+- [ ] T036 [US4] Wire `tools/bench.py board` per contracts/cli.md (`--port` or `--exec` via `devlib.ExecLink`, `--firmware`, `--sample all|parity`):
   - T1 typed/pasted median and max, T2 median, T3, R1
   - write the board result JSON
   - exit 1 on any parity mismatch
-- [ ] T034 [US4] Run quickstart §6 (`--exec` against `build/utiny-host --console`, allgemein suite, `--sample parity`) and fix any console parsing differences between host and board output
-- [ ] T035 [US4] 🔌 Run quickstart §7 on the NodeMCU with `nodemcu` flashed, with `--firmware ../firmware-nodemcu/.pio/build/nodemcuv2/firmware.bin`:
+- [ ] T037 [US4] Run quickstart §6 (`--exec` against `build/utiny-host --console`, allgemein suite, `--sample parity`) and fix any console parsing differences between host and board output
+- [ ] T038 [US4] 🔌 Run quickstart §7 on the NodeMCU with `nodemcu` flashed, with `--firmware ../firmware-nodemcu/.pio/build/nodemcuv2/firmware.bin`:
   - commit `bench/results/nodemcu_allgemein_board_<date>.json`
-  - record T1, T2, R1 and the run time (≤ 30 min) in `specs/007-benchmark-kpi-bericht/measurements.md`; the SC-003 comparison with spec 005 is made in T037 with `chemie-nodemcu`
+  - record T1, T2, R1 and the run time (≤ 30 min) in `specs/007-benchmark-kpi-bericht/measurements.md`; the SC-003 comparison with spec 005 is made in T040 with `chemie-nodemcu`
 
 **Checkpoint**: Board KPIs are measured by one command, with parity.
 
@@ -272,10 +281,10 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 **Independent Test**: Quickstart §8 in a fresh checkout: the baseline report is reproduced from committed files alone (SC-001).
 
-- [ ] T036 [US3] 🖥️ On the Spark, run `tools/bench.py pc --suite ../bench/suites/chemie --model <chemie-nodemcu.utny> --label chemie-nodemcu` (with `--train-data` of its run, if still present) and commit `bench/results/chemie-nodemcu_chemie_pc_<date>.json`
-- [ ] T037 [US3] 🔌 Flash `chemie-nodemcu` (specs/005 quickstart), run `tools/bench.py board --suite ../bench/suites/chemie … --firmware ../firmware-nodemcu/.pio/build/nodemcuv2/firmware.bin` and commit `bench/results/chemie-nodemcu_chemie_board_<date>.json`. Check SC-003: T1 typed and T2 within 10 % of spec 005 (158 ms, 5.1 chars/s) or the difference explained in `specs/007-benchmark-kpi-bericht/measurements.md`. If the board is not available, the baseline report shows the board KPIs as "not measured" with the reason in measurements.md.
-- [ ] T038 [US3] 👤 The user fills in the S3 rating sheets `bench/results/chemie-nodemcu_chemie_pc_<date>.json.s3.tsv` and `bench/results/nodemcu_allgemein_pc.json.s3.tsv` (20 answers each, `grammar_ok` = `ja`/`nein`, data-model.md `Rating sheet.grammar_ok`), so S3 has a value in the baseline (SC-004).
-- [ ] T039 [US3] Generate and commit `bench/results/baseline.md` and `bench/results/baseline.html` with `tools/bench_report.py` from the four results. Check in a clean clone without `models/` and `runs/` that the same command reproduces them (SC-001), and that every KPI shows a value, "not applicable" or a stated reason (SC-004).
+- [ ] T039 [US3] 🖥️ On the Spark, run `tools/bench.py pc --suite ../bench/suites/chemie --model <chemie-nodemcu.utny> --label chemie-nodemcu` (with `--train-data` of its run, if still present) and commit `bench/results/chemie-nodemcu_chemie_pc_<date>.json`
+- [ ] T040 [US3] 🔌 Flash `chemie-nodemcu` (specs/005 quickstart), run `tools/bench.py board --suite ../bench/suites/chemie … --firmware ../firmware-nodemcu/.pio/build/nodemcuv2/firmware.bin` and commit `bench/results/chemie-nodemcu_chemie_board_<date>.json`. Check SC-003: T1 typed and T2 within 10 % of spec 005 (158 ms, 5.1 chars/s) or the difference explained in `specs/007-benchmark-kpi-bericht/measurements.md`. If the board is not available, the baseline report shows the board KPIs as "not measured" with the reason in measurements.md.
+- [ ] T041 [US3] 👤 The user fills in the S3 rating sheets `bench/results/chemie-nodemcu_chemie_pc_<date>.json.s3.tsv` and `bench/results/nodemcu_allgemein_pc.json.s3.tsv` (20 answers each, `grammar_ok` = `ja`/`nein`, data-model.md `Rating sheet.grammar_ok`), so S3 has a value in the baseline (SC-004).
+- [ ] T042 [US3] Generate and commit `bench/results/baseline.md` and `bench/results/baseline.html` with `tools/bench_report.py` from the four results. Check in a clean clone without `models/` and `runs/` that the same command reproduces them (SC-001), and that every KPI shows a value, "not applicable" or a stated reason (SC-004).
 
 **Checkpoint**: The roadmap's comparison point exists in the repository.
 
@@ -287,12 +296,12 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 **Independent Test**: Quickstart §9 with `chemie-nodemcu` and `nodemcu`: two boards, or one board with `--single` twice and `--merge`.
 
-- [ ] T040 [P] [US5] Write the demo script for this step `bench/demo/007.tsv` (12 questions: chemistry facts, a reverse question, a refusal, a greeting, one capital) per data-model.md "Demo script" (10–15 rows)
-- [ ] T041 [US5] Implement `training/src/ultratiny/bench/demo.py` and wire `tools/bench_demo.py` per contracts/cli.md:
+- [ ] T043 [P] [US5] Write the demo script for this step `bench/demo/007.tsv` (12 questions: chemistry facts, a reverse question, a refusal, a greeting, one capital) per data-model.md "Demo script" (10–15 rows)
+- [ ] T044 [US5] Implement `training/src/ultratiny/bench/demo.py` and wire `tools/bench_demo.py` per contracts/cli.md:
   - two-board mode, `--single` run JSON and `--merge`
   - Markdown table with #, question, answer A/B and first character A/B (ms)
   - test with two `--a-exec`/`--b-exec` host consoles in `training/tests/test_bench_board.py`
-- [ ] T042 [US5] 🔌 Run the demo for `chemie-nodemcu` vs. `nodemcu` and commit `bench/demo/007-chemie-nodemcu-vs-nodemcu.md`
+- [ ] T045 [US5] 🔌 Run the demo for `chemie-nodemcu` vs. `nodemcu` and commit `bench/demo/007-chemie-nodemcu-vs-nodemcu.md`
 
 **Checkpoint**: Every later step can show its demo with one command.
 
@@ -304,12 +313,12 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 **Independent Test**: Quickstart §5: exit 0 unchanged; exit 1 with the question listed after a simulated change (SC-007).
 
-- [ ] T043 [US6] Implement `--check FILE` in `training/src/ultratiny/bench/pc.py`:
+- [ ] T046 [US6] Implement `--check FILE` in `training/src/ultratiny/bench/pc.py`:
   - compare F1–F6, S1, S2, the S3 answers and every `items[].class` with the committed result; ignore `env`, timings and identity
   - print each changed KPI and question
   - exit 1 on any difference, exit 2 on a pin mismatch
-- [ ] T044 [P] [US6] Add a test in `training/tests/test_bench_pc.py`: checking against a copy with one changed item class fails, names that item, and an unchanged copy passes
-- [ ] T045 [US6] Add the CI steps in `.github/workflows/ci.yml`:
+- [ ] T047 [P] [US6] Add a test in `training/tests/test_bench_pc.py`: checking against a copy with one changed item class fails, names that item, and an unchanged copy passes
+- [ ] T048 [US6] Add the CI steps in `.github/workflows/ci.yml`:
   - `python` job after pytest: `uv run python ../tools/bench.py pc --suite ../bench/suites/allgemein --model ../models/nodemcu.utny --check ../bench/results/nodemcu_allgemein_pc.json`
   - `runtime-host` job after the parity step: `tools/bench.py board --exec "../build/utiny-host --model ../models/nodemcu.utny --console" --sample parity`
   - confirm the python step finishes within 10 min (FR-024) and record its time in measurements.md
@@ -322,15 +331,15 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 
 **Purpose**: Training exclusion, licenses, documentation
 
-- [ ] T046 Drop benchmark questions from training data (FR-005):
+- [ ] T049 Drop benchmark questions from training data (FR-005):
   - in `training/src/ultratiny/datagen.py` (v1 pipeline) and `training/src/ultratiny/hybrid.py` (beside the `kurzarbeit` drop), remove every training prompt whose normalised form equals one from `ultratiny.bench.suite.all_questions()`
   - report the count as `dropped_bench_match` in the data summary
   - add a test in `training/tests/test_datagen.py`
   - check that `make hybrid-smoke` and `test_determinism.py` still pass
-- [ ] T047 [P] Update `DATA_LICENSES.md`: add a `public-domain` row for the S1 general text (work, author, source URL), and a note that everything under `bench/` is evaluation-only and that its questions were LLM-proposed and reviewed by the user (FR-006)
-- [ ] T048 [P] Complete `bench/README.md` with the commands of contracts/cli.md, the re-pin procedure (suite version bump), the rating-sheet workflow for S3 and the rule that test sets never enter training
-- [ ] T049 [P] Update `specs/ROADMAP.md` step 1: mark spec 007 as done once T039 is committed, link `bench/results/baseline.md`, and replace the KPI draft table with a link to contracts/result-format.md "KPI definitions"
-- [ ] T050 Run the whole quickstart.md (§1–§6, plus §7–§9 where hardware was available), check that `ruff check`, `ruff format --check` and `pytest -q` pass, and complete `specs/007-benchmark-kpi-bericht/measurements.md`
+- [ ] T050 [P] Update `DATA_LICENSES.md`: add a `public-domain` row for the S1 general text (work, author, source URL); note that everything under `bench/` is evaluation-only, that its questions and topic texts were proposed by an allowed local LLM (`llm:<model>` per row in `bench/suites/*/proposals/`, spec FR-006) and spot-checked by the user, and that expected answers never come from the LLM
+- [ ] T051 [P] Complete `bench/README.md` with the commands of contracts/cli.md, the re-pin procedure (suite version bump), the rating-sheet workflow for S3 and the rule that test sets never enter training
+- [ ] T052 [P] Update `specs/ROADMAP.md` step 1: mark spec 007 as done once T042 is committed, link `bench/results/baseline.md`, and replace the KPI draft table with a link to contracts/result-format.md "KPI definitions"
+- [ ] T053 Run the whole quickstart.md (§1–§6, plus §7–§9 where hardware was available), check that `ruff check`, `ruff format --check` and `pytest -q` pass, and complete `specs/007-benchmark-kpi-bericht/measurements.md`
 
 ---
 
@@ -341,47 +350,48 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 - **Setup (Phase 1)**: no dependencies.
 - **Foundational (Phase 2)**: needs Phase 1 and blocks all stories.
 - **US1 (Phase 3)**: needs Phase 2.
-- **US2 (Phase 4)**: needs Phase 2. It can be built in parallel with US1, but quickstart §4 (T030) needs a result from T020.
-- **US4 (Phase 5)**: needs US1 (T011 subject for parity, T016–T018 allgemein suite).
-- **US3 (Phase 6)**: needs US1 (chemie suite T021–T024), US2 (report) and US4 (board mode). T038 (S3 ratings) needs T036 and T020.
-- **US5 (Phase 7)**: needs US4's board link handling (T032).
-- **US6 (Phase 8)**: needs T020 (committed result) and T034 (host board mode).
-- **Polish (Phase 9)**: T046 needs T004; the rest come at the end.
+- **US2 (Phase 4)**: needs Phase 2. It can be built in parallel with US1, but quickstart §4 (T033) needs a result from T023.
+- **US4 (Phase 5)**: needs US1 (T011 subject for parity, T016–T021 allgemein suite).
+- **US3 (Phase 6)**: needs US1 (chemie suite T024–T027), US2 (report) and US4 (board mode). T041 (S3 ratings) needs T039 and T023.
+- **US5 (Phase 7)**: needs US4's board link handling (T035).
+- **US6 (Phase 8)**: needs T023 (committed result) and T037 (host board mode).
+- **Polish (Phase 9)**: T049 needs T004; the rest come at the end.
 
 ### Within User Story 1
 
 - T009 and T010 come first and fail until T011–T014 are done.
 - T011 → T012 → T014 → T015.
-- Allgemein data: T016 → T017 → T018 → T019 → T020.
-- Chemie data: T021 → T022 → T023 → T024 → T025.
-- T013 must exist before T018.
+- Allgemein data: T016 → T019 → T020 → T021 → T022 → T023; proposals: T017 → T018 (🖥️) → T019, T020, T026.
+- Chemie data: T024 → T025 → T026 → T027 → T028.
+- T013 must exist before T021.
 
 ### Human and hardware steps
 
 | Task | Who | Blocks |
 |------|-----|--------|
-| T019 | 👤 | T020 |
-| T024 | 👤 | T025, T036 |
-| T035 | 🔌 | — (T037 can still run) |
-| T036 | 🖥️ | T038, T039 |
-| T037 | 🔌 | — (baseline can show "not measured") |
-| T038 | 👤 | T039 (otherwise S3 shows "not rated") |
-| T042 | 🔌 | — |
+| T018 | 🖥️ | T019, T020, T026 (all test-set data) |
+| T022 | 👤 | T023 |
+| T027 | 👤 | T028, T039 |
+| T038 | 🔌 | — (T040 can still run) |
+| T039 | 🖥️ | T041, T042 |
+| T040 | 🔌 | — (baseline can show "not measured") |
+| T041 | 👤 | T042 (otherwise S3 shows "not rated") |
+| T045 | 🔌 | — |
 
 ## Parallel Example: User Story 1
 
 ```text
 # After Phase 2, in parallel:
 T009 test_bench_lm.py        T010 test_bench_pc.py
-T013 tools/bench_s2.py       T016 allgemein suite data
-# Then the chain T011 → T012 → T014 while T021 → T023 (chemie data) proceeds in parallel.
+T013 tools/bench_s2.py       T016 allgemein suite config      T017 bench_propose_llm.py
+# Then the chain T011 → T012 → T014 while T018 (Spark) and T024 → T026 (chemie data) proceed.
 ```
 
 ## Parallel Example: User Story 2
 
 ```text
-T026 test_bench_report.py   (parallel with any US1 implementation task)
-T027 → T028 → T029 → T030
+T029 test_bench_report.py   (parallel with any US1 implementation task)
+T030 → T031 → T032 → T033
 ```
 
 ## Implementation Strategy
@@ -389,15 +399,16 @@ T027 → T028 → T029 → T030
 ### MVP first (User Story 1 on the allgemein suite)
 
 1. Phase 1 and Phase 2.
-2. T009–T020: PC measurement of `nodemcu.utny`, result committed.
+2. T009–T023: PC measurement of `nodemcu.utny`, result committed. The code (T009–T017) can be built
+   and tested on the mini fixture suite while the Spark run (T018) is pending.
 3. **Stop and validate**: quickstart §1–§2; this already gives reproducible PC KPIs for the repo model.
 
 ### Incremental delivery
 
-1. **US1 (allgemein)** → **US2 report** → **US6 CI**. Everything here runs in the container; drift
-   protection is in place early.
-2. **US1 (chemie)**: needs the user review (T024).
-3. **US4 board**: the host console first (T034), then the real board (T035 🔌).
+1. **US1 (allgemein)** → **US2 report** → **US6 CI**. Everything except the proposal run (T018 🖥️)
+   runs in the container; drift protection is in place early.
+2. **US1 (chemie)**: needs the user review (T027).
+3. **US4 board**: the host console first (T037), then the real board (T038 🔌).
 4. **US3 baseline** (🖥️ + 🔌) → **US5 demo** → **Polish**.
 
 ### Notes

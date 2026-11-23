@@ -152,8 +152,7 @@ no history and inflate bits); stride 1 (too slow).
 - **General half, both suites**: 10,000 characters of public-domain German prose (Project Gutenberg,
   author dead > 70 years, e.g. Kafka, *Die Verwandlung*, 1915).
 
-How the project-written text is sourced and recorded is decided in T047 (see the open licence
-question). A check verifies that no 40-character span of
+How the project-written text is sourced and recorded follows the rule for LLM output in `DATA_LICENSES.md`: proposed by an allowed local model on the Spark (T017, T018), reviewed by the user, recorded in T050 (decided 2026-11-23). A check verifies that no 40-character span of
 the S1 text occurs in the training data files. `DATA_LICENSES.md` gets a `public-domain` row and a
 note that `bench/` data is evaluation-only.
 

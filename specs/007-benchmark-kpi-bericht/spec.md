@@ -45,6 +45,7 @@ element symbols, self-description), not on the chemistry curriculum.
 - Q: Wie soll S2 (Merk-Test) gemessen werden? → A: Über die Vorhersage-Güte: Wie viel besser sagt das Modell das zweite Vorkommen eines früh genannten Worts vorher als im gleichen Text ohne die erste Nennung; keine generierte Antwort nötig.
 - Q: Wie streng soll die CI-Prüfung des Repo-Modells sein? → A: Rot bei jeder Änderung einer Kennzahl oder Antwort-Klasse gegenüber dem committeten Ergebnis; Fix = neu messen und im selben PR committen.
 - Q: Passen die vorgeschlagenen Rauschschwellen? → A: Ja, so festlegen: F1/F3/F4/F5 ±3 Pkt., F2 ±0,5 Pkt., F6 ±1 %, T1–T3 ±5 %, R1–R4 exakt, S1 ±0,02 Bit/Zeichen, S2 eine Abstandsstufe, S3 ±2 Antworten.
+- Q: Wer schlägt neue Testfragen und den selbst geschriebenen S1-Text vor? → A: Ein in `DATA_LICENSES.md` erlaubtes lokales LLM auf dem Spark (bestehende Pipeline), der Nutzer prüft Stichproben.
 - Q: Wie wird kurzarbeit.tsv (noch ungeprüft) übernommen? → A: Erst prüfen, dann pinnen: Der Nutzer prüft die Datei einmal als Teil von 007; derselbe Hash gilt für den Benchmark und für Spec 006.
 
 ## User Scenarios & Testing *(mandatory)*
@@ -277,7 +278,9 @@ re-pinning), run the CI step and see it fail with a clear message.
   spec 006 already does for `kurzarbeit.tsv`). The benchmark MUST report, for every test set, how
   many of its questions occur in the model's recorded training data when that data is available.
 - **FR-006**: New test questions MAY be proposed by a large language model but MUST be reviewed
-  and accepted by a person before they are pinned; the review is recorded with the set.
+  and accepted by a person before they are pinned; the review is recorded with the set. Only the
+  local models allowed in `DATA_LICENSES.md` may propose them (run on the DGX Spark); expected
+  answers never come from the language model.
 
 **Scoring**
 

@@ -140,6 +140,8 @@ tools/
 ├── bench_s2.py                         # NEW – S2 probe generator
 └── bench_export_facts.py               # NEW – reference facts export
 
+training/tools/bench_propose_llm.py     # NEW – LLM proposals for test sets and S1 topic text (Spark)
+
 training/tests/
 ├── test_bench_suite.py                 # pins, loading, minimum sizes
 ├── test_bench_scoring.py               # hand-labelled sample (SC-008), edge cases
@@ -177,7 +179,9 @@ same hash.
    - s3 20 prompts
    - T3 prompts
 
-   Test questions are proposed by an LLM and reviewed by the user (👤, FR-006).
+   Test questions and the topic halves of the S1 texts are proposed by an allowed local LLM on the
+   Spark (`training/tools/bench_propose_llm.py`, 🖥️) and spot-checked by the user (👤, FR-006);
+   expected answers come from the request, never from the LLM.
 6. **Board mode (US4)**: `board.py`, `tools/bench.py board`, the host-console CI step, a board run
    with `nodemcu` (🔌).
 7. **Baseline (US3)**: run `chemie-nodemcu` on the Spark (🖥️) and on the board (🔌), commit
