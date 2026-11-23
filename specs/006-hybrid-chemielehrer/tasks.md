@@ -218,7 +218,7 @@ separately; one command runs the whole pipeline (FR-009, FR-010, FR-015).
 contracts/eval-sets.md, and two runs with the same seed are identical (quickstart §3, §4).
 
 - [X] T036 [US3] Draft training/data/eval/kurzarbeit.tsv with ≥ 120 rows, per data-model.md `Short-test item.id`, `Short-test item.question`, `Short-test item.kind`, `Short-test item.expected` and `Short-test item.grade`, written independently of hybrid.toml. Mix per research R9: ~70 % fact, 15 % explain, 10 % refuse/unknown, 5 % multi/tricky (N/Na/Co/CO).
-- [ ] T037 [US3] 👤 The user reviews the short-test set. Then pin its SHA-256 as `kurzarbeit_sha256` in training/configs/chemie-hybrid.toml and hybrid-smoke.toml.
+- [X] T037 [US3] 👤 The user reviews the short-test set. Then pin its SHA-256 as `kurzarbeit_sha256` in training/configs/chemie-hybrid.toml and hybrid-smoke.toml. Done 2026-11-23 in spec 007 (spot-check review by the user; explain keywords accepted as they are, to be judged by the first results).
 - [X] T038 [US3] Implement the held-back sets in training/src/ultratiny/datagen.py per data-model.md "Held-back sets" (`combo`, `family`, `kurzarbeit`, `explain`, `refusal`):
   - stable hash with the seed, and the coverage rules
   - pin check: fail if the hash differs
