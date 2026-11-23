@@ -20,7 +20,7 @@ import time
 from pathlib import Path
 
 from . import RESULT_FORMAT, TOOL_VERSION
-from .pc import default_out, git_commit, write_result
+from .pc import Progress, default_out, git_commit, write_result
 from .scoring import Scorer, kpi, not_measured
 from .subject import load_subject
 from .suite import REPO_ROOT, Item, Suite, SuiteError, load_suite
@@ -219,6 +219,7 @@ def run_board(
     scorer = Scorer(suite)
     log(f"bench board: {len(items)} questions ({n_typed} typed), {len(t3_ids)} T3 prompts")
     records = []
+    prog = Progress("Board-Fragen", len(items), log)
     for i, it in enumerate(items):
         rec = run.ask(it, typed=False)
         if "answer" in rec:
@@ -233,6 +234,7 @@ def run_board(
             t = run.ask(it, typed=True)
             if t.get("first_ms") is not None:
                 rec["first_ms_typed"] = t["first_ms"]
+        prog.step()
     sys_end = run.stats()
     run.command("/trace aus")
 

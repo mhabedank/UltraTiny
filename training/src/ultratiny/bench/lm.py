@@ -26,7 +26,7 @@ def clean_text(text: str, alphabet) -> tuple[str, int]:
     return "".join(kept), len(text) - len(kept)
 
 
-def sliding_bits(subject, tokens: list[int]) -> list[float]:
+def sliding_bits(subject, tokens: list[int], step=None) -> list[float]:
     """Bits for tokens[1:]: windows of `window` tokens, stride window/2; only the second half of
     each window is scored (the first window scores all of it). Unbounded subjects: one pass."""
     n = len(tokens)
@@ -37,6 +37,8 @@ def sliding_bits(subject, tokens: list[int]) -> list[float]:
         logits = subject.feed(tokens[0])
         for i in range(1, n):
             out[i] = _bits(logits, tokens[i])
+            if step:
+                step()
             if i < n - 1:
                 logits = subject.feed(tokens[i])
         return out[1:]
@@ -49,12 +51,14 @@ def sliding_bits(subject, tokens: list[int]) -> list[float]:
             logits = subject.feed(tokens[i])
             if i + 1 > scored:
                 out[i + 1] = _bits(logits, tokens[i + 1])
+                if step:
+                    step()
         scored = end
         start += stride
     return out[1:]
 
 
-def s1(subject, sections: dict[str, str]) -> dict:
+def s1(subject, sections: dict[str, str], step=None) -> dict:
     """S1 per section (topic, general) and for both; coverage = share of characters kept."""
     ab = subject.alphabet
     detail: dict = {}
@@ -64,7 +68,7 @@ def s1(subject, sections: dict[str, str]) -> dict:
         text, removed = clean_text(raw, ab)
         if len(text) < 2:
             continue
-        bits = sliding_bits(subject, ab.encode(text))
+        bits = sliding_bits(subject, ab.encode(text), step)
         detail[name] = round(sum(bits) / len(bits), 4)
         tot_bits += sum(bits)
         tot_n += len(bits)
@@ -95,7 +99,7 @@ def span_bits(subject, tokens: list[int], start: int, length: int) -> float:
     return total
 
 
-def s2(subject, probes: list[Probe], cfg: dict) -> dict:
+def s2(subject, probes: list[Probe], cfg: dict, step=None) -> dict:
     ratio = float(cfg.get("recall_ratio", 0.5))
     need = float(cfg.get("recall_min", 0.8))
     ab = subject.alphabet
@@ -106,6 +110,8 @@ def s2(subject, probes: list[Probe], cfg: dict) -> dict:
         b = span_bits(subject, t, p.target_start, p.target_len)
         bc = span_bits(subject, c, p.target_start, p.target_len)
         per.setdefault(p.distance, []).append(b <= ratio * bc)
+        if step:
+            step()
     if not per:
         return {"value": None, "status": "not_measured", "reason": "no S2 probes"}
     curve = {str(d): round(sum(v) / len(v), 3) for d, v in sorted(per.items())}

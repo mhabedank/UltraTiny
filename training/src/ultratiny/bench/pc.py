@@ -9,6 +9,7 @@ import json
 import multiprocessing as mp
 import platform
 import subprocess
+import time
 from pathlib import Path
 
 from . import RESULT_FORMAT, TOOL_VERSION
@@ -59,17 +60,52 @@ def _ask(q: str) -> tuple[str, bool]:
     return _W["s"].answer(q)
 
 
-def answer_all(subject, questions: list[str], model, facts, jobs: int) -> list[tuple[str, bool]]:
+class Progress:
+    """One log line about every 10 s (and at the end): done/total, rate, time left."""
+
+    def __init__(self, what: str, total: int, log=print, every: float = 10.0):
+        self.what, self.total, self.log, self.every = what, total, log, every
+        self.t0 = self.last = time.time()
+        self.done = 0
+
+    def step(self, n: int = 1) -> None:
+        self.done += n
+        now = time.time()
+        if now - self.last >= self.every or self.done >= self.total:
+            self.last = now
+            el = now - self.t0
+            left = el / self.done * (self.total - self.done) if self.done else 0
+            self.log(
+                f"bench: {self.what} {self.done}/{self.total} "
+                f"({100 * self.done // max(1, self.total)} %), {el:.0f} s, "
+                f"noch ~{left:.0f} s"
+            )
+
+
+def answer_all(subject, questions: list[str], model, facts, jobs: int, log=print) -> list:
+    prog = Progress("Fragen", len(questions), log)
     if jobs <= 1 or len(questions) < 2 * jobs:
-        return [subject.answer(q) for q in questions]
+        out = []
+        for q in questions:
+            out.append(subject.answer(q))
+            prog.step()
+        return out
     ctx = mp.get_context("spawn")
+    out = []
     with ctx.Pool(
         jobs, initializer=_init, initargs=(str(model), str(facts) if facts else None)
     ) as p:
-        return p.map(_ask, questions, chunksize=8)
+        for res in p.imap(_ask, questions, chunksize=8):  # keeps the question order
+            out.append(res)
+            prog.step()
+    return out
 
 
 # ---------------------------------------------------------------- run
+
+
+def s1_chars(suite: Suite) -> int:
+    return sum(max(0, len(t) - 1) for t in suite.s1.values())
 
 
 def git_commit() -> str:
@@ -109,7 +145,7 @@ def run_pc(
     scorer = Scorer(suite)
     items = all_items(suite, only)
     log(f"bench: {len(items)} questions, {len(suite.s1)} S1 sections, {len(suite.s2)} S2 probes")
-    answers = answer_all(subject, [it.question for it in items], model, facts, jobs)
+    answers = answer_all(subject, [it.question for it in items], model, facts, jobs, log)
     records = []
     for it, (ans, too_long) in zip(items, answers, strict=True):
         sc = scorer.score(it, ans) if not too_long else {"class": "no_answer", "ok": False}
@@ -139,13 +175,13 @@ def run_pc(
         else not_measured("F6 is 0 or not measured")
     )
     if only is None or "s1" in only:
-        log("bench: S1 ...")
-        kpis["S1"] = s1_kpi(subject, suite.s1)
+        kpis["S1"] = s1_kpi(subject, suite.s1, Progress("S1 Zeichen", s1_chars(suite), log).step)
     else:
         kpis["S1"] = not_measured("skipped (--only)")
     if only is None or "s2" in only:
-        log("bench: S2 ...")
-        kpis["S2"] = s2_kpi(subject, suite.s2, suite.s2_cfg)
+        kpis["S2"] = s2_kpi(
+            subject, suite.s2, suite.s2_cfg, Progress("S2 Proben", len(suite.s2), log).step
+        )
     else:
         kpis["S2"] = not_measured("skipped (--only)")
     for k in ("T1", "T2", "T3", "R1"):
