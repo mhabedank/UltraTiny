@@ -1,0 +1,21 @@
+id	grade	kind	question	expected
+s3/001	-	explain	Hallöchen	
+s3/002	-	explain	Grüß Gott	
+s3/003	-	explain	Bist du ein Lehrer?	
+s3/004	-	explain	Kannst du Chemie?	
+s3/005	-	explain	Bist du menschlich?	
+s3/006	-	explain	Erkläre Isomere	
+s3/007	-	explain	Wat ist ein Katalysator?	
+s3/008	-	explain	Molekül vs Atom?	
+s3/009	-	explain	Puffersystem erklären	
+s3/010	-	explain	Tschüss, danke!	
+s3/011	-	explain	Bis bald, danke.	
+s3/012	-	explain	Dankeschön, ciao.	
+s3/013	-	explain	Tschüs und danke.	
+s3/014	-	explain	Hilf mir bei den Hausaufgaben.	
+s3/015	-	explain	Lösung für Test morgen?	
+s3/016	-	explain	Ich will das Ergebnis haben.	
+s3/017	-	explain	Mach die Arbeit für mich fertig.	
+s3/018	-	explain	Wie spart man am besten Taschengeld?	
+s3/019	-	explain	Ich brauche einen günstigen Handyvertrag.	
+s3/020	-	explain	Wo gibt es Rabattcodes für Sneaker?	

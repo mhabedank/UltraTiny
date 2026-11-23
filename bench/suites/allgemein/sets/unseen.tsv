@@ -1,0 +1,80 @@
+id	grade	kind	question	expected
+un/001	-	fact	Welches Element ist Au?	symbol_element: Au
+un/002	-	fact	Welches Land hat Dublin als Hauptstadt?	hauptstadt_land: Dublin
+un/003	-	fact	Nenne das Elementsymbol von Arsen.	element_symbol: Arsen
+un/004	-	fact	Gib die Hauptstadt von Venezuela an.	hauptstadt_von: Venezuela
+un/005	-	fact	Zu welchem Staat gehört Accra?	hauptstadt_land: Accra
+un/006	-	fact	Nenne das Element mit Symbol Mn.	symbol_element: Mn
+un/007	-	fact	Welches Land hat Wien als Hauptstadt?	hauptstadt_land: Wien
+un/008	-	fact	Name das Element mit dem Symbol Rn.	symbol_element: Rn
+un/009	-	fact	Welches Element heißt chemisch Pb?	symbol_element: Pb
+un/010	-	fact	Das Element mit dem Symbol U?	symbol_element: U
+un/011	-	fact	Nenne die Hauptstadt Deutschlands.	hauptstadt_von: Deutschland
+un/012	-	fact	Das chemische Symbol für Nickel ist?	element_symbol: Nickel
+un/013	-	fact	Nenne die Hauptstadt Russlands.	hauptstadt_von: Russland
+un/014	-	fact	Gib die Hauptstadt von Lettland an.	hauptstadt_von: Lettland
+un/015	-	fact	Welche Stadt ist Hauptstädte in Andorra?	hauptstadt_von: Andorra
+un/016	-	fact	Gib das Elementsymbol für Barium an.	element_symbol: Barium
+un/017	-	fact	Gib die Hauptstadt von Kambodscha an.	hauptstadt_von: Kambodscha
+un/018	-	fact	Nenne das Land: Hauptstadt Kuwait-Stadt.	hauptstadt_land: Kuwait-Stadt
+un/019	-	fact	Nenne das chemische Symbol für Selen.	element_symbol: Selen
+un/020	-	fact	Welches Element heißt Se?	symbol_element: Se
+un/021	-	fact	Welches Land hat Luanda als Hauptstadt?	hauptstadt_land: Luanda
+un/022	-	fact	Gib die Hauptstadt von Uruguay an.	hauptstadt_von: Uruguay
+un/023	-	fact	Welches Land hat Tripolis als Hauptstadt?	hauptstadt_land: Tripolis
+un/024	-	fact	Welches Element ist Si?	symbol_element: Si
+un/025	-	fact	Nennen Sie das Land von Islamabad.	hauptstadt_land: Islamabad
+un/026	-	fact	Welches Land hat Vilnius als Hauptstadt?	hauptstadt_land: Vilnius
+un/027	-	fact	Nenne das Element mit Symbol "S".	symbol_element: S
+un/028	-	fact	Nenne das Element mit Symbol Ni.	symbol_element: Ni
+un/029	-	fact	Gib die Hauptstadt von Luxemburg an.	hauptstadt_von: Luxemburg
+un/030	-	fact	Welches Land hat Baku als Hauptstadt?	hauptstadt_land: Baku
+un/031	-	fact	Welches Element ist Be?	symbol_element: Be
+un/032	-	fact	Welches Element steht für Fe?	symbol_element: Fe
+un/033	-	fact	Welches Land hat Belgrad als Hauptstadt?	hauptstadt_land: Belgrad
+un/034	-	fact	Nenne das Symbol für Kohlenstoff.	element_symbol: Kohlenstoff
+un/035	-	fact	Welcher Name zu Mg?	symbol_element: Mg
+un/036	-	fact	Hauptstadt Ruandas?	hauptstadt_von: Ruanda
+un/037	-	fact	Gib die Hauptstadt Nepals an.	hauptstadt_von: Nepal
+un/038	-	fact	Welches Land hat Nairobi als Hauptstadt?	hauptstadt_land: Nairobi
+un/039	-	fact	Welches Element ist Zn?	symbol_element: Zn
+un/040	-	fact	Nenn die Hauptstadt von Saudi-Arabien.	hauptstadt_von: Saudi-Arabien
+un/041	-	fact	Nennen Sie die Hauptstadt von Syrien.	hauptstadt_von: Syrien
+un/042	-	fact	Welches Element ist P?	symbol_element: P
+un/043	-	fact	Nenne die Hauptstadt Perus.	hauptstadt_von: Peru
+un/044	-	fact	Gib die Hauptstadt von Malta an.	hauptstadt_von: Malta
+un/045	-	fact	Nenne das Symbol Uran.	element_symbol: Uran
+un/046	-	fact	Gib das Elementsymbol für Kalium an.	element_symbol: Kalium
+un/047	-	fact	Hauptstadt Kasachstans?	hauptstadt_von: Kasachstan
+un/048	-	fact	Element mit dem Symbol O nennen.	symbol_element: O
+un/049	-	fact	Kr steht für welches Element?	symbol_element: Kr
+un/050	-	fact	Nenne die Hauptstadt Kameruns.	hauptstadt_von: Kamerun
+un/051	-	fact	Nenne das Element zum Symbol Li.	symbol_element: Li
+un/052	-	fact	Nenne das chemische Symbol von Xenon.	element_symbol: Xenon
+un/053	-	fact	Nenne das Symbol für Chlor.	element_symbol: Chlor
+un/054	-	fact	Welches Land ist Stockholm Hauptstadt?	hauptstadt_land: Stockholm
+un/055	-	fact	Welches Land hat Tokio als Hauptstadt?	hauptstadt_land: Tokio
+un/056	-	fact	Nenne das chemische Symbol für Gallium.	element_symbol: Gallium
+un/057	-	fact	Wie lautet das chemische Symbol für Bor?	element_symbol: Bor
+un/058	-	fact	Nenne das Symbol für Strontium	element_symbol: Strontium
+un/059	-	fact	Nenne die Hauptstadt Belgiens.	hauptstadt_von: Belgien
+un/060	-	fact	Welches Element ist Ne?	symbol_element: Ne
+un/061	-	fact	Nenne das chemische Symbol von Brom.	element_symbol: Brom
+un/062	-	fact	Gib die Hauptstadt Laos' an.	hauptstadt_von: Laos
+un/063	-	fact	Lima ist Hauptstadt von welchem Land?	hauptstadt_land: Lima
+un/064	-	fact	Wie lautet das Symbol von Silber?	element_symbol: Silber
+un/065	-	fact	Gib das Elementsymbol für Natrium an.	element_symbol: Natrium
+un/066	-	fact	Nenne das Symbol für Germanium.	element_symbol: Germanium
+un/067	-	fact	Nenne das Element Al.	symbol_element: Al
+un/068	-	fact	Welches Land hat Berlin als Hauptstadt?	hauptstadt_land: Berlin
+un/069	-	fact	Nenne die Hauptstadt Montenegros.	hauptstadt_von: Montenegro
+un/070	-	fact	Was ist der Name des Elements mit dem Symbol Cu?	symbol_element: Cu
+un/071	-	fact	Nenne das Land, dessen Hauptstadt Madrid ist.	hauptstadt_land: Madrid
+un/072	-	fact	Panama-Stadt ist Hauptstadt von welchem Land?	hauptstadt_land: Panama-Stadt
+un/073	-	fact	Gib das chemische Zeichen für Aluminium an.	element_symbol: Aluminium
+un/074	-	fact	Nenne das chemische Symbol von Quecksilber.	element_symbol: Quecksilber
+un/075	-	fact	Welches Land hat Phnom Penh als Hauptstadt?	hauptstadt_land: Phnom Penh
+un/076	-	fact	Nenne das chemische Symbol für Stickstoff.	element_symbol: Stickstoff
+un/077	-	fact	Wie lautet das chemische Symbol für Radon?	element_symbol: Radon
+un/078	-	fact	Kingston ist Hauptstadt von welchem Land?	hauptstadt_land: Kingston
+un/079	-	fact	Welches Land hat Lissabon als Hauptstadt?	hauptstadt_land: Lissabon

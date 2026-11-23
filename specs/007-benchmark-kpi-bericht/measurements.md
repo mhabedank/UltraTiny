@@ -16,10 +16,39 @@ Host values from the development container (4 CPU cores, Linux x86-64), 2026-11-
 
 ## Suites
 
-| Suite | Reference facts | Properties | Sets present | Status |
-|-------|-----------------|------------|--------------|--------|
-| chemie | 2,379 (exported from the spec 006 fact set) | 26 | `kurzarbeit` (130, pinned `cd2a36bf…`) | unseen/unknown/offtopic/s3 and S1/S2 wait for the Spark proposals (T018) |
-| allgemein | 288 (capitals and element symbols, both directions) | 4 | – | all sets wait for the Spark proposals (T018) |
+Assembled from the Spark proposals (T018, `qwen3.6:35b` with check prompt) with
+`tools/bench_assemble.py` (seed 7); pinned, review by the user pending (T022, T027).
+
+| Suite | Facts | unseen (T3) | unknown | offtopic | kurzarbeit | s3 | S1 topic + general | S2 |
+|-------|-------|-------------|---------|----------|------------|----|--------------------|----|
+| chemie | 2,379 / 26 properties | 257 (10), all 26 properties | 50 | 55 | 130 | 20 | 10,861 + 10,084 | 104 |
+| allgemein | 288 / 4 properties | 79 (10) | 50 | 26 | – | 20 | 10,040 + 10,084 | 104 |
+
+- S1 general half: Kafka, *Die Verwandlung* (public domain, Gutenberg #22367); 100 % of its characters
+  are in the model alphabet.
+- One chemistry paragraph was dropped because it shared a 40-character span with the curriculum data
+  (`test_s1_texts_not_in_training_data`).
+- S3 (allgemein): fact-like prompts ("Hauptstadt Frankreich?") were removed and the set filled from
+  unused off-topic proposals.
+
+## Repo model `nodemcu.utny` (T023, reference result for CI)
+
+`bench.py pc --suite ../bench/suites/allgemein --model ../models/nodemcu.utny --label nodemcu`,
+1 job, 185.7 s → `bench/results/nodemcu_allgemein_pc.json`.
+
+| KPI | Value | Note |
+|-----|-------|------|
+| F1 | 88.6 % (n = 79) | per type: element_symbol 95, symbol_element 90, hauptstadt_land 90, hauptstadt_von 78.9 |
+| F2 | 6.3 % (n = 79) | |
+| F3 | 0.0 % (n = 76) | the starter data has no refusals; unknown countries get an invented capital |
+| F4 | 0.0 % | |
+| F6 | 287 of 288 | |
+| R2 / R4 | 601,404 B / 2,095.5 B per fact | |
+| S1 | 13.50 bits per character (topic 13.40, general 13.61), coverage 100 % | see the observation below |
+| S2 | 0 (no recall at any distance) | |
+
+Same model on the chemie suite (not a baseline, timing only): 2,891 questions + S1 + S2 in 262.8 s
+with `--jobs 3` (SC-002: ≤ 15 min). F1 1.9 %, F2 5.3 %, F5 8.5 %, F6 51.
 
 ## First runs (partial suites)
 

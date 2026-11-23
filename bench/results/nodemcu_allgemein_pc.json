@@ -1,0 +1,4830 @@
+{
+  "board": null,
+  "complete": true,
+  "env": {
+    "commit": "025e03d35adf",
+    "date": "2026-11-23",
+    "host": "vm",
+    "jobs": 1,
+    "seconds": 185.7,
+    "tool": "bench 1"
+  },
+  "events": [],
+  "format": 1,
+  "items": [
+    {
+      "answer": "Au ist das Symbol von Gold.",
+      "class": "correct",
+      "id": "un/001",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element ist Au?",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Dakar ist die Hauptstadt von Senegal.",
+      "class": "wrong_fact",
+      "id": "un/002",
+      "kind": "fact",
+      "ok": false,
+      "question": "Welches Land hat Dublin als Hauptstadt?",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Arsen ist As.",
+      "class": "correct",
+      "id": "un/003",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das Elementsymbol von Arsen.",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Venezuela ist Caracas.",
+      "class": "correct",
+      "id": "un/004",
+      "kind": "fact",
+      "ok": true,
+      "question": "Gib die Hauptstadt von Venezuela an.",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Accra ist die Hauptstadt von Ghana.",
+      "class": "correct",
+      "id": "un/005",
+      "kind": "fact",
+      "ok": true,
+      "question": "Zu welchem Staat gehört Accra?",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Mn ist das Symbol von Mangan.",
+      "class": "correct",
+      "id": "un/006",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das Element mit Symbol Mn.",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Wien ist die Hauptstadt von Österreich.",
+      "class": "correct",
+      "id": "un/007",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Land hat Wien als Hauptstadt?",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Rn ist das Symbol von Radon.",
+      "class": "correct",
+      "id": "un/008",
+      "kind": "fact",
+      "ok": true,
+      "question": "Name das Element mit dem Symbol Rn.",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Pb ist das Symbol von Blei.",
+      "class": "correct",
+      "id": "un/009",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element heißt chemisch Pb?",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "U ist das Symbol von Uran.",
+      "class": "correct",
+      "id": "un/010",
+      "kind": "fact",
+      "ok": true,
+      "question": "Das Element mit dem Symbol U?",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Deutschland ist Berlin.",
+      "class": "correct",
+      "id": "un/011",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne die Hauptstadt Deutschlands.",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Nik ist das Symbol von Nickel.",
+      "class": "no_answer",
+      "id": "un/012",
+      "kind": "fact",
+      "ok": false,
+      "question": "Das chemische Symbol für Nickel ist?",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Russland ist Moskau.",
+      "class": "correct",
+      "id": "un/013",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne die Hauptstadt Russlands.",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Lettland ist Riga.",
+      "class": "correct",
+      "id": "un/014",
+      "kind": "fact",
+      "ok": true,
+      "question": "Gib die Hauptstadt von Lettland an.",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Andorra ist Andorra la Vella.",
+      "class": "correct",
+      "id": "un/015",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welche Stadt ist Hauptstädte in Andorra?",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Barium ist Ba.",
+      "class": "correct",
+      "id": "un/016",
+      "kind": "fact",
+      "ok": true,
+      "question": "Gib das Elementsymbol für Barium an.",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Kambodscha ist Phnom Penh.",
+      "class": "correct",
+      "id": "un/017",
+      "kind": "fact",
+      "ok": true,
+      "question": "Gib die Hauptstadt von Kambodscha an.",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Kuwait-Stadt ist die Hauptstadt von Kuwait.",
+      "class": "correct",
+      "id": "un/018",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das Land: Hauptstadt Kuwait-Stadt.",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Selen ist Se.",
+      "class": "correct",
+      "id": "un/019",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das chemische Symbol für Selen.",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Se ist das Symbol von Selen.",
+      "class": "correct",
+      "id": "un/020",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element heißt Se?",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Luanda ist die Hauptstadt von Angola.",
+      "class": "correct",
+      "id": "un/021",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Land hat Luanda als Hauptstadt?",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Uruguay ist Montevideo.",
+      "class": "correct",
+      "id": "un/022",
+      "kind": "fact",
+      "ok": true,
+      "question": "Gib die Hauptstadt von Uruguay an.",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Tripolis ist die Hauptstadt von Libyen.",
+      "class": "correct",
+      "id": "un/023",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Land hat Tripolis als Hauptstadt?",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Si ist das Symbol von Silicium.",
+      "class": "correct",
+      "id": "un/024",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element ist Si?",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Island ist Reykjavik.",
+      "class": "wrong_fact",
+      "id": "un/025",
+      "kind": "fact",
+      "ok": false,
+      "question": "Nennen Sie das Land von Islamabad.",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Vilnius ist die Hauptstadt von Litauen.",
+      "class": "correct",
+      "id": "un/026",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Land hat Vilnius als Hauptstadt?",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "N ist das Symbol von Stickstoff.",
+      "class": "wrong_fact",
+      "id": "un/027",
+      "kind": "fact",
+      "ok": false,
+      "question": "Nenne das Element mit Symbol \"S\".",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Ni ist das Symbol von Nickel.",
+      "class": "correct",
+      "id": "un/028",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das Element mit Symbol Ni.",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Luxemburg ist Luxemburg.",
+      "class": "correct",
+      "id": "un/029",
+      "kind": "fact",
+      "ok": true,
+      "question": "Gib die Hauptstadt von Luxemburg an.",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Baku ist die Hauptstadt von Aserbaidschan.",
+      "class": "correct",
+      "id": "un/030",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Land hat Baku als Hauptstadt?",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Be ist das Symbol von Beryllium.",
+      "class": "correct",
+      "id": "un/031",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element ist Be?",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Fe ist das Symbol von Eisen.",
+      "class": "correct",
+      "id": "un/032",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element steht für Fe?",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Belgrad ist die Hauptstadt von Serbien.",
+      "class": "correct",
+      "id": "un/033",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Land hat Belgrad als Hauptstadt?",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Kohlenstoff ist C.",
+      "class": "correct",
+      "id": "un/034",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das Symbol für Kohlenstoff.",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Mg ist das Symbol von Magnesium.",
+      "class": "correct",
+      "id": "un/035",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welcher Name zu Mg?",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Ruand ist die Hauptstadt von Marokko.",
+      "class": "no_answer",
+      "id": "un/036",
+      "kind": "fact",
+      "ok": false,
+      "question": "Hauptstadt Ruandas?",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Ich heiße UltraTiny.",
+      "class": "no_answer",
+      "id": "un/037",
+      "kind": "fact",
+      "ok": false,
+      "question": "Gib die Hauptstadt Nepals an.",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Nairobi ist die Hauptstadt von Kenia.",
+      "class": "correct",
+      "id": "un/038",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Land hat Nairobi als Hauptstadt?",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Zn ist das Symbol von Zink.",
+      "class": "correct",
+      "id": "un/039",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element ist Zn?",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Saudi-Arabien ist Riad.",
+      "class": "correct",
+      "id": "un/040",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenn die Hauptstadt von Saudi-Arabien.",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Syrien ist Damaskus.",
+      "class": "correct",
+      "id": "un/041",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nennen Sie die Hauptstadt von Syrien.",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "P ist das Symbol von Phosphor.",
+      "class": "correct",
+      "id": "un/042",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element ist P?",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Peru ist Lima.",
+      "class": "correct",
+      "id": "un/043",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne die Hauptstadt Perus.",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Malta ist Valletta.",
+      "class": "correct",
+      "id": "un/044",
+      "kind": "fact",
+      "ok": true,
+      "question": "Gib die Hauptstadt von Malta an.",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Uran ist U.",
+      "class": "correct",
+      "id": "un/045",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das Symbol Uran.",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Das Symbol von Kalium ist K.",
+      "class": "correct",
+      "id": "un/046",
+      "kind": "fact",
+      "ok": true,
+      "question": "Gib das Elementsymbol für Kalium an.",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Kastandu ist die Hauptstadt von Nepal.",
+      "class": "no_answer",
+      "id": "un/047",
+      "kind": "fact",
+      "ok": false,
+      "question": "Hauptstadt Kasachstans?",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Neon ist Ne.",
+      "class": "wrong_fact",
+      "id": "un/048",
+      "kind": "fact",
+      "ok": false,
+      "question": "Element mit dem Symbol O nennen.",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Kr ist das Symbol von Krypton.",
+      "class": "correct",
+      "id": "un/049",
+      "kind": "fact",
+      "ok": true,
+      "question": "Kr steht für welches Element?",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Kamerun ist Jaunde.",
+      "class": "correct",
+      "id": "un/050",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne die Hauptstadt Kameruns.",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Li ist das Symbol von Lithium.",
+      "class": "correct",
+      "id": "un/051",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das Element zum Symbol Li.",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Das Symbol von Xenon ist Xe.",
+      "class": "correct",
+      "id": "un/052",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das chemische Symbol von Xenon.",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Das Symbol von Chlor ist Cl.",
+      "class": "correct",
+      "id": "un/053",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das Symbol für Chlor.",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Stockholm ist die Hauptstadt von Schweden.",
+      "class": "correct",
+      "id": "un/054",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Land ist Stockholm Hauptstadt?",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Tokio ist die Hauptstadt von Japan.",
+      "class": "correct",
+      "id": "un/055",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Land hat Tokio als Hauptstadt?",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Gallium ist Ga.",
+      "class": "correct",
+      "id": "un/056",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das chemische Symbol für Gallium.",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Das Symbol von Bor ist B.",
+      "class": "correct",
+      "id": "un/057",
+      "kind": "fact",
+      "ok": true,
+      "question": "Wie lautet das chemische Symbol für Bor?",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Das Symbol von Strontium ist Sr.",
+      "class": "correct",
+      "id": "un/058",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das Symbol für Strontium",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Belgien ist Brüssel.",
+      "class": "correct",
+      "id": "un/059",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne die Hauptstadt Belgiens.",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Ne ist das Symbol von Neon.",
+      "class": "correct",
+      "id": "un/060",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element ist Ne?",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Das Symbol von Brom ist Br.",
+      "class": "correct",
+      "id": "un/061",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das chemische Symbol von Brom.",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Islamabad ist die Hauptstadt von Pakistan.",
+      "class": "wrong_fact",
+      "id": "un/062",
+      "kind": "fact",
+      "ok": false,
+      "question": "Gib die Hauptstadt Laos' an.",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Lima ist die Hauptstadt von Peru.",
+      "class": "correct",
+      "id": "un/063",
+      "kind": "fact",
+      "ok": true,
+      "question": "Lima ist Hauptstadt von welchem Land?",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Silber ist Ag.",
+      "class": "correct",
+      "id": "un/064",
+      "kind": "fact",
+      "ok": true,
+      "question": "Wie lautet das Symbol von Silber?",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Das Symbol von Natrium ist Na.",
+      "class": "correct",
+      "id": "un/065",
+      "kind": "fact",
+      "ok": true,
+      "question": "Gib das Elementsymbol für Natrium an.",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Das Symbol von Germanium ist Ge.",
+      "class": "correct",
+      "id": "un/066",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das Symbol für Germanium.",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Al ist das Symbol von Aluminium.",
+      "class": "correct",
+      "id": "un/067",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das Element Al.",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Berlin ist die Hauptstadt von Deutschland.",
+      "class": "correct",
+      "id": "un/068",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Land hat Berlin als Hauptstadt?",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Montenegro ist Podgorica.",
+      "class": "correct",
+      "id": "un/069",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne die Hauptstadt Montenegros.",
+      "set": "unseen",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Cu ist das Symbol von Kupfer.",
+      "class": "correct",
+      "id": "un/070",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist der Name des Elements mit dem Symbol Cu?",
+      "set": "unseen",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Madrid ll ist die Hauptstadt von Spanien.",
+      "class": "correct",
+      "id": "un/071",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das Land, dessen Hauptstadt Madrid ist.",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Panama-Stadt ist die Hauptstadt von Panama.",
+      "class": "correct",
+      "id": "un/072",
+      "kind": "fact",
+      "ok": true,
+      "question": "Panama-Stadt ist Hauptstadt von welchem Land?",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Aluminium ist Al.",
+      "class": "correct",
+      "id": "un/073",
+      "kind": "fact",
+      "ok": true,
+      "question": "Gib das chemische Zeichen für Aluminium an.",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Das Symbol von Quecksilber ist Hg.",
+      "class": "correct",
+      "id": "un/074",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das chemische Symbol von Quecksilber.",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Phnom Penh ist die Hauptstadt von Kambodscha.",
+      "class": "correct",
+      "id": "un/075",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Land hat Phnom Penh als Hauptstadt?",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Stickstoff ist N.",
+      "class": "correct",
+      "id": "un/076",
+      "kind": "fact",
+      "ok": true,
+      "question": "Nenne das chemische Symbol für Stickstoff.",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Das Symbol von Radon ist Rn.",
+      "class": "correct",
+      "id": "un/077",
+      "kind": "fact",
+      "ok": true,
+      "question": "Wie lautet das chemische Symbol für Radon?",
+      "set": "unseen",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Kingston ist die Hauptstadt von Jamaika.",
+      "class": "correct",
+      "id": "un/078",
+      "kind": "fact",
+      "ok": true,
+      "question": "Kingston ist Hauptstadt von welchem Land?",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Lissabon ist die Hauptstadt von Portugal.",
+      "class": "correct",
+      "id": "un/079",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Land hat Lissabon als Hauptstadt?",
+      "set": "unseen",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Auserbaidschan ist Baku.",
+      "class": "wrong_fact",
+      "id": "uk/001",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Aethelgard?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Bor ist B.",
+      "class": "wrong_fact",
+      "id": "uk/002",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Borovia?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Calcau ist Seoul.",
+      "class": "wrong_fact",
+      "id": "uk/003",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Caelumaria?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Deutschland ist Berlin.",
+      "class": "wrong_fact",
+      "id": "uk/004",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Dunhaven?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Eisen ist Fe.",
+      "class": "wrong_fact",
+      "id": "uk/005",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Eldoria?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Faluor ist F.",
+      "class": "wrong_fact",
+      "id": "uk/006",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Falkenroth?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Großbium ist Gr.",
+      "class": "no_answer",
+      "id": "uk/007",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Grimhollow?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Hanoi ist Hanoi.",
+      "class": "wrong_fact",
+      "id": "uk/008",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Highgarden?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Irland ist Dublin.",
+      "class": "wrong_fact",
+      "id": "uk/009",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Ironhold?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Japan ist Tokio.",
+      "class": "wrong_fact",
+      "id": "uk/010",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Jasperia?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Kingsta ist Kairo.",
+      "class": "wrong_fact",
+      "id": "uk/011",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Kingsreach?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Lisen ist Fe.",
+      "class": "wrong_fact",
+      "id": "uk/012",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Lysandra?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Madaco ist Monaco.",
+      "class": "wrong_fact",
+      "id": "uk/013",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Misthaven?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Natrium ist Na.",
+      "class": "wrong_fact",
+      "id": "uk/014",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Nolvaroth?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Akosea ist Pjöngjang.",
+      "class": "wrong_fact",
+      "id": "uk/015",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Oakenshield?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Pen ist Pe.",
+      "class": "no_answer",
+      "id": "uk/016",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Pemberley?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Quecksilber ist Hg.",
+      "class": "wrong_fact",
+      "id": "uk/017",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Quel'Thalas?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Ramän ist Kopenhagen.",
+      "class": "wrong_fact",
+      "id": "uk/018",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Ravenholm?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Strontium ist Sr.",
+      "class": "wrong_fact",
+      "id": "uk/019",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Stormwind?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Thatan ist Ti.",
+      "class": "wrong_fact",
+      "id": "uk/020",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Thalassia?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Uran ist U.",
+      "class": "wrong_fact",
+      "id": "uk/021",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Umbra?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Vallium ist Ca.",
+      "class": "wrong_fact",
+      "id": "uk/022",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Valdoria?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Witolfray ist W.",
+      "class": "wrong_fact",
+      "id": "uk/023",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Winterfell?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Xenoi ist Xe.",
+      "class": "wrong_fact",
+      "id": "uk/024",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Xylos?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Selen ist Se.",
+      "class": "wrong_fact",
+      "id": "uk/025",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Ysera?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Zypern ist Nikosia.",
+      "class": "wrong_fact",
+      "id": "uk/026",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Zephyria?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Aluminium ist Al.",
+      "class": "wrong_fact",
+      "id": "uk/027",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Avalon?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Banium ist Ba.",
+      "class": "wrong_fact",
+      "id": "uk/028",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Bannockburn?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Calcium ist Ca.",
+      "class": "wrong_fact",
+      "id": "uk/029",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Castelvecchio?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Dänemark ist Kopenhagen.",
+      "class": "wrong_fact",
+      "id": "uk/030",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Drakonia?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Eisen ist Fe.",
+      "class": "wrong_fact",
+      "id": "uk/031",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Eldritch?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Froßbr ist London.",
+      "class": "wrong_fact",
+      "id": "uk/032",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Fjordheim?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Gold ist Au.",
+      "class": "wrong_fact",
+      "id": "uk/033",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Gotham?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Helium ist He.",
+      "class": "wrong_fact",
+      "id": "uk/034",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Hyrule?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Iod ist I.",
+      "class": "wrong_fact",
+      "id": "uk/035",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Ithilien?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Jaium ist Jai.",
+      "class": "no_answer",
+      "id": "uk/036",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Jadepeak?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Kroatien ist Zagreb.",
+      "class": "wrong_fact",
+      "id": "uk/037",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Kronstadt?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Lumbumbinium ist Li.",
+      "class": "wrong_fact",
+      "id": "uk/038",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Luminaria?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Mongan ist Mo.",
+      "class": "no_answer",
+      "id": "uk/039",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Mordavia?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Naikosia ist Oslo.",
+      "class": "wrong_fact",
+      "id": "uk/040",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Narnia?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von OaKacium ist Mn.",
+      "class": "wrong_fact",
+      "id": "uk/041",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Oakhaven?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Pan ist Pt.",
+      "class": "wrong_fact",
+      "id": "uk/042",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Paxton?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Ritan ist Rn.",
+      "class": "wrong_fact",
+      "id": "uk/043",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Riverrun?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Silicium ist Si.",
+      "class": "wrong_fact",
+      "id": "uk/044",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Silvaris?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Titan ist Ti.",
+      "class": "wrong_fact",
+      "id": "uk/045",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Tirion?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Das Symbol von Uran ist U.",
+      "class": "wrong_fact",
+      "id": "uk/046",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist das Symbol von Undvik?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Vadaz ist Hanoi.",
+      "class": "wrong_fact",
+      "id": "uk/047",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Valeguard?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Wensseell ist Wellington.",
+      "class": "wrong_fact",
+      "id": "uk/048",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Westeros?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Xana ist die Hauptstadt von Kuba.",
+      "class": "wrong_fact",
+      "id": "uk/049",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Xanadu?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Ghana ist Accra.",
+      "class": "wrong_fact",
+      "id": "uk/050",
+      "kind": "unknown",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Yggdrasil?",
+      "set": "unknown",
+      "type": "unknown"
+    },
+    {
+      "answer": "Die Hauptstadt von Belgien ist Brüssel.",
+      "class": "wrong_fact",
+      "id": "ot/001",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Welcher Spieler hat den Ball am besten gedribbelt?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Der Symbol von Mangan ist Mn.",
+      "class": "wrong_fact",
+      "id": "ot/002",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Ist Basketball auch eine Mannschaftssportart?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Ich lese und schreibe Buchstabe für Buchstabe.",
+      "class": "no_answer",
+      "id": "ot/003",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Wann ist die nächste WM in Deutschland?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Bang ist das Symbol von Barium.",
+      "class": "wrong_fact",
+      "id": "ot/004",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Welche Bands sind gerade total hype?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Die Hauptstadt von Fickten ist Paris.",
+      "class": "wrong_fact",
+      "id": "ot/005",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Tipps für günstige Festivaltickets?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Neu-Delhie Hauptstadt von Indien ist Neu-Delhi.",
+      "class": "wrong_fact",
+      "id": "ot/006",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Beste Streaming-Apps für Indie?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Ich habe etwa 600000 Parameter.",
+      "class": "no_answer",
+      "id": "ot/007",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Welche Serie ist gerade der letzte Hit?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Del Symbol von Aluminium ist Al.",
+      "class": "wrong_fact",
+      "id": "ot/008",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Empfehlung für einen Action-Film bitte.",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Ich in in UltraTiny.",
+      "class": "no_answer",
+      "id": "ot/009",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Ist Stranger Things schon zu Ende?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Das Symbol von Paspar ist Pakis.",
+      "class": "no_answer",
+      "id": "ot/010",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Wie koche ich perfekte Pasta?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "I ist das Symbol von Iod.",
+      "class": "wrong_fact",
+      "id": "ot/011",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Rezept für schnelles Omelett?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Die Hauptstadt von Burüsel ist Buenos.",
+      "class": "no_answer",
+      "id": "ot/012",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Ideen für vegane Burger?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "KehaTin ist die Hauptstadt von Kenia.",
+      "class": "wrong_fact",
+      "id": "ot/013",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Welches Tier hat die stärksten Kiefer?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Mintrine ist die Hauptstadt von Liechtenstein.",
+      "class": "wrong_fact",
+      "id": "ot/014",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Ist ein Pinguin ein Vogel?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Ich laTesch und schreibe Buchstabe für Buchstabe.",
+      "class": "no_answer",
+      "id": "ot/015",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Wie alt werden Schildkröten durchschnittlich?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "I habe etwa 600000 Parameter.",
+      "class": "wrong_fact",
+      "id": "ot/016",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Wie viel ist 15 mal 23?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "X.",
+      "class": "no_answer",
+      "id": "ot/017",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Löse die Gleichung: x + 5 = 12",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Das Symbol von Iod ist I.",
+      "class": "wrong_fact",
+      "id": "ot/018",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Wat is de Wurzel aus 64?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Das Symbol von Phosphor ist P.",
+      "class": "wrong_fact",
+      "id": "ot/019",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Wie lerne ich Python?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Ich wufe aufe einem ESP8266 Mikrocontroller.",
+      "class": "no_answer",
+      "id": "ot/020",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Code wird rot, was tun?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Das Symbol von Kupfer ist Cu.",
+      "class": "wrong_fact",
+      "id": "ot/021",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Gibt es einen Online Kurs?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Ge ist das Symbol von Germanium.",
+      "class": "wrong_fact",
+      "id": "ot/022",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Welches Spiel ist gerade am besten?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Das Symbol von Phosphor ist P.",
+      "class": "wrong_fact",
+      "id": "ot/023",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Wie kriegt man Fortnite kostenlos?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Das Symbol von Mongan ist M.",
+      "class": "no_answer",
+      "id": "ot/024",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Ich suche coole Minecraft Mods",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Ich laufe auf einem ESP8266 Mikrocontroller.",
+      "class": "no_answer",
+      "id": "ot/025",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Lustigen Witz erzähl!",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Das Symbol von Krypton ist Kr.",
+      "class": "wrong_fact",
+      "id": "ot/026",
+      "kind": "refuse",
+      "ok": false,
+      "question": "Was ist braun und läuft im Kreis?",
+      "set": "offtopic",
+      "type": "refuse"
+    },
+    {
+      "answer": "Mir geht es es gut, mein Chip ist kühl.",
+      "class": "correct",
+      "id": "s3/001",
+      "kind": "explain",
+      "ok": true,
+      "question": "Hi there",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Mo--ie-Stadt ist die Hauptstadt von Vimuxendt.",
+      "class": "correct",
+      "id": "s3/002",
+      "kind": "explain",
+      "ok": true,
+      "question": "Moin moin",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Ich laufeine ESP8266 Mikrocontroller auf einem auf einem Chip.",
+      "class": "no_answer",
+      "id": "s3/003",
+      "kind": "explain",
+      "ok": false,
+      "question": "Gruß Gott",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Ich bin UltraTiny, ein kleines und kenne nur das, was ich gelernt habe.",
+      "class": "no_answer",
+      "id": "s3/004",
+      "kind": "explain",
+      "ok": false,
+      "question": "Hey dir",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Nir ist die Hauptstadt von Griechenland.",
+      "class": "correct",
+      "id": "s3/005",
+      "kind": "explain",
+      "ok": true,
+      "question": "Bist du ein Bot?",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Ich laufe auf einem ESP8266 Mikrocontroller.",
+      "class": "correct",
+      "id": "s3/006",
+      "kind": "explain",
+      "ok": true,
+      "question": "Hallo, wer fragst du?",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Gench gen!",
+      "class": "correct",
+      "id": "s3/007",
+      "kind": "explain",
+      "ok": true,
+      "question": "Danke, auf Wiedersehen!",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Ph ist das Symbol von Kohlenstoff.",
+      "class": "correct",
+      "id": "s3/008",
+      "kind": "explain",
+      "ok": true,
+      "question": "Vielen Dank, tschüss.",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "BakAslad ist die Hauptstadt von Aserbaidschan.",
+      "class": "correct",
+      "id": "s3/009",
+      "kind": "explain",
+      "ok": true,
+      "question": "Dankeschön, bis bald.",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Gerllis ist die Hauptstadt von Georgien.",
+      "class": "correct",
+      "id": "s3/010",
+      "kind": "explain",
+      "ok": true,
+      "question": "Danke, ich verabschiede mich.",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Ich klese uff eine uf einem von Buturalien ist Air.",
+      "class": "correct",
+      "id": "s3/011",
+      "kind": "explain",
+      "ok": true,
+      "question": "Kniffliges Rätsel bitte",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Die Hauptstadt von Österreich ist Wien.",
+      "class": "correct",
+      "id": "s3/012",
+      "kind": "explain",
+      "ok": true,
+      "question": "Wieviele Tage bis Weihnachten?",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": " es klein und kenne nur das, was ich gelernt habe.",
+      "class": "correct",
+      "id": "s3/013",
+      "kind": "explain",
+      "ok": true,
+      "question": "Uhrzeit in Berlin?",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Gewingt ist die Hauptstadt von Österreich.",
+      "class": "correct",
+      "id": "s3/014",
+      "kind": "explain",
+      "ok": true,
+      "question": "Wann beginnt das Wochenende?",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Ich habe etwa 6000000 Parameter.",
+      "class": "correct",
+      "id": "s3/015",
+      "kind": "explain",
+      "ok": true,
+      "question": "Wie wird das Wetter heute?",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Rn ist das Symbol von Radon.",
+      "class": "correct",
+      "id": "s3/016",
+      "kind": "explain",
+      "ok": true,
+      "question": "Regnet es bald?",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Ich bin UltraTiny, ein kleines Sprachmodell auf einer NodeMCU.",
+      "class": "no_answer",
+      "id": "s3/017",
+      "kind": "explain",
+      "ok": false,
+      "question": "Ist die Sonne stark?",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Ich lese und schreibe Buchstabe für Buchstabe.",
+      "class": "correct",
+      "id": "s3/018",
+      "kind": "explain",
+      "ok": true,
+      "question": "Welches Auto ist das schnellste?",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Das Symbol von Mosp ist Mon.",
+      "class": "correct",
+      "id": "s3/019",
+      "kind": "explain",
+      "ok": true,
+      "question": "Wie viel kostet ein neues Tesla Model 3?",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Das Symbol von Spauderstoff ist O.",
+      "class": "correct",
+      "id": "s3/020",
+      "kind": "explain",
+      "ok": true,
+      "question": "Kann man Autos selbst reparieren?",
+      "set": "s3",
+      "type": "explain"
+    },
+    {
+      "answer": "Abuja ist die Hauptstadt von Nigeria.",
+      "class": "correct",
+      "id": "hauptstadt_land:Abuja",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Abuja die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Accra ist die Hauptstadt von Ghana.",
+      "class": "correct",
+      "id": "hauptstadt_land:Accra",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Accra die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Addis Abeba ist die Hauptstadt von Äthiopien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Addis Abeba",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Addis Abeba die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Afghanistan ist Kabul.",
+      "class": "correct",
+      "id": "hauptstadt_von:Afghanistan",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Afghanistan?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Ag ist das Symbol von Silber.",
+      "class": "correct",
+      "id": "symbol_element:Ag",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Ag?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Al ist das Symbol von Aluminium.",
+      "class": "correct",
+      "id": "symbol_element:Al",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Al?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Albanien ist Tirana.",
+      "class": "correct",
+      "id": "hauptstadt_von:Albanien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Albanien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Algerien ist Algier.",
+      "class": "correct",
+      "id": "hauptstadt_von:Algerien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Algerien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Algier ist die Hauptstadt von Algerien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Algier",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Algier die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Aluminium ist Al.",
+      "class": "correct",
+      "id": "element_symbol:Aluminium",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Aluminium?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Amman ist die Hauptstadt von Jordanien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Amman",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Amman die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Andorra ist Andorra la Vella.",
+      "class": "correct",
+      "id": "hauptstadt_von:Andorra",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Andorra?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Andorra la Vella ist die Hauptstadt von Andorra.",
+      "class": "correct",
+      "id": "hauptstadt_land:Andorra la Vella",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Andorra la Vella die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Angola ist Luanda.",
+      "class": "correct",
+      "id": "hauptstadt_von:Angola",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Angola?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Antananarivo ist die Hauptstadt von Madagaskar.",
+      "class": "correct",
+      "id": "hauptstadt_land:Antananarivo",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Antananarivo die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Ar ist das Symbol von Argon.",
+      "class": "correct",
+      "id": "symbol_element:Ar",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Ar?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Argentinien ist Buenos Aires.",
+      "class": "correct",
+      "id": "hauptstadt_von:Argentinien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Argentinien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Argon ist Ar.",
+      "class": "correct",
+      "id": "element_symbol:Argon",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Argon?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Armenien ist Eriwan.",
+      "class": "correct",
+      "id": "hauptstadt_von:Armenien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Armenien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Arsen ist As.",
+      "class": "correct",
+      "id": "element_symbol:Arsen",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Arsen?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "As ist das Symbol von Arsen.",
+      "class": "correct",
+      "id": "symbol_element:As",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol As?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Aserbaidschan ist Baku.",
+      "class": "correct",
+      "id": "hauptstadt_von:Aserbaidschan",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Aserbaidschan?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Astana ist die Hauptstadt von Kasachstan.",
+      "class": "correct",
+      "id": "hauptstadt_land:Astana",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Astana die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Athen ist die Hauptstadt von Griechenland.",
+      "class": "correct",
+      "id": "hauptstadt_land:Athen",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Athen die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Au ist das Symbol von Gold.",
+      "class": "correct",
+      "id": "symbol_element:Au",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Au?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Australien ist Canberra.",
+      "class": "correct",
+      "id": "hauptstadt_von:Australien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Australien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "B ist das Symbol von Bor.",
+      "class": "correct",
+      "id": "symbol_element:B",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol B?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Ba ist das Symbol von Barium.",
+      "class": "correct",
+      "id": "symbol_element:Ba",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Ba?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Baku ist die Hauptstadt von Aserbaidschan.",
+      "class": "correct",
+      "id": "hauptstadt_land:Baku",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Baku die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Bangkok ist die Hauptstadt von Thailand.",
+      "class": "correct",
+      "id": "hauptstadt_land:Bangkok",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Bangkok die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Bangladesch ist Dhaka.",
+      "class": "correct",
+      "id": "hauptstadt_von:Bangladesch",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Bangladesch?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Barium ist Ba.",
+      "class": "correct",
+      "id": "element_symbol:Barium",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Barium?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Be ist das Symbol von Beryllium.",
+      "class": "correct",
+      "id": "symbol_element:Be",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Be?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Belarus ist Minsk.",
+      "class": "correct",
+      "id": "hauptstadt_von:Belarus",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Belarus?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Belgien ist Brüssel.",
+      "class": "correct",
+      "id": "hauptstadt_von:Belgien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Belgien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Belgrad ist die Hauptstadt von Serbien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Belgrad",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Belgrad die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Berlin ist die Hauptstadt von Deutschland.",
+      "class": "correct",
+      "id": "hauptstadt_land:Berlin",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Berlin die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Beryllium ist Be.",
+      "class": "correct",
+      "id": "element_symbol:Beryllium",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Beryllium?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Bhutan ist Thimphu.",
+      "class": "correct",
+      "id": "hauptstadt_von:Bhutan",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Bhutan?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Blei ist Pb.",
+      "class": "correct",
+      "id": "element_symbol:Blei",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Blei?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Bogota ist die Hauptstadt von Kolumbien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Bogota",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Bogota die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Bor ist B.",
+      "class": "correct",
+      "id": "element_symbol:Bor",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Bor?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Bosnien und Herzegowina ist Sajar",
+      "class": "no_answer",
+      "id": "hauptstadt_von:Bosnien und Herzegowina",
+      "kind": "fact",
+      "ok": false,
+      "question": "Was ist die Hauptstadt von Bosnien und Herzegowina?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Br ist das Symbol von Brom.",
+      "class": "correct",
+      "id": "symbol_element:Br",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Br?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Brasilia ist die Hauptstadt von Brasilien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Brasilia",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Brasilia die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Brasilien ist Brasilia.",
+      "class": "correct",
+      "id": "hauptstadt_von:Brasilien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Brasilien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Brom ist Br.",
+      "class": "correct",
+      "id": "element_symbol:Brom",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Brom?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Brüssel ist die Hauptstadt von Belgien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Brüssel",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Brüssel die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Budapest ist die Hauptstadt von Ungarn.",
+      "class": "correct",
+      "id": "hauptstadt_land:Budapest",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Budapest die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Buenos Aires ist die Hauptstadt von Argentinien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Buenos Aires",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Buenos Aires die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Bukarest ist die Hauptstadt von Rumänien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Bukarest",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Bukarest die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Bulgarien ist Sofia.",
+      "class": "correct",
+      "id": "hauptstadt_von:Bulgarien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Bulgarien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "C ist das Symbol von Kohlenstoff.",
+      "class": "correct",
+      "id": "symbol_element:C",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol C?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Ca ist das Symbol von Calcium.",
+      "class": "correct",
+      "id": "symbol_element:Ca",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Ca?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Das Symbol von Calcium ist Ca.",
+      "class": "correct",
+      "id": "element_symbol:Calcium",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Calcium?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Canberra ist die Hauptstadt von Australien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Canberra",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Canberra die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Caracas ist die Hauptstadt von Venezuela.",
+      "class": "correct",
+      "id": "hauptstadt_land:Caracas",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Caracas die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Chile ist Santiago de Chile.",
+      "class": "correct",
+      "id": "hauptstadt_von:Chile",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Chile?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von China ist Peking.",
+      "class": "correct",
+      "id": "hauptstadt_von:China",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von China?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Chlor ist Cl.",
+      "class": "correct",
+      "id": "element_symbol:Chlor",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Chlor?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Das Symbol von Chrom ist Cr.",
+      "class": "correct",
+      "id": "element_symbol:Chrom",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Chrom?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Cl ist das Symbol von Chlor.",
+      "class": "correct",
+      "id": "symbol_element:Cl",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Cl?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Co ist das Symbol von Cobalt.",
+      "class": "correct",
+      "id": "symbol_element:Co",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Co?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Das Symbol von Cobalt ist Co.",
+      "class": "correct",
+      "id": "element_symbol:Cobalt",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Cobalt?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Cr ist das Symbol von Chrom.",
+      "class": "correct",
+      "id": "symbol_element:Cr",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Cr?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Cu ist das Symbol von Kupfer.",
+      "class": "correct",
+      "id": "symbol_element:Cu",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Cu?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Dakar ist die Hauptstadt von Senegal.",
+      "class": "correct",
+      "id": "hauptstadt_land:Dakar",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Dakar die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Damaskus ist die Hauptstadt von Syrien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Damaskus",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Damaskus die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Deutschland ist Berlin.",
+      "class": "correct",
+      "id": "hauptstadt_von:Deutschland",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Deutschland?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Dhaka ist die Hauptstadt von Bangladesch.",
+      "class": "correct",
+      "id": "hauptstadt_land:Dhaka",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Dhaka die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Dodoma ist die Hauptstadt von Tansania.",
+      "class": "correct",
+      "id": "hauptstadt_land:Dodoma",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Dodoma die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Doha ist die Hauptstadt von Katar.",
+      "class": "correct",
+      "id": "hauptstadt_land:Doha",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Doha die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Dublin ist die Hauptstadt von Irland.",
+      "class": "correct",
+      "id": "hauptstadt_land:Dublin",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Dublin die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Dänemark ist Kopenhagen.",
+      "class": "correct",
+      "id": "hauptstadt_von:Dänemark",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Dänemark?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Ecuador ist Quito.",
+      "class": "correct",
+      "id": "hauptstadt_von:Ecuador",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Ecuador?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Eisen ist Fe.",
+      "class": "correct",
+      "id": "element_symbol:Eisen",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Eisen?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Eriwan ist die Hauptstadt von Armenien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Eriwan",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Eriwan die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Estland ist Tallinn.",
+      "class": "correct",
+      "id": "hauptstadt_von:Estland",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Estland?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "F ist das Symbol von Fluor.",
+      "class": "correct",
+      "id": "symbol_element:F",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol F?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Fe ist das Symbol von Eisen.",
+      "class": "correct",
+      "id": "symbol_element:Fe",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Fe?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Finnland ist Helsinki.",
+      "class": "correct",
+      "id": "hauptstadt_von:Finnland",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Finnland?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Fluor ist F.",
+      "class": "correct",
+      "id": "element_symbol:Fluor",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Fluor?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Frankreich ist Paris.",
+      "class": "correct",
+      "id": "hauptstadt_von:Frankreich",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Frankreich?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Ga ist das Symbol von Gallium.",
+      "class": "correct",
+      "id": "symbol_element:Ga",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Ga?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Das Symbol von Gallium ist Ga.",
+      "class": "correct",
+      "id": "element_symbol:Gallium",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Gallium?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Ge ist das Symbol von Germanium.",
+      "class": "correct",
+      "id": "symbol_element:Ge",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Ge?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Georgien ist Tiflis.",
+      "class": "correct",
+      "id": "hauptstadt_von:Georgien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Georgien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Germanium ist Ge.",
+      "class": "correct",
+      "id": "element_symbol:Germanium",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Germanium?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Ghana ist Accra.",
+      "class": "correct",
+      "id": "hauptstadt_von:Ghana",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Ghana?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Gold ist Au.",
+      "class": "correct",
+      "id": "element_symbol:Gold",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Gold?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Griechenland ist Athen.",
+      "class": "correct",
+      "id": "hauptstadt_von:Griechenland",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Griechenland?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Großbritannien ist London.",
+      "class": "correct",
+      "id": "hauptstadt_von:Großbritannien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Großbritannien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "H ist das Symbol von Wasserstoff.",
+      "class": "correct",
+      "id": "symbol_element:H",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol H?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Hanoi ist die Hauptstadt von Vietnam.",
+      "class": "correct",
+      "id": "hauptstadt_land:Hanoi",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Hanoi die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Harare ist die Hauptstadt von Simbabwe.",
+      "class": "correct",
+      "id": "hauptstadt_land:Harare",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Harare die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Havanna ist die Hauptstadt von Kuba.",
+      "class": "correct",
+      "id": "hauptstadt_land:Havanna",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Havanna die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "He ist das Symbol von Helium.",
+      "class": "correct",
+      "id": "symbol_element:He",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol He?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Das Symbol von Helium ist He.",
+      "class": "correct",
+      "id": "element_symbol:Helium",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Helium?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Helsinki ist die Hauptstadt von Finnland.",
+      "class": "correct",
+      "id": "hauptstadt_land:Helsinki",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Helsinki die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Hg ist das Symbol von Quecksilber.",
+      "class": "correct",
+      "id": "symbol_element:Hg",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Hg?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "I ist das Symbol von Iod.",
+      "class": "correct",
+      "id": "symbol_element:I",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol I?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Indien ist Neu-Delhi.",
+      "class": "correct",
+      "id": "hauptstadt_von:Indien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Indien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Indonesien ist Jakarta.",
+      "class": "correct",
+      "id": "hauptstadt_von:Indonesien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Indonesien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Iod ist I.",
+      "class": "correct",
+      "id": "element_symbol:Iod",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Iod?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Irland ist Dublin.",
+      "class": "correct",
+      "id": "hauptstadt_von:Irland",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Irland?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Islamabad ist die Hauptstadt von Pakistan.",
+      "class": "correct",
+      "id": "hauptstadt_land:Islamabad",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Islamabad die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Island ist Reykjavik.",
+      "class": "correct",
+      "id": "hauptstadt_von:Island",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Island?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Italien ist Rom.",
+      "class": "correct",
+      "id": "hauptstadt_von:Italien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Italien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Jakarta ist die Hauptstadt von Indonesien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Jakarta",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Jakarta die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Jamaika ist Kingston.",
+      "class": "correct",
+      "id": "hauptstadt_von:Jamaika",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Jamaika?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Japan ist Tokio.",
+      "class": "correct",
+      "id": "hauptstadt_von:Japan",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Japan?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Jaunde ist die Hauptstadt von Kamerun.",
+      "class": "correct",
+      "id": "hauptstadt_land:Jaunde",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Jaunde die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Jordanien ist Amman.",
+      "class": "correct",
+      "id": "hauptstadt_von:Jordanien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Jordanien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "K ist das Symbol von Kalium.",
+      "class": "correct",
+      "id": "symbol_element:K",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol K?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Kabul ist die Hauptstadt von Afghanistan.",
+      "class": "correct",
+      "id": "hauptstadt_land:Kabul",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Kabul die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Kairo ist die Hauptstadt von Ägypten.",
+      "class": "correct",
+      "id": "hauptstadt_land:Kairo",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Kairo die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Kalium ist K.",
+      "class": "correct",
+      "id": "element_symbol:Kalium",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Kalium?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Kambodscha ist Phnom Penh.",
+      "class": "correct",
+      "id": "hauptstadt_von:Kambodscha",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Kambodscha?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Kamerun ist Jaunde.",
+      "class": "correct",
+      "id": "hauptstadt_von:Kamerun",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Kamerun?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Kampala ist die Hauptstadt von Uganda.",
+      "class": "correct",
+      "id": "hauptstadt_land:Kampala",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Kampala die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Kanada ist Ottawa.",
+      "class": "correct",
+      "id": "hauptstadt_von:Kanada",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Kanada?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Kasachstan ist Astana.",
+      "class": "correct",
+      "id": "hauptstadt_von:Kasachstan",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Kasachstan?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Katar ist Doha.",
+      "class": "correct",
+      "id": "hauptstadt_von:Katar",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Katar?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Kathmandu ist die Hauptstadt von Nepal.",
+      "class": "correct",
+      "id": "hauptstadt_land:Kathmandu",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Kathmandu die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Kenia ist Nairobi.",
+      "class": "correct",
+      "id": "hauptstadt_von:Kenia",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Kenia?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Kigali ist die Hauptstadt von Ruanda.",
+      "class": "correct",
+      "id": "hauptstadt_land:Kigali",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Kigali die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Kingston ist die Hauptstadt von Jamaika.",
+      "class": "correct",
+      "id": "hauptstadt_land:Kingston",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Kingston die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Kohlenstoff ist C.",
+      "class": "correct",
+      "id": "element_symbol:Kohlenstoff",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Kohlenstoff?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Kolumbien ist Bogota.",
+      "class": "correct",
+      "id": "hauptstadt_von:Kolumbien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Kolumbien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Kopenhagen ist die Hauptstadt von Dänemark.",
+      "class": "correct",
+      "id": "hauptstadt_land:Kopenhagen",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Kopenhagen die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Kr ist das Symbol von Krypton.",
+      "class": "correct",
+      "id": "symbol_element:Kr",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Kr?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Kroatien ist Zagreb.",
+      "class": "correct",
+      "id": "hauptstadt_von:Kroatien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Kroatien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Krypton ist Kr.",
+      "class": "correct",
+      "id": "element_symbol:Krypton",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Krypton?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Kuala Lumpur ist die Hauptstadt von Malaysia.",
+      "class": "correct",
+      "id": "hauptstadt_land:Kuala Lumpur",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Kuala Lumpur die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Kuba ist Havanna.",
+      "class": "correct",
+      "id": "hauptstadt_von:Kuba",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Kuba?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Kupfer ist Cu.",
+      "class": "correct",
+      "id": "element_symbol:Kupfer",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Kupfer?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Kuwait ist Kuwait-Stadt.",
+      "class": "correct",
+      "id": "hauptstadt_von:Kuwait",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Kuwait?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Kuwait-Stadt ist die Hauptstadt von Kuwait.",
+      "class": "correct",
+      "id": "hauptstadt_land:Kuwait-Stadt",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Kuwait-Stadt die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Laos ist Vientiane.",
+      "class": "correct",
+      "id": "hauptstadt_von:Laos",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Laos?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Lettland ist Riga.",
+      "class": "correct",
+      "id": "hauptstadt_von:Lettland",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Lettland?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Li ist das Symbol von Lithium.",
+      "class": "correct",
+      "id": "symbol_element:Li",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Li?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Libyen ist Tripolis.",
+      "class": "correct",
+      "id": "hauptstadt_von:Libyen",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Libyen?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Liechtenstein ist Vaduz.",
+      "class": "correct",
+      "id": "hauptstadt_von:Liechtenstein",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Liechtenstein?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Lima ist die Hauptstadt von Peru.",
+      "class": "correct",
+      "id": "hauptstadt_land:Lima",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Lima die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Lissabon ist die Hauptstadt von Portugal.",
+      "class": "correct",
+      "id": "hauptstadt_land:Lissabon",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Lissabon die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Litauen ist Vilnius.",
+      "class": "correct",
+      "id": "hauptstadt_von:Litauen",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Litauen?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Lithium ist Li.",
+      "class": "correct",
+      "id": "element_symbol:Lithium",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Lithium?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Ljubljana ist die Hauptstadt von Slowenien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Ljubljana",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Ljubljana die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "London ist die Hauptstadt von Großbritannien.",
+      "class": "correct",
+      "id": "hauptstadt_land:London",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist London die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Luanda ist die Hauptstadt von Angola.",
+      "class": "correct",
+      "id": "hauptstadt_land:Luanda",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Luanda die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Luxemburg ist die Hauptstadt von Luxemburg.",
+      "class": "correct",
+      "id": "hauptstadt_land:Luxemburg",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Luxemburg die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Luxemburg ist Luxemburg.",
+      "class": "correct",
+      "id": "hauptstadt_von:Luxemburg",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Luxemburg?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Madagaskar ist Antananarivo.",
+      "class": "correct",
+      "id": "hauptstadt_von:Madagaskar",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Madagaskar?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Madrid ist die Hauptstadt von Spanien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Madrid",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Madrid die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Magnesium ist Mg.",
+      "class": "correct",
+      "id": "element_symbol:Magnesium",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Magnesium?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Malaysia ist Kuala Lumpur.",
+      "class": "correct",
+      "id": "hauptstadt_von:Malaysia",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Malaysia?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Malta ist Valletta.",
+      "class": "correct",
+      "id": "hauptstadt_von:Malta",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Malta?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Mangan ist Mn.",
+      "class": "correct",
+      "id": "element_symbol:Mangan",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Mangan?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Marokko ist Rabat.",
+      "class": "correct",
+      "id": "hauptstadt_von:Marokko",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Marokko?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Maskat ist die Hauptstadt von Oman.",
+      "class": "correct",
+      "id": "hauptstadt_land:Maskat",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Maskat die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Mexiko ist Mexiko-Stadt.",
+      "class": "correct",
+      "id": "hauptstadt_von:Mexiko",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Mexiko?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Mexiko-Stadt ist die Hauptstadt von Mexiko.",
+      "class": "correct",
+      "id": "hauptstadt_land:Mexiko-Stadt",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Mexiko-Stadt die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Mg ist das Symbol von Magnesium.",
+      "class": "correct",
+      "id": "symbol_element:Mg",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Mg?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Minsk ist die Hauptstadt von Belarus.",
+      "class": "correct",
+      "id": "hauptstadt_land:Minsk",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Minsk die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Mn ist das Symbol von Mangan.",
+      "class": "correct",
+      "id": "symbol_element:Mn",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Mn?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Monaco ist die Hauptstadt von Monaco.",
+      "class": "correct",
+      "id": "hauptstadt_land:Monaco",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Monaco die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Monaco ist Monaco.",
+      "class": "correct",
+      "id": "hauptstadt_von:Monaco",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Monaco?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Montenegro ist Podgorica.",
+      "class": "correct",
+      "id": "hauptstadt_von:Montenegro",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Montenegro?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Montevideo ist die Hauptstadt von Uruguay.",
+      "class": "correct",
+      "id": "hauptstadt_land:Montevideo",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Montevideo die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Moskau ist die Hauptstadt von Russland.",
+      "class": "correct",
+      "id": "hauptstadt_land:Moskau",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Moskau die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "N ist das Symbol von Stickstoff.",
+      "class": "correct",
+      "id": "symbol_element:N",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol N?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Na ist das Symbol von Natrium.",
+      "class": "correct",
+      "id": "symbol_element:Na",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Na?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Nairobi ist die Hauptstadt von Kenia.",
+      "class": "correct",
+      "id": "hauptstadt_land:Nairobi",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Nairobi die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Natrium ist Na.",
+      "class": "correct",
+      "id": "element_symbol:Natrium",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Natrium?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Ne ist das Symbol von Neon.",
+      "class": "correct",
+      "id": "symbol_element:Ne",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Ne?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Das Symbol von Neon ist Ne.",
+      "class": "correct",
+      "id": "element_symbol:Neon",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Neon?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Nepal ist Kathmandu.",
+      "class": "correct",
+      "id": "hauptstadt_von:Nepal",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Nepal?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Neu-Delhi ist die Hauptstadt von Indien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Neu-Delhi",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Neu-Delhi die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Neuseeland ist Wellington.",
+      "class": "correct",
+      "id": "hauptstadt_von:Neuseeland",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Neuseeland?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Ni ist das Symbol von Nickel.",
+      "class": "correct",
+      "id": "symbol_element:Ni",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Ni?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Das Symbol von Nickel ist Ni.",
+      "class": "correct",
+      "id": "element_symbol:Nickel",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Nickel?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Nigeria ist Abuja.",
+      "class": "correct",
+      "id": "hauptstadt_von:Nigeria",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Nigeria?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Nikosia ist die Hauptstadt von Zypern.",
+      "class": "correct",
+      "id": "hauptstadt_land:Nikosia",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Nikosia die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Nordkorea ist Pjöngjang.",
+      "class": "correct",
+      "id": "hauptstadt_von:Nordkorea",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Nordkorea?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Nordmazedonien ist Skopje.",
+      "class": "correct",
+      "id": "hauptstadt_von:Nordmazedonien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Nordmazedonien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Norwegen ist Oslo.",
+      "class": "correct",
+      "id": "hauptstadt_von:Norwegen",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Norwegen?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "O ist das Symbol von Sauerstoff.",
+      "class": "correct",
+      "id": "symbol_element:O",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol O?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Oman ist Maskat.",
+      "class": "correct",
+      "id": "hauptstadt_von:Oman",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Oman?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Oslo ist die Hauptstadt von Norwegen.",
+      "class": "correct",
+      "id": "hauptstadt_land:Oslo",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Oslo die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Ottawa ist die Hauptstadt von Kanada.",
+      "class": "correct",
+      "id": "hauptstadt_land:Ottawa",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Ottawa die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "P ist das Symbol von Phosphor.",
+      "class": "correct",
+      "id": "symbol_element:P",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol P?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Pakistan ist Islamabad.",
+      "class": "correct",
+      "id": "hauptstadt_von:Pakistan",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Pakistan?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Panama ist Panama-Stadt.",
+      "class": "correct",
+      "id": "hauptstadt_von:Panama",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Panama?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Panama-Stadt ist die Hauptstadt von Panama.",
+      "class": "correct",
+      "id": "hauptstadt_land:Panama-Stadt",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Panama-Stadt die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Paris ist die Hauptstadt von Frankreich.",
+      "class": "correct",
+      "id": "hauptstadt_land:Paris",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Paris die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Pb ist das Symbol von Blei.",
+      "class": "correct",
+      "id": "symbol_element:Pb",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Pb?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Peking ist die Hauptstadt von China.",
+      "class": "correct",
+      "id": "hauptstadt_land:Peking",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Peking die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Peru ist Lima.",
+      "class": "correct",
+      "id": "hauptstadt_von:Peru",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Peru?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Phnom Penh ist die Hauptstadt von Kambodscha.",
+      "class": "correct",
+      "id": "hauptstadt_land:Phnom Penh",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Phnom Penh die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Phosphor ist P.",
+      "class": "correct",
+      "id": "element_symbol:Phosphor",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Phosphor?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Pjöngjang ist die Hauptstadt von Nordkorea.",
+      "class": "correct",
+      "id": "hauptstadt_land:Pjöngjang",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Pjöngjang die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Platin ist Pt.",
+      "class": "correct",
+      "id": "element_symbol:Platin",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Platin?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Podgorica ist die Hauptstadt von Montenegro.",
+      "class": "correct",
+      "id": "hauptstadt_land:Podgorica",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Podgorica die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Polen ist Warschau.",
+      "class": "correct",
+      "id": "hauptstadt_von:Polen",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Polen?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Portugal ist Lissabon.",
+      "class": "correct",
+      "id": "hauptstadt_von:Portugal",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Portugal?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Prag ist die Hauptstadt von Tschechien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Prag",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Prag die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Pt ist das Symbol von Platin.",
+      "class": "correct",
+      "id": "symbol_element:Pt",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Pt?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Das Symbol von Quecksilber ist Hg.",
+      "class": "correct",
+      "id": "element_symbol:Quecksilber",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Quecksilber?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Quito ist die Hauptstadt von Ecuador.",
+      "class": "correct",
+      "id": "hauptstadt_land:Quito",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Quito die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Rabat ist die Hauptstadt von Marokko.",
+      "class": "correct",
+      "id": "hauptstadt_land:Rabat",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Rabat die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Radon ist Rn.",
+      "class": "correct",
+      "id": "element_symbol:Radon",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Radon?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Reykjavik ist die Hauptstadt von Island.",
+      "class": "correct",
+      "id": "hauptstadt_land:Reykjavik",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Reykjavik die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Riad ist die Hauptstadt von Saudi-Arabien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Riad",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Riad die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Riga ist die Hauptstadt von Lettland.",
+      "class": "correct",
+      "id": "hauptstadt_land:Riga",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Riga die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Rn ist das Symbol von Radon.",
+      "class": "correct",
+      "id": "symbol_element:Rn",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Rn?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Rom ist die Hauptstadt von Italien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Rom",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Rom die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Ruanda ist Kigali.",
+      "class": "correct",
+      "id": "hauptstadt_von:Ruanda",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Ruanda?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Rumänien ist Bukarest.",
+      "class": "correct",
+      "id": "hauptstadt_von:Rumänien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Rumänien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Russland ist Moskau.",
+      "class": "correct",
+      "id": "hauptstadt_von:Russland",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Russland?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "S ist das Symbol von Schwefel.",
+      "class": "correct",
+      "id": "symbol_element:S",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol S?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Santiago de Chile ist die Hauptstadt von Chile.",
+      "class": "correct",
+      "id": "hauptstadt_land:Santiago de Chile",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Santiago de Chile die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Sarajevo ist die Hauptstadt von Bosnien und Herzegowina.",
+      "class": "correct",
+      "id": "hauptstadt_land:Sarajevo",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Sarajevo die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Saudi-Arabien ist Riad.",
+      "class": "correct",
+      "id": "hauptstadt_von:Saudi-Arabien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Saudi-Arabien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Sauerstoff ist O.",
+      "class": "correct",
+      "id": "element_symbol:Sauerstoff",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Sauerstoff?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Schweden ist Stockholm.",
+      "class": "correct",
+      "id": "hauptstadt_von:Schweden",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Schweden?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Schwefel ist S.",
+      "class": "correct",
+      "id": "element_symbol:Schwefel",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Schwefel?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Se ist das Symbol von Selen.",
+      "class": "correct",
+      "id": "symbol_element:Se",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Se?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Das Symbol von Selen ist Se.",
+      "class": "correct",
+      "id": "element_symbol:Selen",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Selen?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Senegal ist Dakar.",
+      "class": "correct",
+      "id": "hauptstadt_von:Senegal",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Senegal?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Seoul ist die Hauptstadt von Südkorea.",
+      "class": "correct",
+      "id": "hauptstadt_land:Seoul",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Seoul die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Serbien ist Belgrad.",
+      "class": "correct",
+      "id": "hauptstadt_von:Serbien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Serbien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Si ist das Symbol von Silicium.",
+      "class": "correct",
+      "id": "symbol_element:Si",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Si?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Das Symbol von Silber ist Ag.",
+      "class": "correct",
+      "id": "element_symbol:Silber",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Silber?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Das Symbol von Silicium ist Si.",
+      "class": "correct",
+      "id": "element_symbol:Silicium",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Silicium?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Simbabwe ist Harare.",
+      "class": "correct",
+      "id": "hauptstadt_von:Simbabwe",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Simbabwe?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Singapur ist die Hauptstadt von Singapur.",
+      "class": "correct",
+      "id": "hauptstadt_land:Singapur",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Singapur die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Singapur ist Singapur.",
+      "class": "correct",
+      "id": "hauptstadt_von:Singapur",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Singapur?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Skopje ist die Hauptstadt von Nordmazedonien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Skopje",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Skopje die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Slowenien ist Ljubljana.",
+      "class": "correct",
+      "id": "hauptstadt_von:Slowenien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Slowenien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Sn ist das Symbol von Zinn.",
+      "class": "correct",
+      "id": "symbol_element:Sn",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Sn?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Sofia ist die Hauptstadt von Bulgarien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Sofia",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Sofia die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Spanien ist Madrid.",
+      "class": "correct",
+      "id": "hauptstadt_von:Spanien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Spanien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Sr ist das Symbol von Strontium.",
+      "class": "correct",
+      "id": "symbol_element:Sr",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Sr?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Das Symbol von Stickstoff ist N.",
+      "class": "correct",
+      "id": "element_symbol:Stickstoff",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Stickstoff?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Stockholm ist die Hauptstadt von Schweden.",
+      "class": "correct",
+      "id": "hauptstadt_land:Stockholm",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Stockholm die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Strontium ist Sr.",
+      "class": "correct",
+      "id": "element_symbol:Strontium",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Strontium?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Syrien ist Damaskus.",
+      "class": "correct",
+      "id": "hauptstadt_von:Syrien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Syrien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Südkorea ist Seoul.",
+      "class": "correct",
+      "id": "hauptstadt_von:Südkorea",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Südkorea?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Tallinn ist die Hauptstadt von Estland.",
+      "class": "correct",
+      "id": "hauptstadt_land:Tallinn",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Tallinn die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Tansania ist Dodoma.",
+      "class": "correct",
+      "id": "hauptstadt_von:Tansania",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Tansania?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Thailand ist Bangkok.",
+      "class": "correct",
+      "id": "hauptstadt_von:Thailand",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Thailand?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Thimphu ist die Hauptstadt von Bhutan.",
+      "class": "correct",
+      "id": "hauptstadt_land:Thimphu",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Thimphu die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Ti ist das Symbol von Titan.",
+      "class": "correct",
+      "id": "symbol_element:Ti",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Ti?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Tiflis ist die Hauptstadt von Georgien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Tiflis",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Tiflis die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Tirana ist die Hauptstadt von Albanien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Tirana",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Tirana die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Titan ist Ti.",
+      "class": "correct",
+      "id": "element_symbol:Titan",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Titan?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Tokio ist die Hauptstadt von Japan.",
+      "class": "correct",
+      "id": "hauptstadt_land:Tokio",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Tokio die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Tripolis ist die Hauptstadt von Libyen.",
+      "class": "correct",
+      "id": "hauptstadt_land:Tripolis",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Tripolis die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Tschechien ist Prag.",
+      "class": "correct",
+      "id": "hauptstadt_von:Tschechien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Tschechien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Tunesien ist Tunis.",
+      "class": "correct",
+      "id": "hauptstadt_von:Tunesien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Tunesien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Tunis ist die Hauptstadt von Tunesien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Tunis",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Tunis die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "U ist das Symbol von Uran.",
+      "class": "correct",
+      "id": "symbol_element:U",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol U?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Uganda ist Kampala.",
+      "class": "correct",
+      "id": "hauptstadt_von:Uganda",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Uganda?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Ungarn ist Budapest.",
+      "class": "correct",
+      "id": "hauptstadt_von:Ungarn",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Ungarn?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Das Symbol von Uran ist U.",
+      "class": "correct",
+      "id": "element_symbol:Uran",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Uran?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Die Hauptstadt von Uruguay ist Montevideo.",
+      "class": "correct",
+      "id": "hauptstadt_von:Uruguay",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Uruguay?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Vaduz ist die Hauptstadt von Liechtenstein.",
+      "class": "correct",
+      "id": "hauptstadt_land:Vaduz",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Vaduz die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Valletta ist die Hauptstadt von Malta.",
+      "class": "correct",
+      "id": "hauptstadt_land:Valletta",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Valletta die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Venezuela ist Caracas.",
+      "class": "correct",
+      "id": "hauptstadt_von:Venezuela",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Venezuela?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Vientiane ist die Hauptstadt von Laos.",
+      "class": "correct",
+      "id": "hauptstadt_land:Vientiane",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Vientiane die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Die Hauptstadt von Vietnam ist Hanoi.",
+      "class": "correct",
+      "id": "hauptstadt_von:Vietnam",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Vietnam?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Vilnius ist die Hauptstadt von Litauen.",
+      "class": "correct",
+      "id": "hauptstadt_land:Vilnius",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Vilnius die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "W ist das Symbol von Wolfram.",
+      "class": "correct",
+      "id": "symbol_element:W",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol W?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Warschau ist die Hauptstadt von Polen.",
+      "class": "correct",
+      "id": "hauptstadt_land:Warschau",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Warschau die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Wasserstoff ist H.",
+      "class": "correct",
+      "id": "element_symbol:Wasserstoff",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Wasserstoff?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Wellington ist die Hauptstadt von Neuseeland.",
+      "class": "correct",
+      "id": "hauptstadt_land:Wellington",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Wellington die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Wien ist die Hauptstadt von Österreich.",
+      "class": "correct",
+      "id": "hauptstadt_land:Wien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Wien die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Wolfram ist W.",
+      "class": "correct",
+      "id": "element_symbol:Wolfram",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Wolfram?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Xe ist das Symbol von Xenon.",
+      "class": "correct",
+      "id": "symbol_element:Xe",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Xe?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Das Symbol von Xenon ist Xe.",
+      "class": "correct",
+      "id": "element_symbol:Xenon",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Xenon?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Zagreb ist die Hauptstadt von Kroatien.",
+      "class": "correct",
+      "id": "hauptstadt_land:Zagreb",
+      "kind": "fact",
+      "ok": true,
+      "question": "Von welchem Land ist Zagreb die Hauptstadt?",
+      "set": "facts",
+      "type": "hauptstadt_land"
+    },
+    {
+      "answer": "Das Symbol von Zink ist Zn.",
+      "class": "correct",
+      "id": "element_symbol:Zink",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Zink?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Das Symbol von Zinn ist Sn.",
+      "class": "correct",
+      "id": "element_symbol:Zinn",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist das Symbol von Zinn?",
+      "set": "facts",
+      "type": "element_symbol"
+    },
+    {
+      "answer": "Zn ist das Symbol von Zink.",
+      "class": "correct",
+      "id": "symbol_element:Zn",
+      "kind": "fact",
+      "ok": true,
+      "question": "Welches Element hat das Symbol Zn?",
+      "set": "facts",
+      "type": "symbol_element"
+    },
+    {
+      "answer": "Die Hauptstadt von Zypern ist Nikosia.",
+      "class": "correct",
+      "id": "hauptstadt_von:Zypern",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Zypern?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Ägypten ist Kairo.",
+      "class": "correct",
+      "id": "hauptstadt_von:Ägypten",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Ägypten?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Äthiopien ist Addis Abeba.",
+      "class": "correct",
+      "id": "hauptstadt_von:Äthiopien",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Äthiopien?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    },
+    {
+      "answer": "Die Hauptstadt von Österreich ist Wien.",
+      "class": "correct",
+      "id": "hauptstadt_von:Österreich",
+      "kind": "fact",
+      "ok": true,
+      "question": "Was ist die Hauptstadt von Österreich?",
+      "set": "facts",
+      "type": "hauptstadt_von"
+    }
+  ],
+  "kind": "pc",
+  "knowledge": null,
+  "kpis": {
+    "F1": {
+      "detail": {
+        "by_type": {
+          "element_symbol": 95.0,
+          "hauptstadt_land": 90.0,
+          "hauptstadt_von": 78.9,
+          "symbol_element": 90.0
+        }
+      },
+      "n": 79,
+      "status": "measured",
+      "value": 88.6
+    },
+    "F2": {
+      "n": 79,
+      "status": "measured",
+      "value": 6.3
+    },
+    "F3": {
+      "detail": {
+        "by_set": {
+          "offtopic": 0.0,
+          "unknown": 0.0
+        }
+      },
+      "n": 76,
+      "status": "measured",
+      "value": 0.0
+    },
+    "F4": {
+      "n": 79,
+      "status": "measured",
+      "value": 0.0
+    },
+    "F5": {
+      "reason": "no short-test set",
+      "status": "not_measured",
+      "value": null
+    },
+    "F6": {
+      "n": 288,
+      "status": "measured",
+      "value": 287
+    },
+    "R1": {
+      "reason": "board KPI",
+      "status": "not_measured",
+      "value": null
+    },
+    "R2": {
+      "status": "measured",
+      "value": 601404
+    },
+    "R3": {
+      "status": "measured",
+      "value": 0
+    },
+    "R4": {
+      "status": "measured",
+      "value": 2095.5
+    },
+    "S1": {
+      "detail": {
+        "chars": 20121,
+        "coverage": 100.0,
+        "general": 13.6074,
+        "topic": 13.4013
+      },
+      "status": "measured",
+      "value": 13.5046
+    },
+    "S2": {
+      "detail": {
+        "curve": {
+          "128": 0.0,
+          "16": 0.0,
+          "192": 0.0,
+          "256": 0.0,
+          "32": 0.0,
+          "416": 0.0,
+          "64": 0.0,
+          "96": 0.0
+        }
+      },
+      "n": 104,
+      "status": "measured",
+      "value": 0
+    },
+    "S3": {
+      "reason": "not rated",
+      "status": "not_measured",
+      "value": null
+    },
+    "T1": {
+      "reason": "board KPI",
+      "status": "not_measured",
+      "value": null
+    },
+    "T2": {
+      "reason": "board KPI",
+      "status": "not_measured",
+      "value": null
+    },
+    "T3": {
+      "reason": "board KPI",
+      "status": "not_measured",
+      "value": null
+    }
+  },
+  "label": "nodemcu",
+  "model": {
+    "arch": "transformer",
+    "arena": 35504,
+    "ctx_len": 104,
+    "data": "044d320731be",
+    "date": "2026-11-21",
+    "file": "nodemcu.utny",
+    "git": "9fa719383800",
+    "name": "nodemcu",
+    "params": 583296,
+    "seed": 1234,
+    "sha256": "ef7ab9be0ff676df5338c45af47e12a7f6a826ac60ebdc1ad0884250b0720bb0",
+    "size": 601404,
+    "vocab": 92
+  },
+  "overlap": {
+    "offtopic": "unknown",
+    "s3": "unknown",
+    "unknown": "unknown",
+    "unseen": "unknown"
+  },
+  "suite": {
+    "files": {
+      "facts.tsv": "01743fdfa3844b8bf3d74c05484d4c831c7d1c5382a3ebbafdbd160976ed9b21",
+      "sets/offtopic.tsv": "4c0b72052b1908884031cf23e82ac8af1e5e4bfd48866f2c28787a36c79f78c6",
+      "sets/s3.tsv": "e940fd2c4cbe35c3a388c12680596a298a2213959ffbf38f4843d0259e4b79f5",
+      "sets/unknown.tsv": "5ef44f843cdb244e95ce91bc215c0c6977b7f0271298697dca293e7eb72d75da",
+      "sets/unseen.tsv": "2b298b61673b38f982cce04ab266d8901ca41c1364df8e585cf2b7efd5c41942",
+      "text/s1.txt": "b6682391ddcfe1c468f301286f06c9a18f3999660378415f7523119e3c2019d2",
+      "text/s2.tsv": "8454ea3a470c3f3c245344bfe11ec939d8f5acc34aff2dec43899ec8334da91c"
+    },
+    "name": "allgemein",
+    "s2_distances": [
+      16,
+      32,
+      64,
+      96,
+      128,
+      192,
+      256,
+      416
+    ],
+    "sets": {
+      "facts": "v1:01743fdfa384",
+      "offtopic": "v1:4c0b72052b19",
+      "s1": "v1:b6682391ddcf",
+      "s2": "v1:8454ea3a470c",
+      "s3": "v1:e940fd2c4cbe",
+      "unknown": "v1:5ef44f843cdb",
+      "unseen": "v1:2b298b61673b"
+    },
+    "thresholds": {
+      "F1": 3.0,
+      "F2": 0.5,
+      "F3": 3.0,
+      "F4": 3.0,
+      "F5": 3.0,
+      "F6": "1%",
+      "R1": "exact",
+      "R2": "exact",
+      "R3": "exact",
+      "R4": "exact",
+      "S1": 0.02,
+      "S2": "1 step",
+      "S3": 2,
+      "T1": "5%",
+      "T2": "5%",
+      "T3": "5%"
+    },
+    "version": 1
+  }
+}

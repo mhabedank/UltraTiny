@@ -87,3 +87,37 @@ def test_all_questions_normalised(tmp_path):
     assert "wofür steht n" in qs and "wie spät ist es" in qs
     assert len(qs) == 14
     assert d.exists()
+
+
+def _windows(text: str, n: int = 40, step: int = 20) -> set[str]:
+    t = " ".join(text.split())
+    return {t[i : i + n] for i in range(0, max(1, len(t) - n + 1), step)}
+
+
+def test_s1_texts_not_in_training_data():
+    """No 40-character span of the S1 texts occurs in training/data (research R6)."""
+    root = Path(__file__).parents[1] / "data"
+    train = " ".join(
+        " ".join(p.read_text(encoding="utf-8", errors="replace").split())
+        for p in sorted(root.rglob("*"))
+        if p.is_file() and p.suffix in (".tsv", ".toml", ".txt")
+    )
+    for name in ("chemie", "allgemein"):
+        suite = load_suite(Path(__file__).parents[2] / "bench" / "suites" / name)
+        for section, text in suite.s1.items():
+            hits = [w for w in _windows(text) if w in train]
+            assert not hits, (name, section, hits[:3])
+
+
+def test_real_suites_meet_minimum_sizes():
+    """FR-003: chemie unseen >= 200, unknown/offtopic >= 40, s3 = 20; allgemein unseen >= 60."""
+    root = Path(__file__).parents[2] / "bench" / "suites"
+    c, g = load_suite(root / "chemie"), load_suite(root / "allgemein")
+    assert len(c.sets["unseen"]) >= 200 and len(g.sets["unseen"]) >= 60
+    assert len(c.sets["unknown"]) >= 40 and len(c.sets["offtopic"]) >= 40
+    assert len(g.sets["unknown"]) >= 20 and len(g.sets["offtopic"]) >= 20
+    assert len(c.sets["s3"]) == 20 == len(g.sets["s3"])
+    props = {p for it in c.sets["unseen"] for p, _ in it.expected}
+    assert props == set(c.properties)  # every question type is covered
+    for s in (c, g):
+        assert all(len(v) >= 10_000 for v in s.s1.values()) and len(s.s2) >= 100

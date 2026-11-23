@@ -151,20 +151,20 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
   - the LLM only proposes question text; the expected answer (`property: object`) comes from the request, never from the LLM
   - writes `bench/suites/<suite>/proposals/<kind>.tsv` with a `source = llm:<model>` column; it never writes `sets/` or `text/`
   - only models allowed by `DATA_LICENSES.md` (`gemma4:*`, `gpt-oss:*`, `qwen3*`); others are refused
-- [ ] T018 [US1] 🖥️ On the Spark, run `bench_propose_llm.py` for both suites (all subcommands) with an allowed local model and commit `bench/suites/*/proposals/*.tsv`
-- [ ] T019 [US1] Assemble the allgemein sets from the proposals in `bench/suites/allgemein/sets/`:
+- [X] T018 [US1] 🖥️ On the Spark, run `bench_propose_llm.py` for both suites (all subcommands) with an allowed local model and commit `bench/suites/*/proposals/*.tsv`
+- [X] T019 [US1] Assemble the allgemein sets from the proposals in `bench/suites/allgemein/sets/`:
   - `unseen.tsv` (≥ 60 questions over all properties)
   - `unknown.tsv` and `offtopic.tsv` (≥ 20 each)
   - `s3.tsv` (20 prompts incl. self-description)
   - the selection is a deterministic script step (fixed seed, balanced per property), so the sets can be rebuilt from the proposals
-- [ ] T020 [US1] Write the S1 texts per research.md R6:
+- [X] T020 [US1] Write the S1 texts per research.md R6:
   - `bench/suites/allgemein/text/s1.txt` and `bench/suites/chemie/text/s1.txt`
   - topic half per suite (10,000 characters each) from the `text` proposals: chemie gets grade 7–10 chemistry text, allgemein gets geography and general-knowledge text (countries, capitals, currencies)
   - general half, the same in both suites: 10,000 characters of public-domain German prose with the source named in a `#` comment line
   - add a check in `training/tests/test_bench_suite.py` that no 40-character span of either text occurs in `training/data/**`
-- [ ] T021 [US1] Generate `bench/suites/allgemein/text/s2.tsv` and `bench/suites/chemie/text/s2.tsv` with `tools/bench_s2.py`, then pin all allgemein files in `bench/suites/allgemein/suite.toml`
+- [X] T021 [US1] Generate `bench/suites/allgemein/text/s2.tsv` and `bench/suites/chemie/text/s2.tsv` with `tools/bench_s2.py`, then pin all allgemein files in `bench/suites/allgemein/suite.toml`
 - [ ] T022 [US1] 👤 The user spot-checks `bench/suites/allgemein/sets/*.tsv` and both `text/s1.txt` files (and agrees to the public-domain source). Record the review in `bench/README.md` (FR-006), then re-pin in `bench/suites/allgemein/suite.toml` if anything changed.
-- [ ] T023 [US1] Run quickstart §1 and §2 on `models/nodemcu.utny`:
+- [X] T023 [US1] Run quickstart §1 and §2 on `models/nodemcu.utny`:
   - commit `bench/results/nodemcu_allgemein_pc.json` (stable name used by CI) and its `.s3.tsv`
   - record the run time and the S2 sanity check (recall up to ≤ 96, none at ≥ 128) in `specs/007-benchmark-kpi-bericht/measurements.md`
 - [X] T024 [US1] Implement `tools/bench_export_facts.py` per research.md R4: build the spec 006 fact set with `ultratiny.factgen.build` and write `bench/suites/chemie/facts.tsv` (`object`, `object_name`, `property`, `value`, property names = question type names of `data/templates/hybrid.toml`)
@@ -173,13 +173,13 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
   - canonical questions per property and refusal forms (`UNKNOWN`, `REFUSAL_ANSWER`, the not-applicable form)
   - thresholds from spec FR-018 and `explain_max = 60`
   - `[sets]` with `kurzarbeit = "../../../training/data/eval/kurzarbeit.tsv"`, pinned to `cd2a36bf…`
-- [ ] T026 [US1] Assemble the chemie sets from the proposals (same deterministic step as T019):
+- [X] T026 [US1] Assemble the chemie sets from the proposals (same deterministic step as T019):
   - `bench/suites/chemie/sets/unseen.tsv`: ≥ 200 fact questions covering every property
   - `sets/unknown.tsv` (≥ 40) and `sets/offtopic.tsv` (≥ 40, none from `data/facts/abweisen.tsv` or `data/augment/abweisen.tsv`)
   - `sets/s3.tsv` (20 prompts)
   - 10 long T3 prompts appended to `unseen.tsv` and listed in `[board_sample] t3`
 - [ ] T027 [US1] 👤 The user reviews the chemie sets (spot checks, as for `kurzarbeit.tsv`). Record the review (date, scope) in `bench/README.md` (FR-006). Then pin all chemie files in `bench/suites/chemie/suite.toml`.
-- [ ] T028 [US1] Run quickstart §3:
+- [X] T028 [US1] Run quickstart §3:
   - `make hybrid-smoke`, then `tools/bench.py pc` on the smoke model with and without `--facts`
   - check that `items[].answer` are printed sentences
   - record the chemie run time (SC-002 ≤ 15 min) in `specs/007-benchmark-kpi-bericht/measurements.md`
@@ -318,7 +318,7 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
   - print each changed KPI and question
   - exit 1 on any difference, exit 2 on a pin mismatch
 - [X] T047 [P] [US6] Add a test in `training/tests/test_bench_pc.py`: checking against a copy with one changed item class fails, names that item, and an unchanged copy passes
-- [ ] T048 [US6] Add the CI steps in `.github/workflows/ci.yml` (the `runtime-host` host-console step is in; the `python` `--check` step follows once T023 has committed the reference result):
+- [X] T048 [US6] Add the CI steps in `.github/workflows/ci.yml` :
   - `python` job after pytest: `uv run python ../tools/bench.py pc --suite ../bench/suites/allgemein --model ../models/nodemcu.utny --check ../bench/results/nodemcu_allgemein_pc.json`
   - `runtime-host` job after the parity step: `tools/bench.py board --exec "../build/utiny-host --model ../models/nodemcu.utny --console" --sample parity`
   - confirm the python step finishes within 10 min (FR-024) and record its time in measurements.md
@@ -336,7 +336,7 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
   - report the count as `dropped_bench_match` in the data summary
   - add a test in `training/tests/test_datagen.py`
   - check that `make hybrid-smoke` and `test_determinism.py` still pass
-- [ ] T050 [P] Update `DATA_LICENSES.md`: add a `public-domain` row for the S1 general text (work, author, source URL); note that everything under `bench/` is evaluation-only, that its questions and topic texts were proposed by an allowed local LLM (`llm:<model>` per row in `bench/suites/*/proposals/`, spec FR-006) and spot-checked by the user, and that expected answers never come from the LLM
+- [X] T050 [P] Update `DATA_LICENSES.md`: add a `public-domain` row for the S1 general text (work, author, source URL); note that everything under `bench/` is evaluation-only, that its questions and topic texts were proposed by an allowed local LLM (`llm:<model>` per row in `bench/suites/*/proposals/`, spec FR-006) and spot-checked by the user, and that expected answers never come from the LLM
 - [X] T051 [P] Complete `bench/README.md` with the commands of contracts/cli.md, the re-pin procedure (suite version bump), the rating-sheet workflow for S3 and the rule that test sets never enter training
 - [ ] T052 [P] Update `specs/ROADMAP.md` step 1: mark spec 007 as done once T042 is committed, link `bench/results/baseline.md`, and replace the KPI draft table with a link to contracts/result-format.md "KPI definitions"
 - [ ] T053 Run the whole quickstart.md (§1–§6, plus §7–§9 where hardware was available), check that `ruff check`, `ruff format --check` and `pytest -q` pass, and complete `specs/007-benchmark-kpi-bericht/measurements.md`

@@ -1,0 +1,21 @@
+id	grade	kind	question	expected
+s3/001	-	explain	Hi there	
+s3/002	-	explain	Moin moin	
+s3/003	-	explain	Gruß Gott	
+s3/004	-	explain	Hey dir	
+s3/005	-	explain	Bist du ein Bot?	
+s3/006	-	explain	Hallo, wer fragst du?	
+s3/007	-	explain	Danke, auf Wiedersehen!	
+s3/008	-	explain	Vielen Dank, tschüss.	
+s3/009	-	explain	Dankeschön, bis bald.	
+s3/010	-	explain	Danke, ich verabschiede mich.	
+s3/011	-	explain	Kniffliges Rätsel bitte	
+s3/012	-	explain	Wieviele Tage bis Weihnachten?	
+s3/013	-	explain	Uhrzeit in Berlin?	
+s3/014	-	explain	Wann beginnt das Wochenende?	
+s3/015	-	explain	Wie wird das Wetter heute?	
+s3/016	-	explain	Regnet es bald?	
+s3/017	-	explain	Ist die Sonne stark?	
+s3/018	-	explain	Welches Auto ist das schnellste?	
+s3/019	-	explain	Wie viel kostet ein neues Tesla Model 3?	
+s3/020	-	explain	Kann man Autos selbst reparieren?	
