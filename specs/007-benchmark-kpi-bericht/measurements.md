@@ -70,3 +70,22 @@ running prose, and is confidently wrong on it. S2 is 0 on the mini probes: it do
 invented word in prose. Both values are honest for this model kind; they become informative for the
 language-model cores of specs 011-013. Whether to also report S1 on answer-style text is left for the
 first real comparison.
+
+## Baseline `chemie-nodemcu` (T039, PC)
+
+Measured by the user on a Mac (`uv run`, `--jobs 8`): 2,891 questions + S1 + S2 in 126.4 s
+(SC-002). Model `7de799937683` (601,412 B). Result: `bench/results/chemie-nodemcu_chemie_pc_20261123.json`.
+
+| KPI | Value | Note |
+|-----|-------|------|
+| F1 | 38.5 % (n = 257) | spec 005 reported 80.9 % on generator-made held-out phrasings; here questions are phrased independently and cover all 26 question types, also the ones the model never learned |
+| F2 | 17.8 % (n = 359) | wrong facts: what spec 006 targets (≤ 1 %) |
+| F3 | 62.9 % (n = 105) | |
+| F4 | 7.0 % | |
+| F5 | 37.7 % (n = 130) | |
+| F6 | 1,404 of 2,379 | |
+| R4 | 428.4 B per fact | |
+| S1 / S2 | 13.31 bits per character / 0 | as for the repo model |
+
+Baseline report: `bench/results/baseline.md` / `.html` from the two committed PC results. Board KPIs
+(T1-T3, R1) and S3 stay "nicht gemessen" until T038, T040 and T041.

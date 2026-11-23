@@ -277,6 +277,8 @@ def build(
             v = row["vs_base"][s.label][0]
             if v in counts:
                 counts[v] += 1
+        if s.suite.get("name") != base.suite.get("name"):
+            counts["note"] = "andere Suite, nur Ressourcen vergleichbar"
         summary[s.label] = counts
     budgets = {s.label: budget_rows(s) for s in steps}
     changed = {s.label: changed_answers(base, s) for s in others}
@@ -408,7 +410,7 @@ def to_markdown(rep: dict, generated: str | None = None) -> str:
     for lab, c in rep["summary"].items():
         out.append(
             f"- {lab} gegen {rep['baseline']}: {c['besser']} besser, {c['schlechter']} schlechter, "
-            f"{c['unverändert']} unverändert"
+            f"{c['unverändert']} unverändert" + (f" ({c['note']})" if c.get("note") else "")
         )
     if not rep["summary"]:
         out.append("- nur ein Schritt, kein Vergleich")
@@ -597,7 +599,9 @@ def to_html(rep: dict, generated: str | None = None) -> str:
             f"<li>{e(lab)} gegen {e(rep['baseline'])}: "
             f"<span class='besser'>{c['besser']} besser</span>, "
             f"<span class='schlechter'>{c['schlechter']} schlechter</span>, "
-            f"{c['unverändert']} unverändert</li>"
+            f"{c['unverändert']} unverändert"
+            + (f" ({e(c['note'])})" if c.get("note") else "")
+            + "</li>"
             for lab, c in rep["summary"].items()
         )
         + "</ul>"
