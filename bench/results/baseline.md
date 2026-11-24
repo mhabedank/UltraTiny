@@ -1,6 +1,6 @@
 # Benchmark-Bericht
 
-_erzeugt 2026-11-23 19:06_
+_erzeugt 2026-11-24 05:19_
 
 | Schritt | Rolle | Suite | Seeds | Board | Datum | Modell |
 |---|---|---|---|---|---|---|
@@ -9,7 +9,6 @@ _erzeugt 2026-11-23 19:06_
 
 ## Zusammenfassung
 
-- **parity broken**: Board und PC antworten unterschiedlich.
 - nodemcu gegen chemie-nodemcu: 1 besser, 0 schlechter, 1 unverändert (andere Suite, nur Ressourcen vergleichbar)
 
 ## Kennzahlen
@@ -22,8 +21,8 @@ _erzeugt 2026-11-23 19:06_
 | Faktenqualität | **F4** fälschlich abgewiesen (%) | ↓ | 7.0 | 0.0 | nicht vergleichbar |  |
 | Faktenqualität | **F5** Kurzarbeit (%) | ↑ | 37.7 | nicht gemessen | nicht gemessen |  |
 | Faktenqualität | **F6** beantwortbare Fakten | ↑ | 1.404 | 287 | nicht vergleichbar |  |
-| Tempo | **T1** erstes Zeichen, getippt (ms) | ↓ | 179 | nicht gemessen | nicht gemessen |  |
-| Tempo | **T2** Zeichen/s | ↑ | 4.7 | nicht gemessen | nicht gemessen |  |
+| Tempo | **T1** erstes Zeichen, getippt (ms) | ↓ | 178 | nicht gemessen | nicht gemessen |  |
+| Tempo | **T2** Zeichen/s | ↑ | 4.8 | nicht gemessen | nicht gemessen |  |
 | Tempo | **T3** Zeichen/s bei vollem Kontext | ↑ | 3.8 | nicht gemessen | nicht gemessen |  |
 | Ressourcen | **R1** Arena (B) | ↓ | 35.504 | nicht gemessen | nicht gemessen |  |
 | Ressourcen | **R2** Flash Modell (B) | ↓ | 601.412 | 601.404 | -8 (besser) | exakt |
@@ -42,7 +41,3 @@ _erzeugt 2026-11-23 19:06_
 | chemie-nodemcu | Firmware | 293.232 | 324.403 | ok | Firmwarebereich − 10 % |
 | nodemcu | Modell (Flash) | 601.404 | 619.315 | ok | Modellbereich − 10 % |
 | nodemcu | Arena (RAM) | 35.504 | 35.840 | ok | ≤ 35 KB und ≥ 10 % Reserve |
-
-## Hinweise
-
-- chemie-nodemcu: unvollständiger Lauf (Teilmenge oder Board-Ausfälle).

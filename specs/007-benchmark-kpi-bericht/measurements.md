@@ -114,3 +114,22 @@ on all 165 other answers. Fix (after this run): the JSON trace is switched on on
 prompts and for the R1 reading, T2 comes from the `/stats` text, and a question whose answer is lost or
 differs is asked once more (event `retry_ok` when the second answer matches). A re-run with this
 version replaces the result.
+
+## Board run `chemie-nodemcu` (T040, second attempt, replaces the first)
+
+Same board and port, tool version with trace only for T3, T2 from `/stats`, one retry, and
+`caffeinate` (the Mac went to sleep during the first attempt, which explains its hangs).
+170 questions in 46.8 min, `complete: true`, no events. Result:
+`bench/results/chemie-nodemcu_chemie_board_20261124.json` (the first attempt was removed).
+
+| KPI | Second attempt | First attempt | Spec 005 |
+|-----|----------------|---------------|----------|
+| T1 typed (median of 15) | 178 ms (max 189) | 179 ms | 158 ms (one prompt) |
+| T1 pasted (median) | 184 ms (max 226) | 184 ms | – |
+| T2 | 4.8 chars/s | 4.7 | 5.1 |
+| T3 | 3.81 chars/s | 3.81 | – |
+| R1 | arena 35,504 / 36,864 B; heap 4,960 B at boot, 4,744 B at the end | same at boot | 4,960 B |
+| Parity board vs. PC | 170 / 170 | 165 / 170 (serial losses) | – |
+
+The two attempts agree within 1 ms and 0.1 chars/s, so the board measurement is reproducible.
+SC-003: T2 −6 % (holds); T1 +13 % against the single spec-005 sample (see above).
