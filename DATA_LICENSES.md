@@ -18,7 +18,7 @@ Exception (specs/006-hybrid-chemielehrer, FR-008): `training/data/facts/chemie_k
 short (<= 60 characters) versions of the curated `own` explanations, *proposed* by a local LLM
 (`tools/shorten_llm.py`, source `llm:<model>`). Each row must pass the automatic check (no new
 numbers or formulas, key term present, table facts excluded) and is reviewed by a person
-(`reviewed = yes`) before it is used for training. No fact value comes from an LLM; facts are
+(`reviewed = yes`) before it is used for training. Review of 2026-11-24: 338 rows accepted, 115 flagged rows kept out (`specs/006-hybrid-chemielehrer/kurz-review.tsv`). No fact value comes from an LLM; facts are
 answered from the fact table (`own`, `wikidata`, `computed`).
 
 Benchmark data (specs/007-benchmark-kpi-bericht): everything under `bench/` is evaluation-only and
