@@ -133,3 +133,23 @@ Same board and port, tool version with trace only for T3, T2 from `/stats`, one 
 
 The two attempts agree within 1 ms and 0.1 chars/s, so the board measurement is reproducible.
 SC-003: T2 −6 % (holds); T1 +13 % against the single spec-005 sample (see above).
+
+## Board run `nodemcu` and demo (T038, T045)
+
+`nodemcu.utny` flashed, allgemein suite: 40 questions in 12.9 min, `complete: true`, parity 40/40.
+T1 typed 182 ms (pasted 185), T2 4.8 chars/s, arena 35,504 B, heap 4,960 → 4,776 B. T3 is
+"nicht gemessen": the model's short answers never reach 90 % of the context, even on the 10 longest
+questions. Result: `bench/results/nodemcu_allgemein_board_20261124.json`.
+
+Demo `bench/demo/007-chemie-nodemcu-vs-nodemcu.md` (12 questions, one board, flashed in between):
+`chemie-nodemcu` mixes up facts exactly where spec 006 aims ("Wie viele Außenelektronen hat
+Schwefel?" → atomic number; "Was ist N?" → "Formel von Stickstoffmonooxid"; molar mass of CO2 → its
+formula); `nodemcu` answers capitals and symbols and invents the rest.
+
+## Final check (T053)
+
+- `ruff check`, `ruff format --check`, `pytest -q`: see the commit of this section (all pass).
+- Quickstart §1–§6 in the container, §7–§9 on the user's board and Spark (above).
+- SC-001: `baseline.md` is rebuilt from the four committed results alone (no model files needed).
+- SC-004: every KPI shows a value, "nicht vergleichbar" between the two suites, or "nicht gemessen"
+  with a reason (F5 has no short-test set in allgemein; T3 for `nodemcu`, see above).

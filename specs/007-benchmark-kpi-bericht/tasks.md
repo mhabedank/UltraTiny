@@ -267,7 +267,7 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
   - write the board result JSON
   - exit 1 on any parity mismatch
 - [X] T037 [US4] Run quickstart §6 (`--exec` against `build/utiny-host --console`, allgemein suite, `--sample parity`) and fix any console parsing differences between host and board output
-- [ ] T038 [US4] 🔌 Run quickstart §7 on the NodeMCU with `nodemcu` flashed, with `--firmware ../firmware-nodemcu/.pio/build/nodemcuv2/firmware.bin`:
+- [X] T038 [US4] 🔌 Run quickstart §7 on the NodeMCU with `nodemcu` flashed, with `--firmware ../firmware-nodemcu/.pio/build/nodemcuv2/firmware.bin`:
   - commit `bench/results/nodemcu_allgemein_board_<date>.json`
   - record T1, T2, R1 and the run time (≤ 30 min) in `specs/007-benchmark-kpi-bericht/measurements.md`; the SC-003 comparison with spec 005 is made in T040 with `chemie-nodemcu`
 
@@ -284,7 +284,7 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
 - [X] T039 [US3] 🖥️ On the Spark, run `tools/bench.py pc --suite ../bench/suites/chemie --model <chemie-nodemcu.utny> --label chemie-nodemcu` (with `--train-data` of its run, if still present) and commit `bench/results/chemie-nodemcu_chemie_pc_<date>.json`
 - [X] T040 [US3] 🔌 Flash `chemie-nodemcu` (specs/005 quickstart), run `tools/bench.py board --suite ../bench/suites/chemie … --firmware ../firmware-nodemcu/.pio/build/nodemcuv2/firmware.bin` and commit `bench/results/chemie-nodemcu_chemie_board_<date>.json`. Check SC-003: T1 typed and T2 within 10 % of spec 005 (158 ms, 5.1 chars/s) or the difference explained in `specs/007-benchmark-kpi-bericht/measurements.md`. If the board is not available, the baseline report shows the board KPIs as "not measured" with the reason in measurements.md.
 - [X] T041 [US3] 👤 The user fills in the S3 rating sheets `bench/results/chemie-nodemcu_chemie_pc_<date>.s3.tsv` and `bench/results/nodemcu_allgemein_pc.s3.tsv` (20 answers each, `grammar_ok` = `ja`/`nein`, data-model.md `Rating sheet.grammar_ok`), so S3 has a value in the baseline (SC-004).
-- [ ] T042 [US3] Generate and commit `bench/results/baseline.md` and `bench/results/baseline.html` with `tools/bench_report.py` from the four results. Check in a clean clone without `models/` and `runs/` that the same command reproduces them (SC-001), and that every KPI shows a value, "not applicable" or a stated reason (SC-004).
+- [X] T042 [US3] Generate and commit `bench/results/baseline.md` and `bench/results/baseline.html` with `tools/bench_report.py` from the four results. Check in a clean clone without `models/` and `runs/` that the same command reproduces them (SC-001), and that every KPI shows a value, "not applicable" or a stated reason (SC-004).
 
 **Checkpoint**: The roadmap's comparison point exists in the repository.
 
@@ -301,7 +301,7 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
   - two-board mode, `--single` run JSON and `--merge`
   - Markdown table with #, question, answer A/B and first character A/B (ms)
   - test with two `--a-exec`/`--b-exec` host consoles in `training/tests/test_bench_board.py`
-- [ ] T045 [US5] 🔌 Run the demo for `chemie-nodemcu` vs. `nodemcu` and commit `bench/demo/007-chemie-nodemcu-vs-nodemcu.md`
+- [X] T045 [US5] 🔌 Run the demo for `chemie-nodemcu` vs. `nodemcu` and commit `bench/demo/007-chemie-nodemcu-vs-nodemcu.md`
 
 **Checkpoint**: Every later step can show its demo with one command.
 
@@ -338,8 +338,8 @@ All commands run from `training/` (`uv run …`), as in [contracts/cli.md](contr
   - check that `make hybrid-smoke` and `test_determinism.py` still pass
 - [X] T050 [P] Update `DATA_LICENSES.md`: add a `public-domain` row for the S1 general text (work, author, source URL); note that everything under `bench/` is evaluation-only, that its questions and topic texts were proposed by an allowed local LLM (`llm:<model>` per row in `bench/suites/*/proposals/`, spec FR-006) and spot-checked by the user, and that expected answers never come from the LLM
 - [X] T051 [P] Complete `bench/README.md` with the commands of contracts/cli.md, the re-pin procedure (suite version bump), the rating-sheet workflow for S3 and the rule that test sets never enter training
-- [ ] T052 [P] Update `specs/ROADMAP.md` step 1: mark spec 007 as done once T042 is committed, link `bench/results/baseline.md`, and replace the KPI draft table with a link to contracts/result-format.md "KPI definitions"
-- [ ] T053 Run the whole quickstart.md (§1–§6, plus §7–§9 where hardware was available), check that `ruff check`, `ruff format --check` and `pytest -q` pass, and complete `specs/007-benchmark-kpi-bericht/measurements.md`
+- [X] T052 [P] Update `specs/ROADMAP.md` step 1: mark spec 007 as done once T042 is committed, link `bench/results/baseline.md`, and replace the KPI draft table with a link to contracts/result-format.md "KPI definitions"
+- [X] T053 Run the whole quickstart.md (§1–§6, plus §7–§9 where hardware was available), check that `ruff check`, `ruff format --check` and `pytest -q` pass, and complete `specs/007-benchmark-kpi-bericht/measurements.md`
 
 ---
 
