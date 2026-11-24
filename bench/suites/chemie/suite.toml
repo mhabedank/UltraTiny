@@ -1,0 +1,250 @@
+# Benchmark suite "chemie" (specs/007-benchmark-kpi-bericht): the chemistry curriculum of specs 003-006.
+# facts.tsv is exported from the spec 006 fact set (tools/bench_export_facts.py, research R4);
+# canonical questions are the first question form of each type in training/data/templates/hybrid.toml.
+# Re-pin with `tools/bench.py pin --suite ../bench/suites/chemie`.
+name = "chemie"
+version = 1
+max_question = 70
+explain_max = 60
+refusal_forms = [
+  "Das weiß ich leider nicht.", "Frag mich etwas zur Chemie", ": dazu habe ich keine Angabe.",
+  "gebe ich nicht an", "gehört zu keiner der Familien, die ich kenne", "weiß man das noch nicht genau",
+  "noch nicht genau bekannt", "gehört nicht zum Schalenmodell der Schule", "gibt es nicht.",
+  "kenne ich nicht genau genug", "kann ich nicht angeben", "ist weder Säure noch Lauge",
+]
+not_applicable = []
+
+[files]
+"sets/unseen.tsv" = "82d67ffebba329d34b2b2d79ec77e1e03602bc47f9d93d4688c0c2cc55b6e6fb"
+"sets/unknown.tsv" = "911cae0761a5d11129ed97aa579c587da11f0ce229586cbeef9209e2f2ea3a49"
+"sets/offtopic.tsv" = "ae48d2a704719c41b0c1efa78ea89c57b0173c59de0bd2acfd90d2898982932f"
+"sets/s3.tsv" = "a7b44b440895061198542e502326b0a6759fb97b46adfd4064b6eb422492e5af"
+"text/s1.txt" = "ee3cd90aebc50cc11da1207677f4e44da3572de16de4074b33bb4073a1414a61"
+"text/s2.tsv" = "8454ea3a470c3f3c245344bfe11ec939d8f5acc34aff2dec43899ec8334da91c"
+"facts.tsv" = "b7accae0d05e9f3884eec895716245464965380412a8d27d9e5c3bad5bb80496"
+"../../../training/data/eval/kurzarbeit.tsv" = "cd2a36bfba2b0a267831dba497ad1f0197675a9d3ff39d6c86e87711bcf60aaa"
+
+[sets]
+kurzarbeit = "../../../training/data/eval/kurzarbeit.tsv"
+unseen = "sets/unseen.tsv"
+unknown = "sets/unknown.tsv"
+offtopic = "sets/offtopic.tsv"
+s3 = "sets/s3.tsv"
+s1 = "text/s1.txt"
+s2 = "text/s2.tsv"
+
+[value_classes.symbol]
+kind = "vocab"
+case_sensitive = true
+
+[value_classes.element_name]
+kind = "vocab"
+case_sensitive = false
+
+[value_classes.formula]
+kind = "vocab"
+case_sensitive = true
+
+[value_classes.compound_name]
+kind = "vocab"
+case_sensitive = false
+
+[value_classes.number]
+kind = "number"
+decimals = 2
+units = ["u", "g/mol"]
+
+[value_classes.family]
+kind = "vocab"
+case_sensitive = false
+
+[value_classes.group]
+kind = "vocab"
+case_sensitive = false
+
+[value_classes.category]
+kind = "vocab"
+case_sensitive = false
+
+[value_classes.state]
+kind = "vocab"
+case_sensitive = false
+
+[value_classes.ion]
+kind = "vocab"
+case_sensitive = true
+
+[value_classes.shells]
+kind = "vocab"
+case_sensitive = true
+
+[value_classes.bond]
+kind = "vocab"
+case_sensitive = false
+
+[value_classes.acid_base]
+kind = "vocab"
+case_sensitive = false
+
+[value_classes.equation]
+kind = "vocab"
+case_sensitive = true
+
+[value_classes.test]
+kind = "vocab"
+case_sensitive = false
+
+[properties.element_atommasse]
+value_class = "number"
+canonical = "Welche Atommasse hat {name}?"
+
+[properties.element_aussenelektronen]
+value_class = "number"
+canonical = "Wie viele Außenelektronen hat {name}?"
+
+[properties.element_elektronen]
+value_class = "number"
+canonical = "Wie viele Elektronen hat {name}?"
+
+[properties.element_elektronenverteilung]
+value_class = "shells"
+canonical = "Wie sind die Elektronen von {name} auf die Schalen verteilt?"
+
+[properties.element_familie]
+value_class = "family"
+canonical = "Zu welcher Elementfamilie gehört {name}?"
+
+[properties.element_gruppe]
+value_class = "group"
+canonical = "In welcher Gruppe steht {name}?"
+
+[properties.element_ion]
+value_class = "ion"
+canonical = "Welches Ion bildet {name}?"
+
+[properties.element_kategorie]
+value_class = "category"
+canonical = "Ist {name} ein Metall oder ein Nichtmetall?"
+
+[properties.element_neutronen]
+value_class = "number"
+canonical = "Wie viele Neutronen hat {name}?"
+
+[properties.element_ordnungszahl]
+value_class = "number"
+canonical = "Welche Ordnungszahl hat {name}?"
+
+[properties.element_periode]
+value_class = "number"
+canonical = "In welcher Periode steht {name}?"
+
+[properties.element_profil]
+value_class = "number"
+canonical = "Was ist {name}?"
+
+[properties.element_protonen]
+value_class = "number"
+canonical = "Wie viele Protonen hat {name}?"
+
+[properties.element_schalen]
+value_class = "number"
+canonical = "Wie viele Schalen hat {name}?"
+
+[properties.element_symbol]
+value_class = "symbol"
+canonical = "Welches Symbol hat {name}?"
+
+[properties.element_wertigkeit]
+value_class = "number"
+canonical = "Welche Wertigkeit hat {name}?"
+
+[properties.element_zustand]
+value_class = "state"
+canonical = "Welchen Aggregatzustand hat {name} bei Raumtemperatur?"
+
+[properties.formel_verbindung]
+value_class = "compound_name"
+canonical = "Was ist {key}?"
+reverse = true
+
+[properties.nachweis]
+value_class = "test"
+canonical = "Wie weist man {name} nach?"
+
+[properties.ordnungszahl_element]
+value_class = "element_name"
+canonical = "Welches Element hat die Ordnungszahl {key}?"
+reverse = true
+
+[properties.reaktion_gleichung]
+value_class = "equation"
+canonical = "Wie lautet die Reaktionsgleichung für {name}?"
+
+[properties.symbol_element]
+value_class = "element_name"
+canonical = "Was ist {key}?"
+reverse = true
+
+[properties.verbindung_bindung]
+value_class = "bond"
+canonical = "Welche Bindungsart liegt in {name} vor?"
+
+[properties.verbindung_formel]
+value_class = "formula"
+canonical = "Welche Formel hat {name}?"
+
+[properties.verbindung_molare_masse]
+value_class = "number"
+canonical = "Welche molare Masse hat {name}?"
+
+[properties.verbindung_saeure_base]
+value_class = "acid_base"
+canonical = "Ist {name} eine Säure oder eine Lauge?"
+
+[propose]   # tools/bench_propose_llm.py (Spark); wording only, no answers
+topic = "Chemie in der Schule (Klassen 7 bis 10)"
+unknown_objects = "chemische Elemente oder Verbindungen"
+offtopic_themes = [
+  "Fußball und andere Sportarten", "Musik und Konzerte", "Filme und Serien", "Geschichte",
+  "Politik", "Erdkunde und Hauptstädte", "Wetter", "Kochen", "Tiere", "Mathe-Rechenaufgaben",
+  "Computer und Programmieren", "Videospiele", "Freundschaft", "Witze und Rätsel", "Uhrzeit und Datum",
+  "Physik (nicht Chemie)", "Biologie (nicht Chemie)", "Weltraum", "Autos", "Einkaufen und Geld",
+]
+s3_kinds = ["Begrüßungen", "Fragen, wer oder was der Chatbot ist", "Bitten, einen Chemie-Begriff kurz zu erklären",
+            "Dank und Verabschiedung", "Fragen, die der Chatbot höflich ablehnen sollte"]
+text_themes = [
+  "Atome und ihr Aufbau", "das Periodensystem der Elemente", "Metalle und ihre Eigenschaften",
+  "Nichtmetalle und Edelgase", "chemische Reaktionen im Alltag", "Säuren und Laugen",
+  "Salze und Ionen", "Wasser als Stoff", "Verbrennung und Sauerstoff", "Nachweisreaktionen im Labor",
+  "Stoffgemische und ihre Trennung", "die Elektronenpaarbindung", "Energie bei chemischen Reaktionen",
+  "Kohlenstoff und seine Verbindungen", "Sicherheit im Chemieunterricht",
+]
+
+[thresholds]   # spec FR-018 (clarified 2026-11-23); percentages are percentage points
+F1 = 3.0
+F2 = 0.5
+F3 = 3.0
+F4 = 3.0
+F5 = 3.0
+F6 = "1%"
+T1 = "5%"
+T2 = "5%"
+T3 = "5%"
+R1 = "exact"
+R2 = "exact"
+R3 = "exact"
+R4 = "exact"
+S1 = 0.02
+S2 = "1 step"
+S3 = 2
+
+[board_sample]
+unseen = 30
+kurzarbeit = "all"
+typed = 15
+t3 = ["un/248", "un/249", "un/250", "un/251", "un/252", "un/253", "un/254", "un/255", "un/256", "un/257"]
+
+[s2]
+distances = [16, 32, 64, 96, 128, 192, 256, 416]
+recall_ratio = 0.5
+recall_min = 0.8

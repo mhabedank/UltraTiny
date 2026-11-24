@@ -1,0 +1,37 @@
+question	theme	source
+Welcher Spieler hat den Ball am besten gedribbelt?	Fußball und andere Sportarten	llm:qwen3.6:35b
+Ist Basketball auch eine Mannschaftssportart?	Fußball und andere Sportarten	llm:qwen3.6:35b
+Wann ist die nächste WM in Deutschland?	Fußball und andere Sportarten	llm:qwen3.6:35b
+Welche Bands sind gerade total hype?	Musik und Konzerte	llm:qwen3.6:35b
+Tipps für günstige Festivaltickets?	Musik und Konzerte	llm:qwen3.6:35b
+Beste Streaming-Apps für Indie?	Musik und Konzerte	llm:qwen3.6:35b
+Welche Serie ist gerade der letzte Hit?	Filme und Serien	llm:qwen3.6:35b
+Empfehlung für einen Action-Film bitte.	Filme und Serien	llm:qwen3.6:35b
+Ist Stranger Things schon zu Ende?	Filme und Serien	llm:qwen3.6:35b
+Wie koche ich perfekte Pasta?	Kochen	llm:qwen3.6:35b
+Rezept für schnelles Omelett?	Kochen	llm:qwen3.6:35b
+Ideen für vegane Burger?	Kochen	llm:qwen3.6:35b
+Welches Tier hat die stärksten Kiefer?	Tiere	llm:qwen3.6:35b
+Ist ein Pinguin ein Vogel?	Tiere	llm:qwen3.6:35b
+Wie alt werden Schildkröten durchschnittlich?	Tiere	llm:qwen3.6:35b
+Wie viel ist 15 mal 23?	Mathe-Rechenaufgaben	llm:qwen3.6:35b
+Löse die Gleichung: x + 5 = 12	Mathe-Rechenaufgaben	llm:qwen3.6:35b
+Wat is de Wurzel aus 64?	Mathe-Rechenaufgaben	llm:qwen3.6:35b
+Wie lerne ich Python?	Computer und Programmieren	llm:qwen3.6:35b
+Code wird rot, was tun?	Computer und Programmieren	llm:qwen3.6:35b
+Gibt es einen Online Kurs?	Computer und Programmieren	llm:qwen3.6:35b
+Welches Spiel ist gerade am besten?	Videospiele	llm:qwen3.6:35b
+Wie kriegt man Fortnite kostenlos?	Videospiele	llm:qwen3.6:35b
+Ich suche coole Minecraft Mods	Videospiele	llm:qwen3.6:35b
+Lustigen Witz erzähl!	Witze und Rätsel	llm:qwen3.6:35b
+Was ist braun und läuft im Kreis?	Witze und Rätsel	llm:qwen3.6:35b
+Kniffliges Rätsel bitte	Witze und Rätsel	llm:qwen3.6:35b
+Wieviele Tage bis Weihnachten?	Uhrzeit und Datum	llm:qwen3.6:35b
+Uhrzeit in Berlin?	Uhrzeit und Datum	llm:qwen3.6:35b
+Wann beginnt das Wochenende?	Uhrzeit und Datum	llm:qwen3.6:35b
+Wie wird das Wetter heute?	Wetter	llm:qwen3.6:35b
+Regnet es bald?	Wetter	llm:qwen3.6:35b
+Ist die Sonne stark?	Wetter	llm:qwen3.6:35b
+Welches Auto ist das schnellste?	Autos	llm:qwen3.6:35b
+Wie viel kostet ein neues Tesla Model 3?	Autos	llm:qwen3.6:35b
+Kann man Autos selbst reparieren?	Autos	llm:qwen3.6:35b

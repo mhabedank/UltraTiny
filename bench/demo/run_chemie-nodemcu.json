@@ -1,0 +1,87 @@
+{
+  "label": "chemie-nodemcu",
+  "info": {
+    "params": 583296,
+    "size": 601412,
+    "arena": 35504,
+    "git": "04ac94b85b24",
+    "date": "2026-11-22",
+    "first_ms": 0,
+    "cps": 0.0,
+    "free_heap": 4960
+  },
+  "rows": [
+    {
+      "id": "d/01",
+      "question": "Hallo, wer bist du?",
+      "answer": "Ich bin noch ganz neu. Mein Alter ist nicht so wichtig, die Chemie dagegen schon!",
+      "first_ms": 163
+    },
+    {
+      "id": "d/02",
+      "question": "Welches Symbol hat Natrium?",
+      "answer": "Das Symbol von Natrium ist Na.",
+      "first_ms": 173
+    },
+    {
+      "id": "d/03",
+      "question": "Wofür steht das Zeichen Fe?",
+      "answer": "Fe ist das Symbol von Eisen.",
+      "first_ms": 173
+    },
+    {
+      "id": "d/04",
+      "question": "Welche Ordnungszahl hat Kupfer?",
+      "answer": "Kupfer hat die Ordnungszahl 29.",
+      "first_ms": 178
+    },
+    {
+      "id": "d/05",
+      "question": "Wie viele Außenelektronen hat Schwefel?",
+      "answer": "Schwefel hat die Ordnungszahl 16.",
+      "first_ms": 187
+    },
+    {
+      "id": "d/06",
+      "question": "Welche Formel hat Wasser?",
+      "answer": "Wasser hat die Formel H2O.",
+      "first_ms": 170
+    },
+    {
+      "id": "d/07",
+      "question": "Was ist N?",
+      "answer": "N ist die Formel von Stickstoffmonooxid.",
+      "first_ms": 152
+    },
+    {
+      "id": "d/08",
+      "question": "Ist Kupfer ein Metall?",
+      "answer": "Kupfer ist ein Metall.",
+      "first_ms": 166
+    },
+    {
+      "id": "d/09",
+      "question": "Welche molare Masse hat Kohlenstoffdioxid?",
+      "answer": "Kohlenstoffdioxid hat die Formel CO2.",
+      "first_ms": 192
+    },
+    {
+      "id": "d/10",
+      "question": "Was ist die Hauptstadt von Frankreich?",
+      "answer": "Das weiß ich leider nicht. Frag mich etwas zur Chemie!",
+      "first_ms": 186
+    },
+    {
+      "id": "d/11",
+      "question": "Wer hat die Fußball-WM 2014 gewonnen?",
+      "answer": "Das weiß ich leider nicht. Frag mich etwas zur Chemie!",
+      "first_ms": 185
+    },
+    {
+      "id": "d/12",
+      "question": "Danke, tschüss!",
+      "answer": "Gern geschehen! Hast du noch eine Chemiefrage?",
+      "first_ms": 158
+    }
+  ]
+}

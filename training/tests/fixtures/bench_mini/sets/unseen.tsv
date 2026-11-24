@@ -1,0 +1,6 @@
+id	grade	kind	question	expected
+un/001	-	fact	Wie kürzt man Natrium ab?	element_symbol: Na
+un/002	-	fact	Wofür steht N?	symbol_element: N
+un/003	-	fact	Hauptstadt Italiens?	hauptstadt_von: Italien
+un/004	-	multi	Symbol und Masse von Natrium?	element_symbol: Na | element_atommasse: Na
+un/005	-	fact	Sag mir genau, welche Stadt die Hauptstadt von Frankreich ist.	hauptstadt_von: Frankreich

@@ -1,0 +1,59 @@
+question	theme	source
+Wie läuft die WM 2026?	Fußball und andere Sportarten	llm:qwen3.6:35b
+Ist Fußball gesund für Gelenke?	Fußball und andere Sportarten	llm:qwen3.6:35b
+Fußball oder Basketball - was besser?	Fußball und andere Sportarten	llm:qwen3.6:35b
+Welche Bands kennst du?	Musik und Konzerte	llm:qwen3.6:35b
+Wo gab es die besten Konzerte?	Musik und Konzerte	llm:qwen3.6:35b
+Sind dir TikTok-Songs egal?	Musik und Konzerte	llm:qwen3.6:35b
+Welche Serie ist gerade total hype?	Filme und Serien	llm:qwen3.6:35b
+Empfehlung für einen guten Thriller?	Filme und Serien	llm:qwen3.6:35b
+Wer spielt eigentlich in Stranger Things?	Filme und Serien	llm:qwen3.6:35b
+Wann fiel die Mauer?	Geschichte	llm:qwen3.6:35b
+Wer hat Amerika entdeckt?	Geschichte	llm:qwen3.6:35b
+Was waren die Kreuzzüge?	Geschichte	llm:qwen3.6:35b
+Warum sind Wahlen so wichtig?	Politik	llm:qwen3.6:35b
+Was macht die Regierung genau?	Politik	llm:qwen3.6:35b
+Wer ist gerade Bundeskanzler?	Politik	llm:qwen3.6:35b
+Welche Hauptstadt ist die höchste der Welt?	Erdkunde und Hauptstädte	llm:qwen3.6:35b
+Ist Paris die Hauptstadt von Spanien?	Erdkunde und Hauptstädte	llm:qwen3.6:35b
+Welches Land hat die größte Fläche?	Erdkunde und Hauptstädte	llm:qwen3.6:35b
+Regnet es heute?	Wetter	llm:qwen3.6:35b
+Wann wird die Sonne scheinen?	Wetter	llm:qwen3.6:35b
+Ist es kalt draußen?	Wetter	llm:qwen3.6:35b
+Wie mache ich perfekte Pancakes?	Kochen	llm:qwen3.6:35b
+Nudel kochen: wie lange?	Kochen	llm:qwen3.6:35b
+Schnelles Abendessen für Teenies	Kochen	llm:qwen3.6:35b
+Welches Tier ist das schnellste an Land?	Tiere	llm:qwen3.6:35b
+Ist ein Okapi wirklich ein Verwandter der Giraffe?	Tiere	llm:qwen3.6:35b
+Wie schlafen Wale ohne zu ertrinken?	Tiere	llm:qwen3.6:35b
+Wie rechnet man Wurzel aus 144?	Mathe-Rechenaufgaben	llm:qwen3.6:35b
+Lösung für 5x + 3 = 18	Mathe-Rechenaufgaben	llm:qwen3.6:35b
+Berechne 25% von 200 Euro	Mathe-Rechenaufgaben	llm:qwen3.6:35b
+Wie lerne ich Python?	Computer und Programmieren	llm:qwen3.6:35b
+Befehle für HTML	Computer und Programmieren	llm:qwen3.6:35b
+Code Fehler beheben	Computer und Programmieren	llm:qwen3.6:35b
+Welches Spiel ist gerade total hype?	Videospiele	llm:qwen3.6:35b
+Ich brauche Tipps für Elden Ring.	Videospiele	llm:qwen3.6:35b
+Wo finde ich die besten Skins für Fortnite?	Videospiele	llm:qwen3.6:35b
+Wie finde ich neue Freunde?	Freundschaft	llm:qwen3.6:35b
+Ich habe Streit mit meinem besten Kumpel.	Freundschaft	llm:qwen3.6:35b
+Mein Freund ignoriert mich total.	Freundschaft	llm:qwen3.6:35b
+Erzähl mir einen Witz über Pizza	Witze und Rätsel	llm:qwen3.6:35b
+Ich brauche ein kniffliges Rätsel	Witze und Rätsel	llm:qwen3.6:35b
+Mach nen Witz über Katzen	Witze und Rätsel	llm:qwen3.6:35b
+Wie spät ist es gerade?	Uhrzeit und Datum	llm:qwen3.6:35b
+Welches Datum ist heute?	Uhrzeit und Datum	llm:qwen3.6:35b
+Ist morgen Feiertag?	Uhrzeit und Datum	llm:qwen3.6:35b
+Wie funktioniert ein Hebel?	Physik (nicht Chemie)	llm:qwen3.6:35b
+Erkläre Reibung einfach.	Physik (nicht Chemie)	llm:qwen3.6:35b
+Wie berechne ich die Geschwindigkeit?	Physik (nicht Chemie)	llm:qwen3.6:35b
+Welche Sinne hat ein Hund besonders gut?	Biologie (nicht Chemie)	llm:qwen3.6:35b
+Wie ist das Weltall entstanden?	Weltraum	llm:qwen3.6:35b
+Wie weit ist es zum Mond?	Weltraum	llm:qwen3.6:35b
+Gibt es Leben auf anderen Planeten?	Weltraum	llm:qwen3.6:35b
+Welches Auto ist das schnellste?	Autos	llm:qwen3.6:35b
+Was kostet ein Tesla Model S?	Autos	llm:qwen3.6:35b
+Wie funktioniert ein Automatikgetriebe?	Autos	llm:qwen3.6:35b
+Wie spart man am besten Taschengeld?	Einkaufen und Geld	llm:qwen3.6:35b
+Ich brauche einen günstigen Handyvertrag.	Einkaufen und Geld	llm:qwen3.6:35b
+Wo gibt es Rabattcodes für Sneaker?	Einkaufen und Geld	llm:qwen3.6:35b

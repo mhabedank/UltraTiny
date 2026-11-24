@@ -1,106 +1,106 @@
 id	grade	kind	question	expected
-ka/001	7	fact	Gib das Elementsymbol von Natrium an.	SNa
-ka/002	7	fact	Notiere das chemische Zeichen für Eisen.	SFe
-ka/003	7	fact	Welches Zeichen steht im PSE für Silber?	SAg
-ka/004	7	fact	Wie lautet das Kürzel für Gold?	SAu
-ka/005	7	fact	Kalium wird abgekürzt mit?	SK
-ka/006	7	fact	Schreib das Symbol für Quecksilber hin.	SHg
-ka/007	7	fact	Elementsymbol für Blei?	SPb
-ka/008	7	fact	Welches Element verbirgt sich hinter dem Zeichen Cl?	sCl
-ka/009	7	fact	Was bedeutet das Zeichen Na?	sNa
-ka/010	7	fact	Wofür steht Fe im Periodensystem?	sFe
-ka/011	7	fact	Was ist N?	sN
-ka/012	7	fact	Was ist Co?	sCo
-ka/013	7	fact	Nenne den Elementnamen zu Ca.	sCa
-ka/014	7	fact	Zu welchem Element gehört das Symbol Zn?	sZn
-ka/015	8	fact	Welche Ordnungszahl besitzt Sauerstoff?	OO
-ka/016	8	fact	Notiere die Ordnungszahl von Aluminium.	OAl
-ka/017	8	fact	ordnungszahl von eisen	OFe
-ka/018	8	fact	Welches Element trägt die Ordnungszahl 17?	o17
-ka/019	8	fact	Element mit Ordnungszahl 6?	o6
-ka/020	8	fact	Welches Element hat 11 Protonen im Kern?	o11
-ka/021	8	fact	Gib die relative Atommasse von Kohlenstoff an.	MC
-ka/022	8	fact	Wie viel u wiegt ein Schwefelatom ungefähr?	MS
-ka/023	8	fact	In welcher Periode befindet sich Kalium?	PK
-ka/024	8	fact	Periode von Chlor?	PCl
-ka/025	8	fact	In welcher Hauptgruppe steht Magnesium?	GMg
-ka/026	8	fact	Zu welcher Gruppe des PSE zählt Fluor?	GF
-ka/027	8	fact	Welcher Elementfamilie gehört Natrium an?	FNa
-ka/028	8	fact	Ist Brom ein Halogen? Zu welcher Familie gehört es?	FBr
-ka/029	8	fact	Zu welcher Elementgruppe zählt Argon?	FAr|GAr
-ka/030	7	fact	Handelt es sich bei Schwefel um ein Metall?	KS
-ka/031	7	fact	Ist Kupfer ein Metall oder Nichtmetall?	KCu
-ka/032	7	fact	Ist Silicium ein Metall?	KSi
-ka/033	7	fact	Welchen Aggregatzustand hat Brom bei 20 °C?	ZBr
-ka/034	7	fact	Liegt Quecksilber bei Raumtemperatur flüssig vor?	ZHg
-ka/035	7	fact	Ist Chlor bei Zimmertemperatur ein Gas?	ZCl
-ka/036	8	fact	Wie viele Protonen enthält ein Magnesiumatom?	pMg|OMg
-ka/037	8	fact	Anzahl der Elektronen in einem Kohlenstoffatom?	eC
-ka/038	8	fact	Wie viele Elektronen besitzt ein Neon-Atom?	eNe
-ka/039	8	fact	Berechne die Neutronenzahl eines Natriumatoms.	nNa
-ka/040	8	fact	Wie viele Neutronen hat ein Atom Aluminium?	nAl
-ka/041	8	fact	Wie viele Valenzelektronen besitzt ein Stickstoffatom?	aN
-ka/042	8	fact	Wie viele Außenelektronen hat Chlor?	aCl
-ka/043	8	fact	Gib die Anzahl der Außenelektronen von Calcium an.	aCa
-ka/044	8	fact	Auf wie vielen Schalen sitzen die Elektronen von Phosphor?	hP|vP
-ka/045	8	fact	Wie viele Elektronenschalen hat Kalium?	hK
-ka/046	8	fact	Wie viele Elektronen hat Natrium auf welcher Schale?	vNa
-ka/047	8	fact	Wie sind die Elektronen von Schwefel auf die Schalen verteilt?	vS
-ka/048	8	fact	Schalenmodell von Sauerstoff?	vO
-ka/049	9	fact	Welches Ion bildet Magnesium?	iMg
-ka/050	9	fact	Gib die Ladung des Chlorid-Ions an.	iCl
-ka/051	9	fact	Welche Ladung trägt ein Natrium-Ion?	iNa
-ka/052	9	fact	Bildet Sauerstoff positive oder negative Ionen?	iO
-ka/053	9	fact	Welches Ion entsteht aus einem Aluminiumatom?	iAl
-ka/054	9	fact	Welche Ladung hat das Ion von Neon?	iNe
-ka/055	9	fact	Welche Wertigkeit hat Sauerstoff?	wO
-ka/056	9	fact	Wievielwertig ist Kohlenstoff?	wC
-ka/057	9	fact	Wertigkeit von Stickstoff?	wN
-ka/058	8	fact	Was ist Kohlenstoff?	EC
-ka/059	8	fact	Was ist Natrium?	ENa
-ka/060	8	fact	Was ist Helium für ein Element?	EHe
-ka/061	9	fact	Stelle die Formel von Aluminiumoxid auf.	RAl2O3
-ka/062	9	fact	Welche Verhältnisformel hat Magnesiumchlorid?	RMgCl2
-ka/063	9	fact	Gib die Formel von Natriumsulfid an.	RNa2S
-ka/064	9	fact	Wie lautet die Summenformel von Methan?	RCH4
-ka/065	9	fact	Formel von Kohlenstoffdioxid?	RCO2
-ka/066	9	fact	Welche Formel hat Kochsalz?	RNaCl
-ka/067	9	fact	Welche chemische Formel hat Traubenzucker?	RC6H12O6
-ka/068	9	fact	Schreibe die Formel für Ammoniak auf.	RNH3
-ka/069	9	fact	Welcher Stoff hat die Formel H2O?	fH2O
-ka/070	9	fact	Was ist CO?	fCO
-ka/071	9	fact	Benenne die Verbindung CaCO3.	fCaCO3
-ka/072	9	fact	Wie heißt NaOH?	fNaOH
-ka/073	9	fact	Was verbirgt sich hinter der Formel H2SO4?	fH2SO4
-ka/074	9	fact	Name von KCl?	fKCl
-ka/075	10	fact	Berechne die molare Masse von Wasser.	mH2O
-ka/076	10	fact	Wie groß ist die molare Masse von Kohlenstoffdioxid?	mCO2
-ka/077	10	fact	Molare Masse von Natriumchlorid?	mNaCl
-ka/078	10	fact	Ermittle die molare Masse von Schwefelsäure.	mH2SO4
-ka/079	10	fact	Wie viel Gramm wiegt ein Mol Methan?	mCH4
-ka/080	9	fact	Welche Bindungsart liegt in Natriumchlorid vor?	bNaCl
-ka/081	9	fact	Welche Bindung findet man im Wassermolekül?	bH2O
-ka/082	9	fact	Ist Magnesiumoxid eine Ionenverbindung?	bMgO
-ka/083	9	fact	Wie halten die Atome in Methan zusammen?	bCH4
-ka/084	9	fact	Ist Salzsäure eine Säure oder eine Lauge?	cHCl
-ka/085	9	fact	Welchen pH-Bereich hat Natronlauge?	cNaOH
-ka/086	9	fact	Ist Essigsäure sauer?	cCH3COOH
-ka/087	9	fact	Reagiert Ammoniak in Wasser sauer oder alkalisch?	cNH3
-ka/088	8	fact	Formuliere die Reaktionsgleichung der Knallgasreaktion.	qknallgas
-ka/089	8	fact	Stelle die Gleichung für die Verbrennung von Methan auf.	qmethanbrand
-ka/090	8	fact	Gleichung für die Reaktion von Eisen mit Schwefel?	qeisenschwef
-ka/091	9	fact	Reaktionsgleichung für die Neutralisation von Salzsäure?	qneutral
-ka/092	10	fact	Gib die Reaktionsgleichung der Fotosynthese an.	qfotosynthese
-ka/093	8	fact	Wie kann man Kohlenstoffdioxid nachweisen?	tco2
-ka/094	8	fact	Beschreibe den Nachweis von Sauerstoff.	tsauerstoff
-ka/095	8	fact	Womit weist man Wasser nach?	twasser
-ka/096	8	fact	Wie erkennt man Wasserstoff?	twasserstoff
-ka/097	9	fact	Wie weist man Chlorid-Ionen nach?	tchlorid
-ka/098	9	fact	Welche Flammenfärbung zeigt Natrium?	tnatrium
-ka/099	9	multi	Symbol und Ordnungszahl von Gold?	SAu|OAu|EAu
-ka/100	9	multi	Nenne Formel und molare Masse von Wasser.	RH2O|mH2O
-ka/101	8	multi	Wie viele Protonen und Elektronen hat Lithium?	pLi|eLi|OLi
-ka/102	8	multi	Periode und Gruppe von Calcium?	PCa|GCa
+ka/001	7	fact	Gib das Elementsymbol von Natrium an.	element_symbol: Na
+ka/002	7	fact	Notiere das chemische Zeichen für Eisen.	element_symbol: Fe
+ka/003	7	fact	Welches Zeichen steht im PSE für Silber?	element_symbol: Ag
+ka/004	7	fact	Wie lautet das Kürzel für Gold?	element_symbol: Au
+ka/005	7	fact	Kalium wird abgekürzt mit?	element_symbol: K
+ka/006	7	fact	Schreib das Symbol für Quecksilber hin.	element_symbol: Hg
+ka/007	7	fact	Elementsymbol für Blei?	element_symbol: Pb
+ka/008	7	fact	Welches Element verbirgt sich hinter dem Zeichen Cl?	symbol_element: Cl
+ka/009	7	fact	Was bedeutet das Zeichen Na?	symbol_element: Na
+ka/010	7	fact	Wofür steht Fe im Periodensystem?	symbol_element: Fe
+ka/011	7	fact	Was ist N?	symbol_element: N
+ka/012	7	fact	Was ist Co?	symbol_element: Co
+ka/013	7	fact	Nenne den Elementnamen zu Ca.	symbol_element: Ca
+ka/014	7	fact	Zu welchem Element gehört das Symbol Zn?	symbol_element: Zn
+ka/015	8	fact	Welche Ordnungszahl besitzt Sauerstoff?	element_ordnungszahl: O
+ka/016	8	fact	Notiere die Ordnungszahl von Aluminium.	element_ordnungszahl: Al
+ka/017	8	fact	ordnungszahl von eisen	element_ordnungszahl: Fe
+ka/018	8	fact	Welches Element trägt die Ordnungszahl 17?	ordnungszahl_element: 17
+ka/019	8	fact	Element mit Ordnungszahl 6?	ordnungszahl_element: 6
+ka/020	8	fact	Welches Element hat 11 Protonen im Kern?	ordnungszahl_element: 11
+ka/021	8	fact	Gib die relative Atommasse von Kohlenstoff an.	element_atommasse: C
+ka/022	8	fact	Wie viel u wiegt ein Schwefelatom ungefähr?	element_atommasse: S
+ka/023	8	fact	In welcher Periode befindet sich Kalium?	element_periode: K
+ka/024	8	fact	Periode von Chlor?	element_periode: Cl
+ka/025	8	fact	In welcher Hauptgruppe steht Magnesium?	element_gruppe: Mg
+ka/026	8	fact	Zu welcher Gruppe des PSE zählt Fluor?	element_gruppe: F
+ka/027	8	fact	Welcher Elementfamilie gehört Natrium an?	element_familie: Na
+ka/028	8	fact	Ist Brom ein Halogen? Zu welcher Familie gehört es?	element_familie: Br
+ka/029	8	fact	Zu welcher Elementgruppe zählt Argon?	element_familie: Ar | element_gruppe: Ar
+ka/030	7	fact	Handelt es sich bei Schwefel um ein Metall?	element_kategorie: S
+ka/031	7	fact	Ist Kupfer ein Metall oder Nichtmetall?	element_kategorie: Cu
+ka/032	7	fact	Ist Silicium ein Metall?	element_kategorie: Si
+ka/033	7	fact	Welchen Aggregatzustand hat Brom bei 20 °C?	element_zustand: Br
+ka/034	7	fact	Liegt Quecksilber bei Raumtemperatur flüssig vor?	element_zustand: Hg
+ka/035	7	fact	Ist Chlor bei Zimmertemperatur ein Gas?	element_zustand: Cl
+ka/036	8	fact	Wie viele Protonen enthält ein Magnesiumatom?	element_protonen: Mg | element_ordnungszahl: Mg
+ka/037	8	fact	Anzahl der Elektronen in einem Kohlenstoffatom?	element_elektronen: C
+ka/038	8	fact	Wie viele Elektronen besitzt ein Neon-Atom?	element_elektronen: Ne
+ka/039	8	fact	Berechne die Neutronenzahl eines Natriumatoms.	element_neutronen: Na
+ka/040	8	fact	Wie viele Neutronen hat ein Atom Aluminium?	element_neutronen: Al
+ka/041	8	fact	Wie viele Valenzelektronen besitzt ein Stickstoffatom?	element_aussenelektronen: N
+ka/042	8	fact	Wie viele Außenelektronen hat Chlor?	element_aussenelektronen: Cl
+ka/043	8	fact	Gib die Anzahl der Außenelektronen von Calcium an.	element_aussenelektronen: Ca
+ka/044	8	fact	Auf wie vielen Schalen sitzen die Elektronen von Phosphor?	element_schalen: P | element_elektronenverteilung: P
+ka/045	8	fact	Wie viele Elektronenschalen hat Kalium?	element_schalen: K
+ka/046	8	fact	Wie viele Elektronen hat Natrium auf welcher Schale?	element_elektronenverteilung: Na
+ka/047	8	fact	Wie sind die Elektronen von Schwefel auf die Schalen verteilt?	element_elektronenverteilung: S
+ka/048	8	fact	Schalenmodell von Sauerstoff?	element_elektronenverteilung: O
+ka/049	9	fact	Welches Ion bildet Magnesium?	element_ion: Mg
+ka/050	9	fact	Gib die Ladung des Chlorid-Ions an.	element_ion: Cl
+ka/051	9	fact	Welche Ladung trägt ein Natrium-Ion?	element_ion: Na
+ka/052	9	fact	Bildet Sauerstoff positive oder negative Ionen?	element_ion: O
+ka/053	9	fact	Welches Ion entsteht aus einem Aluminiumatom?	element_ion: Al
+ka/054	9	fact	Welche Ladung hat das Ion von Neon?	element_ion: Ne
+ka/055	9	fact	Welche Wertigkeit hat Sauerstoff?	element_wertigkeit: O
+ka/056	9	fact	Wievielwertig ist Kohlenstoff?	element_wertigkeit: C
+ka/057	9	fact	Wertigkeit von Stickstoff?	element_wertigkeit: N
+ka/058	8	fact	Was ist Kohlenstoff?	element_profil: C
+ka/059	8	fact	Was ist Natrium?	element_profil: Na
+ka/060	8	fact	Was ist Helium für ein Element?	element_profil: He
+ka/061	9	fact	Stelle die Formel von Aluminiumoxid auf.	verbindung_formel: Al2O3
+ka/062	9	fact	Welche Verhältnisformel hat Magnesiumchlorid?	verbindung_formel: MgCl2
+ka/063	9	fact	Gib die Formel von Natriumsulfid an.	verbindung_formel: Na2S
+ka/064	9	fact	Wie lautet die Summenformel von Methan?	verbindung_formel: CH4
+ka/065	9	fact	Formel von Kohlenstoffdioxid?	verbindung_formel: CO2
+ka/066	9	fact	Welche Formel hat Kochsalz?	verbindung_formel: NaCl
+ka/067	9	fact	Welche chemische Formel hat Traubenzucker?	verbindung_formel: C6H12O6
+ka/068	9	fact	Schreibe die Formel für Ammoniak auf.	verbindung_formel: NH3
+ka/069	9	fact	Welcher Stoff hat die Formel H2O?	formel_verbindung: H2O
+ka/070	9	fact	Was ist CO?	formel_verbindung: CO
+ka/071	9	fact	Benenne die Verbindung CaCO3.	formel_verbindung: CaCO3
+ka/072	9	fact	Wie heißt NaOH?	formel_verbindung: NaOH
+ka/073	9	fact	Was verbirgt sich hinter der Formel H2SO4?	formel_verbindung: H2SO4
+ka/074	9	fact	Name von KCl?	formel_verbindung: KCl
+ka/075	10	fact	Berechne die molare Masse von Wasser.	verbindung_molare_masse: H2O
+ka/076	10	fact	Wie groß ist die molare Masse von Kohlenstoffdioxid?	verbindung_molare_masse: CO2
+ka/077	10	fact	Molare Masse von Natriumchlorid?	verbindung_molare_masse: NaCl
+ka/078	10	fact	Ermittle die molare Masse von Schwefelsäure.	verbindung_molare_masse: H2SO4
+ka/079	10	fact	Wie viel Gramm wiegt ein Mol Methan?	verbindung_molare_masse: CH4
+ka/080	9	fact	Welche Bindungsart liegt in Natriumchlorid vor?	verbindung_bindung: NaCl
+ka/081	9	fact	Welche Bindung findet man im Wassermolekül?	verbindung_bindung: H2O
+ka/082	9	fact	Ist Magnesiumoxid eine Ionenverbindung?	verbindung_bindung: MgO
+ka/083	9	fact	Wie halten die Atome in Methan zusammen?	verbindung_bindung: CH4
+ka/084	9	fact	Ist Salzsäure eine Säure oder eine Lauge?	verbindung_saeure_base: HCl
+ka/085	9	fact	Welchen pH-Bereich hat Natronlauge?	verbindung_saeure_base: NaOH
+ka/086	9	fact	Ist Essigsäure sauer?	verbindung_saeure_base: CH3COOH
+ka/087	9	fact	Reagiert Ammoniak in Wasser sauer oder alkalisch?	verbindung_saeure_base: NH3
+ka/088	8	fact	Formuliere die Reaktionsgleichung der Knallgasreaktion.	reaktion_gleichung: knallgas
+ka/089	8	fact	Stelle die Gleichung für die Verbrennung von Methan auf.	reaktion_gleichung: methanbrand
+ka/090	8	fact	Gleichung für die Reaktion von Eisen mit Schwefel?	reaktion_gleichung: eisenschwef
+ka/091	9	fact	Reaktionsgleichung für die Neutralisation von Salzsäure?	reaktion_gleichung: neutral
+ka/092	10	fact	Gib die Reaktionsgleichung der Fotosynthese an.	reaktion_gleichung: fotosynthese
+ka/093	8	fact	Wie kann man Kohlenstoffdioxid nachweisen?	nachweis: co2
+ka/094	8	fact	Beschreibe den Nachweis von Sauerstoff.	nachweis: sauerstoff
+ka/095	8	fact	Womit weist man Wasser nach?	nachweis: wasser
+ka/096	8	fact	Wie erkennt man Wasserstoff?	nachweis: wasserstoff
+ka/097	9	fact	Wie weist man Chlorid-Ionen nach?	nachweis: chlorid
+ka/098	9	fact	Welche Flammenfärbung zeigt Natrium?	nachweis: natrium
+ka/099	9	multi	Symbol und Ordnungszahl von Gold?	element_symbol: Au | element_ordnungszahl: Au | element_profil: Au
+ka/100	9	multi	Nenne Formel und molare Masse von Wasser.	verbindung_formel: H2O | verbindung_molare_masse: H2O
+ka/101	8	multi	Wie viele Protonen und Elektronen hat Lithium?	element_protonen: Li | element_elektronen: Li | element_ordnungszahl: Li
+ka/102	8	multi	Periode und Gruppe von Calcium?	element_periode: Ca | element_gruppe: Ca
 ka/103	9	explain	Was versteht man unter einem chemischen Element?	Element
 ka/104	8	explain	Was ist eine chemische Reaktion?	Stoff
 ka/105	8	explain	Was ist ein Katalysator?	Reaktion

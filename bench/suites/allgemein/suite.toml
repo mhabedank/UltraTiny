@@ -1,0 +1,107 @@
+# Benchmark suite "allgemein" (specs/007-benchmark-kpi-bericht): the topic of the repo model
+# models/nodemcu.utny (capitals, element symbols, self-description). Topic-independence test (FR-002)
+# and CI check (FR-024). Re-pin with `tools/bench.py pin --suite ../bench/suites/allgemein`.
+name = "allgemein"
+version = 1
+max_question = 70
+explain_max = 60
+# The starter model was never trained to refuse; these are the generic forms of later models.
+refusal_forms = ["Das weiß ich leider nicht.", "Frag mich etwas"]
+not_applicable = []
+
+[files]
+"sets/unseen.tsv" = "2b298b61673b38f982cce04ab266d8901ca41c1364df8e585cf2b7efd5c41942"
+"sets/unknown.tsv" = "5ef44f843cdb244e95ce91bc215c0c6977b7f0271298697dca293e7eb72d75da"
+"sets/offtopic.tsv" = "4c0b72052b1908884031cf23e82ac8af1e5e4bfd48866f2c28787a36c79f78c6"
+"sets/s3.tsv" = "e940fd2c4cbe35c3a388c12680596a298a2213959ffbf38f4843d0259e4b79f5"
+"text/s1.txt" = "b6682391ddcfe1c468f301286f06c9a18f3999660378415f7523119e3c2019d2"
+"text/s2.tsv" = "8454ea3a470c3f3c245344bfe11ec939d8f5acc34aff2dec43899ec8334da91c"
+"facts.tsv" = "01743fdfa3844b8bf3d74c05484d4c831c7d1c5382a3ebbafdbd160976ed9b21"
+
+[sets]
+unseen = "sets/unseen.tsv"
+unknown = "sets/unknown.tsv"
+offtopic = "sets/offtopic.tsv"
+s3 = "sets/s3.tsv"
+s1 = "text/s1.txt"
+s2 = "text/s2.tsv"
+
+[value_classes.city]
+kind = "vocab"
+case_sensitive = false
+
+[value_classes.country]
+kind = "vocab"
+case_sensitive = false
+
+[value_classes.symbol]
+kind = "vocab"
+case_sensitive = true
+
+[value_classes.element_name]
+kind = "vocab"
+case_sensitive = false
+
+[properties.hauptstadt_von]
+value_class = "city"
+canonical = "Was ist die Hauptstadt von {name}?"
+
+[properties.hauptstadt_land]
+value_class = "country"
+canonical = "Von welchem Land ist {key} die Hauptstadt?"
+reverse = true
+
+[properties.element_symbol]
+value_class = "symbol"
+canonical = "Was ist das Symbol von {name}?"
+
+[properties.symbol_element]
+value_class = "element_name"
+canonical = "Welches Element hat das Symbol {key}?"
+reverse = true
+
+[propose]   # tools/bench_propose_llm.py (Spark); wording only, no answers
+topic = "Hauptstädte, Länder und chemische Elementsymbole"
+unknown_objects = "Länder"
+offtopic_themes = [
+  "Fußball und andere Sportarten", "Musik und Konzerte", "Filme und Serien", "Kochen", "Tiere",
+  "Mathe-Rechenaufgaben", "Computer und Programmieren", "Videospiele", "Witze und Rätsel",
+  "Uhrzeit und Datum", "Wetter", "Autos",
+]
+s3_kinds = ["Begrüßungen", "Fragen, wer oder was der Chatbot ist", "Fragen, worauf der Chatbot läuft",
+            "Dank und Verabschiedung", "Bitten um einen kurzen Satz über ein Land"]
+text_themes = [
+  "Hauptstädte in Europa", "die Länder Südamerikas", "Reisen durch Asien", "Afrika und seine Länder",
+  "Flüsse und Gebirge Europas", "große Städte der Welt", "Grenzen und Nachbarländer",
+  "Währungen und Geld in verschiedenen Ländern", "Sprachen der Welt", "Inseln und Inselstaaten",
+  "Klimazonen der Erde", "berühmte Bauwerke in Hauptstädten", "die Ozeane", "Landkarten und Atlanten",
+]
+
+[thresholds]   # spec FR-018 (clarified 2026-11-23); percentages are percentage points
+F1 = 3.0
+F2 = 0.5
+F3 = 3.0
+F4 = 3.0
+F5 = 3.0
+F6 = "1%"
+T1 = "5%"
+T2 = "5%"
+T3 = "5%"
+R1 = "exact"
+R2 = "exact"
+R3 = "exact"
+R4 = "exact"
+S1 = 0.02
+S2 = "1 step"
+S3 = 2
+
+[board_sample]
+unseen = 30
+kurzarbeit = "all"
+typed = 15
+t3 = ["un/070", "un/071", "un/072", "un/073", "un/074", "un/075", "un/076", "un/077", "un/078", "un/079"]
+
+[s2]
+distances = [16, 32, 64, 96, 128, 192, 256, 416]
+recall_ratio = 0.5
+recall_min = 0.8

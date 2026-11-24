@@ -1,0 +1,80 @@
+property	object	question	source
+element_symbol	Brom	Nenne das chemische Symbol von Brom.	llm:qwen3.6:35b
+element_symbol	Kohlenstoff	Nenne das Symbol für Kohlenstoff.	llm:qwen3.6:35b
+element_symbol	Radon	Wie lautet das chemische Symbol für Radon?	llm:qwen3.6:35b
+element_symbol	Xenon	Nenne das chemische Symbol von Xenon.	llm:qwen3.6:35b
+element_symbol	Uran	Nenne das Symbol Uran.	llm:qwen3.6:35b
+element_symbol	Bor	Wie lautet das chemische Symbol für Bor?	llm:qwen3.6:35b
+element_symbol	Gallium	Nenne das chemische Symbol für Gallium.	llm:qwen3.6:35b
+element_symbol	Stickstoff	Nenne das chemische Symbol für Stickstoff.	llm:qwen3.6:35b
+element_symbol	Selen	Nenne das chemische Symbol für Selen.	llm:qwen3.6:35b
+element_symbol	Natrium	Gib das Elementsymbol für Natrium an.	llm:qwen3.6:35b
+element_symbol	Silber	Wie lautet das Symbol von Silber?	llm:qwen3.6:35b
+element_symbol	Strontium	Nenne das Symbol für Strontium	llm:qwen3.6:35b
+element_symbol	Quecksilber	Nenne das chemische Symbol von Quecksilber.	llm:qwen3.6:35b
+element_symbol	Nickel	Das chemische Symbol für Nickel ist?	llm:qwen3.6:35b
+element_symbol	Germanium	Nenne das Symbol für Germanium.	llm:qwen3.6:35b
+element_symbol	Aluminium	Gib das chemische Zeichen für Aluminium an.	llm:qwen3.6:35b
+element_symbol	Kalium	Gib das Elementsymbol für Kalium an.	llm:qwen3.6:35b
+element_symbol	Arsen	Nenne das Elementsymbol von Arsen.	llm:qwen3.6:35b
+element_symbol	Barium	Gib das Elementsymbol für Barium an.	llm:qwen3.6:35b
+element_symbol	Chlor	Nenne das Symbol für Chlor.	llm:qwen3.6:35b
+hauptstadt_land	Berlin	Welches Land hat Berlin als Hauptstadt?	llm:qwen3.6:35b
+hauptstadt_land	Nairobi	Welches Land hat Nairobi als Hauptstadt?	llm:qwen3.6:35b
+hauptstadt_land	Accra	Zu welchem Staat gehört Accra?	llm:qwen3.6:35b
+hauptstadt_land	Tripolis	Welches Land hat Tripolis als Hauptstadt?	llm:qwen3.6:35b
+hauptstadt_land	Panama-Stadt	Panama-Stadt ist Hauptstadt von welchem Land?	llm:qwen3.6:35b
+hauptstadt_land	Tokio	Welches Land hat Tokio als Hauptstadt?	llm:qwen3.6:35b
+hauptstadt_land	Kingston	Kingston ist Hauptstadt von welchem Land?	llm:qwen3.6:35b
+hauptstadt_land	Dublin	Welches Land hat Dublin als Hauptstadt?	llm:qwen3.6:35b
+hauptstadt_land	Madrid	Nenne das Land, dessen Hauptstadt Madrid ist.	llm:qwen3.6:35b
+hauptstadt_land	Islamabad	Nennen Sie das Land von Islamabad.	llm:qwen3.6:35b
+hauptstadt_land	Lima	Lima ist Hauptstadt von welchem Land?	llm:qwen3.6:35b
+hauptstadt_land	Lissabon	Welches Land hat Lissabon als Hauptstadt?	llm:qwen3.6:35b
+hauptstadt_land	Luanda	Welches Land hat Luanda als Hauptstadt?	llm:qwen3.6:35b
+hauptstadt_land	Wien	Welches Land hat Wien als Hauptstadt?	llm:qwen3.6:35b
+hauptstadt_land	Phnom Penh	Welches Land hat Phnom Penh als Hauptstadt?	llm:qwen3.6:35b
+hauptstadt_land	Stockholm	Welches Land ist Stockholm Hauptstadt?	llm:qwen3.6:35b
+hauptstadt_land	Baku	Welches Land hat Baku als Hauptstadt?	llm:qwen3.6:35b
+hauptstadt_land	Vilnius	Welches Land hat Vilnius als Hauptstadt?	llm:qwen3.6:35b
+hauptstadt_land	Kuwait-Stadt	Nenne das Land: Hauptstadt Kuwait-Stadt.	llm:qwen3.6:35b
+hauptstadt_land	Belgrad	Welches Land hat Belgrad als Hauptstadt?	llm:qwen3.6:35b
+hauptstadt_von	Ruanda	Hauptstadt Ruandas?	llm:qwen3.6:35b
+hauptstadt_von	Peru	Nenne die Hauptstadt Perus.	llm:qwen3.6:35b
+hauptstadt_von	Kamerun	Nenne die Hauptstadt Kameruns.	llm:qwen3.6:35b
+hauptstadt_von	Kambodscha	Gib die Hauptstadt von Kambodscha an.	llm:qwen3.6:35b
+hauptstadt_von	Montenegro	Nenne die Hauptstadt Montenegros.	llm:qwen3.6:35b
+hauptstadt_von	Deutschland	Nenne die Hauptstadt Deutschlands.	llm:qwen3.6:35b
+hauptstadt_von	Syrien	Nennen Sie die Hauptstadt von Syrien.	llm:qwen3.6:35b
+hauptstadt_von	Uruguay	Gib die Hauptstadt von Uruguay an.	llm:qwen3.6:35b
+hauptstadt_von	Venezuela	Gib die Hauptstadt von Venezuela an.	llm:qwen3.6:35b
+hauptstadt_von	Russland	Nenne die Hauptstadt Russlands.	llm:qwen3.6:35b
+hauptstadt_von	Kasachstan	Hauptstadt Kasachstans?	llm:qwen3.6:35b
+hauptstadt_von	Andorra	Welche Stadt ist Hauptstädte in Andorra?	llm:qwen3.6:35b
+hauptstadt_von	Lettland	Gib die Hauptstadt von Lettland an.	llm:qwen3.6:35b
+hauptstadt_von	Laos	Gib die Hauptstadt Laos' an.	llm:qwen3.6:35b
+hauptstadt_von	Nepal	Gib die Hauptstadt Nepals an.	llm:qwen3.6:35b
+hauptstadt_von	Malta	Gib die Hauptstadt von Malta an.	llm:qwen3.6:35b
+hauptstadt_von	Belgien	Nenne die Hauptstadt Belgiens.	llm:qwen3.6:35b
+hauptstadt_von	Luxemburg	Gib die Hauptstadt von Luxemburg an.	llm:qwen3.6:35b
+hauptstadt_von	Saudi-Arabien	Nenn die Hauptstadt von Saudi-Arabien.	llm:qwen3.6:35b
+symbol_element	Ni	Nenne das Element mit Symbol Ni.	llm:qwen3.6:35b
+symbol_element	Be	Welches Element ist Be?	llm:qwen3.6:35b
+symbol_element	Mn	Nenne das Element mit Symbol Mn.	llm:qwen3.6:35b
+symbol_element	O	Element mit dem Symbol O nennen.	llm:qwen3.6:35b
+symbol_element	Se	Welches Element heißt Se?	llm:qwen3.6:35b
+symbol_element	Zn	Welches Element ist Zn?	llm:qwen3.6:35b
+symbol_element	Li	Nenne das Element zum Symbol Li.	llm:qwen3.6:35b
+symbol_element	P	Welches Element ist P?	llm:qwen3.6:35b
+symbol_element	Fe	Welches Element steht für Fe?	llm:qwen3.6:35b
+symbol_element	Mg	Welcher Name zu Mg?	llm:qwen3.6:35b
+symbol_element	Rn	Name das Element mit dem Symbol Rn.	llm:qwen3.6:35b
+symbol_element	Ne	Welches Element ist Ne?	llm:qwen3.6:35b
+symbol_element	U	Das Element mit dem Symbol U?	llm:qwen3.6:35b
+symbol_element	Si	Welches Element ist Si?	llm:qwen3.6:35b
+symbol_element	Al	Nenne das Element Al.	llm:qwen3.6:35b
+symbol_element	Cu	Was ist der Name des Elements mit dem Symbol Cu?	llm:qwen3.6:35b
+symbol_element	Kr	Kr steht für welches Element?	llm:qwen3.6:35b
+symbol_element	Au	Welches Element ist Au?	llm:qwen3.6:35b
+symbol_element	S	Nenne das Element mit Symbol "S".	llm:qwen3.6:35b
+symbol_element	Pb	Welches Element heißt chemisch Pb?	llm:qwen3.6:35b

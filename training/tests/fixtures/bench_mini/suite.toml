@@ -1,0 +1,98 @@
+# Mini suite for training/tests/test_bench_*.py (specs/007-benchmark-kpi-bericht).
+name = "mini"
+version = 1
+max_question = 70
+refusal_forms = ["Das weiß ich leider nicht.", ": dazu habe ich keine Angabe."]
+explain_max = 60
+not_applicable = []
+
+[files]
+"facts.tsv" = "1991fb826bd1df44223b9b257f49b68ce6573c477a016c0daf9d7c8f0d0b0f65"
+"sets/unseen.tsv" = "94650c3997152eafc6db8cea095e233aedcb922af13e5eaa947019b6c5f65090"
+"sets/unknown.tsv" = "adca3e3be7613b352304951bb28b88b134b5d21eff8babfe3c779604342d5f16"
+"sets/offtopic.tsv" = "408e654239c5421f51346ec533a6b8d41cf92ac43e634be18b4e719feccb3d26"
+"sets/kurzarbeit.tsv" = "6bf06266f0bac4999bead6dd96bc5e96efd8ce67df297d63c167799e0677e711"
+"sets/s3.tsv" = "821b6b08acb60d44dcc094ded5ad992cd4bc6d590c0bf20a22edacc1d11047b3"
+"text/s1.txt" = "c52c0af1db360af22b03d88e90a9569bafdae0df8e1046fe49c094c60dcfe0e8"
+"text/s2.tsv" = "646e4eb4894b28ccf23d4c80e80501d9cbcf51f756c00dc4121639c26d9e950b"
+
+[sets]
+unseen = "sets/unseen.tsv"
+unknown = "sets/unknown.tsv"
+offtopic = "sets/offtopic.tsv"
+kurzarbeit = "sets/kurzarbeit.tsv"
+s3 = "sets/s3.tsv"
+s1 = "text/s1.txt"
+s2 = "text/s2.tsv"
+
+[value_classes.symbol]
+kind = "vocab"
+case_sensitive = true
+
+[value_classes.element_name]
+kind = "vocab"
+case_sensitive = false
+
+[value_classes.city]
+kind = "vocab"
+case_sensitive = false
+
+[value_classes.country]
+kind = "vocab"
+case_sensitive = false
+
+[value_classes.number]
+kind = "number"
+decimals = 2
+units = ["u", "g/mol"]
+
+[properties.element_symbol]
+value_class = "symbol"
+canonical = "Welches Symbol hat {name}?"
+
+[properties.symbol_element]
+value_class = "element_name"
+canonical = "Wofür steht das Symbol {key}?"
+reverse = true
+
+[properties.element_atommasse]
+value_class = "number"
+canonical = "Welche Atommasse hat {name}?"
+
+[properties.hauptstadt_von]
+value_class = "city"
+canonical = "Was ist die Hauptstadt von {name}?"
+
+[properties.hauptstadt_land]
+value_class = "country"
+canonical = "Von welchem Land ist {key} die Hauptstadt?"
+reverse = true
+
+[thresholds]
+F1 = 3.0
+F2 = 0.5
+F3 = 3.0
+F4 = 3.0
+F5 = 3.0
+F6 = "1%"
+T1 = "5%"
+T2 = "5%"
+T3 = "5%"
+R1 = "exact"
+R2 = "exact"
+R3 = "exact"
+R4 = "exact"
+S1 = 0.02
+S2 = "1 step"
+S3 = 2
+
+[board_sample]
+unseen = 3
+kurzarbeit = "all"
+typed = 1
+t3 = ["un/005"]
+
+[s2]
+distances = [16, 32]
+recall_ratio = 0.5
+recall_min = 0.8

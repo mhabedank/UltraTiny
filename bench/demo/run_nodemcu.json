@@ -1,0 +1,87 @@
+{
+  "label": "nodemcu",
+  "info": {
+    "params": 583296,
+    "size": 601404,
+    "arena": 35504,
+    "git": "9fa719383800",
+    "date": "2026-11-21",
+    "first_ms": 0,
+    "cps": 0.0,
+    "free_heap": 4960
+  },
+  "rows": [
+    {
+      "id": "d/01",
+      "question": "Hallo, wer bist du?",
+      "answer": "Ich bin UltraTiny, ein kleines Sprachmodell auf einer NodeMCU.",
+      "first_ms": 164
+    },
+    {
+      "id": "d/02",
+      "question": "Welches Symbol hat Natrium?",
+      "answer": "Das Symbol von Natrium ist Na.",
+      "first_ms": 174
+    },
+    {
+      "id": "d/03",
+      "question": "Wofür steht das Zeichen Fe?",
+      "answer": "Fe ist das Symbol von Eisen.",
+      "first_ms": 174
+    },
+    {
+      "id": "d/04",
+      "question": "Welche Ordnungszahl hat Kupfer?",
+      "answer": "Das Symbol von Kupfer ist Cu.",
+      "first_ms": 178
+    },
+    {
+      "id": "d/05",
+      "question": "Wie viele Außenelektronen hat Schwefel?",
+      "answer": "Das Symbol von Schwefel ist S.",
+      "first_ms": 188
+    },
+    {
+      "id": "d/06",
+      "question": "Welche Formel hat Wasser?",
+      "answer": "Das Symbol von Wasserstoff ist H.",
+      "first_ms": 171
+    },
+    {
+      "id": "d/07",
+      "question": "Was ist N?",
+      "answer": "Ich haken!",
+      "first_ms": 152
+    },
+    {
+      "id": "d/08",
+      "question": "Ist Kupfer ein Metall?",
+      "answer": "Ich lese und schreibe Buchstabe für Buchstabe.",
+      "first_ms": 167
+    },
+    {
+      "id": "d/09",
+      "question": "Welche molare Masse hat Kohlenstoffdioxid?",
+      "answer": "Das Symbol von Kohlenstoff ist C.",
+      "first_ms": 192
+    },
+    {
+      "id": "d/10",
+      "question": "Was ist die Hauptstadt von Frankreich?",
+      "answer": "Die Hauptstadt von Frankreich ist Paris.",
+      "first_ms": 187
+    },
+    {
+      "id": "d/11",
+      "question": "Wer hat die Fußball-WM 2014 gewonnen?",
+      "answer": "Die Hauptstadt von Georgien ist Tiflis.",
+      "first_ms": 186
+    },
+    {
+      "id": "d/12",
+      "question": "Danke, tschüss!",
+      "answer": "Dak ist die Hauptstadt von Bangladesch.",
+      "first_ms": 159
+    }
+  ]
+}

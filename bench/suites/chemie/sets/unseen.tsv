@@ -1,0 +1,258 @@
+id	grade	kind	question	expected
+un/001	-	fact	Gib an: Reduktion von Kupferoxid.	reaktion_gleichung: cuoreduktion
+un/002	-	fact	Definiere Caesium.	element_profil: Cs
+un/003	-	fact	Nenne die Familie von Neon.	element_familie: Ne
+un/004	-	fact	Nenne die Bezeichnung für C2H5OH.	formel_verbindung: C2H5OH
+un/005	-	fact	Lawrencium ist Teil welcher Familie?	element_familie: Lr
+un/006	-	fact	Nenne die Protonenzahl von Wolfram.	element_protonen: W
+un/007	-	fact	Gib die Gruppe für Chrom an.	element_gruppe: Cr
+un/008	-	fact	Elektronenverteilung Krypton?	element_elektronenverteilung: Kr
+un/009	-	fact	Nenne die Protonenzahl von Protactinium.	element_protonen: Pa
+un/010	-	fact	Essigsäure: Säure oder Lauge?	verbindung_saeure_base: CH3COOH
+un/011	-	fact	Anzahl der Neutronen in Thorium?	element_neutronen: Th
+un/012	-	fact	Wie ist die Wertigkeit von Bismut?	element_wertigkeit: Bi
+un/013	-	fact	Periodenzahl für Ruthenium?	element_periode: Ru
+un/014	-	fact	Was bedeutet die Abkürzung Zr?	symbol_element: Zr
+un/015	-	fact	Welches Ion entsteht aus Kalium?	element_ion: K
+un/016	-	fact	Was bedeutet Tc?	symbol_element: Tc
+un/017	-	fact	Nenne die Ordnungszahl für Polonium.	element_ordnungszahl: Po
+un/018	-	fact	Periodennummer von Europium?	element_periode: Eu
+un/019	-	fact	Nachweismethode für Lithium?	nachweis: lithium
+un/020	-	fact	Bor ist bei Raumtemperatur fest.	element_zustand: B
+un/021	-	fact	Gib die molare Masse für Kaliumchlorid an.	verbindung_molare_masse: KCl
+un/022	-	fact	Wieviele Neutronen Schwefel?	element_neutronen: S
+un/023	-	fact	Gib die Atommasse des Elements Xenon an.	element_atommasse: Xe
+un/024	-	fact	Anzahl der Elektronen von Tellur	element_elektronen: Te
+un/025	-	fact	Neptunium: Metall oder Nichtmetall?	element_kategorie: Np
+un/026	-	fact	Barium ist in welcher Hauptgruppe?	element_familie: Ba
+un/027	-	fact	Berechne die molare Masse für Calciumsulfat.	verbindung_molare_masse: CaSO4
+un/028	-	fact	Welche Familie hat Protactinium?	element_familie: Pa
+un/029	-	fact	Darmstadtium: Wie groß ist die Atommasse?	element_atommasse: Ds
+un/030	-	fact	Wieviele Neutronen hat Tellur?	element_neutronen: Te
+un/031	-	fact	Nenne das Symbol für Argon.	element_symbol: Ar
+un/032	-	fact	Phosphor bildet welches Ion?	element_ion: P
+un/033	-	fact	Gib die Schalenzahl für Polonium an.	element_schalen: Po
+un/034	-	fact	Wie lautet die Formel für Stickstoffmonooxid?	verbindung_formel: NO
+un/035	-	fact	Ist Calciumhydroxid Säure oder Lauge?	verbindung_saeure_base: Ca(OH)2
+un/036	-	fact	Gib die Reaktion zum Eiweisnachweis an.	nachweis: eiweiss
+un/037	-	fact	Nenne den Aggregatzustand von Kupfer.	element_zustand: Cu
+un/038	-	fact	Anzahl Neutronen in Astat?	element_neutronen: At
+un/039	-	fact	Was bedeutet SO2?	formel_verbindung: SO2
+un/040	-	fact	Welches Element ist Na?	symbol_element: Na
+un/041	-	fact	Americium: Metall oder Nichtmetall?	element_kategorie: Am
+un/042	-	fact	Gib das Element zur Ordnungsnummer 55 an.	ordnungszahl_element: 55
+un/043	-	fact	Erkläre CaO.	formel_verbindung: CaO
+un/044	-	fact	Nenne das Magnesium-Ion.	element_ion: Mg
+un/045	-	fact	Bindungsart in Kaliumnitrat?	verbindung_bindung: KNO3
+un/046	-	fact	Wo steht Gadolinium im PSE?	element_periode: Gd
+un/047	-	fact	Zu welcher Elementfamilie zählt Fluor?	element_familie: F
+un/048	-	fact	Wie lautet die Gl. der Kalkwasserprobe?	reaktion_gleichung: kalkwasser
+un/049	-	fact	Erkläre Ag2O.	formel_verbindung: Ag2O
+un/050	-	fact	Was bedeutet die Abkürzung P?	symbol_element: P
+un/051	-	fact	Calciumnitrid: Welche molare Masse liegt vor?	verbindung_molare_masse: Ca3N2
+un/052	-	fact	Natriumhydroxid: Säure oder Lauge?	verbindung_saeure_base: NaOH
+un/053	-	fact	Wieviele Neutronen hat Nobelium?	element_neutronen: No
+un/054	-	fact	Erkläre Al2O3.	formel_verbindung: Al2O3
+un/055	-	fact	Gib die Atommasse für Germanium an.	element_atommasse: Ge
+un/056	-	fact	Nenne die Wertigkeit des Radiums.	element_wertigkeit: Ra
+un/057	-	fact	Erläutere die Substanz Natrium.	element_profil: Na
+un/058	-	fact	Nenne die Definition von Rhodium.	element_profil: Rh
+un/059	-	fact	Berechne molare Masse Zinkchlorid.	verbindung_molare_masse: ZnCl2
+un/060	-	fact	Elektronenverteilung in Chlor?	element_elektronenverteilung: Cl
+un/061	-	fact	Nenne das Thallium-Ion.	element_ion: Tl
+un/062	-	fact	Gib die Atommasse für Natrium an.	element_atommasse: Na
+un/063	-	fact	Art der Bindung in Aluminiumoxid?	verbindung_bindung: Al2O3
+un/064	-	fact	Wieviele Protonen besitzt Terbium?	element_protonen: Tb
+un/065	-	fact	Gib die Wertigkeit für Polonium an.	element_wertigkeit: Po
+un/066	-	fact	Gib die Summenformel zu Natriumnitrid an.	verbindung_formel: Na3N
+un/067	-	fact	Wieviele Außenelektronen hat Polonium?	element_aussenelektronen: Po
+un/068	-	fact	Nenne Gd.	symbol_element: Gd
+un/069	-	fact	Gib die Formel für Kaliumnitrid an.	verbindung_formel: K3N
+un/070	-	fact	Gib die Periode für Rubidium an.	element_periode: Rb
+un/071	-	fact	Gib die Schalen von Silicium an.	element_schalen: Si
+un/072	-	fact	Nenne das Ionenbild von Indium	element_ion: In
+un/073	-	fact	Gib die Atommasse für Platin an.	element_atommasse: Pt
+un/074	-	fact	Schwefel bildet welches Ion?	element_ion: S
+un/075	-	fact	Nenne die Anzahl der Schalen für Neon.	element_schalen: Ne
+un/076	-	fact	Welche Elementfamilie hat Gadolinium?	element_familie: Gd
+un/077	-	fact	Anzahl Schalen: Rubidium	element_schalen: Rb
+un/078	-	fact	Welche Gruppe gehört zu Arsen?	element_gruppe: As
+un/079	-	fact	Nichtmetall oder Metall: Europium	element_kategorie: Eu
+un/080	-	fact	Gib die Periode für Mangan an.	element_periode: Mn
+un/081	-	fact	Nenne das Element mit Ordnungszahl 47.	ordnungszahl_element: 47
+un/082	-	fact	Wie ist die Atommasse von Berkelium?	element_atommasse: Bk
+un/083	-	fact	Nenne den Nachweis von Calcium.	nachweis: calcium
+un/084	-	fact	Elektronenkonfiguration von Lithium?	element_elektronenverteilung: Li
+un/085	-	fact	Nenne das Symbol für Neptunium.	element_symbol: Np
+un/086	-	fact	Klassifiziere Radium.	element_kategorie: Ra
+un/087	-	fact	Nenne die Bedeutung von C6H12O6.	formel_verbindung: C6H12O6
+un/088	-	fact	Gib die AM für Kohlenstoff an.	element_atommasse: C
+un/089	-	fact	Wo steht Nickel im PSE?	element_periode: Ni
+un/090	-	fact	Anzahl Neutronen im Zinn?	element_neutronen: Sn
+un/091	-	fact	Nenne das Element mit Ordnungszahl 60.	ordnungszahl_element: 60
+un/092	-	fact	Anzahl Protonen in Californium?	element_protonen: Cf
+un/093	-	fact	Bestimme M(Harnstoff).	verbindung_molare_masse: CO(NH2)2
+un/094	-	fact	Nenne die Bedeutung von Technetium.	element_profil: Tc
+un/095	-	fact	Nenne das Element mit Ordnungszahl 92.	ordnungszahl_element: 92
+un/096	-	fact	Gib die Elektronen von Gallium an.	element_elektronenverteilung: Ga
+un/097	-	fact	Nenne das Element mit Ordnungszahl 72.	ordnungszahl_element: 72
+un/098	-	fact	Nenne das Element mit Ordnungszahl 114	ordnungszahl_element: 114
+un/099	-	fact	Welche Familie hat Rubidium?	element_familie: Rb
+un/100	-	fact	Gib die Gruppe für Osmium an.	element_gruppe: Os
+un/101	-	fact	Ist Ammoniak Säure oder Lauge?	verbindung_saeure_base: NH3
+un/102	-	fact	Definiere Francium.	element_profil: Fr
+un/103	-	fact	Gib die Wertigkeit für Blei an.	element_wertigkeit: Pb
+un/104	-	fact	Gib die Gruppe von Silicium an.	element_gruppe: Si
+un/105	-	fact	Gib die Periode für Terbium an.	element_periode: Tb
+un/106	-	fact	Gib das Symbol für Ordnungszahl 49 an.	ordnungszahl_element: 49
+un/107	-	fact	Elektronenverteilung in Sauerstoff	element_elektronenverteilung: O
+un/108	-	fact	Handelt es sich bei Molybdän um ein Metall?	element_kategorie: Mo
+un/109	-	fact	Gruppe des Stickstoffs?	element_gruppe: N
+un/110	-	fact	Bindungsart in Lithiumiodid?	verbindung_bindung: LiI
+un/111	-	fact	Nenne das Element mit Ordnungszahl 76.	ordnungszahl_element: 76
+un/112	-	fact	Wie erkennt man Kupferionen?	nachweis: kupfer
+un/113	-	fact	Anzahl Protonen Titan:	element_protonen: Ti
+un/114	-	fact	Nenne die Formel für Strontiumfluorid.	verbindung_formel: SrF2
+un/115	-	fact	Anzahl der Protonen im Silberatom.	element_protonen: Ag
+un/116	-	fact	Welche Gruppe gehört zu Lithium?	element_gruppe: Li
+un/117	-	fact	Art der Bindung in Rubidiumnitrid?	verbindung_bindung: Rb3N
+un/118	-	fact	Gib die Ord.-Zahl für Thulium an.	element_ordnungszahl: Tm
+un/119	-	fact	Wie zeigt man Kalium nach?	nachweis: kalium
+un/120	-	fact	Erkläre 'Ir'.	symbol_element: Ir
+un/121	-	fact	In welchem Zustand liegt Californium bei RT vor?	element_zustand: Cf
+un/122	-	fact	Nenne die Elektronenverteilung in Kohlenstoff.	element_elektronenverteilung: C
+un/123	-	fact	Gib die Atommasse für Uran an.	element_atommasse: U
+un/124	-	fact	Nenne CuCl2.	formel_verbindung: CuCl2
+un/125	-	fact	Berechne die molare Masse Natriumcarbonat	verbindung_molare_masse: Na2CO3
+un/126	-	fact	Gib die Gleichung der Verbrennung von Methan an.	reaktion_gleichung: methanbrand
+un/127	-	fact	Nenne die Elektronenzahl von Fermium.	element_elektronen: Fm
+un/128	-	fact	Ord. Zahl von Molybdän ist?	element_ordnungszahl: Mo
+un/129	-	fact	Anzahl Protonen Eisen?	element_protonen: Fe
+un/130	-	fact	Nenne die Atommasse für Niob.	element_atommasse: Nb
+un/131	-	fact	Gib die Ordnungszahl für Cer an.	element_ordnungszahl: Ce
+un/132	-	fact	Nenne die Periode für Krypton.	element_periode: Kr
+un/133	-	fact	Protactinium: Metall oder Nichtmetall?	element_kategorie: Pa
+un/134	-	fact	Bindungsart in Lithiumbromid?	verbindung_bindung: LiBr
+un/135	-	fact	Anzahl der Neutronen in Cadmium?	element_neutronen: Cd
+un/136	-	fact	Wie zeigt man Wasser nach? (Prinzip)	nachweis: wasser
+un/137	-	fact	Nenne das Element mit der Nummer 18.	ordnungszahl_element: 18
+un/138	-	fact	Nenne die Protonenzahl von Plutonium.	element_protonen: Pu
+un/139	-	fact	Gallium: Metall oder Nichtmetall?	element_kategorie: Ga
+un/140	-	fact	Gib die Formel für Natriumsulfid an.	verbindung_formel: Na2S
+un/141	-	fact	Gib die Formel von Natriumiodid an.	verbindung_formel: NaI
+un/142	-	fact	Nenne SrO.	formel_verbindung: SrO
+un/143	-	fact	Nenne Nachweis für Laugen.	nachweis: lauge
+un/144	-	fact	Gib die Ordnungszahl für Mendelevium an.	element_ordnungszahl: Md
+un/145	-	fact	Gib die Wertigkeit für Selen an.	element_wertigkeit: Se
+un/146	-	fact	Wie prüft man auf Carbonat-Ionen?	nachweis: carbonat
+un/147	-	fact	Ordnungszahl 81: Welches ist das Element?	ordnungszahl_element: 81
+un/148	-	fact	Nenne die Bedeutung von Sr.	symbol_element: Sr
+un/149	-	fact	Anzahl der Elektronen von Bismut?	element_elektronen: Bi
+un/150	-	fact	Anzahl Außenelektronen Aluminium?	element_aussenelektronen: Al
+un/151	-	fact	In welchem Zustand ist Lithium bei RT?	element_zustand: Li
+un/152	-	fact	Anzahl der Elektronenschalen bei Caesium	element_schalen: Cs
+un/153	-	fact	Ist Magnesiumhydroxid Säure oder Lauge?	verbindung_saeure_base: Mg(OH)2
+un/154	-	fact	In welchem Aggregatzustand liegt Silicium vor?	element_zustand: Si
+un/155	-	fact	Welche Familie hat Neodym?	element_familie: Nd
+un/156	-	fact	Was bedeutet La?	symbol_element: La
+un/157	-	fact	Anzahl Schalen von Radium?	element_schalen: Ra
+un/158	-	fact	Nenne die Bedeutung von Cf.	symbol_element: Cf
+un/159	-	fact	Ameisensäure: Säure oder Lauge?	verbindung_saeure_base: HCOOH
+un/160	-	fact	Berkelium Zustand bei Raumtemperatur?	element_zustand: Bk
+un/161	-	fact	Gib an: Ist Blei metallisch?	element_kategorie: Pb
+un/162	-	fact	Definiere kurz Xenon.	element_profil: Xe
+un/163	-	fact	Bestimme die Ordnungszahl für Kohlenstoff.	element_ordnungszahl: C
+un/164	-	fact	Anzahl Schalen Germanium?	element_schalen: Ge
+un/165	-	fact	Wie viele Elektronenschalen hat Thallium?	element_schalen: Tl
+un/166	-	fact	Was bedeutet die Abkürzung NO?	formel_verbindung: NO
+un/167	-	fact	Bindungsart in Propan nennen.	verbindung_bindung: C3H8
+un/168	-	fact	Wie viele e- hat Brom?	element_elektronen: Br
+un/169	-	fact	Welches Ion entsteht aus Natrium?	element_ion: Na
+un/170	-	fact	Gib die Gleichung Verbrennung von Eisen an	reaktion_gleichung: eisenbrand
+un/171	-	fact	Welches Ion entsteht bei Sauerstoff?	element_ion: O
+un/172	-	fact	Xenon: Metall oder Nichtmetall?	element_kategorie: Xe
+un/173	-	fact	Gib die Ordnungszahl für Rhenium an	element_ordnungszahl: Re
+un/174	-	fact	Nenne die Protonenzahl von Argon.	element_protonen: Ar
+un/175	-	fact	Hexan: Gib die Summenformel an.	verbindung_formel: C6H14
+un/176	-	fact	Anzahl Protonen Mendelevium?	element_protonen: Md
+un/177	-	fact	Anzahl der Neutronen im Stickstoff	element_neutronen: N
+un/178	-	fact	Definiere den Begriff Molybdän.	element_profil: Mo
+un/179	-	fact	Nenne das Symbol für Francium.	element_symbol: Fr
+un/180	-	fact	Fotosynthese: Reaktionsgleichung?	reaktion_gleichung: fotosynthese
+un/181	-	fact	Wie viele Schalen besitzt Lithium?	element_schalen: Li
+un/182	-	fact	Wo ist Natrium in der Tabelle?	element_gruppe: Na
+un/183	-	fact	In welchem Zustand liegt Gadolinium bei RT vor?	element_zustand: Gd
+un/184	-	fact	Bindungsart in Calciumoxid?	verbindung_bindung: CaO
+un/185	-	fact	Gib die chemische Formel für Aluminiumchlorid an.	verbindung_formel: AlCl3
+un/186	-	fact	Anzahl der Valenzelektronen von Tellur:	element_aussenelektronen: Te
+un/187	-	fact	Nenne den Nachweis für Stärke.	nachweis: staerke
+un/188	-	fact	Wie lautet das Kurzzeichen für Radium?	element_symbol: Ra
+un/189	-	fact	Bestimme die molare Masse von Zinksulfid.	verbindung_molare_masse: ZnS
+un/190	-	fact	Gib die Ordnungszahl für Xenon an.	element_ordnungszahl: Xe
+un/191	-	fact	Wo steht Brom im PSE?	element_gruppe: Br
+un/192	-	fact	Nenne den Aggregatzustand von Uran (RT).	element_zustand: U
+un/193	-	fact	Was bedeutet Cd?	symbol_element: Cd
+un/194	-	fact	Wie hoch ist die Wertigkeit von Wasserstoff?	element_wertigkeit: H
+un/195	-	fact	Anzahl Elektronen Yttrium?	element_elektronen: Y
+un/196	-	fact	Welche Familie hat Strontium?	element_familie: Sr
+un/197	-	fact	Wie beweist man Ammoniak?	nachweis: ammoniak
+un/198	-	fact	Nenne das Symbol für Zink	element_symbol: Zn
+un/199	-	fact	Bestimme die Neutronen bei Brom.	element_neutronen: Br
+un/200	-	fact	Caesium: Wertigkeit angeben	element_wertigkeit: Cs
+un/201	-	fact	Verteilung der Elektronen im Germanium	element_elektronenverteilung: Ge
+un/202	-	fact	Wie lautet das Symbol von Mendelevium?	element_symbol: Md
+un/203	-	fact	Wie verteilen sich Elektronen bei Selen?	element_elektronenverteilung: Se
+un/204	-	fact	Wie lautet die Summenformel für Ozon?	verbindung_formel: O3
+un/205	-	fact	Plutonium: Metall oder Nichtmetall?	element_kategorie: Pu
+un/206	-	fact	Elektronenverteilung im Natriumatom?	element_elektronenverteilung: Na
+un/207	-	fact	Das Symbol von Titan?	element_symbol: Ti
+un/208	-	fact	Anzahl der Valenzelektronen von Natrium	element_aussenelektronen: Na
+un/209	-	fact	Nenne die Vanadium-Gruppe.	element_gruppe: V
+un/210	-	fact	Salzsäure ist Säure oder Lauge?	verbindung_saeure_base: HCl
+un/211	-	fact	Ist Kaliumhydroxid Säure oder Lauge?	verbindung_saeure_base: KOH
+un/212	-	fact	Bindungsart in Kaliumiodid?	verbindung_bindung: KI
+un/213	-	fact	Gib die Wertigkeit des Elements Germanium an.	element_wertigkeit: Ge
+un/214	-	fact	Wie lautet die Formel für Ameisensäure?	verbindung_formel: HCOOH
+un/215	-	fact	Gib die molare Masse für Rubidiumnitrid an.	verbindung_molare_masse: Rb3N
+un/216	-	fact	Mangan bei RT in welchem Aggregatzustand?	element_zustand: Mn
+un/217	-	fact	Welcher Aggregatzustand hat Osmium?	element_zustand: Os
+un/218	-	fact	Nenne das Brom-Ion.	element_ion: Br
+un/219	-	fact	Wasserstoff-Elektronenverteilung nennen.	element_elektronenverteilung: H
+un/220	-	fact	Das Symbol von Zirconium?	element_symbol: Zr
+un/221	-	fact	Art der Bindung in Bariumsulfid?	verbindung_bindung: BaS
+un/222	-	fact	Nenne die Außenelektronen von Zinn.	element_aussenelektronen: Sn
+un/223	-	fact	Nenne die Definition von Lutetium.	element_profil: Lu
+un/224	-	fact	Wie lautet das Zeichen für Technetium?	element_symbol: Tc
+un/225	-	fact	Wie viele e- hat Palladium?	element_elektronen: Pd
+un/226	-	fact	Nenne das Stickstoff-Ion.	element_ion: N
+un/227	-	fact	Anzahl Elektronen Silber?	element_elektronen: Ag
+un/228	-	fact	Erkläre Krypton kurz.	element_profil: Kr
+un/229	-	fact	Definiere Platin.	element_profil: Pt
+un/230	-	fact	Anzahl Elektronen Moscovium?	element_elektronen: Mc
+un/231	-	fact	Yttrium: Atommasse angeben.	element_atommasse: Y
+un/232	-	fact	Gib die Gruppe für Platin an.	element_gruppe: Pt
+un/233	-	fact	Anzahl der Schalen bei Phosphor	element_schalen: P
+un/234	-	fact	Wie viel ist die molare Masse von Caesiumfluorid?	verbindung_molare_masse: CsF
+un/235	-	fact	Nenne die Anzahl der Außenelektronen bei Antimon.	element_aussenelektronen: Sb
+un/236	-	fact	Wie hoch ist die Wertigkeit von Natrium?	element_wertigkeit: Na
+un/237	-	fact	Gib die ONZ für Rhodium an.	element_ordnungszahl: Rh
+un/238	-	fact	Anzahl der Elektronen von Rutherfordium.	element_elektronen: Rf
+un/239	-	fact	Nenne das Symbol für Germanium.	element_symbol: Ge
+un/240	-	fact	Bindungsart in Bariumbromid nennen.	verbindung_bindung: BaBr2
+un/241	-	fact	Anzahl Elektronen in Beryllium?	element_elektronen: Be
+un/242	-	fact	Anzahl Außenelektronen Sauerstoff?	element_aussenelektronen: O
+un/243	-	fact	Erkläre C2H2.	formel_verbindung: C2H2
+un/244	-	fact	Periodennummer von Neptunium angeben.	element_periode: Np
+un/245	-	fact	Beryllium gehört zu welcher Familie?	element_familie: Be
+un/246	-	fact	Ist Salpetersäure eine Säure oder Lauge?	verbindung_saeure_base: HNO3
+un/247	-	fact	Anzahl der Neutronen in Blei?	element_neutronen: Pb
+un/248	-	fact	Nenne die Reaktionsgleichung für Reaktion von Magnesium mit Salzsäure.	reaktion_gleichung: mgsalzsaeure
+un/249	-	fact	Gib an: Reaktionsgleichung zur Reaktion von Calcium mit Wasser	reaktion_gleichung: cawasser
+un/250	-	fact	Stelle die Reaktionsgleichung des Thermitverfahrens auf.	reaktion_gleichung: thermit
+un/251	-	fact	Wird Phosphorsäure als Säure oder Lauge klassifiziert?	verbindung_saeure_base: H3PO4
+un/252	-	fact	Gib die Anzahl der Valenzelektronen von Silicium an.	element_aussenelektronen: Si
+un/253	-	fact	Bestimme die molare Masse von Distickstoffmonooxid.	verbindung_molare_masse: N2O
+un/254	-	fact	Nenne die Anzahl der Valenzelektronen von Schwefel.	element_aussenelektronen: S
+un/255	-	fact	Reaktion von Natrium mit Chlor: Reaktionsgleichung?	reaktion_gleichung: nachlor
+un/256	-	fact	Gib die Anzahl der Außenelektronen von Gallium an.	element_aussenelektronen: Ga
+un/257	-	fact	Reaktionsgleichung für die Bildung von Kohlensäure	reaktion_gleichung: kohlensaeure

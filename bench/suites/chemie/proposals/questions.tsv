@@ -1,0 +1,258 @@
+property	object	question	source
+element_atommasse	C	Gib die AM für Kohlenstoff an.	llm:qwen3.6:35b
+element_atommasse	Ge	Gib die Atommasse für Germanium an.	llm:qwen3.6:35b
+element_atommasse	Na	Gib die Atommasse für Natrium an.	llm:qwen3.6:35b
+element_atommasse	Nb	Nenne die Atommasse für Niob.	llm:qwen3.6:35b
+element_atommasse	Pt	Gib die Atommasse für Platin an.	llm:qwen3.6:35b
+element_atommasse	U	Gib die Atommasse für Uran an.	llm:qwen3.6:35b
+element_atommasse	Bk	Wie ist die Atommasse von Berkelium?	llm:qwen3.6:35b
+element_atommasse	Xe	Gib die Atommasse des Elements Xenon an.	llm:qwen3.6:35b
+element_atommasse	Ds	Darmstadtium: Wie groß ist die Atommasse?	llm:qwen3.6:35b
+element_atommasse	Y	Yttrium: Atommasse angeben.	llm:qwen3.6:35b
+element_aussenelektronen	Si	Gib die Anzahl der Valenzelektronen von Silicium an.	llm:qwen3.6:35b
+element_aussenelektronen	Sn	Nenne die Außenelektronen von Zinn.	llm:qwen3.6:35b
+element_aussenelektronen	S	Nenne die Anzahl der Valenzelektronen von Schwefel.	llm:qwen3.6:35b
+element_aussenelektronen	Na	Anzahl der Valenzelektronen von Natrium	llm:qwen3.6:35b
+element_aussenelektronen	Sb	Nenne die Anzahl der Außenelektronen bei Antimon.	llm:qwen3.6:35b
+element_aussenelektronen	Te	Anzahl der Valenzelektronen von Tellur:	llm:qwen3.6:35b
+element_aussenelektronen	Po	Wieviele Außenelektronen hat Polonium?	llm:qwen3.6:35b
+element_aussenelektronen	O	Anzahl Außenelektronen Sauerstoff?	llm:qwen3.6:35b
+element_aussenelektronen	Ga	Gib die Anzahl der Außenelektronen von Gallium an.	llm:qwen3.6:35b
+element_aussenelektronen	Al	Anzahl Außenelektronen Aluminium?	llm:qwen3.6:35b
+element_elektronen	Pd	Wie viele e- hat Palladium?	llm:qwen3.6:35b
+element_elektronen	Be	Anzahl Elektronen in Beryllium?	llm:qwen3.6:35b
+element_elektronen	Br	Wie viele e- hat Brom?	llm:qwen3.6:35b
+element_elektronen	Fm	Nenne die Elektronenzahl von Fermium.	llm:qwen3.6:35b
+element_elektronen	Te	Anzahl der Elektronen von Tellur	llm:qwen3.6:35b
+element_elektronen	Bi	Anzahl der Elektronen von Bismut?	llm:qwen3.6:35b
+element_elektronen	Mc	Anzahl Elektronen Moscovium?	llm:qwen3.6:35b
+element_elektronen	Ag	Anzahl Elektronen Silber?	llm:qwen3.6:35b
+element_elektronen	Y	Anzahl Elektronen Yttrium?	llm:qwen3.6:35b
+element_elektronen	Rf	Anzahl der Elektronen von Rutherfordium.	llm:qwen3.6:35b
+element_elektronenverteilung	Kr	Elektronenverteilung Krypton?	llm:qwen3.6:35b
+element_elektronenverteilung	O	Elektronenverteilung in Sauerstoff	llm:qwen3.6:35b
+element_elektronenverteilung	Ga	Gib die Elektronen von Gallium an.	llm:qwen3.6:35b
+element_elektronenverteilung	C	Nenne die Elektronenverteilung in Kohlenstoff.	llm:qwen3.6:35b
+element_elektronenverteilung	H	Wasserstoff-Elektronenverteilung nennen.	llm:qwen3.6:35b
+element_elektronenverteilung	Cl	Elektronenverteilung in Chlor?	llm:qwen3.6:35b
+element_elektronenverteilung	Ge	Verteilung der Elektronen im Germanium	llm:qwen3.6:35b
+element_elektronenverteilung	Na	Elektronenverteilung im Natriumatom?	llm:qwen3.6:35b
+element_elektronenverteilung	Se	Wie verteilen sich Elektronen bei Selen?	llm:qwen3.6:35b
+element_elektronenverteilung	Li	Elektronenkonfiguration von Lithium?	llm:qwen3.6:35b
+element_familie	Pa	Welche Familie hat Protactinium?	llm:qwen3.6:35b
+element_familie	Ba	Barium ist in welcher Hauptgruppe?	llm:qwen3.6:35b
+element_familie	Rb	Welche Familie hat Rubidium?	llm:qwen3.6:35b
+element_familie	Gd	Welche Elementfamilie hat Gadolinium?	llm:qwen3.6:35b
+element_familie	Be	Beryllium gehört zu welcher Familie?	llm:qwen3.6:35b
+element_familie	Ne	Nenne die Familie von Neon.	llm:qwen3.6:35b
+element_familie	Nd	Welche Familie hat Neodym?	llm:qwen3.6:35b
+element_familie	F	Zu welcher Elementfamilie zählt Fluor?	llm:qwen3.6:35b
+element_familie	Sr	Welche Familie hat Strontium?	llm:qwen3.6:35b
+element_familie	Lr	Lawrencium ist Teil welcher Familie?	llm:qwen3.6:35b
+element_gruppe	Cr	Gib die Gruppe für Chrom an.	llm:qwen3.6:35b
+element_gruppe	V	Nenne die Vanadium-Gruppe.	llm:qwen3.6:35b
+element_gruppe	Si	Gib die Gruppe von Silicium an.	llm:qwen3.6:35b
+element_gruppe	Li	Welche Gruppe gehört zu Lithium?	llm:qwen3.6:35b
+element_gruppe	As	Welche Gruppe gehört zu Arsen?	llm:qwen3.6:35b
+element_gruppe	Na	Wo ist Natrium in der Tabelle?	llm:qwen3.6:35b
+element_gruppe	N	Gruppe des Stickstoffs?	llm:qwen3.6:35b
+element_gruppe	Pt	Gib die Gruppe für Platin an.	llm:qwen3.6:35b
+element_gruppe	Os	Gib die Gruppe für Osmium an.	llm:qwen3.6:35b
+element_gruppe	Br	Wo steht Brom im PSE?	llm:qwen3.6:35b
+element_ion	In	Nenne das Ionenbild von Indium	llm:qwen3.6:35b
+element_ion	O	Welches Ion entsteht bei Sauerstoff?	llm:qwen3.6:35b
+element_ion	Na	Welches Ion entsteht aus Natrium?	llm:qwen3.6:35b
+element_ion	Mg	Nenne das Magnesium-Ion.	llm:qwen3.6:35b
+element_ion	Br	Nenne das Brom-Ion.	llm:qwen3.6:35b
+element_ion	K	Welches Ion entsteht aus Kalium?	llm:qwen3.6:35b
+element_ion	N	Nenne das Stickstoff-Ion.	llm:qwen3.6:35b
+element_ion	S	Schwefel bildet welches Ion?	llm:qwen3.6:35b
+element_ion	Tl	Nenne das Thallium-Ion.	llm:qwen3.6:35b
+element_ion	P	Phosphor bildet welches Ion?	llm:qwen3.6:35b
+element_kategorie	Ga	Gallium: Metall oder Nichtmetall?	llm:qwen3.6:35b
+element_kategorie	Mo	Handelt es sich bei Molybdän um ein Metall?	llm:qwen3.6:35b
+element_kategorie	Pu	Plutonium: Metall oder Nichtmetall?	llm:qwen3.6:35b
+element_kategorie	Np	Neptunium: Metall oder Nichtmetall?	llm:qwen3.6:35b
+element_kategorie	Pa	Protactinium: Metall oder Nichtmetall?	llm:qwen3.6:35b
+element_kategorie	Pb	Gib an: Ist Blei metallisch?	llm:qwen3.6:35b
+element_kategorie	Am	Americium: Metall oder Nichtmetall?	llm:qwen3.6:35b
+element_kategorie	Ra	Klassifiziere Radium.	llm:qwen3.6:35b
+element_kategorie	Eu	Nichtmetall oder Metall: Europium	llm:qwen3.6:35b
+element_kategorie	Xe	Xenon: Metall oder Nichtmetall?	llm:qwen3.6:35b
+element_neutronen	Cd	Anzahl der Neutronen in Cadmium?	llm:qwen3.6:35b
+element_neutronen	At	Anzahl Neutronen in Astat?	llm:qwen3.6:35b
+element_neutronen	Te	Wieviele Neutronen hat Tellur?	llm:qwen3.6:35b
+element_neutronen	Pb	Anzahl der Neutronen in Blei?	llm:qwen3.6:35b
+element_neutronen	Sn	Anzahl Neutronen im Zinn?	llm:qwen3.6:35b
+element_neutronen	Br	Bestimme die Neutronen bei Brom.	llm:qwen3.6:35b
+element_neutronen	Th	Anzahl der Neutronen in Thorium?	llm:qwen3.6:35b
+element_neutronen	S	Wieviele Neutronen Schwefel?	llm:qwen3.6:35b
+element_neutronen	N	Anzahl der Neutronen im Stickstoff	llm:qwen3.6:35b
+element_neutronen	No	Wieviele Neutronen hat Nobelium?	llm:qwen3.6:35b
+element_ordnungszahl	Ce	Gib die Ordnungszahl für Cer an.	llm:qwen3.6:35b
+element_ordnungszahl	Mo	Ord. Zahl von Molybdän ist?	llm:qwen3.6:35b
+element_ordnungszahl	Xe	Gib die Ordnungszahl für Xenon an.	llm:qwen3.6:35b
+element_ordnungszahl	Tm	Gib die Ord.-Zahl für Thulium an.	llm:qwen3.6:35b
+element_ordnungszahl	C	Bestimme die Ordnungszahl für Kohlenstoff.	llm:qwen3.6:35b
+element_ordnungszahl	Po	Nenne die Ordnungszahl für Polonium.	llm:qwen3.6:35b
+element_ordnungszahl	Rh	Gib die ONZ für Rhodium an.	llm:qwen3.6:35b
+element_ordnungszahl	Md	Gib die Ordnungszahl für Mendelevium an.	llm:qwen3.6:35b
+element_ordnungszahl	Re	Gib die Ordnungszahl für Rhenium an	llm:qwen3.6:35b
+element_periode	Mn	Gib die Periode für Mangan an.	llm:qwen3.6:35b
+element_periode	Ru	Periodenzahl für Ruthenium?	llm:qwen3.6:35b
+element_periode	Ni	Wo steht Nickel im PSE?	llm:qwen3.6:35b
+element_periode	Eu	Periodennummer von Europium?	llm:qwen3.6:35b
+element_periode	Np	Periodennummer von Neptunium angeben.	llm:qwen3.6:35b
+element_periode	Kr	Nenne die Periode für Krypton.	llm:qwen3.6:35b
+element_periode	Rb	Gib die Periode für Rubidium an.	llm:qwen3.6:35b
+element_periode	Gd	Wo steht Gadolinium im PSE?	llm:qwen3.6:35b
+element_periode	Tb	Gib die Periode für Terbium an.	llm:qwen3.6:35b
+element_profil	Pt	Definiere Platin.	llm:qwen3.6:35b
+element_profil	Na	Erläutere die Substanz Natrium.	llm:qwen3.6:35b
+element_profil	Rh	Nenne die Definition von Rhodium.	llm:qwen3.6:35b
+element_profil	Mo	Definiere den Begriff Molybdän.	llm:qwen3.6:35b
+element_profil	Tc	Nenne die Bedeutung von Technetium.	llm:qwen3.6:35b
+element_profil	Xe	Definiere kurz Xenon.	llm:qwen3.6:35b
+element_profil	Kr	Erkläre Krypton kurz.	llm:qwen3.6:35b
+element_profil	Lu	Nenne die Definition von Lutetium.	llm:qwen3.6:35b
+element_profil	Cs	Definiere Caesium.	llm:qwen3.6:35b
+element_profil	Fr	Definiere Francium.	llm:qwen3.6:35b
+element_protonen	Ti	Anzahl Protonen Titan:	llm:qwen3.6:35b
+element_protonen	Fe	Anzahl Protonen Eisen?	llm:qwen3.6:35b
+element_protonen	Ag	Anzahl der Protonen im Silberatom.	llm:qwen3.6:35b
+element_protonen	Ar	Nenne die Protonenzahl von Argon.	llm:qwen3.6:35b
+element_protonen	Cf	Anzahl Protonen in Californium?	llm:qwen3.6:35b
+element_protonen	Pu	Nenne die Protonenzahl von Plutonium.	llm:qwen3.6:35b
+element_protonen	W	Nenne die Protonenzahl von Wolfram.	llm:qwen3.6:35b
+element_protonen	Pa	Nenne die Protonenzahl von Protactinium.	llm:qwen3.6:35b
+element_protonen	Md	Anzahl Protonen Mendelevium?	llm:qwen3.6:35b
+element_protonen	Tb	Wieviele Protonen besitzt Terbium?	llm:qwen3.6:35b
+element_schalen	Rb	Anzahl Schalen: Rubidium	llm:qwen3.6:35b
+element_schalen	Po	Gib die Schalenzahl für Polonium an.	llm:qwen3.6:35b
+element_schalen	Li	Wie viele Schalen besitzt Lithium?	llm:qwen3.6:35b
+element_schalen	Cs	Anzahl der Elektronenschalen bei Caesium	llm:qwen3.6:35b
+element_schalen	Ge	Anzahl Schalen Germanium?	llm:qwen3.6:35b
+element_schalen	Tl	Wie viele Elektronenschalen hat Thallium?	llm:qwen3.6:35b
+element_schalen	P	Anzahl der Schalen bei Phosphor	llm:qwen3.6:35b
+element_schalen	Ra	Anzahl Schalen von Radium?	llm:qwen3.6:35b
+element_schalen	Si	Gib die Schalen von Silicium an.	llm:qwen3.6:35b
+element_schalen	Ne	Nenne die Anzahl der Schalen für Neon.	llm:qwen3.6:35b
+element_symbol	Np	Nenne das Symbol für Neptunium.	llm:qwen3.6:35b
+element_symbol	Ra	Wie lautet das Kurzzeichen für Radium?	llm:qwen3.6:35b
+element_symbol	Zn	Nenne das Symbol für Zink	llm:qwen3.6:35b
+element_symbol	Ar	Nenne das Symbol für Argon.	llm:qwen3.6:35b
+element_symbol	Ti	Das Symbol von Titan?	llm:qwen3.6:35b
+element_symbol	Fr	Nenne das Symbol für Francium.	llm:qwen3.6:35b
+element_symbol	Ge	Nenne das Symbol für Germanium.	llm:qwen3.6:35b
+element_symbol	Md	Wie lautet das Symbol von Mendelevium?	llm:qwen3.6:35b
+element_symbol	Zr	Das Symbol von Zirconium?	llm:qwen3.6:35b
+element_symbol	Tc	Wie lautet das Zeichen für Technetium?	llm:qwen3.6:35b
+element_wertigkeit	Bi	Wie ist die Wertigkeit von Bismut?	llm:qwen3.6:35b
+element_wertigkeit	Ra	Nenne die Wertigkeit des Radiums.	llm:qwen3.6:35b
+element_wertigkeit	Se	Gib die Wertigkeit für Selen an.	llm:qwen3.6:35b
+element_wertigkeit	H	Wie hoch ist die Wertigkeit von Wasserstoff?	llm:qwen3.6:35b
+element_wertigkeit	Cs	Caesium: Wertigkeit angeben	llm:qwen3.6:35b
+element_wertigkeit	Po	Gib die Wertigkeit für Polonium an.	llm:qwen3.6:35b
+element_wertigkeit	Pb	Gib die Wertigkeit für Blei an.	llm:qwen3.6:35b
+element_wertigkeit	Na	Wie hoch ist die Wertigkeit von Natrium?	llm:qwen3.6:35b
+element_wertigkeit	Ge	Gib die Wertigkeit des Elements Germanium an.	llm:qwen3.6:35b
+element_zustand	B	Bor ist bei Raumtemperatur fest.	llm:qwen3.6:35b
+element_zustand	Si	In welchem Aggregatzustand liegt Silicium vor?	llm:qwen3.6:35b
+element_zustand	Gd	In welchem Zustand liegt Gadolinium bei RT vor?	llm:qwen3.6:35b
+element_zustand	Os	Welcher Aggregatzustand hat Osmium?	llm:qwen3.6:35b
+element_zustand	Li	In welchem Zustand ist Lithium bei RT?	llm:qwen3.6:35b
+element_zustand	Bk	Berkelium Zustand bei Raumtemperatur?	llm:qwen3.6:35b
+element_zustand	Cu	Nenne den Aggregatzustand von Kupfer.	llm:qwen3.6:35b
+element_zustand	U	Nenne den Aggregatzustand von Uran (RT).	llm:qwen3.6:35b
+element_zustand	Mn	Mangan bei RT in welchem Aggregatzustand?	llm:qwen3.6:35b
+element_zustand	Cf	In welchem Zustand liegt Californium bei RT vor?	llm:qwen3.6:35b
+formel_verbindung	NO	Was bedeutet die Abkürzung NO?	llm:qwen3.6:35b
+formel_verbindung	Al2O3	Erkläre Al2O3.	llm:qwen3.6:35b
+formel_verbindung	C2H5OH	Nenne die Bezeichnung für C2H5OH.	llm:qwen3.6:35b
+formel_verbindung	Ag2O	Erkläre Ag2O.	llm:qwen3.6:35b
+formel_verbindung	SrO	Nenne SrO.	llm:qwen3.6:35b
+formel_verbindung	SO2	Was bedeutet SO2?	llm:qwen3.6:35b
+formel_verbindung	C2H2	Erkläre C2H2.	llm:qwen3.6:35b
+formel_verbindung	CaO	Erkläre CaO.	llm:qwen3.6:35b
+formel_verbindung	CuCl2	Nenne CuCl2.	llm:qwen3.6:35b
+formel_verbindung	C6H12O6	Nenne die Bedeutung von C6H12O6.	llm:qwen3.6:35b
+nachweis	calcium	Nenne den Nachweis von Calcium.	llm:qwen3.6:35b
+nachweis	wasser	Wie zeigt man Wasser nach? (Prinzip)	llm:qwen3.6:35b
+nachweis	kalium	Wie zeigt man Kalium nach?	llm:qwen3.6:35b
+nachweis	lithium	Nachweismethode für Lithium?	llm:qwen3.6:35b
+nachweis	carbonat	Wie prüft man auf Carbonat-Ionen?	llm:qwen3.6:35b
+nachweis	ammoniak	Wie beweist man Ammoniak?	llm:qwen3.6:35b
+nachweis	eiweiss	Gib die Reaktion zum Eiweisnachweis an.	llm:qwen3.6:35b
+nachweis	lauge	Nenne Nachweis für Laugen.	llm:qwen3.6:35b
+nachweis	kupfer	Wie erkennt man Kupferionen?	llm:qwen3.6:35b
+nachweis	staerke	Nenne den Nachweis für Stärke.	llm:qwen3.6:35b
+ordnungszahl_element	81	Ordnungszahl 81: Welches ist das Element?	llm:qwen3.6:35b
+ordnungszahl_element	92	Nenne das Element mit Ordnungszahl 92.	llm:qwen3.6:35b
+ordnungszahl_element	49	Gib das Symbol für Ordnungszahl 49 an.	llm:qwen3.6:35b
+ordnungszahl_element	72	Nenne das Element mit Ordnungszahl 72.	llm:qwen3.6:35b
+ordnungszahl_element	76	Nenne das Element mit Ordnungszahl 76.	llm:qwen3.6:35b
+ordnungszahl_element	114	Nenne das Element mit Ordnungszahl 114	llm:qwen3.6:35b
+ordnungszahl_element	55	Gib das Element zur Ordnungsnummer 55 an.	llm:qwen3.6:35b
+ordnungszahl_element	18	Nenne das Element mit der Nummer 18.	llm:qwen3.6:35b
+ordnungszahl_element	47	Nenne das Element mit Ordnungszahl 47.	llm:qwen3.6:35b
+ordnungszahl_element	60	Nenne das Element mit Ordnungszahl 60.	llm:qwen3.6:35b
+reaktion_gleichung	cuoreduktion	Gib an: Reduktion von Kupferoxid.	llm:qwen3.6:35b
+reaktion_gleichung	methanbrand	Gib die Gleichung der Verbrennung von Methan an.	llm:qwen3.6:35b
+reaktion_gleichung	thermit	Stelle die Reaktionsgleichung des Thermitverfahrens auf.	llm:qwen3.6:35b
+reaktion_gleichung	nachlor	Reaktion von Natrium mit Chlor: Reaktionsgleichung?	llm:qwen3.6:35b
+reaktion_gleichung	kohlensaeure	Reaktionsgleichung für die Bildung von Kohlensäure	llm:qwen3.6:35b
+reaktion_gleichung	fotosynthese	Fotosynthese: Reaktionsgleichung?	llm:qwen3.6:35b
+reaktion_gleichung	cawasser	Gib an: Reaktionsgleichung zur Reaktion von Calcium mit Wasser	llm:qwen3.6:35b
+reaktion_gleichung	kalkwasser	Wie lautet die Gl. der Kalkwasserprobe?	llm:qwen3.6:35b
+reaktion_gleichung	mgsalzsaeure	Nenne die Reaktionsgleichung für Reaktion von Magnesium mit Salzsäure.	llm:qwen3.6:35b
+reaktion_gleichung	eisenbrand	Gib die Gleichung Verbrennung von Eisen an	llm:qwen3.6:35b
+symbol_element	Cd	Was bedeutet Cd?	llm:qwen3.6:35b
+symbol_element	Sr	Nenne die Bedeutung von Sr.	llm:qwen3.6:35b
+symbol_element	Zr	Was bedeutet die Abkürzung Zr?	llm:qwen3.6:35b
+symbol_element	P	Was bedeutet die Abkürzung P?	llm:qwen3.6:35b
+symbol_element	Gd	Nenne Gd.	llm:qwen3.6:35b
+symbol_element	Na	Welches Element ist Na?	llm:qwen3.6:35b
+symbol_element	La	Was bedeutet La?	llm:qwen3.6:35b
+symbol_element	Ir	Erkläre 'Ir'.	llm:qwen3.6:35b
+symbol_element	Tc	Was bedeutet Tc?	llm:qwen3.6:35b
+symbol_element	Cf	Nenne die Bedeutung von Cf.	llm:qwen3.6:35b
+verbindung_bindung	Rb3N	Art der Bindung in Rubidiumnitrid?	llm:qwen3.6:35b
+verbindung_bindung	CaO	Bindungsart in Calciumoxid?	llm:qwen3.6:35b
+verbindung_bindung	LiBr	Bindungsart in Lithiumbromid?	llm:qwen3.6:35b
+verbindung_bindung	Al2O3	Art der Bindung in Aluminiumoxid?	llm:qwen3.6:35b
+verbindung_bindung	C3H8	Bindungsart in Propan nennen.	llm:qwen3.6:35b
+verbindung_bindung	LiI	Bindungsart in Lithiumiodid?	llm:qwen3.6:35b
+verbindung_bindung	BaS	Art der Bindung in Bariumsulfid?	llm:qwen3.6:35b
+verbindung_bindung	BaBr2	Bindungsart in Bariumbromid nennen.	llm:qwen3.6:35b
+verbindung_bindung	KI	Bindungsart in Kaliumiodid?	llm:qwen3.6:35b
+verbindung_bindung	KNO3	Bindungsart in Kaliumnitrat?	llm:qwen3.6:35b
+verbindung_formel	AlCl3	Gib die chemische Formel für Aluminiumchlorid an.	llm:qwen3.6:35b
+verbindung_formel	O3	Wie lautet die Summenformel für Ozon?	llm:qwen3.6:35b
+verbindung_formel	Na3N	Gib die Summenformel zu Natriumnitrid an.	llm:qwen3.6:35b
+verbindung_formel	K3N	Gib die Formel für Kaliumnitrid an.	llm:qwen3.6:35b
+verbindung_formel	HCOOH	Wie lautet die Formel für Ameisensäure?	llm:qwen3.6:35b
+verbindung_formel	NO	Wie lautet die Formel für Stickstoffmonooxid?	llm:qwen3.6:35b
+verbindung_formel	C6H14	Hexan: Gib die Summenformel an.	llm:qwen3.6:35b
+verbindung_formel	NaI	Gib die Formel von Natriumiodid an.	llm:qwen3.6:35b
+verbindung_formel	Na2S	Gib die Formel für Natriumsulfid an.	llm:qwen3.6:35b
+verbindung_formel	SrF2	Nenne die Formel für Strontiumfluorid.	llm:qwen3.6:35b
+verbindung_molare_masse	Ca3N2	Calciumnitrid: Welche molare Masse liegt vor?	llm:qwen3.6:35b
+verbindung_molare_masse	CO(NH2)2	Bestimme M(Harnstoff).	llm:qwen3.6:35b
+verbindung_molare_masse	ZnCl2	Berechne molare Masse Zinkchlorid.	llm:qwen3.6:35b
+verbindung_molare_masse	Rb3N	Gib die molare Masse für Rubidiumnitrid an.	llm:qwen3.6:35b
+verbindung_molare_masse	CaSO4	Berechne die molare Masse für Calciumsulfat.	llm:qwen3.6:35b
+verbindung_molare_masse	N2O	Bestimme die molare Masse von Distickstoffmonooxid.	llm:qwen3.6:35b
+verbindung_molare_masse	KCl	Gib die molare Masse für Kaliumchlorid an.	llm:qwen3.6:35b
+verbindung_molare_masse	Na2CO3	Berechne die molare Masse Natriumcarbonat	llm:qwen3.6:35b
+verbindung_molare_masse	ZnS	Bestimme die molare Masse von Zinksulfid.	llm:qwen3.6:35b
+verbindung_molare_masse	CsF	Wie viel ist die molare Masse von Caesiumfluorid?	llm:qwen3.6:35b
+verbindung_saeure_base	Mg(OH)2	Ist Magnesiumhydroxid Säure oder Lauge?	llm:qwen3.6:35b
+verbindung_saeure_base	NH3	Ist Ammoniak Säure oder Lauge?	llm:qwen3.6:35b
+verbindung_saeure_base	Ca(OH)2	Ist Calciumhydroxid Säure oder Lauge?	llm:qwen3.6:35b
+verbindung_saeure_base	HNO3	Ist Salpetersäure eine Säure oder Lauge?	llm:qwen3.6:35b
+verbindung_saeure_base	HCOOH	Ameisensäure: Säure oder Lauge?	llm:qwen3.6:35b
+verbindung_saeure_base	CH3COOH	Essigsäure: Säure oder Lauge?	llm:qwen3.6:35b
+verbindung_saeure_base	NaOH	Natriumhydroxid: Säure oder Lauge?	llm:qwen3.6:35b
+verbindung_saeure_base	H3PO4	Wird Phosphorsäure als Säure oder Lauge klassifiziert?	llm:qwen3.6:35b
+verbindung_saeure_base	KOH	Ist Kaliumhydroxid Säure oder Lauge?	llm:qwen3.6:35b
+verbindung_saeure_base	HCl	Salzsäure ist Säure oder Lauge?	llm:qwen3.6:35b

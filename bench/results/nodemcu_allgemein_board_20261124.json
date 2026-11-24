@@ -1,0 +1,737 @@
+{
+  "board": {
+    "boot": [
+      "N{���n",
+      "",
+      "B�� \u0003\u000frےn\u0004"
+    ],
+    "firmware_size": 293232,
+    "info": {
+      "arena": 35504,
+      "cps": 0.0,
+      "date": "2026-11-21",
+      "first_ms": 0,
+      "free_heap": 4960,
+      "git": "9fa719383800",
+      "params": 583296,
+      "size": 601404
+    },
+    "mode": "all",
+    "name": "serial /dev/tty.usbserial-0001"
+  },
+  "complete": true,
+  "env": {
+    "commit": "d55c567cf74a",
+    "date": "2026-11-24",
+    "host": "Mac.fritz.box",
+    "seconds": 772.7,
+    "tool": "bench 1"
+  },
+  "events": [],
+  "format": 1,
+  "items": [
+    {
+      "answer": "Au ist das Symbol von Gold.",
+      "class": "correct",
+      "cps": 5.2,
+      "first_ms": 169,
+      "first_ms_typed": 168,
+      "id": "un/001",
+      "kind": "fact",
+      "parity": true,
+      "question": "Welches Element ist Au?",
+      "set": "unseen",
+      "t2": 5.393944674724391,
+      "typed": false
+    },
+    {
+      "answer": "Dakar ist die Hauptstadt von Senegal.",
+      "class": "wrong_fact",
+      "cps": 4.6,
+      "first_ms": 188,
+      "first_ms_typed": 188,
+      "id": "un/002",
+      "kind": "fact",
+      "parity": true,
+      "question": "Welches Land hat Dublin als Hauptstadt?",
+      "set": "unseen",
+      "t2": 4.735764095804508,
+      "typed": false
+    },
+    {
+      "answer": "Das Symbol von Arsen ist As.",
+      "class": "correct",
+      "cps": 4.8,
+      "first_ms": 182,
+      "first_ms_typed": 182,
+      "id": "un/003",
+      "kind": "fact",
+      "parity": true,
+      "question": "Nenne das Elementsymbol von Arsen.",
+      "set": "unseen",
+      "t2": 5.009016229212583,
+      "typed": false
+    },
+    {
+      "answer": "Die Hauptstadt von Venezuela ist Caracas.",
+      "class": "correct",
+      "cps": 4.7,
+      "first_ms": 184,
+      "first_ms_typed": 184,
+      "id": "un/004",
+      "kind": "fact",
+      "parity": true,
+      "question": "Gib die Hauptstadt von Venezuela an.",
+      "set": "unseen",
+      "t2": 4.763214645932393,
+      "typed": false
+    },
+    {
+      "answer": "Accra ist die Hauptstadt von Ghana.",
+      "class": "correct",
+      "cps": 4.9,
+      "first_ms": 177,
+      "first_ms_typed": 177,
+      "id": "un/005",
+      "kind": "fact",
+      "parity": true,
+      "question": "Zu welchem Staat gehört Accra?",
+      "set": "unseen",
+      "t2": 5.0307914026734215,
+      "typed": false
+    },
+    {
+      "answer": "Mn ist das Symbol von Mangan.",
+      "class": "correct",
+      "cps": 4.9,
+      "first_ms": 179,
+      "first_ms_typed": 179,
+      "id": "un/006",
+      "kind": "fact",
+      "parity": true,
+      "question": "Nenne das Element mit Symbol Mn.",
+      "set": "unseen",
+      "t2": 5.058753812132337,
+      "typed": false
+    },
+    {
+      "answer": "Wien ist die Hauptstadt von Österreich.",
+      "class": "correct",
+      "cps": 4.6,
+      "first_ms": 185,
+      "first_ms_typed": 185,
+      "id": "un/007",
+      "kind": "fact",
+      "parity": true,
+      "question": "Welches Land hat Wien als Hauptstadt?",
+      "set": "unseen",
+      "t2": 4.763271665678497,
+      "typed": false
+    },
+    {
+      "answer": "Rn ist das Symbol von Radon.",
+      "class": "correct",
+      "cps": 4.8,
+      "first_ms": 183,
+      "first_ms_typed": 183,
+      "id": "un/008",
+      "kind": "fact",
+      "parity": true,
+      "question": "Name das Element mit dem Symbol Rn.",
+      "set": "unseen",
+      "t2": 4.9832691352920655,
+      "typed": false
+    },
+    {
+      "answer": "Pb ist das Symbol von Blei.",
+      "class": "correct",
+      "cps": 4.8,
+      "first_ms": 182,
+      "first_ms_typed": 181,
+      "id": "un/009",
+      "kind": "fact",
+      "parity": true,
+      "question": "Welches Element heißt chemisch Pb?",
+      "set": "unseen",
+      "t2": 5.028264649172173,
+      "typed": false
+    },
+    {
+      "answer": "U ist das Symbol von Uran.",
+      "class": "correct",
+      "cps": 5.0,
+      "first_ms": 176,
+      "first_ms_typed": 175,
+      "id": "un/010",
+      "kind": "fact",
+      "parity": true,
+      "question": "Das Element mit dem Symbol U?",
+      "set": "unseen",
+      "t2": 5.20470088584009,
+      "typed": false
+    },
+    {
+      "answer": "Die Hauptstadt von Deutschland ist Berlin.",
+      "class": "correct",
+      "cps": 4.7,
+      "first_ms": 182,
+      "first_ms_typed": 182,
+      "id": "un/011",
+      "kind": "fact",
+      "parity": true,
+      "question": "Nenne die Hauptstadt Deutschlands.",
+      "set": "unseen",
+      "t2": 4.807669757646541,
+      "typed": false
+    },
+    {
+      "answer": "Nik ist das Symbol von Nickel.",
+      "class": "no_answer",
+      "cps": 4.8,
+      "first_ms": 185,
+      "first_ms_typed": 185,
+      "id": "un/012",
+      "kind": "fact",
+      "parity": true,
+      "question": "Das chemische Symbol für Nickel ist?",
+      "set": "unseen",
+      "t2": 4.915254237288137,
+      "typed": false
+    },
+    {
+      "answer": "Die Hauptstadt von Russland ist Moskau.",
+      "class": "correct",
+      "cps": 4.8,
+      "first_ms": 178,
+      "first_ms_typed": 178,
+      "id": "un/013",
+      "kind": "fact",
+      "parity": true,
+      "question": "Nenne die Hauptstadt Russlands.",
+      "set": "unseen",
+      "t2": 4.937860918650041,
+      "typed": false
+    },
+    {
+      "answer": "Die Hauptstadt von Lettland ist Riga.",
+      "class": "correct",
+      "cps": 4.7,
+      "first_ms": 183,
+      "first_ms_typed": 183,
+      "id": "un/014",
+      "kind": "fact",
+      "parity": true,
+      "question": "Gib die Hauptstadt von Lettland an.",
+      "set": "unseen",
+      "t2": 4.852092060360025,
+      "typed": false
+    },
+    {
+      "answer": "Die Hauptstadt von Andorra ist Andorra la Vella.",
+      "class": "correct",
+      "cps": 4.5,
+      "first_ms": 189,
+      "first_ms_typed": 190,
+      "id": "un/015",
+      "kind": "fact",
+      "parity": true,
+      "question": "Welche Stadt ist Hauptstädte in Andorra?",
+      "set": "unseen",
+      "t2": 4.561357537643331,
+      "typed": false
+    },
+    {
+      "answer": "Das Symbol von Barium ist Ba.",
+      "class": "correct",
+      "cps": 4.8,
+      "first_ms": 185,
+      "id": "un/016",
+      "kind": "fact",
+      "parity": true,
+      "question": "Gib das Elementsymbol für Barium an.",
+      "set": "unseen",
+      "t2": 4.934085898911153,
+      "typed": false
+    },
+    {
+      "answer": "Die Hauptstadt von Kambodscha ist Phnom Penh.",
+      "class": "correct",
+      "cps": 4.6,
+      "first_ms": 185,
+      "id": "un/017",
+      "kind": "fact",
+      "parity": true,
+      "question": "Gib die Hauptstadt von Kambodscha an.",
+      "set": "unseen",
+      "t2": 4.6810950783604675,
+      "typed": false
+    },
+    {
+      "answer": "Kuwait-Stadt ist die Hauptstadt von Kuwait.",
+      "class": "correct",
+      "cps": 4.5,
+      "first_ms": 190,
+      "id": "un/018",
+      "kind": "fact",
+      "parity": true,
+      "question": "Nenne das Land: Hauptstadt Kuwait-Stadt.",
+      "set": "unseen",
+      "t2": 4.626788887334386,
+      "typed": false
+    },
+    {
+      "answer": "Das Symbol von Selen ist Se.",
+      "class": "correct",
+      "cps": 4.7,
+      "first_ms": 186,
+      "id": "un/019",
+      "kind": "fact",
+      "parity": true,
+      "question": "Nenne das chemische Symbol für Selen.",
+      "set": "unseen",
+      "t2": 4.917307282532086,
+      "typed": false
+    },
+    {
+      "answer": "Se ist das Symbol von Selen.",
+      "class": "correct",
+      "cps": 5.1,
+      "first_ms": 171,
+      "id": "un/020",
+      "kind": "fact",
+      "parity": true,
+      "question": "Welches Element heißt Se?",
+      "set": "unseen",
+      "t2": 5.30594678724922,
+      "typed": false
+    },
+    {
+      "answer": "Luanda ist die Hauptstadt von Angola.",
+      "class": "correct",
+      "cps": 4.6,
+      "first_ms": 188,
+      "id": "un/021",
+      "kind": "fact",
+      "parity": true,
+      "question": "Welches Land hat Luanda als Hauptstadt?",
+      "set": "unseen",
+      "t2": 4.73773354723323,
+      "typed": false
+    },
+    {
+      "answer": "Die Hauptstadt von Uruguay ist Montevideo.",
+      "class": "correct",
+      "cps": 4.7,
+      "first_ms": 182,
+      "id": "un/022",
+      "kind": "fact",
+      "parity": true,
+      "question": "Gib die Hauptstadt von Uruguay an.",
+      "set": "unseen",
+      "t2": 4.807455542761732,
+      "typed": false
+    },
+    {
+      "answer": "Tripolis ist die Hauptstadt von Libyen.",
+      "class": "correct",
+      "cps": 4.5,
+      "first_ms": 190,
+      "id": "un/023",
+      "kind": "fact",
+      "parity": true,
+      "question": "Welches Land hat Tripolis als Hauptstadt?",
+      "set": "unseen",
+      "t2": 4.655607556786161,
+      "typed": false
+    },
+    {
+      "answer": "Si ist das Symbol von Silicium.",
+      "class": "correct",
+      "cps": 5.2,
+      "first_ms": 168,
+      "id": "un/024",
+      "kind": "fact",
+      "parity": true,
+      "question": "Welches Element ist Si?",
+      "set": "unseen",
+      "t2": 5.322130839264553,
+      "typed": false
+    },
+    {
+      "answer": "Die Hauptstadt von Island ist Reykjavik.",
+      "class": "wrong_fact",
+      "cps": 4.7,
+      "first_ms": 181,
+      "id": "un/025",
+      "kind": "fact",
+      "parity": true,
+      "question": "Nennen Sie das Land von Islamabad.",
+      "set": "unseen",
+      "t2": 4.834235310742168,
+      "typed": false
+    },
+    {
+      "answer": "Vilnius ist die Hauptstadt von Litauen.",
+      "class": "correct",
+      "cps": 4.6,
+      "first_ms": 189,
+      "id": "un/026",
+      "kind": "fact",
+      "parity": true,
+      "question": "Welches Land hat Vilnius als Hauptstadt?",
+      "set": "unseen",
+      "t2": 4.6800507908670035,
+      "typed": false
+    },
+    {
+      "answer": "N ist das Symbol von Stickstoff.",
+      "class": "wrong_fact",
+      "cps": 4.8,
+      "first_ms": 180,
+      "id": "un/027",
+      "kind": "fact",
+      "parity": true,
+      "question": "Nenne das Element mit Symbol \"S\".",
+      "set": "unseen",
+      "t2": 4.976402221722799,
+      "typed": false
+    },
+    {
+      "answer": "Ni ist das Symbol von Nickel.",
+      "class": "correct",
+      "cps": 4.9,
+      "first_ms": 179,
+      "id": "un/028",
+      "kind": "fact",
+      "parity": true,
+      "question": "Nenne das Element mit Symbol Ni.",
+      "set": "unseen",
+      "t2": 5.053750243662958,
+      "typed": false
+    },
+    {
+      "answer": "Die Hauptstadt von Luxemburg ist Luxemburg.",
+      "class": "correct",
+      "cps": 4.6,
+      "first_ms": 184,
+      "id": "un/029",
+      "kind": "fact",
+      "parity": true,
+      "question": "Gib die Hauptstadt von Luxemburg an.",
+      "set": "unseen",
+      "t2": 4.735788125349545,
+      "typed": false
+    },
+    {
+      "answer": "Baku ist die Hauptstadt von Aserbaidschan.",
+      "class": "correct",
+      "cps": 4.6,
+      "first_ms": 186,
+      "id": "un/030",
+      "kind": "fact",
+      "parity": true,
+      "question": "Welches Land hat Baku als Hauptstadt?",
+      "set": "unseen",
+      "t2": 4.721805065460342,
+      "typed": false
+    },
+    {
+      "answer": "Cu ist das Symbol von Kupfer.",
+      "class": "correct",
+      "cps": 4.4,
+      "first_ms": 199,
+      "id": "un/070",
+      "kind": "fact",
+      "parity": true,
+      "question": "Was ist der Name des Elements mit dem Symbol Cu?",
+      "set": "unseen",
+      "t2": 4.536658877115359,
+      "typed": false
+    },
+    {
+      "answer": "Madrid ll ist die Hauptstadt von Spanien.",
+      "class": "correct",
+      "cps": 4.4,
+      "first_ms": 196,
+      "id": "un/071",
+      "kind": "fact",
+      "parity": true,
+      "question": "Nenne das Land, dessen Hauptstadt Madrid ist.",
+      "set": "unseen",
+      "t2": 4.467012785707346,
+      "typed": false
+    },
+    {
+      "answer": "Panama-Stadt ist die Hauptstadt von Panama.",
+      "class": "correct",
+      "cps": 4.3,
+      "first_ms": 196,
+      "id": "un/072",
+      "kind": "fact",
+      "parity": true,
+      "question": "Panama-Stadt ist Hauptstadt von welchem Land?",
+      "set": "unseen",
+      "t2": 4.441829170634348,
+      "typed": false
+    },
+    {
+      "answer": "Das Symbol von Aluminium ist Al.",
+      "class": "correct",
+      "cps": 4.5,
+      "first_ms": 193,
+      "id": "un/073",
+      "kind": "fact",
+      "parity": true,
+      "question": "Gib das chemische Zeichen für Aluminium an.",
+      "set": "unseen",
+      "t2": 4.626530075579592,
+      "typed": false
+    },
+    {
+      "answer": "Das Symbol von Quecksilber ist Hg.",
+      "class": "correct",
+      "cps": 4.5,
+      "first_ms": 193,
+      "id": "un/074",
+      "kind": "fact",
+      "parity": true,
+      "question": "Nenne das chemische Symbol von Quecksilber.",
+      "set": "unseen",
+      "t2": 4.597412910371346,
+      "typed": false
+    },
+    {
+      "answer": "Phnom Penh ist die Hauptstadt von Kambodscha.",
+      "class": "correct",
+      "cps": 4.4,
+      "first_ms": 193,
+      "id": "un/075",
+      "kind": "fact",
+      "parity": true,
+      "question": "Welches Land hat Phnom Penh als Hauptstadt?",
+      "set": "unseen",
+      "t2": 4.465853022078264,
+      "typed": false
+    },
+    {
+      "answer": "Das Symbol von Stickstoff ist N.",
+      "class": "correct",
+      "cps": 4.5,
+      "first_ms": 192,
+      "id": "un/076",
+      "kind": "fact",
+      "parity": true,
+      "question": "Nenne das chemische Symbol für Stickstoff.",
+      "set": "unseen",
+      "t2": 4.650832033850856,
+      "typed": false
+    },
+    {
+      "answer": "Das Symbol von Radon ist Rn.",
+      "class": "correct",
+      "cps": 4.5,
+      "first_ms": 191,
+      "id": "un/077",
+      "kind": "fact",
+      "parity": true,
+      "question": "Wie lautet das chemische Symbol für Radon?",
+      "set": "unseen",
+      "t2": 4.706054600691267,
+      "typed": false
+    },
+    {
+      "answer": "Kingston ist die Hauptstadt von Jamaika.",
+      "class": "correct",
+      "cps": 4.5,
+      "first_ms": 191,
+      "id": "un/078",
+      "kind": "fact",
+      "parity": true,
+      "question": "Kingston ist Hauptstadt von welchem Land?",
+      "set": "unseen",
+      "t2": 4.579692820039797,
+      "typed": false
+    },
+    {
+      "answer": "Lissabon ist die Hauptstadt von Portugal.",
+      "class": "correct",
+      "cps": 4.5,
+      "first_ms": 191,
+      "id": "un/079",
+      "kind": "fact",
+      "parity": true,
+      "question": "Welches Land hat Lissabon als Hauptstadt?",
+      "set": "unseen",
+      "t2": 4.565423604541182,
+      "typed": false
+    }
+  ],
+  "kind": "board",
+  "knowledge": null,
+  "kpis": {
+    "F1": {
+      "reason": "PC KPI",
+      "status": "not_measured",
+      "value": null
+    },
+    "F2": {
+      "reason": "PC KPI",
+      "status": "not_measured",
+      "value": null
+    },
+    "F3": {
+      "reason": "PC KPI",
+      "status": "not_measured",
+      "value": null
+    },
+    "F4": {
+      "reason": "PC KPI",
+      "status": "not_measured",
+      "value": null
+    },
+    "F5": {
+      "reason": "PC KPI",
+      "status": "not_measured",
+      "value": null
+    },
+    "F6": {
+      "reason": "PC KPI",
+      "status": "not_measured",
+      "value": null
+    },
+    "R1": {
+      "detail": {
+        "arena_buf": 36864,
+        "arena_need": 35504,
+        "heap_free_boot": 4960,
+        "heap_free_end": 4776,
+        "heap_min": null
+      },
+      "status": "measured",
+      "value": 35504
+    },
+    "R2": {
+      "reason": "PC KPI",
+      "status": "not_measured",
+      "value": null
+    },
+    "R3": {
+      "reason": "PC KPI",
+      "status": "not_measured",
+      "value": null
+    },
+    "R4": {
+      "reason": "PC KPI",
+      "status": "not_measured",
+      "value": null
+    },
+    "S1": {
+      "reason": "PC KPI",
+      "status": "not_measured",
+      "value": null
+    },
+    "S2": {
+      "reason": "PC KPI",
+      "status": "not_measured",
+      "value": null
+    },
+    "S3": {
+      "reason": "PC KPI",
+      "status": "not_measured",
+      "value": null
+    },
+    "T1": {
+      "detail": {
+        "info_cps_median": 4.7,
+        "pasted": {
+          "max": 199,
+          "median": 185.0
+        },
+        "typed": {
+          "max": 190,
+          "median": 182
+        }
+      },
+      "n": 15,
+      "status": "measured",
+      "value": 182
+    },
+    "T2": {
+      "n": 40,
+      "status": "measured",
+      "value": 4.8
+    },
+    "T3": {
+      "reason": "no steps at >= 90 % of the context",
+      "status": "not_measured",
+      "value": null
+    }
+  },
+  "label": "nodemcu",
+  "model": {
+    "arch": "transformer",
+    "arena": 35504,
+    "ctx_len": 104,
+    "data": "044d320731be",
+    "date": "2026-11-21",
+    "file": "nodemcu.utny",
+    "git": "9fa719383800",
+    "name": "nodemcu",
+    "params": 583296,
+    "seed": 1234,
+    "sha256": "ef7ab9be0ff676df5338c45af47e12a7f6a826ac60ebdc1ad0884250b0720bb0",
+    "size": 601404,
+    "vocab": 92
+  },
+  "overlap": {},
+  "suite": {
+    "files": {
+      "facts.tsv": "01743fdfa3844b8bf3d74c05484d4c831c7d1c5382a3ebbafdbd160976ed9b21",
+      "sets/offtopic.tsv": "4c0b72052b1908884031cf23e82ac8af1e5e4bfd48866f2c28787a36c79f78c6",
+      "sets/s3.tsv": "e940fd2c4cbe35c3a388c12680596a298a2213959ffbf38f4843d0259e4b79f5",
+      "sets/unknown.tsv": "5ef44f843cdb244e95ce91bc215c0c6977b7f0271298697dca293e7eb72d75da",
+      "sets/unseen.tsv": "2b298b61673b38f982cce04ab266d8901ca41c1364df8e585cf2b7efd5c41942",
+      "text/s1.txt": "b6682391ddcfe1c468f301286f06c9a18f3999660378415f7523119e3c2019d2",
+      "text/s2.tsv": "8454ea3a470c3f3c245344bfe11ec939d8f5acc34aff2dec43899ec8334da91c"
+    },
+    "name": "allgemein",
+    "s2_distances": [
+      16,
+      32,
+      64,
+      96,
+      128,
+      192,
+      256,
+      416
+    ],
+    "sets": {
+      "facts": "v1:01743fdfa384",
+      "offtopic": "v1:4c0b72052b19",
+      "s1": "v1:b6682391ddcf",
+      "s2": "v1:8454ea3a470c",
+      "s3": "v1:e940fd2c4cbe",
+      "unknown": "v1:5ef44f843cdb",
+      "unseen": "v1:2b298b61673b"
+    },
+    "thresholds": {
+      "F1": 3.0,
+      "F2": 0.5,
+      "F3": 3.0,
+      "F4": 3.0,
+      "F5": 3.0,
+      "F6": "1%",
+      "R1": "exact",
+      "R2": "exact",
+      "R3": "exact",
+      "R4": "exact",
+      "S1": 0.02,
+      "S2": "1 step",
+      "S3": 2,
+      "T1": "5%",
+      "T2": "5%",
+      "T3": "5%"
+    },
+    "version": 1
+  }
+}

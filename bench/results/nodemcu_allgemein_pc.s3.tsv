@@ -1,0 +1,21 @@
+id	answer_sha256	answer	grammar_ok
+s3/001	c2e5eb06a0c4e883	Mir geht es es gut, mein Chip ist kühl.	nein
+s3/002	c9ab3fdb78fd67d0	Mo--ie-Stadt ist die Hauptstadt von Vimuxendt.	nein
+s3/003	1585a755bf57a5f1	Ich laufeine ESP8266 Mikrocontroller auf einem auf einem Chip.	nein
+s3/004	7fba9b4632660d65	Ich bin UltraTiny, ein kleines und kenne nur das, was ich gelernt habe.	nein
+s3/005	cf3398100ffe5a68	Nir ist die Hauptstadt von Griechenland.	ja
+s3/006	f97dad902d96f938	Ich laufe auf einem ESP8266 Mikrocontroller.	ja
+s3/007	9dea9fab3733d682	Gench gen!	nein
+s3/008	9277415a4c3023d5	Ph ist das Symbol von Kohlenstoff.	ja
+s3/009	467fa322630a764c	BakAslad ist die Hauptstadt von Aserbaidschan.	ja
+s3/010	d636a839d38fbaf7	Gerllis ist die Hauptstadt von Georgien.	ja
+s3/011	bbc6979906ef4249	Ich klese uff eine uf einem von Buturalien ist Air.	nein
+s3/012	3a9901454f3c5559	Die Hauptstadt von Österreich ist Wien.	ja
+s3/013	a5f2062df1f22a8c	 es klein und kenne nur das, was ich gelernt habe.	nein
+s3/014	591876bd1f21a6b8	Gewingt ist die Hauptstadt von Österreich.	ja
+s3/015	6267681040b6c8e4	Ich habe etwa 6000000 Parameter.	ja
+s3/016	80d9783e175b777c	Rn ist das Symbol von Radon.	ja
+s3/017	94717e89025dceb9	Ich bin UltraTiny, ein kleines Sprachmodell auf einer NodeMCU.	ja
+s3/018	4f760f0023de729f	Ich lese und schreibe Buchstabe für Buchstabe.	ja
+s3/019	89723555746784a8	Das Symbol von Mosp ist Mon.	ja
+s3/020	daa64554dfd9e5db	Das Symbol von Spauderstoff ist O.	ja

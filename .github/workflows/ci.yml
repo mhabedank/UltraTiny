@@ -18,6 +18,10 @@ jobs:
       - run: uv run ruff check .
       - run: uv run ruff format --check .
       - run: uv run pytest -q
+      - name: Benchmark check of the repo model (specs/007 FR-024; any change fails)
+        run: >-
+          uv run python ../tools/bench.py pc --suite ../bench/suites/allgemein
+          --model ../models/nodemcu.utny --check ../bench/results/nodemcu_allgemein_pc.json
 
   runtime-host:
     runs-on: ubuntu-latest
@@ -40,6 +44,12 @@ jobs:
           uv run python ../tools/budget_report.py --board nodemcu --model ../models/nodemcu.utny
           uv run python ../tools/budget_report.py --board nodemcu --model ../runtime/tests/fixtures/tiny_v2.utny --facts ../runtime/tests/fixtures/facts_small.utft
           uv run python ../tools/budget_report.py --board esp32 --model ../models/starter.utny
+      - name: Benchmark board mode against the host console (specs/007, parity sample)
+        working-directory: training
+        run: >-
+          uv run python ../tools/bench.py board --suite ../bench/suites/allgemein
+          --model ../models/nodemcu.utny --sample parity --out /tmp/bench_host.json
+          --exec "../build/utiny-host --model ../models/nodemcu.utny --console"
 
   firmware:
     runs-on: ubuntu-latest

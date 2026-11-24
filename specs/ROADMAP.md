@@ -34,7 +34,7 @@ und die Fragerunde vom selben Tag.
 
 ## Kennzahlen (KPIs)
 
-Spec 007 legt Definition, Testmenge und Messverfahren jeder Kennzahl fest. Entwurf:
+Spec 007 hat Definition, Testmenge und Messverfahren jeder Kennzahl festgelegt ([KPI-Definitionen](007-benchmark-kpi-bericht/contracts/result-format.md#kpi-definitions-implementation-of-spec-fr-009), Rauschschwellen in `bench/suites/*/suite.toml`). Übersicht:
 
 | Gruppe | Kennzahl | Gemessen auf | Richtung |
 |--------|----------|--------------|----------|
@@ -85,6 +85,14 @@ Entscheidungen für 012 und 013 liefert.
 - **Demo:** Baseline-Bericht für `chemie-nodemcu` und `nodemcu`.
 - **Fertig, wenn:** Baseline-JSON im Repo, Bericht reproduzierbar, CI rechnet die PC-Kennzahlen für
   das Repo-Modell.
+- **Stand (2026-11-24): erledigt.** Baseline-Bericht: [`bench/results/baseline.md`](../bench/results/baseline.md)
+  (auch als HTML). `chemie-nodemcu` auf der Chemie-Suite: F1 38,5 %, F2 17,8 % falsche Fakten,
+  F3 62,9 %, F5 37,7 %, F6 1.404 von 2.379 Fakten, S3 100 %; auf dem Board T1 178 ms, T2 4,8 Zeichen/s,
+  T3 3,8 Zeichen/s, Arena 35.504 B, Parität 170/170. Die 80,9 % aus Spec 005 stammten aus
+  Formulierungen des eigenen Datengenerators und sind mit F1 nicht vergleichbar. Messprotokoll:
+  [`specs/007-benchmark-kpi-bericht/measurements.md`](007-benchmark-kpi-bericht/measurements.md).
+  Jeder spätere Schritt misst mit `tools/bench.py` und vergleicht mit `tools/bench_report.py` gegen
+  diese Baseline.
 
 ### Schritt 2 · Spec 006 abschließen: Hybrid-Chemielehrer
 
