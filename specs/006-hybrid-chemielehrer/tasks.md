@@ -197,8 +197,8 @@ table, with golden tokens and text bit-identical in the normal and the checked b
   - For each `frei` entry of chemie_rlp_*.tsv and chemie_reaktionen.tsv, propose an answer ≤ 60 chars ("keine neuen Fakten")
   - Write the proposals to training/data/facts/chemie_kurz.tsv, with columns per data-model.md `Short explanation.id`, `Short explanation.questions` and `Short explanation.answer`, plus `reviewed` = `no`
 - [X] T032 [US2] Implement the automatic check of research R8 in training/src/ultratiny/augment.py (`check_short_explanation`), with tests in training/tests/test_augment.py. It rejects a proposal that is longer than 60 characters, uses characters outside the alphabet, adds a number, formula or symbol, or lacks the key term, or contains a value the fact table holds as a fact (FR-002). Entries whose content is a table fact (e.g. "Was ist Kalk chemisch?") are marked `to_fact` and turned into factual questions with an alias.
-- [ ] T033 [US2] 🖥️ Run shorten_llm.py on the Spark and the check locally, then commit training/data/facts/chemie_kurz.tsv with check results. Record its source (own curriculum text, shortened by an LLM, reviewed) in DATA_LICENSES.md.
-- [ ] T034 [US2] 👤 The user reviews training/data/facts/chemie_kurz.tsv in the PR and sets `reviewed = yes`. Datagen uses only reviewed rows.
+- [X] T033 [US2] 🖥️ Run shorten_llm.py on the Spark and the check locally, then commit training/data/facts/chemie_kurz.tsv with check results. Record its source (own curriculum text, shortened by an LLM, reviewed) in DATA_LICENSES.md.
+- [X] T034 [US2] 👤 The user reviews training/data/facts/chemie_kurz.tsv in the PR and sets `reviewed = yes`. Datagen uses only reviewed rows. Done 2026-11-24: 338 of 453 auto-checked rows accepted; 115 flagged in a content review (wrong, essential point missing, grammar, too vague) stay `reviewed = no`, reasons in specs/006-hybrid-chemielehrer/kurz-review.tsv for a later regeneration.
 - [X] T035 [US2] Generate explanation, greeting and refusal pairs in training/src/ultratiny/datagen.py:
   - reviewed short explanations with their phrasings and paraphrases
   - chemie_persona.tsv and the refusal data as today

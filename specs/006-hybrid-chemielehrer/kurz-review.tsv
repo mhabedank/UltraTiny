@@ -1,0 +1,116 @@
+id	category	short	reason
+reak/14	2	Spiritus ist Ethanol mit Giftzusätzen.	Die Langantwort spricht von Zusätzen gegen das Trinken, nicht von Giftzusätzen.
+reak/23	2	Entkalken Sie mit Essig.	Zitronensäure und die Wirkung der Säure fehlen, obwohl danach gefragt wird.
+reak/29	2	Er zeigt bei Säuren die Farbe Rot.	Nur die Farbe bei Säuren; neutral und Lauge fehlen, zudem 'Er' ohne Bezug.
+reak/33	1	Wasserstoff entsteht bei der Verbrennung.	Falsch: Bei der Verbrennung von Kohle entsteht Kohlenstoffdioxid, nicht Wasserstoff.
+reak/36	1	Erdgas entsteht aus Methan.	Falsch und am Thema vorbei: Gefragt sind die Verbrennungsprodukte von Methan.
+reak/4	2	Backpulver enthält Natron und eine Säure.	Die Frage, warum der Teig aufgeht, bleibt unbeantwortet; das entstehende Kohlenstoffdioxid fehlt.
+reak/42	2	Säure löst Kalk unter Schaumbildung auf.	Die Produkte Salz, Wasser und Kohlenstoffdioxid fehlen, obwohl danach gefragt wird.
+reak/43	4	Kalk zerfällt bei Hitze.	Zu vage: Die Zerfallsprodukte Calciumoxid und Kohlenstoffdioxid fehlen.
+reak/44	2	Branntkalk reagiert mit Wasser unter Wärmefreisetzung.	Das Produkt Calciumhydroxid fehlt, obwohl gefragt wird, was entsteht.
+reak/46	2	Kalkwasser wird durch Kohlenstoffdioxid getrübt.	Das entstehende Calciumcarbonat, die Ursache der Trübung, fehlt.
+reak/47	4	Natrium reagiert mit Wasser.	Zu vage: Es fehlen die Produkte Natronlauge und Wasserstoff.
+reak/48	2	Calcium reagiert mit Wasser zu Calciumhydroxid.	Wasserstoff fehlt, obwohl ausdrücklich nach dem entstehenden Gas gefragt wird.
+reak/55	4	Metall löst sich.	Zu vage: Die Produkte Salz und Wasserstoff fehlen.
+reak/56	2	Zinkchlorid entsteht.	Wasserstoff fehlt, obwohl nach dem entstehenden Gas gefragt wird.
+reak/61	2	Silberoxid zerfällt zu Silber.	Sauerstoff als zweites Zerfallsprodukt fehlt.
+reak/65	3	Ironoxid wird zu Eisen reduziert.	'Ironoxid' ist ein englisches Mischwort statt Eisenoxid; das Reduktionsmittel fehlt.
+reak/66	1	Eisen löst Kupfer aus der Lösung.	Missverständlich: 'löst Kupfer aus der Lösung' klingt nach Auflösen; Kupfer scheidet sich ab.
+reak/69	4	Energie wird bei der Zellatmung frei.	Zu vage: Ausgangsstoffe und Produkte der Zellatmung fehlen.
+reak/70	2	Gärung ist die Umwandlung von Zucker durch Hefe.	Die Produkte Ethanol und CO2 fehlen, obwohl gefragt wird, wie Alkohol entsteht.
+reak/74	3	Ammoniak und Chlorwasserstoff bilden festen Ammoniumchlorid.	Falsches Genus: 'festen Ammoniumchlorid' statt 'festes Ammoniumchlorid'.
+reak/83	2	Ethanol dient als Brennstoff.	Nennt nur Brennstoff; Desinfizieren fehlt, obwohl danach gefragt wird.
+reak/86	1	Seife besteht aus Fetten und Lauge.	Missverständlich: Seife besteht nicht aus Fett und Lauge, sie entsteht daraus.
+rlpa/101	2	Gase füllen jeden Raum.	Das Teilchenmodell (weit entfernte, frei bewegliche Teilchen) fehlt.
+rlpa/104	1	Treibhausgase enthalten Kohlenstoffdioxid.	Falsche Beziehung: Treibhausgase enthalten nicht CO2, CO2 ist eines davon.
+rlpa/107	2	Atome streben durch Oktettregel die Edelgaskonfiguration an.	Der Kern der Regel (acht Außenelektronen) fehlt, die Formulierung ist schief.
+rlpa/11	4	Ein Streichholz brennt nicht von selbst.	Wiederholt nur die Frage, der Grund (fehlende Aktivierungsenergie) fehlt.
+rlpa/113	2	Halogene bilden zweiatomige Moleküle.	Nur Halogene; Wasserstoff, Stickstoff und Sauerstoff fehlen.
+rlpa/118	2	Das Kohlenstoffdioxidmolekül hat einen linearen Aufbau.	Die Doppelbindungen fehlen, obwohl nach den Bindungen gefragt wird.
+rlpa/120	2	Wasser dehnt sich beim Gefrieren aus.	Der Kern der Dichteanomalie (größte Dichte bei 4 °C) fehlt.
+rlpa/126	3	Wasser löst Salze, weil es Dipole ist.	Grammatisch falsch: 'weil es Dipole ist'.
+rlpa/132	3	Wasserstoff hat doppelte Anzahl an Atomen im Wassermolekül.	Schiefer Satz ohne Vergleich, unklar was doppelt ist.
+rlpa/134	2	Wassersynthese ist exotherm.	Die mehrfach gefragte Elektrolyse (endotherm) fehlt.
+rlpa/138	2	Der Index zählt Atome im Molekül.	Der Koeffizient fehlt, obwohl nach dem Unterschied und der 2 in 2 H2O gefragt wird.
+rlpa/139	1	Wasser ist gewinkelt.	Verwechselt Stoff und Teilchen: Das Wassermolekül ist gewinkelt, nicht Wasser.
+rlpa/140	4	Wegen der Abstoßung ist das Wassermolekül gewinkelt.	Zu vage: Unklar, was sich abstößt (Elektronenpaare am Sauerstoff).
+rlpa/143	3	Wenn das stärkere Atom die Bindungselektronen anzieht.	Nebensatzfragment ohne Hauptsatz; 'stärkere Atom' ist unklar.
+rlpa/152	2	Wassermoleküle werden nach innen gezogen.	Definiert Oberflächenspannung nicht (gespannte Haut).
+rlpa/16	2	Das Gesetz der Erhaltung der Masse wurde entdeckt.	Nennt die Entdecker nicht, obwohl genau danach gefragt wird.
+rlpa/29	4	Das Branddreieck zeigt die drei Feuerbedingungen.	Nennt die drei Bedingungen nicht und beantwortet die Frage damit nicht.
+rlpa/33	2	Die Brennerflamme hat einen inneren Kegel.	Die Frage nach der heißesten Stelle bleibt unbeantwortet.
+rlpa/34	3	Rauschend brennt blau und heißer.	Unvollständiger Satz ohne Subjekt; die Rolle der Luftzufuhr fehlt.
+rlpa/37	2	Ein Gemisch trennt man durch physikalische Methoden.	Definiert den Begriff nicht, sondern nennt nur Trennverfahren.
+rlpa/39	2	Schmelzen, Verdampfen und Sublimieren.	Unvollständige Aufzählung; die Frage nach Sublimieren wird nicht beantwortet.
+rlpa/4	2	Woran erkennt man eine chemische Reaktion? An neuen Stoffen.	Wiederholt die Frage und lässt die Energieumwandlung als zweites Kennzeichen weg.
+rlpa/41	4	Ein chemisches Symbol ist ein Buchstabe oder zwei.	Zu vage: Es fehlt, dass das Symbol ein Element abkürzt.
+rlpa/51	4	Ladungen gleichen sich durch gleiche Anzahl aus.	Zu vage: Unklar, wessen Anzahl gleich ist (Protonen und Elektronen).
+rlpa/60	3	Die u ist ein Zwölftel der Kohlenstoff-12-Masse.	Falscher Artikel 'Die u'; gemeint ist die Einheit u.
+rlpa/82	2	Wasserstoff knallt im Reagenzglas.	Beschreibt den Nachweis nicht; Wasserstoff knallt nicht einfach im Glas.
+rlpa/9	2	Endotherme Reaktionen brauchen Energie.	Nennt kein Beispiel, obwohl nach einem Beispiel gefragt wird.
+rlpa/95	1	Kohlenstoffdioxid erstickt durch Sauerstoffmangel.	Falsch formuliert: Nicht CO2 erstickt, sondern Menschen ersticken durch Sauerstoffmangel.
+rlpb/10	4	Natrium reagiert mit Chlor zu Salz.	Zu vage: 'zu Salz' statt Natriumchlorid.
+rlpb/100	2	Berechne zuerst die Stoffmenge und dann die Masse.	Wichtige Schritte (Gleichung, Stoffmengenverhältnis) fehlen.
+rlpb/102	2	Wasserstoff reagiert zu Wasser.	Beantwortet die Rechenfrage nicht; 36 g Wasser fehlen.
+rlpb/114	2	Das molare Volumen ist das Volumen von 1 Mol Gas.	Zirkulär; der Wert 22,4 Liter fehlt, obwohl danach gefragt wird.
+rlpb/115	1	Ein Indikator zeigt die Säurestärke durch seine Farbe.	Falsch: Ein Indikator zeigt sauer, neutral oder alkalisch, nicht die Säurestärke.
+rlpb/116	2	Mit dem Universalindikator lässt sich der Säuregrad ablesen.	Die Farben fehlen, obwohl nach ihnen gefragt wird.
+rlpb/117	2	Rotkohlsaft zeigt je nach pH-Wert verschiedene Farben.	Die Farben fehlen, obwohl nach der Farbe in Säure gefragt wird.
+rlpb/118	3	Pheolphenolphthalein ist ein Indikator.	Tippfehler 'Pheolphenolphthalein'; die Farben fehlen.
+rlpb/119	4	Lackmus ist ein Farbstoff für Säure-Base-Reaktionen.	Zu vage; die Farben in Säure und Lauge fehlen.
+rlpb/120	1	Der pH-Wert zeigt die Säurestärke einer Lösung.	Fachlich falsch: Der pH-Wert zeigt, wie sauer oder alkalisch, nicht die Säurestärke.
+rlpb/124	3	Lösungen mit diesem Begriff haben einen pH-Wert über 7.	Unsinnige Formulierung 'Lösungen mit diesem Begriff'.
+rlpb/126	2	Der pH-Wert reicht im Alltag von 1 bis 14.	Keine Beispiele, obwohl nach Alltagsstoffen wie Zitronensaft gefragt wird.
+rlpb/135	2	Lauge ist die Base in Wasser.	Der Unterschied (Teilchen vs. Lösung mit OH-Ionen) wird nicht erklärt.
+rlpb/145	2	Neutralisation ist die Reaktion von Säure und Lauge.	Die Produkte Salz und Wasser fehlen, obwohl danach gefragt wird.
+rlpb/18	4	Ionenkräfte halten Salze fest.	Zu vage: Der Zusammenhang mit hohem Energiebedarf fehlt.
+rlpb/22	2	Löslichkeit: Menge Stoff pro Lösungsmittel.	Das entscheidende 'höchstens' fehlt; Löslichkeit ist eine Höchstmenge.
+rlpb/30	3	Namen Sie zuerst Metall und dann Nichtmetall mit -id.	'Namen Sie' ist kein Verb (gemeint: Nennen Sie).
+rlpb/55	4	Metalle ordnet man von unedel nach edel.	Nennt die Reihenfolge nicht, obwohl genau danach gefragt wird.
+rlpb/62	1	Metalle glänzen durch reflektierte Elektronen.	Falsch: Nicht Elektronen werden reflektiert, sondern Elektronen werfen Licht zurück.
+rlpb/68	2	Kupferoxid reagiert zu Kupfer.	Kohlenstoff und Kohlenstoffdioxid fehlen; die Reaktion wird nicht beschrieben.
+rlpb/69	2	Ein unedleres Metall reduziert Metalloxide.	Wesentliche Bedingung fehlt: nur Oxide edlerer Metalle werden reduziert.
+rlpb/74	3	Iron schützt man vor Rost durch Lackieren.	'Iron' ist ein englisches Wort statt Eisen.
+rlpb/75	1	Zink rostet statt des Eisens.	Ungenau: Zink rostet nicht, es korrodiert; Rost ist ein Eisenoxid.
+rlpb/80	2	Ein Mol ist die Einheit der Stoffmenge.	Die Teilchenzahl pro Mol fehlt, obwohl danach gefragt wird.
+rlpb/81	2	Die Avogadro-Konstante ist die Teilchenzahl pro Mol.	Der Zahlenwert fehlt, obwohl nach der Größe gefragt wird.
+rlpb/94	2	Wasser hat eine Stoffmenge von 2 Mol.	Die gegebene Masse 36 g fehlt; so klingt es, als hätte Wasser immer 2 mol.
+rlpb/96	4	Die Teilchenzahl ergibt sich aus der Stoffmenge.	Zu vage: Die Formel N = n mal Avogadro-Konstante fehlt.
+rlpb/97	1	Wasserstoffatome sind zu leicht für die Angabe in Gramm.	Falsch: Die Masse lässt sich in Gramm angeben, der Wert fehlt.
+rlpb/98	1	Wasser- und Eisenmoleküle haben unterschiedliche Masse.	Falsch: Eisen besteht nicht aus Molekülen.
+rlpc/101	2	Glycin ist eine einfache Aminosäure.	'eine einfache' statt 'die einfachste'; Formel fehlt.
+rlpc/105	4	Peptidbindungen verbinden Aminosäuren.	Zu vage: Wie die Verknüpfung entsteht, fehlt.
+rlpc/107	3	Mit Indikator färben saure Carbonsäuren rot.	Falsches Subjekt: Nicht die Säuren färben sich, sondern der Indikator.
+rlpc/113	2	Propansäure konserviert Lebensmittel wie Brot.	Nur Verwendung; was Propansäure ist (Formel, 3 C-Atome) fehlt.
+rlpc/116	2	Ester verbinden Säure- mit Alkoholrest.	Beschreibt die Gruppe -COO- nicht und nennt Ester statt Ester-Gruppe.
+rlpc/124	3	Ester abtrennen.	Bruchstück ohne Satz; Überschuss und Wasserentzug fehlen.
+rlpc/125	1	Ester heißen Alkylrest plus Säurename mit Endung -ester.	Falsche Reihenfolge: Erst die Säure, dann der Alkylrest (Essigsäuremethylester).
+rlpc/127	2	Ethansäure und Ethanol bilden Ethylacetat.	Gefragt ist die Reaktionsgleichung, geliefert nur eine Wortgleichung.
+rlpc/130	1	Ester riecht nach Banane.	Falsch verallgemeinert und ohne Namen; gemeint ist Pentylacetat.
+rlpc/135	3	Öle sind flüssig, weil Ketten sich durch Knick nicht lagern.	Schiefer Satz ('durch Knick nicht lagern'); Doppelbindung als Ursache fehlt.
+rlpc/137	2	Sie sind essenziell, da der Körper sie nicht selbst bildet.	Verallgemeinert: Nur einige ungesättigte Fettsäuren sind essenziell.
+rlpc/20	1	Homologe Reihen haben gleiche Gruppenstruktur.	Falsch bzw. nichtssagend; das Kennzeichen CH2-Unterschied fehlt.
+rlpc/23	2	Der Name zeigt die Anzahl der Kohlenstoffatome.	Die Endungen -an, -en, -in fehlen.
+rlpc/27	4	Längere Ketten haben stärkere Kräfte.	Zu vage: Welche Kräfte und warum (Oberfläche) bleibt offen.
+rlpc/30	2	Methan reagiert mit Sauerstoff zu Kohlendioxid und Wasser.	Gefragt ist die Reaktionsgleichung, geliefert nur eine Wortgleichung.
+rlpc/35	2	Ungesättigte Kohlenwasserstoffe haben Doppelbindungen.	Unvollständig: Auch Dreifachbindungen machen ungesättigt.
+rlpc/37	4	Ethen ist ein Alken.	Zu vage; Formel und Bau fehlen, obwohl danach gefragt wird.
+rlpc/39	2	Ethin ist das einfachste Alkin.	Formel C2H2 und Verwendung fehlen, obwohl danach gefragt wird.
+rlpc/4	2	Erdgas ist ein brennbares Gasgemisch.	Der Hauptbestandteil Methan fehlt, obwohl danach gefragt wird.
+rlpc/42	4	Bromwasser entbleicht bei der Bromwasserprobe.	Zirkulär; es fehlt, dass ungesättigte Stoffe Bromwasser entfärben.
+rlpc/54	1	Hefe baut Alkohol aus Zucker ab.	Umgekehrte Beziehung: Hefe baut Zucker zu Alkohol ab, nicht Alkohol aus Zucker.
+rlpc/57	4	Methanol ist giftig, weil es den Körper schädigt.	Zirkulär; die konkreten Folgen (Erblindung, Tod) fehlen.
+rlpc/70	2	Glykol ist ein Frostschutzmittel.	Chemischer Name und Stoffklasse fehlen, obwohl danach gefragt wird.
+rlpc/77	2	Ethanal entsteht aus Ethanol und verursacht Kater.	Übertreibt: Ethanal trägt laut Langantwort nur zum Kater bei; Formel fehlt.
+rlpc/80	2	Die Carboxy-Gruppe bindet ein C-Atom an eine OH-Gruppe.	Das doppelt gebundene O-Atom fehlt, der Aufbau wird verzerrt.
+rlpc/81	4	Alkansäuren sind Carbonsäuren.	Zu vage; Ableitung von Alkanen und Endung -säure fehlen.
+rlpc/82	2	Essigsäure ist der saure Bestandteil von Essig.	Chemischer Name und Formel fehlen, obwohl danach gefragt wird.
+rlpc/83	2	Ameisensäure ist die einfachste Carbonsäure.	Chemischer Name und Formel fehlen, obwohl danach gefragt wird.
+rlpc/87	3	Ethanol wird mit Sauerstoff zu Essigsäure.	Satz ohne Verb ('wird ... zu'); die gefragte Gleichung fehlt.
+rlpc/88	2	Essigsäure riecht stechend.	Nur der Geruch; Löslichkeit und saure Reaktion fehlen.
+rlpc/89	2	Eine schwache Säure gibt nur wenige Ionen ab.	Allgemeiner Satz; sagt nicht, dass Essigsäure schwach ist.
+rlpc/91	4	Der Entkalker reagiert mit dem Kalk.	Zu vage: Die Produkte (lösliches Salz, Wasser, CO2) fehlen.
+rlpc/92	2	Essig tötet Keime durch Säure.	Laut Langantwort hemmt Säure die Vermehrung, sie tötet nicht.
+rlpc/94	2	Alkansäuren bilden eine homologe Reihe mit CH2-Unterschied.	Nennt die ersten Alkansäuren nicht, obwohl danach gefragt wird.
+rlpc/95	2	Butansäure ist der chemische Name für Buttersäure.	Der Geruch fehlt, obwohl danach gefragt wird.
+rlpc/99	4	Aminosäuren sind organische Verbindungen.	Zu vage: Carboxy- und Aminogruppe fehlen.

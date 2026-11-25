@@ -61,3 +61,22 @@ give identical `facts.utft`, `golden.json` and weights (the model file differs o
 | Free heap after boot | > 0, stable | |
 | `tools/device_parity.py` with printed answers | all identical | |
 | Erased table area: `/info` → `fehlt`, fact question → missing text, `Hi` → greeting | all OK | |
+
+## Short explanations (T033, T034)
+
+`tools/shorten_llm.py --model qwen3.6:35b` on the Spark, 2026-11-24: 550 curriculum entries.
+
+| Automatic check (research R8) | Rows |
+|-------------------------------|------|
+| ok | 453 (re-checked locally: identical) |
+| reject: > 60 characters | 57 |
+| reject: key term missing | 22 |
+| reject: new number or formula | 4 |
+| reject: characters outside the alphabet | 2 |
+| to_fact (states a table value) | 12 |
+
+Content review of the 453 ok rows against the long answers: 115 flagged (17 wrong or misleading,
+e.g. "Ein Indikator zeigt die Säurestärke", "Hefe baut Alkohol aus Zucker ab"; 61 essential point
+missing; 15 grammar; 22 too vague). The user accepted the other 338 (`reviewed = yes`); the flagged rows
+stay out of training (`specs/006-hybrid-chemielehrer/kurz-review.tsv`). `ut datagen` with
+`configs/chemie-hybrid.toml`: 338 explanations used, 212 skipped.
