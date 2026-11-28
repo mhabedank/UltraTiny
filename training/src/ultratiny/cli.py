@@ -271,6 +271,10 @@ def main(argv: list[str] | None = None) -> int:
     _common(p)
     p.set_defaults(func=cmd_facts)
 
+    from .knowledge.commands import add_parser as add_knowledge
+
+    add_knowledge(sub)
+
     p = sub.add_parser("datagen")
     p.add_argument("--config", required=True)
     p.add_argument("--out", required=True)

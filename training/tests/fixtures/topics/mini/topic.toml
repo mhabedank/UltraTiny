@@ -1,0 +1,7 @@
+# Fixture topic for the knowledge compiler tests (specs/008-wissens-compiler, task T004).
+# Fictional data; covers every value type, card/reverse combination, view kind and rule kind.
+id = "mini"
+schema_version = 3
+title = "Testthema"
+object_files = ["objects.tsv", "objects_lang.tsv"]
+fact_files = ["facts/*.tsv"]

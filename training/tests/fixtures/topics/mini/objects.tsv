@@ -1,0 +1,10 @@
+key	name	class	source
+# Städte (ordered by rang in the image)
+Be	Bestadt	stadt	own
+Aa	Aastadt	stadt	own
+Ce	Cestadt	stadt	own
+De	Desstadt	stadt	own
+Zz	Zettstadt	stadt	own
+NL	Nordland	land	own
+SL	Südland	land	own
+LL	Langland	land	own
