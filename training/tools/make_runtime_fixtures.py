@@ -1,15 +1,15 @@
-"""Write runtime test fixtures for the hybrid chemistry teacher (specs/006, tasks T009/T019).
+"""Write runtime test fixtures for the knowledge engine (specs/006 T009/T019, specs/008 T019).
 
-- runtime/tests/fixtures/facts_small.utft: a subset of the real fact table
-- runtime/tests/fixtures/facts_cases.tsv: type, key, expected printed bytes (hex) from the Python
-  renderer (facttable.answer_bytes), covering forward, reverse, not applicable, unknown key/type
+- runtime/tests/fixtures/kb_mini.utki + kb_mini_cases.tsv: the `mini` fixture topic
+  (training/tests/fixtures/topics/mini) compiled to UTKI v1, and its golden query cases from the
+  Python reference (every view kind, lists, not-applicable, unknown keys)
 - runtime/tests/fixtures/tiny_v2.utny + tiny_v2_golden.json: a random tiny UTNY v2 model (with
-  <fn>) and golden cases incl. the printed text with facts_small.utft
+  <fn>) and golden cases incl. the printed text with the chemistry image (models/chemie.utki)
 
     cd training && uv run python tools/make_runtime_fixtures.py [--check]
 
---check regenerates the fact fixtures and fails if the committed ones differ (used by pytest);
-the tiny model is trained here and only has to agree with its own golden file.
+--check regenerates the knowledge fixtures and fails if the committed ones differ (used by
+pytest); the tiny model is trained here and only has to agree with its own golden file.
 """
 
 from __future__ import annotations
@@ -21,67 +21,20 @@ import sys
 import numpy as np
 import torch
 
-from ultratiny import factgen
-from ultratiny import facttable as ft
-from ultratiny.alphabet import EOS, FN, Alphabet
-from ultratiny.config import ModelConfig, load_config
+from ultratiny.alphabet import FN, Alphabet
+from ultratiny.config import ModelConfig
 from ultratiny.datagen import TRAINING_ROOT
 from ultratiny.export import write_model
 from ultratiny.golden import make_golden
+from ultratiny.knowledge.commands import make_cases
+from ultratiny.knowledge.compile import build as build_image
+from ultratiny.knowledge.image import Image
+from ultratiny.knowledge.topic import load_topic
 from ultratiny.model import TinyLM
 
 FIXTURES = TRAINING_ROOT.parent / "runtime" / "tests" / "fixtures"
-KEYS = ["C", "Cu", "N", "Na", "Ne", "S", "Co", "Og", "La", "Fe", "H2O", "CO", "NaCl", "Al2O3",
-        "HCl", "knallgas", "co2"]  # fmt: skip
-CASES = [
-    ("O", "Cu"),
-    ("S", "Na"),
-    ("s", "N"),
-    ("s", "Co"),
-    ("o", "29"),
-    ("o", "7"),
-    ("o", "200"),
-    ("a", "S"),
-    ("a", "Fe"),
-    ("v", "Na"),
-    ("v", "Fe"),
-    ("i", "Ne"),
-    ("i", "S"),
-    ("E", "C"),
-    ("E", "Og"),
-    ("G", "La"),
-    ("R", "Al2O3"),
-    ("f", "CO"),
-    ("m", "H2O"),
-    ("b", "NaCl"),
-    ("c", "HCl"),
-    ("c", "H2O"),
-    ("q", "knallgas"),
-    ("t", "co2"),
-    ("O", "Xx"),
-    ("O", ""),
-    ("S", "H2O"),
-    ("s", "H2O"),
-    ("Q", "Cu"),
-    ("-", "Cu"),
-    ("O", "Cuu"),
-    ("O", "C"),
-]
-
-
-def small_factset() -> factgen.FactSet:
-    cfg = load_config(TRAINING_ROOT / "configs" / "chemie-hybrid.toml")
-    fs = factgen.build(cfg, TRAINING_ROOT)
-    objects = {k: fs.objects[k] for k in KEYS}
-    records = {kc: v for kc, v in fs.records.items() if kc[0] in objects}
-    return factgen.FactSet(objects, fs.types, records)
-
-
-def case_tokens(ab: Alphabet, code: str, key: str) -> list[int]:
-    head = [FN] if code == "-" else [FN, *ab.encode(code)]
-    if code == "-":
-        head.append(ab.encode(" ")[0])  # non-letter type character
-    return head + ab.encode(key) + [EOS]
+MINI = TRAINING_ROOT / "tests" / "fixtures" / "topics" / "mini"
+CHEMIE = TRAINING_ROOT.parent / "topics" / "chemie"
 
 
 # A few question -> target pairs so the tiny model really emits function outputs; the golden file
@@ -126,24 +79,23 @@ def train_tiny(ab: Alphabet) -> tuple[TinyLM, ModelConfig]:
     return model, cfg
 
 
-def build() -> dict[str, bytes]:
-    fs = small_factset()
-    data = ft.build_bytes(fs)
-    table = ft.Table(data)
+def build(train: bool = True) -> dict[str, bytes]:
+    data, _ = build_image(load_topic(MINI))
+    cases = make_cases(Image(data))
+    lines = ["view\tkey\toutcome\tanswer"]
+    lines += [f"{v}\t{k.decode()}\t{o}\t{ans.decode()}" for v, k, o, ans in cases]
+    files = {"kb_mini.utki": data, "kb_mini_cases.tsv": ("\n".join(lines) + "\n").encode()}
+    if not train:
+        return files
     ab = Alphabet(fn=True)
-    lines = ["# code\tkey\texpected (hex); code '-' = non-letter type character"]
-    for code, key in CASES:
-        out = ft.answer_bytes(case_tokens(ab, code, key), ab, table)
-        lines.append(f"{code}\t{key}\t{out.hex()}")
-    lines.append(f"MISSING\t\t{ft.MISSING.hex()}")
-    files = {"facts_small.utft": data, "facts_cases.tsv": ("\n".join(lines) + "\n").encode()}
+    chem, _ = build_image(load_topic(CHEMIE))
 
     model, cfg = train_tiny(ab)
     state = {k: v.detach().numpy() for k, v in model.state_dict().items()}
     tmp = FIXTURES / ".tiny_v2.tmp"
     write_model(tmp, cfg, state, ab, {"name": "tiny-v2"})
     prompts = [q for q, _ in TINY_PAIRS] + ["Ordnungszahl Eisen?", "abc", "Was ist Na?"]
-    golden = make_golden(tmp, prompts, max_len=40, facts_bytes=data)
+    golden = make_golden(tmp, prompts, max_len=40, facts_bytes=chem)
     files["tiny_v2.utny"] = tmp.read_bytes()
     tmp.unlink()
     files["tiny_v2_golden.json"] = (json.dumps(golden, ensure_ascii=False,
@@ -156,8 +108,11 @@ def build() -> dict[str, bytes]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true")
+    ap.add_argument(
+        "--kb-only", action="store_true", help="only the knowledge fixtures (no training)"
+    )
     a = ap.parse_args()
-    files = build()
+    files = build(train=not (a.check or a.kb_only))
     bad = []
     for name, data in files.items():
         path = FIXTURES / name

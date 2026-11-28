@@ -53,7 +53,7 @@ def parse_info(txt: str) -> dict:
         out.update(git=m.group(1).rstrip(","), date=m.group(2))
     if m := re.search(r"erstes Zeichen nach (\d+) ms, ([\d.]+) Zeichen/s", txt):
         out.update(first_ms=int(m.group(1)), cps=float(m.group(2)))
-    if m := re.search(r"Faktentabelle: ([^\r\n]+)", txt):
+    if m := re.search(r"Wissen: ([^\r\n]+)", txt):
         out["facts"] = m.group(1).strip()
         if m2 := re.search(r"data ([0-9a-f]{8})", out["facts"]):
             out["facts_sha4"] = m2.group(1)
@@ -119,7 +119,8 @@ def facts_sha4(path: Path | None) -> str | None:
     if path is None:
         return None
     data = Path(path).read_bytes()
-    return f"{struct.unpack_from('<I', data, 52)[0]:08x}" if len(data) >= 56 else None
+    # UTKI v1 header: data_sha (u32) at offset 56, printed by /info as "data %08lx"
+    return f"{struct.unpack_from('<I', data, 56)[0]:08x}" if len(data) >= 60 else None
 
 
 # ---------------------------------------------------------------- run
@@ -217,7 +218,7 @@ def identity_problems(info: dict, ident: dict, know_sha4: str | None) -> list[st
     if ident.get("git") and info.get("git") not in (None, "?") and info["git"] != ident["git"]:
         probs.append(f"git: board {info['git']}, model file {ident['git']}")
     if know_sha4 and info.get("facts_sha4") != know_sha4:
-        probs.append(f"fact table: board {info.get('facts', 'none')}, file data {know_sha4}")
+        probs.append(f"knowledge image: board {info.get('facts', 'none')}, file data {know_sha4}")
     return probs
 
 
@@ -320,7 +321,7 @@ def run_board(
         )
     else:
         kpis["R1"] = not_measured("no /stats JSON")
-    for k in ("F1", "F2", "F3", "F4", "F5", "F6", "R2", "R3", "R4", "S1", "S2", "S3"):
+    for k in ("F1", "F2", "F3", "F4", "F5", "F6", "F7", "R2", "R3", "R4", "R5", "S1", "S2", "S3"):
         kpis[k] = not_measured("PC KPI")
     fw = Path(firmware).stat().st_size if firmware else None
     lost = [e for e in run.events if e["event"] != "retry_ok"]

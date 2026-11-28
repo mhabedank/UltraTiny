@@ -15,7 +15,6 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from . import factgen
-from . import facttable as ft
 from .alphabet import FN_CHAR, Alphabet
 from .augment import load_augment
 from .bench.suite import all_questions
@@ -28,10 +27,13 @@ from .datagen import (
     allowed_source_prefixes,
     load_facts,
 )
+from .knowledge import image as kimage
+from .knowledge.compile import build as build_image
+from .knowledge.topic import TopicError, load_topic
 
 UT_ANSWER_RESERVE = 32  # runtime/include/utiny_console.h (console caps the question length)
 EXPLAIN_MAX = 60  # FR-003
-UNKNOWN_TEXT = ft.UNKNOWN.decode()
+UNKNOWN_TEXT = "Das weiß ich leider nicht."  # the chemistry topic's unknown text
 REFUSAL_ANSWER = "Das weiß ich leider nicht. Frag mich etwas zur Chemie!"
 NAME, KEY = "\x02", "\x03"  # placeholders while adding noise (never letters, never lowercased)
 FAMILY_SAMPLE = 40  # held-back family prompts per type
@@ -66,13 +68,18 @@ def sha256_file(path: Path) -> str:
 
 
 def build_facts(cfg: Config, out_dir: Path) -> tuple[factgen.FactSet, bytes, dict]:
-    """Compute, check and write facts.utft + facts.json (FR-004, FR-005, `ut facts`)."""
+    """Compute and check the fact set (FR-004, FR-005) for datagen, and compile the knowledge
+    image of the config's topic (specs/008): writes knowledge.utki + facts.json."""
     fs = factgen.build(cfg, TRAINING_ROOT)
     errors = factgen.check(fs, Alphabet(fn=True), allowed_source_prefixes())
     if errors:
         raise DataError("fact checks failed:\n" + "\n".join(errors))
     out_dir.mkdir(parents=True, exist_ok=True)
-    data = ft.write(fs, out_dir / "facts.utft")
+    try:
+        data, report = build_image(load_topic(TRAINING_ROOT / cfg.data.knowledge_topic))
+    except TopicError as e:
+        raise DataError("knowledge topic invalid:\n" + str(e)) from e
+    (out_dir / "knowledge.utki").write_bytes(data)
     per_type = Counter(c for _, c in fs.records)
     dump = {
         "objects": {k: {"name": o.name, "kind": o.kind, "source": o.source,
@@ -86,7 +93,8 @@ def build_facts(cfg: Config, out_dir: Path) -> tuple[factgen.FactSet, bytes, dic
         "records": len(fs.records),
         "records_per_type": dict(sorted(per_type.items())),
         "bytes": len(data),
-        "budget_bytes": ft.MAX_SIZE,
+        "budget_bytes": kimage.MAX_SIZE,
+        "answerable": report["answerable"],
         "sha256": hashlib.sha256(data).hexdigest(),
         "checks": "ok",
     }
@@ -101,9 +109,20 @@ def model_key(fs: factgen.FactSet, code: str, key: str) -> str | None:
     return fs.value(key, t.reverse_of) if t.reverse_of else key
 
 
+def fact_outcome(fs: factgen.FactSet, code: str, key: str) -> str:
+    """ "fact" or "na" for an object of a matching kind (lookup rules of specs/006, as the
+    knowledge image renders them): a missing own value or `{X}` value is not applicable."""
+    t = fs.types[code]
+    if t.needs_value and fs.value(key, code) is None:
+        return "na"
+    for slot in factgen.SLOT.findall(t.template):
+        if len(slot) == 1 and slot != "v" and fs.value(key, slot) is None:
+            return "na"
+    return "fact"
+
+
 def combos(fs: factgen.FactSet) -> list[tuple[str, str, str]]:
     """(type, object key, outcome) for every type x object of a matching kind."""
-    table = ft.Table(ft.build_bytes(fs))
     out = []
     for code in sorted(fs.types):
         t = fs.types[code]
@@ -113,7 +132,7 @@ def combos(fs: factgen.FactSet) -> list[tuple[str, str, str]]:
             mk = model_key(fs, code, k)
             if not mk:
                 continue
-            out.append((code, k, table.outcome(code + mk)))
+            out.append((code, k, fact_outcome(fs, code, k)))
     return out
 
 
@@ -381,7 +400,7 @@ def generate(cfg: Config, out_dir: Path, seed: int) -> dict:
                 else ""}  # fmt: skip
     (out_dir / "heldback.json").write_text(json.dumps(heldback, indent=1) + "\n")
     digest = hashlib.sha256()
-    for name in ["train.txt", "facts.utft", "heldback.json", *sets]:
+    for name in ["train.txt", "knowledge.utki", "heldback.json", *sets]:
         digest.update((out_dir / name).read_bytes())
     sha = digest.hexdigest()
     (out_dir / "dataset.sha256").write_text(sha + "\n")
@@ -419,13 +438,13 @@ def read_jsonl(path: Path) -> list[dict]:
     return [json.loads(x) for x in path.read_text(encoding="utf-8").splitlines() if x]
 
 
-def score(row: dict, tokens: list[int], ab: Alphabet, table: ft.Table,
+def score(row: dict, tokens: list[int], ab: Alphabet, table: kimage.Image,
           refusal_norm: set[str]) -> dict:  # fmt: skip
     """One prediction scored per contracts/eval-sets.md "Scoring"."""
     from .evaluate import is_correct, normalize
 
-    fo = ft.function_output(tokens, ab)
-    printed = ft.answer_bytes(tokens, ab, table).decode("utf-8", "replace")
+    fo = kimage.function_output(tokens, ab)
+    printed = kimage.answer_bytes(tokens, ab, table).decode("utf-8", "replace")
     outcome = table.outcome(fo)
     refused = fo is None and normalize(printed) in refusal_norm
     kind = row["kind"]
@@ -435,7 +454,7 @@ def score(row: dict, tokens: list[int], ab: Alphabet, table: ft.Table,
         if fo is not None and fo in exp:
             correct = True
         elif fo is not None and exp:
-            canon = ft.answer_bytes(ab.encode(FN_CHAR + exp[0]), ab, table).decode()
+            canon = kimage.answer_bytes(ab.encode(FN_CHAR + exp[0]), ab, table).decode()
             correct = printed == canon
         wrong = not correct and outcome == "fact"
     elif kind == "explain":
@@ -477,7 +496,7 @@ def evaluate_sets(model_path: Path, data_dir: Path, facts_bytes: bytes, limit: i
 
     ref = Reference(model_path)
     ab = ref.m.alphabet
-    table = ft.Table(facts_bytes)
+    table = kimage.Image(facts_bytes)
     max_len = ref.cfg.ctx_len - 3
     refusal_norm = {normalize(UNKNOWN_TEXT), normalize(REFUSAL_ANSWER)}
     report: dict = {}

@@ -7,7 +7,7 @@
 #define UTINY_CONSOLE_H
 
 #include "utiny.h"
-#include "utiny_facts.h"
+#include "utiny_knowledge.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -15,7 +15,7 @@ extern "C" {
 
 #define UT_FW_VERSION "0.1.0"
 #define UT_LINE_MAX 256
-#define UT_CMD_MAX 64
+#define UT_CMD_MAX 112 /* "/wissen <view> <key>" with keys up to 60 bytes */
 #define UT_ANSWER_RESERVE 32 /* positions kept free for the answer */
 /* Upper bound for /max and the size of the trace buffer; boards with little RAM may lower it
  * (the NodeMCU build uses its context length, specs/005-nodemcu-port). */
@@ -58,8 +58,9 @@ typedef struct {
     uint32_t (*micros)(void *user);                       /* finer timings; else millis*1000 */
     void (*sys_stats)(void *user, ut_sys_stats *out);     /* /stats system values */
     const char *board; /* optional (NULL): board name for the banner, specs/005-nodemcu-port */
-    /* optional (NULL): fact table for function output (UTNY v2), specs/006-hybrid-chemielehrer */
-    ut_facts *facts;
+    /* optional (NULL): knowledge image for function output (UTNY v2) and /wissen,
+     * specs/006-hybrid-chemielehrer and specs/008-wissens-compiler */
+    ut_kb *kb;
 } ut_console_io;
 
 typedef enum { UT_ST_READY, UT_ST_TYPING, UT_ST_GENERATING, UT_ST_HALT_ERROR } ut_console_state;
@@ -106,11 +107,12 @@ typedef struct ut_console {
     } last;
     float probs[UT_MAX_VOCAB];
     ut_trace_step steps[UT_MAX_ANSWER + 1];
-    /* function output (contracts/function-output.md): 0 = text, 1 = wait for type, 2 = key */
+    /* function output (specs/006 contracts/function-output.md): 0 = text, 1 = wait for type, 2 = key */
     int fn_mode, fn_has_type, fn_prefix, fn_key_len, raw;
     char fn_code;
-    ut_fact_type fn_type;
-    char fn_key[4 * UT_FACTS_KEY_MAX];
+    ut_kb_view fn_view;
+    char fn_key[4 * UT_KB_KEY_MAX];
+    char model_topic[16]; /* model meta "topic" ("" = none, not checked; research R11) */
 } ut_console;
 
 /* ctx may be NULL when model_status != UT_OK (HALT_ERROR). */

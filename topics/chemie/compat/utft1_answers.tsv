@@ -1,0 +1,3172 @@
+# UTFT v1 answers, frozen from facts.utft sha256 398b433cbdbf3876b841b5bb962bce699ced82dcf0f0fc7c4c0cb16c2d0a38f9 (29100 B)
+letter	key	outcome	answer
+S	H	fact	Das Symbol von Wasserstoff ist H.
+S	He	fact	Das Symbol von Helium ist He.
+S	Li	fact	Das Symbol von Lithium ist Li.
+S	Be	fact	Das Symbol von Beryllium ist Be.
+S	B	fact	Das Symbol von Bor ist B.
+S	C	fact	Das Symbol von Kohlenstoff ist C.
+S	N	fact	Das Symbol von Stickstoff ist N.
+S	O	fact	Das Symbol von Sauerstoff ist O.
+S	F	fact	Das Symbol von Fluor ist F.
+S	Ne	fact	Das Symbol von Neon ist Ne.
+S	Na	fact	Das Symbol von Natrium ist Na.
+S	Mg	fact	Das Symbol von Magnesium ist Mg.
+S	Al	fact	Das Symbol von Aluminium ist Al.
+S	Si	fact	Das Symbol von Silicium ist Si.
+S	P	fact	Das Symbol von Phosphor ist P.
+S	S	fact	Das Symbol von Schwefel ist S.
+S	Cl	fact	Das Symbol von Chlor ist Cl.
+S	Ar	fact	Das Symbol von Argon ist Ar.
+S	K	fact	Das Symbol von Kalium ist K.
+S	Ca	fact	Das Symbol von Calcium ist Ca.
+S	Sc	fact	Das Symbol von Scandium ist Sc.
+S	Ti	fact	Das Symbol von Titan ist Ti.
+S	V	fact	Das Symbol von Vanadium ist V.
+S	Cr	fact	Das Symbol von Chrom ist Cr.
+S	Mn	fact	Das Symbol von Mangan ist Mn.
+S	Fe	fact	Das Symbol von Eisen ist Fe.
+S	Co	fact	Das Symbol von Cobalt ist Co.
+S	Ni	fact	Das Symbol von Nickel ist Ni.
+S	Cu	fact	Das Symbol von Kupfer ist Cu.
+S	Zn	fact	Das Symbol von Zink ist Zn.
+S	Ga	fact	Das Symbol von Gallium ist Ga.
+S	Ge	fact	Das Symbol von Germanium ist Ge.
+S	As	fact	Das Symbol von Arsen ist As.
+S	Se	fact	Das Symbol von Selen ist Se.
+S	Br	fact	Das Symbol von Brom ist Br.
+S	Kr	fact	Das Symbol von Krypton ist Kr.
+S	Rb	fact	Das Symbol von Rubidium ist Rb.
+S	Sr	fact	Das Symbol von Strontium ist Sr.
+S	Y	fact	Das Symbol von Yttrium ist Y.
+S	Zr	fact	Das Symbol von Zirconium ist Zr.
+S	Nb	fact	Das Symbol von Niob ist Nb.
+S	Mo	fact	Das Symbol von Molybdän ist Mo.
+S	Tc	fact	Das Symbol von Technetium ist Tc.
+S	Ru	fact	Das Symbol von Ruthenium ist Ru.
+S	Rh	fact	Das Symbol von Rhodium ist Rh.
+S	Pd	fact	Das Symbol von Palladium ist Pd.
+S	Ag	fact	Das Symbol von Silber ist Ag.
+S	Cd	fact	Das Symbol von Cadmium ist Cd.
+S	In	fact	Das Symbol von Indium ist In.
+S	Sn	fact	Das Symbol von Zinn ist Sn.
+S	Sb	fact	Das Symbol von Antimon ist Sb.
+S	Te	fact	Das Symbol von Tellur ist Te.
+S	I	fact	Das Symbol von Iod ist I.
+S	Xe	fact	Das Symbol von Xenon ist Xe.
+S	Cs	fact	Das Symbol von Caesium ist Cs.
+S	Ba	fact	Das Symbol von Barium ist Ba.
+S	La	fact	Das Symbol von Lanthan ist La.
+S	Ce	fact	Das Symbol von Cer ist Ce.
+S	Pr	fact	Das Symbol von Praseodym ist Pr.
+S	Nd	fact	Das Symbol von Neodym ist Nd.
+S	Pm	fact	Das Symbol von Promethium ist Pm.
+S	Sm	fact	Das Symbol von Samarium ist Sm.
+S	Eu	fact	Das Symbol von Europium ist Eu.
+S	Gd	fact	Das Symbol von Gadolinium ist Gd.
+S	Tb	fact	Das Symbol von Terbium ist Tb.
+S	Dy	fact	Das Symbol von Dysprosium ist Dy.
+S	Ho	fact	Das Symbol von Holmium ist Ho.
+S	Er	fact	Das Symbol von Erbium ist Er.
+S	Tm	fact	Das Symbol von Thulium ist Tm.
+S	Yb	fact	Das Symbol von Ytterbium ist Yb.
+S	Lu	fact	Das Symbol von Lutetium ist Lu.
+S	Hf	fact	Das Symbol von Hafnium ist Hf.
+S	Ta	fact	Das Symbol von Tantal ist Ta.
+S	W	fact	Das Symbol von Wolfram ist W.
+S	Re	fact	Das Symbol von Rhenium ist Re.
+S	Os	fact	Das Symbol von Osmium ist Os.
+S	Ir	fact	Das Symbol von Iridium ist Ir.
+S	Pt	fact	Das Symbol von Platin ist Pt.
+S	Au	fact	Das Symbol von Gold ist Au.
+S	Hg	fact	Das Symbol von Quecksilber ist Hg.
+S	Tl	fact	Das Symbol von Thallium ist Tl.
+S	Pb	fact	Das Symbol von Blei ist Pb.
+S	Bi	fact	Das Symbol von Bismut ist Bi.
+S	Po	fact	Das Symbol von Polonium ist Po.
+S	At	fact	Das Symbol von Astat ist At.
+S	Rn	fact	Das Symbol von Radon ist Rn.
+S	Fr	fact	Das Symbol von Francium ist Fr.
+S	Ra	fact	Das Symbol von Radium ist Ra.
+S	Ac	fact	Das Symbol von Actinium ist Ac.
+S	Th	fact	Das Symbol von Thorium ist Th.
+S	Pa	fact	Das Symbol von Protactinium ist Pa.
+S	U	fact	Das Symbol von Uran ist U.
+S	Np	fact	Das Symbol von Neptunium ist Np.
+S	Pu	fact	Das Symbol von Plutonium ist Pu.
+S	Am	fact	Das Symbol von Americium ist Am.
+S	Cm	fact	Das Symbol von Curium ist Cm.
+S	Bk	fact	Das Symbol von Berkelium ist Bk.
+S	Cf	fact	Das Symbol von Californium ist Cf.
+S	Es	fact	Das Symbol von Einsteinium ist Es.
+S	Fm	fact	Das Symbol von Fermium ist Fm.
+S	Md	fact	Das Symbol von Mendelevium ist Md.
+S	No	fact	Das Symbol von Nobelium ist No.
+S	Lr	fact	Das Symbol von Lawrencium ist Lr.
+S	Rf	fact	Das Symbol von Rutherfordium ist Rf.
+S	Db	fact	Das Symbol von Dubnium ist Db.
+S	Sg	fact	Das Symbol von Seaborgium ist Sg.
+S	Bh	fact	Das Symbol von Bohrium ist Bh.
+S	Hs	fact	Das Symbol von Hassium ist Hs.
+S	Mt	fact	Das Symbol von Meitnerium ist Mt.
+S	Ds	fact	Das Symbol von Darmstadtium ist Ds.
+S	Rg	fact	Das Symbol von Roentgenium ist Rg.
+S	Cn	fact	Das Symbol von Copernicium ist Cn.
+S	Nh	fact	Das Symbol von Nihonium ist Nh.
+S	Fl	fact	Das Symbol von Flerovium ist Fl.
+S	Mc	fact	Das Symbol von Moscovium ist Mc.
+S	Lv	fact	Das Symbol von Livermorium ist Lv.
+S	Ts	fact	Das Symbol von Tenness ist Ts.
+S	Og	fact	Das Symbol von Oganesson ist Og.
+S	H2O	na	Das Symbol von Wasser: dazu habe ich keine Angabe.
+S	knallgas	na	Das Symbol von Knallgasreaktion: dazu habe ich keine Angabe.
+S	wasser	na	Das Symbol von Wasser: dazu habe ich keine Angabe.
+S	Xyz	unknown	Das Symbol von – Das weiß ich leider nicht.
+s	H	fact	Das Symbol H steht für Wasserstoff.
+s	He	fact	Das Symbol He steht für Helium.
+s	Li	fact	Das Symbol Li steht für Lithium.
+s	Be	fact	Das Symbol Be steht für Beryllium.
+s	B	fact	Das Symbol B steht für Bor.
+s	C	fact	Das Symbol C steht für Kohlenstoff.
+s	N	fact	Das Symbol N steht für Stickstoff.
+s	O	fact	Das Symbol O steht für Sauerstoff.
+s	F	fact	Das Symbol F steht für Fluor.
+s	Ne	fact	Das Symbol Ne steht für Neon.
+s	Na	fact	Das Symbol Na steht für Natrium.
+s	Mg	fact	Das Symbol Mg steht für Magnesium.
+s	Al	fact	Das Symbol Al steht für Aluminium.
+s	Si	fact	Das Symbol Si steht für Silicium.
+s	P	fact	Das Symbol P steht für Phosphor.
+s	S	fact	Das Symbol S steht für Schwefel.
+s	Cl	fact	Das Symbol Cl steht für Chlor.
+s	Ar	fact	Das Symbol Ar steht für Argon.
+s	K	fact	Das Symbol K steht für Kalium.
+s	Ca	fact	Das Symbol Ca steht für Calcium.
+s	Sc	fact	Das Symbol Sc steht für Scandium.
+s	Ti	fact	Das Symbol Ti steht für Titan.
+s	V	fact	Das Symbol V steht für Vanadium.
+s	Cr	fact	Das Symbol Cr steht für Chrom.
+s	Mn	fact	Das Symbol Mn steht für Mangan.
+s	Fe	fact	Das Symbol Fe steht für Eisen.
+s	Co	fact	Das Symbol Co steht für Cobalt.
+s	Ni	fact	Das Symbol Ni steht für Nickel.
+s	Cu	fact	Das Symbol Cu steht für Kupfer.
+s	Zn	fact	Das Symbol Zn steht für Zink.
+s	Ga	fact	Das Symbol Ga steht für Gallium.
+s	Ge	fact	Das Symbol Ge steht für Germanium.
+s	As	fact	Das Symbol As steht für Arsen.
+s	Se	fact	Das Symbol Se steht für Selen.
+s	Br	fact	Das Symbol Br steht für Brom.
+s	Kr	fact	Das Symbol Kr steht für Krypton.
+s	Rb	fact	Das Symbol Rb steht für Rubidium.
+s	Sr	fact	Das Symbol Sr steht für Strontium.
+s	Y	fact	Das Symbol Y steht für Yttrium.
+s	Zr	fact	Das Symbol Zr steht für Zirconium.
+s	Nb	fact	Das Symbol Nb steht für Niob.
+s	Mo	fact	Das Symbol Mo steht für Molybdän.
+s	Tc	fact	Das Symbol Tc steht für Technetium.
+s	Ru	fact	Das Symbol Ru steht für Ruthenium.
+s	Rh	fact	Das Symbol Rh steht für Rhodium.
+s	Pd	fact	Das Symbol Pd steht für Palladium.
+s	Ag	fact	Das Symbol Ag steht für Silber.
+s	Cd	fact	Das Symbol Cd steht für Cadmium.
+s	In	fact	Das Symbol In steht für Indium.
+s	Sn	fact	Das Symbol Sn steht für Zinn.
+s	Sb	fact	Das Symbol Sb steht für Antimon.
+s	Te	fact	Das Symbol Te steht für Tellur.
+s	I	fact	Das Symbol I steht für Iod.
+s	Xe	fact	Das Symbol Xe steht für Xenon.
+s	Cs	fact	Das Symbol Cs steht für Caesium.
+s	Ba	fact	Das Symbol Ba steht für Barium.
+s	La	fact	Das Symbol La steht für Lanthan.
+s	Ce	fact	Das Symbol Ce steht für Cer.
+s	Pr	fact	Das Symbol Pr steht für Praseodym.
+s	Nd	fact	Das Symbol Nd steht für Neodym.
+s	Pm	fact	Das Symbol Pm steht für Promethium.
+s	Sm	fact	Das Symbol Sm steht für Samarium.
+s	Eu	fact	Das Symbol Eu steht für Europium.
+s	Gd	fact	Das Symbol Gd steht für Gadolinium.
+s	Tb	fact	Das Symbol Tb steht für Terbium.
+s	Dy	fact	Das Symbol Dy steht für Dysprosium.
+s	Ho	fact	Das Symbol Ho steht für Holmium.
+s	Er	fact	Das Symbol Er steht für Erbium.
+s	Tm	fact	Das Symbol Tm steht für Thulium.
+s	Yb	fact	Das Symbol Yb steht für Ytterbium.
+s	Lu	fact	Das Symbol Lu steht für Lutetium.
+s	Hf	fact	Das Symbol Hf steht für Hafnium.
+s	Ta	fact	Das Symbol Ta steht für Tantal.
+s	W	fact	Das Symbol W steht für Wolfram.
+s	Re	fact	Das Symbol Re steht für Rhenium.
+s	Os	fact	Das Symbol Os steht für Osmium.
+s	Ir	fact	Das Symbol Ir steht für Iridium.
+s	Pt	fact	Das Symbol Pt steht für Platin.
+s	Au	fact	Das Symbol Au steht für Gold.
+s	Hg	fact	Das Symbol Hg steht für Quecksilber.
+s	Tl	fact	Das Symbol Tl steht für Thallium.
+s	Pb	fact	Das Symbol Pb steht für Blei.
+s	Bi	fact	Das Symbol Bi steht für Bismut.
+s	Po	fact	Das Symbol Po steht für Polonium.
+s	At	fact	Das Symbol At steht für Astat.
+s	Rn	fact	Das Symbol Rn steht für Radon.
+s	Fr	fact	Das Symbol Fr steht für Francium.
+s	Ra	fact	Das Symbol Ra steht für Radium.
+s	Ac	fact	Das Symbol Ac steht für Actinium.
+s	Th	fact	Das Symbol Th steht für Thorium.
+s	Pa	fact	Das Symbol Pa steht für Protactinium.
+s	U	fact	Das Symbol U steht für Uran.
+s	Np	fact	Das Symbol Np steht für Neptunium.
+s	Pu	fact	Das Symbol Pu steht für Plutonium.
+s	Am	fact	Das Symbol Am steht für Americium.
+s	Cm	fact	Das Symbol Cm steht für Curium.
+s	Bk	fact	Das Symbol Bk steht für Berkelium.
+s	Cf	fact	Das Symbol Cf steht für Californium.
+s	Es	fact	Das Symbol Es steht für Einsteinium.
+s	Fm	fact	Das Symbol Fm steht für Fermium.
+s	Md	fact	Das Symbol Md steht für Mendelevium.
+s	No	fact	Das Symbol No steht für Nobelium.
+s	Lr	fact	Das Symbol Lr steht für Lawrencium.
+s	Rf	fact	Das Symbol Rf steht für Rutherfordium.
+s	Db	fact	Das Symbol Db steht für Dubnium.
+s	Sg	fact	Das Symbol Sg steht für Seaborgium.
+s	Bh	fact	Das Symbol Bh steht für Bohrium.
+s	Hs	fact	Das Symbol Hs steht für Hassium.
+s	Mt	fact	Das Symbol Mt steht für Meitnerium.
+s	Ds	fact	Das Symbol Ds steht für Darmstadtium.
+s	Rg	fact	Das Symbol Rg steht für Roentgenium.
+s	Cn	fact	Das Symbol Cn steht für Copernicium.
+s	Nh	fact	Das Symbol Nh steht für Nihonium.
+s	Fl	fact	Das Symbol Fl steht für Flerovium.
+s	Mc	fact	Das Symbol Mc steht für Moscovium.
+s	Lv	fact	Das Symbol Lv steht für Livermorium.
+s	Ts	fact	Das Symbol Ts steht für Tenness.
+s	Og	fact	Das Symbol Og steht für Oganesson.
+s	H2O	na	Das Symbol Wasser: dazu habe ich keine Angabe.
+s	knallgas	na	Das Symbol Knallgasreaktion: dazu habe ich keine Angabe.
+s	wasser	na	Das Symbol Wasser: dazu habe ich keine Angabe.
+s	Xyz	unknown	Das Symbol – Das weiß ich leider nicht.
+O	H	fact	Die Ordnungszahl von Wasserstoff ist 1.
+O	He	fact	Die Ordnungszahl von Helium ist 2.
+O	Li	fact	Die Ordnungszahl von Lithium ist 3.
+O	Be	fact	Die Ordnungszahl von Beryllium ist 4.
+O	B	fact	Die Ordnungszahl von Bor ist 5.
+O	C	fact	Die Ordnungszahl von Kohlenstoff ist 6.
+O	N	fact	Die Ordnungszahl von Stickstoff ist 7.
+O	O	fact	Die Ordnungszahl von Sauerstoff ist 8.
+O	F	fact	Die Ordnungszahl von Fluor ist 9.
+O	Ne	fact	Die Ordnungszahl von Neon ist 10.
+O	Na	fact	Die Ordnungszahl von Natrium ist 11.
+O	Mg	fact	Die Ordnungszahl von Magnesium ist 12.
+O	Al	fact	Die Ordnungszahl von Aluminium ist 13.
+O	Si	fact	Die Ordnungszahl von Silicium ist 14.
+O	P	fact	Die Ordnungszahl von Phosphor ist 15.
+O	S	fact	Die Ordnungszahl von Schwefel ist 16.
+O	Cl	fact	Die Ordnungszahl von Chlor ist 17.
+O	Ar	fact	Die Ordnungszahl von Argon ist 18.
+O	K	fact	Die Ordnungszahl von Kalium ist 19.
+O	Ca	fact	Die Ordnungszahl von Calcium ist 20.
+O	Sc	fact	Die Ordnungszahl von Scandium ist 21.
+O	Ti	fact	Die Ordnungszahl von Titan ist 22.
+O	V	fact	Die Ordnungszahl von Vanadium ist 23.
+O	Cr	fact	Die Ordnungszahl von Chrom ist 24.
+O	Mn	fact	Die Ordnungszahl von Mangan ist 25.
+O	Fe	fact	Die Ordnungszahl von Eisen ist 26.
+O	Co	fact	Die Ordnungszahl von Cobalt ist 27.
+O	Ni	fact	Die Ordnungszahl von Nickel ist 28.
+O	Cu	fact	Die Ordnungszahl von Kupfer ist 29.
+O	Zn	fact	Die Ordnungszahl von Zink ist 30.
+O	Ga	fact	Die Ordnungszahl von Gallium ist 31.
+O	Ge	fact	Die Ordnungszahl von Germanium ist 32.
+O	As	fact	Die Ordnungszahl von Arsen ist 33.
+O	Se	fact	Die Ordnungszahl von Selen ist 34.
+O	Br	fact	Die Ordnungszahl von Brom ist 35.
+O	Kr	fact	Die Ordnungszahl von Krypton ist 36.
+O	Rb	fact	Die Ordnungszahl von Rubidium ist 37.
+O	Sr	fact	Die Ordnungszahl von Strontium ist 38.
+O	Y	fact	Die Ordnungszahl von Yttrium ist 39.
+O	Zr	fact	Die Ordnungszahl von Zirconium ist 40.
+O	Nb	fact	Die Ordnungszahl von Niob ist 41.
+O	Mo	fact	Die Ordnungszahl von Molybdän ist 42.
+O	Tc	fact	Die Ordnungszahl von Technetium ist 43.
+O	Ru	fact	Die Ordnungszahl von Ruthenium ist 44.
+O	Rh	fact	Die Ordnungszahl von Rhodium ist 45.
+O	Pd	fact	Die Ordnungszahl von Palladium ist 46.
+O	Ag	fact	Die Ordnungszahl von Silber ist 47.
+O	Cd	fact	Die Ordnungszahl von Cadmium ist 48.
+O	In	fact	Die Ordnungszahl von Indium ist 49.
+O	Sn	fact	Die Ordnungszahl von Zinn ist 50.
+O	Sb	fact	Die Ordnungszahl von Antimon ist 51.
+O	Te	fact	Die Ordnungszahl von Tellur ist 52.
+O	I	fact	Die Ordnungszahl von Iod ist 53.
+O	Xe	fact	Die Ordnungszahl von Xenon ist 54.
+O	Cs	fact	Die Ordnungszahl von Caesium ist 55.
+O	Ba	fact	Die Ordnungszahl von Barium ist 56.
+O	La	fact	Die Ordnungszahl von Lanthan ist 57.
+O	Ce	fact	Die Ordnungszahl von Cer ist 58.
+O	Pr	fact	Die Ordnungszahl von Praseodym ist 59.
+O	Nd	fact	Die Ordnungszahl von Neodym ist 60.
+O	Pm	fact	Die Ordnungszahl von Promethium ist 61.
+O	Sm	fact	Die Ordnungszahl von Samarium ist 62.
+O	Eu	fact	Die Ordnungszahl von Europium ist 63.
+O	Gd	fact	Die Ordnungszahl von Gadolinium ist 64.
+O	Tb	fact	Die Ordnungszahl von Terbium ist 65.
+O	Dy	fact	Die Ordnungszahl von Dysprosium ist 66.
+O	Ho	fact	Die Ordnungszahl von Holmium ist 67.
+O	Er	fact	Die Ordnungszahl von Erbium ist 68.
+O	Tm	fact	Die Ordnungszahl von Thulium ist 69.
+O	Yb	fact	Die Ordnungszahl von Ytterbium ist 70.
+O	Lu	fact	Die Ordnungszahl von Lutetium ist 71.
+O	Hf	fact	Die Ordnungszahl von Hafnium ist 72.
+O	Ta	fact	Die Ordnungszahl von Tantal ist 73.
+O	W	fact	Die Ordnungszahl von Wolfram ist 74.
+O	Re	fact	Die Ordnungszahl von Rhenium ist 75.
+O	Os	fact	Die Ordnungszahl von Osmium ist 76.
+O	Ir	fact	Die Ordnungszahl von Iridium ist 77.
+O	Pt	fact	Die Ordnungszahl von Platin ist 78.
+O	Au	fact	Die Ordnungszahl von Gold ist 79.
+O	Hg	fact	Die Ordnungszahl von Quecksilber ist 80.
+O	Tl	fact	Die Ordnungszahl von Thallium ist 81.
+O	Pb	fact	Die Ordnungszahl von Blei ist 82.
+O	Bi	fact	Die Ordnungszahl von Bismut ist 83.
+O	Po	fact	Die Ordnungszahl von Polonium ist 84.
+O	At	fact	Die Ordnungszahl von Astat ist 85.
+O	Rn	fact	Die Ordnungszahl von Radon ist 86.
+O	Fr	fact	Die Ordnungszahl von Francium ist 87.
+O	Ra	fact	Die Ordnungszahl von Radium ist 88.
+O	Ac	fact	Die Ordnungszahl von Actinium ist 89.
+O	Th	fact	Die Ordnungszahl von Thorium ist 90.
+O	Pa	fact	Die Ordnungszahl von Protactinium ist 91.
+O	U	fact	Die Ordnungszahl von Uran ist 92.
+O	Np	fact	Die Ordnungszahl von Neptunium ist 93.
+O	Pu	fact	Die Ordnungszahl von Plutonium ist 94.
+O	Am	fact	Die Ordnungszahl von Americium ist 95.
+O	Cm	fact	Die Ordnungszahl von Curium ist 96.
+O	Bk	fact	Die Ordnungszahl von Berkelium ist 97.
+O	Cf	fact	Die Ordnungszahl von Californium ist 98.
+O	Es	fact	Die Ordnungszahl von Einsteinium ist 99.
+O	Fm	fact	Die Ordnungszahl von Fermium ist 100.
+O	Md	fact	Die Ordnungszahl von Mendelevium ist 101.
+O	No	fact	Die Ordnungszahl von Nobelium ist 102.
+O	Lr	fact	Die Ordnungszahl von Lawrencium ist 103.
+O	Rf	fact	Die Ordnungszahl von Rutherfordium ist 104.
+O	Db	fact	Die Ordnungszahl von Dubnium ist 105.
+O	Sg	fact	Die Ordnungszahl von Seaborgium ist 106.
+O	Bh	fact	Die Ordnungszahl von Bohrium ist 107.
+O	Hs	fact	Die Ordnungszahl von Hassium ist 108.
+O	Mt	fact	Die Ordnungszahl von Meitnerium ist 109.
+O	Ds	fact	Die Ordnungszahl von Darmstadtium ist 110.
+O	Rg	fact	Die Ordnungszahl von Roentgenium ist 111.
+O	Cn	fact	Die Ordnungszahl von Copernicium ist 112.
+O	Nh	fact	Die Ordnungszahl von Nihonium ist 113.
+O	Fl	fact	Die Ordnungszahl von Flerovium ist 114.
+O	Mc	fact	Die Ordnungszahl von Moscovium ist 115.
+O	Lv	fact	Die Ordnungszahl von Livermorium ist 116.
+O	Ts	fact	Die Ordnungszahl von Tenness ist 117.
+O	Og	fact	Die Ordnungszahl von Oganesson ist 118.
+O	H2O	na	Die Ordnungszahl von Wasser: dazu habe ich keine Angabe.
+O	knallgas	na	Die Ordnungszahl von Knallgasreaktion: dazu habe ich keine Angabe.
+O	wasser	na	Die Ordnungszahl von Wasser: dazu habe ich keine Angabe.
+O	Xyz	unknown	Die Ordnungszahl von – Das weiß ich leider nicht.
+o	1	fact	Die Ordnungszahl 1 hat Wasserstoff.
+o	10	fact	Die Ordnungszahl 10 hat Neon.
+o	100	fact	Die Ordnungszahl 100 hat Fermium.
+o	101	fact	Die Ordnungszahl 101 hat Mendelevium.
+o	102	fact	Die Ordnungszahl 102 hat Nobelium.
+o	103	fact	Die Ordnungszahl 103 hat Lawrencium.
+o	104	fact	Die Ordnungszahl 104 hat Rutherfordium.
+o	105	fact	Die Ordnungszahl 105 hat Dubnium.
+o	106	fact	Die Ordnungszahl 106 hat Seaborgium.
+o	107	fact	Die Ordnungszahl 107 hat Bohrium.
+o	108	fact	Die Ordnungszahl 108 hat Hassium.
+o	109	fact	Die Ordnungszahl 109 hat Meitnerium.
+o	11	fact	Die Ordnungszahl 11 hat Natrium.
+o	110	fact	Die Ordnungszahl 110 hat Darmstadtium.
+o	111	fact	Die Ordnungszahl 111 hat Roentgenium.
+o	112	fact	Die Ordnungszahl 112 hat Copernicium.
+o	113	fact	Die Ordnungszahl 113 hat Nihonium.
+o	114	fact	Die Ordnungszahl 114 hat Flerovium.
+o	115	fact	Die Ordnungszahl 115 hat Moscovium.
+o	116	fact	Die Ordnungszahl 116 hat Livermorium.
+o	117	fact	Die Ordnungszahl 117 hat Tenness.
+o	118	fact	Die Ordnungszahl 118 hat Oganesson.
+o	12	fact	Die Ordnungszahl 12 hat Magnesium.
+o	13	fact	Die Ordnungszahl 13 hat Aluminium.
+o	14	fact	Die Ordnungszahl 14 hat Silicium.
+o	15	fact	Die Ordnungszahl 15 hat Phosphor.
+o	16	fact	Die Ordnungszahl 16 hat Schwefel.
+o	17	fact	Die Ordnungszahl 17 hat Chlor.
+o	18	fact	Die Ordnungszahl 18 hat Argon.
+o	19	fact	Die Ordnungszahl 19 hat Kalium.
+o	2	fact	Die Ordnungszahl 2 hat Helium.
+o	20	fact	Die Ordnungszahl 20 hat Calcium.
+o	21	fact	Die Ordnungszahl 21 hat Scandium.
+o	22	fact	Die Ordnungszahl 22 hat Titan.
+o	23	fact	Die Ordnungszahl 23 hat Vanadium.
+o	24	fact	Die Ordnungszahl 24 hat Chrom.
+o	25	fact	Die Ordnungszahl 25 hat Mangan.
+o	26	fact	Die Ordnungszahl 26 hat Eisen.
+o	27	fact	Die Ordnungszahl 27 hat Cobalt.
+o	28	fact	Die Ordnungszahl 28 hat Nickel.
+o	29	fact	Die Ordnungszahl 29 hat Kupfer.
+o	3	fact	Die Ordnungszahl 3 hat Lithium.
+o	30	fact	Die Ordnungszahl 30 hat Zink.
+o	31	fact	Die Ordnungszahl 31 hat Gallium.
+o	32	fact	Die Ordnungszahl 32 hat Germanium.
+o	33	fact	Die Ordnungszahl 33 hat Arsen.
+o	34	fact	Die Ordnungszahl 34 hat Selen.
+o	35	fact	Die Ordnungszahl 35 hat Brom.
+o	36	fact	Die Ordnungszahl 36 hat Krypton.
+o	37	fact	Die Ordnungszahl 37 hat Rubidium.
+o	38	fact	Die Ordnungszahl 38 hat Strontium.
+o	39	fact	Die Ordnungszahl 39 hat Yttrium.
+o	4	fact	Die Ordnungszahl 4 hat Beryllium.
+o	40	fact	Die Ordnungszahl 40 hat Zirconium.
+o	41	fact	Die Ordnungszahl 41 hat Niob.
+o	42	fact	Die Ordnungszahl 42 hat Molybdän.
+o	43	fact	Die Ordnungszahl 43 hat Technetium.
+o	44	fact	Die Ordnungszahl 44 hat Ruthenium.
+o	45	fact	Die Ordnungszahl 45 hat Rhodium.
+o	46	fact	Die Ordnungszahl 46 hat Palladium.
+o	47	fact	Die Ordnungszahl 47 hat Silber.
+o	48	fact	Die Ordnungszahl 48 hat Cadmium.
+o	49	fact	Die Ordnungszahl 49 hat Indium.
+o	5	fact	Die Ordnungszahl 5 hat Bor.
+o	50	fact	Die Ordnungszahl 50 hat Zinn.
+o	51	fact	Die Ordnungszahl 51 hat Antimon.
+o	52	fact	Die Ordnungszahl 52 hat Tellur.
+o	53	fact	Die Ordnungszahl 53 hat Iod.
+o	54	fact	Die Ordnungszahl 54 hat Xenon.
+o	55	fact	Die Ordnungszahl 55 hat Caesium.
+o	56	fact	Die Ordnungszahl 56 hat Barium.
+o	57	fact	Die Ordnungszahl 57 hat Lanthan.
+o	58	fact	Die Ordnungszahl 58 hat Cer.
+o	59	fact	Die Ordnungszahl 59 hat Praseodym.
+o	6	fact	Die Ordnungszahl 6 hat Kohlenstoff.
+o	60	fact	Die Ordnungszahl 60 hat Neodym.
+o	61	fact	Die Ordnungszahl 61 hat Promethium.
+o	62	fact	Die Ordnungszahl 62 hat Samarium.
+o	63	fact	Die Ordnungszahl 63 hat Europium.
+o	64	fact	Die Ordnungszahl 64 hat Gadolinium.
+o	65	fact	Die Ordnungszahl 65 hat Terbium.
+o	66	fact	Die Ordnungszahl 66 hat Dysprosium.
+o	67	fact	Die Ordnungszahl 67 hat Holmium.
+o	68	fact	Die Ordnungszahl 68 hat Erbium.
+o	69	fact	Die Ordnungszahl 69 hat Thulium.
+o	7	fact	Die Ordnungszahl 7 hat Stickstoff.
+o	70	fact	Die Ordnungszahl 70 hat Ytterbium.
+o	71	fact	Die Ordnungszahl 71 hat Lutetium.
+o	72	fact	Die Ordnungszahl 72 hat Hafnium.
+o	73	fact	Die Ordnungszahl 73 hat Tantal.
+o	74	fact	Die Ordnungszahl 74 hat Wolfram.
+o	75	fact	Die Ordnungszahl 75 hat Rhenium.
+o	76	fact	Die Ordnungszahl 76 hat Osmium.
+o	77	fact	Die Ordnungszahl 77 hat Iridium.
+o	78	fact	Die Ordnungszahl 78 hat Platin.
+o	79	fact	Die Ordnungszahl 79 hat Gold.
+o	8	fact	Die Ordnungszahl 8 hat Sauerstoff.
+o	80	fact	Die Ordnungszahl 80 hat Quecksilber.
+o	81	fact	Die Ordnungszahl 81 hat Thallium.
+o	82	fact	Die Ordnungszahl 82 hat Blei.
+o	83	fact	Die Ordnungszahl 83 hat Bismut.
+o	84	fact	Die Ordnungszahl 84 hat Polonium.
+o	85	fact	Die Ordnungszahl 85 hat Astat.
+o	86	fact	Die Ordnungszahl 86 hat Radon.
+o	87	fact	Die Ordnungszahl 87 hat Francium.
+o	88	fact	Die Ordnungszahl 88 hat Radium.
+o	89	fact	Die Ordnungszahl 89 hat Actinium.
+o	9	fact	Die Ordnungszahl 9 hat Fluor.
+o	90	fact	Die Ordnungszahl 90 hat Thorium.
+o	91	fact	Die Ordnungszahl 91 hat Protactinium.
+o	92	fact	Die Ordnungszahl 92 hat Uran.
+o	93	fact	Die Ordnungszahl 93 hat Neptunium.
+o	94	fact	Die Ordnungszahl 94 hat Plutonium.
+o	95	fact	Die Ordnungszahl 95 hat Americium.
+o	96	fact	Die Ordnungszahl 96 hat Curium.
+o	97	fact	Die Ordnungszahl 97 hat Berkelium.
+o	98	fact	Die Ordnungszahl 98 hat Californium.
+o	99	fact	Die Ordnungszahl 99 hat Einsteinium.
+o	Xyz	unknown	Die Ordnungszahl – Das weiß ich leider nicht.
+M	H	fact	Die Atommasse von Wasserstoff beträgt 1,01 u.
+M	He	fact	Die Atommasse von Helium beträgt 4,00 u.
+M	Li	fact	Die Atommasse von Lithium beträgt 6,94 u.
+M	Be	fact	Die Atommasse von Beryllium beträgt 9,01 u.
+M	B	fact	Die Atommasse von Bor beträgt 10,81 u.
+M	C	fact	Die Atommasse von Kohlenstoff beträgt 12,01 u.
+M	N	fact	Die Atommasse von Stickstoff beträgt 14,01 u.
+M	O	fact	Die Atommasse von Sauerstoff beträgt 16,00 u.
+M	F	fact	Die Atommasse von Fluor beträgt 19,00 u.
+M	Ne	fact	Die Atommasse von Neon beträgt 20,18 u.
+M	Na	fact	Die Atommasse von Natrium beträgt 22,99 u.
+M	Mg	fact	Die Atommasse von Magnesium beträgt 24,31 u.
+M	Al	fact	Die Atommasse von Aluminium beträgt 26,98 u.
+M	Si	fact	Die Atommasse von Silicium beträgt 28,09 u.
+M	P	fact	Die Atommasse von Phosphor beträgt 30,97 u.
+M	S	fact	Die Atommasse von Schwefel beträgt 32,06 u.
+M	Cl	fact	Die Atommasse von Chlor beträgt 35,45 u.
+M	Ar	fact	Die Atommasse von Argon beträgt 39,95 u.
+M	K	fact	Die Atommasse von Kalium beträgt 39,10 u.
+M	Ca	fact	Die Atommasse von Calcium beträgt 40,08 u.
+M	Sc	fact	Die Atommasse von Scandium beträgt 44,96 u.
+M	Ti	fact	Die Atommasse von Titan beträgt 47,87 u.
+M	V	fact	Die Atommasse von Vanadium beträgt 50,94 u.
+M	Cr	fact	Die Atommasse von Chrom beträgt 52,00 u.
+M	Mn	fact	Die Atommasse von Mangan beträgt 54,94 u.
+M	Fe	fact	Die Atommasse von Eisen beträgt 55,85 u.
+M	Co	fact	Die Atommasse von Cobalt beträgt 58,93 u.
+M	Ni	fact	Die Atommasse von Nickel beträgt 58,69 u.
+M	Cu	fact	Die Atommasse von Kupfer beträgt 63,55 u.
+M	Zn	fact	Die Atommasse von Zink beträgt 65,38 u.
+M	Ga	fact	Die Atommasse von Gallium beträgt 69,72 u.
+M	Ge	fact	Die Atommasse von Germanium beträgt 72,63 u.
+M	As	fact	Die Atommasse von Arsen beträgt 74,92 u.
+M	Se	fact	Die Atommasse von Selen beträgt 78,97 u.
+M	Br	fact	Die Atommasse von Brom beträgt 79,90 u.
+M	Kr	fact	Die Atommasse von Krypton beträgt 83,80 u.
+M	Rb	fact	Die Atommasse von Rubidium beträgt 85,47 u.
+M	Sr	fact	Die Atommasse von Strontium beträgt 87,62 u.
+M	Y	fact	Die Atommasse von Yttrium beträgt 88,91 u.
+M	Zr	fact	Die Atommasse von Zirconium beträgt 91,22 u.
+M	Nb	fact	Die Atommasse von Niob beträgt 92,91 u.
+M	Mo	fact	Die Atommasse von Molybdän beträgt 95,95 u.
+M	Tc	fact	Die Atommasse von Technetium beträgt 97,91 u.
+M	Ru	fact	Die Atommasse von Ruthenium beträgt 101,07 u.
+M	Rh	fact	Die Atommasse von Rhodium beträgt 102,91 u.
+M	Pd	fact	Die Atommasse von Palladium beträgt 106,42 u.
+M	Ag	fact	Die Atommasse von Silber beträgt 107,87 u.
+M	Cd	fact	Die Atommasse von Cadmium beträgt 112,41 u.
+M	In	fact	Die Atommasse von Indium beträgt 114,82 u.
+M	Sn	fact	Die Atommasse von Zinn beträgt 118,71 u.
+M	Sb	fact	Die Atommasse von Antimon beträgt 121,76 u.
+M	Te	fact	Die Atommasse von Tellur beträgt 127,60 u.
+M	I	fact	Die Atommasse von Iod beträgt 126,90 u.
+M	Xe	fact	Die Atommasse von Xenon beträgt 131,29 u.
+M	Cs	fact	Die Atommasse von Caesium beträgt 132,91 u.
+M	Ba	fact	Die Atommasse von Barium beträgt 137,33 u.
+M	La	fact	Die Atommasse von Lanthan beträgt 138,91 u.
+M	Ce	fact	Die Atommasse von Cer beträgt 140,12 u.
+M	Pr	fact	Die Atommasse von Praseodym beträgt 140,91 u.
+M	Nd	fact	Die Atommasse von Neodym beträgt 144,24 u.
+M	Pm	fact	Die Atommasse von Promethium beträgt 144,91 u.
+M	Sm	fact	Die Atommasse von Samarium beträgt 150,36 u.
+M	Eu	fact	Die Atommasse von Europium beträgt 151,96 u.
+M	Gd	fact	Die Atommasse von Gadolinium beträgt 157,25 u.
+M	Tb	fact	Die Atommasse von Terbium beträgt 158,93 u.
+M	Dy	fact	Die Atommasse von Dysprosium beträgt 162,50 u.
+M	Ho	fact	Die Atommasse von Holmium beträgt 164,93 u.
+M	Er	fact	Die Atommasse von Erbium beträgt 167,26 u.
+M	Tm	fact	Die Atommasse von Thulium beträgt 168,93 u.
+M	Yb	fact	Die Atommasse von Ytterbium beträgt 173,05 u.
+M	Lu	fact	Die Atommasse von Lutetium beträgt 174,97 u.
+M	Hf	fact	Die Atommasse von Hafnium beträgt 178,49 u.
+M	Ta	fact	Die Atommasse von Tantal beträgt 180,95 u.
+M	W	fact	Die Atommasse von Wolfram beträgt 183,84 u.
+M	Re	fact	Die Atommasse von Rhenium beträgt 186,21 u.
+M	Os	fact	Die Atommasse von Osmium beträgt 190,23 u.
+M	Ir	fact	Die Atommasse von Iridium beträgt 192,22 u.
+M	Pt	fact	Die Atommasse von Platin beträgt 195,08 u.
+M	Au	fact	Die Atommasse von Gold beträgt 196,97 u.
+M	Hg	fact	Die Atommasse von Quecksilber beträgt 200,59 u.
+M	Tl	fact	Die Atommasse von Thallium beträgt 204,38 u.
+M	Pb	fact	Die Atommasse von Blei beträgt 207,20 u.
+M	Bi	fact	Die Atommasse von Bismut beträgt 208,98 u.
+M	Po	fact	Die Atommasse von Polonium beträgt 208,98 u.
+M	At	fact	Die Atommasse von Astat beträgt 209,99 u.
+M	Rn	fact	Die Atommasse von Radon beträgt 222,02 u.
+M	Fr	fact	Die Atommasse von Francium beträgt 223,02 u.
+M	Ra	fact	Die Atommasse von Radium beträgt 226,03 u.
+M	Ac	fact	Die Atommasse von Actinium beträgt 227,03 u.
+M	Th	fact	Die Atommasse von Thorium beträgt 232,04 u.
+M	Pa	fact	Die Atommasse von Protactinium beträgt 231,04 u.
+M	U	fact	Die Atommasse von Uran beträgt 238,03 u.
+M	Np	fact	Die Atommasse von Neptunium beträgt 237,05 u.
+M	Pu	fact	Die Atommasse von Plutonium beträgt 244,06 u.
+M	Am	fact	Die Atommasse von Americium beträgt 243 u.
+M	Cm	fact	Die Atommasse von Curium beträgt 247 u.
+M	Bk	fact	Die Atommasse von Berkelium beträgt 247 u.
+M	Cf	fact	Die Atommasse von Californium beträgt 251 u.
+M	Es	fact	Die Atommasse von Einsteinium beträgt 252 u.
+M	Fm	fact	Die Atommasse von Fermium beträgt 257 u.
+M	Md	fact	Die Atommasse von Mendelevium beträgt 258 u.
+M	No	fact	Die Atommasse von Nobelium beträgt 259 u.
+M	Lr	fact	Die Atommasse von Lawrencium beträgt 266 u.
+M	Rf	fact	Die Atommasse von Rutherfordium beträgt 267 u.
+M	Db	fact	Die Atommasse von Dubnium beträgt 268 u.
+M	Sg	fact	Die Atommasse von Seaborgium beträgt 267 u.
+M	Bh	fact	Die Atommasse von Bohrium beträgt 270 u.
+M	Hs	fact	Die Atommasse von Hassium beträgt 271 u.
+M	Mt	fact	Die Atommasse von Meitnerium beträgt 278 u.
+M	Ds	fact	Die Atommasse von Darmstadtium beträgt 281 u.
+M	Rg	fact	Die Atommasse von Roentgenium beträgt 282 u.
+M	Cn	fact	Die Atommasse von Copernicium beträgt 285 u.
+M	Nh	fact	Die Atommasse von Nihonium beträgt 286 u.
+M	Fl	fact	Die Atommasse von Flerovium beträgt 289 u.
+M	Mc	fact	Die Atommasse von Moscovium beträgt 290 u.
+M	Lv	fact	Die Atommasse von Livermorium beträgt 293 u.
+M	Ts	fact	Die Atommasse von Tenness beträgt 294 u.
+M	Og	fact	Die Atommasse von Oganesson beträgt 294 u.
+M	H2O	na	Die Atommasse von Wasser: dazu habe ich keine Angabe.
+M	knallgas	na	Die Atommasse von Knallgasreaktion: dazu habe ich keine Angabe.
+M	wasser	na	Die Atommasse von Wasser: dazu habe ich keine Angabe.
+M	Xyz	unknown	Die Atommasse von – Das weiß ich leider nicht.
+P	H	fact	Zur Periode: Wasserstoff steht in der 1. Periode.
+P	He	fact	Zur Periode: Helium steht in der 1. Periode.
+P	Li	fact	Zur Periode: Lithium steht in der 2. Periode.
+P	Be	fact	Zur Periode: Beryllium steht in der 2. Periode.
+P	B	fact	Zur Periode: Bor steht in der 2. Periode.
+P	C	fact	Zur Periode: Kohlenstoff steht in der 2. Periode.
+P	N	fact	Zur Periode: Stickstoff steht in der 2. Periode.
+P	O	fact	Zur Periode: Sauerstoff steht in der 2. Periode.
+P	F	fact	Zur Periode: Fluor steht in der 2. Periode.
+P	Ne	fact	Zur Periode: Neon steht in der 2. Periode.
+P	Na	fact	Zur Periode: Natrium steht in der 3. Periode.
+P	Mg	fact	Zur Periode: Magnesium steht in der 3. Periode.
+P	Al	fact	Zur Periode: Aluminium steht in der 3. Periode.
+P	Si	fact	Zur Periode: Silicium steht in der 3. Periode.
+P	P	fact	Zur Periode: Phosphor steht in der 3. Periode.
+P	S	fact	Zur Periode: Schwefel steht in der 3. Periode.
+P	Cl	fact	Zur Periode: Chlor steht in der 3. Periode.
+P	Ar	fact	Zur Periode: Argon steht in der 3. Periode.
+P	K	fact	Zur Periode: Kalium steht in der 4. Periode.
+P	Ca	fact	Zur Periode: Calcium steht in der 4. Periode.
+P	Sc	fact	Zur Periode: Scandium steht in der 4. Periode.
+P	Ti	fact	Zur Periode: Titan steht in der 4. Periode.
+P	V	fact	Zur Periode: Vanadium steht in der 4. Periode.
+P	Cr	fact	Zur Periode: Chrom steht in der 4. Periode.
+P	Mn	fact	Zur Periode: Mangan steht in der 4. Periode.
+P	Fe	fact	Zur Periode: Eisen steht in der 4. Periode.
+P	Co	fact	Zur Periode: Cobalt steht in der 4. Periode.
+P	Ni	fact	Zur Periode: Nickel steht in der 4. Periode.
+P	Cu	fact	Zur Periode: Kupfer steht in der 4. Periode.
+P	Zn	fact	Zur Periode: Zink steht in der 4. Periode.
+P	Ga	fact	Zur Periode: Gallium steht in der 4. Periode.
+P	Ge	fact	Zur Periode: Germanium steht in der 4. Periode.
+P	As	fact	Zur Periode: Arsen steht in der 4. Periode.
+P	Se	fact	Zur Periode: Selen steht in der 4. Periode.
+P	Br	fact	Zur Periode: Brom steht in der 4. Periode.
+P	Kr	fact	Zur Periode: Krypton steht in der 4. Periode.
+P	Rb	fact	Zur Periode: Rubidium steht in der 5. Periode.
+P	Sr	fact	Zur Periode: Strontium steht in der 5. Periode.
+P	Y	fact	Zur Periode: Yttrium steht in der 5. Periode.
+P	Zr	fact	Zur Periode: Zirconium steht in der 5. Periode.
+P	Nb	fact	Zur Periode: Niob steht in der 5. Periode.
+P	Mo	fact	Zur Periode: Molybdän steht in der 5. Periode.
+P	Tc	fact	Zur Periode: Technetium steht in der 5. Periode.
+P	Ru	fact	Zur Periode: Ruthenium steht in der 5. Periode.
+P	Rh	fact	Zur Periode: Rhodium steht in der 5. Periode.
+P	Pd	fact	Zur Periode: Palladium steht in der 5. Periode.
+P	Ag	fact	Zur Periode: Silber steht in der 5. Periode.
+P	Cd	fact	Zur Periode: Cadmium steht in der 5. Periode.
+P	In	fact	Zur Periode: Indium steht in der 5. Periode.
+P	Sn	fact	Zur Periode: Zinn steht in der 5. Periode.
+P	Sb	fact	Zur Periode: Antimon steht in der 5. Periode.
+P	Te	fact	Zur Periode: Tellur steht in der 5. Periode.
+P	I	fact	Zur Periode: Iod steht in der 5. Periode.
+P	Xe	fact	Zur Periode: Xenon steht in der 5. Periode.
+P	Cs	fact	Zur Periode: Caesium steht in der 6. Periode.
+P	Ba	fact	Zur Periode: Barium steht in der 6. Periode.
+P	La	fact	Zur Periode: Lanthan steht in der 6. Periode.
+P	Ce	fact	Zur Periode: Cer steht in der 6. Periode.
+P	Pr	fact	Zur Periode: Praseodym steht in der 6. Periode.
+P	Nd	fact	Zur Periode: Neodym steht in der 6. Periode.
+P	Pm	fact	Zur Periode: Promethium steht in der 6. Periode.
+P	Sm	fact	Zur Periode: Samarium steht in der 6. Periode.
+P	Eu	fact	Zur Periode: Europium steht in der 6. Periode.
+P	Gd	fact	Zur Periode: Gadolinium steht in der 6. Periode.
+P	Tb	fact	Zur Periode: Terbium steht in der 6. Periode.
+P	Dy	fact	Zur Periode: Dysprosium steht in der 6. Periode.
+P	Ho	fact	Zur Periode: Holmium steht in der 6. Periode.
+P	Er	fact	Zur Periode: Erbium steht in der 6. Periode.
+P	Tm	fact	Zur Periode: Thulium steht in der 6. Periode.
+P	Yb	fact	Zur Periode: Ytterbium steht in der 6. Periode.
+P	Lu	fact	Zur Periode: Lutetium steht in der 6. Periode.
+P	Hf	fact	Zur Periode: Hafnium steht in der 6. Periode.
+P	Ta	fact	Zur Periode: Tantal steht in der 6. Periode.
+P	W	fact	Zur Periode: Wolfram steht in der 6. Periode.
+P	Re	fact	Zur Periode: Rhenium steht in der 6. Periode.
+P	Os	fact	Zur Periode: Osmium steht in der 6. Periode.
+P	Ir	fact	Zur Periode: Iridium steht in der 6. Periode.
+P	Pt	fact	Zur Periode: Platin steht in der 6. Periode.
+P	Au	fact	Zur Periode: Gold steht in der 6. Periode.
+P	Hg	fact	Zur Periode: Quecksilber steht in der 6. Periode.
+P	Tl	fact	Zur Periode: Thallium steht in der 6. Periode.
+P	Pb	fact	Zur Periode: Blei steht in der 6. Periode.
+P	Bi	fact	Zur Periode: Bismut steht in der 6. Periode.
+P	Po	fact	Zur Periode: Polonium steht in der 6. Periode.
+P	At	fact	Zur Periode: Astat steht in der 6. Periode.
+P	Rn	fact	Zur Periode: Radon steht in der 6. Periode.
+P	Fr	fact	Zur Periode: Francium steht in der 7. Periode.
+P	Ra	fact	Zur Periode: Radium steht in der 7. Periode.
+P	Ac	fact	Zur Periode: Actinium steht in der 7. Periode.
+P	Th	fact	Zur Periode: Thorium steht in der 7. Periode.
+P	Pa	fact	Zur Periode: Protactinium steht in der 7. Periode.
+P	U	fact	Zur Periode: Uran steht in der 7. Periode.
+P	Np	fact	Zur Periode: Neptunium steht in der 7. Periode.
+P	Pu	fact	Zur Periode: Plutonium steht in der 7. Periode.
+P	Am	fact	Zur Periode: Americium steht in der 7. Periode.
+P	Cm	fact	Zur Periode: Curium steht in der 7. Periode.
+P	Bk	fact	Zur Periode: Berkelium steht in der 7. Periode.
+P	Cf	fact	Zur Periode: Californium steht in der 7. Periode.
+P	Es	fact	Zur Periode: Einsteinium steht in der 7. Periode.
+P	Fm	fact	Zur Periode: Fermium steht in der 7. Periode.
+P	Md	fact	Zur Periode: Mendelevium steht in der 7. Periode.
+P	No	fact	Zur Periode: Nobelium steht in der 7. Periode.
+P	Lr	fact	Zur Periode: Lawrencium steht in der 7. Periode.
+P	Rf	fact	Zur Periode: Rutherfordium steht in der 7. Periode.
+P	Db	fact	Zur Periode: Dubnium steht in der 7. Periode.
+P	Sg	fact	Zur Periode: Seaborgium steht in der 7. Periode.
+P	Bh	fact	Zur Periode: Bohrium steht in der 7. Periode.
+P	Hs	fact	Zur Periode: Hassium steht in der 7. Periode.
+P	Mt	fact	Zur Periode: Meitnerium steht in der 7. Periode.
+P	Ds	fact	Zur Periode: Darmstadtium steht in der 7. Periode.
+P	Rg	fact	Zur Periode: Roentgenium steht in der 7. Periode.
+P	Cn	fact	Zur Periode: Copernicium steht in der 7. Periode.
+P	Nh	fact	Zur Periode: Nihonium steht in der 7. Periode.
+P	Fl	fact	Zur Periode: Flerovium steht in der 7. Periode.
+P	Mc	fact	Zur Periode: Moscovium steht in der 7. Periode.
+P	Lv	fact	Zur Periode: Livermorium steht in der 7. Periode.
+P	Ts	fact	Zur Periode: Tenness steht in der 7. Periode.
+P	Og	fact	Zur Periode: Oganesson steht in der 7. Periode.
+P	H2O	na	Zur Periode: Wasser: dazu habe ich keine Angabe.
+P	knallgas	na	Zur Periode: Knallgasreaktion: dazu habe ich keine Angabe.
+P	wasser	na	Zur Periode: Wasser: dazu habe ich keine Angabe.
+P	Xyz	unknown	Zur Periode: – Das weiß ich leider nicht.
+G	H	fact	Die Gruppe von Wasserstoff ist: 1. Hauptgruppe (Gruppe 1).
+G	He	fact	Die Gruppe von Helium ist: 8. Hauptgruppe (Gruppe 18).
+G	Li	fact	Die Gruppe von Lithium ist: 1. Hauptgruppe (Gruppe 1).
+G	Be	fact	Die Gruppe von Beryllium ist: 2. Hauptgruppe (Gruppe 2).
+G	B	fact	Die Gruppe von Bor ist: 3. Hauptgruppe (Gruppe 13).
+G	C	fact	Die Gruppe von Kohlenstoff ist: 4. Hauptgruppe (Gruppe 14).
+G	N	fact	Die Gruppe von Stickstoff ist: 5. Hauptgruppe (Gruppe 15).
+G	O	fact	Die Gruppe von Sauerstoff ist: 6. Hauptgruppe (Gruppe 16).
+G	F	fact	Die Gruppe von Fluor ist: 7. Hauptgruppe (Gruppe 17).
+G	Ne	fact	Die Gruppe von Neon ist: 8. Hauptgruppe (Gruppe 18).
+G	Na	fact	Die Gruppe von Natrium ist: 1. Hauptgruppe (Gruppe 1).
+G	Mg	fact	Die Gruppe von Magnesium ist: 2. Hauptgruppe (Gruppe 2).
+G	Al	fact	Die Gruppe von Aluminium ist: 3. Hauptgruppe (Gruppe 13).
+G	Si	fact	Die Gruppe von Silicium ist: 4. Hauptgruppe (Gruppe 14).
+G	P	fact	Die Gruppe von Phosphor ist: 5. Hauptgruppe (Gruppe 15).
+G	S	fact	Die Gruppe von Schwefel ist: 6. Hauptgruppe (Gruppe 16).
+G	Cl	fact	Die Gruppe von Chlor ist: 7. Hauptgruppe (Gruppe 17).
+G	Ar	fact	Die Gruppe von Argon ist: 8. Hauptgruppe (Gruppe 18).
+G	K	fact	Die Gruppe von Kalium ist: 1. Hauptgruppe (Gruppe 1).
+G	Ca	fact	Die Gruppe von Calcium ist: 2. Hauptgruppe (Gruppe 2).
+G	Sc	fact	Die Gruppe von Scandium ist: Gruppe 3 (Nebengruppe).
+G	Ti	fact	Die Gruppe von Titan ist: Gruppe 4 (Nebengruppe).
+G	V	fact	Die Gruppe von Vanadium ist: Gruppe 5 (Nebengruppe).
+G	Cr	fact	Die Gruppe von Chrom ist: Gruppe 6 (Nebengruppe).
+G	Mn	fact	Die Gruppe von Mangan ist: Gruppe 7 (Nebengruppe).
+G	Fe	fact	Die Gruppe von Eisen ist: Gruppe 8 (Nebengruppe).
+G	Co	fact	Die Gruppe von Cobalt ist: Gruppe 9 (Nebengruppe).
+G	Ni	fact	Die Gruppe von Nickel ist: Gruppe 10 (Nebengruppe).
+G	Cu	fact	Die Gruppe von Kupfer ist: Gruppe 11 (Nebengruppe).
+G	Zn	fact	Die Gruppe von Zink ist: Gruppe 12 (Nebengruppe).
+G	Ga	fact	Die Gruppe von Gallium ist: 3. Hauptgruppe (Gruppe 13).
+G	Ge	fact	Die Gruppe von Germanium ist: 4. Hauptgruppe (Gruppe 14).
+G	As	fact	Die Gruppe von Arsen ist: 5. Hauptgruppe (Gruppe 15).
+G	Se	fact	Die Gruppe von Selen ist: 6. Hauptgruppe (Gruppe 16).
+G	Br	fact	Die Gruppe von Brom ist: 7. Hauptgruppe (Gruppe 17).
+G	Kr	fact	Die Gruppe von Krypton ist: 8. Hauptgruppe (Gruppe 18).
+G	Rb	fact	Die Gruppe von Rubidium ist: 1. Hauptgruppe (Gruppe 1).
+G	Sr	fact	Die Gruppe von Strontium ist: 2. Hauptgruppe (Gruppe 2).
+G	Y	fact	Die Gruppe von Yttrium ist: Gruppe 3 (Nebengruppe).
+G	Zr	fact	Die Gruppe von Zirconium ist: Gruppe 4 (Nebengruppe).
+G	Nb	fact	Die Gruppe von Niob ist: Gruppe 5 (Nebengruppe).
+G	Mo	fact	Die Gruppe von Molybdän ist: Gruppe 6 (Nebengruppe).
+G	Tc	fact	Die Gruppe von Technetium ist: Gruppe 7 (Nebengruppe).
+G	Ru	fact	Die Gruppe von Ruthenium ist: Gruppe 8 (Nebengruppe).
+G	Rh	fact	Die Gruppe von Rhodium ist: Gruppe 9 (Nebengruppe).
+G	Pd	fact	Die Gruppe von Palladium ist: Gruppe 10 (Nebengruppe).
+G	Ag	fact	Die Gruppe von Silber ist: Gruppe 11 (Nebengruppe).
+G	Cd	fact	Die Gruppe von Cadmium ist: Gruppe 12 (Nebengruppe).
+G	In	fact	Die Gruppe von Indium ist: 3. Hauptgruppe (Gruppe 13).
+G	Sn	fact	Die Gruppe von Zinn ist: 4. Hauptgruppe (Gruppe 14).
+G	Sb	fact	Die Gruppe von Antimon ist: 5. Hauptgruppe (Gruppe 15).
+G	Te	fact	Die Gruppe von Tellur ist: 6. Hauptgruppe (Gruppe 16).
+G	I	fact	Die Gruppe von Iod ist: 7. Hauptgruppe (Gruppe 17).
+G	Xe	fact	Die Gruppe von Xenon ist: 8. Hauptgruppe (Gruppe 18).
+G	Cs	fact	Die Gruppe von Caesium ist: 1. Hauptgruppe (Gruppe 1).
+G	Ba	fact	Die Gruppe von Barium ist: 2. Hauptgruppe (Gruppe 2).
+G	La	na	Die Gruppe von Lanthan gebe ich nicht an.
+G	Ce	na	Die Gruppe von Cer gebe ich nicht an.
+G	Pr	na	Die Gruppe von Praseodym gebe ich nicht an.
+G	Nd	na	Die Gruppe von Neodym gebe ich nicht an.
+G	Pm	na	Die Gruppe von Promethium gebe ich nicht an.
+G	Sm	na	Die Gruppe von Samarium gebe ich nicht an.
+G	Eu	na	Die Gruppe von Europium gebe ich nicht an.
+G	Gd	na	Die Gruppe von Gadolinium gebe ich nicht an.
+G	Tb	na	Die Gruppe von Terbium gebe ich nicht an.
+G	Dy	na	Die Gruppe von Dysprosium gebe ich nicht an.
+G	Ho	na	Die Gruppe von Holmium gebe ich nicht an.
+G	Er	na	Die Gruppe von Erbium gebe ich nicht an.
+G	Tm	na	Die Gruppe von Thulium gebe ich nicht an.
+G	Yb	na	Die Gruppe von Ytterbium gebe ich nicht an.
+G	Lu	na	Die Gruppe von Lutetium gebe ich nicht an.
+G	Hf	fact	Die Gruppe von Hafnium ist: Gruppe 4 (Nebengruppe).
+G	Ta	fact	Die Gruppe von Tantal ist: Gruppe 5 (Nebengruppe).
+G	W	fact	Die Gruppe von Wolfram ist: Gruppe 6 (Nebengruppe).
+G	Re	fact	Die Gruppe von Rhenium ist: Gruppe 7 (Nebengruppe).
+G	Os	fact	Die Gruppe von Osmium ist: Gruppe 8 (Nebengruppe).
+G	Ir	fact	Die Gruppe von Iridium ist: Gruppe 9 (Nebengruppe).
+G	Pt	fact	Die Gruppe von Platin ist: Gruppe 10 (Nebengruppe).
+G	Au	fact	Die Gruppe von Gold ist: Gruppe 11 (Nebengruppe).
+G	Hg	fact	Die Gruppe von Quecksilber ist: Gruppe 12 (Nebengruppe).
+G	Tl	fact	Die Gruppe von Thallium ist: 3. Hauptgruppe (Gruppe 13).
+G	Pb	fact	Die Gruppe von Blei ist: 4. Hauptgruppe (Gruppe 14).
+G	Bi	fact	Die Gruppe von Bismut ist: 5. Hauptgruppe (Gruppe 15).
+G	Po	fact	Die Gruppe von Polonium ist: 6. Hauptgruppe (Gruppe 16).
+G	At	fact	Die Gruppe von Astat ist: 7. Hauptgruppe (Gruppe 17).
+G	Rn	fact	Die Gruppe von Radon ist: 8. Hauptgruppe (Gruppe 18).
+G	Fr	fact	Die Gruppe von Francium ist: 1. Hauptgruppe (Gruppe 1).
+G	Ra	fact	Die Gruppe von Radium ist: 2. Hauptgruppe (Gruppe 2).
+G	Ac	na	Die Gruppe von Actinium gebe ich nicht an.
+G	Th	na	Die Gruppe von Thorium gebe ich nicht an.
+G	Pa	na	Die Gruppe von Protactinium gebe ich nicht an.
+G	U	na	Die Gruppe von Uran gebe ich nicht an.
+G	Np	na	Die Gruppe von Neptunium gebe ich nicht an.
+G	Pu	na	Die Gruppe von Plutonium gebe ich nicht an.
+G	Am	na	Die Gruppe von Americium gebe ich nicht an.
+G	Cm	na	Die Gruppe von Curium gebe ich nicht an.
+G	Bk	na	Die Gruppe von Berkelium gebe ich nicht an.
+G	Cf	na	Die Gruppe von Californium gebe ich nicht an.
+G	Es	na	Die Gruppe von Einsteinium gebe ich nicht an.
+G	Fm	na	Die Gruppe von Fermium gebe ich nicht an.
+G	Md	na	Die Gruppe von Mendelevium gebe ich nicht an.
+G	No	na	Die Gruppe von Nobelium gebe ich nicht an.
+G	Lr	na	Die Gruppe von Lawrencium gebe ich nicht an.
+G	Rf	fact	Die Gruppe von Rutherfordium ist: Gruppe 4 (Nebengruppe).
+G	Db	fact	Die Gruppe von Dubnium ist: Gruppe 5 (Nebengruppe).
+G	Sg	fact	Die Gruppe von Seaborgium ist: Gruppe 6 (Nebengruppe).
+G	Bh	fact	Die Gruppe von Bohrium ist: Gruppe 7 (Nebengruppe).
+G	Hs	fact	Die Gruppe von Hassium ist: Gruppe 8 (Nebengruppe).
+G	Mt	fact	Die Gruppe von Meitnerium ist: Gruppe 9 (Nebengruppe).
+G	Ds	fact	Die Gruppe von Darmstadtium ist: Gruppe 10 (Nebengruppe).
+G	Rg	fact	Die Gruppe von Roentgenium ist: Gruppe 11 (Nebengruppe).
+G	Cn	fact	Die Gruppe von Copernicium ist: Gruppe 12 (Nebengruppe).
+G	Nh	fact	Die Gruppe von Nihonium ist: 3. Hauptgruppe (Gruppe 13).
+G	Fl	fact	Die Gruppe von Flerovium ist: 4. Hauptgruppe (Gruppe 14).
+G	Mc	fact	Die Gruppe von Moscovium ist: 5. Hauptgruppe (Gruppe 15).
+G	Lv	fact	Die Gruppe von Livermorium ist: 6. Hauptgruppe (Gruppe 16).
+G	Ts	fact	Die Gruppe von Tenness ist: 7. Hauptgruppe (Gruppe 17).
+G	Og	fact	Die Gruppe von Oganesson ist: 8. Hauptgruppe (Gruppe 18).
+G	H2O	na	Die Gruppe von Wasser gebe ich nicht an.
+G	knallgas	na	Die Gruppe von Knallgasreaktion gebe ich nicht an.
+G	wasser	na	Die Gruppe von Wasser gebe ich nicht an.
+G	Xyz	unknown	Die Gruppe von – Das weiß ich leider nicht.
+F	H	na	Zur Elementfamilie: Wasserstoff gehört zu keiner der Familien, die ich kenne.
+F	He	fact	Zur Elementfamilie: Helium gehört zu den Edelgasen.
+F	Li	fact	Zur Elementfamilie: Lithium gehört zu den Alkalimetallen.
+F	Be	fact	Zur Elementfamilie: Beryllium gehört zu den Erdalkalimetallen.
+F	B	na	Zur Elementfamilie: Bor gehört zu keiner der Familien, die ich kenne.
+F	C	na	Zur Elementfamilie: Kohlenstoff gehört zu keiner der Familien, die ich kenne.
+F	N	na	Zur Elementfamilie: Stickstoff gehört zu keiner der Familien, die ich kenne.
+F	O	fact	Zur Elementfamilie: Sauerstoff gehört zu den Chalkogenen.
+F	F	fact	Zur Elementfamilie: Fluor gehört zu den Halogenen.
+F	Ne	fact	Zur Elementfamilie: Neon gehört zu den Edelgasen.
+F	Na	fact	Zur Elementfamilie: Natrium gehört zu den Alkalimetallen.
+F	Mg	fact	Zur Elementfamilie: Magnesium gehört zu den Erdalkalimetallen.
+F	Al	na	Zur Elementfamilie: Aluminium gehört zu keiner der Familien, die ich kenne.
+F	Si	na	Zur Elementfamilie: Silicium gehört zu keiner der Familien, die ich kenne.
+F	P	na	Zur Elementfamilie: Phosphor gehört zu keiner der Familien, die ich kenne.
+F	S	fact	Zur Elementfamilie: Schwefel gehört zu den Chalkogenen.
+F	Cl	fact	Zur Elementfamilie: Chlor gehört zu den Halogenen.
+F	Ar	fact	Zur Elementfamilie: Argon gehört zu den Edelgasen.
+F	K	fact	Zur Elementfamilie: Kalium gehört zu den Alkalimetallen.
+F	Ca	fact	Zur Elementfamilie: Calcium gehört zu den Erdalkalimetallen.
+F	Sc	na	Zur Elementfamilie: Scandium gehört zu keiner der Familien, die ich kenne.
+F	Ti	na	Zur Elementfamilie: Titan gehört zu keiner der Familien, die ich kenne.
+F	V	na	Zur Elementfamilie: Vanadium gehört zu keiner der Familien, die ich kenne.
+F	Cr	na	Zur Elementfamilie: Chrom gehört zu keiner der Familien, die ich kenne.
+F	Mn	na	Zur Elementfamilie: Mangan gehört zu keiner der Familien, die ich kenne.
+F	Fe	na	Zur Elementfamilie: Eisen gehört zu keiner der Familien, die ich kenne.
+F	Co	na	Zur Elementfamilie: Cobalt gehört zu keiner der Familien, die ich kenne.
+F	Ni	na	Zur Elementfamilie: Nickel gehört zu keiner der Familien, die ich kenne.
+F	Cu	na	Zur Elementfamilie: Kupfer gehört zu keiner der Familien, die ich kenne.
+F	Zn	na	Zur Elementfamilie: Zink gehört zu keiner der Familien, die ich kenne.
+F	Ga	na	Zur Elementfamilie: Gallium gehört zu keiner der Familien, die ich kenne.
+F	Ge	na	Zur Elementfamilie: Germanium gehört zu keiner der Familien, die ich kenne.
+F	As	na	Zur Elementfamilie: Arsen gehört zu keiner der Familien, die ich kenne.
+F	Se	fact	Zur Elementfamilie: Selen gehört zu den Chalkogenen.
+F	Br	fact	Zur Elementfamilie: Brom gehört zu den Halogenen.
+F	Kr	fact	Zur Elementfamilie: Krypton gehört zu den Edelgasen.
+F	Rb	fact	Zur Elementfamilie: Rubidium gehört zu den Alkalimetallen.
+F	Sr	fact	Zur Elementfamilie: Strontium gehört zu den Erdalkalimetallen.
+F	Y	na	Zur Elementfamilie: Yttrium gehört zu keiner der Familien, die ich kenne.
+F	Zr	na	Zur Elementfamilie: Zirconium gehört zu keiner der Familien, die ich kenne.
+F	Nb	na	Zur Elementfamilie: Niob gehört zu keiner der Familien, die ich kenne.
+F	Mo	na	Zur Elementfamilie: Molybdän gehört zu keiner der Familien, die ich kenne.
+F	Tc	na	Zur Elementfamilie: Technetium gehört zu keiner der Familien, die ich kenne.
+F	Ru	na	Zur Elementfamilie: Ruthenium gehört zu keiner der Familien, die ich kenne.
+F	Rh	na	Zur Elementfamilie: Rhodium gehört zu keiner der Familien, die ich kenne.
+F	Pd	na	Zur Elementfamilie: Palladium gehört zu keiner der Familien, die ich kenne.
+F	Ag	na	Zur Elementfamilie: Silber gehört zu keiner der Familien, die ich kenne.
+F	Cd	na	Zur Elementfamilie: Cadmium gehört zu keiner der Familien, die ich kenne.
+F	In	na	Zur Elementfamilie: Indium gehört zu keiner der Familien, die ich kenne.
+F	Sn	na	Zur Elementfamilie: Zinn gehört zu keiner der Familien, die ich kenne.
+F	Sb	na	Zur Elementfamilie: Antimon gehört zu keiner der Familien, die ich kenne.
+F	Te	fact	Zur Elementfamilie: Tellur gehört zu den Chalkogenen.
+F	I	fact	Zur Elementfamilie: Iod gehört zu den Halogenen.
+F	Xe	fact	Zur Elementfamilie: Xenon gehört zu den Edelgasen.
+F	Cs	fact	Zur Elementfamilie: Caesium gehört zu den Alkalimetallen.
+F	Ba	fact	Zur Elementfamilie: Barium gehört zu den Erdalkalimetallen.
+F	La	fact	Zur Elementfamilie: Lanthan gehört zu den Lanthanoiden.
+F	Ce	fact	Zur Elementfamilie: Cer gehört zu den Lanthanoiden.
+F	Pr	fact	Zur Elementfamilie: Praseodym gehört zu den Lanthanoiden.
+F	Nd	fact	Zur Elementfamilie: Neodym gehört zu den Lanthanoiden.
+F	Pm	fact	Zur Elementfamilie: Promethium gehört zu den Lanthanoiden.
+F	Sm	fact	Zur Elementfamilie: Samarium gehört zu den Lanthanoiden.
+F	Eu	fact	Zur Elementfamilie: Europium gehört zu den Lanthanoiden.
+F	Gd	fact	Zur Elementfamilie: Gadolinium gehört zu den Lanthanoiden.
+F	Tb	fact	Zur Elementfamilie: Terbium gehört zu den Lanthanoiden.
+F	Dy	fact	Zur Elementfamilie: Dysprosium gehört zu den Lanthanoiden.
+F	Ho	fact	Zur Elementfamilie: Holmium gehört zu den Lanthanoiden.
+F	Er	fact	Zur Elementfamilie: Erbium gehört zu den Lanthanoiden.
+F	Tm	fact	Zur Elementfamilie: Thulium gehört zu den Lanthanoiden.
+F	Yb	fact	Zur Elementfamilie: Ytterbium gehört zu den Lanthanoiden.
+F	Lu	fact	Zur Elementfamilie: Lutetium gehört zu den Lanthanoiden.
+F	Hf	na	Zur Elementfamilie: Hafnium gehört zu keiner der Familien, die ich kenne.
+F	Ta	na	Zur Elementfamilie: Tantal gehört zu keiner der Familien, die ich kenne.
+F	W	na	Zur Elementfamilie: Wolfram gehört zu keiner der Familien, die ich kenne.
+F	Re	na	Zur Elementfamilie: Rhenium gehört zu keiner der Familien, die ich kenne.
+F	Os	na	Zur Elementfamilie: Osmium gehört zu keiner der Familien, die ich kenne.
+F	Ir	na	Zur Elementfamilie: Iridium gehört zu keiner der Familien, die ich kenne.
+F	Pt	na	Zur Elementfamilie: Platin gehört zu keiner der Familien, die ich kenne.
+F	Au	na	Zur Elementfamilie: Gold gehört zu keiner der Familien, die ich kenne.
+F	Hg	na	Zur Elementfamilie: Quecksilber gehört zu keiner der Familien, die ich kenne.
+F	Tl	na	Zur Elementfamilie: Thallium gehört zu keiner der Familien, die ich kenne.
+F	Pb	na	Zur Elementfamilie: Blei gehört zu keiner der Familien, die ich kenne.
+F	Bi	na	Zur Elementfamilie: Bismut gehört zu keiner der Familien, die ich kenne.
+F	Po	fact	Zur Elementfamilie: Polonium gehört zu den Chalkogenen.
+F	At	fact	Zur Elementfamilie: Astat gehört zu den Halogenen.
+F	Rn	fact	Zur Elementfamilie: Radon gehört zu den Edelgasen.
+F	Fr	fact	Zur Elementfamilie: Francium gehört zu den Alkalimetallen.
+F	Ra	fact	Zur Elementfamilie: Radium gehört zu den Erdalkalimetallen.
+F	Ac	fact	Zur Elementfamilie: Actinium gehört zu den Actinoiden.
+F	Th	fact	Zur Elementfamilie: Thorium gehört zu den Actinoiden.
+F	Pa	fact	Zur Elementfamilie: Protactinium gehört zu den Actinoiden.
+F	U	fact	Zur Elementfamilie: Uran gehört zu den Actinoiden.
+F	Np	fact	Zur Elementfamilie: Neptunium gehört zu den Actinoiden.
+F	Pu	fact	Zur Elementfamilie: Plutonium gehört zu den Actinoiden.
+F	Am	fact	Zur Elementfamilie: Americium gehört zu den Actinoiden.
+F	Cm	fact	Zur Elementfamilie: Curium gehört zu den Actinoiden.
+F	Bk	fact	Zur Elementfamilie: Berkelium gehört zu den Actinoiden.
+F	Cf	fact	Zur Elementfamilie: Californium gehört zu den Actinoiden.
+F	Es	fact	Zur Elementfamilie: Einsteinium gehört zu den Actinoiden.
+F	Fm	fact	Zur Elementfamilie: Fermium gehört zu den Actinoiden.
+F	Md	fact	Zur Elementfamilie: Mendelevium gehört zu den Actinoiden.
+F	No	fact	Zur Elementfamilie: Nobelium gehört zu den Actinoiden.
+F	Lr	fact	Zur Elementfamilie: Lawrencium gehört zu den Actinoiden.
+F	Rf	na	Zur Elementfamilie: Rutherfordium gehört zu keiner der Familien, die ich kenne.
+F	Db	na	Zur Elementfamilie: Dubnium gehört zu keiner der Familien, die ich kenne.
+F	Sg	na	Zur Elementfamilie: Seaborgium gehört zu keiner der Familien, die ich kenne.
+F	Bh	na	Zur Elementfamilie: Bohrium gehört zu keiner der Familien, die ich kenne.
+F	Hs	na	Zur Elementfamilie: Hassium gehört zu keiner der Familien, die ich kenne.
+F	Mt	na	Zur Elementfamilie: Meitnerium gehört zu keiner der Familien, die ich kenne.
+F	Ds	na	Zur Elementfamilie: Darmstadtium gehört zu keiner der Familien, die ich kenne.
+F	Rg	na	Zur Elementfamilie: Roentgenium gehört zu keiner der Familien, die ich kenne.
+F	Cn	na	Zur Elementfamilie: Copernicium gehört zu keiner der Familien, die ich kenne.
+F	Nh	na	Zur Elementfamilie: Nihonium gehört zu keiner der Familien, die ich kenne.
+F	Fl	na	Zur Elementfamilie: Flerovium gehört zu keiner der Familien, die ich kenne.
+F	Mc	na	Zur Elementfamilie: Moscovium gehört zu keiner der Familien, die ich kenne.
+F	Lv	na	Zur Elementfamilie: Livermorium gehört zu keiner der Familien, die ich kenne.
+F	Ts	na	Zur Elementfamilie: Tenness gehört zu keiner der Familien, die ich kenne.
+F	Og	fact	Zur Elementfamilie: Oganesson gehört zu den Edelgasen.
+F	H2O	na	Zur Elementfamilie: Wasser gehört zu keiner der Familien, die ich kenne.
+F	knallgas	na	Zur Elementfamilie: Knallgasreaktion gehört zu keiner der Familien, die ich kenne.
+F	wasser	na	Zur Elementfamilie: Wasser gehört zu keiner der Familien, die ich kenne.
+F	Xyz	unknown	Zur Elementfamilie: – Das weiß ich leider nicht.
+K	H	fact	Zur Stoffart: Wasserstoff ist ein Nichtmetall.
+K	He	fact	Zur Stoffart: Helium ist ein Nichtmetall.
+K	Li	fact	Zur Stoffart: Lithium ist ein Metall.
+K	Be	fact	Zur Stoffart: Beryllium ist ein Metall.
+K	B	fact	Zur Stoffart: Bor ist ein Halbmetall.
+K	C	fact	Zur Stoffart: Kohlenstoff ist ein Nichtmetall.
+K	N	fact	Zur Stoffart: Stickstoff ist ein Nichtmetall.
+K	O	fact	Zur Stoffart: Sauerstoff ist ein Nichtmetall.
+K	F	fact	Zur Stoffart: Fluor ist ein Nichtmetall.
+K	Ne	fact	Zur Stoffart: Neon ist ein Nichtmetall.
+K	Na	fact	Zur Stoffart: Natrium ist ein Metall.
+K	Mg	fact	Zur Stoffart: Magnesium ist ein Metall.
+K	Al	fact	Zur Stoffart: Aluminium ist ein Metall.
+K	Si	fact	Zur Stoffart: Silicium ist ein Halbmetall.
+K	P	fact	Zur Stoffart: Phosphor ist ein Nichtmetall.
+K	S	fact	Zur Stoffart: Schwefel ist ein Nichtmetall.
+K	Cl	fact	Zur Stoffart: Chlor ist ein Nichtmetall.
+K	Ar	fact	Zur Stoffart: Argon ist ein Nichtmetall.
+K	K	fact	Zur Stoffart: Kalium ist ein Metall.
+K	Ca	fact	Zur Stoffart: Calcium ist ein Metall.
+K	Sc	fact	Zur Stoffart: Scandium ist ein Metall.
+K	Ti	fact	Zur Stoffart: Titan ist ein Metall.
+K	V	fact	Zur Stoffart: Vanadium ist ein Metall.
+K	Cr	fact	Zur Stoffart: Chrom ist ein Metall.
+K	Mn	fact	Zur Stoffart: Mangan ist ein Metall.
+K	Fe	fact	Zur Stoffart: Eisen ist ein Metall.
+K	Co	fact	Zur Stoffart: Cobalt ist ein Metall.
+K	Ni	fact	Zur Stoffart: Nickel ist ein Metall.
+K	Cu	fact	Zur Stoffart: Kupfer ist ein Metall.
+K	Zn	fact	Zur Stoffart: Zink ist ein Metall.
+K	Ga	fact	Zur Stoffart: Gallium ist ein Metall.
+K	Ge	fact	Zur Stoffart: Germanium ist ein Halbmetall.
+K	As	fact	Zur Stoffart: Arsen ist ein Halbmetall.
+K	Se	fact	Zur Stoffart: Selen ist ein Nichtmetall.
+K	Br	fact	Zur Stoffart: Brom ist ein Nichtmetall.
+K	Kr	fact	Zur Stoffart: Krypton ist ein Nichtmetall.
+K	Rb	fact	Zur Stoffart: Rubidium ist ein Metall.
+K	Sr	fact	Zur Stoffart: Strontium ist ein Metall.
+K	Y	fact	Zur Stoffart: Yttrium ist ein Metall.
+K	Zr	fact	Zur Stoffart: Zirconium ist ein Metall.
+K	Nb	fact	Zur Stoffart: Niob ist ein Metall.
+K	Mo	fact	Zur Stoffart: Molybdän ist ein Metall.
+K	Tc	fact	Zur Stoffart: Technetium ist ein Metall.
+K	Ru	fact	Zur Stoffart: Ruthenium ist ein Metall.
+K	Rh	fact	Zur Stoffart: Rhodium ist ein Metall.
+K	Pd	fact	Zur Stoffart: Palladium ist ein Metall.
+K	Ag	fact	Zur Stoffart: Silber ist ein Metall.
+K	Cd	fact	Zur Stoffart: Cadmium ist ein Metall.
+K	In	fact	Zur Stoffart: Indium ist ein Metall.
+K	Sn	fact	Zur Stoffart: Zinn ist ein Metall.
+K	Sb	fact	Zur Stoffart: Antimon ist ein Halbmetall.
+K	Te	fact	Zur Stoffart: Tellur ist ein Halbmetall.
+K	I	fact	Zur Stoffart: Iod ist ein Nichtmetall.
+K	Xe	fact	Zur Stoffart: Xenon ist ein Nichtmetall.
+K	Cs	fact	Zur Stoffart: Caesium ist ein Metall.
+K	Ba	fact	Zur Stoffart: Barium ist ein Metall.
+K	La	fact	Zur Stoffart: Lanthan ist ein Metall.
+K	Ce	fact	Zur Stoffart: Cer ist ein Metall.
+K	Pr	fact	Zur Stoffart: Praseodym ist ein Metall.
+K	Nd	fact	Zur Stoffart: Neodym ist ein Metall.
+K	Pm	fact	Zur Stoffart: Promethium ist ein Metall.
+K	Sm	fact	Zur Stoffart: Samarium ist ein Metall.
+K	Eu	fact	Zur Stoffart: Europium ist ein Metall.
+K	Gd	fact	Zur Stoffart: Gadolinium ist ein Metall.
+K	Tb	fact	Zur Stoffart: Terbium ist ein Metall.
+K	Dy	fact	Zur Stoffart: Dysprosium ist ein Metall.
+K	Ho	fact	Zur Stoffart: Holmium ist ein Metall.
+K	Er	fact	Zur Stoffart: Erbium ist ein Metall.
+K	Tm	fact	Zur Stoffart: Thulium ist ein Metall.
+K	Yb	fact	Zur Stoffart: Ytterbium ist ein Metall.
+K	Lu	fact	Zur Stoffart: Lutetium ist ein Metall.
+K	Hf	fact	Zur Stoffart: Hafnium ist ein Metall.
+K	Ta	fact	Zur Stoffart: Tantal ist ein Metall.
+K	W	fact	Zur Stoffart: Wolfram ist ein Metall.
+K	Re	fact	Zur Stoffart: Rhenium ist ein Metall.
+K	Os	fact	Zur Stoffart: Osmium ist ein Metall.
+K	Ir	fact	Zur Stoffart: Iridium ist ein Metall.
+K	Pt	fact	Zur Stoffart: Platin ist ein Metall.
+K	Au	fact	Zur Stoffart: Gold ist ein Metall.
+K	Hg	fact	Zur Stoffart: Quecksilber ist ein Metall.
+K	Tl	fact	Zur Stoffart: Thallium ist ein Metall.
+K	Pb	fact	Zur Stoffart: Blei ist ein Metall.
+K	Bi	fact	Zur Stoffart: Bismut ist ein Metall.
+K	Po	fact	Zur Stoffart: Polonium ist ein Metall.
+K	At	fact	Zur Stoffart: Astat ist ein Metall.
+K	Rn	fact	Zur Stoffart: Radon ist ein Nichtmetall.
+K	Fr	fact	Zur Stoffart: Francium ist ein Metall.
+K	Ra	fact	Zur Stoffart: Radium ist ein Metall.
+K	Ac	fact	Zur Stoffart: Actinium ist ein Metall.
+K	Th	fact	Zur Stoffart: Thorium ist ein Metall.
+K	Pa	fact	Zur Stoffart: Protactinium ist ein Metall.
+K	U	fact	Zur Stoffart: Uran ist ein Metall.
+K	Np	fact	Zur Stoffart: Neptunium ist ein Metall.
+K	Pu	fact	Zur Stoffart: Plutonium ist ein Metall.
+K	Am	fact	Zur Stoffart: Americium ist ein Metall.
+K	Cm	fact	Zur Stoffart: Curium ist ein Metall.
+K	Bk	fact	Zur Stoffart: Berkelium ist ein Metall.
+K	Cf	fact	Zur Stoffart: Californium ist ein Metall.
+K	Es	fact	Zur Stoffart: Einsteinium ist ein Metall.
+K	Fm	fact	Zur Stoffart: Fermium ist ein Metall.
+K	Md	fact	Zur Stoffart: Mendelevium ist ein Metall.
+K	No	fact	Zur Stoffart: Nobelium ist ein Metall.
+K	Lr	fact	Zur Stoffart: Lawrencium ist ein Metall.
+K	Rf	na	Zur Stoffart: bei Rutherfordium weiß man das noch nicht genau.
+K	Db	na	Zur Stoffart: bei Dubnium weiß man das noch nicht genau.
+K	Sg	na	Zur Stoffart: bei Seaborgium weiß man das noch nicht genau.
+K	Bh	na	Zur Stoffart: bei Bohrium weiß man das noch nicht genau.
+K	Hs	na	Zur Stoffart: bei Hassium weiß man das noch nicht genau.
+K	Mt	na	Zur Stoffart: bei Meitnerium weiß man das noch nicht genau.
+K	Ds	na	Zur Stoffart: bei Darmstadtium weiß man das noch nicht genau.
+K	Rg	na	Zur Stoffart: bei Roentgenium weiß man das noch nicht genau.
+K	Cn	na	Zur Stoffart: bei Copernicium weiß man das noch nicht genau.
+K	Nh	na	Zur Stoffart: bei Nihonium weiß man das noch nicht genau.
+K	Fl	na	Zur Stoffart: bei Flerovium weiß man das noch nicht genau.
+K	Mc	na	Zur Stoffart: bei Moscovium weiß man das noch nicht genau.
+K	Lv	na	Zur Stoffart: bei Livermorium weiß man das noch nicht genau.
+K	Ts	na	Zur Stoffart: bei Tenness weiß man das noch nicht genau.
+K	Og	na	Zur Stoffart: bei Oganesson weiß man das noch nicht genau.
+K	H2O	na	Zur Stoffart: bei Wasser weiß man das noch nicht genau.
+K	knallgas	na	Zur Stoffart: bei Knallgasreaktion weiß man das noch nicht genau.
+K	wasser	na	Zur Stoffart: bei Wasser weiß man das noch nicht genau.
+K	Xyz	unknown	Zur Stoffart: – Das weiß ich leider nicht.
+Z	H	fact	Bei Raumtemperatur ist Wasserstoff gasförmig.
+Z	He	fact	Bei Raumtemperatur ist Helium gasförmig.
+Z	Li	fact	Bei Raumtemperatur ist Lithium fest.
+Z	Be	fact	Bei Raumtemperatur ist Beryllium fest.
+Z	B	fact	Bei Raumtemperatur ist Bor fest.
+Z	C	fact	Bei Raumtemperatur ist Kohlenstoff fest.
+Z	N	fact	Bei Raumtemperatur ist Stickstoff gasförmig.
+Z	O	fact	Bei Raumtemperatur ist Sauerstoff gasförmig.
+Z	F	fact	Bei Raumtemperatur ist Fluor gasförmig.
+Z	Ne	fact	Bei Raumtemperatur ist Neon gasförmig.
+Z	Na	fact	Bei Raumtemperatur ist Natrium fest.
+Z	Mg	fact	Bei Raumtemperatur ist Magnesium fest.
+Z	Al	fact	Bei Raumtemperatur ist Aluminium fest.
+Z	Si	fact	Bei Raumtemperatur ist Silicium fest.
+Z	P	fact	Bei Raumtemperatur ist Phosphor fest.
+Z	S	fact	Bei Raumtemperatur ist Schwefel fest.
+Z	Cl	fact	Bei Raumtemperatur ist Chlor gasförmig.
+Z	Ar	fact	Bei Raumtemperatur ist Argon gasförmig.
+Z	K	fact	Bei Raumtemperatur ist Kalium fest.
+Z	Ca	fact	Bei Raumtemperatur ist Calcium fest.
+Z	Sc	fact	Bei Raumtemperatur ist Scandium fest.
+Z	Ti	fact	Bei Raumtemperatur ist Titan fest.
+Z	V	fact	Bei Raumtemperatur ist Vanadium fest.
+Z	Cr	fact	Bei Raumtemperatur ist Chrom fest.
+Z	Mn	fact	Bei Raumtemperatur ist Mangan fest.
+Z	Fe	fact	Bei Raumtemperatur ist Eisen fest.
+Z	Co	fact	Bei Raumtemperatur ist Cobalt fest.
+Z	Ni	fact	Bei Raumtemperatur ist Nickel fest.
+Z	Cu	fact	Bei Raumtemperatur ist Kupfer fest.
+Z	Zn	fact	Bei Raumtemperatur ist Zink fest.
+Z	Ga	fact	Bei Raumtemperatur ist Gallium fest.
+Z	Ge	fact	Bei Raumtemperatur ist Germanium fest.
+Z	As	fact	Bei Raumtemperatur ist Arsen fest.
+Z	Se	fact	Bei Raumtemperatur ist Selen fest.
+Z	Br	fact	Bei Raumtemperatur ist Brom flüssig.
+Z	Kr	fact	Bei Raumtemperatur ist Krypton gasförmig.
+Z	Rb	fact	Bei Raumtemperatur ist Rubidium fest.
+Z	Sr	fact	Bei Raumtemperatur ist Strontium fest.
+Z	Y	fact	Bei Raumtemperatur ist Yttrium fest.
+Z	Zr	fact	Bei Raumtemperatur ist Zirconium fest.
+Z	Nb	fact	Bei Raumtemperatur ist Niob fest.
+Z	Mo	fact	Bei Raumtemperatur ist Molybdän fest.
+Z	Tc	fact	Bei Raumtemperatur ist Technetium fest.
+Z	Ru	fact	Bei Raumtemperatur ist Ruthenium fest.
+Z	Rh	fact	Bei Raumtemperatur ist Rhodium fest.
+Z	Pd	fact	Bei Raumtemperatur ist Palladium fest.
+Z	Ag	fact	Bei Raumtemperatur ist Silber fest.
+Z	Cd	fact	Bei Raumtemperatur ist Cadmium fest.
+Z	In	fact	Bei Raumtemperatur ist Indium fest.
+Z	Sn	fact	Bei Raumtemperatur ist Zinn fest.
+Z	Sb	fact	Bei Raumtemperatur ist Antimon fest.
+Z	Te	fact	Bei Raumtemperatur ist Tellur fest.
+Z	I	fact	Bei Raumtemperatur ist Iod fest.
+Z	Xe	fact	Bei Raumtemperatur ist Xenon gasförmig.
+Z	Cs	fact	Bei Raumtemperatur ist Caesium fest.
+Z	Ba	fact	Bei Raumtemperatur ist Barium fest.
+Z	La	fact	Bei Raumtemperatur ist Lanthan fest.
+Z	Ce	fact	Bei Raumtemperatur ist Cer fest.
+Z	Pr	fact	Bei Raumtemperatur ist Praseodym fest.
+Z	Nd	fact	Bei Raumtemperatur ist Neodym fest.
+Z	Pm	fact	Bei Raumtemperatur ist Promethium fest.
+Z	Sm	fact	Bei Raumtemperatur ist Samarium fest.
+Z	Eu	fact	Bei Raumtemperatur ist Europium fest.
+Z	Gd	fact	Bei Raumtemperatur ist Gadolinium fest.
+Z	Tb	fact	Bei Raumtemperatur ist Terbium fest.
+Z	Dy	fact	Bei Raumtemperatur ist Dysprosium fest.
+Z	Ho	fact	Bei Raumtemperatur ist Holmium fest.
+Z	Er	fact	Bei Raumtemperatur ist Erbium fest.
+Z	Tm	fact	Bei Raumtemperatur ist Thulium fest.
+Z	Yb	fact	Bei Raumtemperatur ist Ytterbium fest.
+Z	Lu	fact	Bei Raumtemperatur ist Lutetium fest.
+Z	Hf	fact	Bei Raumtemperatur ist Hafnium fest.
+Z	Ta	fact	Bei Raumtemperatur ist Tantal fest.
+Z	W	fact	Bei Raumtemperatur ist Wolfram fest.
+Z	Re	fact	Bei Raumtemperatur ist Rhenium fest.
+Z	Os	fact	Bei Raumtemperatur ist Osmium fest.
+Z	Ir	fact	Bei Raumtemperatur ist Iridium fest.
+Z	Pt	fact	Bei Raumtemperatur ist Platin fest.
+Z	Au	fact	Bei Raumtemperatur ist Gold fest.
+Z	Hg	fact	Bei Raumtemperatur ist Quecksilber flüssig.
+Z	Tl	fact	Bei Raumtemperatur ist Thallium fest.
+Z	Pb	fact	Bei Raumtemperatur ist Blei fest.
+Z	Bi	fact	Bei Raumtemperatur ist Bismut fest.
+Z	Po	fact	Bei Raumtemperatur ist Polonium fest.
+Z	At	fact	Bei Raumtemperatur ist Astat fest.
+Z	Rn	fact	Bei Raumtemperatur ist Radon gasförmig.
+Z	Fr	fact	Bei Raumtemperatur ist Francium fest.
+Z	Ra	fact	Bei Raumtemperatur ist Radium fest.
+Z	Ac	fact	Bei Raumtemperatur ist Actinium fest.
+Z	Th	fact	Bei Raumtemperatur ist Thorium fest.
+Z	Pa	fact	Bei Raumtemperatur ist Protactinium fest.
+Z	U	fact	Bei Raumtemperatur ist Uran fest.
+Z	Np	fact	Bei Raumtemperatur ist Neptunium fest.
+Z	Pu	fact	Bei Raumtemperatur ist Plutonium fest.
+Z	Am	fact	Bei Raumtemperatur ist Americium fest.
+Z	Cm	fact	Bei Raumtemperatur ist Curium fest.
+Z	Bk	fact	Bei Raumtemperatur ist Berkelium fest.
+Z	Cf	fact	Bei Raumtemperatur ist Californium fest.
+Z	Es	fact	Bei Raumtemperatur ist Einsteinium fest.
+Z	Fm	fact	Bei Raumtemperatur ist Fermium fest.
+Z	Md	fact	Bei Raumtemperatur ist Mendelevium fest.
+Z	No	fact	Bei Raumtemperatur ist Nobelium fest.
+Z	Lr	fact	Bei Raumtemperatur ist Lawrencium fest.
+Z	Rf	na	Bei Raumtemperatur ist der Zustand von Rutherfordium noch nicht genau bekannt.
+Z	Db	na	Bei Raumtemperatur ist der Zustand von Dubnium noch nicht genau bekannt.
+Z	Sg	na	Bei Raumtemperatur ist der Zustand von Seaborgium noch nicht genau bekannt.
+Z	Bh	na	Bei Raumtemperatur ist der Zustand von Bohrium noch nicht genau bekannt.
+Z	Hs	na	Bei Raumtemperatur ist der Zustand von Hassium noch nicht genau bekannt.
+Z	Mt	na	Bei Raumtemperatur ist der Zustand von Meitnerium noch nicht genau bekannt.
+Z	Ds	na	Bei Raumtemperatur ist der Zustand von Darmstadtium noch nicht genau bekannt.
+Z	Rg	na	Bei Raumtemperatur ist der Zustand von Roentgenium noch nicht genau bekannt.
+Z	Cn	na	Bei Raumtemperatur ist der Zustand von Copernicium noch nicht genau bekannt.
+Z	Nh	na	Bei Raumtemperatur ist der Zustand von Nihonium noch nicht genau bekannt.
+Z	Fl	na	Bei Raumtemperatur ist der Zustand von Flerovium noch nicht genau bekannt.
+Z	Mc	na	Bei Raumtemperatur ist der Zustand von Moscovium noch nicht genau bekannt.
+Z	Lv	na	Bei Raumtemperatur ist der Zustand von Livermorium noch nicht genau bekannt.
+Z	Ts	na	Bei Raumtemperatur ist der Zustand von Tenness noch nicht genau bekannt.
+Z	Og	na	Bei Raumtemperatur ist der Zustand von Oganesson noch nicht genau bekannt.
+Z	H2O	na	Bei Raumtemperatur ist der Zustand von Wasser noch nicht genau bekannt.
+Z	knallgas	na	Bei Raumtemperatur ist der Zustand von Knallgasreaktion noch nicht genau bekannt.
+Z	wasser	na	Bei Raumtemperatur ist der Zustand von Wasser noch nicht genau bekannt.
+Z	Xyz	unknown	Bei Raumtemperatur ist – Das weiß ich leider nicht.
+p	H	fact	Ein Atom Wasserstoff hat 1 Protonen.
+p	He	fact	Ein Atom Helium hat 2 Protonen.
+p	Li	fact	Ein Atom Lithium hat 3 Protonen.
+p	Be	fact	Ein Atom Beryllium hat 4 Protonen.
+p	B	fact	Ein Atom Bor hat 5 Protonen.
+p	C	fact	Ein Atom Kohlenstoff hat 6 Protonen.
+p	N	fact	Ein Atom Stickstoff hat 7 Protonen.
+p	O	fact	Ein Atom Sauerstoff hat 8 Protonen.
+p	F	fact	Ein Atom Fluor hat 9 Protonen.
+p	Ne	fact	Ein Atom Neon hat 10 Protonen.
+p	Na	fact	Ein Atom Natrium hat 11 Protonen.
+p	Mg	fact	Ein Atom Magnesium hat 12 Protonen.
+p	Al	fact	Ein Atom Aluminium hat 13 Protonen.
+p	Si	fact	Ein Atom Silicium hat 14 Protonen.
+p	P	fact	Ein Atom Phosphor hat 15 Protonen.
+p	S	fact	Ein Atom Schwefel hat 16 Protonen.
+p	Cl	fact	Ein Atom Chlor hat 17 Protonen.
+p	Ar	fact	Ein Atom Argon hat 18 Protonen.
+p	K	fact	Ein Atom Kalium hat 19 Protonen.
+p	Ca	fact	Ein Atom Calcium hat 20 Protonen.
+p	Sc	fact	Ein Atom Scandium hat 21 Protonen.
+p	Ti	fact	Ein Atom Titan hat 22 Protonen.
+p	V	fact	Ein Atom Vanadium hat 23 Protonen.
+p	Cr	fact	Ein Atom Chrom hat 24 Protonen.
+p	Mn	fact	Ein Atom Mangan hat 25 Protonen.
+p	Fe	fact	Ein Atom Eisen hat 26 Protonen.
+p	Co	fact	Ein Atom Cobalt hat 27 Protonen.
+p	Ni	fact	Ein Atom Nickel hat 28 Protonen.
+p	Cu	fact	Ein Atom Kupfer hat 29 Protonen.
+p	Zn	fact	Ein Atom Zink hat 30 Protonen.
+p	Ga	fact	Ein Atom Gallium hat 31 Protonen.
+p	Ge	fact	Ein Atom Germanium hat 32 Protonen.
+p	As	fact	Ein Atom Arsen hat 33 Protonen.
+p	Se	fact	Ein Atom Selen hat 34 Protonen.
+p	Br	fact	Ein Atom Brom hat 35 Protonen.
+p	Kr	fact	Ein Atom Krypton hat 36 Protonen.
+p	Rb	fact	Ein Atom Rubidium hat 37 Protonen.
+p	Sr	fact	Ein Atom Strontium hat 38 Protonen.
+p	Y	fact	Ein Atom Yttrium hat 39 Protonen.
+p	Zr	fact	Ein Atom Zirconium hat 40 Protonen.
+p	Nb	fact	Ein Atom Niob hat 41 Protonen.
+p	Mo	fact	Ein Atom Molybdän hat 42 Protonen.
+p	Tc	fact	Ein Atom Technetium hat 43 Protonen.
+p	Ru	fact	Ein Atom Ruthenium hat 44 Protonen.
+p	Rh	fact	Ein Atom Rhodium hat 45 Protonen.
+p	Pd	fact	Ein Atom Palladium hat 46 Protonen.
+p	Ag	fact	Ein Atom Silber hat 47 Protonen.
+p	Cd	fact	Ein Atom Cadmium hat 48 Protonen.
+p	In	fact	Ein Atom Indium hat 49 Protonen.
+p	Sn	fact	Ein Atom Zinn hat 50 Protonen.
+p	Sb	fact	Ein Atom Antimon hat 51 Protonen.
+p	Te	fact	Ein Atom Tellur hat 52 Protonen.
+p	I	fact	Ein Atom Iod hat 53 Protonen.
+p	Xe	fact	Ein Atom Xenon hat 54 Protonen.
+p	Cs	fact	Ein Atom Caesium hat 55 Protonen.
+p	Ba	fact	Ein Atom Barium hat 56 Protonen.
+p	La	fact	Ein Atom Lanthan hat 57 Protonen.
+p	Ce	fact	Ein Atom Cer hat 58 Protonen.
+p	Pr	fact	Ein Atom Praseodym hat 59 Protonen.
+p	Nd	fact	Ein Atom Neodym hat 60 Protonen.
+p	Pm	fact	Ein Atom Promethium hat 61 Protonen.
+p	Sm	fact	Ein Atom Samarium hat 62 Protonen.
+p	Eu	fact	Ein Atom Europium hat 63 Protonen.
+p	Gd	fact	Ein Atom Gadolinium hat 64 Protonen.
+p	Tb	fact	Ein Atom Terbium hat 65 Protonen.
+p	Dy	fact	Ein Atom Dysprosium hat 66 Protonen.
+p	Ho	fact	Ein Atom Holmium hat 67 Protonen.
+p	Er	fact	Ein Atom Erbium hat 68 Protonen.
+p	Tm	fact	Ein Atom Thulium hat 69 Protonen.
+p	Yb	fact	Ein Atom Ytterbium hat 70 Protonen.
+p	Lu	fact	Ein Atom Lutetium hat 71 Protonen.
+p	Hf	fact	Ein Atom Hafnium hat 72 Protonen.
+p	Ta	fact	Ein Atom Tantal hat 73 Protonen.
+p	W	fact	Ein Atom Wolfram hat 74 Protonen.
+p	Re	fact	Ein Atom Rhenium hat 75 Protonen.
+p	Os	fact	Ein Atom Osmium hat 76 Protonen.
+p	Ir	fact	Ein Atom Iridium hat 77 Protonen.
+p	Pt	fact	Ein Atom Platin hat 78 Protonen.
+p	Au	fact	Ein Atom Gold hat 79 Protonen.
+p	Hg	fact	Ein Atom Quecksilber hat 80 Protonen.
+p	Tl	fact	Ein Atom Thallium hat 81 Protonen.
+p	Pb	fact	Ein Atom Blei hat 82 Protonen.
+p	Bi	fact	Ein Atom Bismut hat 83 Protonen.
+p	Po	fact	Ein Atom Polonium hat 84 Protonen.
+p	At	fact	Ein Atom Astat hat 85 Protonen.
+p	Rn	fact	Ein Atom Radon hat 86 Protonen.
+p	Fr	fact	Ein Atom Francium hat 87 Protonen.
+p	Ra	fact	Ein Atom Radium hat 88 Protonen.
+p	Ac	fact	Ein Atom Actinium hat 89 Protonen.
+p	Th	fact	Ein Atom Thorium hat 90 Protonen.
+p	Pa	fact	Ein Atom Protactinium hat 91 Protonen.
+p	U	fact	Ein Atom Uran hat 92 Protonen.
+p	Np	fact	Ein Atom Neptunium hat 93 Protonen.
+p	Pu	fact	Ein Atom Plutonium hat 94 Protonen.
+p	Am	fact	Ein Atom Americium hat 95 Protonen.
+p	Cm	fact	Ein Atom Curium hat 96 Protonen.
+p	Bk	fact	Ein Atom Berkelium hat 97 Protonen.
+p	Cf	fact	Ein Atom Californium hat 98 Protonen.
+p	Es	fact	Ein Atom Einsteinium hat 99 Protonen.
+p	Fm	fact	Ein Atom Fermium hat 100 Protonen.
+p	Md	fact	Ein Atom Mendelevium hat 101 Protonen.
+p	No	fact	Ein Atom Nobelium hat 102 Protonen.
+p	Lr	fact	Ein Atom Lawrencium hat 103 Protonen.
+p	Rf	fact	Ein Atom Rutherfordium hat 104 Protonen.
+p	Db	fact	Ein Atom Dubnium hat 105 Protonen.
+p	Sg	fact	Ein Atom Seaborgium hat 106 Protonen.
+p	Bh	fact	Ein Atom Bohrium hat 107 Protonen.
+p	Hs	fact	Ein Atom Hassium hat 108 Protonen.
+p	Mt	fact	Ein Atom Meitnerium hat 109 Protonen.
+p	Ds	fact	Ein Atom Darmstadtium hat 110 Protonen.
+p	Rg	fact	Ein Atom Roentgenium hat 111 Protonen.
+p	Cn	fact	Ein Atom Copernicium hat 112 Protonen.
+p	Nh	fact	Ein Atom Nihonium hat 113 Protonen.
+p	Fl	fact	Ein Atom Flerovium hat 114 Protonen.
+p	Mc	fact	Ein Atom Moscovium hat 115 Protonen.
+p	Lv	fact	Ein Atom Livermorium hat 116 Protonen.
+p	Ts	fact	Ein Atom Tenness hat 117 Protonen.
+p	Og	fact	Ein Atom Oganesson hat 118 Protonen.
+p	H2O	na	Ein Atom Wasser: dazu habe ich keine Angabe.
+p	knallgas	na	Ein Atom Knallgasreaktion: dazu habe ich keine Angabe.
+p	wasser	na	Ein Atom Wasser: dazu habe ich keine Angabe.
+p	Xyz	unknown	Ein Atom – Das weiß ich leider nicht.
+e	H	fact	Ein Atom Wasserstoff hat 1 Elektronen.
+e	He	fact	Ein Atom Helium hat 2 Elektronen.
+e	Li	fact	Ein Atom Lithium hat 3 Elektronen.
+e	Be	fact	Ein Atom Beryllium hat 4 Elektronen.
+e	B	fact	Ein Atom Bor hat 5 Elektronen.
+e	C	fact	Ein Atom Kohlenstoff hat 6 Elektronen.
+e	N	fact	Ein Atom Stickstoff hat 7 Elektronen.
+e	O	fact	Ein Atom Sauerstoff hat 8 Elektronen.
+e	F	fact	Ein Atom Fluor hat 9 Elektronen.
+e	Ne	fact	Ein Atom Neon hat 10 Elektronen.
+e	Na	fact	Ein Atom Natrium hat 11 Elektronen.
+e	Mg	fact	Ein Atom Magnesium hat 12 Elektronen.
+e	Al	fact	Ein Atom Aluminium hat 13 Elektronen.
+e	Si	fact	Ein Atom Silicium hat 14 Elektronen.
+e	P	fact	Ein Atom Phosphor hat 15 Elektronen.
+e	S	fact	Ein Atom Schwefel hat 16 Elektronen.
+e	Cl	fact	Ein Atom Chlor hat 17 Elektronen.
+e	Ar	fact	Ein Atom Argon hat 18 Elektronen.
+e	K	fact	Ein Atom Kalium hat 19 Elektronen.
+e	Ca	fact	Ein Atom Calcium hat 20 Elektronen.
+e	Sc	fact	Ein Atom Scandium hat 21 Elektronen.
+e	Ti	fact	Ein Atom Titan hat 22 Elektronen.
+e	V	fact	Ein Atom Vanadium hat 23 Elektronen.
+e	Cr	fact	Ein Atom Chrom hat 24 Elektronen.
+e	Mn	fact	Ein Atom Mangan hat 25 Elektronen.
+e	Fe	fact	Ein Atom Eisen hat 26 Elektronen.
+e	Co	fact	Ein Atom Cobalt hat 27 Elektronen.
+e	Ni	fact	Ein Atom Nickel hat 28 Elektronen.
+e	Cu	fact	Ein Atom Kupfer hat 29 Elektronen.
+e	Zn	fact	Ein Atom Zink hat 30 Elektronen.
+e	Ga	fact	Ein Atom Gallium hat 31 Elektronen.
+e	Ge	fact	Ein Atom Germanium hat 32 Elektronen.
+e	As	fact	Ein Atom Arsen hat 33 Elektronen.
+e	Se	fact	Ein Atom Selen hat 34 Elektronen.
+e	Br	fact	Ein Atom Brom hat 35 Elektronen.
+e	Kr	fact	Ein Atom Krypton hat 36 Elektronen.
+e	Rb	fact	Ein Atom Rubidium hat 37 Elektronen.
+e	Sr	fact	Ein Atom Strontium hat 38 Elektronen.
+e	Y	fact	Ein Atom Yttrium hat 39 Elektronen.
+e	Zr	fact	Ein Atom Zirconium hat 40 Elektronen.
+e	Nb	fact	Ein Atom Niob hat 41 Elektronen.
+e	Mo	fact	Ein Atom Molybdän hat 42 Elektronen.
+e	Tc	fact	Ein Atom Technetium hat 43 Elektronen.
+e	Ru	fact	Ein Atom Ruthenium hat 44 Elektronen.
+e	Rh	fact	Ein Atom Rhodium hat 45 Elektronen.
+e	Pd	fact	Ein Atom Palladium hat 46 Elektronen.
+e	Ag	fact	Ein Atom Silber hat 47 Elektronen.
+e	Cd	fact	Ein Atom Cadmium hat 48 Elektronen.
+e	In	fact	Ein Atom Indium hat 49 Elektronen.
+e	Sn	fact	Ein Atom Zinn hat 50 Elektronen.
+e	Sb	fact	Ein Atom Antimon hat 51 Elektronen.
+e	Te	fact	Ein Atom Tellur hat 52 Elektronen.
+e	I	fact	Ein Atom Iod hat 53 Elektronen.
+e	Xe	fact	Ein Atom Xenon hat 54 Elektronen.
+e	Cs	fact	Ein Atom Caesium hat 55 Elektronen.
+e	Ba	fact	Ein Atom Barium hat 56 Elektronen.
+e	La	fact	Ein Atom Lanthan hat 57 Elektronen.
+e	Ce	fact	Ein Atom Cer hat 58 Elektronen.
+e	Pr	fact	Ein Atom Praseodym hat 59 Elektronen.
+e	Nd	fact	Ein Atom Neodym hat 60 Elektronen.
+e	Pm	fact	Ein Atom Promethium hat 61 Elektronen.
+e	Sm	fact	Ein Atom Samarium hat 62 Elektronen.
+e	Eu	fact	Ein Atom Europium hat 63 Elektronen.
+e	Gd	fact	Ein Atom Gadolinium hat 64 Elektronen.
+e	Tb	fact	Ein Atom Terbium hat 65 Elektronen.
+e	Dy	fact	Ein Atom Dysprosium hat 66 Elektronen.
+e	Ho	fact	Ein Atom Holmium hat 67 Elektronen.
+e	Er	fact	Ein Atom Erbium hat 68 Elektronen.
+e	Tm	fact	Ein Atom Thulium hat 69 Elektronen.
+e	Yb	fact	Ein Atom Ytterbium hat 70 Elektronen.
+e	Lu	fact	Ein Atom Lutetium hat 71 Elektronen.
+e	Hf	fact	Ein Atom Hafnium hat 72 Elektronen.
+e	Ta	fact	Ein Atom Tantal hat 73 Elektronen.
+e	W	fact	Ein Atom Wolfram hat 74 Elektronen.
+e	Re	fact	Ein Atom Rhenium hat 75 Elektronen.
+e	Os	fact	Ein Atom Osmium hat 76 Elektronen.
+e	Ir	fact	Ein Atom Iridium hat 77 Elektronen.
+e	Pt	fact	Ein Atom Platin hat 78 Elektronen.
+e	Au	fact	Ein Atom Gold hat 79 Elektronen.
+e	Hg	fact	Ein Atom Quecksilber hat 80 Elektronen.
+e	Tl	fact	Ein Atom Thallium hat 81 Elektronen.
+e	Pb	fact	Ein Atom Blei hat 82 Elektronen.
+e	Bi	fact	Ein Atom Bismut hat 83 Elektronen.
+e	Po	fact	Ein Atom Polonium hat 84 Elektronen.
+e	At	fact	Ein Atom Astat hat 85 Elektronen.
+e	Rn	fact	Ein Atom Radon hat 86 Elektronen.
+e	Fr	fact	Ein Atom Francium hat 87 Elektronen.
+e	Ra	fact	Ein Atom Radium hat 88 Elektronen.
+e	Ac	fact	Ein Atom Actinium hat 89 Elektronen.
+e	Th	fact	Ein Atom Thorium hat 90 Elektronen.
+e	Pa	fact	Ein Atom Protactinium hat 91 Elektronen.
+e	U	fact	Ein Atom Uran hat 92 Elektronen.
+e	Np	fact	Ein Atom Neptunium hat 93 Elektronen.
+e	Pu	fact	Ein Atom Plutonium hat 94 Elektronen.
+e	Am	fact	Ein Atom Americium hat 95 Elektronen.
+e	Cm	fact	Ein Atom Curium hat 96 Elektronen.
+e	Bk	fact	Ein Atom Berkelium hat 97 Elektronen.
+e	Cf	fact	Ein Atom Californium hat 98 Elektronen.
+e	Es	fact	Ein Atom Einsteinium hat 99 Elektronen.
+e	Fm	fact	Ein Atom Fermium hat 100 Elektronen.
+e	Md	fact	Ein Atom Mendelevium hat 101 Elektronen.
+e	No	fact	Ein Atom Nobelium hat 102 Elektronen.
+e	Lr	fact	Ein Atom Lawrencium hat 103 Elektronen.
+e	Rf	fact	Ein Atom Rutherfordium hat 104 Elektronen.
+e	Db	fact	Ein Atom Dubnium hat 105 Elektronen.
+e	Sg	fact	Ein Atom Seaborgium hat 106 Elektronen.
+e	Bh	fact	Ein Atom Bohrium hat 107 Elektronen.
+e	Hs	fact	Ein Atom Hassium hat 108 Elektronen.
+e	Mt	fact	Ein Atom Meitnerium hat 109 Elektronen.
+e	Ds	fact	Ein Atom Darmstadtium hat 110 Elektronen.
+e	Rg	fact	Ein Atom Roentgenium hat 111 Elektronen.
+e	Cn	fact	Ein Atom Copernicium hat 112 Elektronen.
+e	Nh	fact	Ein Atom Nihonium hat 113 Elektronen.
+e	Fl	fact	Ein Atom Flerovium hat 114 Elektronen.
+e	Mc	fact	Ein Atom Moscovium hat 115 Elektronen.
+e	Lv	fact	Ein Atom Livermorium hat 116 Elektronen.
+e	Ts	fact	Ein Atom Tenness hat 117 Elektronen.
+e	Og	fact	Ein Atom Oganesson hat 118 Elektronen.
+e	H2O	na	Ein Atom Wasser: dazu habe ich keine Angabe.
+e	knallgas	na	Ein Atom Knallgasreaktion: dazu habe ich keine Angabe.
+e	wasser	na	Ein Atom Wasser: dazu habe ich keine Angabe.
+e	Xyz	unknown	Ein Atom – Das weiß ich leider nicht.
+n	H	fact	Ein Atom Wasserstoff hat meist 0 Neutronen.
+n	He	fact	Ein Atom Helium hat meist 2 Neutronen.
+n	Li	fact	Ein Atom Lithium hat meist 4 Neutronen.
+n	Be	fact	Ein Atom Beryllium hat meist 5 Neutronen.
+n	B	fact	Ein Atom Bor hat meist 6 Neutronen.
+n	C	fact	Ein Atom Kohlenstoff hat meist 6 Neutronen.
+n	N	fact	Ein Atom Stickstoff hat meist 7 Neutronen.
+n	O	fact	Ein Atom Sauerstoff hat meist 8 Neutronen.
+n	F	fact	Ein Atom Fluor hat meist 10 Neutronen.
+n	Ne	fact	Ein Atom Neon hat meist 10 Neutronen.
+n	Na	fact	Ein Atom Natrium hat meist 12 Neutronen.
+n	Mg	fact	Ein Atom Magnesium hat meist 12 Neutronen.
+n	Al	fact	Ein Atom Aluminium hat meist 14 Neutronen.
+n	Si	fact	Ein Atom Silicium hat meist 14 Neutronen.
+n	P	fact	Ein Atom Phosphor hat meist 16 Neutronen.
+n	S	fact	Ein Atom Schwefel hat meist 16 Neutronen.
+n	Cl	fact	Ein Atom Chlor hat meist 18 Neutronen.
+n	Ar	fact	Ein Atom Argon hat meist 22 Neutronen.
+n	K	fact	Ein Atom Kalium hat meist 20 Neutronen.
+n	Ca	fact	Ein Atom Calcium hat meist 20 Neutronen.
+n	Sc	fact	Ein Atom Scandium hat meist 24 Neutronen.
+n	Ti	fact	Ein Atom Titan hat meist 26 Neutronen.
+n	V	fact	Ein Atom Vanadium hat meist 28 Neutronen.
+n	Cr	fact	Ein Atom Chrom hat meist 28 Neutronen.
+n	Mn	fact	Ein Atom Mangan hat meist 30 Neutronen.
+n	Fe	fact	Ein Atom Eisen hat meist 30 Neutronen.
+n	Co	fact	Ein Atom Cobalt hat meist 32 Neutronen.
+n	Ni	fact	Ein Atom Nickel hat meist 31 Neutronen.
+n	Cu	fact	Ein Atom Kupfer hat meist 35 Neutronen.
+n	Zn	fact	Ein Atom Zink hat meist 35 Neutronen.
+n	Ga	fact	Ein Atom Gallium hat meist 39 Neutronen.
+n	Ge	fact	Ein Atom Germanium hat meist 41 Neutronen.
+n	As	fact	Ein Atom Arsen hat meist 42 Neutronen.
+n	Se	fact	Ein Atom Selen hat meist 45 Neutronen.
+n	Br	fact	Ein Atom Brom hat meist 45 Neutronen.
+n	Kr	fact	Ein Atom Krypton hat meist 48 Neutronen.
+n	Rb	fact	Ein Atom Rubidium hat meist 48 Neutronen.
+n	Sr	fact	Ein Atom Strontium hat meist 50 Neutronen.
+n	Y	fact	Ein Atom Yttrium hat meist 50 Neutronen.
+n	Zr	fact	Ein Atom Zirconium hat meist 51 Neutronen.
+n	Nb	fact	Ein Atom Niob hat meist 52 Neutronen.
+n	Mo	fact	Ein Atom Molybdän hat meist 54 Neutronen.
+n	Tc	fact	Ein Atom Technetium hat meist 55 Neutronen.
+n	Ru	fact	Ein Atom Ruthenium hat meist 57 Neutronen.
+n	Rh	fact	Ein Atom Rhodium hat meist 58 Neutronen.
+n	Pd	fact	Ein Atom Palladium hat meist 60 Neutronen.
+n	Ag	fact	Ein Atom Silber hat meist 61 Neutronen.
+n	Cd	fact	Ein Atom Cadmium hat meist 64 Neutronen.
+n	In	fact	Ein Atom Indium hat meist 66 Neutronen.
+n	Sn	fact	Ein Atom Zinn hat meist 69 Neutronen.
+n	Sb	fact	Ein Atom Antimon hat meist 71 Neutronen.
+n	Te	fact	Ein Atom Tellur hat meist 76 Neutronen.
+n	I	fact	Ein Atom Iod hat meist 74 Neutronen.
+n	Xe	fact	Ein Atom Xenon hat meist 77 Neutronen.
+n	Cs	fact	Ein Atom Caesium hat meist 78 Neutronen.
+n	Ba	fact	Ein Atom Barium hat meist 81 Neutronen.
+n	La	fact	Ein Atom Lanthan hat meist 82 Neutronen.
+n	Ce	fact	Ein Atom Cer hat meist 82 Neutronen.
+n	Pr	fact	Ein Atom Praseodym hat meist 82 Neutronen.
+n	Nd	fact	Ein Atom Neodym hat meist 84 Neutronen.
+n	Pm	fact	Ein Atom Promethium hat meist 84 Neutronen.
+n	Sm	fact	Ein Atom Samarium hat meist 88 Neutronen.
+n	Eu	fact	Ein Atom Europium hat meist 89 Neutronen.
+n	Gd	fact	Ein Atom Gadolinium hat meist 93 Neutronen.
+n	Tb	fact	Ein Atom Terbium hat meist 94 Neutronen.
+n	Dy	fact	Ein Atom Dysprosium hat meist 97 Neutronen.
+n	Ho	fact	Ein Atom Holmium hat meist 98 Neutronen.
+n	Er	fact	Ein Atom Erbium hat meist 99 Neutronen.
+n	Tm	fact	Ein Atom Thulium hat meist 100 Neutronen.
+n	Yb	fact	Ein Atom Ytterbium hat meist 103 Neutronen.
+n	Lu	fact	Ein Atom Lutetium hat meist 104 Neutronen.
+n	Hf	fact	Ein Atom Hafnium hat meist 106 Neutronen.
+n	Ta	fact	Ein Atom Tantal hat meist 108 Neutronen.
+n	W	fact	Ein Atom Wolfram hat meist 110 Neutronen.
+n	Re	fact	Ein Atom Rhenium hat meist 111 Neutronen.
+n	Os	fact	Ein Atom Osmium hat meist 114 Neutronen.
+n	Ir	fact	Ein Atom Iridium hat meist 115 Neutronen.
+n	Pt	fact	Ein Atom Platin hat meist 117 Neutronen.
+n	Au	fact	Ein Atom Gold hat meist 118 Neutronen.
+n	Hg	fact	Ein Atom Quecksilber hat meist 121 Neutronen.
+n	Tl	fact	Ein Atom Thallium hat meist 123 Neutronen.
+n	Pb	fact	Ein Atom Blei hat meist 125 Neutronen.
+n	Bi	fact	Ein Atom Bismut hat meist 126 Neutronen.
+n	Po	fact	Ein Atom Polonium hat meist 125 Neutronen.
+n	At	fact	Ein Atom Astat hat meist 125 Neutronen.
+n	Rn	fact	Ein Atom Radon hat meist 136 Neutronen.
+n	Fr	fact	Ein Atom Francium hat meist 136 Neutronen.
+n	Ra	fact	Ein Atom Radium hat meist 138 Neutronen.
+n	Ac	fact	Ein Atom Actinium hat meist 138 Neutronen.
+n	Th	fact	Ein Atom Thorium hat meist 142 Neutronen.
+n	Pa	fact	Ein Atom Protactinium hat meist 140 Neutronen.
+n	U	fact	Ein Atom Uran hat meist 146 Neutronen.
+n	Np	fact	Ein Atom Neptunium hat meist 144 Neutronen.
+n	Pu	fact	Ein Atom Plutonium hat meist 150 Neutronen.
+n	Am	fact	Ein Atom Americium hat meist 148 Neutronen.
+n	Cm	fact	Ein Atom Curium hat meist 151 Neutronen.
+n	Bk	fact	Ein Atom Berkelium hat meist 150 Neutronen.
+n	Cf	fact	Ein Atom Californium hat meist 153 Neutronen.
+n	Es	fact	Ein Atom Einsteinium hat meist 153 Neutronen.
+n	Fm	fact	Ein Atom Fermium hat meist 157 Neutronen.
+n	Md	fact	Ein Atom Mendelevium hat meist 157 Neutronen.
+n	No	fact	Ein Atom Nobelium hat meist 157 Neutronen.
+n	Lr	fact	Ein Atom Lawrencium hat meist 163 Neutronen.
+n	Rf	na	Ein Atom Rutherfordium: die Neutronenzahl gebe ich nicht an.
+n	Db	na	Ein Atom Dubnium: die Neutronenzahl gebe ich nicht an.
+n	Sg	na	Ein Atom Seaborgium: die Neutronenzahl gebe ich nicht an.
+n	Bh	na	Ein Atom Bohrium: die Neutronenzahl gebe ich nicht an.
+n	Hs	na	Ein Atom Hassium: die Neutronenzahl gebe ich nicht an.
+n	Mt	na	Ein Atom Meitnerium: die Neutronenzahl gebe ich nicht an.
+n	Ds	na	Ein Atom Darmstadtium: die Neutronenzahl gebe ich nicht an.
+n	Rg	na	Ein Atom Roentgenium: die Neutronenzahl gebe ich nicht an.
+n	Cn	na	Ein Atom Copernicium: die Neutronenzahl gebe ich nicht an.
+n	Nh	na	Ein Atom Nihonium: die Neutronenzahl gebe ich nicht an.
+n	Fl	na	Ein Atom Flerovium: die Neutronenzahl gebe ich nicht an.
+n	Mc	na	Ein Atom Moscovium: die Neutronenzahl gebe ich nicht an.
+n	Lv	na	Ein Atom Livermorium: die Neutronenzahl gebe ich nicht an.
+n	Ts	na	Ein Atom Tenness: die Neutronenzahl gebe ich nicht an.
+n	Og	na	Ein Atom Oganesson: die Neutronenzahl gebe ich nicht an.
+n	H2O	na	Ein Atom Wasser: die Neutronenzahl gebe ich nicht an.
+n	knallgas	na	Ein Atom Knallgasreaktion: die Neutronenzahl gebe ich nicht an.
+n	wasser	na	Ein Atom Wasser: die Neutronenzahl gebe ich nicht an.
+n	Xyz	unknown	Ein Atom – Das weiß ich leider nicht.
+a	H	fact	Die Zahl der Außenelektronen von Wasserstoff ist 1.
+a	He	fact	Die Zahl der Außenelektronen von Helium ist 2.
+a	Li	fact	Die Zahl der Außenelektronen von Lithium ist 1.
+a	Be	fact	Die Zahl der Außenelektronen von Beryllium ist 2.
+a	B	fact	Die Zahl der Außenelektronen von Bor ist 3.
+a	C	fact	Die Zahl der Außenelektronen von Kohlenstoff ist 4.
+a	N	fact	Die Zahl der Außenelektronen von Stickstoff ist 5.
+a	O	fact	Die Zahl der Außenelektronen von Sauerstoff ist 6.
+a	F	fact	Die Zahl der Außenelektronen von Fluor ist 7.
+a	Ne	fact	Die Zahl der Außenelektronen von Neon ist 8.
+a	Na	fact	Die Zahl der Außenelektronen von Natrium ist 1.
+a	Mg	fact	Die Zahl der Außenelektronen von Magnesium ist 2.
+a	Al	fact	Die Zahl der Außenelektronen von Aluminium ist 3.
+a	Si	fact	Die Zahl der Außenelektronen von Silicium ist 4.
+a	P	fact	Die Zahl der Außenelektronen von Phosphor ist 5.
+a	S	fact	Die Zahl der Außenelektronen von Schwefel ist 6.
+a	Cl	fact	Die Zahl der Außenelektronen von Chlor ist 7.
+a	Ar	fact	Die Zahl der Außenelektronen von Argon ist 8.
+a	K	fact	Die Zahl der Außenelektronen von Kalium ist 1.
+a	Ca	fact	Die Zahl der Außenelektronen von Calcium ist 2.
+a	Sc	na	Die Zahl der Außenelektronen von Scandium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Ti	na	Die Zahl der Außenelektronen von Titan gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	V	na	Die Zahl der Außenelektronen von Vanadium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Cr	na	Die Zahl der Außenelektronen von Chrom gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Mn	na	Die Zahl der Außenelektronen von Mangan gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Fe	na	Die Zahl der Außenelektronen von Eisen gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Co	na	Die Zahl der Außenelektronen von Cobalt gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Ni	na	Die Zahl der Außenelektronen von Nickel gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Cu	na	Die Zahl der Außenelektronen von Kupfer gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Zn	na	Die Zahl der Außenelektronen von Zink gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Ga	fact	Die Zahl der Außenelektronen von Gallium ist 3.
+a	Ge	fact	Die Zahl der Außenelektronen von Germanium ist 4.
+a	As	fact	Die Zahl der Außenelektronen von Arsen ist 5.
+a	Se	fact	Die Zahl der Außenelektronen von Selen ist 6.
+a	Br	fact	Die Zahl der Außenelektronen von Brom ist 7.
+a	Kr	fact	Die Zahl der Außenelektronen von Krypton ist 8.
+a	Rb	fact	Die Zahl der Außenelektronen von Rubidium ist 1.
+a	Sr	fact	Die Zahl der Außenelektronen von Strontium ist 2.
+a	Y	na	Die Zahl der Außenelektronen von Yttrium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Zr	na	Die Zahl der Außenelektronen von Zirconium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Nb	na	Die Zahl der Außenelektronen von Niob gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Mo	na	Die Zahl der Außenelektronen von Molybdän gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Tc	na	Die Zahl der Außenelektronen von Technetium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Ru	na	Die Zahl der Außenelektronen von Ruthenium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Rh	na	Die Zahl der Außenelektronen von Rhodium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Pd	na	Die Zahl der Außenelektronen von Palladium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Ag	na	Die Zahl der Außenelektronen von Silber gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Cd	na	Die Zahl der Außenelektronen von Cadmium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	In	fact	Die Zahl der Außenelektronen von Indium ist 3.
+a	Sn	fact	Die Zahl der Außenelektronen von Zinn ist 4.
+a	Sb	fact	Die Zahl der Außenelektronen von Antimon ist 5.
+a	Te	fact	Die Zahl der Außenelektronen von Tellur ist 6.
+a	I	fact	Die Zahl der Außenelektronen von Iod ist 7.
+a	Xe	fact	Die Zahl der Außenelektronen von Xenon ist 8.
+a	Cs	fact	Die Zahl der Außenelektronen von Caesium ist 1.
+a	Ba	fact	Die Zahl der Außenelektronen von Barium ist 2.
+a	La	na	Die Zahl der Außenelektronen von Lanthan gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Ce	na	Die Zahl der Außenelektronen von Cer gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Pr	na	Die Zahl der Außenelektronen von Praseodym gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Nd	na	Die Zahl der Außenelektronen von Neodym gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Pm	na	Die Zahl der Außenelektronen von Promethium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Sm	na	Die Zahl der Außenelektronen von Samarium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Eu	na	Die Zahl der Außenelektronen von Europium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Gd	na	Die Zahl der Außenelektronen von Gadolinium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Tb	na	Die Zahl der Außenelektronen von Terbium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Dy	na	Die Zahl der Außenelektronen von Dysprosium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Ho	na	Die Zahl der Außenelektronen von Holmium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Er	na	Die Zahl der Außenelektronen von Erbium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Tm	na	Die Zahl der Außenelektronen von Thulium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Yb	na	Die Zahl der Außenelektronen von Ytterbium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Lu	na	Die Zahl der Außenelektronen von Lutetium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Hf	na	Die Zahl der Außenelektronen von Hafnium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Ta	na	Die Zahl der Außenelektronen von Tantal gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	W	na	Die Zahl der Außenelektronen von Wolfram gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Re	na	Die Zahl der Außenelektronen von Rhenium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Os	na	Die Zahl der Außenelektronen von Osmium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Ir	na	Die Zahl der Außenelektronen von Iridium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Pt	na	Die Zahl der Außenelektronen von Platin gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Au	na	Die Zahl der Außenelektronen von Gold gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Hg	na	Die Zahl der Außenelektronen von Quecksilber gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Tl	fact	Die Zahl der Außenelektronen von Thallium ist 3.
+a	Pb	fact	Die Zahl der Außenelektronen von Blei ist 4.
+a	Bi	fact	Die Zahl der Außenelektronen von Bismut ist 5.
+a	Po	fact	Die Zahl der Außenelektronen von Polonium ist 6.
+a	At	fact	Die Zahl der Außenelektronen von Astat ist 7.
+a	Rn	fact	Die Zahl der Außenelektronen von Radon ist 8.
+a	Fr	fact	Die Zahl der Außenelektronen von Francium ist 1.
+a	Ra	fact	Die Zahl der Außenelektronen von Radium ist 2.
+a	Ac	na	Die Zahl der Außenelektronen von Actinium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Th	na	Die Zahl der Außenelektronen von Thorium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Pa	na	Die Zahl der Außenelektronen von Protactinium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	U	na	Die Zahl der Außenelektronen von Uran gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Np	na	Die Zahl der Außenelektronen von Neptunium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Pu	na	Die Zahl der Außenelektronen von Plutonium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Am	na	Die Zahl der Außenelektronen von Americium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Cm	na	Die Zahl der Außenelektronen von Curium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Bk	na	Die Zahl der Außenelektronen von Berkelium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Cf	na	Die Zahl der Außenelektronen von Californium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Es	na	Die Zahl der Außenelektronen von Einsteinium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Fm	na	Die Zahl der Außenelektronen von Fermium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Md	na	Die Zahl der Außenelektronen von Mendelevium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	No	na	Die Zahl der Außenelektronen von Nobelium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Lr	na	Die Zahl der Außenelektronen von Lawrencium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Rf	na	Die Zahl der Außenelektronen von Rutherfordium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Db	na	Die Zahl der Außenelektronen von Dubnium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Sg	na	Die Zahl der Außenelektronen von Seaborgium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Bh	na	Die Zahl der Außenelektronen von Bohrium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Hs	na	Die Zahl der Außenelektronen von Hassium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Mt	na	Die Zahl der Außenelektronen von Meitnerium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Ds	na	Die Zahl der Außenelektronen von Darmstadtium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Rg	na	Die Zahl der Außenelektronen von Roentgenium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Cn	na	Die Zahl der Außenelektronen von Copernicium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Nh	na	Die Zahl der Außenelektronen von Nihonium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Fl	na	Die Zahl der Außenelektronen von Flerovium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Mc	na	Die Zahl der Außenelektronen von Moscovium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Lv	na	Die Zahl der Außenelektronen von Livermorium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Ts	na	Die Zahl der Außenelektronen von Tenness gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Og	na	Die Zahl der Außenelektronen von Oganesson gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	H2O	na	Die Zahl der Außenelektronen von Wasser gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	knallgas	na	Die Zahl der Außenelektronen von Knallgasreaktion gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	wasser	na	Die Zahl der Außenelektronen von Wasser gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Xyz	unknown	Die Zahl der Außenelektronen von – Das weiß ich leider nicht.
+h	H	fact	Die Zahl der Schalen von Wasserstoff ist 1.
+h	He	fact	Die Zahl der Schalen von Helium ist 1.
+h	Li	fact	Die Zahl der Schalen von Lithium ist 2.
+h	Be	fact	Die Zahl der Schalen von Beryllium ist 2.
+h	B	fact	Die Zahl der Schalen von Bor ist 2.
+h	C	fact	Die Zahl der Schalen von Kohlenstoff ist 2.
+h	N	fact	Die Zahl der Schalen von Stickstoff ist 2.
+h	O	fact	Die Zahl der Schalen von Sauerstoff ist 2.
+h	F	fact	Die Zahl der Schalen von Fluor ist 2.
+h	Ne	fact	Die Zahl der Schalen von Neon ist 2.
+h	Na	fact	Die Zahl der Schalen von Natrium ist 3.
+h	Mg	fact	Die Zahl der Schalen von Magnesium ist 3.
+h	Al	fact	Die Zahl der Schalen von Aluminium ist 3.
+h	Si	fact	Die Zahl der Schalen von Silicium ist 3.
+h	P	fact	Die Zahl der Schalen von Phosphor ist 3.
+h	S	fact	Die Zahl der Schalen von Schwefel ist 3.
+h	Cl	fact	Die Zahl der Schalen von Chlor ist 3.
+h	Ar	fact	Die Zahl der Schalen von Argon ist 3.
+h	K	fact	Die Zahl der Schalen von Kalium ist 4.
+h	Ca	fact	Die Zahl der Schalen von Calcium ist 4.
+h	Sc	na	Die Zahl der Schalen von Scandium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Ti	na	Die Zahl der Schalen von Titan gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	V	na	Die Zahl der Schalen von Vanadium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Cr	na	Die Zahl der Schalen von Chrom gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Mn	na	Die Zahl der Schalen von Mangan gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Fe	na	Die Zahl der Schalen von Eisen gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Co	na	Die Zahl der Schalen von Cobalt gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Ni	na	Die Zahl der Schalen von Nickel gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Cu	na	Die Zahl der Schalen von Kupfer gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Zn	na	Die Zahl der Schalen von Zink gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Ga	fact	Die Zahl der Schalen von Gallium ist 4.
+h	Ge	fact	Die Zahl der Schalen von Germanium ist 4.
+h	As	fact	Die Zahl der Schalen von Arsen ist 4.
+h	Se	fact	Die Zahl der Schalen von Selen ist 4.
+h	Br	fact	Die Zahl der Schalen von Brom ist 4.
+h	Kr	fact	Die Zahl der Schalen von Krypton ist 4.
+h	Rb	fact	Die Zahl der Schalen von Rubidium ist 5.
+h	Sr	fact	Die Zahl der Schalen von Strontium ist 5.
+h	Y	na	Die Zahl der Schalen von Yttrium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Zr	na	Die Zahl der Schalen von Zirconium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Nb	na	Die Zahl der Schalen von Niob gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Mo	na	Die Zahl der Schalen von Molybdän gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Tc	na	Die Zahl der Schalen von Technetium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Ru	na	Die Zahl der Schalen von Ruthenium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Rh	na	Die Zahl der Schalen von Rhodium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Pd	na	Die Zahl der Schalen von Palladium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Ag	na	Die Zahl der Schalen von Silber gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Cd	na	Die Zahl der Schalen von Cadmium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	In	fact	Die Zahl der Schalen von Indium ist 5.
+h	Sn	fact	Die Zahl der Schalen von Zinn ist 5.
+h	Sb	fact	Die Zahl der Schalen von Antimon ist 5.
+h	Te	fact	Die Zahl der Schalen von Tellur ist 5.
+h	I	fact	Die Zahl der Schalen von Iod ist 5.
+h	Xe	fact	Die Zahl der Schalen von Xenon ist 5.
+h	Cs	fact	Die Zahl der Schalen von Caesium ist 6.
+h	Ba	fact	Die Zahl der Schalen von Barium ist 6.
+h	La	na	Die Zahl der Schalen von Lanthan gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Ce	na	Die Zahl der Schalen von Cer gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Pr	na	Die Zahl der Schalen von Praseodym gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Nd	na	Die Zahl der Schalen von Neodym gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Pm	na	Die Zahl der Schalen von Promethium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Sm	na	Die Zahl der Schalen von Samarium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Eu	na	Die Zahl der Schalen von Europium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Gd	na	Die Zahl der Schalen von Gadolinium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Tb	na	Die Zahl der Schalen von Terbium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Dy	na	Die Zahl der Schalen von Dysprosium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Ho	na	Die Zahl der Schalen von Holmium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Er	na	Die Zahl der Schalen von Erbium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Tm	na	Die Zahl der Schalen von Thulium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Yb	na	Die Zahl der Schalen von Ytterbium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Lu	na	Die Zahl der Schalen von Lutetium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Hf	na	Die Zahl der Schalen von Hafnium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Ta	na	Die Zahl der Schalen von Tantal gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	W	na	Die Zahl der Schalen von Wolfram gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Re	na	Die Zahl der Schalen von Rhenium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Os	na	Die Zahl der Schalen von Osmium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Ir	na	Die Zahl der Schalen von Iridium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Pt	na	Die Zahl der Schalen von Platin gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Au	na	Die Zahl der Schalen von Gold gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Hg	na	Die Zahl der Schalen von Quecksilber gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Tl	fact	Die Zahl der Schalen von Thallium ist 6.
+h	Pb	fact	Die Zahl der Schalen von Blei ist 6.
+h	Bi	fact	Die Zahl der Schalen von Bismut ist 6.
+h	Po	fact	Die Zahl der Schalen von Polonium ist 6.
+h	At	fact	Die Zahl der Schalen von Astat ist 6.
+h	Rn	fact	Die Zahl der Schalen von Radon ist 6.
+h	Fr	fact	Die Zahl der Schalen von Francium ist 7.
+h	Ra	fact	Die Zahl der Schalen von Radium ist 7.
+h	Ac	na	Die Zahl der Schalen von Actinium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Th	na	Die Zahl der Schalen von Thorium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Pa	na	Die Zahl der Schalen von Protactinium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	U	na	Die Zahl der Schalen von Uran gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Np	na	Die Zahl der Schalen von Neptunium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Pu	na	Die Zahl der Schalen von Plutonium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Am	na	Die Zahl der Schalen von Americium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Cm	na	Die Zahl der Schalen von Curium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Bk	na	Die Zahl der Schalen von Berkelium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Cf	na	Die Zahl der Schalen von Californium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Es	na	Die Zahl der Schalen von Einsteinium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Fm	na	Die Zahl der Schalen von Fermium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Md	na	Die Zahl der Schalen von Mendelevium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	No	na	Die Zahl der Schalen von Nobelium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Lr	na	Die Zahl der Schalen von Lawrencium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Rf	na	Die Zahl der Schalen von Rutherfordium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Db	na	Die Zahl der Schalen von Dubnium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Sg	na	Die Zahl der Schalen von Seaborgium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Bh	na	Die Zahl der Schalen von Bohrium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Hs	na	Die Zahl der Schalen von Hassium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Mt	na	Die Zahl der Schalen von Meitnerium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Ds	na	Die Zahl der Schalen von Darmstadtium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Rg	na	Die Zahl der Schalen von Roentgenium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Cn	na	Die Zahl der Schalen von Copernicium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Nh	na	Die Zahl der Schalen von Nihonium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Fl	na	Die Zahl der Schalen von Flerovium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Mc	na	Die Zahl der Schalen von Moscovium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Lv	na	Die Zahl der Schalen von Livermorium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Ts	na	Die Zahl der Schalen von Tenness gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Og	na	Die Zahl der Schalen von Oganesson gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	H2O	na	Die Zahl der Schalen von Wasser gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	knallgas	na	Die Zahl der Schalen von Knallgasreaktion gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	wasser	na	Die Zahl der Schalen von Wasser gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Xyz	unknown	Die Zahl der Schalen von – Das weiß ich leider nicht.
+v	H	fact	Die Elektronenverteilung von Wasserstoff: 1.
+v	He	fact	Die Elektronenverteilung von Helium: 2.
+v	Li	fact	Die Elektronenverteilung von Lithium: 2, 1.
+v	Be	fact	Die Elektronenverteilung von Beryllium: 2, 2.
+v	B	fact	Die Elektronenverteilung von Bor: 2, 3.
+v	C	fact	Die Elektronenverteilung von Kohlenstoff: 2, 4.
+v	N	fact	Die Elektronenverteilung von Stickstoff: 2, 5.
+v	O	fact	Die Elektronenverteilung von Sauerstoff: 2, 6.
+v	F	fact	Die Elektronenverteilung von Fluor: 2, 7.
+v	Ne	fact	Die Elektronenverteilung von Neon: 2, 8.
+v	Na	fact	Die Elektronenverteilung von Natrium: 2, 8, 1.
+v	Mg	fact	Die Elektronenverteilung von Magnesium: 2, 8, 2.
+v	Al	fact	Die Elektronenverteilung von Aluminium: 2, 8, 3.
+v	Si	fact	Die Elektronenverteilung von Silicium: 2, 8, 4.
+v	P	fact	Die Elektronenverteilung von Phosphor: 2, 8, 5.
+v	S	fact	Die Elektronenverteilung von Schwefel: 2, 8, 6.
+v	Cl	fact	Die Elektronenverteilung von Chlor: 2, 8, 7.
+v	Ar	fact	Die Elektronenverteilung von Argon: 2, 8, 8.
+v	K	fact	Die Elektronenverteilung von Kalium: 2, 8, 8, 1.
+v	Ca	fact	Die Elektronenverteilung von Calcium: 2, 8, 8, 2.
+v	Sc	na	Die Elektronenverteilung von Scandium gehört nicht zum Schalenmodell der Schule.
+v	Ti	na	Die Elektronenverteilung von Titan gehört nicht zum Schalenmodell der Schule.
+v	V	na	Die Elektronenverteilung von Vanadium gehört nicht zum Schalenmodell der Schule.
+v	Cr	na	Die Elektronenverteilung von Chrom gehört nicht zum Schalenmodell der Schule.
+v	Mn	na	Die Elektronenverteilung von Mangan gehört nicht zum Schalenmodell der Schule.
+v	Fe	na	Die Elektronenverteilung von Eisen gehört nicht zum Schalenmodell der Schule.
+v	Co	na	Die Elektronenverteilung von Cobalt gehört nicht zum Schalenmodell der Schule.
+v	Ni	na	Die Elektronenverteilung von Nickel gehört nicht zum Schalenmodell der Schule.
+v	Cu	na	Die Elektronenverteilung von Kupfer gehört nicht zum Schalenmodell der Schule.
+v	Zn	na	Die Elektronenverteilung von Zink gehört nicht zum Schalenmodell der Schule.
+v	Ga	fact	Die Elektronenverteilung von Gallium: 2, 8, 18, 3.
+v	Ge	fact	Die Elektronenverteilung von Germanium: 2, 8, 18, 4.
+v	As	fact	Die Elektronenverteilung von Arsen: 2, 8, 18, 5.
+v	Se	fact	Die Elektronenverteilung von Selen: 2, 8, 18, 6.
+v	Br	fact	Die Elektronenverteilung von Brom: 2, 8, 18, 7.
+v	Kr	fact	Die Elektronenverteilung von Krypton: 2, 8, 18, 8.
+v	Rb	na	Die Elektronenverteilung von Rubidium gehört nicht zum Schalenmodell der Schule.
+v	Sr	na	Die Elektronenverteilung von Strontium gehört nicht zum Schalenmodell der Schule.
+v	Y	na	Die Elektronenverteilung von Yttrium gehört nicht zum Schalenmodell der Schule.
+v	Zr	na	Die Elektronenverteilung von Zirconium gehört nicht zum Schalenmodell der Schule.
+v	Nb	na	Die Elektronenverteilung von Niob gehört nicht zum Schalenmodell der Schule.
+v	Mo	na	Die Elektronenverteilung von Molybdän gehört nicht zum Schalenmodell der Schule.
+v	Tc	na	Die Elektronenverteilung von Technetium gehört nicht zum Schalenmodell der Schule.
+v	Ru	na	Die Elektronenverteilung von Ruthenium gehört nicht zum Schalenmodell der Schule.
+v	Rh	na	Die Elektronenverteilung von Rhodium gehört nicht zum Schalenmodell der Schule.
+v	Pd	na	Die Elektronenverteilung von Palladium gehört nicht zum Schalenmodell der Schule.
+v	Ag	na	Die Elektronenverteilung von Silber gehört nicht zum Schalenmodell der Schule.
+v	Cd	na	Die Elektronenverteilung von Cadmium gehört nicht zum Schalenmodell der Schule.
+v	In	na	Die Elektronenverteilung von Indium gehört nicht zum Schalenmodell der Schule.
+v	Sn	na	Die Elektronenverteilung von Zinn gehört nicht zum Schalenmodell der Schule.
+v	Sb	na	Die Elektronenverteilung von Antimon gehört nicht zum Schalenmodell der Schule.
+v	Te	na	Die Elektronenverteilung von Tellur gehört nicht zum Schalenmodell der Schule.
+v	I	na	Die Elektronenverteilung von Iod gehört nicht zum Schalenmodell der Schule.
+v	Xe	na	Die Elektronenverteilung von Xenon gehört nicht zum Schalenmodell der Schule.
+v	Cs	na	Die Elektronenverteilung von Caesium gehört nicht zum Schalenmodell der Schule.
+v	Ba	na	Die Elektronenverteilung von Barium gehört nicht zum Schalenmodell der Schule.
+v	La	na	Die Elektronenverteilung von Lanthan gehört nicht zum Schalenmodell der Schule.
+v	Ce	na	Die Elektronenverteilung von Cer gehört nicht zum Schalenmodell der Schule.
+v	Pr	na	Die Elektronenverteilung von Praseodym gehört nicht zum Schalenmodell der Schule.
+v	Nd	na	Die Elektronenverteilung von Neodym gehört nicht zum Schalenmodell der Schule.
+v	Pm	na	Die Elektronenverteilung von Promethium gehört nicht zum Schalenmodell der Schule.
+v	Sm	na	Die Elektronenverteilung von Samarium gehört nicht zum Schalenmodell der Schule.
+v	Eu	na	Die Elektronenverteilung von Europium gehört nicht zum Schalenmodell der Schule.
+v	Gd	na	Die Elektronenverteilung von Gadolinium gehört nicht zum Schalenmodell der Schule.
+v	Tb	na	Die Elektronenverteilung von Terbium gehört nicht zum Schalenmodell der Schule.
+v	Dy	na	Die Elektronenverteilung von Dysprosium gehört nicht zum Schalenmodell der Schule.
+v	Ho	na	Die Elektronenverteilung von Holmium gehört nicht zum Schalenmodell der Schule.
+v	Er	na	Die Elektronenverteilung von Erbium gehört nicht zum Schalenmodell der Schule.
+v	Tm	na	Die Elektronenverteilung von Thulium gehört nicht zum Schalenmodell der Schule.
+v	Yb	na	Die Elektronenverteilung von Ytterbium gehört nicht zum Schalenmodell der Schule.
+v	Lu	na	Die Elektronenverteilung von Lutetium gehört nicht zum Schalenmodell der Schule.
+v	Hf	na	Die Elektronenverteilung von Hafnium gehört nicht zum Schalenmodell der Schule.
+v	Ta	na	Die Elektronenverteilung von Tantal gehört nicht zum Schalenmodell der Schule.
+v	W	na	Die Elektronenverteilung von Wolfram gehört nicht zum Schalenmodell der Schule.
+v	Re	na	Die Elektronenverteilung von Rhenium gehört nicht zum Schalenmodell der Schule.
+v	Os	na	Die Elektronenverteilung von Osmium gehört nicht zum Schalenmodell der Schule.
+v	Ir	na	Die Elektronenverteilung von Iridium gehört nicht zum Schalenmodell der Schule.
+v	Pt	na	Die Elektronenverteilung von Platin gehört nicht zum Schalenmodell der Schule.
+v	Au	na	Die Elektronenverteilung von Gold gehört nicht zum Schalenmodell der Schule.
+v	Hg	na	Die Elektronenverteilung von Quecksilber gehört nicht zum Schalenmodell der Schule.
+v	Tl	na	Die Elektronenverteilung von Thallium gehört nicht zum Schalenmodell der Schule.
+v	Pb	na	Die Elektronenverteilung von Blei gehört nicht zum Schalenmodell der Schule.
+v	Bi	na	Die Elektronenverteilung von Bismut gehört nicht zum Schalenmodell der Schule.
+v	Po	na	Die Elektronenverteilung von Polonium gehört nicht zum Schalenmodell der Schule.
+v	At	na	Die Elektronenverteilung von Astat gehört nicht zum Schalenmodell der Schule.
+v	Rn	na	Die Elektronenverteilung von Radon gehört nicht zum Schalenmodell der Schule.
+v	Fr	na	Die Elektronenverteilung von Francium gehört nicht zum Schalenmodell der Schule.
+v	Ra	na	Die Elektronenverteilung von Radium gehört nicht zum Schalenmodell der Schule.
+v	Ac	na	Die Elektronenverteilung von Actinium gehört nicht zum Schalenmodell der Schule.
+v	Th	na	Die Elektronenverteilung von Thorium gehört nicht zum Schalenmodell der Schule.
+v	Pa	na	Die Elektronenverteilung von Protactinium gehört nicht zum Schalenmodell der Schule.
+v	U	na	Die Elektronenverteilung von Uran gehört nicht zum Schalenmodell der Schule.
+v	Np	na	Die Elektronenverteilung von Neptunium gehört nicht zum Schalenmodell der Schule.
+v	Pu	na	Die Elektronenverteilung von Plutonium gehört nicht zum Schalenmodell der Schule.
+v	Am	na	Die Elektronenverteilung von Americium gehört nicht zum Schalenmodell der Schule.
+v	Cm	na	Die Elektronenverteilung von Curium gehört nicht zum Schalenmodell der Schule.
+v	Bk	na	Die Elektronenverteilung von Berkelium gehört nicht zum Schalenmodell der Schule.
+v	Cf	na	Die Elektronenverteilung von Californium gehört nicht zum Schalenmodell der Schule.
+v	Es	na	Die Elektronenverteilung von Einsteinium gehört nicht zum Schalenmodell der Schule.
+v	Fm	na	Die Elektronenverteilung von Fermium gehört nicht zum Schalenmodell der Schule.
+v	Md	na	Die Elektronenverteilung von Mendelevium gehört nicht zum Schalenmodell der Schule.
+v	No	na	Die Elektronenverteilung von Nobelium gehört nicht zum Schalenmodell der Schule.
+v	Lr	na	Die Elektronenverteilung von Lawrencium gehört nicht zum Schalenmodell der Schule.
+v	Rf	na	Die Elektronenverteilung von Rutherfordium gehört nicht zum Schalenmodell der Schule.
+v	Db	na	Die Elektronenverteilung von Dubnium gehört nicht zum Schalenmodell der Schule.
+v	Sg	na	Die Elektronenverteilung von Seaborgium gehört nicht zum Schalenmodell der Schule.
+v	Bh	na	Die Elektronenverteilung von Bohrium gehört nicht zum Schalenmodell der Schule.
+v	Hs	na	Die Elektronenverteilung von Hassium gehört nicht zum Schalenmodell der Schule.
+v	Mt	na	Die Elektronenverteilung von Meitnerium gehört nicht zum Schalenmodell der Schule.
+v	Ds	na	Die Elektronenverteilung von Darmstadtium gehört nicht zum Schalenmodell der Schule.
+v	Rg	na	Die Elektronenverteilung von Roentgenium gehört nicht zum Schalenmodell der Schule.
+v	Cn	na	Die Elektronenverteilung von Copernicium gehört nicht zum Schalenmodell der Schule.
+v	Nh	na	Die Elektronenverteilung von Nihonium gehört nicht zum Schalenmodell der Schule.
+v	Fl	na	Die Elektronenverteilung von Flerovium gehört nicht zum Schalenmodell der Schule.
+v	Mc	na	Die Elektronenverteilung von Moscovium gehört nicht zum Schalenmodell der Schule.
+v	Lv	na	Die Elektronenverteilung von Livermorium gehört nicht zum Schalenmodell der Schule.
+v	Ts	na	Die Elektronenverteilung von Tenness gehört nicht zum Schalenmodell der Schule.
+v	Og	na	Die Elektronenverteilung von Oganesson gehört nicht zum Schalenmodell der Schule.
+v	H2O	na	Die Elektronenverteilung von Wasser gehört nicht zum Schalenmodell der Schule.
+v	knallgas	na	Die Elektronenverteilung von Knallgasreaktion gehört nicht zum Schalenmodell der Schule.
+v	wasser	na	Die Elektronenverteilung von Wasser gehört nicht zum Schalenmodell der Schule.
+v	Xyz	unknown	Die Elektronenverteilung von – Das weiß ich leider nicht.
+i	H	fact	Das typische Ion von Wasserstoff ist H+ (einfach positiv geladen).
+i	He	na	Das typische Ion von Helium gibt es nicht.
+i	Li	fact	Das typische Ion von Lithium ist Li+ (einfach positiv geladen).
+i	Be	fact	Das typische Ion von Beryllium ist Be2+ (zweifach positiv geladen).
+i	B	na	Das typische Ion von Bor gibt es nicht.
+i	C	na	Das typische Ion von Kohlenstoff gibt es nicht.
+i	N	fact	Das typische Ion von Stickstoff ist N3- (dreifach negativ geladen).
+i	O	fact	Das typische Ion von Sauerstoff ist O2- (zweifach negativ geladen).
+i	F	fact	Das typische Ion von Fluor ist F- (einfach negativ geladen).
+i	Ne	na	Das typische Ion von Neon gibt es nicht.
+i	Na	fact	Das typische Ion von Natrium ist Na+ (einfach positiv geladen).
+i	Mg	fact	Das typische Ion von Magnesium ist Mg2+ (zweifach positiv geladen).
+i	Al	fact	Das typische Ion von Aluminium ist Al3+ (dreifach positiv geladen).
+i	Si	na	Das typische Ion von Silicium gibt es nicht.
+i	P	fact	Das typische Ion von Phosphor ist P3- (dreifach negativ geladen).
+i	S	fact	Das typische Ion von Schwefel ist S2- (zweifach negativ geladen).
+i	Cl	fact	Das typische Ion von Chlor ist Cl- (einfach negativ geladen).
+i	Ar	na	Das typische Ion von Argon gibt es nicht.
+i	K	fact	Das typische Ion von Kalium ist K+ (einfach positiv geladen).
+i	Ca	fact	Das typische Ion von Calcium ist Ca2+ (zweifach positiv geladen).
+i	Sc	na	Das typische Ion von Scandium gibt es nicht.
+i	Ti	na	Das typische Ion von Titan gibt es nicht.
+i	V	na	Das typische Ion von Vanadium gibt es nicht.
+i	Cr	na	Das typische Ion von Chrom gibt es nicht.
+i	Mn	na	Das typische Ion von Mangan gibt es nicht.
+i	Fe	na	Das typische Ion von Eisen gibt es nicht.
+i	Co	na	Das typische Ion von Cobalt gibt es nicht.
+i	Ni	na	Das typische Ion von Nickel gibt es nicht.
+i	Cu	na	Das typische Ion von Kupfer gibt es nicht.
+i	Zn	na	Das typische Ion von Zink gibt es nicht.
+i	Ga	fact	Das typische Ion von Gallium ist Ga3+ (dreifach positiv geladen).
+i	Ge	na	Das typische Ion von Germanium gibt es nicht.
+i	As	na	Das typische Ion von Arsen gibt es nicht.
+i	Se	fact	Das typische Ion von Selen ist Se2- (zweifach negativ geladen).
+i	Br	fact	Das typische Ion von Brom ist Br- (einfach negativ geladen).
+i	Kr	na	Das typische Ion von Krypton gibt es nicht.
+i	Rb	fact	Das typische Ion von Rubidium ist Rb+ (einfach positiv geladen).
+i	Sr	fact	Das typische Ion von Strontium ist Sr2+ (zweifach positiv geladen).
+i	Y	na	Das typische Ion von Yttrium gibt es nicht.
+i	Zr	na	Das typische Ion von Zirconium gibt es nicht.
+i	Nb	na	Das typische Ion von Niob gibt es nicht.
+i	Mo	na	Das typische Ion von Molybdän gibt es nicht.
+i	Tc	na	Das typische Ion von Technetium gibt es nicht.
+i	Ru	na	Das typische Ion von Ruthenium gibt es nicht.
+i	Rh	na	Das typische Ion von Rhodium gibt es nicht.
+i	Pd	na	Das typische Ion von Palladium gibt es nicht.
+i	Ag	na	Das typische Ion von Silber gibt es nicht.
+i	Cd	na	Das typische Ion von Cadmium gibt es nicht.
+i	In	fact	Das typische Ion von Indium ist In3+ (dreifach positiv geladen).
+i	Sn	na	Das typische Ion von Zinn gibt es nicht.
+i	Sb	na	Das typische Ion von Antimon gibt es nicht.
+i	Te	na	Das typische Ion von Tellur gibt es nicht.
+i	I	fact	Das typische Ion von Iod ist I- (einfach negativ geladen).
+i	Xe	na	Das typische Ion von Xenon gibt es nicht.
+i	Cs	fact	Das typische Ion von Caesium ist Cs+ (einfach positiv geladen).
+i	Ba	fact	Das typische Ion von Barium ist Ba2+ (zweifach positiv geladen).
+i	La	na	Das typische Ion von Lanthan gibt es nicht.
+i	Ce	na	Das typische Ion von Cer gibt es nicht.
+i	Pr	na	Das typische Ion von Praseodym gibt es nicht.
+i	Nd	na	Das typische Ion von Neodym gibt es nicht.
+i	Pm	na	Das typische Ion von Promethium gibt es nicht.
+i	Sm	na	Das typische Ion von Samarium gibt es nicht.
+i	Eu	na	Das typische Ion von Europium gibt es nicht.
+i	Gd	na	Das typische Ion von Gadolinium gibt es nicht.
+i	Tb	na	Das typische Ion von Terbium gibt es nicht.
+i	Dy	na	Das typische Ion von Dysprosium gibt es nicht.
+i	Ho	na	Das typische Ion von Holmium gibt es nicht.
+i	Er	na	Das typische Ion von Erbium gibt es nicht.
+i	Tm	na	Das typische Ion von Thulium gibt es nicht.
+i	Yb	na	Das typische Ion von Ytterbium gibt es nicht.
+i	Lu	na	Das typische Ion von Lutetium gibt es nicht.
+i	Hf	na	Das typische Ion von Hafnium gibt es nicht.
+i	Ta	na	Das typische Ion von Tantal gibt es nicht.
+i	W	na	Das typische Ion von Wolfram gibt es nicht.
+i	Re	na	Das typische Ion von Rhenium gibt es nicht.
+i	Os	na	Das typische Ion von Osmium gibt es nicht.
+i	Ir	na	Das typische Ion von Iridium gibt es nicht.
+i	Pt	na	Das typische Ion von Platin gibt es nicht.
+i	Au	na	Das typische Ion von Gold gibt es nicht.
+i	Hg	na	Das typische Ion von Quecksilber gibt es nicht.
+i	Tl	fact	Das typische Ion von Thallium ist Tl3+ (dreifach positiv geladen).
+i	Pb	na	Das typische Ion von Blei gibt es nicht.
+i	Bi	na	Das typische Ion von Bismut gibt es nicht.
+i	Po	na	Das typische Ion von Polonium gibt es nicht.
+i	At	na	Das typische Ion von Astat gibt es nicht.
+i	Rn	na	Das typische Ion von Radon gibt es nicht.
+i	Fr	fact	Das typische Ion von Francium ist Fr+ (einfach positiv geladen).
+i	Ra	fact	Das typische Ion von Radium ist Ra2+ (zweifach positiv geladen).
+i	Ac	na	Das typische Ion von Actinium gibt es nicht.
+i	Th	na	Das typische Ion von Thorium gibt es nicht.
+i	Pa	na	Das typische Ion von Protactinium gibt es nicht.
+i	U	na	Das typische Ion von Uran gibt es nicht.
+i	Np	na	Das typische Ion von Neptunium gibt es nicht.
+i	Pu	na	Das typische Ion von Plutonium gibt es nicht.
+i	Am	na	Das typische Ion von Americium gibt es nicht.
+i	Cm	na	Das typische Ion von Curium gibt es nicht.
+i	Bk	na	Das typische Ion von Berkelium gibt es nicht.
+i	Cf	na	Das typische Ion von Californium gibt es nicht.
+i	Es	na	Das typische Ion von Einsteinium gibt es nicht.
+i	Fm	na	Das typische Ion von Fermium gibt es nicht.
+i	Md	na	Das typische Ion von Mendelevium gibt es nicht.
+i	No	na	Das typische Ion von Nobelium gibt es nicht.
+i	Lr	na	Das typische Ion von Lawrencium gibt es nicht.
+i	Rf	na	Das typische Ion von Rutherfordium gibt es nicht.
+i	Db	na	Das typische Ion von Dubnium gibt es nicht.
+i	Sg	na	Das typische Ion von Seaborgium gibt es nicht.
+i	Bh	na	Das typische Ion von Bohrium gibt es nicht.
+i	Hs	na	Das typische Ion von Hassium gibt es nicht.
+i	Mt	na	Das typische Ion von Meitnerium gibt es nicht.
+i	Ds	na	Das typische Ion von Darmstadtium gibt es nicht.
+i	Rg	na	Das typische Ion von Roentgenium gibt es nicht.
+i	Cn	na	Das typische Ion von Copernicium gibt es nicht.
+i	Nh	na	Das typische Ion von Nihonium gibt es nicht.
+i	Fl	na	Das typische Ion von Flerovium gibt es nicht.
+i	Mc	na	Das typische Ion von Moscovium gibt es nicht.
+i	Lv	na	Das typische Ion von Livermorium gibt es nicht.
+i	Ts	na	Das typische Ion von Tenness gibt es nicht.
+i	Og	na	Das typische Ion von Oganesson gibt es nicht.
+i	H2O	na	Das typische Ion von Wasser gibt es nicht.
+i	knallgas	na	Das typische Ion von Knallgasreaktion gibt es nicht.
+i	wasser	na	Das typische Ion von Wasser gibt es nicht.
+i	Xyz	unknown	Das typische Ion von – Das weiß ich leider nicht.
+w	H	fact	Die Wertigkeit von Wasserstoff ist 1.
+w	He	na	Die Wertigkeit von Helium gebe ich nicht an.
+w	Li	fact	Die Wertigkeit von Lithium ist 1.
+w	Be	fact	Die Wertigkeit von Beryllium ist 2.
+w	B	fact	Die Wertigkeit von Bor ist 3.
+w	C	fact	Die Wertigkeit von Kohlenstoff ist 4.
+w	N	fact	Die Wertigkeit von Stickstoff ist 3.
+w	O	fact	Die Wertigkeit von Sauerstoff ist 2.
+w	F	fact	Die Wertigkeit von Fluor ist 1.
+w	Ne	na	Die Wertigkeit von Neon gebe ich nicht an.
+w	Na	fact	Die Wertigkeit von Natrium ist 1.
+w	Mg	fact	Die Wertigkeit von Magnesium ist 2.
+w	Al	fact	Die Wertigkeit von Aluminium ist 3.
+w	Si	fact	Die Wertigkeit von Silicium ist 4.
+w	P	fact	Die Wertigkeit von Phosphor ist 3.
+w	S	fact	Die Wertigkeit von Schwefel ist 2.
+w	Cl	fact	Die Wertigkeit von Chlor ist 1.
+w	Ar	na	Die Wertigkeit von Argon gebe ich nicht an.
+w	K	fact	Die Wertigkeit von Kalium ist 1.
+w	Ca	fact	Die Wertigkeit von Calcium ist 2.
+w	Sc	na	Die Wertigkeit von Scandium gebe ich nicht an.
+w	Ti	na	Die Wertigkeit von Titan gebe ich nicht an.
+w	V	na	Die Wertigkeit von Vanadium gebe ich nicht an.
+w	Cr	na	Die Wertigkeit von Chrom gebe ich nicht an.
+w	Mn	na	Die Wertigkeit von Mangan gebe ich nicht an.
+w	Fe	na	Die Wertigkeit von Eisen gebe ich nicht an.
+w	Co	na	Die Wertigkeit von Cobalt gebe ich nicht an.
+w	Ni	na	Die Wertigkeit von Nickel gebe ich nicht an.
+w	Cu	na	Die Wertigkeit von Kupfer gebe ich nicht an.
+w	Zn	na	Die Wertigkeit von Zink gebe ich nicht an.
+w	Ga	fact	Die Wertigkeit von Gallium ist 3.
+w	Ge	fact	Die Wertigkeit von Germanium ist 4.
+w	As	fact	Die Wertigkeit von Arsen ist 3.
+w	Se	fact	Die Wertigkeit von Selen ist 2.
+w	Br	fact	Die Wertigkeit von Brom ist 1.
+w	Kr	na	Die Wertigkeit von Krypton gebe ich nicht an.
+w	Rb	fact	Die Wertigkeit von Rubidium ist 1.
+w	Sr	fact	Die Wertigkeit von Strontium ist 2.
+w	Y	na	Die Wertigkeit von Yttrium gebe ich nicht an.
+w	Zr	na	Die Wertigkeit von Zirconium gebe ich nicht an.
+w	Nb	na	Die Wertigkeit von Niob gebe ich nicht an.
+w	Mo	na	Die Wertigkeit von Molybdän gebe ich nicht an.
+w	Tc	na	Die Wertigkeit von Technetium gebe ich nicht an.
+w	Ru	na	Die Wertigkeit von Ruthenium gebe ich nicht an.
+w	Rh	na	Die Wertigkeit von Rhodium gebe ich nicht an.
+w	Pd	na	Die Wertigkeit von Palladium gebe ich nicht an.
+w	Ag	na	Die Wertigkeit von Silber gebe ich nicht an.
+w	Cd	na	Die Wertigkeit von Cadmium gebe ich nicht an.
+w	In	fact	Die Wertigkeit von Indium ist 3.
+w	Sn	fact	Die Wertigkeit von Zinn ist 4.
+w	Sb	fact	Die Wertigkeit von Antimon ist 3.
+w	Te	fact	Die Wertigkeit von Tellur ist 2.
+w	I	fact	Die Wertigkeit von Iod ist 1.
+w	Xe	na	Die Wertigkeit von Xenon gebe ich nicht an.
+w	Cs	fact	Die Wertigkeit von Caesium ist 1.
+w	Ba	fact	Die Wertigkeit von Barium ist 2.
+w	La	na	Die Wertigkeit von Lanthan gebe ich nicht an.
+w	Ce	na	Die Wertigkeit von Cer gebe ich nicht an.
+w	Pr	na	Die Wertigkeit von Praseodym gebe ich nicht an.
+w	Nd	na	Die Wertigkeit von Neodym gebe ich nicht an.
+w	Pm	na	Die Wertigkeit von Promethium gebe ich nicht an.
+w	Sm	na	Die Wertigkeit von Samarium gebe ich nicht an.
+w	Eu	na	Die Wertigkeit von Europium gebe ich nicht an.
+w	Gd	na	Die Wertigkeit von Gadolinium gebe ich nicht an.
+w	Tb	na	Die Wertigkeit von Terbium gebe ich nicht an.
+w	Dy	na	Die Wertigkeit von Dysprosium gebe ich nicht an.
+w	Ho	na	Die Wertigkeit von Holmium gebe ich nicht an.
+w	Er	na	Die Wertigkeit von Erbium gebe ich nicht an.
+w	Tm	na	Die Wertigkeit von Thulium gebe ich nicht an.
+w	Yb	na	Die Wertigkeit von Ytterbium gebe ich nicht an.
+w	Lu	na	Die Wertigkeit von Lutetium gebe ich nicht an.
+w	Hf	na	Die Wertigkeit von Hafnium gebe ich nicht an.
+w	Ta	na	Die Wertigkeit von Tantal gebe ich nicht an.
+w	W	na	Die Wertigkeit von Wolfram gebe ich nicht an.
+w	Re	na	Die Wertigkeit von Rhenium gebe ich nicht an.
+w	Os	na	Die Wertigkeit von Osmium gebe ich nicht an.
+w	Ir	na	Die Wertigkeit von Iridium gebe ich nicht an.
+w	Pt	na	Die Wertigkeit von Platin gebe ich nicht an.
+w	Au	na	Die Wertigkeit von Gold gebe ich nicht an.
+w	Hg	na	Die Wertigkeit von Quecksilber gebe ich nicht an.
+w	Tl	fact	Die Wertigkeit von Thallium ist 3.
+w	Pb	fact	Die Wertigkeit von Blei ist 4.
+w	Bi	fact	Die Wertigkeit von Bismut ist 3.
+w	Po	fact	Die Wertigkeit von Polonium ist 2.
+w	At	fact	Die Wertigkeit von Astat ist 1.
+w	Rn	na	Die Wertigkeit von Radon gebe ich nicht an.
+w	Fr	fact	Die Wertigkeit von Francium ist 1.
+w	Ra	fact	Die Wertigkeit von Radium ist 2.
+w	Ac	na	Die Wertigkeit von Actinium gebe ich nicht an.
+w	Th	na	Die Wertigkeit von Thorium gebe ich nicht an.
+w	Pa	na	Die Wertigkeit von Protactinium gebe ich nicht an.
+w	U	na	Die Wertigkeit von Uran gebe ich nicht an.
+w	Np	na	Die Wertigkeit von Neptunium gebe ich nicht an.
+w	Pu	na	Die Wertigkeit von Plutonium gebe ich nicht an.
+w	Am	na	Die Wertigkeit von Americium gebe ich nicht an.
+w	Cm	na	Die Wertigkeit von Curium gebe ich nicht an.
+w	Bk	na	Die Wertigkeit von Berkelium gebe ich nicht an.
+w	Cf	na	Die Wertigkeit von Californium gebe ich nicht an.
+w	Es	na	Die Wertigkeit von Einsteinium gebe ich nicht an.
+w	Fm	na	Die Wertigkeit von Fermium gebe ich nicht an.
+w	Md	na	Die Wertigkeit von Mendelevium gebe ich nicht an.
+w	No	na	Die Wertigkeit von Nobelium gebe ich nicht an.
+w	Lr	na	Die Wertigkeit von Lawrencium gebe ich nicht an.
+w	Rf	na	Die Wertigkeit von Rutherfordium gebe ich nicht an.
+w	Db	na	Die Wertigkeit von Dubnium gebe ich nicht an.
+w	Sg	na	Die Wertigkeit von Seaborgium gebe ich nicht an.
+w	Bh	na	Die Wertigkeit von Bohrium gebe ich nicht an.
+w	Hs	na	Die Wertigkeit von Hassium gebe ich nicht an.
+w	Mt	na	Die Wertigkeit von Meitnerium gebe ich nicht an.
+w	Ds	na	Die Wertigkeit von Darmstadtium gebe ich nicht an.
+w	Rg	na	Die Wertigkeit von Roentgenium gebe ich nicht an.
+w	Cn	na	Die Wertigkeit von Copernicium gebe ich nicht an.
+w	Nh	na	Die Wertigkeit von Nihonium gebe ich nicht an.
+w	Fl	na	Die Wertigkeit von Flerovium gebe ich nicht an.
+w	Mc	na	Die Wertigkeit von Moscovium gebe ich nicht an.
+w	Lv	na	Die Wertigkeit von Livermorium gebe ich nicht an.
+w	Ts	na	Die Wertigkeit von Tenness gebe ich nicht an.
+w	Og	na	Die Wertigkeit von Oganesson gebe ich nicht an.
+w	H2O	na	Die Wertigkeit von Wasser gebe ich nicht an.
+w	knallgas	na	Die Wertigkeit von Knallgasreaktion gebe ich nicht an.
+w	wasser	na	Die Wertigkeit von Wasser gebe ich nicht an.
+w	Xyz	unknown	Die Wertigkeit von – Das weiß ich leider nicht.
+E	H	fact	Das Element Wasserstoff (H) ist ein Nichtmetall mit der Ordnungszahl 1.
+E	He	fact	Das Element Helium (He) ist ein Nichtmetall mit der Ordnungszahl 2.
+E	Li	fact	Das Element Lithium (Li) ist ein Metall mit der Ordnungszahl 3.
+E	Be	fact	Das Element Beryllium (Be) ist ein Metall mit der Ordnungszahl 4.
+E	B	fact	Das Element Bor (B) ist ein Halbmetall mit der Ordnungszahl 5.
+E	C	fact	Das Element Kohlenstoff (C) ist ein Nichtmetall mit der Ordnungszahl 6.
+E	N	fact	Das Element Stickstoff (N) ist ein Nichtmetall mit der Ordnungszahl 7.
+E	O	fact	Das Element Sauerstoff (O) ist ein Nichtmetall mit der Ordnungszahl 8.
+E	F	fact	Das Element Fluor (F) ist ein Nichtmetall mit der Ordnungszahl 9.
+E	Ne	fact	Das Element Neon (Ne) ist ein Nichtmetall mit der Ordnungszahl 10.
+E	Na	fact	Das Element Natrium (Na) ist ein Metall mit der Ordnungszahl 11.
+E	Mg	fact	Das Element Magnesium (Mg) ist ein Metall mit der Ordnungszahl 12.
+E	Al	fact	Das Element Aluminium (Al) ist ein Metall mit der Ordnungszahl 13.
+E	Si	fact	Das Element Silicium (Si) ist ein Halbmetall mit der Ordnungszahl 14.
+E	P	fact	Das Element Phosphor (P) ist ein Nichtmetall mit der Ordnungszahl 15.
+E	S	fact	Das Element Schwefel (S) ist ein Nichtmetall mit der Ordnungszahl 16.
+E	Cl	fact	Das Element Chlor (Cl) ist ein Nichtmetall mit der Ordnungszahl 17.
+E	Ar	fact	Das Element Argon (Ar) ist ein Nichtmetall mit der Ordnungszahl 18.
+E	K	fact	Das Element Kalium (K) ist ein Metall mit der Ordnungszahl 19.
+E	Ca	fact	Das Element Calcium (Ca) ist ein Metall mit der Ordnungszahl 20.
+E	Sc	fact	Das Element Scandium (Sc) ist ein Metall mit der Ordnungszahl 21.
+E	Ti	fact	Das Element Titan (Ti) ist ein Metall mit der Ordnungszahl 22.
+E	V	fact	Das Element Vanadium (V) ist ein Metall mit der Ordnungszahl 23.
+E	Cr	fact	Das Element Chrom (Cr) ist ein Metall mit der Ordnungszahl 24.
+E	Mn	fact	Das Element Mangan (Mn) ist ein Metall mit der Ordnungszahl 25.
+E	Fe	fact	Das Element Eisen (Fe) ist ein Metall mit der Ordnungszahl 26.
+E	Co	fact	Das Element Cobalt (Co) ist ein Metall mit der Ordnungszahl 27.
+E	Ni	fact	Das Element Nickel (Ni) ist ein Metall mit der Ordnungszahl 28.
+E	Cu	fact	Das Element Kupfer (Cu) ist ein Metall mit der Ordnungszahl 29.
+E	Zn	fact	Das Element Zink (Zn) ist ein Metall mit der Ordnungszahl 30.
+E	Ga	fact	Das Element Gallium (Ga) ist ein Metall mit der Ordnungszahl 31.
+E	Ge	fact	Das Element Germanium (Ge) ist ein Halbmetall mit der Ordnungszahl 32.
+E	As	fact	Das Element Arsen (As) ist ein Halbmetall mit der Ordnungszahl 33.
+E	Se	fact	Das Element Selen (Se) ist ein Nichtmetall mit der Ordnungszahl 34.
+E	Br	fact	Das Element Brom (Br) ist ein Nichtmetall mit der Ordnungszahl 35.
+E	Kr	fact	Das Element Krypton (Kr) ist ein Nichtmetall mit der Ordnungszahl 36.
+E	Rb	fact	Das Element Rubidium (Rb) ist ein Metall mit der Ordnungszahl 37.
+E	Sr	fact	Das Element Strontium (Sr) ist ein Metall mit der Ordnungszahl 38.
+E	Y	fact	Das Element Yttrium (Y) ist ein Metall mit der Ordnungszahl 39.
+E	Zr	fact	Das Element Zirconium (Zr) ist ein Metall mit der Ordnungszahl 40.
+E	Nb	fact	Das Element Niob (Nb) ist ein Metall mit der Ordnungszahl 41.
+E	Mo	fact	Das Element Molybdän (Mo) ist ein Metall mit der Ordnungszahl 42.
+E	Tc	fact	Das Element Technetium (Tc) ist ein Metall mit der Ordnungszahl 43.
+E	Ru	fact	Das Element Ruthenium (Ru) ist ein Metall mit der Ordnungszahl 44.
+E	Rh	fact	Das Element Rhodium (Rh) ist ein Metall mit der Ordnungszahl 45.
+E	Pd	fact	Das Element Palladium (Pd) ist ein Metall mit der Ordnungszahl 46.
+E	Ag	fact	Das Element Silber (Ag) ist ein Metall mit der Ordnungszahl 47.
+E	Cd	fact	Das Element Cadmium (Cd) ist ein Metall mit der Ordnungszahl 48.
+E	In	fact	Das Element Indium (In) ist ein Metall mit der Ordnungszahl 49.
+E	Sn	fact	Das Element Zinn (Sn) ist ein Metall mit der Ordnungszahl 50.
+E	Sb	fact	Das Element Antimon (Sb) ist ein Halbmetall mit der Ordnungszahl 51.
+E	Te	fact	Das Element Tellur (Te) ist ein Halbmetall mit der Ordnungszahl 52.
+E	I	fact	Das Element Iod (I) ist ein Nichtmetall mit der Ordnungszahl 53.
+E	Xe	fact	Das Element Xenon (Xe) ist ein Nichtmetall mit der Ordnungszahl 54.
+E	Cs	fact	Das Element Caesium (Cs) ist ein Metall mit der Ordnungszahl 55.
+E	Ba	fact	Das Element Barium (Ba) ist ein Metall mit der Ordnungszahl 56.
+E	La	fact	Das Element Lanthan (La) ist ein Metall mit der Ordnungszahl 57.
+E	Ce	fact	Das Element Cer (Ce) ist ein Metall mit der Ordnungszahl 58.
+E	Pr	fact	Das Element Praseodym (Pr) ist ein Metall mit der Ordnungszahl 59.
+E	Nd	fact	Das Element Neodym (Nd) ist ein Metall mit der Ordnungszahl 60.
+E	Pm	fact	Das Element Promethium (Pm) ist ein Metall mit der Ordnungszahl 61.
+E	Sm	fact	Das Element Samarium (Sm) ist ein Metall mit der Ordnungszahl 62.
+E	Eu	fact	Das Element Europium (Eu) ist ein Metall mit der Ordnungszahl 63.
+E	Gd	fact	Das Element Gadolinium (Gd) ist ein Metall mit der Ordnungszahl 64.
+E	Tb	fact	Das Element Terbium (Tb) ist ein Metall mit der Ordnungszahl 65.
+E	Dy	fact	Das Element Dysprosium (Dy) ist ein Metall mit der Ordnungszahl 66.
+E	Ho	fact	Das Element Holmium (Ho) ist ein Metall mit der Ordnungszahl 67.
+E	Er	fact	Das Element Erbium (Er) ist ein Metall mit der Ordnungszahl 68.
+E	Tm	fact	Das Element Thulium (Tm) ist ein Metall mit der Ordnungszahl 69.
+E	Yb	fact	Das Element Ytterbium (Yb) ist ein Metall mit der Ordnungszahl 70.
+E	Lu	fact	Das Element Lutetium (Lu) ist ein Metall mit der Ordnungszahl 71.
+E	Hf	fact	Das Element Hafnium (Hf) ist ein Metall mit der Ordnungszahl 72.
+E	Ta	fact	Das Element Tantal (Ta) ist ein Metall mit der Ordnungszahl 73.
+E	W	fact	Das Element Wolfram (W) ist ein Metall mit der Ordnungszahl 74.
+E	Re	fact	Das Element Rhenium (Re) ist ein Metall mit der Ordnungszahl 75.
+E	Os	fact	Das Element Osmium (Os) ist ein Metall mit der Ordnungszahl 76.
+E	Ir	fact	Das Element Iridium (Ir) ist ein Metall mit der Ordnungszahl 77.
+E	Pt	fact	Das Element Platin (Pt) ist ein Metall mit der Ordnungszahl 78.
+E	Au	fact	Das Element Gold (Au) ist ein Metall mit der Ordnungszahl 79.
+E	Hg	fact	Das Element Quecksilber (Hg) ist ein Metall mit der Ordnungszahl 80.
+E	Tl	fact	Das Element Thallium (Tl) ist ein Metall mit der Ordnungszahl 81.
+E	Pb	fact	Das Element Blei (Pb) ist ein Metall mit der Ordnungszahl 82.
+E	Bi	fact	Das Element Bismut (Bi) ist ein Metall mit der Ordnungszahl 83.
+E	Po	fact	Das Element Polonium (Po) ist ein Metall mit der Ordnungszahl 84.
+E	At	fact	Das Element Astat (At) ist ein Metall mit der Ordnungszahl 85.
+E	Rn	fact	Das Element Radon (Rn) ist ein Nichtmetall mit der Ordnungszahl 86.
+E	Fr	fact	Das Element Francium (Fr) ist ein Metall mit der Ordnungszahl 87.
+E	Ra	fact	Das Element Radium (Ra) ist ein Metall mit der Ordnungszahl 88.
+E	Ac	fact	Das Element Actinium (Ac) ist ein Metall mit der Ordnungszahl 89.
+E	Th	fact	Das Element Thorium (Th) ist ein Metall mit der Ordnungszahl 90.
+E	Pa	fact	Das Element Protactinium (Pa) ist ein Metall mit der Ordnungszahl 91.
+E	U	fact	Das Element Uran (U) ist ein Metall mit der Ordnungszahl 92.
+E	Np	fact	Das Element Neptunium (Np) ist ein Metall mit der Ordnungszahl 93.
+E	Pu	fact	Das Element Plutonium (Pu) ist ein Metall mit der Ordnungszahl 94.
+E	Am	fact	Das Element Americium (Am) ist ein Metall mit der Ordnungszahl 95.
+E	Cm	fact	Das Element Curium (Cm) ist ein Metall mit der Ordnungszahl 96.
+E	Bk	fact	Das Element Berkelium (Bk) ist ein Metall mit der Ordnungszahl 97.
+E	Cf	fact	Das Element Californium (Cf) ist ein Metall mit der Ordnungszahl 98.
+E	Es	fact	Das Element Einsteinium (Es) ist ein Metall mit der Ordnungszahl 99.
+E	Fm	fact	Das Element Fermium (Fm) ist ein Metall mit der Ordnungszahl 100.
+E	Md	fact	Das Element Mendelevium (Md) ist ein Metall mit der Ordnungszahl 101.
+E	No	fact	Das Element Nobelium (No) ist ein Metall mit der Ordnungszahl 102.
+E	Lr	fact	Das Element Lawrencium (Lr) ist ein Metall mit der Ordnungszahl 103.
+E	Rf	na	Das Element Rutherfordium kenne ich nicht genau genug für ein Kurzprofil.
+E	Db	na	Das Element Dubnium kenne ich nicht genau genug für ein Kurzprofil.
+E	Sg	na	Das Element Seaborgium kenne ich nicht genau genug für ein Kurzprofil.
+E	Bh	na	Das Element Bohrium kenne ich nicht genau genug für ein Kurzprofil.
+E	Hs	na	Das Element Hassium kenne ich nicht genau genug für ein Kurzprofil.
+E	Mt	na	Das Element Meitnerium kenne ich nicht genau genug für ein Kurzprofil.
+E	Ds	na	Das Element Darmstadtium kenne ich nicht genau genug für ein Kurzprofil.
+E	Rg	na	Das Element Roentgenium kenne ich nicht genau genug für ein Kurzprofil.
+E	Cn	na	Das Element Copernicium kenne ich nicht genau genug für ein Kurzprofil.
+E	Nh	na	Das Element Nihonium kenne ich nicht genau genug für ein Kurzprofil.
+E	Fl	na	Das Element Flerovium kenne ich nicht genau genug für ein Kurzprofil.
+E	Mc	na	Das Element Moscovium kenne ich nicht genau genug für ein Kurzprofil.
+E	Lv	na	Das Element Livermorium kenne ich nicht genau genug für ein Kurzprofil.
+E	Ts	na	Das Element Tenness kenne ich nicht genau genug für ein Kurzprofil.
+E	Og	na	Das Element Oganesson kenne ich nicht genau genug für ein Kurzprofil.
+E	H2O	na	Das Element Wasser kenne ich nicht genau genug für ein Kurzprofil.
+E	knallgas	na	Das Element Knallgasreaktion kenne ich nicht genau genug für ein Kurzprofil.
+E	wasser	na	Das Element Wasser kenne ich nicht genau genug für ein Kurzprofil.
+E	Xyz	unknown	Das Element – Das weiß ich leider nicht.
+R	H2O	fact	Die Formel von Wasser ist H2O.
+R	H2O2	fact	Die Formel von Wasserstoffperoxid ist H2O2.
+R	CO2	fact	Die Formel von Kohlenstoffdioxid ist CO2.
+R	CO	fact	Die Formel von Kohlenstoffmonooxid ist CO.
+R	SO2	fact	Die Formel von Schwefeldioxid ist SO2.
+R	SO3	fact	Die Formel von Schwefeltrioxid ist SO3.
+R	NO	fact	Die Formel von Stickstoffmonooxid ist NO.
+R	NO2	fact	Die Formel von Stickstoffdioxid ist NO2.
+R	N2O	fact	Die Formel von Distickstoffmonooxid ist N2O.
+R	O3	fact	Die Formel von Ozon ist O3.
+R	NH3	fact	Die Formel von Ammoniak ist NH3.
+R	H2S	fact	Die Formel von Schwefelwasserstoff ist H2S.
+R	CH4	fact	Die Formel von Methan ist CH4.
+R	C2H6	fact	Die Formel von Ethan ist C2H6.
+R	C3H8	fact	Die Formel von Propan ist C3H8.
+R	C4H10	fact	Die Formel von Butan ist C4H10.
+R	C5H12	fact	Die Formel von Pentan ist C5H12.
+R	C6H14	fact	Die Formel von Hexan ist C6H14.
+R	C8H18	fact	Die Formel von Octan ist C8H18.
+R	C2H4	fact	Die Formel von Ethen ist C2H4.
+R	C3H6	fact	Die Formel von Propen ist C3H6.
+R	C2H2	fact	Die Formel von Ethin ist C2H2.
+R	C6H6	fact	Die Formel von Benzol ist C6H6.
+R	CH3OH	fact	Die Formel von Methanol ist CH3OH.
+R	C2H5OH	fact	Die Formel von Ethanol ist C2H5OH.
+R	C3H7OH	fact	Die Formel von Propanol ist C3H7OH.
+R	CH3COCH3	fact	Die Formel von Aceton ist CH3COCH3.
+R	CH3COOH	fact	Die Formel von Essigsäure ist CH3COOH.
+R	HCOOH	fact	Die Formel von Ameisensäure ist HCOOH.
+R	C6H12O6	fact	Die Formel von Glucose ist C6H12O6.
+R	C12H22O11	fact	Die Formel von Saccharose ist C12H22O11.
+R	CO(NH2)2	fact	Die Formel von Harnstoff ist CO(NH2)2.
+R	HCl	fact	Die Formel von Salzsäure ist HCl.
+R	H2SO4	fact	Die Formel von Schwefelsäure ist H2SO4.
+R	H2SO3	fact	Die Formel von Schweflige Säure ist H2SO3.
+R	HNO3	fact	Die Formel von Salpetersäure ist HNO3.
+R	H3PO4	fact	Die Formel von Phosphorsäure ist H3PO4.
+R	H2CO3	fact	Die Formel von Kohlensäure ist H2CO3.
+R	NaOH	fact	Die Formel von Natriumhydroxid ist NaOH.
+R	KOH	fact	Die Formel von Kaliumhydroxid ist KOH.
+R	Ca(OH)2	fact	Die Formel von Calciumhydroxid ist Ca(OH)2.
+R	Mg(OH)2	fact	Die Formel von Magnesiumhydroxid ist Mg(OH)2.
+R	NaCl	fact	Die Formel von Natriumchlorid ist NaCl.
+R	KCl	fact	Die Formel von Kaliumchlorid ist KCl.
+R	LiCl	fact	Die Formel von Lithiumchlorid ist LiCl.
+R	CaCl2	fact	Die Formel von Calciumchlorid ist CaCl2.
+R	MgCl2	fact	Die Formel von Magnesiumchlorid ist MgCl2.
+R	BaCl2	fact	Die Formel von Bariumchlorid ist BaCl2.
+R	AlCl3	fact	Die Formel von Aluminiumchlorid ist AlCl3.
+R	NH4Cl	fact	Die Formel von Ammoniumchlorid ist NH4Cl.
+R	AgCl	fact	Die Formel von Silberchlorid ist AgCl.
+R	CuCl2	fact	Die Formel von Kupfer(II)-chlorid ist CuCl2.
+R	ZnCl2	fact	Die Formel von Zinkchlorid ist ZnCl2.
+R	NaF	fact	Die Formel von Natriumfluorid ist NaF.
+R	CaF2	fact	Die Formel von Calciumfluorid ist CaF2.
+R	NaBr	fact	Die Formel von Natriumbromid ist NaBr.
+R	KI	fact	Die Formel von Kaliumiodid ist KI.
+R	CaCO3	fact	Die Formel von Calciumcarbonat ist CaCO3.
+R	Na2CO3	fact	Die Formel von Natriumcarbonat ist Na2CO3.
+R	K2CO3	fact	Die Formel von Kaliumcarbonat ist K2CO3.
+R	MgCO3	fact	Die Formel von Magnesiumcarbonat ist MgCO3.
+R	NaHCO3	fact	Die Formel von Natriumhydrogencarbonat ist NaHCO3.
+R	CaSO4	fact	Die Formel von Calciumsulfat ist CaSO4.
+R	BaSO4	fact	Die Formel von Bariumsulfat ist BaSO4.
+R	CuSO4	fact	Die Formel von Kupfer(II)-sulfat ist CuSO4.
+R	Na2SO4	fact	Die Formel von Natriumsulfat ist Na2SO4.
+R	MgSO4	fact	Die Formel von Magnesiumsulfat ist MgSO4.
+R	ZnSO4	fact	Die Formel von Zinksulfat ist ZnSO4.
+R	FeSO4	fact	Die Formel von Eisen(II)-sulfat ist FeSO4.
+R	KNO3	fact	Die Formel von Kaliumnitrat ist KNO3.
+R	NaNO3	fact	Die Formel von Natriumnitrat ist NaNO3.
+R	AgNO3	fact	Die Formel von Silbernitrat ist AgNO3.
+R	NH4NO3	fact	Die Formel von Ammoniumnitrat ist NH4NO3.
+R	Ca3(PO4)2	fact	Die Formel von Calciumphosphat ist Ca3(PO4)2.
+R	KMnO4	fact	Die Formel von Kaliumpermanganat ist KMnO4.
+R	CaO	fact	Die Formel von Calciumoxid ist CaO.
+R	MgO	fact	Die Formel von Magnesiumoxid ist MgO.
+R	Na2O	fact	Die Formel von Natriumoxid ist Na2O.
+R	Al2O3	fact	Die Formel von Aluminiumoxid ist Al2O3.
+R	Fe2O3	fact	Die Formel von Eisen(III)-oxid ist Fe2O3.
+R	FeO	fact	Die Formel von Eisen(II)-oxid ist FeO.
+R	CuO	fact	Die Formel von Kupfer(II)-oxid ist CuO.
+R	Cu2O	fact	Die Formel von Kupfer(I)-oxid ist Cu2O.
+R	ZnO	fact	Die Formel von Zinkoxid ist ZnO.
+R	Ag2O	fact	Die Formel von Silberoxid ist Ag2O.
+R	SiO2	fact	Die Formel von Siliciumdioxid ist SiO2.
+R	TiO2	fact	Die Formel von Titandioxid ist TiO2.
+R	FeS	fact	Die Formel von Eisen(II)-sulfid ist FeS.
+R	Cu2S	fact	Die Formel von Kupfer(I)-sulfid ist Cu2S.
+R	ZnS	fact	Die Formel von Zinksulfid ist ZnS.
+R	LiF	fact	Die Formel von Lithiumfluorid ist LiF.
+R	LiBr	fact	Die Formel von Lithiumbromid ist LiBr.
+R	LiI	fact	Die Formel von Lithiumiodid ist LiI.
+R	Li2O	fact	Die Formel von Lithiumoxid ist Li2O.
+R	Li2S	fact	Die Formel von Lithiumsulfid ist Li2S.
+R	Li3N	fact	Die Formel von Lithiumnitrid ist Li3N.
+R	Li3P	fact	Die Formel von Lithiumphosphid ist Li3P.
+R	NaI	fact	Die Formel von Natriumiodid ist NaI.
+R	Na2S	fact	Die Formel von Natriumsulfid ist Na2S.
+R	Na3N	fact	Die Formel von Natriumnitrid ist Na3N.
+R	Na3P	fact	Die Formel von Natriumphosphid ist Na3P.
+R	KF	fact	Die Formel von Kaliumfluorid ist KF.
+R	KBr	fact	Die Formel von Kaliumbromid ist KBr.
+R	K2O	fact	Die Formel von Kaliumoxid ist K2O.
+R	K2S	fact	Die Formel von Kaliumsulfid ist K2S.
+R	K3N	fact	Die Formel von Kaliumnitrid ist K3N.
+R	K3P	fact	Die Formel von Kaliumphosphid ist K3P.
+R	RbF	fact	Die Formel von Rubidiumfluorid ist RbF.
+R	RbCl	fact	Die Formel von Rubidiumchlorid ist RbCl.
+R	RbBr	fact	Die Formel von Rubidiumbromid ist RbBr.
+R	RbI	fact	Die Formel von Rubidiumiodid ist RbI.
+R	Rb2O	fact	Die Formel von Rubidiumoxid ist Rb2O.
+R	Rb2S	fact	Die Formel von Rubidiumsulfid ist Rb2S.
+R	Rb3N	fact	Die Formel von Rubidiumnitrid ist Rb3N.
+R	Rb3P	fact	Die Formel von Rubidiumphosphid ist Rb3P.
+R	CsF	fact	Die Formel von Caesiumfluorid ist CsF.
+R	CsCl	fact	Die Formel von Caesiumchlorid ist CsCl.
+R	CsBr	fact	Die Formel von Caesiumbromid ist CsBr.
+R	CsI	fact	Die Formel von Caesiumiodid ist CsI.
+R	Cs2O	fact	Die Formel von Caesiumoxid ist Cs2O.
+R	Cs2S	fact	Die Formel von Caesiumsulfid ist Cs2S.
+R	Cs3N	fact	Die Formel von Caesiumnitrid ist Cs3N.
+R	Cs3P	fact	Die Formel von Caesiumphosphid ist Cs3P.
+R	MgF2	fact	Die Formel von Magnesiumfluorid ist MgF2.
+R	MgBr2	fact	Die Formel von Magnesiumbromid ist MgBr2.
+R	MgI2	fact	Die Formel von Magnesiumiodid ist MgI2.
+R	MgS	fact	Die Formel von Magnesiumsulfid ist MgS.
+R	Mg3N2	fact	Die Formel von Magnesiumnitrid ist Mg3N2.
+R	Mg3P2	fact	Die Formel von Magnesiumphosphid ist Mg3P2.
+R	CaBr2	fact	Die Formel von Calciumbromid ist CaBr2.
+R	CaI2	fact	Die Formel von Calciumiodid ist CaI2.
+R	CaS	fact	Die Formel von Calciumsulfid ist CaS.
+R	Ca3N2	fact	Die Formel von Calciumnitrid ist Ca3N2.
+R	Ca3P2	fact	Die Formel von Calciumphosphid ist Ca3P2.
+R	SrF2	fact	Die Formel von Strontiumfluorid ist SrF2.
+R	SrCl2	fact	Die Formel von Strontiumchlorid ist SrCl2.
+R	SrBr2	fact	Die Formel von Strontiumbromid ist SrBr2.
+R	SrI2	fact	Die Formel von Strontiumiodid ist SrI2.
+R	SrO	fact	Die Formel von Strontiumoxid ist SrO.
+R	SrS	fact	Die Formel von Strontiumsulfid ist SrS.
+R	Sr3N2	fact	Die Formel von Strontiumnitrid ist Sr3N2.
+R	Sr3P2	fact	Die Formel von Strontiumphosphid ist Sr3P2.
+R	BaF2	fact	Die Formel von Bariumfluorid ist BaF2.
+R	BaBr2	fact	Die Formel von Bariumbromid ist BaBr2.
+R	BaI2	fact	Die Formel von Bariumiodid ist BaI2.
+R	BaO	fact	Die Formel von Bariumoxid ist BaO.
+R	BaS	fact	Die Formel von Bariumsulfid ist BaS.
+R	Ba3N2	fact	Die Formel von Bariumnitrid ist Ba3N2.
+R	Ba3P2	fact	Die Formel von Bariumphosphid ist Ba3P2.
+R	AlF3	fact	Die Formel von Aluminiumfluorid ist AlF3.
+R	AlBr3	fact	Die Formel von Aluminiumbromid ist AlBr3.
+R	AlI3	fact	Die Formel von Aluminiumiodid ist AlI3.
+R	Al2S3	fact	Die Formel von Aluminiumsulfid ist Al2S3.
+R	AlN	fact	Die Formel von Aluminiumnitrid ist AlN.
+R	AlP	fact	Die Formel von Aluminiumphosphid ist AlP.
+R	H	na	Die Formel von Wasserstoff: dazu habe ich keine Angabe.
+R	knallgas	na	Die Formel von Knallgasreaktion: dazu habe ich keine Angabe.
+R	wasser	na	Die Formel von Wasser: dazu habe ich keine Angabe.
+R	Xyz	unknown	Die Formel von – Das weiß ich leider nicht.
+f	H2O	fact	Die Formel H2O steht für Wasser.
+f	H2O2	fact	Die Formel H2O2 steht für Wasserstoffperoxid.
+f	CO2	fact	Die Formel CO2 steht für Kohlenstoffdioxid.
+f	CO	fact	Die Formel CO steht für Kohlenstoffmonooxid.
+f	SO2	fact	Die Formel SO2 steht für Schwefeldioxid.
+f	SO3	fact	Die Formel SO3 steht für Schwefeltrioxid.
+f	NO	fact	Die Formel NO steht für Stickstoffmonooxid.
+f	NO2	fact	Die Formel NO2 steht für Stickstoffdioxid.
+f	N2O	fact	Die Formel N2O steht für Distickstoffmonooxid.
+f	O3	fact	Die Formel O3 steht für Ozon.
+f	NH3	fact	Die Formel NH3 steht für Ammoniak.
+f	H2S	fact	Die Formel H2S steht für Schwefelwasserstoff.
+f	CH4	fact	Die Formel CH4 steht für Methan.
+f	C2H6	fact	Die Formel C2H6 steht für Ethan.
+f	C3H8	fact	Die Formel C3H8 steht für Propan.
+f	C4H10	fact	Die Formel C4H10 steht für Butan.
+f	C5H12	fact	Die Formel C5H12 steht für Pentan.
+f	C6H14	fact	Die Formel C6H14 steht für Hexan.
+f	C8H18	fact	Die Formel C8H18 steht für Octan.
+f	C2H4	fact	Die Formel C2H4 steht für Ethen.
+f	C3H6	fact	Die Formel C3H6 steht für Propen.
+f	C2H2	fact	Die Formel C2H2 steht für Ethin.
+f	C6H6	fact	Die Formel C6H6 steht für Benzol.
+f	CH3OH	fact	Die Formel CH3OH steht für Methanol.
+f	C2H5OH	fact	Die Formel C2H5OH steht für Ethanol.
+f	C3H7OH	fact	Die Formel C3H7OH steht für Propanol.
+f	CH3COCH3	fact	Die Formel CH3COCH3 steht für Aceton.
+f	CH3COOH	fact	Die Formel CH3COOH steht für Essigsäure.
+f	HCOOH	fact	Die Formel HCOOH steht für Ameisensäure.
+f	C6H12O6	fact	Die Formel C6H12O6 steht für Glucose.
+f	C12H22O11	fact	Die Formel C12H22O11 steht für Saccharose.
+f	CO(NH2)2	fact	Die Formel CO(NH2)2 steht für Harnstoff.
+f	HCl	fact	Die Formel HCl steht für Salzsäure.
+f	H2SO4	fact	Die Formel H2SO4 steht für Schwefelsäure.
+f	H2SO3	fact	Die Formel H2SO3 steht für Schweflige Säure.
+f	HNO3	fact	Die Formel HNO3 steht für Salpetersäure.
+f	H3PO4	fact	Die Formel H3PO4 steht für Phosphorsäure.
+f	H2CO3	fact	Die Formel H2CO3 steht für Kohlensäure.
+f	NaOH	fact	Die Formel NaOH steht für Natriumhydroxid.
+f	KOH	fact	Die Formel KOH steht für Kaliumhydroxid.
+f	Ca(OH)2	fact	Die Formel Ca(OH)2 steht für Calciumhydroxid.
+f	Mg(OH)2	fact	Die Formel Mg(OH)2 steht für Magnesiumhydroxid.
+f	NaCl	fact	Die Formel NaCl steht für Natriumchlorid.
+f	KCl	fact	Die Formel KCl steht für Kaliumchlorid.
+f	LiCl	fact	Die Formel LiCl steht für Lithiumchlorid.
+f	CaCl2	fact	Die Formel CaCl2 steht für Calciumchlorid.
+f	MgCl2	fact	Die Formel MgCl2 steht für Magnesiumchlorid.
+f	BaCl2	fact	Die Formel BaCl2 steht für Bariumchlorid.
+f	AlCl3	fact	Die Formel AlCl3 steht für Aluminiumchlorid.
+f	NH4Cl	fact	Die Formel NH4Cl steht für Ammoniumchlorid.
+f	AgCl	fact	Die Formel AgCl steht für Silberchlorid.
+f	CuCl2	fact	Die Formel CuCl2 steht für Kupfer(II)-chlorid.
+f	ZnCl2	fact	Die Formel ZnCl2 steht für Zinkchlorid.
+f	NaF	fact	Die Formel NaF steht für Natriumfluorid.
+f	CaF2	fact	Die Formel CaF2 steht für Calciumfluorid.
+f	NaBr	fact	Die Formel NaBr steht für Natriumbromid.
+f	KI	fact	Die Formel KI steht für Kaliumiodid.
+f	CaCO3	fact	Die Formel CaCO3 steht für Calciumcarbonat.
+f	Na2CO3	fact	Die Formel Na2CO3 steht für Natriumcarbonat.
+f	K2CO3	fact	Die Formel K2CO3 steht für Kaliumcarbonat.
+f	MgCO3	fact	Die Formel MgCO3 steht für Magnesiumcarbonat.
+f	NaHCO3	fact	Die Formel NaHCO3 steht für Natriumhydrogencarbonat.
+f	CaSO4	fact	Die Formel CaSO4 steht für Calciumsulfat.
+f	BaSO4	fact	Die Formel BaSO4 steht für Bariumsulfat.
+f	CuSO4	fact	Die Formel CuSO4 steht für Kupfer(II)-sulfat.
+f	Na2SO4	fact	Die Formel Na2SO4 steht für Natriumsulfat.
+f	MgSO4	fact	Die Formel MgSO4 steht für Magnesiumsulfat.
+f	ZnSO4	fact	Die Formel ZnSO4 steht für Zinksulfat.
+f	FeSO4	fact	Die Formel FeSO4 steht für Eisen(II)-sulfat.
+f	KNO3	fact	Die Formel KNO3 steht für Kaliumnitrat.
+f	NaNO3	fact	Die Formel NaNO3 steht für Natriumnitrat.
+f	AgNO3	fact	Die Formel AgNO3 steht für Silbernitrat.
+f	NH4NO3	fact	Die Formel NH4NO3 steht für Ammoniumnitrat.
+f	Ca3(PO4)2	fact	Die Formel Ca3(PO4)2 steht für Calciumphosphat.
+f	KMnO4	fact	Die Formel KMnO4 steht für Kaliumpermanganat.
+f	CaO	fact	Die Formel CaO steht für Calciumoxid.
+f	MgO	fact	Die Formel MgO steht für Magnesiumoxid.
+f	Na2O	fact	Die Formel Na2O steht für Natriumoxid.
+f	Al2O3	fact	Die Formel Al2O3 steht für Aluminiumoxid.
+f	Fe2O3	fact	Die Formel Fe2O3 steht für Eisen(III)-oxid.
+f	FeO	fact	Die Formel FeO steht für Eisen(II)-oxid.
+f	CuO	fact	Die Formel CuO steht für Kupfer(II)-oxid.
+f	Cu2O	fact	Die Formel Cu2O steht für Kupfer(I)-oxid.
+f	ZnO	fact	Die Formel ZnO steht für Zinkoxid.
+f	Ag2O	fact	Die Formel Ag2O steht für Silberoxid.
+f	SiO2	fact	Die Formel SiO2 steht für Siliciumdioxid.
+f	TiO2	fact	Die Formel TiO2 steht für Titandioxid.
+f	FeS	fact	Die Formel FeS steht für Eisen(II)-sulfid.
+f	Cu2S	fact	Die Formel Cu2S steht für Kupfer(I)-sulfid.
+f	ZnS	fact	Die Formel ZnS steht für Zinksulfid.
+f	LiF	fact	Die Formel LiF steht für Lithiumfluorid.
+f	LiBr	fact	Die Formel LiBr steht für Lithiumbromid.
+f	LiI	fact	Die Formel LiI steht für Lithiumiodid.
+f	Li2O	fact	Die Formel Li2O steht für Lithiumoxid.
+f	Li2S	fact	Die Formel Li2S steht für Lithiumsulfid.
+f	Li3N	fact	Die Formel Li3N steht für Lithiumnitrid.
+f	Li3P	fact	Die Formel Li3P steht für Lithiumphosphid.
+f	NaI	fact	Die Formel NaI steht für Natriumiodid.
+f	Na2S	fact	Die Formel Na2S steht für Natriumsulfid.
+f	Na3N	fact	Die Formel Na3N steht für Natriumnitrid.
+f	Na3P	fact	Die Formel Na3P steht für Natriumphosphid.
+f	KF	fact	Die Formel KF steht für Kaliumfluorid.
+f	KBr	fact	Die Formel KBr steht für Kaliumbromid.
+f	K2O	fact	Die Formel K2O steht für Kaliumoxid.
+f	K2S	fact	Die Formel K2S steht für Kaliumsulfid.
+f	K3N	fact	Die Formel K3N steht für Kaliumnitrid.
+f	K3P	fact	Die Formel K3P steht für Kaliumphosphid.
+f	RbF	fact	Die Formel RbF steht für Rubidiumfluorid.
+f	RbCl	fact	Die Formel RbCl steht für Rubidiumchlorid.
+f	RbBr	fact	Die Formel RbBr steht für Rubidiumbromid.
+f	RbI	fact	Die Formel RbI steht für Rubidiumiodid.
+f	Rb2O	fact	Die Formel Rb2O steht für Rubidiumoxid.
+f	Rb2S	fact	Die Formel Rb2S steht für Rubidiumsulfid.
+f	Rb3N	fact	Die Formel Rb3N steht für Rubidiumnitrid.
+f	Rb3P	fact	Die Formel Rb3P steht für Rubidiumphosphid.
+f	CsF	fact	Die Formel CsF steht für Caesiumfluorid.
+f	CsCl	fact	Die Formel CsCl steht für Caesiumchlorid.
+f	CsBr	fact	Die Formel CsBr steht für Caesiumbromid.
+f	CsI	fact	Die Formel CsI steht für Caesiumiodid.
+f	Cs2O	fact	Die Formel Cs2O steht für Caesiumoxid.
+f	Cs2S	fact	Die Formel Cs2S steht für Caesiumsulfid.
+f	Cs3N	fact	Die Formel Cs3N steht für Caesiumnitrid.
+f	Cs3P	fact	Die Formel Cs3P steht für Caesiumphosphid.
+f	MgF2	fact	Die Formel MgF2 steht für Magnesiumfluorid.
+f	MgBr2	fact	Die Formel MgBr2 steht für Magnesiumbromid.
+f	MgI2	fact	Die Formel MgI2 steht für Magnesiumiodid.
+f	MgS	fact	Die Formel MgS steht für Magnesiumsulfid.
+f	Mg3N2	fact	Die Formel Mg3N2 steht für Magnesiumnitrid.
+f	Mg3P2	fact	Die Formel Mg3P2 steht für Magnesiumphosphid.
+f	CaBr2	fact	Die Formel CaBr2 steht für Calciumbromid.
+f	CaI2	fact	Die Formel CaI2 steht für Calciumiodid.
+f	CaS	fact	Die Formel CaS steht für Calciumsulfid.
+f	Ca3N2	fact	Die Formel Ca3N2 steht für Calciumnitrid.
+f	Ca3P2	fact	Die Formel Ca3P2 steht für Calciumphosphid.
+f	SrF2	fact	Die Formel SrF2 steht für Strontiumfluorid.
+f	SrCl2	fact	Die Formel SrCl2 steht für Strontiumchlorid.
+f	SrBr2	fact	Die Formel SrBr2 steht für Strontiumbromid.
+f	SrI2	fact	Die Formel SrI2 steht für Strontiumiodid.
+f	SrO	fact	Die Formel SrO steht für Strontiumoxid.
+f	SrS	fact	Die Formel SrS steht für Strontiumsulfid.
+f	Sr3N2	fact	Die Formel Sr3N2 steht für Strontiumnitrid.
+f	Sr3P2	fact	Die Formel Sr3P2 steht für Strontiumphosphid.
+f	BaF2	fact	Die Formel BaF2 steht für Bariumfluorid.
+f	BaBr2	fact	Die Formel BaBr2 steht für Bariumbromid.
+f	BaI2	fact	Die Formel BaI2 steht für Bariumiodid.
+f	BaO	fact	Die Formel BaO steht für Bariumoxid.
+f	BaS	fact	Die Formel BaS steht für Bariumsulfid.
+f	Ba3N2	fact	Die Formel Ba3N2 steht für Bariumnitrid.
+f	Ba3P2	fact	Die Formel Ba3P2 steht für Bariumphosphid.
+f	AlF3	fact	Die Formel AlF3 steht für Aluminiumfluorid.
+f	AlBr3	fact	Die Formel AlBr3 steht für Aluminiumbromid.
+f	AlI3	fact	Die Formel AlI3 steht für Aluminiumiodid.
+f	Al2S3	fact	Die Formel Al2S3 steht für Aluminiumsulfid.
+f	AlN	fact	Die Formel AlN steht für Aluminiumnitrid.
+f	AlP	fact	Die Formel AlP steht für Aluminiumphosphid.
+f	H	na	Die Formel Wasserstoff: dazu habe ich keine Angabe.
+f	knallgas	na	Die Formel Knallgasreaktion: dazu habe ich keine Angabe.
+f	wasser	na	Die Formel Wasser: dazu habe ich keine Angabe.
+f	Xyz	unknown	Die Formel – Das weiß ich leider nicht.
+m	H2O	fact	Die molare Masse von Wasser beträgt 18,0 g/mol.
+m	H2O2	fact	Die molare Masse von Wasserstoffperoxid beträgt 34,0 g/mol.
+m	CO2	fact	Die molare Masse von Kohlenstoffdioxid beträgt 44,0 g/mol.
+m	CO	fact	Die molare Masse von Kohlenstoffmonooxid beträgt 28,0 g/mol.
+m	SO2	fact	Die molare Masse von Schwefeldioxid beträgt 64,1 g/mol.
+m	SO3	fact	Die molare Masse von Schwefeltrioxid beträgt 80,1 g/mol.
+m	NO	fact	Die molare Masse von Stickstoffmonooxid beträgt 30,0 g/mol.
+m	NO2	fact	Die molare Masse von Stickstoffdioxid beträgt 46,0 g/mol.
+m	N2O	fact	Die molare Masse von Distickstoffmonooxid beträgt 44,0 g/mol.
+m	O3	fact	Die molare Masse von Ozon beträgt 48,0 g/mol.
+m	NH3	fact	Die molare Masse von Ammoniak beträgt 17,0 g/mol.
+m	H2S	fact	Die molare Masse von Schwefelwasserstoff beträgt 34,1 g/mol.
+m	CH4	fact	Die molare Masse von Methan beträgt 16,0 g/mol.
+m	C2H6	fact	Die molare Masse von Ethan beträgt 30,0 g/mol.
+m	C3H8	fact	Die molare Masse von Propan beträgt 44,0 g/mol.
+m	C4H10	fact	Die molare Masse von Butan beträgt 58,0 g/mol.
+m	C5H12	fact	Die molare Masse von Pentan beträgt 72,0 g/mol.
+m	C6H14	fact	Die molare Masse von Hexan beträgt 86,0 g/mol.
+m	C8H18	fact	Die molare Masse von Octan beträgt 114,0 g/mol.
+m	C2H4	fact	Die molare Masse von Ethen beträgt 28,0 g/mol.
+m	C3H6	fact	Die molare Masse von Propen beträgt 42,0 g/mol.
+m	C2H2	fact	Die molare Masse von Ethin beträgt 26,0 g/mol.
+m	C6H6	fact	Die molare Masse von Benzol beträgt 78,0 g/mol.
+m	CH3OH	fact	Die molare Masse von Methanol beträgt 32,0 g/mol.
+m	C2H5OH	fact	Die molare Masse von Ethanol beträgt 46,0 g/mol.
+m	C3H7OH	fact	Die molare Masse von Propanol beträgt 60,0 g/mol.
+m	CH3COCH3	fact	Die molare Masse von Aceton beträgt 58,0 g/mol.
+m	CH3COOH	fact	Die molare Masse von Essigsäure beträgt 60,0 g/mol.
+m	HCOOH	fact	Die molare Masse von Ameisensäure beträgt 46,0 g/mol.
+m	C6H12O6	fact	Die molare Masse von Glucose beträgt 180,0 g/mol.
+m	C12H22O11	fact	Die molare Masse von Saccharose beträgt 342,0 g/mol.
+m	CO(NH2)2	fact	Die molare Masse von Harnstoff beträgt 60,0 g/mol.
+m	HCl	fact	Die molare Masse von Salzsäure beträgt 36,5 g/mol.
+m	H2SO4	fact	Die molare Masse von Schwefelsäure beträgt 98,1 g/mol.
+m	H2SO3	fact	Die molare Masse von Schweflige Säure beträgt 82,1 g/mol.
+m	HNO3	fact	Die molare Masse von Salpetersäure beträgt 63,0 g/mol.
+m	H3PO4	fact	Die molare Masse von Phosphorsäure beträgt 98,0 g/mol.
+m	H2CO3	fact	Die molare Masse von Kohlensäure beträgt 62,0 g/mol.
+m	NaOH	fact	Die molare Masse von Natriumhydroxid beträgt 40,0 g/mol.
+m	KOH	fact	Die molare Masse von Kaliumhydroxid beträgt 56,1 g/mol.
+m	Ca(OH)2	fact	Die molare Masse von Calciumhydroxid beträgt 74,1 g/mol.
+m	Mg(OH)2	fact	Die molare Masse von Magnesiumhydroxid beträgt 58,3 g/mol.
+m	NaCl	fact	Die molare Masse von Natriumchlorid beträgt 58,5 g/mol.
+m	KCl	fact	Die molare Masse von Kaliumchlorid beträgt 74,6 g/mol.
+m	LiCl	fact	Die molare Masse von Lithiumchlorid beträgt 42,4 g/mol.
+m	CaCl2	fact	Die molare Masse von Calciumchlorid beträgt 111,1 g/mol.
+m	MgCl2	fact	Die molare Masse von Magnesiumchlorid beträgt 95,3 g/mol.
+m	BaCl2	fact	Die molare Masse von Bariumchlorid beträgt 208,3 g/mol.
+m	AlCl3	fact	Die molare Masse von Aluminiumchlorid beträgt 133,5 g/mol.
+m	NH4Cl	fact	Die molare Masse von Ammoniumchlorid beträgt 53,5 g/mol.
+m	AgCl	fact	Die molare Masse von Silberchlorid beträgt 143,4 g/mol.
+m	CuCl2	fact	Die molare Masse von Kupfer(II)-chlorid beträgt 134,6 g/mol.
+m	ZnCl2	fact	Die molare Masse von Zinkchlorid beträgt 136,4 g/mol.
+m	NaF	fact	Die molare Masse von Natriumfluorid beträgt 42,0 g/mol.
+m	CaF2	fact	Die molare Masse von Calciumfluorid beträgt 78,1 g/mol.
+m	NaBr	fact	Die molare Masse von Natriumbromid beträgt 102,9 g/mol.
+m	KI	fact	Die molare Masse von Kaliumiodid beträgt 166,0 g/mol.
+m	CaCO3	fact	Die molare Masse von Calciumcarbonat beträgt 100,1 g/mol.
+m	Na2CO3	fact	Die molare Masse von Natriumcarbonat beträgt 106,0 g/mol.
+m	K2CO3	fact	Die molare Masse von Kaliumcarbonat beträgt 138,2 g/mol.
+m	MgCO3	fact	Die molare Masse von Magnesiumcarbonat beträgt 84,3 g/mol.
+m	NaHCO3	fact	Die molare Masse von Natriumhydrogencarbonat beträgt 84,0 g/mol.
+m	CaSO4	fact	Die molare Masse von Calciumsulfat beträgt 136,2 g/mol.
+m	BaSO4	fact	Die molare Masse von Bariumsulfat beträgt 233,4 g/mol.
+m	CuSO4	fact	Die molare Masse von Kupfer(II)-sulfat beträgt 159,7 g/mol.
+m	Na2SO4	fact	Die molare Masse von Natriumsulfat beträgt 142,1 g/mol.
+m	MgSO4	fact	Die molare Masse von Magnesiumsulfat beträgt 120,4 g/mol.
+m	ZnSO4	fact	Die molare Masse von Zinksulfat beträgt 161,5 g/mol.
+m	FeSO4	fact	Die molare Masse von Eisen(II)-sulfat beträgt 152,0 g/mol.
+m	KNO3	fact	Die molare Masse von Kaliumnitrat beträgt 101,1 g/mol.
+m	NaNO3	fact	Die molare Masse von Natriumnitrat beträgt 85,0 g/mol.
+m	AgNO3	fact	Die molare Masse von Silbernitrat beträgt 169,9 g/mol.
+m	NH4NO3	fact	Die molare Masse von Ammoniumnitrat beträgt 80,0 g/mol.
+m	Ca3(PO4)2	fact	Die molare Masse von Calciumphosphat beträgt 310,3 g/mol.
+m	KMnO4	fact	Die molare Masse von Kaliumpermanganat beträgt 158,0 g/mol.
+m	CaO	fact	Die molare Masse von Calciumoxid beträgt 56,1 g/mol.
+m	MgO	fact	Die molare Masse von Magnesiumoxid beträgt 40,3 g/mol.
+m	Na2O	fact	Die molare Masse von Natriumoxid beträgt 62,0 g/mol.
+m	Al2O3	fact	Die molare Masse von Aluminiumoxid beträgt 102,0 g/mol.
+m	Fe2O3	fact	Die molare Masse von Eisen(III)-oxid beträgt 159,8 g/mol.
+m	FeO	fact	Die molare Masse von Eisen(II)-oxid beträgt 71,9 g/mol.
+m	CuO	fact	Die molare Masse von Kupfer(II)-oxid beträgt 79,6 g/mol.
+m	Cu2O	fact	Die molare Masse von Kupfer(I)-oxid beträgt 143,2 g/mol.
+m	ZnO	fact	Die molare Masse von Zinkoxid beträgt 81,4 g/mol.
+m	Ag2O	fact	Die molare Masse von Silberoxid beträgt 231,8 g/mol.
+m	SiO2	fact	Die molare Masse von Siliciumdioxid beträgt 60,1 g/mol.
+m	TiO2	fact	Die molare Masse von Titandioxid beträgt 79,9 g/mol.
+m	FeS	fact	Die molare Masse von Eisen(II)-sulfid beträgt 88,0 g/mol.
+m	Cu2S	fact	Die molare Masse von Kupfer(I)-sulfid beträgt 159,3 g/mol.
+m	ZnS	fact	Die molare Masse von Zinksulfid beträgt 97,5 g/mol.
+m	LiF	fact	Die molare Masse von Lithiumfluorid beträgt 25,9 g/mol.
+m	LiBr	fact	Die molare Masse von Lithiumbromid beträgt 86,8 g/mol.
+m	LiI	fact	Die molare Masse von Lithiumiodid beträgt 133,8 g/mol.
+m	Li2O	fact	Die molare Masse von Lithiumoxid beträgt 29,8 g/mol.
+m	Li2S	fact	Die molare Masse von Lithiumsulfid beträgt 45,9 g/mol.
+m	Li3N	fact	Die molare Masse von Lithiumnitrid beträgt 34,7 g/mol.
+m	Li3P	fact	Die molare Masse von Lithiumphosphid beträgt 51,7 g/mol.
+m	NaI	fact	Die molare Masse von Natriumiodid beträgt 149,9 g/mol.
+m	Na2S	fact	Die molare Masse von Natriumsulfid beträgt 78,1 g/mol.
+m	Na3N	fact	Die molare Masse von Natriumnitrid beträgt 83,0 g/mol.
+m	Na3P	fact	Die molare Masse von Natriumphosphid beträgt 100,0 g/mol.
+m	KF	fact	Die molare Masse von Kaliumfluorid beträgt 58,1 g/mol.
+m	KBr	fact	Die molare Masse von Kaliumbromid beträgt 119,0 g/mol.
+m	K2O	fact	Die molare Masse von Kaliumoxid beträgt 94,2 g/mol.
+m	K2S	fact	Die molare Masse von Kaliumsulfid beträgt 110,3 g/mol.
+m	K3N	fact	Die molare Masse von Kaliumnitrid beträgt 131,3 g/mol.
+m	K3P	fact	Die molare Masse von Kaliumphosphid beträgt 148,3 g/mol.
+m	RbF	fact	Die molare Masse von Rubidiumfluorid beträgt 104,5 g/mol.
+m	RbCl	fact	Die molare Masse von Rubidiumchlorid beträgt 121,0 g/mol.
+m	RbBr	fact	Die molare Masse von Rubidiumbromid beträgt 165,4 g/mol.
+m	RbI	fact	Die molare Masse von Rubidiumiodid beträgt 212,4 g/mol.
+m	Rb2O	fact	Die molare Masse von Rubidiumoxid beträgt 187,0 g/mol.
+m	Rb2S	fact	Die molare Masse von Rubidiumsulfid beträgt 203,1 g/mol.
+m	Rb3N	fact	Die molare Masse von Rubidiumnitrid beträgt 270,5 g/mol.
+m	Rb3P	fact	Die molare Masse von Rubidiumphosphid beträgt 287,5 g/mol.
+m	CsF	fact	Die molare Masse von Caesiumfluorid beträgt 151,9 g/mol.
+m	CsCl	fact	Die molare Masse von Caesiumchlorid beträgt 168,4 g/mol.
+m	CsBr	fact	Die molare Masse von Caesiumbromid beträgt 212,8 g/mol.
+m	CsI	fact	Die molare Masse von Caesiumiodid beträgt 259,8 g/mol.
+m	Cs2O	fact	Die molare Masse von Caesiumoxid beträgt 281,8 g/mol.
+m	Cs2S	fact	Die molare Masse von Caesiumsulfid beträgt 297,9 g/mol.
+m	Cs3N	fact	Die molare Masse von Caesiumnitrid beträgt 412,7 g/mol.
+m	Cs3P	fact	Die molare Masse von Caesiumphosphid beträgt 429,7 g/mol.
+m	MgF2	fact	Die molare Masse von Magnesiumfluorid beträgt 62,3 g/mol.
+m	MgBr2	fact	Die molare Masse von Magnesiumbromid beträgt 184,1 g/mol.
+m	MgI2	fact	Die molare Masse von Magnesiumiodid beträgt 278,1 g/mol.
+m	MgS	fact	Die molare Masse von Magnesiumsulfid beträgt 56,4 g/mol.
+m	Mg3N2	fact	Die molare Masse von Magnesiumnitrid beträgt 100,9 g/mol.
+m	Mg3P2	fact	Die molare Masse von Magnesiumphosphid beträgt 134,9 g/mol.
+m	CaBr2	fact	Die molare Masse von Calciumbromid beträgt 199,9 g/mol.
+m	CaI2	fact	Die molare Masse von Calciumiodid beträgt 293,9 g/mol.
+m	CaS	fact	Die molare Masse von Calciumsulfid beträgt 72,2 g/mol.
+m	Ca3N2	fact	Die molare Masse von Calciumnitrid beträgt 148,3 g/mol.
+m	Ca3P2	fact	Die molare Masse von Calciumphosphid beträgt 182,3 g/mol.
+m	SrF2	fact	Die molare Masse von Strontiumfluorid beträgt 125,6 g/mol.
+m	SrCl2	fact	Die molare Masse von Strontiumchlorid beträgt 158,6 g/mol.
+m	SrBr2	fact	Die molare Masse von Strontiumbromid beträgt 247,4 g/mol.
+m	SrI2	fact	Die molare Masse von Strontiumiodid beträgt 341,4 g/mol.
+m	SrO	fact	Die molare Masse von Strontiumoxid beträgt 103,6 g/mol.
+m	SrS	fact	Die molare Masse von Strontiumsulfid beträgt 119,7 g/mol.
+m	Sr3N2	fact	Die molare Masse von Strontiumnitrid beträgt 290,8 g/mol.
+m	Sr3P2	fact	Die molare Masse von Strontiumphosphid beträgt 324,8 g/mol.
+m	BaF2	fact	Die molare Masse von Bariumfluorid beträgt 175,3 g/mol.
+m	BaBr2	fact	Die molare Masse von Bariumbromid beträgt 297,1 g/mol.
+m	BaI2	fact	Die molare Masse von Bariumiodid beträgt 391,1 g/mol.
+m	BaO	fact	Die molare Masse von Bariumoxid beträgt 153,3 g/mol.
+m	BaS	fact	Die molare Masse von Bariumsulfid beträgt 169,4 g/mol.
+m	Ba3N2	fact	Die molare Masse von Bariumnitrid beträgt 439,9 g/mol.
+m	Ba3P2	fact	Die molare Masse von Bariumphosphid beträgt 473,9 g/mol.
+m	AlF3	fact	Die molare Masse von Aluminiumfluorid beträgt 84,0 g/mol.
+m	AlBr3	fact	Die molare Masse von Aluminiumbromid beträgt 266,7 g/mol.
+m	AlI3	fact	Die molare Masse von Aluminiumiodid beträgt 407,7 g/mol.
+m	Al2S3	fact	Die molare Masse von Aluminiumsulfid beträgt 150,3 g/mol.
+m	AlN	fact	Die molare Masse von Aluminiumnitrid beträgt 41,0 g/mol.
+m	AlP	fact	Die molare Masse von Aluminiumphosphid beträgt 58,0 g/mol.
+m	H	na	Die molare Masse von Wasserstoff: dazu habe ich keine Angabe.
+m	knallgas	na	Die molare Masse von Knallgasreaktion: dazu habe ich keine Angabe.
+m	wasser	na	Die molare Masse von Wasser: dazu habe ich keine Angabe.
+m	Xyz	unknown	Die molare Masse von – Das weiß ich leider nicht.
+b	H2O	fact	Die Bindung in Wasser ist eine Elektronenpaarbindung.
+b	H2O2	fact	Die Bindung in Wasserstoffperoxid ist eine Elektronenpaarbindung.
+b	CO2	fact	Die Bindung in Kohlenstoffdioxid ist eine Elektronenpaarbindung.
+b	CO	fact	Die Bindung in Kohlenstoffmonooxid ist eine Elektronenpaarbindung.
+b	SO2	fact	Die Bindung in Schwefeldioxid ist eine Elektronenpaarbindung.
+b	SO3	fact	Die Bindung in Schwefeltrioxid ist eine Elektronenpaarbindung.
+b	NO	fact	Die Bindung in Stickstoffmonooxid ist eine Elektronenpaarbindung.
+b	NO2	fact	Die Bindung in Stickstoffdioxid ist eine Elektronenpaarbindung.
+b	N2O	fact	Die Bindung in Distickstoffmonooxid ist eine Elektronenpaarbindung.
+b	O3	fact	Die Bindung in Ozon ist eine Elektronenpaarbindung.
+b	NH3	fact	Die Bindung in Ammoniak ist eine Elektronenpaarbindung.
+b	H2S	fact	Die Bindung in Schwefelwasserstoff ist eine Elektronenpaarbindung.
+b	CH4	fact	Die Bindung in Methan ist eine Elektronenpaarbindung.
+b	C2H6	fact	Die Bindung in Ethan ist eine Elektronenpaarbindung.
+b	C3H8	fact	Die Bindung in Propan ist eine Elektronenpaarbindung.
+b	C4H10	fact	Die Bindung in Butan ist eine Elektronenpaarbindung.
+b	C5H12	fact	Die Bindung in Pentan ist eine Elektronenpaarbindung.
+b	C6H14	fact	Die Bindung in Hexan ist eine Elektronenpaarbindung.
+b	C8H18	fact	Die Bindung in Octan ist eine Elektronenpaarbindung.
+b	C2H4	fact	Die Bindung in Ethen ist eine Elektronenpaarbindung.
+b	C3H6	fact	Die Bindung in Propen ist eine Elektronenpaarbindung.
+b	C2H2	fact	Die Bindung in Ethin ist eine Elektronenpaarbindung.
+b	C6H6	fact	Die Bindung in Benzol ist eine Elektronenpaarbindung.
+b	CH3OH	fact	Die Bindung in Methanol ist eine Elektronenpaarbindung.
+b	C2H5OH	fact	Die Bindung in Ethanol ist eine Elektronenpaarbindung.
+b	C3H7OH	fact	Die Bindung in Propanol ist eine Elektronenpaarbindung.
+b	CH3COCH3	fact	Die Bindung in Aceton ist eine Elektronenpaarbindung.
+b	CH3COOH	fact	Die Bindung in Essigsäure ist eine Elektronenpaarbindung.
+b	HCOOH	fact	Die Bindung in Ameisensäure ist eine Elektronenpaarbindung.
+b	C6H12O6	fact	Die Bindung in Glucose ist eine Elektronenpaarbindung.
+b	C12H22O11	fact	Die Bindung in Saccharose ist eine Elektronenpaarbindung.
+b	CO(NH2)2	fact	Die Bindung in Harnstoff ist eine Elektronenpaarbindung.
+b	HCl	fact	Die Bindung in Salzsäure ist eine Elektronenpaarbindung.
+b	H2SO4	fact	Die Bindung in Schwefelsäure ist eine Elektronenpaarbindung.
+b	H2SO3	fact	Die Bindung in Schweflige Säure ist eine Elektronenpaarbindung.
+b	HNO3	fact	Die Bindung in Salpetersäure ist eine Elektronenpaarbindung.
+b	H3PO4	fact	Die Bindung in Phosphorsäure ist eine Elektronenpaarbindung.
+b	H2CO3	fact	Die Bindung in Kohlensäure ist eine Elektronenpaarbindung.
+b	NaOH	fact	Die Bindung in Natriumhydroxid ist eine Ionenbindung.
+b	KOH	fact	Die Bindung in Kaliumhydroxid ist eine Ionenbindung.
+b	Ca(OH)2	fact	Die Bindung in Calciumhydroxid ist eine Ionenbindung.
+b	Mg(OH)2	fact	Die Bindung in Magnesiumhydroxid ist eine Ionenbindung.
+b	NaCl	fact	Die Bindung in Natriumchlorid ist eine Ionenbindung.
+b	KCl	fact	Die Bindung in Kaliumchlorid ist eine Ionenbindung.
+b	LiCl	fact	Die Bindung in Lithiumchlorid ist eine Ionenbindung.
+b	CaCl2	fact	Die Bindung in Calciumchlorid ist eine Ionenbindung.
+b	MgCl2	fact	Die Bindung in Magnesiumchlorid ist eine Ionenbindung.
+b	BaCl2	fact	Die Bindung in Bariumchlorid ist eine Ionenbindung.
+b	AlCl3	fact	Die Bindung in Aluminiumchlorid ist eine Ionenbindung.
+b	NH4Cl	fact	Die Bindung in Ammoniumchlorid ist eine Ionenbindung.
+b	AgCl	fact	Die Bindung in Silberchlorid ist eine Ionenbindung.
+b	CuCl2	fact	Die Bindung in Kupfer(II)-chlorid ist eine Ionenbindung.
+b	ZnCl2	fact	Die Bindung in Zinkchlorid ist eine Ionenbindung.
+b	NaF	fact	Die Bindung in Natriumfluorid ist eine Ionenbindung.
+b	CaF2	fact	Die Bindung in Calciumfluorid ist eine Ionenbindung.
+b	NaBr	fact	Die Bindung in Natriumbromid ist eine Ionenbindung.
+b	KI	fact	Die Bindung in Kaliumiodid ist eine Ionenbindung.
+b	CaCO3	fact	Die Bindung in Calciumcarbonat ist eine Ionenbindung.
+b	Na2CO3	fact	Die Bindung in Natriumcarbonat ist eine Ionenbindung.
+b	K2CO3	fact	Die Bindung in Kaliumcarbonat ist eine Ionenbindung.
+b	MgCO3	fact	Die Bindung in Magnesiumcarbonat ist eine Ionenbindung.
+b	NaHCO3	fact	Die Bindung in Natriumhydrogencarbonat ist eine Ionenbindung.
+b	CaSO4	fact	Die Bindung in Calciumsulfat ist eine Ionenbindung.
+b	BaSO4	fact	Die Bindung in Bariumsulfat ist eine Ionenbindung.
+b	CuSO4	fact	Die Bindung in Kupfer(II)-sulfat ist eine Ionenbindung.
+b	Na2SO4	fact	Die Bindung in Natriumsulfat ist eine Ionenbindung.
+b	MgSO4	fact	Die Bindung in Magnesiumsulfat ist eine Ionenbindung.
+b	ZnSO4	fact	Die Bindung in Zinksulfat ist eine Ionenbindung.
+b	FeSO4	fact	Die Bindung in Eisen(II)-sulfat ist eine Ionenbindung.
+b	KNO3	fact	Die Bindung in Kaliumnitrat ist eine Ionenbindung.
+b	NaNO3	fact	Die Bindung in Natriumnitrat ist eine Ionenbindung.
+b	AgNO3	fact	Die Bindung in Silbernitrat ist eine Ionenbindung.
+b	NH4NO3	fact	Die Bindung in Ammoniumnitrat ist eine Ionenbindung.
+b	Ca3(PO4)2	fact	Die Bindung in Calciumphosphat ist eine Ionenbindung.
+b	KMnO4	fact	Die Bindung in Kaliumpermanganat ist eine Ionenbindung.
+b	CaO	fact	Die Bindung in Calciumoxid ist eine Ionenbindung.
+b	MgO	fact	Die Bindung in Magnesiumoxid ist eine Ionenbindung.
+b	Na2O	fact	Die Bindung in Natriumoxid ist eine Ionenbindung.
+b	Al2O3	fact	Die Bindung in Aluminiumoxid ist eine Ionenbindung.
+b	Fe2O3	fact	Die Bindung in Eisen(III)-oxid ist eine Ionenbindung.
+b	FeO	fact	Die Bindung in Eisen(II)-oxid ist eine Ionenbindung.
+b	CuO	fact	Die Bindung in Kupfer(II)-oxid ist eine Ionenbindung.
+b	Cu2O	fact	Die Bindung in Kupfer(I)-oxid ist eine Ionenbindung.
+b	ZnO	fact	Die Bindung in Zinkoxid ist eine Ionenbindung.
+b	Ag2O	fact	Die Bindung in Silberoxid ist eine Ionenbindung.
+b	SiO2	fact	Die Bindung in Siliciumdioxid ist eine Elektronenpaarbindung.
+b	TiO2	fact	Die Bindung in Titandioxid ist eine Ionenbindung.
+b	FeS	fact	Die Bindung in Eisen(II)-sulfid ist eine Ionenbindung.
+b	Cu2S	fact	Die Bindung in Kupfer(I)-sulfid ist eine Ionenbindung.
+b	ZnS	fact	Die Bindung in Zinksulfid ist eine Ionenbindung.
+b	LiF	fact	Die Bindung in Lithiumfluorid ist eine Ionenbindung.
+b	LiBr	fact	Die Bindung in Lithiumbromid ist eine Ionenbindung.
+b	LiI	fact	Die Bindung in Lithiumiodid ist eine Ionenbindung.
+b	Li2O	fact	Die Bindung in Lithiumoxid ist eine Ionenbindung.
+b	Li2S	fact	Die Bindung in Lithiumsulfid ist eine Ionenbindung.
+b	Li3N	fact	Die Bindung in Lithiumnitrid ist eine Ionenbindung.
+b	Li3P	fact	Die Bindung in Lithiumphosphid ist eine Ionenbindung.
+b	NaI	fact	Die Bindung in Natriumiodid ist eine Ionenbindung.
+b	Na2S	fact	Die Bindung in Natriumsulfid ist eine Ionenbindung.
+b	Na3N	fact	Die Bindung in Natriumnitrid ist eine Ionenbindung.
+b	Na3P	fact	Die Bindung in Natriumphosphid ist eine Ionenbindung.
+b	KF	fact	Die Bindung in Kaliumfluorid ist eine Ionenbindung.
+b	KBr	fact	Die Bindung in Kaliumbromid ist eine Ionenbindung.
+b	K2O	fact	Die Bindung in Kaliumoxid ist eine Ionenbindung.
+b	K2S	fact	Die Bindung in Kaliumsulfid ist eine Ionenbindung.
+b	K3N	fact	Die Bindung in Kaliumnitrid ist eine Ionenbindung.
+b	K3P	fact	Die Bindung in Kaliumphosphid ist eine Ionenbindung.
+b	RbF	fact	Die Bindung in Rubidiumfluorid ist eine Ionenbindung.
+b	RbCl	fact	Die Bindung in Rubidiumchlorid ist eine Ionenbindung.
+b	RbBr	fact	Die Bindung in Rubidiumbromid ist eine Ionenbindung.
+b	RbI	fact	Die Bindung in Rubidiumiodid ist eine Ionenbindung.
+b	Rb2O	fact	Die Bindung in Rubidiumoxid ist eine Ionenbindung.
+b	Rb2S	fact	Die Bindung in Rubidiumsulfid ist eine Ionenbindung.
+b	Rb3N	fact	Die Bindung in Rubidiumnitrid ist eine Ionenbindung.
+b	Rb3P	fact	Die Bindung in Rubidiumphosphid ist eine Ionenbindung.
+b	CsF	fact	Die Bindung in Caesiumfluorid ist eine Ionenbindung.
+b	CsCl	fact	Die Bindung in Caesiumchlorid ist eine Ionenbindung.
+b	CsBr	fact	Die Bindung in Caesiumbromid ist eine Ionenbindung.
+b	CsI	fact	Die Bindung in Caesiumiodid ist eine Ionenbindung.
+b	Cs2O	fact	Die Bindung in Caesiumoxid ist eine Ionenbindung.
+b	Cs2S	fact	Die Bindung in Caesiumsulfid ist eine Ionenbindung.
+b	Cs3N	fact	Die Bindung in Caesiumnitrid ist eine Ionenbindung.
+b	Cs3P	fact	Die Bindung in Caesiumphosphid ist eine Ionenbindung.
+b	MgF2	fact	Die Bindung in Magnesiumfluorid ist eine Ionenbindung.
+b	MgBr2	fact	Die Bindung in Magnesiumbromid ist eine Ionenbindung.
+b	MgI2	fact	Die Bindung in Magnesiumiodid ist eine Ionenbindung.
+b	MgS	fact	Die Bindung in Magnesiumsulfid ist eine Ionenbindung.
+b	Mg3N2	fact	Die Bindung in Magnesiumnitrid ist eine Ionenbindung.
+b	Mg3P2	fact	Die Bindung in Magnesiumphosphid ist eine Ionenbindung.
+b	CaBr2	fact	Die Bindung in Calciumbromid ist eine Ionenbindung.
+b	CaI2	fact	Die Bindung in Calciumiodid ist eine Ionenbindung.
+b	CaS	fact	Die Bindung in Calciumsulfid ist eine Ionenbindung.
+b	Ca3N2	fact	Die Bindung in Calciumnitrid ist eine Ionenbindung.
+b	Ca3P2	fact	Die Bindung in Calciumphosphid ist eine Ionenbindung.
+b	SrF2	fact	Die Bindung in Strontiumfluorid ist eine Ionenbindung.
+b	SrCl2	fact	Die Bindung in Strontiumchlorid ist eine Ionenbindung.
+b	SrBr2	fact	Die Bindung in Strontiumbromid ist eine Ionenbindung.
+b	SrI2	fact	Die Bindung in Strontiumiodid ist eine Ionenbindung.
+b	SrO	fact	Die Bindung in Strontiumoxid ist eine Ionenbindung.
+b	SrS	fact	Die Bindung in Strontiumsulfid ist eine Ionenbindung.
+b	Sr3N2	fact	Die Bindung in Strontiumnitrid ist eine Ionenbindung.
+b	Sr3P2	fact	Die Bindung in Strontiumphosphid ist eine Ionenbindung.
+b	BaF2	fact	Die Bindung in Bariumfluorid ist eine Ionenbindung.
+b	BaBr2	fact	Die Bindung in Bariumbromid ist eine Ionenbindung.
+b	BaI2	fact	Die Bindung in Bariumiodid ist eine Ionenbindung.
+b	BaO	fact	Die Bindung in Bariumoxid ist eine Ionenbindung.
+b	BaS	fact	Die Bindung in Bariumsulfid ist eine Ionenbindung.
+b	Ba3N2	fact	Die Bindung in Bariumnitrid ist eine Ionenbindung.
+b	Ba3P2	fact	Die Bindung in Bariumphosphid ist eine Ionenbindung.
+b	AlF3	fact	Die Bindung in Aluminiumfluorid ist eine Ionenbindung.
+b	AlBr3	fact	Die Bindung in Aluminiumbromid ist eine Ionenbindung.
+b	AlI3	fact	Die Bindung in Aluminiumiodid ist eine Ionenbindung.
+b	Al2S3	fact	Die Bindung in Aluminiumsulfid ist eine Ionenbindung.
+b	AlN	fact	Die Bindung in Aluminiumnitrid ist eine Ionenbindung.
+b	AlP	fact	Die Bindung in Aluminiumphosphid ist eine Ionenbindung.
+b	H	na	Die Bindung in Wasserstoff kann ich nicht angeben.
+b	knallgas	na	Die Bindung in Knallgasreaktion kann ich nicht angeben.
+b	wasser	na	Die Bindung in Wasser kann ich nicht angeben.
+b	Xyz	unknown	Die Bindung in – Das weiß ich leider nicht.
+c	H2O	na	Säure oder Lauge? Wasser ist weder Säure noch Lauge.
+c	H2O2	na	Säure oder Lauge? Wasserstoffperoxid ist weder Säure noch Lauge.
+c	CO2	na	Säure oder Lauge? Kohlenstoffdioxid ist weder Säure noch Lauge.
+c	CO	na	Säure oder Lauge? Kohlenstoffmonooxid ist weder Säure noch Lauge.
+c	SO2	na	Säure oder Lauge? Schwefeldioxid ist weder Säure noch Lauge.
+c	SO3	na	Säure oder Lauge? Schwefeltrioxid ist weder Säure noch Lauge.
+c	NO	na	Säure oder Lauge? Stickstoffmonooxid ist weder Säure noch Lauge.
+c	NO2	na	Säure oder Lauge? Stickstoffdioxid ist weder Säure noch Lauge.
+c	N2O	na	Säure oder Lauge? Distickstoffmonooxid ist weder Säure noch Lauge.
+c	O3	na	Säure oder Lauge? Ozon ist weder Säure noch Lauge.
+c	NH3	fact	Säure oder Lauge? Ammoniak ist eine Lauge (pH über 7), gelöst Ammoniakwasser.
+c	H2S	na	Säure oder Lauge? Schwefelwasserstoff ist weder Säure noch Lauge.
+c	CH4	na	Säure oder Lauge? Methan ist weder Säure noch Lauge.
+c	C2H6	na	Säure oder Lauge? Ethan ist weder Säure noch Lauge.
+c	C3H8	na	Säure oder Lauge? Propan ist weder Säure noch Lauge.
+c	C4H10	na	Säure oder Lauge? Butan ist weder Säure noch Lauge.
+c	C5H12	na	Säure oder Lauge? Pentan ist weder Säure noch Lauge.
+c	C6H14	na	Säure oder Lauge? Hexan ist weder Säure noch Lauge.
+c	C8H18	na	Säure oder Lauge? Octan ist weder Säure noch Lauge.
+c	C2H4	na	Säure oder Lauge? Ethen ist weder Säure noch Lauge.
+c	C3H6	na	Säure oder Lauge? Propen ist weder Säure noch Lauge.
+c	C2H2	na	Säure oder Lauge? Ethin ist weder Säure noch Lauge.
+c	C6H6	na	Säure oder Lauge? Benzol ist weder Säure noch Lauge.
+c	CH3OH	na	Säure oder Lauge? Methanol ist weder Säure noch Lauge.
+c	C2H5OH	na	Säure oder Lauge? Ethanol ist weder Säure noch Lauge.
+c	C3H7OH	na	Säure oder Lauge? Propanol ist weder Säure noch Lauge.
+c	CH3COCH3	na	Säure oder Lauge? Aceton ist weder Säure noch Lauge.
+c	CH3COOH	fact	Säure oder Lauge? Essigsäure ist eine schwache Säure (pH unter 7).
+c	HCOOH	fact	Säure oder Lauge? Ameisensäure ist eine schwache Säure (pH unter 7).
+c	C6H12O6	na	Säure oder Lauge? Glucose ist weder Säure noch Lauge.
+c	C12H22O11	na	Säure oder Lauge? Saccharose ist weder Säure noch Lauge.
+c	CO(NH2)2	na	Säure oder Lauge? Harnstoff ist weder Säure noch Lauge.
+c	HCl	fact	Säure oder Lauge? Salzsäure ist eine Säure (pH unter 7).
+c	H2SO4	fact	Säure oder Lauge? Schwefelsäure ist eine Säure (pH unter 7).
+c	H2SO3	fact	Säure oder Lauge? Schweflige Säure ist eine Säure (pH unter 7).
+c	HNO3	fact	Säure oder Lauge? Salpetersäure ist eine Säure (pH unter 7).
+c	H3PO4	fact	Säure oder Lauge? Phosphorsäure ist eine Säure (pH unter 7).
+c	H2CO3	fact	Säure oder Lauge? Kohlensäure ist eine schwache Säure (pH unter 7).
+c	NaOH	fact	Säure oder Lauge? Natriumhydroxid ist eine Lauge (pH über 7), gelöst Natronlauge.
+c	KOH	fact	Säure oder Lauge? Kaliumhydroxid ist eine Lauge (pH über 7), gelöst Kalilauge.
+c	Ca(OH)2	fact	Säure oder Lauge? Calciumhydroxid ist eine Lauge (pH über 7), gelöst Kalkwasser.
+c	Mg(OH)2	fact	Säure oder Lauge? Magnesiumhydroxid ist eine schwache Lauge (pH über 7).
+c	NaCl	na	Säure oder Lauge? Natriumchlorid ist weder Säure noch Lauge.
+c	KCl	na	Säure oder Lauge? Kaliumchlorid ist weder Säure noch Lauge.
+c	LiCl	na	Säure oder Lauge? Lithiumchlorid ist weder Säure noch Lauge.
+c	CaCl2	na	Säure oder Lauge? Calciumchlorid ist weder Säure noch Lauge.
+c	MgCl2	na	Säure oder Lauge? Magnesiumchlorid ist weder Säure noch Lauge.
+c	BaCl2	na	Säure oder Lauge? Bariumchlorid ist weder Säure noch Lauge.
+c	AlCl3	na	Säure oder Lauge? Aluminiumchlorid ist weder Säure noch Lauge.
+c	NH4Cl	na	Säure oder Lauge? Ammoniumchlorid ist weder Säure noch Lauge.
+c	AgCl	na	Säure oder Lauge? Silberchlorid ist weder Säure noch Lauge.
+c	CuCl2	na	Säure oder Lauge? Kupfer(II)-chlorid ist weder Säure noch Lauge.
+c	ZnCl2	na	Säure oder Lauge? Zinkchlorid ist weder Säure noch Lauge.
+c	NaF	na	Säure oder Lauge? Natriumfluorid ist weder Säure noch Lauge.
+c	CaF2	na	Säure oder Lauge? Calciumfluorid ist weder Säure noch Lauge.
+c	NaBr	na	Säure oder Lauge? Natriumbromid ist weder Säure noch Lauge.
+c	KI	na	Säure oder Lauge? Kaliumiodid ist weder Säure noch Lauge.
+c	CaCO3	na	Säure oder Lauge? Calciumcarbonat ist weder Säure noch Lauge.
+c	Na2CO3	na	Säure oder Lauge? Natriumcarbonat ist weder Säure noch Lauge.
+c	K2CO3	na	Säure oder Lauge? Kaliumcarbonat ist weder Säure noch Lauge.
+c	MgCO3	na	Säure oder Lauge? Magnesiumcarbonat ist weder Säure noch Lauge.
+c	NaHCO3	na	Säure oder Lauge? Natriumhydrogencarbonat ist weder Säure noch Lauge.
+c	CaSO4	na	Säure oder Lauge? Calciumsulfat ist weder Säure noch Lauge.
+c	BaSO4	na	Säure oder Lauge? Bariumsulfat ist weder Säure noch Lauge.
+c	CuSO4	na	Säure oder Lauge? Kupfer(II)-sulfat ist weder Säure noch Lauge.
+c	Na2SO4	na	Säure oder Lauge? Natriumsulfat ist weder Säure noch Lauge.
+c	MgSO4	na	Säure oder Lauge? Magnesiumsulfat ist weder Säure noch Lauge.
+c	ZnSO4	na	Säure oder Lauge? Zinksulfat ist weder Säure noch Lauge.
+c	FeSO4	na	Säure oder Lauge? Eisen(II)-sulfat ist weder Säure noch Lauge.
+c	KNO3	na	Säure oder Lauge? Kaliumnitrat ist weder Säure noch Lauge.
+c	NaNO3	na	Säure oder Lauge? Natriumnitrat ist weder Säure noch Lauge.
+c	AgNO3	na	Säure oder Lauge? Silbernitrat ist weder Säure noch Lauge.
+c	NH4NO3	na	Säure oder Lauge? Ammoniumnitrat ist weder Säure noch Lauge.
+c	Ca3(PO4)2	na	Säure oder Lauge? Calciumphosphat ist weder Säure noch Lauge.
+c	KMnO4	na	Säure oder Lauge? Kaliumpermanganat ist weder Säure noch Lauge.
+c	CaO	na	Säure oder Lauge? Calciumoxid ist weder Säure noch Lauge.
+c	MgO	na	Säure oder Lauge? Magnesiumoxid ist weder Säure noch Lauge.
+c	Na2O	na	Säure oder Lauge? Natriumoxid ist weder Säure noch Lauge.
+c	Al2O3	na	Säure oder Lauge? Aluminiumoxid ist weder Säure noch Lauge.
+c	Fe2O3	na	Säure oder Lauge? Eisen(III)-oxid ist weder Säure noch Lauge.
+c	FeO	na	Säure oder Lauge? Eisen(II)-oxid ist weder Säure noch Lauge.
+c	CuO	na	Säure oder Lauge? Kupfer(II)-oxid ist weder Säure noch Lauge.
+c	Cu2O	na	Säure oder Lauge? Kupfer(I)-oxid ist weder Säure noch Lauge.
+c	ZnO	na	Säure oder Lauge? Zinkoxid ist weder Säure noch Lauge.
+c	Ag2O	na	Säure oder Lauge? Silberoxid ist weder Säure noch Lauge.
+c	SiO2	na	Säure oder Lauge? Siliciumdioxid ist weder Säure noch Lauge.
+c	TiO2	na	Säure oder Lauge? Titandioxid ist weder Säure noch Lauge.
+c	FeS	na	Säure oder Lauge? Eisen(II)-sulfid ist weder Säure noch Lauge.
+c	Cu2S	na	Säure oder Lauge? Kupfer(I)-sulfid ist weder Säure noch Lauge.
+c	ZnS	na	Säure oder Lauge? Zinksulfid ist weder Säure noch Lauge.
+c	LiF	na	Säure oder Lauge? Lithiumfluorid ist weder Säure noch Lauge.
+c	LiBr	na	Säure oder Lauge? Lithiumbromid ist weder Säure noch Lauge.
+c	LiI	na	Säure oder Lauge? Lithiumiodid ist weder Säure noch Lauge.
+c	Li2O	na	Säure oder Lauge? Lithiumoxid ist weder Säure noch Lauge.
+c	Li2S	na	Säure oder Lauge? Lithiumsulfid ist weder Säure noch Lauge.
+c	Li3N	na	Säure oder Lauge? Lithiumnitrid ist weder Säure noch Lauge.
+c	Li3P	na	Säure oder Lauge? Lithiumphosphid ist weder Säure noch Lauge.
+c	NaI	na	Säure oder Lauge? Natriumiodid ist weder Säure noch Lauge.
+c	Na2S	na	Säure oder Lauge? Natriumsulfid ist weder Säure noch Lauge.
+c	Na3N	na	Säure oder Lauge? Natriumnitrid ist weder Säure noch Lauge.
+c	Na3P	na	Säure oder Lauge? Natriumphosphid ist weder Säure noch Lauge.
+c	KF	na	Säure oder Lauge? Kaliumfluorid ist weder Säure noch Lauge.
+c	KBr	na	Säure oder Lauge? Kaliumbromid ist weder Säure noch Lauge.
+c	K2O	na	Säure oder Lauge? Kaliumoxid ist weder Säure noch Lauge.
+c	K2S	na	Säure oder Lauge? Kaliumsulfid ist weder Säure noch Lauge.
+c	K3N	na	Säure oder Lauge? Kaliumnitrid ist weder Säure noch Lauge.
+c	K3P	na	Säure oder Lauge? Kaliumphosphid ist weder Säure noch Lauge.
+c	RbF	na	Säure oder Lauge? Rubidiumfluorid ist weder Säure noch Lauge.
+c	RbCl	na	Säure oder Lauge? Rubidiumchlorid ist weder Säure noch Lauge.
+c	RbBr	na	Säure oder Lauge? Rubidiumbromid ist weder Säure noch Lauge.
+c	RbI	na	Säure oder Lauge? Rubidiumiodid ist weder Säure noch Lauge.
+c	Rb2O	na	Säure oder Lauge? Rubidiumoxid ist weder Säure noch Lauge.
+c	Rb2S	na	Säure oder Lauge? Rubidiumsulfid ist weder Säure noch Lauge.
+c	Rb3N	na	Säure oder Lauge? Rubidiumnitrid ist weder Säure noch Lauge.
+c	Rb3P	na	Säure oder Lauge? Rubidiumphosphid ist weder Säure noch Lauge.
+c	CsF	na	Säure oder Lauge? Caesiumfluorid ist weder Säure noch Lauge.
+c	CsCl	na	Säure oder Lauge? Caesiumchlorid ist weder Säure noch Lauge.
+c	CsBr	na	Säure oder Lauge? Caesiumbromid ist weder Säure noch Lauge.
+c	CsI	na	Säure oder Lauge? Caesiumiodid ist weder Säure noch Lauge.
+c	Cs2O	na	Säure oder Lauge? Caesiumoxid ist weder Säure noch Lauge.
+c	Cs2S	na	Säure oder Lauge? Caesiumsulfid ist weder Säure noch Lauge.
+c	Cs3N	na	Säure oder Lauge? Caesiumnitrid ist weder Säure noch Lauge.
+c	Cs3P	na	Säure oder Lauge? Caesiumphosphid ist weder Säure noch Lauge.
+c	MgF2	na	Säure oder Lauge? Magnesiumfluorid ist weder Säure noch Lauge.
+c	MgBr2	na	Säure oder Lauge? Magnesiumbromid ist weder Säure noch Lauge.
+c	MgI2	na	Säure oder Lauge? Magnesiumiodid ist weder Säure noch Lauge.
+c	MgS	na	Säure oder Lauge? Magnesiumsulfid ist weder Säure noch Lauge.
+c	Mg3N2	na	Säure oder Lauge? Magnesiumnitrid ist weder Säure noch Lauge.
+c	Mg3P2	na	Säure oder Lauge? Magnesiumphosphid ist weder Säure noch Lauge.
+c	CaBr2	na	Säure oder Lauge? Calciumbromid ist weder Säure noch Lauge.
+c	CaI2	na	Säure oder Lauge? Calciumiodid ist weder Säure noch Lauge.
+c	CaS	na	Säure oder Lauge? Calciumsulfid ist weder Säure noch Lauge.
+c	Ca3N2	na	Säure oder Lauge? Calciumnitrid ist weder Säure noch Lauge.
+c	Ca3P2	na	Säure oder Lauge? Calciumphosphid ist weder Säure noch Lauge.
+c	SrF2	na	Säure oder Lauge? Strontiumfluorid ist weder Säure noch Lauge.
+c	SrCl2	na	Säure oder Lauge? Strontiumchlorid ist weder Säure noch Lauge.
+c	SrBr2	na	Säure oder Lauge? Strontiumbromid ist weder Säure noch Lauge.
+c	SrI2	na	Säure oder Lauge? Strontiumiodid ist weder Säure noch Lauge.
+c	SrO	na	Säure oder Lauge? Strontiumoxid ist weder Säure noch Lauge.
+c	SrS	na	Säure oder Lauge? Strontiumsulfid ist weder Säure noch Lauge.
+c	Sr3N2	na	Säure oder Lauge? Strontiumnitrid ist weder Säure noch Lauge.
+c	Sr3P2	na	Säure oder Lauge? Strontiumphosphid ist weder Säure noch Lauge.
+c	BaF2	na	Säure oder Lauge? Bariumfluorid ist weder Säure noch Lauge.
+c	BaBr2	na	Säure oder Lauge? Bariumbromid ist weder Säure noch Lauge.
+c	BaI2	na	Säure oder Lauge? Bariumiodid ist weder Säure noch Lauge.
+c	BaO	na	Säure oder Lauge? Bariumoxid ist weder Säure noch Lauge.
+c	BaS	na	Säure oder Lauge? Bariumsulfid ist weder Säure noch Lauge.
+c	Ba3N2	na	Säure oder Lauge? Bariumnitrid ist weder Säure noch Lauge.
+c	Ba3P2	na	Säure oder Lauge? Bariumphosphid ist weder Säure noch Lauge.
+c	AlF3	na	Säure oder Lauge? Aluminiumfluorid ist weder Säure noch Lauge.
+c	AlBr3	na	Säure oder Lauge? Aluminiumbromid ist weder Säure noch Lauge.
+c	AlI3	na	Säure oder Lauge? Aluminiumiodid ist weder Säure noch Lauge.
+c	Al2S3	na	Säure oder Lauge? Aluminiumsulfid ist weder Säure noch Lauge.
+c	AlN	na	Säure oder Lauge? Aluminiumnitrid ist weder Säure noch Lauge.
+c	AlP	na	Säure oder Lauge? Aluminiumphosphid ist weder Säure noch Lauge.
+c	H	na	Säure oder Lauge? Wasserstoff ist weder Säure noch Lauge.
+c	knallgas	na	Säure oder Lauge? Knallgasreaktion ist weder Säure noch Lauge.
+c	wasser	na	Säure oder Lauge? Wasser ist weder Säure noch Lauge.
+c	Xyz	unknown	Säure oder Lauge? – Das weiß ich leider nicht.
+q	knallgas	fact	Gleichung für Knallgasreaktion: 2 H2 + O2 → 2 H2O
+q	elektrolyse	fact	Gleichung für Elektrolyse von Wasser: 2 H2O → 2 H2 + O2
+q	kohlebrand	fact	Gleichung für Verbrennung von Kohlenstoff: C + O2 → CO2
+q	methanbrand	fact	Gleichung für Verbrennung von Methan: CH4 + 2 O2 → CO2 + 2 H2O
+q	mgbrand	fact	Gleichung für Verbrennung von Magnesium: 2 Mg + O2 → 2 MgO
+q	eisenschwef	fact	Gleichung für Reaktion von Eisen mit Schwefel: Fe + S → FeS
+q	kupferschwef	fact	Gleichung für Reaktion von Kupfer mit Schwefel: 2 Cu + S → Cu2S
+q	nachlor	fact	Gleichung für Reaktion von Natrium mit Chlor: 2 Na + Cl2 → 2 NaCl
+q	nawasser	fact	Gleichung für Reaktion von Natrium mit Wasser: 2 Na + 2 H2O → 2 NaOH + H2
+q	kwasser	fact	Gleichung für Reaktion von Kalium mit Wasser: 2 K + 2 H2O → 2 KOH + H2
+q	cawasser	fact	Gleichung für Reaktion von Calcium mit Wasser: Ca + 2 H2O → Ca(OH)2 + H2
+q	neutral	fact	Gleichung für Neutralisation von Salzsäure: HCl + NaOH → NaCl + H2O
+q	kalkbrennen	fact	Gleichung für Kalkbrennen: CaCO3 → CaO + CO2
+q	kalkloeschen	fact	Gleichung für Kalklöschen: CaO + H2O → Ca(OH)2
+q	kalkwasser	fact	Gleichung für Kalkwasserprobe: Ca(OH)2 + CO2 → CaCO3 + H2O
+q	fotosynthese	fact	Gleichung für Fotosynthese: 6 CO2 + 6 H2O → C6H12O6 + 6 O2
+q	zellatmung	fact	Gleichung für Zellatmung: C6H12O6 + 6 O2 → 6 CO2 + 6 H2O
+q	thermit	fact	Gleichung für Thermitverfahren: Fe2O3 + 2 Al → Al2O3 + 2 Fe
+q	hochofen	fact	Gleichung für Reduktion im Hochofen: Fe2O3 + 3 CO → 2 Fe + 3 CO2
+q	cuoreduktion	fact	Gleichung für Reduktion von Kupferoxid: CuO + H2 → Cu + H2O
+q	znsalzsaeure	fact	Gleichung für Reaktion von Zink mit Salzsäure: Zn + 2 HCl → ZnCl2 + H2
+q	mgsalzsaeure	fact	Gleichung für Reaktion von Magnesium mit Salzsäure: Mg + 2 HCl → MgCl2 + H2
+q	nh3synthese	fact	Gleichung für Ammoniaksynthese: N2 + 3 H2 → 2 NH3
+q	sbrand	fact	Gleichung für Verbrennung von Schwefel: S + O2 → SO2
+q	chlorknall	fact	Gleichung für Chlorknallgasreaktion: H2 + Cl2 → 2 HCl
+q	albrand	fact	Gleichung für Verbrennung von Aluminium: 4 Al + 3 O2 → 2 Al2O3
+q	eisenbrand	fact	Gleichung für Verbrennung von Eisen: 3 Fe + 2 O2 → Fe3O4
+q	kohlensaeure	fact	Gleichung für Bildung von Kohlensäure: CO2 + H2O → H2CO3
+q	agcl	fact	Gleichung für Fällung von Silberchlorid: AgNO3 + NaCl → AgCl + NaNO3
+q	ethanolbrand	fact	Gleichung für Verbrennung von Ethanol: C2H5OH + 3 O2 → 2 CO2 + 3 H2O
+q	propanbrand	fact	Gleichung für Verbrennung von Propan: C3H8 + 5 O2 → 3 CO2 + 4 H2O
+q	H2O	na	Gleichung für Wasser: dazu habe ich keine Angabe.
+q	H	na	Gleichung für Wasserstoff: dazu habe ich keine Angabe.
+q	wasser	na	Gleichung für Wasser: dazu habe ich keine Angabe.
+q	Xyz	unknown	Gleichung für – Das weiß ich leider nicht.
+t	wasser	fact	Nachweis für Wasser: weißes Kupfersulfat färbt sich blau
+t	co2	fact	Nachweis für Kohlenstoffdioxid: Kalkwasser wird trüb
+t	sauerstoff	fact	Nachweis für Sauerstoff: ein glimmender Holzspan flammt auf
+t	wasserstoff	fact	Nachweis für Wasserstoff: Knallgasprobe: es ploppt oder pfeift
+t	chlorid	fact	Nachweis für Chlorid-Ionen: Silbernitrat gibt weißen Niederschlag
+t	saeure	fact	Nachweis für Säuren: Indikator färbt sich rot, pH unter 7
+t	lauge	fact	Nachweis für Laugen: Indikator färbt sich blau, pH über 7
+t	staerke	fact	Nachweis für Stärke: Iod-Lösung färbt sich blauschwarz
+t	sulfat	fact	Nachweis für Sulfat-Ionen: Bariumchlorid gibt weißen Niederschlag
+t	carbonat	fact	Nachweis für Carbonat-Ionen: mit Säure entsteht Kohlenstoffdioxid
+t	natrium	fact	Nachweis für Natrium: gelbe Flammenfärbung
+t	kalium	fact	Nachweis für Kalium: violette Flammenfärbung
+t	lithium	fact	Nachweis für Lithium: rote Flammenfärbung
+t	kupfer	fact	Nachweis für Kupfer: grüne Flammenfärbung
+t	calcium	fact	Nachweis für Calcium: ziegelrote Flammenfärbung
+t	glucose	fact	Nachweis für Glucose: Fehling-Probe: roter Niederschlag
+t	ammoniak	fact	Nachweis für Ammoniak: feuchtes Indikatorpapier wird blau
+t	fett	fact	Nachweis für Fett: Fettfleckprobe: durchscheinender Fleck
+t	eiweiss	fact	Nachweis für Eiweiß: Biuret-Probe: violette Färbung
+t	H2O	na	Nachweis für Wasser: dazu habe ich keine Angabe.
+t	H	na	Nachweis für Wasserstoff: dazu habe ich keine Angabe.
+t	knallgas	na	Nachweis für Knallgasreaktion: dazu habe ich keine Angabe.
+t	Xyz	unknown	Nachweis für – Das weiß ich leider nicht.
+X	Cu	unknown	Das weiß ich leider nicht.
+		missing	Die Faktentabelle fehlt, Faktenfragen gehen gerade nicht.

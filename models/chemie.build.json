@@ -1,0 +1,414 @@
+{
+ "answerable": 3145,
+ "answerable_per_view": {
+  "atommasse": 118,
+  "atommasse<": 114,
+  "aussenelektronen": 44,
+  "aussenelektronen<": 8,
+  "bindung": 155,
+  "bindung<": 2,
+  "elektronen": 118,
+  "elektronen<": 118,
+  "elektronenverteilung": 26,
+  "familie": 59,
+  "familie<": 7,
+  "formel": 155,
+  "formel_bedeutung": 155,
+  "gleichung": 31,
+  "gruppe": 88,
+  "gruppe_nr": 88,
+  "gruppe_nr<": 18,
+  "hauptgruppe": 50,
+  "hauptgruppe<": 8,
+  "ion": 26,
+  "kategorie": 103,
+  "kategorie<": 3,
+  "molare_masse": 155,
+  "molare_masse<": 139,
+  "nachweis": 19,
+  "neutronen": 103,
+  "neutronen<": 80,
+  "ordnungszahl": 118,
+  "ordnungszahl<": 118,
+  "periode": 118,
+  "periode<": 7,
+  "profil": 103,
+  "protonen": 118,
+  "protonen<": 118,
+  "saeure_base": 13,
+  "saeure_base<": 7,
+  "schalen": 44,
+  "schalen<": 7,
+  "symbol": 118,
+  "symbol_bedeutung": 118,
+  "wertigkeit": 38,
+  "wertigkeit<": 4,
+  "zustand": 103,
+  "zustand<": 3
+ },
+ "budget_bytes": 58982,
+ "bytes": 23420,
+ "bytes_per_answerable": 7.45,
+ "classes": {
+  "element": 118,
+  "nachweisreaktion": 19,
+  "reaktion": 31,
+  "verbindung": 155
+ },
+ "data_sha256": "72b33b50323f23c8fb37038962a47b24d74e81cde6c6932690771674d5ffd4ce",
+ "derived": [
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1227",
+   "relation": "hauptgruppe",
+   "subject": "H",
+   "value": "1"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1228",
+   "relation": "hauptgruppe",
+   "subject": "He",
+   "value": "8"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1229",
+   "relation": "hauptgruppe",
+   "subject": "Li",
+   "value": "1"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1230",
+   "relation": "hauptgruppe",
+   "subject": "Be",
+   "value": "2"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1231",
+   "relation": "hauptgruppe",
+   "subject": "B",
+   "value": "3"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1232",
+   "relation": "hauptgruppe",
+   "subject": "C",
+   "value": "4"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1233",
+   "relation": "hauptgruppe",
+   "subject": "N",
+   "value": "5"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1234",
+   "relation": "hauptgruppe",
+   "subject": "O",
+   "value": "6"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1235",
+   "relation": "hauptgruppe",
+   "subject": "F",
+   "value": "7"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1236",
+   "relation": "hauptgruppe",
+   "subject": "Ne",
+   "value": "8"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1237",
+   "relation": "hauptgruppe",
+   "subject": "Na",
+   "value": "1"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1238",
+   "relation": "hauptgruppe",
+   "subject": "Mg",
+   "value": "2"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1239",
+   "relation": "hauptgruppe",
+   "subject": "Al",
+   "value": "3"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1240",
+   "relation": "hauptgruppe",
+   "subject": "Si",
+   "value": "4"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1241",
+   "relation": "hauptgruppe",
+   "subject": "P",
+   "value": "5"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1242",
+   "relation": "hauptgruppe",
+   "subject": "S",
+   "value": "6"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1243",
+   "relation": "hauptgruppe",
+   "subject": "Cl",
+   "value": "7"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1244",
+   "relation": "hauptgruppe",
+   "subject": "Ar",
+   "value": "8"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1245",
+   "relation": "hauptgruppe",
+   "subject": "K",
+   "value": "1"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1246",
+   "relation": "hauptgruppe",
+   "subject": "Ca",
+   "value": "2"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1257",
+   "relation": "hauptgruppe",
+   "subject": "Ga",
+   "value": "3"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1258",
+   "relation": "hauptgruppe",
+   "subject": "Ge",
+   "value": "4"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1259",
+   "relation": "hauptgruppe",
+   "subject": "As",
+   "value": "5"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1260",
+   "relation": "hauptgruppe",
+   "subject": "Se",
+   "value": "6"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1261",
+   "relation": "hauptgruppe",
+   "subject": "Br",
+   "value": "7"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1262",
+   "relation": "hauptgruppe",
+   "subject": "Kr",
+   "value": "8"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1263",
+   "relation": "hauptgruppe",
+   "subject": "Rb",
+   "value": "1"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1264",
+   "relation": "hauptgruppe",
+   "subject": "Sr",
+   "value": "2"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1275",
+   "relation": "hauptgruppe",
+   "subject": "In",
+   "value": "3"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1276",
+   "relation": "hauptgruppe",
+   "subject": "Sn",
+   "value": "4"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1277",
+   "relation": "hauptgruppe",
+   "subject": "Sb",
+   "value": "5"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1278",
+   "relation": "hauptgruppe",
+   "subject": "Te",
+   "value": "6"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1279",
+   "relation": "hauptgruppe",
+   "subject": "I",
+   "value": "7"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1280",
+   "relation": "hauptgruppe",
+   "subject": "Xe",
+   "value": "8"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1281",
+   "relation": "hauptgruppe",
+   "subject": "Cs",
+   "value": "1"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1282",
+   "relation": "hauptgruppe",
+   "subject": "Ba",
+   "value": "2"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1292",
+   "relation": "hauptgruppe",
+   "subject": "Tl",
+   "value": "3"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1293",
+   "relation": "hauptgruppe",
+   "subject": "Pb",
+   "value": "4"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1294",
+   "relation": "hauptgruppe",
+   "subject": "Bi",
+   "value": "5"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1295",
+   "relation": "hauptgruppe",
+   "subject": "Po",
+   "value": "6"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1296",
+   "relation": "hauptgruppe",
+   "subject": "At",
+   "value": "7"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1297",
+   "relation": "hauptgruppe",
+   "subject": "Rn",
+   "value": "8"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1298",
+   "relation": "hauptgruppe",
+   "subject": "Fr",
+   "value": "1"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1299",
+   "relation": "hauptgruppe",
+   "subject": "Ra",
+   "value": "2"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1309",
+   "relation": "hauptgruppe",
+   "subject": "Nh",
+   "value": "3"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1310",
+   "relation": "hauptgruppe",
+   "subject": "Fl",
+   "value": "4"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1311",
+   "relation": "hauptgruppe",
+   "subject": "Mc",
+   "value": "5"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1312",
+   "relation": "hauptgruppe",
+   "subject": "Lv",
+   "value": "6"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1313",
+   "relation": "hauptgruppe",
+   "subject": "Ts",
+   "value": "7"
+  },
+  {
+   "origin": "rule hauptgruppe from facts/generated/elemente.tsv:1314",
+   "relation": "hauptgruppe",
+   "subject": "Og",
+   "value": "8"
+  }
+ ],
+ "derived_per_rule": {
+  "alkalimetalle": 0,
+  "chalkogene": 0,
+  "edelgase": 0,
+  "erdalkalimetalle": 0,
+  "halogene": 0,
+  "hauptgruppe": 50
+ },
+ "facts_derived": 50,
+ "facts_explicit": 1685,
+ "facts_per_relation": {
+  "atommasse": 118,
+  "aussenelektronen": 44,
+  "bindung": 155,
+  "elektronen": 118,
+  "elektronenverteilung": 26,
+  "familie": 59,
+  "gleichung": 31,
+  "gruppe": 88,
+  "gruppe_nr": 88,
+  "hauptgruppe": 50,
+  "ion": 26,
+  "kategorie": 103,
+  "molare_masse": 155,
+  "nachweis": 19,
+  "neutronen": 103,
+  "ordnungszahl": 118,
+  "periode": 118,
+  "protonen": 118,
+  "saeure_base": 13,
+  "schalen": 44,
+  "wertigkeit": 38,
+  "zustand": 103
+ },
+ "objects": 323,
+ "relations": 22,
+ "schema_version": 1,
+ "sections": {
+  "classes": 16,
+  "columns": 2560,
+  "header": 80,
+  "keyidx": 648,
+  "lists": 3120,
+  "objects": 1292,
+  "relations": 352,
+  "strings": 13032,
+  "texts": 12,
+  "values": 1780,
+  "views": 528
+ },
+ "sha256": "5ddb8271eba745d0a17df90193b5780d49f7c307b8aced2d028793ded8a48931",
+ "topic": "chemie",
+ "views": 44
+}

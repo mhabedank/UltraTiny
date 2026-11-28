@@ -1,0 +1,10 @@
+# Chemistry topic: school chemistry grades 7–10 (specs/003–006, specs/008-wissens-compiler).
+id = "chemie"
+schema_version = 1
+title = "Chemie Klasse 7–10"
+object_files = ["objects.tsv"]
+fact_files = ["facts/generated/*.tsv", "facts/*.tsv"]
+
+[compat]
+oracle = "compat/utft1_answers.tsv"
+changes = "compat/changes.tsv"

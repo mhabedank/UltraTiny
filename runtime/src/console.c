@@ -90,6 +90,25 @@ void ut_console_init(ut_console *k, ut_ctx *c, const ut_model *m, size_t arena_b
     k->max_answer = answer_cap(k);
     k->state = model_status == UT_OK && c ? UT_ST_READY : UT_ST_HALT_ERROR;
     if (k->c) ut_rewind(k->c, k->c->pos);
+    if (k->io.kb && k->state != UT_ST_HALT_ERROR && m && m->has_fn) {
+        /* topic check (specs/008 research R11): model meta "topic" vs. image topic */
+        meta_str(m->meta, "topic", k->model_topic, sizeof k->model_topic);
+        ut_kb_check_topic(k->io.kb, k->model_topic);
+    }
+}
+
+/* "Wissen: ..." status line for the banner and /info (specs/008 contracts/query.md). */
+static void kb_line(ut_console *k) {
+    const ut_kb *kb = k->io.kb;
+    if (kb && kb->status == UT_KB_OK)
+        outf(k, "Wissen: OK v%d, Thema %s (Schema %u), %u Fakten, data %08lx%s", UT_KB_VERSION,
+             kb->topic, (unsigned)kb->schema_version, (unsigned)kb->n_answerable,
+             (unsigned long)kb->sha4, k->model_topic[0] ? "" : ", Thema nicht gepr\xC3\xBC" "ft");
+    else if (kb && kb->status == UT_KB_WRONG_TOPIC)
+        outf(k, "Wissen: falsches Thema (Bild %s, Modell %s)", kb->topic, k->model_topic);
+    else
+        outf(k, "Wissen: %s%s", ut_kb_status_str(kb ? kb->status : UT_KB_MISSING),
+             kb && kb->status == UT_KB_MISSING ? " (make nodemcu-flash-facts)" : "");
 }
 
 void ut_console_banner(ut_console *k) {
@@ -107,6 +126,10 @@ void ut_console_banner(ut_console *k) {
     outf(k, "Modell: %s | Format v%d | %lu Parameter | %lu KB Flash | %lu KB RAM\r\n",
          name[0] ? name : "?", k->m->has_fn ? 2 : 1, (unsigned long)k->m->n_params,
          (unsigned long)((k->m->size + 1023) / 1024), (unsigned long)((k->arena_bytes + 1023) / 1024));
+    if (k->m->has_fn || k->io.kb) {
+        kb_line(k);
+        out(k, "\r\n");
+    }
     out(k, "Funk: aus. Tippe eine Frage und dr\xC3\xBC" "cke Enter. /hilfe f\xC3\xBCr Befehle.");
     prompt(k);
 }
@@ -121,6 +144,7 @@ static void cmd_help(ut_console *k) {
            "  /stats                       Speicher, CPU-Last, Timings, Profil\r\n"
            "  /trace aus|an|json           Modell-Trace nach jeder Antwort (Standard aus)\r\n"
            "  /raw an|aus                  Funktionsausgabe zus\xC3\xA4tzlich roh zeigen\r\n"
+           "  /wissen [ansicht schl\xC3\xBCssel] Wissens-Abfrage ohne Modell, z. B. /wissen O Cu\r\n"
            "Strg-C bricht eine Antwort ab.");
 }
 
@@ -142,14 +166,9 @@ static void cmd_info(ut_console *k) {
              k->max_answer);
         outf(k, "\r\nLetzte Antwort: erstes Zeichen nach %lu ms, %.1f Zeichen/s",
              (unsigned long)k->last_first_ms, (double)k->last_cps);
-        if (m->has_fn) {
-            const ut_facts *f = k->io.facts;
-            if (f && f->status == UT_FACTS_OK)
-                outf(k, "\r\nFaktentabelle: OK v%d, %lu Eintr\xC3\xA4ge, data %08lx", UT_FACTS_VERSION,
-                     (unsigned long)f->n_records, (unsigned long)f->sha4);
-            else
-                outf(k, "\r\nFaktentabelle: %s",
-                     ut_facts_status_str(f ? f->status : UT_FACTS_MISSING));
+        if (m->has_fn || k->io.kb) {
+            out(k, "\r\n");
+            kb_line(k);
         }
     }
     if (k->io.free_heap)
@@ -159,8 +178,34 @@ static void cmd_info(ut_console *k) {
 static void cmd_stats(ut_console *k);
 static void cmd_trace(ut_console *k, int argc, char **argv);
 
+static void fn_write(void *u, const char *s, size_t n);
+
+/* /wissen [view key] (specs/008 contracts/query.md "Direct query command"). The key is the rest
+ * of the line, so it is parsed before strtok splits the command. */
+static int cmd_wissen(ut_console *k) {
+    static const char kw[] = "/wissen";
+    const size_t n_kw = sizeof kw - 1;
+    if (strncmp(k->cmd, kw, n_kw) != 0 || (k->cmd[n_kw] != 0 && k->cmd[n_kw] != ' ')) return 0;
+    const char *arg = k->cmd + n_kw;
+    while (*arg == ' ') arg++;
+    out(k, "\r\n");
+    if (*arg == 0) {
+        ut_kb_overview(k->io.kb, fn_write, k);
+        return 1;
+    }
+    uint32_t t0 = now_us(k);
+    ut_kb_outcome o = ut_kb_query(k->io.kb, arg, strlen(arg), fn_write, k);
+    uint32_t dt = now_us(k) - t0;
+    if (k->trace != UT_TRACE_OFF) {
+        static const char *const names[] = {"unknown", "fact", "na", "missing"};
+        outf(k, "\r\nwissen: %s %lu us", names[o], (unsigned long)dt);
+    }
+    return 1;
+}
+
 static void run_command(ut_console *k) {
     k->cmd[k->cmd_len] = 0;
+    if (cmd_wissen(k)) return;
     char *argv[4] = {0};
     int argc = 0;
     for (char *tok = strtok(k->cmd, " "); tok && argc < 4; tok = strtok(NULL, " "))
@@ -569,6 +614,7 @@ static void on_backspace(ut_console *k) {
     if (k->is_command) {
         if (k->cmd_len > 0) {
             k->cmd_len--;
+            while (k->cmd_len > 0 && ((uint8_t)k->cmd[k->cmd_len] & 0xC0u) == 0x80u) k->cmd_len--;
             out(k, "\b \b");
         }
         if (k->cmd_len == 0) k->is_command = 0;
@@ -588,8 +634,9 @@ static void on_codepoint(ut_console *k, uint32_t cp) {
         k->is_command = 1;
     }
     if (k->is_command) {
-        if (cp < 0x80 && k->cmd_len < UT_CMD_MAX - 1) {
-            k->cmd[k->cmd_len++] = (char)cp;
+        /* UTF-8 is kept so /wissen keys may contain umlauts (specs/008) */
+        if (k->cmd_len + 4 < UT_CMD_MAX) {
+            k->cmd_len += ut_utf8_encode(cp, k->cmd + k->cmd_len);
             out_cp(k, cp);
         }
         return;
@@ -652,8 +699,8 @@ static void fn_write(void *u, const char *s, size_t n) {
 
 /* End of a function answer: lookup and print the rest (contracts/function-output.md). */
 static void fn_finish(ut_console *k) {
-    ut_facts_finish(k->io.facts, k->fn_has_type ? &k->fn_type : NULL, k->fn_prefix, k->fn_key,
-                    (size_t)k->fn_key_len, fn_write, k);
+    ut_kb_finish(k->io.kb, k->fn_has_type ? &k->fn_view : NULL, k->fn_prefix, k->fn_key,
+                 (size_t)k->fn_key_len, fn_write, k);
     if (k->raw) {
         out(k, "  [");
         out(k, "\xE2\x9F\xA8" "fn" "\xE2\x9F\xA9");
@@ -685,8 +732,8 @@ static void generate_step(ut_console *k) {
     } else if (k->fn_mode == 1) {
         char code = (cp >= 'A' && cp <= 'Z') || (cp >= 'a' && cp <= 'z') ? (char)cp : 0;
         k->fn_code = code;
-        k->fn_has_type = code && ut_facts_type(k->io.facts, code, &k->fn_type);
-        if (k->fn_has_type) k->fn_prefix = ut_facts_prefix(k->io.facts, &k->fn_type, fn_write, k);
+        k->fn_has_type = code && ut_kb_view_by_letter(k->io.kb, code, &k->fn_view);
+        if (k->fn_has_type) k->fn_prefix = ut_kb_prefix(k->io.kb, &k->fn_view, fn_write, k);
         k->fn_mode = 2;
     } else if (k->fn_mode == 2) {
         if (cp && k->fn_key_len + 4 <= (int)sizeof k->fn_key)
@@ -699,7 +746,7 @@ static void generate_step(ut_console *k) {
     record_step(k, lg, tok, pos, t - k->us_last);
     k->us_last = t;
     k->gen_count++;
-    const int fn_full = k->fn_mode && k->gen_count >= 2 + UT_FACTS_KEY_MAX;
+    const int fn_full = k->fn_mode && k->gen_count >= 2 + UT_KB_KEY_MAX;
     if (k->gen_count >= k->max_answer || c->pos >= k->m->ctx_len || fn_full) {
         if (k->fn_mode) fn_finish(k);
         finish_answer(k, 0, k->gen_count >= k->max_answer ? "max" : (fn_full ? "eos" : "ctx"));

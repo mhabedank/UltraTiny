@@ -15,7 +15,8 @@ uv sync            # macOS: PyTorch mit MPS (Apple-GPU); Linux: CPU-Wheels
 ```bash
 uv run ut pipeline --config configs/nodemcu.toml --out runs/nodemcu --device cpu   # NodeMCU-Modell
 uv run ut pipeline --config configs/hybrid-smoke.toml --out runs/hybrid-smoke --device cpu   # Hybrid, Mini
-uv run ut facts --config configs/chemie-hybrid.toml --out runs/facts   # nur Faktentabelle (specs/006)
+uv run ut knowledge build --topic ../topics/chemie --out ../models/chemie.utki   # Wissens-Image (specs/008)
+uv run ut knowledge check --topic ../topics/chemie --image ../models/chemie.utki --compat
 uv run ut pipeline --config configs/starter.toml --out runs/starter   # Startermodell (~165 Fakten)
 uv run ut pipeline --config configs/v1.toml --out runs/v1             # volles Modell (ESP32)
 ```
@@ -42,12 +43,18 @@ Gemessen im Container (4 CPU-Kerne): Startermodell 3000 Schritte ≈ 7 min. Auf 
 sollte es deutlich schneller gehen (bitte messen und in `specs/001-esp32-tiny-lm/measurements.md` eintragen).
 
 **Hybrid-Chemielehrer** (`data.hybrid = true`, `specs/006-hybrid-chemielehrer/`): Die Pipeline
-baut zuerst die Faktentabelle (`factgen.py`, `facttable.py`, Prüfungen wie ausgeglichene
-Gleichungen, neutrale Ionenformeln, stimmige molare Massen). Danach erzeugt sie die Daten aus
+prüft zuerst die Fakten (`factgen.py`: ausgeglichene Gleichungen, neutrale Ionenformeln,
+stimmige molare Massen) und baut das Wissens-Image des Themas `data.knowledge_topic`
+(Standard `../topics/chemie`, Compiler `ultratiny.knowledge`, specs/008). Das Thema bekommt
+seine Fakten aus `factgen` über `topics/chemie/prepare.py`; nach einer Änderung an den
+Chemiedaten `uv run python ../topics/chemie/prepare.py` und `make -C .. knowledge` ausführen.
+Danach erzeugt die Pipeline die Daten aus
 `data/templates/hybrid.toml` (26 Fragetypen mit je ≥ 12 Formen in Formulierungsgruppen) und hält
 ganze Kombinationen aus Fragetyp × Objekt sowie je Typ eine ganze Formulierungsgruppe zurück.
 Ausgewertet wird je Testset (`eval.json`), die Budgets gelten für die NodeMCU (Modell, Arena,
-Faktentabelle). Das Modell nutzt Format v2 mit dem Spezialzeichen `<fn>`.
+Wissens-Image). Das Modell nutzt Format v2 mit dem Spezialzeichen `<fn>`; `ut export --facts`
+schreibt das Thema des Images (`topic`) in die Modell-Metadaten, damit das Board ein Image
+eines anderen Themas erkennt.
 
 ## Reproduzierbarkeit
 

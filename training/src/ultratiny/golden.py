@@ -11,7 +11,7 @@ from pathlib import Path
 
 import numpy as np
 
-from . import facttable
+from .knowledge import image as kimage
 from .reference import Reference
 
 UT_ANSWER_RESERVE = 32  # runtime/include/utiny_console.h: the console caps questions below this
@@ -19,10 +19,10 @@ UT_ANSWER_RESERVE = 32  # runtime/include/utiny_console.h: the console caps ques
 
 def make_golden(model_path: Path, prompts: list[str], max_len: int = 200,
                 facts_bytes: bytes | None = None) -> dict:  # fmt: skip
-    """Golden cases. With a fact table (specs/006), each case that the console can type in full
-    also gets `printed`: the exact bytes the console prints (facttable.answer_bytes)."""
+    """Golden cases. With a knowledge image (specs/006, specs/008), each case that the console can
+    type in full also gets `printed`: the exact bytes the console prints (image.answer_bytes)."""
     ref = Reference(model_path)
-    table = facttable.Table(facts_bytes) if facts_bytes is not None else None
+    table = kimage.Image(facts_bytes) if facts_bytes is not None else None
     max_q = ref.cfg.ctx_len - 2 - UT_ANSWER_RESERVE
     cases = []
     for p in prompts:
@@ -37,7 +37,7 @@ def make_golden(model_path: Path, prompts: list[str], max_len: int = 200,
                             for lg in r["logits"]],
         }  # fmt: skip
         if table is not None and len(p) <= max_q:
-            case["printed"] = facttable.answer_bytes(r["tokens"], ref.m.alphabet, table).decode()
+            case["printed"] = kimage.answer_bytes(r["tokens"], ref.m.alphabet, table).decode()
         cases.append(case)
     g = {"format": 1, "model_size": ref.m.size, "cases": cases}
     if facts_bytes is not None:

@@ -1,0 +1,167 @@
+[texts]
+unknown = "Das weiß ich leider nicht."
+not_applicable = ": dazu habe ich keine Angabe."
+fallback_sep = "– "
+list_sep = ", "
+list_last = " und "
+
+[classes.figur]
+[classes.farbe]
+
+[relations.wert]
+subject = "figur"
+type = "int"
+reverse = "many"
+
+[relations.anzahl]
+subject = "figur"
+type = "int"
+reverse = "many"
+
+[relations.zug]
+subject = "figur"
+type = "text"
+
+[relations.startfelder]
+subject = "figur"
+type = "text"
+card = "many"
+reverse = "one"
+
+[relations.art]
+subject = "figur"
+type = "enum"
+values = ["Leichtfigur", "Schwerfigur"]
+reverse = "many"
+
+[relations.grundreihe]
+subject = "farbe"
+type = "int"
+reverse = "one"
+
+[relations.zieht_zuerst]
+subject = "farbe"
+type = "enum"
+values = ["ja", "nein"]
+
+[[rules]]
+id = "leichtfigur"
+kind = "class"
+if_relation = "wert"
+equals = 3
+add_relation = "art"
+add_value = "Leichtfigur"
+
+[[rules]]
+id = "schwerfigur"
+kind = "class"
+if_relation = "wert"
+between = [5, 9]
+add_relation = "art"
+add_value = "Schwerfigur"
+
+[views.kuerzel]
+kind = "self"
+classes = ["figur"]
+template = "Das Kürzel von {name} ist {key}."
+questions = [{ question = "Welches Kürzel hat der Springer?", key = "S", expect = "Das Kürzel von Springer ist S." }]
+
+[views.profil]
+kind = "profile"
+classes = ["figur"]
+template = "Die Figur {name} ({key}) hat den Wert {r:wert} und zieht {r:zug}."
+not_applicable = "{name} ({key}) hat keinen festen Wert."
+questions = [
+  { question = "Was ist ein Turm?", key = "T", expect = "Die Figur Turm (T) hat den Wert 5 und zieht beliebig weit waagerecht und senkrecht." },
+  { question = "Was ist ein König?", key = "K", expect = "na" },
+]
+
+[views.wert]
+kind = "forward"
+relation = "wert"
+template = "Der Wert von {name}: {v} Bauerneinheiten."
+not_applicable = "{name}: nicht festgelegt, er kann nicht geschlagen werden."
+questions = [
+  { question = "Wie viel ist eine Dame wert?", key = "D", expect = "Der Wert von Dame: 9 Bauerneinheiten." },
+  { question = "Wie viel ist der König wert?", key = "K", expect = "na" },
+]
+
+[views."wert<"]
+kind = "reverse"
+relation = "wert"
+template = "Den Wert {key} haben: {v}."
+more = " und {n} weitere"
+questions = [{ question = "Welche Figuren sind 3 Bauern wert?", key = "3", expect = "Den Wert 3 haben: Läufer und Springer." }]
+
+[views.anzahl]
+kind = "forward"
+relation = "anzahl"
+template = "Die Anzahl von {name} je Seite: {v}."
+questions = [{ question = "Wie viele Bauern hat jede Seite?", key = "B", expect = "Die Anzahl von Bauer je Seite: 8." }]
+
+[views."anzahl<"]
+kind = "reverse"
+relation = "anzahl"
+template = "Je Seite {key}-mal vorhanden: {v}."
+more = " und {n} weitere"
+questions = [{ question = "Welche Figuren gibt es zweimal?", key = "2", expect = "Je Seite 2-mal vorhanden: Turm, Läufer und Springer." }]
+
+[views.zug]
+kind = "forward"
+relation = "zug"
+template = "So zieht {name}: {v}."
+questions = [{ question = "Wie zieht der Springer?", key = "S", expect = "So zieht Springer: zwei Felder gerade, dann eins zur Seite." }]
+
+[views.startfelder]
+kind = "forward"
+relation = "startfelder"
+template = "Startfelder von {name} (Weiß): {v}."
+more = " und {n} weitere"
+questions = [
+  { question = "Wo stehen die weißen Türme am Anfang?", key = "T", expect = "Startfelder von Turm (Weiß): a1 und h1." },
+  { question = "Wo stehen die weißen Bauern?", key = "B", expect = "Startfelder von Bauer (Weiß): a2, b2, c2, d2, e2, f2, g2 und h2." },
+]
+
+[views."startfelder<"]
+kind = "reverse"
+relation = "startfelder"
+template = "Auf {key} steht zu Beginn {name}."
+questions = [
+  { question = "Welche Figur steht auf e1?", key = "e1", expect = "Auf e1 steht zu Beginn König." },
+  { question = "Welche Figur steht auf e4?", key = "e4", expect = "unknown" },
+]
+
+[views.art]
+kind = "forward"
+relation = "art"
+template = "Figurenart: {name} ist eine {v}."
+not_applicable = "{name} ist weder Leicht- noch Schwerfigur."
+questions = [
+  { question = "Ist der Läufer eine Leichtfigur?", key = "L", expect = "Figurenart: Läufer ist eine Leichtfigur." },
+  { question = "Ist der Bauer eine Leichtfigur?", key = "B", expect = "na" },
+]
+
+[views."art<"]
+kind = "reverse"
+relation = "art"
+template = "Eine {key} ist: {v}."
+more = " und {n} weitere"
+questions = [{ question = "Welche Figuren sind Schwerfiguren?", key = "Schwerfigur", expect = "Eine Schwerfigur ist: Dame und Turm." }]
+
+[views.grundreihe]
+kind = "forward"
+relation = "grundreihe"
+template = "Die Grundreihe von {name} ist Reihe {v}."
+questions = [{ question = "Auf welcher Reihe beginnt Schwarz?", key = "s", expect = "Die Grundreihe von Schwarz ist Reihe 8." }]
+
+[views."grundreihe<"]
+kind = "reverse"
+relation = "grundreihe"
+template = "Reihe {key} ist die Grundreihe von {name}."
+questions = [{ question = "Wessen Grundreihe ist Reihe 1?", key = "1", expect = "Reihe 1 ist die Grundreihe von Weiß." }]
+
+[views.zieht_zuerst]
+kind = "forward"
+relation = "zieht_zuerst"
+template = "Zieht {name} zuerst? {v}."
+questions = [{ question = "Wer beginnt eine Partie?", key = "w", expect = "Zieht Weiß zuerst? ja." }]

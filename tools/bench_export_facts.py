@@ -10,6 +10,10 @@ benchmark never depends on the fact generator at run time.
     # allgemein: the starter facts (capitals, element symbols) in both directions
     uv run python ../tools/bench_export_facts.py --starter data/facts/starter.tsv \
         --out ../bench/suites/allgemein/facts.tsv
+    # a compiled topic (specs/008): every answerable fact of the views with a legacy letter;
+    # --types maps the letters to the property names of the suite (spec 006 type names)
+    uv run python ../tools/bench_export_facts.py --topic ../topics/chemie \
+        --types data/templates/hybrid.toml --out /tmp/facts.tsv
 
 `--canonical` prints the first question form of every property as a `canonical = …` line for
 suite.toml.
@@ -74,6 +78,49 @@ def from_starter(path: Path) -> tuple[list[tuple[str, str, str, str]], dict[str,
     return rows, canonical
 
 
+def from_topic(topic_dir: Path, types: Path | None) -> tuple[list[tuple[str, str, str, str]], dict]:
+    """Answerable facts of a compiled topic (specs/008 research R13). The expected value is what
+    the answer's last slot prints: the value, the key, the name or another relation's value."""
+    import tomllib
+
+    from ultratiny.knowledge.compile import build
+    from ultratiny.knowledge.image import SL_KEY, SL_NAME, SL_REL, SL_V, Image
+    from ultratiny.knowledge.topic import load_topic
+
+    img = Image(build(load_topic(topic_dir))[0])
+    names: dict[str, str] = {}
+    canonical: dict[str, str] = {}
+    if types:
+        for code, t in tomllib.loads(types.read_text(encoding="utf-8"))["types"].items():
+            names[code] = t["name"]
+            canonical[t["name"]] = t["forms"][0]["text"]
+    rows = []
+    for v in img.views:
+        if not v.letter:
+            continue
+        prop = names.get(v.letter, v.name)
+        tpl = img.str(v.template)
+        slots = [(i, b) for i, b in enumerate(tpl) if b <= SL_REL and (i == 0 or tpl[i - 1] != SL_REL)]
+        last_i, last = slots[-1]
+        for key in img.candidate_keys(v):
+            outcome, n, items = img._subject(v, key)
+            if outcome != "fact":
+                continue
+            name = img.obj_name(n).decode()
+            k = key.decode()
+            if last == SL_KEY:
+                value = k
+            elif last == SL_NAME:
+                value = name
+            elif last == SL_V:
+                value = img.lookup(v, key)[1].decode() if items is None else items[0].decode()
+            else:  # {r:relation}
+                value = img._single(img.rels[tpl[last_i + 1] - 1], n).decode()
+            obj_name = k if v.kind == 1 else name  # reverse: the key is the object (spec 006 rows)
+            rows.append((k, obj_name, prop, value))
+    return rows, canonical
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
@@ -81,10 +128,17 @@ def main(argv=None) -> int:
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--config", help="training config with the spec 006 fact data (chemie)")
     g.add_argument("--starter", help="starter.tsv (allgemein)")
+    g.add_argument("--topic", help="topic directory (specs/008), compiled on the fly")
+    ap.add_argument("--types", help="with --topic: hybrid.toml mapping letters to property names")
     ap.add_argument("--out", required=True)
     ap.add_argument("--canonical", action="store_true", help="print canonical question lines")
     a = ap.parse_args(argv)
-    rows, canonical = from_factgen(Path(a.config)) if a.config else from_starter(Path(a.starter))
+    if a.topic:
+        rows, canonical = from_topic(Path(a.topic), Path(a.types) if a.types else None)
+    elif a.config:
+        rows, canonical = from_factgen(Path(a.config))
+    else:
+        rows, canonical = from_starter(Path(a.starter))
     seen: dict[tuple[str, str], str] = {}
     for obj, _name, prop, value in rows:
         if (obj, prop) in seen and seen[(obj, prop)] != value:

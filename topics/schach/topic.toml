@@ -1,0 +1,7 @@
+# Second test topic (specs/008-wissens-compiler FR-017): chess pieces. Facts written by the
+# project (source `own`); the topic proves that the knowledge kit needs no code for a new topic.
+id = "schach"
+schema_version = 1
+title = "Schachfiguren"
+object_files = ["objects.tsv"]
+fact_files = ["facts/*.tsv"]

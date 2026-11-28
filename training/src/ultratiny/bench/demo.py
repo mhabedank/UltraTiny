@@ -26,6 +26,9 @@ def run_single(dev, script: list[dict], label: str, has_reset: bool = False) -> 
     dev.command("/trace aus")
     rows = []
     for q in script:
+        if q["question"].startswith("/wissen"):
+            rows.append({**q, "answer": knowledge_query(dev, q["question"]), "first_ms": None})
+            continue
         try:
             raw = dev.ask(q["question"])
         except TimeoutError:
@@ -37,6 +40,20 @@ def run_single(dev, script: list[dict], label: str, has_reset: bool = False) -> 
         first = parse_info(dev.command("/info")).get("first_ms")
         rows.append({**q, "answer": ans, "first_ms": first})
     return {"label": label, "info": {k: v for k, v in info.items() if k != "raw"}, "rows": rows}
+
+
+def knowledge_query(dev, cmd: str) -> str:
+    """A `/wissen` demo item (specs/008 FR-021): the answer line, or "—" on a board whose
+    firmware has no knowledge command."""
+    try:
+        raw = dev.command(cmd)
+    except TimeoutError:
+        return "(keine Antwort: Zeitüberschreitung)"
+    body = raw.split("\r\n", 1)[1] if "\r\n" in raw else raw
+    prompt = devlib().PROMPT
+    body = body[: -len(prompt)] if body.endswith(prompt) else body
+    line = body.split("\r\n")[0].strip()
+    return "—" if not line or line.startswith("Unbekannter Befehl") else line
 
 
 def merge_markdown(a: dict, b: dict, title: str = "") -> str:

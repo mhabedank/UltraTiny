@@ -58,6 +58,8 @@ UTF-8 JSON, keys sorted, two-space indent, so diffs stay readable in pull reques
 | R1 | `arena_need`, `arena_buf`, `heap_free` after boot (run starts with a reset), `heap_min` | board `/stats` |
 | R2 / R3 | bytes of model / knowledge image | files |
 | R4 | (R2 + R3) / F6 | — |
+| F7 | answerable facts in the knowledge image: distinct (view, key) with outcome `fact` (added by spec 008, research R9/R13; threshold 0, needs no model) | image |
+| R5 | R3 / F7, bytes per answerable fact of the image (added by spec 008) | image |
 | S1 | bits per character: topic, general, all; coverage % | s1 |
 | S2 | largest distance with ≥ 80 % recalled ("≥ 416" when the largest distance passes); curve | s2 |
 | S3 | % of rated answers with `grammar_ok = ja` | s3 + rating sheet |

@@ -1,0 +1,191 @@
+[texts]
+unknown = "Unbekannt."
+not_applicable = ": keine Angabe."
+fallback_sep = "– "
+list_sep = ", "
+list_last = " und "
+
+[classes.stadt]
+order_by = "rang"
+[classes.land]
+
+[relations.rang]
+subject = "stadt"
+type = "int"
+reverse = "one"
+
+[relations.einwohner]
+subject = "stadt"
+type = "dec"
+decimals = 1
+
+[relations.land]
+subject = "stadt"
+type = "ref"
+target = "land"
+reverse = "many"
+
+[relations.farben]
+subject = "land"
+type = "text"
+card = "many"
+reverse = "many"
+
+[relations.sprache]
+subject = "land"
+type = "enum"
+values = ["Alt", "Neu"]
+
+[relations.gruss]
+subject = "land"
+type = "text"
+
+[relations.kontinent]
+subject = "land"
+type = "text"
+
+[relations.erdteil]
+subject = "stadt"
+type = "text"
+
+[relations.groesse]
+subject = "stadt"
+type = "enum"
+values = ["groß", "klein"]
+
+[[rules]]
+id = "gross"
+kind = "class"
+if_relation = "rang"
+between = [1, 3]
+except = ["Zz"]
+add_relation = "groesse"
+add_value = "groß"
+
+[[rules]]
+id = "klein"
+kind = "class"
+if_relation = "rang"
+equals = 9
+add_relation = "groesse"
+add_value = "klein"
+
+[[rules]]
+id = "erdteil"
+kind = "chain"
+first = "land"
+then = "kontinent"
+add_relation = "erdteil"
+
+[[rules]]
+id = "gruss"
+kind = "table"
+from = "sprache"
+add_relation = "gruss"
+map = { "Alt" = "Salve", "Neu" = "Hallo" }
+
+[views.rang]
+kind = "forward"
+relation = "rang"
+letter = "R"
+template = "Rang von {name}: {v}."
+questions = [{ question = "Rang von Aastadt?", key = "Aa", expect = "Rang von Aastadt: 1." }]
+
+[views."rang<"]
+kind = "reverse"
+relation = "rang"
+letter = "r"
+template = "Platz {key} hat {name}."
+questions = [{ question = "Wer ist Zweiter?", key = "2", expect = "Platz 2 hat Bestadt." }]
+
+[views.einwohner]
+kind = "forward"
+relation = "einwohner"
+template = "Einwohner von {name}: {v} Tsd."
+not_applicable = "{name} ({key}) zählt niemand."
+questions = [
+  { question = "Einwohner Aastadt?", key = "Aa", expect = "Einwohner von Aastadt: 12,5 Tsd." },
+  { question = "Einwohner Zett?", key = "Zz", expect = "Einwohner von Zettstadt (Zz) zählt niemand." },
+]
+
+[views.land]
+kind = "forward"
+relation = "land"
+template = "Lage: {name} liegt in {v}."
+questions = [{ question = "Wo liegt Aastadt?", key = "Aa", expect = "Lage: Aastadt liegt in Nordland." }]
+
+[views."land<"]
+kind = "reverse"
+relation = "land"
+template = "In {key} liegen {v}."
+more = " und {n} weitere"
+questions = [
+  { question = "Städte in Nordland?", key = "NL", expect = "In NL liegen Aastadt, Bestadt und Cestadt." },
+  { question = "Städte in Langland?", key = "LL", expect = "fact" },
+]
+
+[views.farben]
+kind = "forward"
+relation = "farben"
+template = "Farben von {name}: {v}."
+more = " und {n} mehr"
+questions = [{ question = "Farben Nordland?", key = "NL", expect = "Farben von Nordland: Blau und Rot." }]
+
+[views."farben<"]
+kind = "reverse"
+relation = "farben"
+template = "Die Farbe {key} haben {v}."
+more = " und {n} mehr"
+questions = [{ question = "Wer hat Blau?", key = "Blau", expect = "Die Farbe Blau haben Nordland und Südland." }]
+
+[views.sprache]
+kind = "forward"
+relation = "sprache"
+template = "In {name} spricht man {v}."
+questions = [{ question = "Sprache Südland?", key = "SL", expect = "In Südland spricht man Neu." }]
+
+[views.gruss]
+kind = "forward"
+relation = "gruss"
+template = "Gruß in {name}: {v}."
+questions = [{ question = "Gruß Nordland?", key = "NL", expect = "Gruß in Nordland: Salve." }]
+
+[views.erdteil]
+kind = "forward"
+relation = "erdteil"
+template = "Erdteil: {name} liegt auf {v}."
+questions = [{ question = "Erdteil Bestadt?", key = "Be", expect = "Erdteil: Bestadt liegt auf Ostia." }]
+
+[views.groesse]
+kind = "forward"
+relation = "groesse"
+template = "Größe: {name} ist {v}."
+questions = [
+  { question = "Ist Cestadt groß?", key = "Ce", expect = "Größe: Cestadt ist groß." },
+  { question = "Ist Zettstadt groß?", key = "Zz", expect = "Größe: Zettstadt ist klein." },
+  { question = "Ist Nordland groß?", key = "NL", expect = "na" },
+]
+
+[views.kontinent]
+kind = "forward"
+relation = "kontinent"
+template = "Kontinent: {name} gehört zu {v}."
+questions = [{ question = "Kontinent Xland?", key = "XL", expect = "unknown" }]
+
+[views.kurz]
+kind = "self"
+classes = ["stadt"]
+letter = "K"
+template = "Das Kürzel von {name} ist {key}."
+questions = [{ question = "Kürzel Bestadt?", key = "Be", expect = "Das Kürzel von Bestadt ist Be." }]
+
+[views.profil]
+kind = "profile"
+classes = ["stadt"]
+letter = "P"
+template = "Die Stadt {name} ({key}) hat Rang {r:rang} und liegt in {r:land}."
+not_applicable = "{name} ist unvollständig."
+questions = [
+  { question = "Profil Aastadt?", key = "Aa", expect = "Die Stadt Aastadt (Aa) hat Rang 1 und liegt in Nordland." },
+  { question = "Profil Desstadt?", key = "De", expect = "Die Stadt Desstadt ist unvollständig." },
+]

@@ -53,6 +53,8 @@ Spec 007 hat Definition, Testmenge und Messverfahren jeder Kennzahl festgelegt (
 | Sprache | **S1** Bit pro Zeichen auf festem deutschem Prüftext (nicht trainiert) | PC | ↓ |
 | | **S2** nutzbarer Kontext: Merk-Test, bei dem ein früh genanntes Wort später abgefragt wird | PC | ↑ |
 | | **S3** Fließtext-Stichprobe: 20 Antworten, von Hand bewertet (Grammatik ok ja/nein) | PC | ↑ |
+| Wissens-Image (Spec 008) | **F7** im Image beantwortbare Fakten (Ansicht × Schlüssel), ohne Modell | Build | ↑ |
+| | **R5** Bytes pro beantwortbarem Fakt im Image (R3 / F7) | Build | ↓ |
 
 ## Die Schritte
 
@@ -120,6 +122,15 @@ Entscheidungen für 012 und 013 liefert.
 - **Themen-Test:** ein winziges zweites Thema (z. B. 30 Fakten aus einem Spielregelwerk) als
   Testfall, der ohne Codeänderung kompiliert und abfragbar sein muss.
 - **Demo:** mehr beantwortbare Fakten (F6) bei weniger Bytes pro Fakt (R4) als 006, gleiche Antworten.
+- **Stand (2026-11-28): umgesetzt, Board-Messung offen.** Spec: [`specs/008-wissens-compiler/`](008-wissens-compiler/spec.md).
+  Themen liegen als Daten unter [`topics/`](../topics/README.md); der Compiler `ultratiny.knowledge`
+  schreibt das Wissens-Image UTKI v1, das die Faktentabelle UTFT v1 ersetzt (C-Engine `runtime/src/knowledge.c`,
+  Konsolenbefehl `/wissen`). Chemie: alle 3.169 Antworten aus 006 byte-gleich, **F7 3.145** statt 2.364,
+  **23.420 B** statt 29.100 B, **R5 7,45 B** statt 12,31 B pro Fakt
+  ([Bericht](../bench/results/008.md)). Zweites Thema: Schachfiguren, ohne Codeänderung.
+  Kein neues Modell (die Fragen zu den neuen Rückrichtungen kommen mit Spec 009); offen sind die
+  Board-Läufe (Nachschlagezeit, Parität, Demo neben `chemie-nodemcu`, braucht `chemie-hybrid` aus 006).
+  Messprotokoll: [`specs/008-wissens-compiler/measurements.md`](008-wissens-compiler/measurements.md).
 
 ### Schritt 4 · Spec 009: Fragen verstehen
 
@@ -194,7 +205,8 @@ fehlender Fakten; Tsetlin-Maschine als Vorlagen-Klassifikator; Logikgatter-Netze
   Rechenwege. Principle II und V verlangen dafür Messungen; die liefert Spec 011.
 - **Baseline-Zugang:** Für Board-Vergleiche muss `chemie-nodemcu` einmal vom Spark auf das zweite
   Board oder als Firmware-Image bereitliegen.
-- **Zweites Testthema:** Welches Thema als Mini-Test in Spec 008 dient, wird dort entschieden.
+- **Zweites Testthema:** in Spec 008 entschieden: Schachfiguren (`topics/schach/`, eigene Fakten).
+  Spätere Specs testen ihre Themenunabhängigkeit mit diesem Thema weiter.
 
 ## Eine Spec starten
 

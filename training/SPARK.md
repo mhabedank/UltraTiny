@@ -113,7 +113,7 @@ Aufs Board: `make nodemcu-flash-model PORT=... NODEMCU_MODEL=models/chemie-nodem
 
 ### Hybrid-Chemielehrer (specs/006)
 
-Faktenfragen beantwortet das Board aus der Faktentabelle, das Modell gibt nur `<fn>` + Typ +
+Faktenfragen beantwortet das Board aus dem Wissens-Image (specs/008), das Modell gibt nur `<fn>` + Typ +
 Schlüssel aus. Ablauf:
 
 1. **Gekürzte Erklärungen** (≤ 60 Zeichen) mit Ollama vorschlagen lassen:
@@ -128,10 +128,11 @@ Schlüssel aus. Ablauf:
 NAME=chemie-hybrid tools/spark/train.sh configs/chemie-hybrid.toml 1234
 ```
 
-Ergebnis: `model.utny` (Format v2), `facts.utft`, `golden.json` (mit gedruckten Antworten),
-`eval.json` (je Testset: zurückgehaltene Kombinationen und Formulierungen, Kurzarbeit, falsche
-Fakten, Abweisungen). Zurück auf den Mac kopieren als `models/chemie-hybrid.utny`,
-`models/chemie-hybrid.utft`, `models/chemie-hybrid_golden.json` und `models/chemie-hybrid_eval.json`.
+Ergebnis: `model.utny` (Format v2, Meta `topic = chemie`), `knowledge.utki`, `golden.json` (mit
+gedruckten Antworten), `eval.json` (je Testset: zurückgehaltene Kombinationen und Formulierungen,
+Kurzarbeit, falsche Fakten, Abweisungen). Zurück auf den Mac kopieren als
+`models/chemie-hybrid.utny`, `models/chemie-hybrid_golden.json` und `models/chemie-hybrid_eval.json`;
+das Wissens-Image ist `models/chemie.utki` (aus `topics/chemie`, byte-gleich mit `knowledge.utki`).
 Die Pipeline endet mit `FAILED: …`, wenn ein Ziel aus spec 006 verfehlt ist; das Modell ist trotzdem da.
 
 ### Loss live auf dem Mac verfolgen

@@ -51,6 +51,8 @@ class DataConfig:
     # Hybrid chemistry teacher (specs/006-hybrid-chemielehrer): function output + fact table.
     hybrid: bool = False
     hybrid_templates: str = "data/templates/hybrid.toml"
+    # Knowledge topic compiled into the board's knowledge image (specs/008-wissens-compiler).
+    knowledge_topic: str = "../topics/chemie"
     element_facts: str = "data/facts/wikidata_elemente_chemie.tsv"
     compound_facts: list[str] = field(default_factory=list)  # name/formula TSVs (formel_von)
     acidbase_facts: str = ""

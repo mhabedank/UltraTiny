@@ -1,0 +1,132 @@
+view	key	outcome	answer
+R	Aa	fact	Rang von Aastadt: 1.
+R	Be	fact	Rang von Bestadt: 2.
+R	Ce	fact	Rang von Cestadt: 3.
+R	De	fact	Rang von Desstadt: 4.
+R	Zz	fact	Rang von Zettstadt: 9.
+R	L01	fact	Rang von Langstadt Nummer 01: 101.
+R	L02	fact	Rang von Langstadt Nummer 02: 102.
+R	L03	fact	Rang von Langstadt Nummer 03: 103.
+R	L04	fact	Rang von Langstadt Nummer 04: 104.
+R	L05	fact	Rang von Langstadt Nummer 05: 105.
+R	L06	fact	Rang von Langstadt Nummer 06: 106.
+R	L07	fact	Rang von Langstadt Nummer 07: 107.
+R	L08	fact	Rang von Langstadt Nummer 08: 108.
+R	L09	fact	Rang von Langstadt Nummer 09: 109.
+R	L10	fact	Rang von Langstadt Nummer 10: 110.
+R	L11	fact	Rang von Langstadt Nummer 11: 111.
+R	L12	fact	Rang von Langstadt Nummer 12: 112.
+R	NL	na	Rang von Nordland: keine Angabe.
+R	Xyz	unknown	Rang von – Unbekannt.
+r	1	fact	Platz 1 hat Aastadt.
+r	101	fact	Platz 101 hat Langstadt Nummer 01.
+r	102	fact	Platz 102 hat Langstadt Nummer 02.
+r	103	fact	Platz 103 hat Langstadt Nummer 03.
+r	104	fact	Platz 104 hat Langstadt Nummer 04.
+r	105	fact	Platz 105 hat Langstadt Nummer 05.
+r	106	fact	Platz 106 hat Langstadt Nummer 06.
+r	107	fact	Platz 107 hat Langstadt Nummer 07.
+r	108	fact	Platz 108 hat Langstadt Nummer 08.
+r	109	fact	Platz 109 hat Langstadt Nummer 09.
+r	110	fact	Platz 110 hat Langstadt Nummer 10.
+r	111	fact	Platz 111 hat Langstadt Nummer 11.
+r	112	fact	Platz 112 hat Langstadt Nummer 12.
+r	2	fact	Platz 2 hat Bestadt.
+r	3	fact	Platz 3 hat Cestadt.
+r	4	fact	Platz 4 hat Desstadt.
+r	9	fact	Platz 9 hat Zettstadt.
+r	Xyz	unknown	Platz – Unbekannt.
+einwohner	Aa	fact	Einwohner von Aastadt: 12,5 Tsd.
+einwohner	Be	fact	Einwohner von Bestadt: 7,0 Tsd.
+einwohner	Ce	na	Einwohner von Cestadt (Ce) zählt niemand.
+einwohner	Xyz	unknown	Einwohner von – Unbekannt.
+land	Aa	fact	Lage: Aastadt liegt in Nordland.
+land	Be	fact	Lage: Bestadt liegt in Nordland.
+land	Ce	fact	Lage: Cestadt liegt in Nordland.
+land	Zz	fact	Lage: Zettstadt liegt in Südland.
+land	L01	fact	Lage: Langstadt Nummer 01 liegt in Langland.
+land	L02	fact	Lage: Langstadt Nummer 02 liegt in Langland.
+land	L03	fact	Lage: Langstadt Nummer 03 liegt in Langland.
+land	L04	fact	Lage: Langstadt Nummer 04 liegt in Langland.
+land	L05	fact	Lage: Langstadt Nummer 05 liegt in Langland.
+land	L06	fact	Lage: Langstadt Nummer 06 liegt in Langland.
+land	L07	fact	Lage: Langstadt Nummer 07 liegt in Langland.
+land	L08	fact	Lage: Langstadt Nummer 08 liegt in Langland.
+land	L09	fact	Lage: Langstadt Nummer 09 liegt in Langland.
+land	L10	fact	Lage: Langstadt Nummer 10 liegt in Langland.
+land	L11	fact	Lage: Langstadt Nummer 11 liegt in Langland.
+land	L12	fact	Lage: Langstadt Nummer 12 liegt in Langland.
+land	De	na	Lage: Desstadt: keine Angabe.
+land	Xyz	unknown	Lage: – Unbekannt.
+land<	LL	fact	In LL liegen Langstadt Nummer 01, Langstadt Nummer 02, Langstadt Nummer 03 und 9 weitere.
+land<	NL	fact	In NL liegen Aastadt, Bestadt und Cestadt.
+land<	SL	fact	In SL liegen Zettstadt.
+land<	Xyz	unknown	In – Unbekannt.
+farben	NL	fact	Farben von Nordland: Blau und Rot.
+farben	SL	fact	Farben von Südland: Blau.
+farben	LL	na	Farben von Langland: keine Angabe.
+farben	Xyz	unknown	Farben von – Unbekannt.
+farben<	Blau	fact	Die Farbe Blau haben Nordland und Südland.
+farben<	Rot	fact	Die Farbe Rot haben Nordland.
+farben<	Xyz	unknown	Die Farbe – Unbekannt.
+sprache	NL	fact	In Nordland spricht man Alt.
+sprache	SL	fact	In Südland spricht man Neu.
+sprache	LL	na	In Langland: keine Angabe.
+sprache	Xyz	unknown	In – Unbekannt.
+gruss	NL	fact	Gruß in Nordland: Salve.
+gruss	SL	fact	Gruß in Südland: Hallo.
+gruss	LL	na	Gruß in Langland: keine Angabe.
+gruss	Xyz	unknown	Gruß in – Unbekannt.
+erdteil	Aa	fact	Erdteil: Aastadt liegt auf Ostia.
+erdteil	Be	fact	Erdteil: Bestadt liegt auf Ostia.
+erdteil	Ce	fact	Erdteil: Cestadt liegt auf Ostia.
+erdteil	Zz	fact	Erdteil: Zettstadt liegt auf Westia.
+erdteil	De	na	Erdteil: Desstadt: keine Angabe.
+erdteil	Xyz	unknown	Erdteil: – Unbekannt.
+groesse	Aa	fact	Größe: Aastadt ist groß.
+groesse	Be	fact	Größe: Bestadt ist groß.
+groesse	Ce	fact	Größe: Cestadt ist groß.
+groesse	Zz	fact	Größe: Zettstadt ist klein.
+groesse	De	na	Größe: Desstadt: keine Angabe.
+groesse	Xyz	unknown	Größe: – Unbekannt.
+kontinent	NL	fact	Kontinent: Nordland gehört zu Ostia.
+kontinent	SL	fact	Kontinent: Südland gehört zu Westia.
+kontinent	LL	na	Kontinent: Langland: keine Angabe.
+kontinent	Xyz	unknown	Kontinent: – Unbekannt.
+K	Aa	fact	Das Kürzel von Aastadt ist Aa.
+K	Be	fact	Das Kürzel von Bestadt ist Be.
+K	Ce	fact	Das Kürzel von Cestadt ist Ce.
+K	De	fact	Das Kürzel von Desstadt ist De.
+K	Zz	fact	Das Kürzel von Zettstadt ist Zz.
+K	L01	fact	Das Kürzel von Langstadt Nummer 01 ist L01.
+K	L02	fact	Das Kürzel von Langstadt Nummer 02 ist L02.
+K	L03	fact	Das Kürzel von Langstadt Nummer 03 ist L03.
+K	L04	fact	Das Kürzel von Langstadt Nummer 04 ist L04.
+K	L05	fact	Das Kürzel von Langstadt Nummer 05 ist L05.
+K	L06	fact	Das Kürzel von Langstadt Nummer 06 ist L06.
+K	L07	fact	Das Kürzel von Langstadt Nummer 07 ist L07.
+K	L08	fact	Das Kürzel von Langstadt Nummer 08 ist L08.
+K	L09	fact	Das Kürzel von Langstadt Nummer 09 ist L09.
+K	L10	fact	Das Kürzel von Langstadt Nummer 10 ist L10.
+K	L11	fact	Das Kürzel von Langstadt Nummer 11 ist L11.
+K	L12	fact	Das Kürzel von Langstadt Nummer 12 ist L12.
+K	NL	na	Das Kürzel von Nordland: keine Angabe.
+K	Xyz	unknown	Das Kürzel von – Unbekannt.
+P	Aa	fact	Die Stadt Aastadt (Aa) hat Rang 1 und liegt in Nordland.
+P	Be	fact	Die Stadt Bestadt (Be) hat Rang 2 und liegt in Nordland.
+P	Ce	fact	Die Stadt Cestadt (Ce) hat Rang 3 und liegt in Nordland.
+P	Zz	fact	Die Stadt Zettstadt (Zz) hat Rang 9 und liegt in Südland.
+P	L01	fact	Die Stadt Langstadt Nummer 01 (L01) hat Rang 101 und liegt in Langland.
+P	L02	fact	Die Stadt Langstadt Nummer 02 (L02) hat Rang 102 und liegt in Langland.
+P	L03	fact	Die Stadt Langstadt Nummer 03 (L03) hat Rang 103 und liegt in Langland.
+P	L04	fact	Die Stadt Langstadt Nummer 04 (L04) hat Rang 104 und liegt in Langland.
+P	L05	fact	Die Stadt Langstadt Nummer 05 (L05) hat Rang 105 und liegt in Langland.
+P	L06	fact	Die Stadt Langstadt Nummer 06 (L06) hat Rang 106 und liegt in Langland.
+P	L07	fact	Die Stadt Langstadt Nummer 07 (L07) hat Rang 107 und liegt in Langland.
+P	L08	fact	Die Stadt Langstadt Nummer 08 (L08) hat Rang 108 und liegt in Langland.
+P	L09	fact	Die Stadt Langstadt Nummer 09 (L09) hat Rang 109 und liegt in Langland.
+P	L10	fact	Die Stadt Langstadt Nummer 10 (L10) hat Rang 110 und liegt in Langland.
+P	L11	fact	Die Stadt Langstadt Nummer 11 (L11) hat Rang 111 und liegt in Langland.
+P	L12	fact	Die Stadt Langstadt Nummer 12 (L12) hat Rang 112 und liegt in Langland.
+P	De	na	Die Stadt Desstadt ist unvollständig.
+P	Xyz	unknown	Die Stadt – Unbekannt.

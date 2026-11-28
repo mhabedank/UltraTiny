@@ -1,0 +1,87 @@
+{
+ "answerable": 69,
+ "answerable_per_view": {
+  "anzahl": 6,
+  "anzahl<": 3,
+  "art": 4,
+  "art<": 2,
+  "grundreihe": 2,
+  "grundreihe<": 2,
+  "kuerzel": 6,
+  "profil": 5,
+  "startfelder": 6,
+  "startfelder<": 16,
+  "wert": 5,
+  "wert<": 4,
+  "zieht_zuerst": 2,
+  "zug": 6
+ },
+ "budget_bytes": 58982,
+ "bytes": 1744,
+ "bytes_per_answerable": 25.28,
+ "classes": {
+  "farbe": 2,
+  "figur": 6
+ },
+ "data_sha256": "209cd956e657ffc65babbe7b28b3d2f14c10c724ff5dd98447c511321a047b15",
+ "derived": [
+  {
+   "origin": "rule leichtfigur from facts/figuren.tsv:4",
+   "relation": "art",
+   "subject": "L",
+   "value": "Leichtfigur"
+  },
+  {
+   "origin": "rule leichtfigur from facts/figuren.tsv:5",
+   "relation": "art",
+   "subject": "S",
+   "value": "Leichtfigur"
+  },
+  {
+   "origin": "rule schwerfigur from facts/figuren.tsv:2",
+   "relation": "art",
+   "subject": "D",
+   "value": "Schwerfigur"
+  },
+  {
+   "origin": "rule schwerfigur from facts/figuren.tsv:3",
+   "relation": "art",
+   "subject": "T",
+   "value": "Schwerfigur"
+  }
+ ],
+ "derived_per_rule": {
+  "leichtfigur": 2,
+  "schwerfigur": 2
+ },
+ "facts_derived": 4,
+ "facts_explicit": 37,
+ "facts_per_relation": {
+  "anzahl": 6,
+  "art": 4,
+  "grundreihe": 2,
+  "startfelder": 16,
+  "wert": 5,
+  "zieht_zuerst": 2,
+  "zug": 6
+ },
+ "objects": 8,
+ "relations": 7,
+ "schema_version": 1,
+ "sections": {
+  "classes": 8,
+  "columns": 40,
+  "header": 80,
+  "keyidx": 16,
+  "lists": 136,
+  "objects": 32,
+  "relations": 112,
+  "strings": 1068,
+  "texts": 12,
+  "values": 72,
+  "views": 168
+ },
+ "sha256": "475971fe8fe22172563798d8f1d8238d22e09f8527f5ae6145f16c2c2a60160c",
+ "topic": "schach",
+ "views": 14
+}

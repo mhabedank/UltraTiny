@@ -8,6 +8,8 @@ Run from training/:
     uv run python ../tools/bench.py pc ... --check ../bench/results/nodemcu_allgemein_pc.json
     uv run python ../tools/bench.py board --suite ... --model ... --port /dev/ttyUSB0
     uv run python ../tools/bench.py pin --suite ../bench/suites/allgemein   # re-pin after a change
+    uv run python ../tools/bench.py image --suite ../bench/suites/chemie \
+        --facts ../models/chemie.utki          # image-only KPIs F7, R3, R5 (spec 008)
 
 Exit codes: 0 ok, 1 measured but a check failed (--check, parity), 2 usage or input error.
 """
@@ -80,6 +82,23 @@ def cmd_board(a) -> int:
     return board.main(a)
 
 
+def cmd_image(a) -> int:
+    from ultratiny.bench.image import run_image
+
+    try:
+        suite = load_suite(a.suite)
+        result = run_image(suite, Path(a.facts), a.label)
+    except (SuiteError, ValueError, OSError) as e:
+        print(f"bench: {e}", file=sys.stderr)
+        return 2
+    out = Path(a.out) if a.out else pc.default_out(result, RESULTS)
+    pc.write_result(result, out)
+    k = result["kpis"]
+    print(f"bench: F7 {k['F7']['value']}, R3 {k['R3']['value']} B, R5 {k['R5']['value']} B/Fakt")
+    print(f"bench: wrote {out}")
+    return 0
+
+
 def cmd_pin(a) -> int:
     try:
         new = pin_suite(a.suite)
@@ -108,7 +127,7 @@ def main(argv=None) -> int:
     p = sub.add_parser("pc", help="measure a model on the PC (US1)")
     p.add_argument("--suite", required=True)
     p.add_argument("--model", required=True)
-    p.add_argument("--facts", help="knowledge image (.utft)")
+    p.add_argument("--facts", help="knowledge image (.utki)")
     p.add_argument("--label", help="step name for grouping seeds (default: model meta name)")
     p.add_argument("--out")
     p.add_argument("--train-data", help="training data (train.txt) for the overlap report")
@@ -133,6 +152,12 @@ def main(argv=None) -> int:
     p.add_argument("--sample", choices=("all", "parity"), default="all")
     p.add_argument("--timeout", type=float, default=60.0)
     p.set_defaults(fn=cmd_board)
+    p = sub.add_parser("image", help="image-only KPIs of a knowledge image (spec 008)")
+    p.add_argument("--suite", required=True)
+    p.add_argument("--facts", required=True, help="knowledge image (.utki)")
+    p.add_argument("--label")
+    p.add_argument("--out")
+    p.set_defaults(fn=cmd_image)
     p = sub.add_parser("pin", help="re-pin all files of a suite")
     p.add_argument("--suite", required=True)
     p.set_defaults(fn=cmd_pin)
