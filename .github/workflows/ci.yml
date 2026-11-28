@@ -18,7 +18,7 @@ jobs:
       - run: uv run ruff check .
       - run: uv run ruff format --check .
       - run: uv run pytest -q
-      - name: Knowledge topics (specs/008): preparation steps current, images current, compat
+      - name: "Knowledge topics (specs/008): preparation steps current, images current, compat"
         run: |
           for prep in ../topics/*/prepare.py; do
             [ -f "$prep" ] && uv run python "$prep" --check
