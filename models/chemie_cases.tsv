@@ -334,3 +334,155 @@ gruppe_nr	Ts	fact	Die Gruppennummer von Tenness ist 17.
 gruppe_nr	Og	fact	Die Gruppennummer von Oganesson ist 18.
 gruppe_nr	La	na	Die Gruppennummer von Lanthan: dazu habe ich keine Angabe.
 gruppe_nr	Xyz	unknown	Die Gruppennummer von – Das weiß ich leider nicht.
+hauptgruppe	H	fact	Zur Hauptgruppe: Wasserstoff steht in der 1. Hauptgruppe.
+hauptgruppe	He	fact	Zur Hauptgruppe: Helium steht in der 8. Hauptgruppe.
+hauptgruppe	Li	fact	Zur Hauptgruppe: Lithium steht in der 1. Hauptgruppe.
+hauptgruppe	Be	fact	Zur Hauptgruppe: Beryllium steht in der 2. Hauptgruppe.
+hauptgruppe	B	fact	Zur Hauptgruppe: Bor steht in der 3. Hauptgruppe.
+hauptgruppe	Fl	fact	Zur Hauptgruppe: Flerovium steht in der 4. Hauptgruppe.
+hauptgruppe	Mc	fact	Zur Hauptgruppe: Moscovium steht in der 5. Hauptgruppe.
+hauptgruppe	Lv	fact	Zur Hauptgruppe: Livermorium steht in der 6. Hauptgruppe.
+hauptgruppe	Ts	fact	Zur Hauptgruppe: Tenness steht in der 7. Hauptgruppe.
+hauptgruppe	Og	fact	Zur Hauptgruppe: Oganesson steht in der 8. Hauptgruppe.
+hauptgruppe	Sc	na	Zur Hauptgruppe: Scandium: dazu habe ich keine Angabe.
+hauptgruppe	Xyz	unknown	Zur Hauptgruppe: – Das weiß ich leider nicht.
+protonen<	1	fact	Die Protonenzahl 1 hat Wasserstoff.
+protonen<	10	fact	Die Protonenzahl 10 hat Neon.
+protonen<	100	fact	Die Protonenzahl 100 hat Fermium.
+protonen<	101	fact	Die Protonenzahl 101 hat Mendelevium.
+protonen<	102	fact	Die Protonenzahl 102 hat Nobelium.
+protonen<	95	fact	Die Protonenzahl 95 hat Americium.
+protonen<	96	fact	Die Protonenzahl 96 hat Curium.
+protonen<	97	fact	Die Protonenzahl 97 hat Berkelium.
+protonen<	98	fact	Die Protonenzahl 98 hat Californium.
+protonen<	99	fact	Die Protonenzahl 99 hat Einsteinium.
+protonen<	Xyz	unknown	Die Protonenzahl – Das weiß ich leider nicht.
+elektronen<	1	fact	Die Elektronenzahl 1 hat Wasserstoff.
+elektronen<	10	fact	Die Elektronenzahl 10 hat Neon.
+elektronen<	100	fact	Die Elektronenzahl 100 hat Fermium.
+elektronen<	101	fact	Die Elektronenzahl 101 hat Mendelevium.
+elektronen<	102	fact	Die Elektronenzahl 102 hat Nobelium.
+elektronen<	95	fact	Die Elektronenzahl 95 hat Americium.
+elektronen<	96	fact	Die Elektronenzahl 96 hat Curium.
+elektronen<	97	fact	Die Elektronenzahl 97 hat Berkelium.
+elektronen<	98	fact	Die Elektronenzahl 98 hat Californium.
+elektronen<	99	fact	Die Elektronenzahl 99 hat Einsteinium.
+elektronen<	Xyz	unknown	Die Elektronenzahl – Das weiß ich leider nicht.
+atommasse<	1,01	fact	Die Atommasse 1,01 u hat: Wasserstoff.
+atommasse<	10,81	fact	Die Atommasse 10,81 u hat: Bor.
+atommasse<	101,07	fact	Die Atommasse 101,07 u hat: Ruthenium.
+atommasse<	102,91	fact	Die Atommasse 102,91 u hat: Rhodium.
+atommasse<	106,42	fact	Die Atommasse 106,42 u hat: Palladium.
+atommasse<	9,01	fact	Die Atommasse 9,01 u hat: Beryllium.
+atommasse<	91,22	fact	Die Atommasse 91,22 u hat: Zirconium.
+atommasse<	92,91	fact	Die Atommasse 92,91 u hat: Niob.
+atommasse<	95,95	fact	Die Atommasse 95,95 u hat: Molybdän.
+atommasse<	97,91	fact	Die Atommasse 97,91 u hat: Technetium.
+atommasse<	Xyz	unknown	Die Atommasse – Das weiß ich leider nicht.
+molare_masse<	100,0	fact	Die molare Masse 100,0 g/mol hat: Natriumphosphid.
+molare_masse<	100,1	fact	Die molare Masse 100,1 g/mol hat: Calciumcarbonat.
+molare_masse<	100,9	fact	Die molare Masse 100,9 g/mol hat: Magnesiumnitrid.
+molare_masse<	101,1	fact	Die molare Masse 101,1 g/mol hat: Kaliumnitrat.
+molare_masse<	102,0	fact	Die molare Masse 102,0 g/mol hat: Aluminiumoxid.
+molare_masse<	94,2	fact	Die molare Masse 94,2 g/mol hat: Kaliumoxid.
+molare_masse<	95,3	fact	Die molare Masse 95,3 g/mol hat: Magnesiumchlorid.
+molare_masse<	97,5	fact	Die molare Masse 97,5 g/mol hat: Zinksulfid.
+molare_masse<	98,0	fact	Die molare Masse 98,0 g/mol hat: Phosphorsäure.
+molare_masse<	98,1	fact	Die molare Masse 98,1 g/mol hat: Schwefelsäure.
+molare_masse<	Xyz	unknown	Die molare Masse – Das weiß ich leider nicht.
+neutronen<	0	fact	Meist 0 Neutronen hat: Wasserstoff.
+neutronen<	10	fact	Meist 10 Neutronen hat: Fluor und Neon.
+neutronen<	100	fact	Meist 100 Neutronen hat: Thulium.
+neutronen<	103	fact	Meist 103 Neutronen hat: Ytterbium.
+neutronen<	104	fact	Meist 104 Neutronen hat: Lutetium.
+neutronen<	93	fact	Meist 93 Neutronen hat: Gadolinium.
+neutronen<	94	fact	Meist 94 Neutronen hat: Terbium.
+neutronen<	97	fact	Meist 97 Neutronen hat: Dysprosium.
+neutronen<	98	fact	Meist 98 Neutronen hat: Holmium.
+neutronen<	99	fact	Meist 99 Neutronen hat: Erbium.
+neutronen<	Xyz	unknown	Meist – Das weiß ich leider nicht.
+gruppe_nr<	1	fact	Zur Gruppe 1 gehören: Wasserstoff, Lithium, Natrium, Kalium, Rubidium, Caesium und Francium.
+gruppe_nr<	10	fact	Zur Gruppe 10 gehören: Nickel, Palladium, Platin und Darmstadtium.
+gruppe_nr<	11	fact	Zur Gruppe 11 gehören: Kupfer, Silber, Gold und Roentgenium.
+gruppe_nr<	12	fact	Zur Gruppe 12 gehören: Zink, Cadmium, Quecksilber und Copernicium.
+gruppe_nr<	13	fact	Zur Gruppe 13 gehören: Bor, Aluminium, Gallium, Indium, Thallium und Nihonium.
+gruppe_nr<	14	fact	Zur Gruppe 14 gehören: Kohlenstoff, Silicium, Germanium, Zinn, Blei und Flerovium.
+gruppe_nr<	15	fact	Zur Gruppe 15 gehören: Stickstoff, Phosphor, Arsen, Antimon, Bismut und Moscovium.
+gruppe_nr<	16	fact	Zur Gruppe 16 gehören: Sauerstoff, Schwefel, Selen, Tellur, Polonium und Livermorium.
+gruppe_nr<	17	fact	Zur Gruppe 17 gehören: Fluor, Chlor, Brom, Iod, Astat und Tenness.
+gruppe_nr<	18	fact	Zur Gruppe 18 gehören: Helium, Neon, Argon, Krypton, Xenon, Radon und Oganesson.
+gruppe_nr<	2	fact	Zur Gruppe 2 gehören: Beryllium, Magnesium, Calcium, Strontium, Barium und Radium.
+gruppe_nr<	3	fact	Zur Gruppe 3 gehören: Scandium und Yttrium.
+gruppe_nr<	4	fact	Zur Gruppe 4 gehören: Titan, Zirconium, Hafnium und Rutherfordium.
+gruppe_nr<	5	fact	Zur Gruppe 5 gehören: Vanadium, Niob, Tantal und Dubnium.
+gruppe_nr<	6	fact	Zur Gruppe 6 gehören: Chrom, Molybdän, Wolfram und Seaborgium.
+gruppe_nr<	7	fact	Zur Gruppe 7 gehören: Mangan, Technetium, Rhenium und Bohrium.
+gruppe_nr<	8	fact	Zur Gruppe 8 gehören: Eisen, Ruthenium, Osmium und Hassium.
+gruppe_nr<	9	fact	Zur Gruppe 9 gehören: Cobalt, Rhodium, Iridium und Meitnerium.
+gruppe_nr<	Xyz	unknown	Zur Gruppe – Das weiß ich leider nicht.
+hauptgruppe<	1	fact	Zur 1. Hauptgruppe gehören: Wasserstoff, Lithium, Natrium, Kalium, Rubidium, Caesium und Francium.
+hauptgruppe<	2	fact	Zur 2. Hauptgruppe gehören: Beryllium, Magnesium, Calcium, Strontium, Barium und Radium.
+hauptgruppe<	3	fact	Zur 3. Hauptgruppe gehören: Bor, Aluminium, Gallium, Indium, Thallium und Nihonium.
+hauptgruppe<	4	fact	Zur 4. Hauptgruppe gehören: Kohlenstoff, Silicium, Germanium, Zinn, Blei und Flerovium.
+hauptgruppe<	5	fact	Zur 5. Hauptgruppe gehören: Stickstoff, Phosphor, Arsen, Antimon, Bismut und Moscovium.
+hauptgruppe<	6	fact	Zur 6. Hauptgruppe gehören: Sauerstoff, Schwefel, Selen, Tellur, Polonium und Livermorium.
+hauptgruppe<	7	fact	Zur 7. Hauptgruppe gehören: Fluor, Chlor, Brom, Iod, Astat und Tenness.
+hauptgruppe<	8	fact	Zur 8. Hauptgruppe gehören: Helium, Neon, Argon, Krypton, Xenon, Radon und Oganesson.
+hauptgruppe<	Xyz	unknown	Zur – Das weiß ich leider nicht.
+periode<	1	fact	Zur 1. Periode gehören: Wasserstoff und Helium.
+periode<	2	fact	Zur 2. Periode gehören: Lithium, Beryllium, Bor, Kohlenstoff, Stickstoff, Sauerstoff und 2 weitere.
+periode<	3	fact	Zur 3. Periode gehören: Natrium, Magnesium, Aluminium, Silicium, Phosphor, Schwefel und 2 weitere.
+periode<	4	fact	Zur 4. Periode gehören: Kalium, Calcium, Scandium, Titan, Vanadium, Chrom, Mangan und 11 weitere.
+periode<	5	fact	Zur 5. Periode gehören: Rubidium, Strontium, Yttrium, Zirconium, Niob, Molybdän und 12 weitere.
+periode<	6	fact	Zur 6. Periode gehören: Caesium, Barium, Lanthan, Cer, Praseodym, Neodym und 26 weitere.
+periode<	7	fact	Zur 7. Periode gehören: Francium, Radium, Actinium, Thorium, Protactinium, Uran und 26 weitere.
+periode<	Xyz	unknown	Zur – Das weiß ich leider nicht.
+familie<	Actinoiden	fact	Zu den Actinoiden gehören: Actinium, Thorium, Protactinium, Uran, Neptunium und 10 weitere.
+familie<	Alkalimetallen	fact	Zu den Alkalimetallen gehören: Lithium, Natrium, Kalium, Rubidium, Caesium und Francium.
+familie<	Chalkogenen	fact	Zu den Chalkogenen gehören: Sauerstoff, Schwefel, Selen, Tellur und Polonium.
+familie<	Edelgasen	fact	Zu den Edelgasen gehören: Helium, Neon, Argon, Krypton, Xenon, Radon und Oganesson.
+familie<	Erdalkalimetallen	fact	Zu den Erdalkalimetallen gehören: Beryllium, Magnesium, Calcium, Strontium, Barium und Radium.
+familie<	Halogenen	fact	Zu den Halogenen gehören: Fluor, Chlor, Brom, Iod und Astat.
+familie<	Lanthanoiden	fact	Zu den Lanthanoiden gehören: Lanthan, Cer, Praseodym, Neodym, Promethium, Samarium und 9 weitere.
+familie<	Xyz	unknown	Zu den – Das weiß ich leider nicht.
+kategorie<	Halbmetall	fact	Stoffart Halbmetall: Bor, Silicium, Germanium, Arsen, Antimon und Tellur.
+kategorie<	Metall	fact	Stoffart Metall: Lithium, Beryllium, Natrium, Magnesium, Aluminium, Kalium, Calcium und 73 weitere.
+kategorie<	Nichtmetall	fact	Stoffart Nichtmetall: Wasserstoff, Helium, Kohlenstoff, Stickstoff, Sauerstoff und 12 weitere.
+kategorie<	Xyz	unknown	Stoffart – Das weiß ich leider nicht.
+zustand<	fest	fact	Bei Raumtemperatur fest sind: Lithium, Beryllium, Bor, Kohlenstoff, Natrium und 85 weitere.
+zustand<	flüssig	fact	Bei Raumtemperatur flüssig sind: Brom und Quecksilber.
+zustand<	gasförmig	fact	Bei Raumtemperatur gasförmig sind: Wasserstoff, Helium, Stickstoff, Sauerstoff und 7 weitere.
+zustand<	Xyz	unknown	Bei Raumtemperatur – Das weiß ich leider nicht.
+aussenelektronen<	1	fact	Genau 1 Außenelektronen haben: Wasserstoff, Lithium, Natrium, Kalium, Rubidium und 2 weitere.
+aussenelektronen<	2	fact	Genau 2 Außenelektronen haben: Helium, Beryllium, Magnesium, Calcium, Strontium, Barium und Radium.
+aussenelektronen<	3	fact	Genau 3 Außenelektronen haben: Bor, Aluminium, Gallium, Indium und Thallium.
+aussenelektronen<	4	fact	Genau 4 Außenelektronen haben: Kohlenstoff, Silicium, Germanium, Zinn und Blei.
+aussenelektronen<	5	fact	Genau 5 Außenelektronen haben: Stickstoff, Phosphor, Arsen, Antimon und Bismut.
+aussenelektronen<	6	fact	Genau 6 Außenelektronen haben: Sauerstoff, Schwefel, Selen, Tellur und Polonium.
+aussenelektronen<	7	fact	Genau 7 Außenelektronen haben: Fluor, Chlor, Brom, Iod und Astat.
+aussenelektronen<	8	fact	Genau 8 Außenelektronen haben: Neon, Argon, Krypton, Xenon und Radon.
+aussenelektronen<	Xyz	unknown	Genau – Das weiß ich leider nicht.
+schalen<	1	fact	Genau 1 Schalen haben: Wasserstoff und Helium.
+schalen<	2	fact	Genau 2 Schalen haben: Lithium, Beryllium, Bor, Kohlenstoff, Stickstoff, Sauerstoff, Fluor und Neon.
+schalen<	3	fact	Genau 3 Schalen haben: Natrium, Magnesium, Aluminium, Silicium, Phosphor, Schwefel, Chlor und Argon.
+schalen<	4	fact	Genau 4 Schalen haben: Kalium, Calcium, Gallium, Germanium, Arsen, Selen, Brom und Krypton.
+schalen<	5	fact	Genau 5 Schalen haben: Rubidium, Strontium, Indium, Zinn, Antimon, Tellur, Iod und Xenon.
+schalen<	6	fact	Genau 6 Schalen haben: Caesium, Barium, Thallium, Blei, Bismut, Polonium, Astat und Radon.
+schalen<	7	fact	Genau 7 Schalen haben: Francium und Radium.
+schalen<	Xyz	unknown	Genau – Das weiß ich leider nicht.
+wertigkeit<	1	fact	Die Wertigkeit 1 haben: Wasserstoff, Lithium, Fluor, Natrium, Chlor, Kalium, Brom und 5 weitere.
+wertigkeit<	2	fact	Die Wertigkeit 2 haben: Beryllium, Sauerstoff, Magnesium, Schwefel, Calcium, Selen und 5 weitere.
+wertigkeit<	3	fact	Die Wertigkeit 3 haben: Bor, Stickstoff, Aluminium, Phosphor, Gallium, Arsen, Indium und 3 weitere.
+wertigkeit<	4	fact	Die Wertigkeit 4 haben: Kohlenstoff, Silicium, Germanium, Zinn und Blei.
+wertigkeit<	Xyz	unknown	Die Wertigkeit – Das weiß ich leider nicht.
+bindung<	Elektronenpaarbindung	fact	Eine Elektronenpaarbindung haben: Wasser, Wasserstoffperoxid, Kohlenstoffdioxid und 36 weitere.
+bindung<	Ionenbindung	fact	Eine Ionenbindung haben: Natriumhydroxid, Kaliumhydroxid, Calciumhydroxid und 113 weitere.
+bindung<	Xyz	unknown	Eine – Das weiß ich leider nicht.
+saeure_base<	Lauge (pH über 7), gelöst Ammoniakwasser	fact	Säure oder Lauge, Lauge (pH über 7), gelöst Ammoniakwasser: Ammoniak.
+saeure_base<	Lauge (pH über 7), gelöst Kalilauge	fact	Säure oder Lauge, Lauge (pH über 7), gelöst Kalilauge: Kaliumhydroxid.
+saeure_base<	Lauge (pH über 7), gelöst Kalkwasser	fact	Säure oder Lauge, Lauge (pH über 7), gelöst Kalkwasser: Calciumhydroxid.
+saeure_base<	Lauge (pH über 7), gelöst Natronlauge	fact	Säure oder Lauge, Lauge (pH über 7), gelöst Natronlauge: Natriumhydroxid.
+saeure_base<	Säure (pH unter 7)	fact	Säure oder Lauge, Säure (pH unter 7): Salzsäure, Schwefelsäure, Schweflige Säure und 2 weitere.
+saeure_base<	schwache Lauge (pH über 7)	fact	Säure oder Lauge, schwache Lauge (pH über 7): Magnesiumhydroxid.
+saeure_base<	schwache Säure (pH unter 7)	fact	Säure oder Lauge, schwache Säure (pH unter 7): Essigsäure, Ameisensäure und Kohlensäure.
+saeure_base<	Xyz	unknown	Säure oder Lauge, – Das weiß ich leider nicht.

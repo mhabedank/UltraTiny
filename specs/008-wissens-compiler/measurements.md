@@ -38,16 +38,43 @@ Size per section (B): header 80, classes 16, objects 1,292, key index 648, relat
 17,132 B (UTFT v1 records, objects, types) to 7,268 B; the strings stayed at about 12 KB, as
 research R1 predicted.
 
-## Parity (T016–T019)
+## Chemistry image, US2 (T026–T032)
+
+Reverse views for 16 relations, the `hauptgruppe` table rule and five family class rules.
+
+| Item | Value | Target |
+|------|-------|--------|
+| Views | 44 (26 with 006 letters, 17 reverse, 1 rule result) | |
+| Derived facts | 50 (`hauptgruppe` 50; family rules 0: the Wikidata families agree with the groups, Ts and Lv are excluded on purpose) | |
+| Compat with spec 006 | 3,169 of 3,169 identical, 0 changes | 100 % (SC-001) |
+| F7 | **3,145** (+33 % against 2,364; +32 % against 2,379) | ≥ 2,855 (SC-002) |
+| Image | **23,420 B** (40 % of the budget) | ≤ 58,982 B (SC-003) |
+| R5 | **7.45 B** per answerable fact (006: 12.31 B, −39 %) | ≤ 8.56 B (SC-003) |
+| Shortened lists in the golden cases | 19 of 487 cases | ≤ 100 B each |
+
+Size per section (B): header 80, classes 16, objects 1,292, key index 648, relations 352, views
+528, texts 12, values 1,780, columns 2,560, lists 3,120, strings 13,032. No string compression was
+needed (research R6).
+
+Examples (exact answers, competency questions):
+
+```text
+/wissen gruppe_nr< 1     Zur Gruppe 1 gehören: Wasserstoff, Lithium, Natrium, Kalium, Rubidium, Caesium und Francium.
+/wissen familie< Halogenen  Zu den Halogenen gehören: Fluor, Chlor, Brom, Iod und Astat.
+/wissen periode< 2       Zur 2. Periode gehören: Lithium, Beryllium, Bor, Kohlenstoff, Stickstoff, Sauerstoff und 2 weitere.
+/wissen hauptgruppe Na   Zur Hauptgruppe: Natrium steht in der 1. Hauptgruppe.
+```
+
+## Parity (T016–T019, T030)
 
 | Check | Result |
 |-------|--------|
 | `test_knowledge` on `kb_mini.utki` (all view kinds, lists, rules) | 131 cases (74 via the fn path), 0 failures |
-| `test_knowledge` on `chemie.utki` | 335 cases (323 via the fn path), 0 failures |
-| `utiny-host --kb-cases` (chemie) | 335 cases, 0 failed |
+| `test_knowledge` on `chemie.utki` (after US2) | 487 cases (323 via the fn path, 19 shortened lists), 0 failures |
+| `utiny-host --kb-cases` (chemie) | 487 cases, 0 failed |
 | Alignment-checked build (`*_checked`) | same cases, 0 failures |
 | `parity_tiny_v2` with `chemie.utki` (006 golden, printed answers) | 15 cases, 15 printed, 0 failed |
-| `tools/device_knowledge.py --exec utiny-host … --console` | 335 cases identical; lookup median 0.01 ms, max 0.07 ms (host) |
+| `tools/device_knowledge.py --exec utiny-host … --console` | 487 cases identical; lookup median 0.01 ms, max 0.08 ms (host) |
 
 ## On the board (🔌 T025)
 

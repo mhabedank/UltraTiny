@@ -23,10 +23,12 @@ reverse = "one"
 [relations.atommasse]
 subject = "element"
 type = "text"
+reverse = "many"
 
 [relations.periode]
 subject = "element"
 type = "int"
+reverse = "many"
 
 [relations.gruppe]
 subject = "element"
@@ -35,34 +37,42 @@ type = "text"
 [relations.familie]
 subject = "element"
 type = "text"
+reverse = "many"
 
 [relations.kategorie]
 subject = "element"
 type = "text"
+reverse = "many"
 
 [relations.zustand]
 subject = "element"
 type = "text"
+reverse = "many"
 
 [relations.protonen]
 subject = "element"
 type = "int"
+reverse = "one"
 
 [relations.elektronen]
 subject = "element"
 type = "int"
+reverse = "one"
 
 [relations.neutronen]
 subject = "element"
 type = "int"
+reverse = "many"
 
 [relations.aussenelektronen]
 subject = "element"
 type = "int"
+reverse = "many"
 
 [relations.schalen]
 subject = "element"
 type = "int"
+reverse = "many"
 
 [relations.elektronenverteilung]
 subject = "element"
@@ -75,18 +85,22 @@ type = "text"
 [relations.wertigkeit]
 subject = "element"
 type = "text"
+reverse = "many"
 
 [relations.molare_masse]
 subject = "verbindung"
 type = "text"
+reverse = "many"
 
 [relations.bindung]
 subject = "verbindung"
 type = "text"
+reverse = "many"
 
 [relations.saeure_base]
 subject = "verbindung"
 type = "text"
+reverse = "many"
 
 [relations.gleichung]
 subject = "reaktion"
@@ -99,6 +113,64 @@ type = "text"
 [relations.gruppe_nr]
 subject = "element"
 type = "int"
+reverse = "many"
+
+[relations.hauptgruppe]
+subject = "element"
+type = "int"
+reverse = "many"
+
+# Rules (specs/008 FR-006). The family rules check the Wikidata families (a contradiction stops the
+# build); the superheavy Ts and Lv are left out on purpose, their family is not school knowledge.
+[[rules]]
+id = "hauptgruppe"
+kind = "table"
+from = "gruppe_nr"
+add_relation = "hauptgruppe"
+map = { "1" = "1", "2" = "2", "13" = "3", "14" = "4", "15" = "5", "16" = "6", "17" = "7", "18" = "8" }
+
+[[rules]]
+id = "alkalimetalle"
+kind = "class"
+if_relation = "gruppe_nr"
+equals = 1
+except = ["H"]
+add_relation = "familie"
+add_value = "Alkalimetallen"
+
+[[rules]]
+id = "erdalkalimetalle"
+kind = "class"
+if_relation = "gruppe_nr"
+equals = 2
+add_relation = "familie"
+add_value = "Erdalkalimetallen"
+
+[[rules]]
+id = "chalkogene"
+kind = "class"
+if_relation = "gruppe_nr"
+equals = 16
+except = ["Lv"]
+add_relation = "familie"
+add_value = "Chalkogenen"
+
+[[rules]]
+id = "halogene"
+kind = "class"
+if_relation = "gruppe_nr"
+equals = 17
+except = ["Ts"]
+add_relation = "familie"
+add_value = "Halogenen"
+
+[[rules]]
+id = "edelgase"
+kind = "class"
+if_relation = "gruppe_nr"
+equals = 18
+add_relation = "familie"
+add_value = "Edelgasen"
 
 [views.symbol]
 kind = "self"
@@ -300,3 +372,120 @@ kind = "forward"
 relation = "gruppe_nr"
 template = "Die Gruppennummer von {name} ist {v}."
 questions = [{ question = "In welcher Gruppe steht Natrium?", key = "Na", expect = "Die Gruppennummer von Natrium ist 1." }]
+
+# Reverse questions and rule results, new in spec 008 (research R9; no 006 letter).
+[views.hauptgruppe]
+kind = "forward"
+relation = "hauptgruppe"
+template = "Zur Hauptgruppe: {name} steht in der {v}. Hauptgruppe."
+questions = [{ question = "In welcher Hauptgruppe steht Natrium?", key = "Na", expect = "Zur Hauptgruppe: Natrium steht in der 1. Hauptgruppe." }]
+
+[views."protonen<"]
+kind = "reverse"
+relation = "protonen"
+template = "Die Protonenzahl {key} hat {name}."
+questions = [{ question = "Welches Element hat 17 Protonen?", key = "17", expect = "Die Protonenzahl 17 hat Chlor." }]
+
+[views."elektronen<"]
+kind = "reverse"
+relation = "elektronen"
+template = "Die Elektronenzahl {key} hat {name}."
+questions = [{ question = "Welches Element hat 10 Elektronen?", key = "10", expect = "Die Elektronenzahl 10 hat Neon." }]
+
+[views."atommasse<"]
+kind = "reverse"
+relation = "atommasse"
+template = "Die Atommasse {key} u hat: {v}."
+more = " und {n} weitere"
+questions = [{ question = "Welches Element hat die Atommasse 35,45 u?", key = "35,45", expect = "Die Atommasse 35,45 u hat: Chlor." }]
+
+[views."molare_masse<"]
+kind = "reverse"
+relation = "molare_masse"
+template = "Die molare Masse {key} g/mol hat: {v}."
+more = " und {n} weitere"
+questions = [{ question = "Welcher Stoff hat die molare Masse 18,0 g/mol?", key = "18,0", expect = "Die molare Masse 18,0 g/mol hat: Wasser." }]
+
+[views."neutronen<"]
+kind = "reverse"
+relation = "neutronen"
+template = "Meist {key} Neutronen hat: {v}."
+more = " und {n} weitere"
+questions = [{ question = "Welches Element hat meist 20 Neutronen?", key = "20", expect = "Meist 20 Neutronen hat: Kalium und Calcium." }]
+
+[views."gruppe_nr<"]
+kind = "reverse"
+relation = "gruppe_nr"
+template = "Zur Gruppe {key} gehören: {v}."
+more = " und {n} weitere"
+questions = [{ question = "Welche Elemente gehören zur Gruppe 1?", key = "1", expect = "Zur Gruppe 1 gehören: Wasserstoff, Lithium, Natrium, Kalium, Rubidium, Caesium und Francium." }]
+
+[views."hauptgruppe<"]
+kind = "reverse"
+relation = "hauptgruppe"
+template = "Zur {key}. Hauptgruppe gehören: {v}."
+more = " und {n} weitere"
+questions = [{ question = "Welche Elemente stehen in der 3. Hauptgruppe?", key = "3", expect = "Zur 3. Hauptgruppe gehören: Bor, Aluminium, Gallium, Indium, Thallium und Nihonium." }]
+
+[views."periode<"]
+kind = "reverse"
+relation = "periode"
+template = "Zur {key}. Periode gehören: {v}."
+more = " und {n} weitere"
+questions = [{ question = "Welche Elemente stehen in der 2. Periode?", key = "2", expect = "Zur 2. Periode gehören: Lithium, Beryllium, Bor, Kohlenstoff, Stickstoff, Sauerstoff und 2 weitere." }]
+
+[views."familie<"]
+kind = "reverse"
+relation = "familie"
+template = "Zu den {key} gehören: {v}."
+more = " und {n} weitere"
+questions = [{ question = "Welche Elemente sind Halogene?", key = "Halogenen", expect = "Zu den Halogenen gehören: Fluor, Chlor, Brom, Iod und Astat." }]
+
+[views."kategorie<"]
+kind = "reverse"
+relation = "kategorie"
+template = "Stoffart {key}: {v}."
+more = " und {n} weitere"
+questions = [{ question = "Welche Elemente sind Halbmetalle?", key = "Halbmetall", expect = "Stoffart Halbmetall: Bor, Silicium, Germanium, Arsen, Antimon und Tellur." }]
+
+[views."zustand<"]
+kind = "reverse"
+relation = "zustand"
+template = "Bei Raumtemperatur {key} sind: {v}."
+more = " und {n} weitere"
+questions = [{ question = "Welche Elemente sind bei Raumtemperatur flüssig?", key = "flüssig", expect = "Bei Raumtemperatur flüssig sind: Brom und Quecksilber." }]
+
+[views."aussenelektronen<"]
+kind = "reverse"
+relation = "aussenelektronen"
+template = "Genau {key} Außenelektronen haben: {v}."
+more = " und {n} weitere"
+questions = [{ question = "Welche Elemente haben 6 Außenelektronen?", key = "6", expect = "Genau 6 Außenelektronen haben: Sauerstoff, Schwefel, Selen, Tellur und Polonium." }]
+
+[views."schalen<"]
+kind = "reverse"
+relation = "schalen"
+template = "Genau {key} Schalen haben: {v}."
+more = " und {n} weitere"
+questions = [{ question = "Welche Elemente haben 2 Schalen?", key = "2", expect = "Genau 2 Schalen haben: Lithium, Beryllium, Bor, Kohlenstoff, Stickstoff, Sauerstoff, Fluor und Neon." }]
+
+[views."wertigkeit<"]
+kind = "reverse"
+relation = "wertigkeit"
+template = "Die Wertigkeit {key} haben: {v}."
+more = " und {n} weitere"
+questions = [{ question = "Welche Elemente sind vierwertig?", key = "4", expect = "Die Wertigkeit 4 haben: Kohlenstoff, Silicium, Germanium, Zinn und Blei." }]
+
+[views."bindung<"]
+kind = "reverse"
+relation = "bindung"
+template = "Eine {key} haben: {v}."
+more = " und {n} weitere"
+questions = [{ question = "Welche Stoffe haben eine Elektronenpaarbindung?", key = "Elektronenpaarbindung", expect = "Eine Elektronenpaarbindung haben: Wasser, Wasserstoffperoxid, Kohlenstoffdioxid und 36 weitere." }]
+
+[views."saeure_base<"]
+kind = "reverse"
+relation = "saeure_base"
+template = "Säure oder Lauge, {key}: {v}."
+more = " und {n} weitere"
+questions = [{ question = "Welche Stoffe sind starke Säuren?", key = "Säure (pH unter 7)", expect = "Säure oder Lauge, Säure (pH unter 7): Salzsäure, Schwefelsäure, Schweflige Säure und 2 weitere." }]
