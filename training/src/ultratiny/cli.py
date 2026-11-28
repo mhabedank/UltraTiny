@@ -29,15 +29,6 @@ def _common(p: argparse.ArgumentParser) -> None:
     p.add_argument("--device", choices=["auto", "cuda", "mps", "cpu"], default="auto")
 
 
-def cmd_facts(a) -> int:
-    from .hybrid import build_facts
-
-    cfg = load_config(a.config)
-    _, _, summary = build_facts(cfg, Path(a.out))
-    print(json.dumps(summary, indent=2, ensure_ascii=False))
-    return 0
-
-
 def cmd_datagen(a) -> int:
     cfg = load_config(a.config)
     if cfg.data.hybrid:
@@ -79,7 +70,13 @@ def cmd_export(a) -> int:
     if facts and Path(facts).exists():
         import hashlib
 
-        meta["facts"] = hashlib.sha256(Path(facts).read_bytes()).hexdigest()[:12]
+        from .knowledge.image import Image
+
+        data = Path(facts).read_bytes()
+        meta["facts"] = hashlib.sha256(data).hexdigest()[:12]
+        img = Image(data)
+        if img.ok:
+            meta["topic"] = img.topic  # model and image must belong to one topic (specs/008 R11)
     size = write_model(Path(a.out), mcfg, state, Alphabet.for_vocab(mcfg.vocab_size), meta)
     print(f"wrote {a.out} ({size} bytes)")
     return 0
@@ -151,8 +148,8 @@ def cmd_pipeline_hybrid(a, cfg) -> int:
     print("== facts + datagen")
     stats = hybrid.generate(cfg, data, a.seed)
     print(json.dumps(stats, indent=2, ensure_ascii=False))
-    facts_path = out / "facts.utft"
-    facts_bytes = (data / "facts.utft").read_bytes()
+    facts_path = out / "knowledge.utki"
+    facts_bytes = (data / "knowledge.utki").read_bytes()
     facts_path.write_bytes(facts_bytes)
     print("== train")
     train(cfg, data, out, a.seed, a.device)
@@ -160,7 +157,7 @@ def cmd_pipeline_hybrid(a, cfg) -> int:
     cmd_export(argparse.Namespace(ckpt=str(out / "ckpt.pt"), out=str(out / "model.utny"),
                                   facts=str(facts_path)))  # fmt: skip
     model = out / "model.utny"
-    print("== eval (quantized reference + fact table)")
+    print("== eval (quantized reference + knowledge image)")
     report = hybrid.evaluate_sets(model, data, facts_bytes)
     results = report.pop("_results")
     for name in ("trained_sample", "heldout_family", "heldout_combo", "kurzarbeit",
@@ -265,12 +262,6 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="ut", description="UltraTiny training toolkit")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
-    p = sub.add_parser("facts", help="build and check the fact table (specs/006)")
-    p.add_argument("--config", required=True)
-    p.add_argument("--out", required=True)
-    _common(p)
-    p.set_defaults(func=cmd_facts)
-
     from .knowledge.commands import add_parser as add_knowledge
 
     add_knowledge(sub)
@@ -291,7 +282,7 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("export")
     p.add_argument("--ckpt", required=True)
     p.add_argument("--out", required=True)
-    p.add_argument("--facts", help="fact table whose hash is recorded in the model meta")
+    p.add_argument("--facts", help="knowledge image whose hash and topic go into the model meta")
     _common(p)
     p.set_defaults(func=cmd_export)
 

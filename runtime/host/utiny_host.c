@@ -5,8 +5,10 @@
  *   utiny-host --model m.utny --golden golden.json   # bit-exact parity check, exit 0 on match
  *   utiny-host --model m.utny --info                 # header fields + arena size
  *   utiny-host --model m.utny --console              # serial console on stdin/stdout (POSIX)
- *   --facts table.utft                               # fact table for UTNY v2 function output
- *                                                    # (specs/006-hybrid-chemielehrer)
+ *   --facts image.utki                               # knowledge image for UTNY v2 function output
+ *                                                    # (specs/006, specs/008-wissens-compiler)
+ *   utiny-host --facts image.utki --kb-cases c.tsv   # C engine vs. Python cases (no model)
+ *   utiny-host --facts image.utki --query "O Cu"     # one /wissen answer (no model)
  */
 #define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
@@ -20,9 +22,9 @@
 #include "json.h"
 #include "utiny.h"
 #include "utiny_console.h"
-#include "utiny_facts.h"
+#include "utiny_knowledge.h"
 
-/* Fact table as the board sees it: a 64 KB flash area, erased bytes 0xFF after the file. Reads
+/* Knowledge image as the board sees it: a 64 KB flash area, erased bytes 0xFF after the file. Reads
  * must be 4-byte aligned like ESP.flashRead (trap otherwise). */
 #define FACTS_AREA 0x10000u
 static uint8_t *facts_area;
@@ -33,7 +35,7 @@ static int facts_read(void *u, uint32_t off, void *buf, uint32_t n) {
     memcpy(buf, facts_area + off, n);
     return 0;
 }
-static ut_facts *open_facts(const char *path, ut_facts *f) {
+static ut_kb *open_kb(const char *path, ut_kb *f) {
     facts_area = malloc(FACTS_AREA);
     memset(facts_area, 0xFF, FACTS_AREA);
     if (path) {
@@ -46,7 +48,7 @@ static ut_facts *open_facts(const char *path, ut_facts *f) {
         memcpy(facts_area, d, n < FACTS_AREA ? n : FACTS_AREA);
         free(d);
     }
-    ut_facts_open(f, facts_read, NULL, FACTS_AREA);
+    ut_kb_open(f, facts_read, NULL, FACTS_AREA);
     return f;
 }
 
@@ -127,7 +129,7 @@ static void h_sys(void *u, ut_sys_stats *s) {
     s->uptime_ms = (int32_t)((mono_us() - t0) / 1000u);
 }
 
-static int run_console(ut_ctx *c, const ut_model *m, size_t arena_size, ut_facts *facts) {
+static int run_console(ut_ctx *c, const ut_model *m, size_t arena_size, ut_kb *facts) {
     static ut_console k;
     ut_console_io io = {h_read, h_write, h_millis, NULL, NULL, h_micros, h_sys, "Host (utiny-host)", facts};
     c->clock_us = h_clock_us;
@@ -167,7 +169,7 @@ static void cap_write(void *u, const char *b, size_t n) {
 }
 
 /* What the console prints for `prompt` (between Enter's "\r\n" and the next prompt). */
-static const char *console_answer(ut_ctx *c, const ut_model *m, ut_facts *facts, const char *prompt,
+static const char *console_answer(ut_ctx *c, const ut_model *m, ut_kb *facts, const char *prompt,
                                   int max) {
     static ut_console k;
     static char line[1024];
@@ -192,7 +194,7 @@ static const char *console_answer(ut_ctx *c, const ut_model *m, ut_facts *facts,
 }
 
 /* Compares every logit bit pattern and every generated token against the reference. */
-static int run_golden(ut_ctx *c, const ut_model *m, const char *path, ut_facts *facts,
+static int run_golden(ut_ctx *c, const ut_model *m, const char *path, ut_kb *facts,
                       int have_facts) {
     char *text = read_file(path, NULL);
     if (!text) {
@@ -265,8 +267,59 @@ static int run_golden(ut_ctx *c, const ut_model *m, const char *path, ut_facts *
     return fails ? 1 : 0;
 }
 
+/* Knowledge cases (specs/008 contracts/query.md "Cases file"): every query through the C engine,
+ * printed bytes and outcome compared with the Python reference. */
+static struct {
+    char b[1024];
+    size_t n;
+} kbo;
+static void kbo_write(void *u, const char *s, size_t n) {
+    (void)u;
+    if (kbo.n + n < sizeof kbo.b) {
+        memcpy(kbo.b + kbo.n, s, n);
+        kbo.n += n;
+    }
+}
+static int run_kb_cases(ut_kb *kb, const char *path) {
+    static const char *const names[] = {"unknown", "fact", "na", "missing"};
+    char *text = read_file(path, NULL);
+    if (!text) {
+        fprintf(stderr, "cannot read %s\n", path);
+        return 2;
+    }
+    int n = 0, fails = 0;
+    char *save = NULL;
+    char *line = strtok_r(text, "\n", &save); /* header */
+    for (line = strtok_r(NULL, "\n", &save); line; line = strtok_r(NULL, "\n", &save)) {
+        char *f[4] = {0};
+        char *p = line;
+        for (int i = 0; i < 4 && p; i++) {
+            f[i] = p;
+            char *t = i < 3 ? strchr(p, '\t') : NULL;
+            if (t) *t = 0;
+            p = t ? t + 1 : NULL;
+        }
+        if (!f[3]) continue;
+        char q[256];
+        int qn = snprintf(q, sizeof q, "%s %s", f[0], f[1]);
+        kbo.n = 0;
+        ut_kb_outcome o = ut_kb_query(kb, q, (size_t)qn, kbo_write, NULL);
+        kbo.b[kbo.n] = 0;
+        n++;
+        if (strcmp(kbo.b, f[3]) != 0 || strcmp(names[o], f[2]) != 0) {
+            fprintf(stderr, "case %d (%s %s): got %s \"%s\" want %s \"%s\"\n", n, f[0], f[1],
+                    names[o], kbo.b, f[2], f[3]);
+            fails++;
+        }
+    }
+    free(text);
+    printf("kb-cases: %d cases, %d failed\n", n, fails);
+    return fails ? 1 : 0;
+}
+
 int main(int argc, char **argv) {
     const char *model_path = NULL, *prompt = NULL, *golden = NULL, *facts_path = NULL;
+    const char *kb_cases = NULL, *kb_query = NULL;
     int sampling = 0, max = 200, info = 0, console = 0;
     uint32_t seed = 1;
     float temp = 0.8f;
@@ -275,6 +328,8 @@ int main(int argc, char **argv) {
         else if (!strcmp(argv[i], "--prompt") && i + 1 < argc) prompt = argv[++i];
         else if (!strcmp(argv[i], "--golden") && i + 1 < argc) golden = argv[++i];
         else if (!strcmp(argv[i], "--facts") && i + 1 < argc) facts_path = argv[++i];
+        else if (!strcmp(argv[i], "--kb-cases") && i + 1 < argc) kb_cases = argv[++i];
+        else if (!strcmp(argv[i], "--query") && i + 1 < argc) kb_query = argv[++i];
         else if (!strcmp(argv[i], "--max") && i + 1 < argc) max = atoi(argv[++i]);
         else if (!strcmp(argv[i], "--greedy")) sampling = 0;
         else if (!strcmp(argv[i], "--info")) info = 1;
@@ -285,9 +340,27 @@ int main(int argc, char **argv) {
             temp = (float)atof(argv[++i]);
         } else {
             fprintf(stderr, "usage: %s --model FILE [--prompt TEXT | --golden FILE | --info | --console] "
-                            "[--facts FILE] [--greedy | --sample SEED TEMP] [--max N]\n", argv[0]);
+                            "[--facts FILE] [--greedy | --sample SEED TEMP] [--max N]\n"
+                            "       %s --facts FILE (--kb-cases FILE | --query \"VIEW KEY\")\n",
+                    argv[0], argv[0]);
             return 2;
         }
+    }
+    if (!model_path && facts_path && (kb_cases || kb_query)) {
+        static ut_kb kb;
+        open_kb(facts_path, &kb);
+        if (kb.status != UT_KB_OK) fprintf(stderr, "knowledge image: %s\n", ut_kb_status_str(kb.status));
+        int rc = 0;
+        if (kb_cases) {
+            rc = run_kb_cases(&kb, kb_cases);
+        } else {
+            kbo.n = 0;
+            ut_kb_query(&kb, kb_query, strlen(kb_query), kbo_write, NULL);
+            kbo.b[kbo.n] = 0;
+            puts(kbo.b);
+        }
+        free(facts_area);
+        return rc;
     }
     if (!model_path) {
         fprintf(stderr, "--model is required\n");
@@ -313,10 +386,10 @@ int main(int argc, char **argv) {
         fprintf(stderr, "arena init failed\n");
         return 3;
     }
-    static ut_facts facts;
-    open_facts(facts_path, &facts);
-    if (facts_path && facts.status != UT_FACTS_OK)
-        fprintf(stderr, "fact table: %s\n", ut_facts_status_str(facts.status));
+    static ut_kb facts;
+    open_kb(facts_path, &facts);
+    if (facts_path && facts.status != UT_KB_OK)
+        fprintf(stderr, "knowledge image: %s\n", ut_kb_status_str(facts.status));
     int rc = 0;
     if (info) {
         printf("{\"vocab\": %d, \"d_model\": %d, \"n_layers\": %d, \"n_heads\": %d, "

@@ -1,7 +1,7 @@
 """Compatibility with spec 006 (specs/008-wissens-compiler/research.md R10).
 
-- `export_oracle`: one-off export of every answer the UTFT v1 fact table gave (run once, before
-  UTFT v1 was removed; the result is committed as topics/chemie/compat/utft1_answers.tsv).
+- The oracle `topics/chemie/compat/utft1_answers.tsv` holds every answer the UTFT v1 fact table
+  gave; it was exported once (task T001, tool removed with UTFT v1 in T021) and is frozen.
 - `check_compat`: renders the oracle queries through a knowledge image via the legacy letters and
   compares byte for byte; differences must be listed and reviewed in compat/changes.tsv.
 """

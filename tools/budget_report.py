@@ -5,7 +5,7 @@ Standard library only, so it also runs inside the ESP-IDF CI container.
 
     python tools/budget_report.py --model models/nodemcu.utny [--board nodemcu|esp32]
         [--pio-build firmware-nodemcu/.pio/build/nodemcuv2] [--idf-build firmware/build]
-        [--facts models/chemie-hybrid.utft]
+        [--facts models/chemie.utki]
         [--json out.json]
 
 Board profiles: specs/005-nodemcu-port/data-model.md "Board budget profile" and
@@ -147,7 +147,7 @@ def main() -> int:
     ap.add_argument("--board", choices=sorted(PROFILES), default="nodemcu")
     ap.add_argument("--pio-build", type=Path, help="PlatformIO build dir (nodemcu firmware)")
     ap.add_argument("--idf-build", type=Path, help="ESP-IDF build dir (legacy esp32 firmware)")
-    ap.add_argument("--facts", type=Path, help="UTFT fact table of a hybrid model (specs/006)")
+    ap.add_argument("--facts", type=Path, help="UTKI knowledge image (specs/006, specs/008)")
     ap.add_argument("--json", type=Path)
     a = ap.parse_args()
     prof = PROFILES[a.board]
@@ -172,9 +172,9 @@ def main() -> int:
             rows.append(("app_bytes", s["app_bytes"], factory_partition_size()))
     if a.facts:
         if not prof["facts_max"]:
-            raise SystemExit(f"board {a.board} has no fact table area")
-        if a.facts.read_bytes()[:4] != b"UTFT":
-            raise SystemExit(f"{a.facts}: not a UTFT fact table")
+            raise SystemExit(f"board {a.board} has no knowledge image area")
+        if a.facts.read_bytes()[:4] != b"UTKI":
+            raise SystemExit(f"{a.facts}: not a UTKI knowledge image")
         report["facts"] = str(a.facts)
         rows.append(("facts_bytes", a.facts.stat().st_size, prof["facts_max"]))
     if prof["mapped_window"]:

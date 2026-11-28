@@ -176,7 +176,13 @@ class Device:
         m = re.search(r"Freier Heap: (\d+)", txt)
         if m:
             out["free_heap"] = int(m.group(1))
-        m = re.search(r"Faktentabelle: ([^\r\n]+)", txt)  # hybrid models (specs/006)
+        m = re.search(r"Wissen: ([^\r\n]+)", txt)  # knowledge image (specs/006, specs/008)
         if m:
             out["facts"] = m.group(1).strip()
         return out
+
+    def query(self, view: str, key: str) -> str:
+        """`/wissen <view> <key>`: the answer line from the knowledge image (no model)."""
+        raw = self.command(f"/wissen {view} {key}")
+        answer = raw.split("\r\n", 1)[1] if "\r\n" in raw else raw
+        return answer[: -len(PROMPT)] if answer.endswith(PROMPT) else answer

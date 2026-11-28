@@ -1,6 +1,6 @@
 # Hybrid chemistry teacher on the NodeMCU (specs/006-hybrid-chemielehrer).
 # Factual questions -> function output (<fn> + type letter + key), answered by the board from the
-# fact table (UTFT at flash 0x100000); greetings, refusals and <= 60-char explanations are written
+# knowledge image (UTKI at flash 0x100000, topics/chemie, specs/008); greetings, refusals and <= 60-char explanations are written
 # by the model. NodeMCU dims as configs/chemie-nodemcu-spark.toml (arena within the 40 KB budget).
 #   cd training && NAME=chemie-hybrid tools/spark/train.sh configs/chemie-hybrid.toml 1234
 #   CPU: uv run ut pipeline --config configs/chemie-hybrid.toml --out runs/chemie-hybrid --device cpu

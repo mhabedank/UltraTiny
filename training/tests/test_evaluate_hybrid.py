@@ -2,14 +2,14 @@
 
 import pytest
 
-from ultratiny import facttable as ft
 from ultratiny import hybrid
 from ultratiny.alphabet import EOS, FN, Alphabet
 from ultratiny.datagen import TRAINING_ROOT
 from ultratiny.evaluate import normalize
+from ultratiny.knowledge.image import Image
 
 AB = Alphabet(fn=True)
-TABLE = ft.Table((TRAINING_ROOT.parent / "runtime/tests/fixtures/facts_small.utft").read_bytes())
+TABLE = Image((TRAINING_ROOT.parent / "models/chemie.utki").read_bytes())
 REFUSALS = {normalize(hybrid.UNKNOWN_TEXT), normalize(hybrid.REFUSAL_ANSWER)}
 
 

@@ -111,17 +111,18 @@ static int facts_read(void *u, uint32_t off, void *buf, uint32_t n) {
     return 0;
 }
 
-/* The tiny v2 fixture answers "Ordnungszahl Kupfer?" with <fn>OCu (tiny_v2_golden.json). */
-static void test_fn_console(const char *dir) {
+/* The tiny v2 fixture answers "Ordnungszahl Kupfer?" with <fn>OCu (tiny_v2_golden.json); the
+ * answer comes from the chemistry knowledge image (specs/008, models/chemie.utki). */
+static void test_fn_console(const char *dir, const char *models) {
     size_t n = 0, nf = 0;
     uint8_t *data = load(dir, "tiny_v2.utny", &n);
-    uint8_t *fdata = load(dir, "facts_small.utft", &nf);
+    uint8_t *fdata = load(models, "chemie.utki", &nf);
     CHECK(data && fdata && n && nf);
     if (!data || !fdata) return;
     memset(facts_area, 0xFF, sizeof facts_area);
     memcpy(facts_area, fdata, nf);
-    static ut_facts facts;
-    CHECK(ut_facts_open(&facts, facts_read, NULL, sizeof facts_area) == UT_FACTS_OK);
+    static ut_kb facts;
+    CHECK(ut_kb_open(&facts, facts_read, NULL, sizeof facts_area) == UT_KB_OK);
     ut_model m;
     CHECK(ut_model_open(&m, data, n) == UT_OK);
     CHECK(m.has_fn == 1 && m.n_special == 6);
@@ -161,9 +162,24 @@ static void test_fn_console(const char *dir) {
     CHECK(strstr(f.out, "29.  [\xE2\x9F\xA8" "fn" "\xE2\x9F\xA9" "OCu]") != NULL);
     feed(&k, &f, "/raw aus\r");
 
-    /* /info shows the fact table */
+    /* /info shows the knowledge image; the tiny model has no topic meta (not checked) */
     feed(&k, &f, "/info\r");
-    CHECK(strstr(f.out, "Faktentabelle: OK v1") != NULL);
+    CHECK(strstr(f.out, "Wissen: OK v1, Thema chemie (Schema ") != NULL);
+    CHECK(strstr(f.out, "Thema nicht gepr\xC3\xBC" "ft") != NULL);
+
+    /* /wissen: overview, legacy letter, view name, reverse view, umlauts in keys, timing */
+    feed(&k, &f, "/wissen\r");
+    CHECK(strstr(f.out, "\r\nThema chemie, Schema ") != NULL && strstr(f.out, "ordnungszahl (O)"));
+    feed(&k, &f, "/wissen O Cu\r");
+    CHECK(strstr(f.out, "\r\nDie Ordnungszahl von Kupfer ist 29.\r\n> ") != NULL);
+    feed(&k, &f, "/wissen ordnungszahl< 29\r");
+    CHECK(strstr(f.out, "\r\nDie Ordnungszahl 29 hat Kupfer.\r\n> ") != NULL);
+    feed(&k, &f, "/wissen O Xx\r");
+    CHECK(strstr(f.out, "Die Ordnungszahl von \xE2\x80\x93 Das wei\xC3\x9F ich leider nicht.") != NULL);
+    feed(&k, &f, "/trace an\r");
+    feed(&k, &f, "/wissen O Cu\r");
+    CHECK(strstr(f.out, "\r\nwissen: fact ") != NULL && strstr(f.out, " us") != NULL);
+    feed(&k, &f, "/trace aus\r");
     CHECK(strstr(f.out, "Format v2") == NULL); /* banner line, not /info */
 
     /* Ctrl-C after the prefix: nothing more is printed */
@@ -185,14 +201,16 @@ static void test_fn_console(const char *dir) {
     CHECK(k.state != UT_ST_GENERATING);
 
     /* missing table: model text still works, factual answers say the table is missing */
-    io.facts = NULL;
+    io.kb = NULL;
     ut_console_init(&k, &c, &m, need, &io, UT_OK);
     feed(&k, &f, "Ordnungszahl Kupfer?\r");
     CHECK(strstr(f.out, "Die Faktentabelle fehlt") != NULL);
     feed(&k, &f, "Hi\r");
     CHECK(strstr(f.out, "Hallo!") != NULL);
     feed(&k, &f, "/info\r");
-    CHECK(strstr(f.out, "Faktentabelle: fehlt") != NULL);
+    CHECK(strstr(f.out, "Wissen: fehlt") != NULL);
+    feed(&k, &f, "/wissen O Cu\r");
+    CHECK(strstr(f.out, "Die Faktentabelle fehlt") != NULL);
     free(arena);
     free(data);
     free(fdata);
@@ -448,7 +466,7 @@ int main(int argc, char **argv) {
 
     free(arena);
     free(data);
-    test_fn_console(dir);
+    test_fn_console(dir, argc > 2 ? argv[2] : "../models");
     if (failures) {
         fprintf(stderr, "%d check(s) failed\n", failures);
         return 1;

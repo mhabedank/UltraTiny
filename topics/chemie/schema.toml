@@ -1,0 +1,302 @@
+# Chemistry topic (specs/008-wissens-compiler). Views with a `letter` are the 26 question types of
+# spec 006 (training/data/templates/hybrid.toml); their templates are unchanged so every 006 answer
+# stays byte-identical (compat/utft1_answers.tsv). Grammar beyond fixed templates is spec 010.
+
+[texts]
+unknown = "Das weiß ich leider nicht."
+not_applicable = ": dazu habe ich keine Angabe."
+fallback_sep = "– "
+list_sep = ", "
+list_last = " und "
+
+[classes.element]
+order_by = "ordnungszahl"
+[classes.verbindung]
+[classes.reaktion]
+[classes.nachweisreaktion]
+
+[relations.ordnungszahl]
+subject = "element"
+type = "int"
+reverse = "one"
+
+[relations.atommasse]
+subject = "element"
+type = "text"
+
+[relations.periode]
+subject = "element"
+type = "int"
+
+[relations.gruppe]
+subject = "element"
+type = "text"
+
+[relations.familie]
+subject = "element"
+type = "text"
+
+[relations.kategorie]
+subject = "element"
+type = "text"
+
+[relations.zustand]
+subject = "element"
+type = "text"
+
+[relations.protonen]
+subject = "element"
+type = "int"
+
+[relations.elektronen]
+subject = "element"
+type = "int"
+
+[relations.neutronen]
+subject = "element"
+type = "int"
+
+[relations.aussenelektronen]
+subject = "element"
+type = "int"
+
+[relations.schalen]
+subject = "element"
+type = "int"
+
+[relations.elektronenverteilung]
+subject = "element"
+type = "text"
+
+[relations.ion]
+subject = "element"
+type = "text"
+
+[relations.wertigkeit]
+subject = "element"
+type = "text"
+
+[relations.molare_masse]
+subject = "verbindung"
+type = "text"
+
+[relations.bindung]
+subject = "verbindung"
+type = "text"
+
+[relations.saeure_base]
+subject = "verbindung"
+type = "text"
+
+[relations.gleichung]
+subject = "reaktion"
+type = "text"
+
+[relations.nachweis]
+subject = "nachweisreaktion"
+type = "text"
+
+[relations.gruppe_nr]
+subject = "element"
+type = "int"
+
+[views.symbol]
+kind = "self"
+classes = ["element"]
+letter = "S"
+template = "Das Symbol von {name} ist {key}."
+questions = [{ question = "Welches Symbol hat {name}?", key = "H", expect = "Das Symbol von Wasserstoff ist H." }]
+
+[views.symbol_bedeutung]
+kind = "self"
+classes = ["element"]
+letter = "s"
+template = "Das Symbol {key} steht für {name}."
+questions = [{ question = "Was ist {key}?", key = "H", expect = "Das Symbol H steht für Wasserstoff." }]
+
+[views.ordnungszahl]
+kind = "forward"
+relation = "ordnungszahl"
+letter = "O"
+template = "Die Ordnungszahl von {name} ist {v}."
+questions = [{ question = "Welche Ordnungszahl hat {name}?", key = "H", expect = "Die Ordnungszahl von Wasserstoff ist 1." }]
+
+[views."ordnungszahl<"]
+kind = "reverse"
+relation = "ordnungszahl"
+letter = "o"
+template = "Die Ordnungszahl {key} hat {name}."
+questions = [{ question = "Welches Element hat die Ordnungszahl {key}?", key = "1", expect = "Die Ordnungszahl 1 hat Wasserstoff." }]
+
+[views.atommasse]
+kind = "forward"
+relation = "atommasse"
+letter = "M"
+template = "Die Atommasse von {name} beträgt {v} u."
+questions = [{ question = "Welche Atommasse hat {name}?", key = "H", expect = "Die Atommasse von Wasserstoff beträgt 1,01 u." }]
+
+[views.periode]
+kind = "forward"
+relation = "periode"
+letter = "P"
+template = "Zur Periode: {name} steht in der {v}. Periode."
+questions = [{ question = "In welcher Periode steht {name}?", key = "H", expect = "Zur Periode: Wasserstoff steht in der 1. Periode." }]
+
+[views.gruppe]
+kind = "forward"
+relation = "gruppe"
+letter = "G"
+template = "Die Gruppe von {name} ist: {v}."
+not_applicable = "{name} gebe ich nicht an."
+questions = [{ question = "In welcher Gruppe steht {name}?", key = "H", expect = "Die Gruppe von Wasserstoff ist: 1. Hauptgruppe (Gruppe 1)." }]
+
+[views.familie]
+kind = "forward"
+relation = "familie"
+letter = "F"
+template = "Zur Elementfamilie: {name} gehört zu den {v}."
+not_applicable = "{name} gehört zu keiner der Familien, die ich kenne."
+questions = [{ question = "Zu welcher Elementfamilie gehört {name}?", key = "He", expect = "Zur Elementfamilie: Helium gehört zu den Edelgasen." }]
+
+[views.kategorie]
+kind = "forward"
+relation = "kategorie"
+letter = "K"
+template = "Zur Stoffart: {name} ist ein {v}."
+not_applicable = "bei {name} weiß man das noch nicht genau."
+questions = [{ question = "Ist {name} ein Metall oder ein Nichtmetall?", key = "H", expect = "Zur Stoffart: Wasserstoff ist ein Nichtmetall." }]
+
+[views.zustand]
+kind = "forward"
+relation = "zustand"
+letter = "Z"
+template = "Bei Raumtemperatur ist {name} {v}."
+not_applicable = "der Zustand von {name} noch nicht genau bekannt."
+questions = [{ question = "Welchen Aggregatzustand hat {name} bei Raumtemperatur?", key = "H", expect = "Bei Raumtemperatur ist Wasserstoff gasförmig." }]
+
+[views.protonen]
+kind = "forward"
+relation = "protonen"
+letter = "p"
+template = "Ein Atom {name} hat {v} Protonen."
+questions = [{ question = "Wie viele Protonen hat {name}?", key = "H", expect = "Ein Atom Wasserstoff hat 1 Protonen." }]
+
+[views.elektronen]
+kind = "forward"
+relation = "elektronen"
+letter = "e"
+template = "Ein Atom {name} hat {v} Elektronen."
+questions = [{ question = "Wie viele Elektronen hat {name}?", key = "H", expect = "Ein Atom Wasserstoff hat 1 Elektronen." }]
+
+[views.neutronen]
+kind = "forward"
+relation = "neutronen"
+letter = "n"
+template = "Ein Atom {name} hat meist {v} Neutronen."
+not_applicable = "{name}: die Neutronenzahl gebe ich nicht an."
+questions = [{ question = "Wie viele Neutronen hat {name}?", key = "H", expect = "Ein Atom Wasserstoff hat meist 0 Neutronen." }]
+
+[views.aussenelektronen]
+kind = "forward"
+relation = "aussenelektronen"
+letter = "a"
+template = "Die Zahl der Außenelektronen von {name} ist {v}."
+not_applicable = "{name} gebe ich nicht an, es ist kein Hauptgruppenelement."
+questions = [{ question = "Wie viele Außenelektronen hat {name}?", key = "H", expect = "Die Zahl der Außenelektronen von Wasserstoff ist 1." }]
+
+[views.schalen]
+kind = "forward"
+relation = "schalen"
+letter = "h"
+template = "Die Zahl der Schalen von {name} ist {v}."
+not_applicable = "{name} gebe ich nicht an, es ist kein Hauptgruppenelement."
+questions = [{ question = "Wie viele Schalen hat {name}?", key = "H", expect = "Die Zahl der Schalen von Wasserstoff ist 1." }]
+
+[views.elektronenverteilung]
+kind = "forward"
+relation = "elektronenverteilung"
+letter = "v"
+template = "Die Elektronenverteilung von {name}: {v}."
+not_applicable = "{name} gehört nicht zum Schalenmodell der Schule."
+questions = [{ question = "Wie sind die Elektronen von {name} auf die Schalen verteilt?", key = "H", expect = "Die Elektronenverteilung von Wasserstoff: 1." }]
+
+[views.ion]
+kind = "forward"
+relation = "ion"
+letter = "i"
+template = "Das typische Ion von {name} ist {v}."
+not_applicable = "{name} gibt es nicht."
+questions = [{ question = "Welches Ion bildet {name}?", key = "H", expect = "Das typische Ion von Wasserstoff ist H+ (einfach positiv geladen)." }]
+
+[views.wertigkeit]
+kind = "forward"
+relation = "wertigkeit"
+letter = "w"
+template = "Die Wertigkeit von {name} ist {v}."
+not_applicable = "{name} gebe ich nicht an."
+questions = [{ question = "Welche Wertigkeit hat {name}?", key = "H", expect = "Die Wertigkeit von Wasserstoff ist 1." }]
+
+[views.profil]
+kind = "profile"
+classes = ["element"]
+letter = "E"
+template = "Das Element {name} ({key}) ist ein {r:kategorie} mit der Ordnungszahl {r:ordnungszahl}."
+not_applicable = "{name} kenne ich nicht genau genug für ein Kurzprofil."
+questions = [{ question = "Was ist {name}?", key = "H", expect = "Das Element Wasserstoff (H) ist ein Nichtmetall mit der Ordnungszahl 1." }]
+
+[views.formel]
+kind = "self"
+classes = ["verbindung"]
+letter = "R"
+template = "Die Formel von {name} ist {key}."
+questions = [{ question = "Welche Formel hat {name}?", key = "H2O", expect = "Die Formel von Wasser ist H2O." }]
+
+[views.formel_bedeutung]
+kind = "self"
+classes = ["verbindung"]
+letter = "f"
+template = "Die Formel {key} steht für {name}."
+questions = [{ question = "Was ist {key}?", key = "H2O", expect = "Die Formel H2O steht für Wasser." }]
+
+[views.molare_masse]
+kind = "forward"
+relation = "molare_masse"
+letter = "m"
+template = "Die molare Masse von {name} beträgt {v} g/mol."
+questions = [{ question = "Welche molare Masse hat {name}?", key = "H2O", expect = "Die molare Masse von Wasser beträgt 18,0 g/mol." }]
+
+[views.bindung]
+kind = "forward"
+relation = "bindung"
+letter = "b"
+template = "Die Bindung in {name} ist eine {v}."
+not_applicable = "{name} kann ich nicht angeben."
+questions = [{ question = "Welche Bindungsart liegt in {name} vor?", key = "H2O", expect = "Die Bindung in Wasser ist eine Elektronenpaarbindung." }]
+
+[views.saeure_base]
+kind = "forward"
+relation = "saeure_base"
+letter = "c"
+template = "Säure oder Lauge? {name} ist eine {v}."
+not_applicable = "{name} ist weder Säure noch Lauge."
+questions = [{ question = "Ist {name} eine Säure oder eine Lauge?", key = "NH3", expect = "Säure oder Lauge? Ammoniak ist eine Lauge (pH über 7), gelöst Ammoniakwasser." }]
+
+[views.gleichung]
+kind = "forward"
+relation = "gleichung"
+letter = "q"
+template = "Gleichung für {name}: {v}"
+questions = [{ question = "Wie lautet die Reaktionsgleichung für {name}?", key = "knallgas", expect = "Gleichung für Knallgasreaktion: 2 H2 + O2 → 2 H2O" }]
+
+[views.nachweis]
+kind = "forward"
+relation = "nachweis"
+letter = "t"
+template = "Nachweis für {name}: {v}"
+questions = [{ question = "Wie weist man {name} nach?", key = "wasser", expect = "Nachweis für Wasser: weißes Kupfersulfat färbt sich blau" }]
+
+[views.gruppe_nr]
+kind = "forward"
+relation = "gruppe_nr"
+template = "Die Gruppennummer von {name} ist {v}."
+questions = [{ question = "In welcher Gruppe steht Natrium?", key = "Na", expect = "Die Gruppennummer von Natrium ist 1." }]

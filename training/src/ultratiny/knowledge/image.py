@@ -432,6 +432,18 @@ class Image:
             v = None
         return self.query_view(v, key.encode())
 
+    def outcome(self, fo: str | None) -> str:
+        """Outcome of a function output `letter+key` (without <fn>): fact / na / unknown; "text"
+        for None (a text answer); "missing" without a valid image."""
+        if fo is None:
+            return "text"
+        if not self.ok:
+            return "missing"
+        v = self.view_by_letter(fo[:1]) if fo else None
+        if v is None:
+            return "unknown"
+        return self.lookup(v, fo[1:].encode())[0]
+
     # ---------------------------------------------------------------- coverage
 
     def candidate_keys(self, v: ViewEntry) -> list[bytes]:

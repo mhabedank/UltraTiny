@@ -24,7 +24,7 @@ def test_pipeline_cpu_runs_are_byte_identical(tmp_path):
 
 
 def test_hybrid_datagen_and_training_deterministic(tmp_path):
-    """specs/006 FR-015: same config + seed -> identical data, fact table and model."""
+    """specs/006 FR-015: same config + seed -> identical data, knowledge image and model."""
     from dataclasses import replace
 
     from ultratiny import hybrid
@@ -39,7 +39,7 @@ def test_hybrid_datagen_and_training_deterministic(tmp_path):
         stats = hybrid.generate(cfg, out / "data", 7)
         train(cfg, out / "data", out, 7, "cpu", log=lambda *_: None)
         state = (out / "ckpt.pt").read_bytes()
-        digests.append((stats["sha256"], (out / "data/facts.utft").read_bytes(),
+        digests.append((stats["sha256"], (out / "data/knowledge.utki").read_bytes(),
                         hashlib.sha256(state).hexdigest()))  # fmt: skip
     assert digests[0][:2] == digests[1][:2]
     from ultratiny.train import load_checkpoint

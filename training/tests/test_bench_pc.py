@@ -9,7 +9,7 @@ from ultratiny.bench.suite import load_suite
 
 FIX = Path(__file__).parent / "fixtures"
 TINY_V2 = Path(__file__).parents[2] / "runtime" / "tests" / "fixtures" / "tiny_v2.utny"
-FACTS = Path(__file__).parents[2] / "runtime" / "tests" / "fixtures" / "facts_small.utft"
+FACTS = Path(__file__).parents[2] / "models" / "chemie.utki"
 KPIS = [
     "F1",
     "F2",
@@ -17,10 +17,12 @@ KPIS = [
     "F4",
     "F5",
     "F6",
+    "F7",
     "R1",
     "R2",
     "R3",
     "R4",
+    "R5",
     "S1",
     "S2",
     "S3",

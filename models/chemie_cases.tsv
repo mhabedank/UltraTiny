@@ -1,0 +1,336 @@
+view	key	outcome	answer
+S	H	fact	Das Symbol von Wasserstoff ist H.
+S	He	fact	Das Symbol von Helium ist He.
+S	Li	fact	Das Symbol von Lithium ist Li.
+S	Be	fact	Das Symbol von Beryllium ist Be.
+S	B	fact	Das Symbol von Bor ist B.
+S	Fl	fact	Das Symbol von Flerovium ist Fl.
+S	Mc	fact	Das Symbol von Moscovium ist Mc.
+S	Lv	fact	Das Symbol von Livermorium ist Lv.
+S	Ts	fact	Das Symbol von Tenness ist Ts.
+S	Og	fact	Das Symbol von Oganesson ist Og.
+S	H2O	na	Das Symbol von Wasser: dazu habe ich keine Angabe.
+S	Xyz	unknown	Das Symbol von – Das weiß ich leider nicht.
+s	H	fact	Das Symbol H steht für Wasserstoff.
+s	He	fact	Das Symbol He steht für Helium.
+s	Li	fact	Das Symbol Li steht für Lithium.
+s	Be	fact	Das Symbol Be steht für Beryllium.
+s	B	fact	Das Symbol B steht für Bor.
+s	Fl	fact	Das Symbol Fl steht für Flerovium.
+s	Mc	fact	Das Symbol Mc steht für Moscovium.
+s	Lv	fact	Das Symbol Lv steht für Livermorium.
+s	Ts	fact	Das Symbol Ts steht für Tenness.
+s	Og	fact	Das Symbol Og steht für Oganesson.
+s	H2O	na	Das Symbol Wasser: dazu habe ich keine Angabe.
+s	Xyz	unknown	Das Symbol – Das weiß ich leider nicht.
+O	H	fact	Die Ordnungszahl von Wasserstoff ist 1.
+O	He	fact	Die Ordnungszahl von Helium ist 2.
+O	Li	fact	Die Ordnungszahl von Lithium ist 3.
+O	Be	fact	Die Ordnungszahl von Beryllium ist 4.
+O	B	fact	Die Ordnungszahl von Bor ist 5.
+O	Fl	fact	Die Ordnungszahl von Flerovium ist 114.
+O	Mc	fact	Die Ordnungszahl von Moscovium ist 115.
+O	Lv	fact	Die Ordnungszahl von Livermorium ist 116.
+O	Ts	fact	Die Ordnungszahl von Tenness ist 117.
+O	Og	fact	Die Ordnungszahl von Oganesson ist 118.
+O	H2O	na	Die Ordnungszahl von Wasser: dazu habe ich keine Angabe.
+O	Xyz	unknown	Die Ordnungszahl von – Das weiß ich leider nicht.
+o	1	fact	Die Ordnungszahl 1 hat Wasserstoff.
+o	10	fact	Die Ordnungszahl 10 hat Neon.
+o	100	fact	Die Ordnungszahl 100 hat Fermium.
+o	101	fact	Die Ordnungszahl 101 hat Mendelevium.
+o	102	fact	Die Ordnungszahl 102 hat Nobelium.
+o	95	fact	Die Ordnungszahl 95 hat Americium.
+o	96	fact	Die Ordnungszahl 96 hat Curium.
+o	97	fact	Die Ordnungszahl 97 hat Berkelium.
+o	98	fact	Die Ordnungszahl 98 hat Californium.
+o	99	fact	Die Ordnungszahl 99 hat Einsteinium.
+o	Xyz	unknown	Die Ordnungszahl – Das weiß ich leider nicht.
+M	H	fact	Die Atommasse von Wasserstoff beträgt 1,01 u.
+M	He	fact	Die Atommasse von Helium beträgt 4,00 u.
+M	Li	fact	Die Atommasse von Lithium beträgt 6,94 u.
+M	Be	fact	Die Atommasse von Beryllium beträgt 9,01 u.
+M	B	fact	Die Atommasse von Bor beträgt 10,81 u.
+M	Fl	fact	Die Atommasse von Flerovium beträgt 289 u.
+M	Mc	fact	Die Atommasse von Moscovium beträgt 290 u.
+M	Lv	fact	Die Atommasse von Livermorium beträgt 293 u.
+M	Ts	fact	Die Atommasse von Tenness beträgt 294 u.
+M	Og	fact	Die Atommasse von Oganesson beträgt 294 u.
+M	H2O	na	Die Atommasse von Wasser: dazu habe ich keine Angabe.
+M	Xyz	unknown	Die Atommasse von – Das weiß ich leider nicht.
+P	H	fact	Zur Periode: Wasserstoff steht in der 1. Periode.
+P	He	fact	Zur Periode: Helium steht in der 1. Periode.
+P	Li	fact	Zur Periode: Lithium steht in der 2. Periode.
+P	Be	fact	Zur Periode: Beryllium steht in der 2. Periode.
+P	B	fact	Zur Periode: Bor steht in der 2. Periode.
+P	Fl	fact	Zur Periode: Flerovium steht in der 7. Periode.
+P	Mc	fact	Zur Periode: Moscovium steht in der 7. Periode.
+P	Lv	fact	Zur Periode: Livermorium steht in der 7. Periode.
+P	Ts	fact	Zur Periode: Tenness steht in der 7. Periode.
+P	Og	fact	Zur Periode: Oganesson steht in der 7. Periode.
+P	H2O	na	Zur Periode: Wasser: dazu habe ich keine Angabe.
+P	Xyz	unknown	Zur Periode: – Das weiß ich leider nicht.
+G	H	fact	Die Gruppe von Wasserstoff ist: 1. Hauptgruppe (Gruppe 1).
+G	He	fact	Die Gruppe von Helium ist: 8. Hauptgruppe (Gruppe 18).
+G	Li	fact	Die Gruppe von Lithium ist: 1. Hauptgruppe (Gruppe 1).
+G	Be	fact	Die Gruppe von Beryllium ist: 2. Hauptgruppe (Gruppe 2).
+G	B	fact	Die Gruppe von Bor ist: 3. Hauptgruppe (Gruppe 13).
+G	Fl	fact	Die Gruppe von Flerovium ist: 4. Hauptgruppe (Gruppe 14).
+G	Mc	fact	Die Gruppe von Moscovium ist: 5. Hauptgruppe (Gruppe 15).
+G	Lv	fact	Die Gruppe von Livermorium ist: 6. Hauptgruppe (Gruppe 16).
+G	Ts	fact	Die Gruppe von Tenness ist: 7. Hauptgruppe (Gruppe 17).
+G	Og	fact	Die Gruppe von Oganesson ist: 8. Hauptgruppe (Gruppe 18).
+G	La	na	Die Gruppe von Lanthan gebe ich nicht an.
+G	Xyz	unknown	Die Gruppe von – Das weiß ich leider nicht.
+F	He	fact	Zur Elementfamilie: Helium gehört zu den Edelgasen.
+F	Li	fact	Zur Elementfamilie: Lithium gehört zu den Alkalimetallen.
+F	Be	fact	Zur Elementfamilie: Beryllium gehört zu den Erdalkalimetallen.
+F	O	fact	Zur Elementfamilie: Sauerstoff gehört zu den Chalkogenen.
+F	F	fact	Zur Elementfamilie: Fluor gehört zu den Halogenen.
+F	Fm	fact	Zur Elementfamilie: Fermium gehört zu den Actinoiden.
+F	Md	fact	Zur Elementfamilie: Mendelevium gehört zu den Actinoiden.
+F	No	fact	Zur Elementfamilie: Nobelium gehört zu den Actinoiden.
+F	Lr	fact	Zur Elementfamilie: Lawrencium gehört zu den Actinoiden.
+F	Og	fact	Zur Elementfamilie: Oganesson gehört zu den Edelgasen.
+F	H	na	Zur Elementfamilie: Wasserstoff gehört zu keiner der Familien, die ich kenne.
+F	Xyz	unknown	Zur Elementfamilie: – Das weiß ich leider nicht.
+K	H	fact	Zur Stoffart: Wasserstoff ist ein Nichtmetall.
+K	He	fact	Zur Stoffart: Helium ist ein Nichtmetall.
+K	Li	fact	Zur Stoffart: Lithium ist ein Metall.
+K	Be	fact	Zur Stoffart: Beryllium ist ein Metall.
+K	B	fact	Zur Stoffart: Bor ist ein Halbmetall.
+K	Es	fact	Zur Stoffart: Einsteinium ist ein Metall.
+K	Fm	fact	Zur Stoffart: Fermium ist ein Metall.
+K	Md	fact	Zur Stoffart: Mendelevium ist ein Metall.
+K	No	fact	Zur Stoffart: Nobelium ist ein Metall.
+K	Lr	fact	Zur Stoffart: Lawrencium ist ein Metall.
+K	Rf	na	Zur Stoffart: bei Rutherfordium weiß man das noch nicht genau.
+K	Xyz	unknown	Zur Stoffart: – Das weiß ich leider nicht.
+Z	H	fact	Bei Raumtemperatur ist Wasserstoff gasförmig.
+Z	He	fact	Bei Raumtemperatur ist Helium gasförmig.
+Z	Li	fact	Bei Raumtemperatur ist Lithium fest.
+Z	Be	fact	Bei Raumtemperatur ist Beryllium fest.
+Z	B	fact	Bei Raumtemperatur ist Bor fest.
+Z	Es	fact	Bei Raumtemperatur ist Einsteinium fest.
+Z	Fm	fact	Bei Raumtemperatur ist Fermium fest.
+Z	Md	fact	Bei Raumtemperatur ist Mendelevium fest.
+Z	No	fact	Bei Raumtemperatur ist Nobelium fest.
+Z	Lr	fact	Bei Raumtemperatur ist Lawrencium fest.
+Z	Rf	na	Bei Raumtemperatur ist der Zustand von Rutherfordium noch nicht genau bekannt.
+Z	Xyz	unknown	Bei Raumtemperatur ist – Das weiß ich leider nicht.
+p	H	fact	Ein Atom Wasserstoff hat 1 Protonen.
+p	He	fact	Ein Atom Helium hat 2 Protonen.
+p	Li	fact	Ein Atom Lithium hat 3 Protonen.
+p	Be	fact	Ein Atom Beryllium hat 4 Protonen.
+p	B	fact	Ein Atom Bor hat 5 Protonen.
+p	Fl	fact	Ein Atom Flerovium hat 114 Protonen.
+p	Mc	fact	Ein Atom Moscovium hat 115 Protonen.
+p	Lv	fact	Ein Atom Livermorium hat 116 Protonen.
+p	Ts	fact	Ein Atom Tenness hat 117 Protonen.
+p	Og	fact	Ein Atom Oganesson hat 118 Protonen.
+p	H2O	na	Ein Atom Wasser: dazu habe ich keine Angabe.
+p	Xyz	unknown	Ein Atom – Das weiß ich leider nicht.
+e	H	fact	Ein Atom Wasserstoff hat 1 Elektronen.
+e	He	fact	Ein Atom Helium hat 2 Elektronen.
+e	Li	fact	Ein Atom Lithium hat 3 Elektronen.
+e	Be	fact	Ein Atom Beryllium hat 4 Elektronen.
+e	B	fact	Ein Atom Bor hat 5 Elektronen.
+e	Fl	fact	Ein Atom Flerovium hat 114 Elektronen.
+e	Mc	fact	Ein Atom Moscovium hat 115 Elektronen.
+e	Lv	fact	Ein Atom Livermorium hat 116 Elektronen.
+e	Ts	fact	Ein Atom Tenness hat 117 Elektronen.
+e	Og	fact	Ein Atom Oganesson hat 118 Elektronen.
+e	H2O	na	Ein Atom Wasser: dazu habe ich keine Angabe.
+e	Xyz	unknown	Ein Atom – Das weiß ich leider nicht.
+n	H	fact	Ein Atom Wasserstoff hat meist 0 Neutronen.
+n	He	fact	Ein Atom Helium hat meist 2 Neutronen.
+n	Li	fact	Ein Atom Lithium hat meist 4 Neutronen.
+n	Be	fact	Ein Atom Beryllium hat meist 5 Neutronen.
+n	B	fact	Ein Atom Bor hat meist 6 Neutronen.
+n	Es	fact	Ein Atom Einsteinium hat meist 153 Neutronen.
+n	Fm	fact	Ein Atom Fermium hat meist 157 Neutronen.
+n	Md	fact	Ein Atom Mendelevium hat meist 157 Neutronen.
+n	No	fact	Ein Atom Nobelium hat meist 157 Neutronen.
+n	Lr	fact	Ein Atom Lawrencium hat meist 163 Neutronen.
+n	Rf	na	Ein Atom Rutherfordium: die Neutronenzahl gebe ich nicht an.
+n	Xyz	unknown	Ein Atom – Das weiß ich leider nicht.
+a	H	fact	Die Zahl der Außenelektronen von Wasserstoff ist 1.
+a	He	fact	Die Zahl der Außenelektronen von Helium ist 2.
+a	Li	fact	Die Zahl der Außenelektronen von Lithium ist 1.
+a	Be	fact	Die Zahl der Außenelektronen von Beryllium ist 2.
+a	B	fact	Die Zahl der Außenelektronen von Bor ist 3.
+a	Po	fact	Die Zahl der Außenelektronen von Polonium ist 6.
+a	At	fact	Die Zahl der Außenelektronen von Astat ist 7.
+a	Rn	fact	Die Zahl der Außenelektronen von Radon ist 8.
+a	Fr	fact	Die Zahl der Außenelektronen von Francium ist 1.
+a	Ra	fact	Die Zahl der Außenelektronen von Radium ist 2.
+a	Sc	na	Die Zahl der Außenelektronen von Scandium gebe ich nicht an, es ist kein Hauptgruppenelement.
+a	Xyz	unknown	Die Zahl der Außenelektronen von – Das weiß ich leider nicht.
+h	H	fact	Die Zahl der Schalen von Wasserstoff ist 1.
+h	He	fact	Die Zahl der Schalen von Helium ist 1.
+h	Li	fact	Die Zahl der Schalen von Lithium ist 2.
+h	Be	fact	Die Zahl der Schalen von Beryllium ist 2.
+h	B	fact	Die Zahl der Schalen von Bor ist 2.
+h	Po	fact	Die Zahl der Schalen von Polonium ist 6.
+h	At	fact	Die Zahl der Schalen von Astat ist 6.
+h	Rn	fact	Die Zahl der Schalen von Radon ist 6.
+h	Fr	fact	Die Zahl der Schalen von Francium ist 7.
+h	Ra	fact	Die Zahl der Schalen von Radium ist 7.
+h	Sc	na	Die Zahl der Schalen von Scandium gebe ich nicht an, es ist kein Hauptgruppenelement.
+h	Xyz	unknown	Die Zahl der Schalen von – Das weiß ich leider nicht.
+v	H	fact	Die Elektronenverteilung von Wasserstoff: 1.
+v	He	fact	Die Elektronenverteilung von Helium: 2.
+v	Li	fact	Die Elektronenverteilung von Lithium: 2, 1.
+v	Be	fact	Die Elektronenverteilung von Beryllium: 2, 2.
+v	B	fact	Die Elektronenverteilung von Bor: 2, 3.
+v	Ge	fact	Die Elektronenverteilung von Germanium: 2, 8, 18, 4.
+v	As	fact	Die Elektronenverteilung von Arsen: 2, 8, 18, 5.
+v	Se	fact	Die Elektronenverteilung von Selen: 2, 8, 18, 6.
+v	Br	fact	Die Elektronenverteilung von Brom: 2, 8, 18, 7.
+v	Kr	fact	Die Elektronenverteilung von Krypton: 2, 8, 18, 8.
+v	Sc	na	Die Elektronenverteilung von Scandium gehört nicht zum Schalenmodell der Schule.
+v	Xyz	unknown	Die Elektronenverteilung von – Das weiß ich leider nicht.
+i	H	fact	Das typische Ion von Wasserstoff ist H+ (einfach positiv geladen).
+i	Li	fact	Das typische Ion von Lithium ist Li+ (einfach positiv geladen).
+i	Be	fact	Das typische Ion von Beryllium ist Be2+ (zweifach positiv geladen).
+i	N	fact	Das typische Ion von Stickstoff ist N3- (dreifach negativ geladen).
+i	O	fact	Das typische Ion von Sauerstoff ist O2- (zweifach negativ geladen).
+i	Cs	fact	Das typische Ion von Caesium ist Cs+ (einfach positiv geladen).
+i	Ba	fact	Das typische Ion von Barium ist Ba2+ (zweifach positiv geladen).
+i	Tl	fact	Das typische Ion von Thallium ist Tl3+ (dreifach positiv geladen).
+i	Fr	fact	Das typische Ion von Francium ist Fr+ (einfach positiv geladen).
+i	Ra	fact	Das typische Ion von Radium ist Ra2+ (zweifach positiv geladen).
+i	He	na	Das typische Ion von Helium gibt es nicht.
+i	Xyz	unknown	Das typische Ion von – Das weiß ich leider nicht.
+w	H	fact	Die Wertigkeit von Wasserstoff ist 1.
+w	Li	fact	Die Wertigkeit von Lithium ist 1.
+w	Be	fact	Die Wertigkeit von Beryllium ist 2.
+w	B	fact	Die Wertigkeit von Bor ist 3.
+w	C	fact	Die Wertigkeit von Kohlenstoff ist 4.
+w	Bi	fact	Die Wertigkeit von Bismut ist 3.
+w	Po	fact	Die Wertigkeit von Polonium ist 2.
+w	At	fact	Die Wertigkeit von Astat ist 1.
+w	Fr	fact	Die Wertigkeit von Francium ist 1.
+w	Ra	fact	Die Wertigkeit von Radium ist 2.
+w	He	na	Die Wertigkeit von Helium gebe ich nicht an.
+w	Xyz	unknown	Die Wertigkeit von – Das weiß ich leider nicht.
+E	H	fact	Das Element Wasserstoff (H) ist ein Nichtmetall mit der Ordnungszahl 1.
+E	He	fact	Das Element Helium (He) ist ein Nichtmetall mit der Ordnungszahl 2.
+E	Li	fact	Das Element Lithium (Li) ist ein Metall mit der Ordnungszahl 3.
+E	Be	fact	Das Element Beryllium (Be) ist ein Metall mit der Ordnungszahl 4.
+E	B	fact	Das Element Bor (B) ist ein Halbmetall mit der Ordnungszahl 5.
+E	Es	fact	Das Element Einsteinium (Es) ist ein Metall mit der Ordnungszahl 99.
+E	Fm	fact	Das Element Fermium (Fm) ist ein Metall mit der Ordnungszahl 100.
+E	Md	fact	Das Element Mendelevium (Md) ist ein Metall mit der Ordnungszahl 101.
+E	No	fact	Das Element Nobelium (No) ist ein Metall mit der Ordnungszahl 102.
+E	Lr	fact	Das Element Lawrencium (Lr) ist ein Metall mit der Ordnungszahl 103.
+E	Rf	na	Das Element Rutherfordium kenne ich nicht genau genug für ein Kurzprofil.
+E	Xyz	unknown	Das Element – Das weiß ich leider nicht.
+R	H2O	fact	Die Formel von Wasser ist H2O.
+R	H2O2	fact	Die Formel von Wasserstoffperoxid ist H2O2.
+R	CO2	fact	Die Formel von Kohlenstoffdioxid ist CO2.
+R	CO	fact	Die Formel von Kohlenstoffmonooxid ist CO.
+R	SO2	fact	Die Formel von Schwefeldioxid ist SO2.
+R	AlBr3	fact	Die Formel von Aluminiumbromid ist AlBr3.
+R	AlI3	fact	Die Formel von Aluminiumiodid ist AlI3.
+R	Al2S3	fact	Die Formel von Aluminiumsulfid ist Al2S3.
+R	AlN	fact	Die Formel von Aluminiumnitrid ist AlN.
+R	AlP	fact	Die Formel von Aluminiumphosphid ist AlP.
+R	H	na	Die Formel von Wasserstoff: dazu habe ich keine Angabe.
+R	Xyz	unknown	Die Formel von – Das weiß ich leider nicht.
+f	H2O	fact	Die Formel H2O steht für Wasser.
+f	H2O2	fact	Die Formel H2O2 steht für Wasserstoffperoxid.
+f	CO2	fact	Die Formel CO2 steht für Kohlenstoffdioxid.
+f	CO	fact	Die Formel CO steht für Kohlenstoffmonooxid.
+f	SO2	fact	Die Formel SO2 steht für Schwefeldioxid.
+f	AlBr3	fact	Die Formel AlBr3 steht für Aluminiumbromid.
+f	AlI3	fact	Die Formel AlI3 steht für Aluminiumiodid.
+f	Al2S3	fact	Die Formel Al2S3 steht für Aluminiumsulfid.
+f	AlN	fact	Die Formel AlN steht für Aluminiumnitrid.
+f	AlP	fact	Die Formel AlP steht für Aluminiumphosphid.
+f	H	na	Die Formel Wasserstoff: dazu habe ich keine Angabe.
+f	Xyz	unknown	Die Formel – Das weiß ich leider nicht.
+m	H2O	fact	Die molare Masse von Wasser beträgt 18,0 g/mol.
+m	H2O2	fact	Die molare Masse von Wasserstoffperoxid beträgt 34,0 g/mol.
+m	CO2	fact	Die molare Masse von Kohlenstoffdioxid beträgt 44,0 g/mol.
+m	CO	fact	Die molare Masse von Kohlenstoffmonooxid beträgt 28,0 g/mol.
+m	SO2	fact	Die molare Masse von Schwefeldioxid beträgt 64,1 g/mol.
+m	AlBr3	fact	Die molare Masse von Aluminiumbromid beträgt 266,7 g/mol.
+m	AlI3	fact	Die molare Masse von Aluminiumiodid beträgt 407,7 g/mol.
+m	Al2S3	fact	Die molare Masse von Aluminiumsulfid beträgt 150,3 g/mol.
+m	AlN	fact	Die molare Masse von Aluminiumnitrid beträgt 41,0 g/mol.
+m	AlP	fact	Die molare Masse von Aluminiumphosphid beträgt 58,0 g/mol.
+m	H	na	Die molare Masse von Wasserstoff: dazu habe ich keine Angabe.
+m	Xyz	unknown	Die molare Masse von – Das weiß ich leider nicht.
+b	H2O	fact	Die Bindung in Wasser ist eine Elektronenpaarbindung.
+b	H2O2	fact	Die Bindung in Wasserstoffperoxid ist eine Elektronenpaarbindung.
+b	CO2	fact	Die Bindung in Kohlenstoffdioxid ist eine Elektronenpaarbindung.
+b	CO	fact	Die Bindung in Kohlenstoffmonooxid ist eine Elektronenpaarbindung.
+b	SO2	fact	Die Bindung in Schwefeldioxid ist eine Elektronenpaarbindung.
+b	AlBr3	fact	Die Bindung in Aluminiumbromid ist eine Ionenbindung.
+b	AlI3	fact	Die Bindung in Aluminiumiodid ist eine Ionenbindung.
+b	Al2S3	fact	Die Bindung in Aluminiumsulfid ist eine Ionenbindung.
+b	AlN	fact	Die Bindung in Aluminiumnitrid ist eine Ionenbindung.
+b	AlP	fact	Die Bindung in Aluminiumphosphid ist eine Ionenbindung.
+b	H	na	Die Bindung in Wasserstoff kann ich nicht angeben.
+b	Xyz	unknown	Die Bindung in – Das weiß ich leider nicht.
+c	NH3	fact	Säure oder Lauge? Ammoniak ist eine Lauge (pH über 7), gelöst Ammoniakwasser.
+c	CH3COOH	fact	Säure oder Lauge? Essigsäure ist eine schwache Säure (pH unter 7).
+c	HCOOH	fact	Säure oder Lauge? Ameisensäure ist eine schwache Säure (pH unter 7).
+c	HCl	fact	Säure oder Lauge? Salzsäure ist eine Säure (pH unter 7).
+c	H2SO4	fact	Säure oder Lauge? Schwefelsäure ist eine Säure (pH unter 7).
+c	H2SO3	fact	Säure oder Lauge? Schweflige Säure ist eine Säure (pH unter 7).
+c	HNO3	fact	Säure oder Lauge? Salpetersäure ist eine Säure (pH unter 7).
+c	H3PO4	fact	Säure oder Lauge? Phosphorsäure ist eine Säure (pH unter 7).
+c	H2CO3	fact	Säure oder Lauge? Kohlensäure ist eine schwache Säure (pH unter 7).
+c	NaOH	fact	Säure oder Lauge? Natriumhydroxid ist eine Lauge (pH über 7), gelöst Natronlauge.
+c	KOH	fact	Säure oder Lauge? Kaliumhydroxid ist eine Lauge (pH über 7), gelöst Kalilauge.
+c	Ca(OH)2	fact	Säure oder Lauge? Calciumhydroxid ist eine Lauge (pH über 7), gelöst Kalkwasser.
+c	Mg(OH)2	fact	Säure oder Lauge? Magnesiumhydroxid ist eine schwache Lauge (pH über 7).
+c	H2O	na	Säure oder Lauge? Wasser ist weder Säure noch Lauge.
+c	Xyz	unknown	Säure oder Lauge? – Das weiß ich leider nicht.
+q	knallgas	fact	Gleichung für Knallgasreaktion: 2 H2 + O2 → 2 H2O
+q	elektrolyse	fact	Gleichung für Elektrolyse von Wasser: 2 H2O → 2 H2 + O2
+q	kohlebrand	fact	Gleichung für Verbrennung von Kohlenstoff: C + O2 → CO2
+q	methanbrand	fact	Gleichung für Verbrennung von Methan: CH4 + 2 O2 → CO2 + 2 H2O
+q	mgbrand	fact	Gleichung für Verbrennung von Magnesium: 2 Mg + O2 → 2 MgO
+q	eisenbrand	fact	Gleichung für Verbrennung von Eisen: 3 Fe + 2 O2 → Fe3O4
+q	kohlensaeure	fact	Gleichung für Bildung von Kohlensäure: CO2 + H2O → H2CO3
+q	agcl	fact	Gleichung für Fällung von Silberchlorid: AgNO3 + NaCl → AgCl + NaNO3
+q	ethanolbrand	fact	Gleichung für Verbrennung von Ethanol: C2H5OH + 3 O2 → 2 CO2 + 3 H2O
+q	propanbrand	fact	Gleichung für Verbrennung von Propan: C3H8 + 5 O2 → 3 CO2 + 4 H2O
+q	H	na	Gleichung für Wasserstoff: dazu habe ich keine Angabe.
+q	Xyz	unknown	Gleichung für – Das weiß ich leider nicht.
+t	wasser	fact	Nachweis für Wasser: weißes Kupfersulfat färbt sich blau
+t	co2	fact	Nachweis für Kohlenstoffdioxid: Kalkwasser wird trüb
+t	sauerstoff	fact	Nachweis für Sauerstoff: ein glimmender Holzspan flammt auf
+t	wasserstoff	fact	Nachweis für Wasserstoff: Knallgasprobe: es ploppt oder pfeift
+t	chlorid	fact	Nachweis für Chlorid-Ionen: Silbernitrat gibt weißen Niederschlag
+t	saeure	fact	Nachweis für Säuren: Indikator färbt sich rot, pH unter 7
+t	lauge	fact	Nachweis für Laugen: Indikator färbt sich blau, pH über 7
+t	staerke	fact	Nachweis für Stärke: Iod-Lösung färbt sich blauschwarz
+t	sulfat	fact	Nachweis für Sulfat-Ionen: Bariumchlorid gibt weißen Niederschlag
+t	carbonat	fact	Nachweis für Carbonat-Ionen: mit Säure entsteht Kohlenstoffdioxid
+t	natrium	fact	Nachweis für Natrium: gelbe Flammenfärbung
+t	kalium	fact	Nachweis für Kalium: violette Flammenfärbung
+t	lithium	fact	Nachweis für Lithium: rote Flammenfärbung
+t	kupfer	fact	Nachweis für Kupfer: grüne Flammenfärbung
+t	calcium	fact	Nachweis für Calcium: ziegelrote Flammenfärbung
+t	glucose	fact	Nachweis für Glucose: Fehling-Probe: roter Niederschlag
+t	ammoniak	fact	Nachweis für Ammoniak: feuchtes Indikatorpapier wird blau
+t	fett	fact	Nachweis für Fett: Fettfleckprobe: durchscheinender Fleck
+t	eiweiss	fact	Nachweis für Eiweiß: Biuret-Probe: violette Färbung
+t	H	na	Nachweis für Wasserstoff: dazu habe ich keine Angabe.
+t	Xyz	unknown	Nachweis für – Das weiß ich leider nicht.
+gruppe_nr	H	fact	Die Gruppennummer von Wasserstoff ist 1.
+gruppe_nr	He	fact	Die Gruppennummer von Helium ist 18.
+gruppe_nr	Li	fact	Die Gruppennummer von Lithium ist 1.
+gruppe_nr	Be	fact	Die Gruppennummer von Beryllium ist 2.
+gruppe_nr	B	fact	Die Gruppennummer von Bor ist 13.
+gruppe_nr	Fl	fact	Die Gruppennummer von Flerovium ist 14.
+gruppe_nr	Mc	fact	Die Gruppennummer von Moscovium ist 15.
+gruppe_nr	Lv	fact	Die Gruppennummer von Livermorium ist 16.
+gruppe_nr	Ts	fact	Die Gruppennummer von Tenness ist 17.
+gruppe_nr	Og	fact	Die Gruppennummer von Oganesson ist 18.
+gruppe_nr	La	na	Die Gruppennummer von Lanthan: dazu habe ich keine Angabe.
+gruppe_nr	Xyz	unknown	Die Gruppennummer von – Das weiß ich leider nicht.

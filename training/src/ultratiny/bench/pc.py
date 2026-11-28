@@ -174,6 +174,14 @@ def run_pc(
         if f6
         else not_measured("F6 is 0 or not measured")
     )
+    # image-only KPIs (specs/008 research R13): answerable facts and bytes per fact of the image
+    if subject.table is not None and getattr(subject.table, "ok", False):
+        f7 = subject.table.count_answerable()
+        kpis["F7"] = kpi(f7)
+        kpis["R5"] = kpi(round(kpis["R3"]["value"] / f7, 2)) if f7 else not_measured("F7 is 0")
+    else:
+        kpis["F7"] = not_measured("no knowledge image")
+        kpis["R5"] = not_measured("no knowledge image")
     if only is None or "s1" in only:
         kpis["S1"] = s1_kpi(subject, suite.s1, Progress("S1 Zeichen", s1_chars(suite), log).step)
     else:

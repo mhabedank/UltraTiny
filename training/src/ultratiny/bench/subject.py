@@ -17,7 +17,7 @@ from pathlib import Path
 
 import numpy as np
 
-from .. import facttable as ft
+from ..knowledge import image as kimage
 from ..reference import Reference, arena_size
 
 ANSWER_RESERVE = 32  # UT_ANSWER_RESERVE in runtime/include/utiny_console.h
@@ -42,11 +42,11 @@ class TransformerSubject:
         self.window = self.ctx_len
         self.table = None
         if self.facts_path is not None:
-            self.table = ft.read(self.facts_path)
+            self.table = kimage.read(self.facts_path)
             if not self.table.ok:
-                raise ValueError(f"{self.facts_path}: fact table invalid or missing")
+                raise ValueError(f"{self.facts_path}: knowledge image invalid or missing")
         elif self.alphabet.fn:
-            self.table = ft.Table(None)  # v2 model without table: prints the "missing" text
+            self.table = kimage.Image(None)  # v2 model without image: prints the "missing" text
 
     # ---------------------------------------------------------------- answers
 
@@ -64,7 +64,7 @@ class TransformerSubject:
         if len(question) > self.max_question():
             return "", True  # the console refuses the extra characters
         toks = self.ref.generate(question, max_len=self.ctx_len - 3)["tokens"]
-        text = ft.answer_bytes(toks, self.alphabet, self.table).decode("utf-8", "replace")
+        text = kimage.answer_bytes(toks, self.alphabet, self.table).decode("utf-8", "replace")
         return text, False
 
     # ---------------------------------------------------------------- bits

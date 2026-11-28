@@ -18,6 +18,17 @@ jobs:
       - run: uv run ruff check .
       - run: uv run ruff format --check .
       - run: uv run pytest -q
+      - name: Knowledge topics (specs/008): preparation steps current, images current, compat
+        run: |
+          for prep in ../topics/*/prepare.py; do
+            [ -f "$prep" ] && uv run python "$prep" --check
+          done
+          for t in ../topics/*/; do
+            id=$(basename "$t")
+            compat=""
+            if grep -q '^\[compat\]' "$t/topic.toml"; then compat="--compat"; fi
+            uv run ut knowledge check --topic "$t" --image "../models/$id.utki" $compat
+          done
       - name: Benchmark check of the repo model (specs/007 FR-024; any change fails)
         run: >-
           uv run python ../tools/bench.py pc --suite ../bench/suites/allgemein
@@ -42,7 +53,7 @@ jobs:
         run: |
           uv sync
           uv run python ../tools/budget_report.py --board nodemcu --model ../models/nodemcu.utny
-          uv run python ../tools/budget_report.py --board nodemcu --model ../runtime/tests/fixtures/tiny_v2.utny --facts ../runtime/tests/fixtures/facts_small.utft
+          uv run python ../tools/budget_report.py --board nodemcu --model ../runtime/tests/fixtures/tiny_v2.utny --facts ../models/chemie.utki
           uv run python ../tools/budget_report.py --board esp32 --model ../models/starter.utny
       - name: Benchmark board mode against the host console (specs/007, parity sample)
         working-directory: training
@@ -89,4 +100,4 @@ jobs:
         run: >-
           python tools/budget_report.py --board nodemcu --model models/nodemcu.utny
           --pio-build firmware-nodemcu/.pio/build/nodemcuv2
-          --facts runtime/tests/fixtures/facts_small.utft
+          --facts models/chemie.utki

@@ -18,7 +18,7 @@ from pathlib import Path
 from .pc import read_ratings, s3_from_ratings, sheet_path
 from .suite import KPI_IDS, REPO_ROOT
 
-UP = {"F1", "F3", "F5", "F6", "T2", "T3", "S2", "S3"}  # larger is better; all others: smaller
+UP = {"F1", "F3", "F5", "F6", "F7", "T2", "T3", "S2", "S3"}  # larger is better; others: smaller
 GROUPS = {
     "F": "Faktenqualität",
     "T": "Tempo",
@@ -32,6 +32,7 @@ NAMES = {
     "F4": "fälschlich abgewiesen (%)",
     "F5": "Kurzarbeit (%)",
     "F6": "beantwortbare Fakten",
+    "F7": "beantwortbare Fakten im Wissens-Image",
     "T1": "erstes Zeichen, getippt (ms)",
     "T2": "Zeichen/s",
     "T3": "Zeichen/s bei vollem Kontext",
@@ -39,6 +40,7 @@ NAMES = {
     "R2": "Flash Modell (B)",
     "R3": "Flash Wissen (B)",
     "R4": "Bytes pro Fakt",
+    "R5": "Bytes pro Fakt im Wissens-Image",
     "S1": "Bit pro Zeichen",
     "S2": "nutzbarer Kontext (Zeichen)",
     "S3": "Grammatik ok (%)",

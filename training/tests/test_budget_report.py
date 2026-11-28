@@ -37,8 +37,8 @@ def test_starter_model_passes_legacy_esp32(tmp_path):
 
 
 def test_facts_budget_entry(tmp_path):
-    """Fact table of a hybrid model (specs/006): <= 90 % of the 64 KB area."""
-    facts = REPO / "runtime/tests/fixtures/facts_small.utft"
+    """Knowledge image of a hybrid model (specs/006, 008): <= 90 % of the 64 KB area."""
+    facts = REPO / "models/chemie.utki"
     out = tmp_path / "f.json"
     r = subprocess.run(
         [sys.executable, str(SCRIPT), "--model", str(REPO / "models/nodemcu.utny"),
@@ -47,8 +47,8 @@ def test_facts_budget_entry(tmp_path):
     )  # fmt: skip
     rep = json.loads(out.read_text())
     assert r.returncode == 0 and rep["facts_bytes"]["ok"]
-    big = tmp_path / "big.utft"
-    big.write_bytes(b"UTFT" + b"\0" * 60000)
+    big = tmp_path / "big.utki"
+    big.write_bytes(b"UTKI" + b"\0" * 60000)
     r = subprocess.run(
         [sys.executable, str(SCRIPT), "--model", str(REPO / "models/nodemcu.utny"),
          "--facts", str(big), "--json", str(out)],

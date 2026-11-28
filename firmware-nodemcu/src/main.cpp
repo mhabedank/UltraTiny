@@ -19,7 +19,7 @@
 extern "C" {
 #include "utiny.h"
 #include "utiny_console.h"
-#include "utiny_facts.h"
+#include "utiny_knowledge.h"
 }
 
 #include "layout.h"
@@ -28,9 +28,9 @@ static uint8_t arena[UT_ARENA_MAX] __attribute__((aligned(16)));
 static ut_model model;
 static ut_ctx ctx;
 static ut_console console;
-static ut_facts facts;
+static ut_kb kb; /* knowledge image (specs/008 UTKI v1) */
 
-/* Fact table reads: aligned offset, length and buffer, as ESP.flashRead requires. Yields every
+/* Knowledge image reads: aligned offset, length and buffer, as ESP.flashRead requires. Yields every
  * 4 KB so the boot-time CRC over the whole table does not starve the watchdog. */
 static uint32_t facts_bytes_read = 0;
 static int facts_read(void *, uint32_t off, void *buf, uint32_t n) {
@@ -89,7 +89,10 @@ void setup() {
     io.micros = io_micros;
     io.sys_stats = io_sys_stats;
     io.board = "NodeMCU (ESP8266)";
-    io.facts = &facts;
+    io.kb = &kb;
+    /* Open the knowledge image before the console, so the console can compare the model's topic
+     * with the image (specs/008 research R11) and print the "Wissen:" line in the banner. */
+    ut_kb_open(&kb, facts_read, nullptr, UT_FACTS_AREA_SIZE);
 
     ut_status st = ut_model_open(&model, (const void *)UT_MODEL_ADDR, UT_MODEL_AREA_SIZE);
     size_t need = st == UT_OK ? ut_arena_size(&model) : 0;
@@ -102,13 +105,6 @@ void setup() {
     console.arena_cap = sizeof arena;
     /* Reset reason first, so the banner still ends with the prompt (tools/devlib.py reset()). */
     Serial.printf("\r\nLetzter Reset: %s", ESP.getResetReason().c_str());
-    if (st == UT_OK && model.has_fn) {
-        ut_facts_status fs = ut_facts_open(&facts, facts_read, nullptr, UT_FACTS_AREA_SIZE);
-        if (fs == UT_FACTS_OK)
-            Serial.printf("\r\nFaktentabelle: OK, %lu Eintraege", (unsigned long)facts.n_records);
-        else
-            Serial.printf("\r\nFaktentabelle: %s (make nodemcu-flash-facts)", ut_facts_status_str(fs));
-    }
     ut_console_banner(&console);
 }
 

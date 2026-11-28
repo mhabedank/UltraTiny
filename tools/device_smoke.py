@@ -45,9 +45,9 @@ def main() -> int:
     banner = dev.reset()
     print(banner.strip())
     ok = "Funk: aus" in banner and re.search(r"Format v[12]", banner) is not None
-    facts = dev.info().get("facts")  # hybrid models (UTNY v2, specs/006): table must be OK
+    facts = dev.info().get("facts")  # hybrid models (UTNY v2): knowledge image must be OK
     if facts is not None:
-        print(f"fact table: {facts}")
+        print(f"knowledge image: {facts}")
         ok &= facts.startswith("OK")
     dev.command("/modus gierig")
     worst_ms, slowest = 0, 1e9
