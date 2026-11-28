@@ -1,0 +1,38 @@
+subject	relation	value	source
+D	wert	9	own
+T	wert	5	own
+L	wert	3	own
+S	wert	3	own
+B	wert	1	own
+K	anzahl	1	own
+D	anzahl	1	own
+T	anzahl	2	own
+L	anzahl	2	own
+S	anzahl	2	own
+B	anzahl	8	own
+K	zug	ein Feld in jede Richtung	own
+D	zug	beliebig weit gerade und schräg	own
+T	zug	beliebig weit waagerecht und senkrecht	own
+L	zug	beliebig weit schräg	own
+S	zug	zwei Felder gerade, dann eins zur Seite	own
+B	zug	ein Feld vorwärts, schlägt schräg	own
+K	startfelder	e1	own
+D	startfelder	d1	own
+T	startfelder	a1	own
+T	startfelder	h1	own
+L	startfelder	c1	own
+L	startfelder	f1	own
+S	startfelder	b1	own
+S	startfelder	g1	own
+B	startfelder	a2	own
+B	startfelder	b2	own
+B	startfelder	c2	own
+B	startfelder	d2	own
+B	startfelder	e2	own
+B	startfelder	f2	own
+B	startfelder	g2	own
+B	startfelder	h2	own
+w	grundreihe	1	own
+s	grundreihe	8	own
+w	zieht_zuerst	ja	own
+s	zieht_zuerst	nein	own

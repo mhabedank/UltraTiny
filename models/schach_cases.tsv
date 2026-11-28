@@ -1,0 +1,93 @@
+view	key	outcome	answer
+kuerzel	K	fact	Das Kürzel von König ist K.
+kuerzel	D	fact	Das Kürzel von Dame ist D.
+kuerzel	T	fact	Das Kürzel von Turm ist T.
+kuerzel	L	fact	Das Kürzel von Läufer ist L.
+kuerzel	S	fact	Das Kürzel von Springer ist S.
+kuerzel	B	fact	Das Kürzel von Bauer ist B.
+kuerzel	w	na	Das Kürzel von Weiß: dazu habe ich keine Angabe.
+kuerzel	Xyz	unknown	Das Kürzel von – Das weiß ich leider nicht.
+profil	D	fact	Die Figur Dame (D) hat den Wert 9 und zieht beliebig weit gerade und schräg.
+profil	T	fact	Die Figur Turm (T) hat den Wert 5 und zieht beliebig weit waagerecht und senkrecht.
+profil	L	fact	Die Figur Läufer (L) hat den Wert 3 und zieht beliebig weit schräg.
+profil	S	fact	Die Figur Springer (S) hat den Wert 3 und zieht zwei Felder gerade, dann eins zur Seite.
+profil	B	fact	Die Figur Bauer (B) hat den Wert 1 und zieht ein Feld vorwärts, schlägt schräg.
+profil	K	na	Die Figur König (K) hat keinen festen Wert.
+profil	Xyz	unknown	Die Figur – Das weiß ich leider nicht.
+wert	D	fact	Der Wert von Dame: 9 Bauerneinheiten.
+wert	T	fact	Der Wert von Turm: 5 Bauerneinheiten.
+wert	L	fact	Der Wert von Läufer: 3 Bauerneinheiten.
+wert	S	fact	Der Wert von Springer: 3 Bauerneinheiten.
+wert	B	fact	Der Wert von Bauer: 1 Bauerneinheiten.
+wert	K	na	Der Wert von König: nicht festgelegt, er kann nicht geschlagen werden.
+wert	Xyz	unknown	Der Wert von – Das weiß ich leider nicht.
+wert<	1	fact	Den Wert 1 haben: Bauer.
+wert<	3	fact	Den Wert 3 haben: Läufer und Springer.
+wert<	5	fact	Den Wert 5 haben: Turm.
+wert<	9	fact	Den Wert 9 haben: Dame.
+wert<	Xyz	unknown	Den Wert – Das weiß ich leider nicht.
+anzahl	K	fact	Die Anzahl von König je Seite: 1.
+anzahl	D	fact	Die Anzahl von Dame je Seite: 1.
+anzahl	T	fact	Die Anzahl von Turm je Seite: 2.
+anzahl	L	fact	Die Anzahl von Läufer je Seite: 2.
+anzahl	S	fact	Die Anzahl von Springer je Seite: 2.
+anzahl	B	fact	Die Anzahl von Bauer je Seite: 8.
+anzahl	w	na	Die Anzahl von Weiß: dazu habe ich keine Angabe.
+anzahl	Xyz	unknown	Die Anzahl von – Das weiß ich leider nicht.
+anzahl<	1	fact	Je Seite 1-mal vorhanden: König und Dame.
+anzahl<	2	fact	Je Seite 2-mal vorhanden: Turm, Läufer und Springer.
+anzahl<	8	fact	Je Seite 8-mal vorhanden: Bauer.
+anzahl<	Xyz	unknown	Je Seite – Das weiß ich leider nicht.
+zug	K	fact	So zieht König: ein Feld in jede Richtung.
+zug	D	fact	So zieht Dame: beliebig weit gerade und schräg.
+zug	T	fact	So zieht Turm: beliebig weit waagerecht und senkrecht.
+zug	L	fact	So zieht Läufer: beliebig weit schräg.
+zug	S	fact	So zieht Springer: zwei Felder gerade, dann eins zur Seite.
+zug	B	fact	So zieht Bauer: ein Feld vorwärts, schlägt schräg.
+zug	w	na	So zieht Weiß: dazu habe ich keine Angabe.
+zug	Xyz	unknown	So zieht – Das weiß ich leider nicht.
+startfelder	K	fact	Startfelder von König (Weiß): e1.
+startfelder	D	fact	Startfelder von Dame (Weiß): d1.
+startfelder	T	fact	Startfelder von Turm (Weiß): a1 und h1.
+startfelder	L	fact	Startfelder von Läufer (Weiß): c1 und f1.
+startfelder	S	fact	Startfelder von Springer (Weiß): b1 und g1.
+startfelder	B	fact	Startfelder von Bauer (Weiß): a2, b2, c2, d2, e2, f2, g2 und h2.
+startfelder	w	na	Startfelder von Weiß: dazu habe ich keine Angabe.
+startfelder	Xyz	unknown	Startfelder von – Das weiß ich leider nicht.
+startfelder<	a1	fact	Auf a1 steht zu Beginn Turm.
+startfelder<	a2	fact	Auf a2 steht zu Beginn Bauer.
+startfelder<	b1	fact	Auf b1 steht zu Beginn Springer.
+startfelder<	b2	fact	Auf b2 steht zu Beginn Bauer.
+startfelder<	c1	fact	Auf c1 steht zu Beginn Läufer.
+startfelder<	c2	fact	Auf c2 steht zu Beginn Bauer.
+startfelder<	d1	fact	Auf d1 steht zu Beginn Dame.
+startfelder<	d2	fact	Auf d2 steht zu Beginn Bauer.
+startfelder<	e1	fact	Auf e1 steht zu Beginn König.
+startfelder<	e2	fact	Auf e2 steht zu Beginn Bauer.
+startfelder<	f1	fact	Auf f1 steht zu Beginn Läufer.
+startfelder<	f2	fact	Auf f2 steht zu Beginn Bauer.
+startfelder<	g1	fact	Auf g1 steht zu Beginn Springer.
+startfelder<	g2	fact	Auf g2 steht zu Beginn Bauer.
+startfelder<	h1	fact	Auf h1 steht zu Beginn Turm.
+startfelder<	h2	fact	Auf h2 steht zu Beginn Bauer.
+startfelder<	Xyz	unknown	Auf – Das weiß ich leider nicht.
+art	D	fact	Figurenart: Dame ist eine Schwerfigur.
+art	T	fact	Figurenart: Turm ist eine Schwerfigur.
+art	L	fact	Figurenart: Läufer ist eine Leichtfigur.
+art	S	fact	Figurenart: Springer ist eine Leichtfigur.
+art	K	na	Figurenart: König ist weder Leicht- noch Schwerfigur.
+art	Xyz	unknown	Figurenart: – Das weiß ich leider nicht.
+art<	Leichtfigur	fact	Eine Leichtfigur ist: Läufer und Springer.
+art<	Schwerfigur	fact	Eine Schwerfigur ist: Dame und Turm.
+art<	Xyz	unknown	Eine – Das weiß ich leider nicht.
+grundreihe	w	fact	Die Grundreihe von Weiß ist Reihe 1.
+grundreihe	s	fact	Die Grundreihe von Schwarz ist Reihe 8.
+grundreihe	K	na	Die Grundreihe von König: dazu habe ich keine Angabe.
+grundreihe	Xyz	unknown	Die Grundreihe von – Das weiß ich leider nicht.
+grundreihe<	1	fact	Reihe 1 ist die Grundreihe von Weiß.
+grundreihe<	8	fact	Reihe 8 ist die Grundreihe von Schwarz.
+grundreihe<	Xyz	unknown	Reihe – Das weiß ich leider nicht.
+zieht_zuerst	w	fact	Zieht Weiß zuerst? ja.
+zieht_zuerst	s	fact	Zieht Schwarz zuerst? nein.
+zieht_zuerst	K	na	Zieht König: dazu habe ich keine Angabe.
+zieht_zuerst	Xyz	unknown	Zieht – Das weiß ich leider nicht.
