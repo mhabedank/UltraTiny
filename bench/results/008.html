@@ -1,0 +1,181 @@
+<!doctype html><html lang='de'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Benchmark-Bericht</title><style>
+:root{--bg:#fbfaf7;--fg:#1d1d1b;--muted:#6b6a65;--line:#e4e1d8;--card:#ffffff;
+--good:#1f7a4d;--bad:#b3261e;--accent:#3b5bdb;--c0:#3b5bdb;--c1:#d9480f;--c2:#2b8a3e;--c3:#862e9c}
+@media (prefers-color-scheme:dark){:root{--bg:#161614;--fg:#ecebe6;--muted:#a3a29b;--line:#34332f;
+--card:#1f1f1c;--good:#69db9a;--bad:#ff8a80;--accent:#91a7ff;--c0:#91a7ff;--c1:#ffa94d;--c2:#8ce99a;
+--c3:#e599f7}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 64px}h1{font-size:26px;margin:0 0 4px}
+h2{font-size:19px;margin:32px 0 8px}.muted{color:var(--muted)}
+.wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th,td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-weight:600;font-size:13px;color:var(--muted)}td.n{text-align:right;white-space:nowrap}
+.besser{color:var(--good);font-weight:600}.schlechter{color:var(--bad);font-weight:600}
+.flag{display:inline-block;padding:2px 8px;border-radius:99px;border:1px solid var(--bad);
+color:var(--bad);font-weight:600;margin-right:8px}.ok{color:var(--good)}.broken{color:var(--bad);font-weight:600}
+svg text{fill:var(--muted);font-size:11px}svg .grid{stroke:var(--line)}
+.legend span{margin-right:14px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px}
+details{margin:8px 0}summary{cursor:pointer}
+</style></head><body><main>
+<h1>Benchmark-Bericht</h1><p class='muted'>erzeugt 2026-11-28 14:43 · Baseline <b>chemie-nodemcu</b></p>
+<ul><li>chemie-hybrid-utft1 gegen chemie-nodemcu: <span class='besser'>0 besser</span>, <span class='schlechter'>1 schlechter</span>, 0 unverändert</li><li>chemie-008 gegen chemie-nodemcu: <span class='besser'>0 besser</span>, <span class='schlechter'>1 schlechter</span>, 0 unverändert</li></ul>
+<h2>Schritte</h2><div class='wrap'><table><tr><th>Schritt</th><th>Suite</th><th>Seeds</th><th>Board</th><th>Datum</th><th>Modell</th></tr>
+<tr><td>chemie-nodemcu</td><td>chemie v1</td><td class='n'>1</td><td>ja</td><td>2026-11-23</td><td><code>7de799937683</code></td></tr>
+<tr><td>chemie-hybrid-utft1</td><td>chemie v1</td><td class='n'>1</td><td>nein</td><td>2026-11-28</td><td><code></code></td></tr>
+<tr><td>chemie-008</td><td>chemie v1</td><td class='n'>1</td><td>nein</td><td>2026-11-28</td><td><code></code></td></tr>
+</table></div><h2>Kennzahlen</h2><div class='wrap'><table><tr><th>KPI</th><th></th>
+<th>chemie-nodemcu</th>
+<th>chemie-hybrid-utft1</th>
+<th>chemie-008</th>
+<th>Δ chemie-hybrid-utft1</th>
+<th>Δ chemie-008</th>
+<th>Schwelle</th></tr>
+<tr><th colspan='9'>Faktenqualität</th></tr>
+<tr><td><b>F1</b> richtig, ungesehene Formulierungen (%)</td><td>↑</td>
+<td class='n'>38.5</td>
+<td class='n'>nicht gemessen</td>
+<td class='n'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td></td></tr>
+<tr><td><b>F2</b> falsche Fakten (%)</td><td>↓</td>
+<td class='n'>17.8</td>
+<td class='n'>nicht gemessen</td>
+<td class='n'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td></td></tr>
+<tr><td><b>F3</b> richtig abgewiesen (%)</td><td>↑</td>
+<td class='n'>62.9</td>
+<td class='n'>nicht gemessen</td>
+<td class='n'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td></td></tr>
+<tr><td><b>F4</b> fälschlich abgewiesen (%)</td><td>↓</td>
+<td class='n'>7.0</td>
+<td class='n'>nicht gemessen</td>
+<td class='n'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td></td></tr>
+<tr><td><b>F5</b> Kurzarbeit (%)</td><td>↑</td>
+<td class='n'>37.7</td>
+<td class='n'>nicht gemessen</td>
+<td class='n'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td></td></tr>
+<tr><td><b>F6</b> beantwortbare Fakten</td><td>↑</td>
+<td class='n'>1.404</td>
+<td class='n'>nicht gemessen</td>
+<td class='n'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td></td></tr>
+<tr><td><b>F7</b> beantwortbare Fakten im Wissens-Image</td><td>↑</td>
+<td class='n'>nicht gemessen</td>
+<td class='n'>2.364</td>
+<td class='n'>3.145</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td></td></tr>
+<tr><th colspan='9'>Tempo</th></tr>
+<tr><td><b>T1</b> erstes Zeichen, getippt (ms)</td><td>↓</td>
+<td class='n'>178</td>
+<td class='n'>nicht gemessen</td>
+<td class='n'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td></td></tr>
+<tr><td><b>T2</b> Zeichen/s</td><td>↑</td>
+<td class='n'>4.8</td>
+<td class='n'>nicht gemessen</td>
+<td class='n'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td></td></tr>
+<tr><td><b>T3</b> Zeichen/s bei vollem Kontext</td><td>↑</td>
+<td class='n'>3.8</td>
+<td class='n'>nicht gemessen</td>
+<td class='n'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td></td></tr>
+<tr><th colspan='9'>Ressourcen</th></tr>
+<tr><td><b>R1</b> Arena (B)</td><td>↓</td>
+<td class='n'>35.504</td>
+<td class='n'>nicht gemessen</td>
+<td class='n'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td></td></tr>
+<tr><td><b>R2</b> Flash Modell (B)</td><td>↓</td>
+<td class='n'>601.412</td>
+<td class='n'>nicht gemessen</td>
+<td class='n'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td></td></tr>
+<tr><td><b>R3</b> Flash Wissen (B)</td><td>↓</td>
+<td class='n'>0</td>
+<td class='n'>29.100</td>
+<td class='n'>23.420</td>
+<td class='n schlechter'>+29.100 (schlechter)</td>
+<td class='n schlechter'>+23.420 (schlechter)</td>
+<td>exakt</td></tr>
+<tr><td><b>R4</b> Bytes pro Fakt</td><td>↓</td>
+<td class='n'>428.4</td>
+<td class='n'>nicht gemessen</td>
+<td class='n'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td></td></tr>
+<tr><td><b>R5</b> Bytes pro Fakt im Wissens-Image</td><td>↓</td>
+<td class='n'>nicht gemessen</td>
+<td class='n'>12.31</td>
+<td class='n'>7.45</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td></td></tr>
+<tr><th colspan='9'>Sprache</th></tr>
+<tr><td><b>S1</b> Bit pro Zeichen</td><td>↓</td>
+<td class='n'>13.314</td>
+<td class='n'>nicht gemessen</td>
+<td class='n'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td></td></tr>
+<tr><td><b>S2</b> nutzbarer Kontext (Zeichen)</td><td>↑</td>
+<td class='n'>0</td>
+<td class='n'>nicht gemessen</td>
+<td class='n'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td></td></tr>
+<tr><td><b>S3</b> Grammatik ok (%)</td><td>↑</td>
+<td class='n'>100</td>
+<td class='n'>nicht gemessen</td>
+<td class='n'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td class='n nicht gemessen'>nicht gemessen</td>
+<td></td></tr>
+</table></div><h2>Budget</h2><div class='wrap'><table><tr><th>Schritt</th><th>Posten</th><th>Wert (B)</th><th>Grenze (B)</th><th>Status</th><th>Regel</th></tr>
+<tr><td>chemie-nodemcu</td><td>Modell (Flash)</td><td class='n'>601.412</td><td class='n'>619.315</td><td><span class='ok'>ok</span></td><td>Modellbereich − 10 %</td></tr>
+<tr><td>chemie-nodemcu</td><td>Arena (RAM)</td><td class='n'>35.504</td><td class='n'>35.840</td><td><span class='ok'>ok</span></td><td>≤ 35 KB und ≥ 10 % Reserve</td></tr>
+<tr><td>chemie-nodemcu</td><td>Firmware</td><td class='n'>293.232</td><td class='n'>324.403</td><td><span class='ok'>ok</span></td><td>Firmwarebereich − 10 %</td></tr>
+<tr><td>chemie-hybrid-utft1</td><td>Modell (Flash)</td><td class='n'>–</td><td class='n'>619.315</td><td><span class='muted'>nicht gemessen</span></td><td>Modellbereich − 10 %</td></tr>
+<tr><td>chemie-hybrid-utft1</td><td>Arena (RAM)</td><td class='n'>–</td><td class='n'>35.840</td><td><span class='muted'>nicht gemessen</span></td><td>≤ 35 KB und ≥ 10 % Reserve</td></tr>
+<tr><td>chemie-hybrid-utft1</td><td>Wissen (Flash)</td><td class='n'>29.100</td><td class='n'>58.982</td><td><span class='ok'>ok</span></td><td>Faktenbereich − 10 %</td></tr>
+<tr><td>chemie-008</td><td>Modell (Flash)</td><td class='n'>–</td><td class='n'>619.315</td><td><span class='muted'>nicht gemessen</span></td><td>Modellbereich − 10 %</td></tr>
+<tr><td>chemie-008</td><td>Arena (RAM)</td><td class='n'>–</td><td class='n'>35.840</td><td><span class='muted'>nicht gemessen</span></td><td>≤ 35 KB und ≥ 10 % Reserve</td></tr>
+<tr><td>chemie-008</td><td>Wissen (Flash)</td><td class='n'>23.420</td><td class='n'>58.982</td><td><span class='ok'>ok</span></td><td>Faktenbereich − 10 %</td></tr>
+</table></div>
+<h2>S2: Merk-Test nach Abstand</h2><svg viewBox="0 0 640 220" width="100%" role="img" aria-label="S2-Kurve"><line class="grid" x1="40" x2="600" y1="180.0" y2="180.0"/><text x="4" y="184.0">0 %</text><line class="grid" x1="40" x2="600" y1="110.0" y2="110.0"/><text x="4" y="114.0">50 %</text><line class="grid" x1="40" x2="600" y1="68.0" y2="68.0"/><text x="4" y="72.0">80 %</text><line class="grid" x1="40" x2="600" y1="40.0" y2="40.0"/><text x="4" y="44.0">100 %</text><text x="32.0" y="208">16</text><text x="112.0" y="208">32</text><text x="192.0" y="208">64</text><text x="272.0" y="208">96</text><text x="352.0" y="208">128</text><text x="432.0" y="208">192</text><text x="512.0" y="208">256</text><text x="592.0" y="208">416</text><polyline fill="none" stroke="var(--c0)" stroke-width="2" points="40.0,180.0 120.0,180.0 200.0,180.0 280.0,180.0 360.0,180.0 440.0,180.0 520.0,180.0 600.0,180.0"/></svg><div class="legend muted"><span><i class="sw" style="background:var(--c0)"></i>chemie-nodemcu</span></div>
+<h2>F1 je Frageart (%)</h2><svg viewBox="0 0 640 410" width="100%" role="img" aria-label="F1 je Frageart"><text x="0" y="19">element_atommasse</text><rect x="210" y="10" width="351.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 90.0 %</title></rect><text x="0" y="34">element_aussenelektronen</text><rect x="210" y="25" width="78.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 20.0 %</title></rect><text x="0" y="49">element_elektronen</text><rect x="210" y="40" width="39.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 10.0 %</title></rect><text x="0" y="64">element_elektronenverteilung</text><rect x="210" y="55" width="0.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 0.0 %</title></rect><text x="0" y="79">element_familie</text><rect x="210" y="70" width="351.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 90.0 %</title></rect><text x="0" y="94">element_gruppe</text><rect x="210" y="85" width="0.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 0.0 %</title></rect><text x="0" y="109">element_ion</text><rect x="210" y="100" width="0.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 0.0 %</title></rect><text x="0" y="124">element_kategorie</text><rect x="210" y="115" width="351.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 90.0 %</title></rect><text x="0" y="139">element_neutronen</text><rect x="210" y="130" width="39.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 10.0 %</title></rect><text x="0" y="154">element_ordnungszahl</text><rect x="210" y="145" width="260.1" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 66.7 %</title></rect><text x="0" y="169">element_periode</text><rect x="210" y="160" width="303.4" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 77.8 %</title></rect><text x="0" y="184">element_profil</text><rect x="210" y="175" width="78.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 20.0 %</title></rect><text x="0" y="199">element_protonen</text><rect x="210" y="190" width="78.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 20.0 %</title></rect><text x="0" y="214">element_schalen</text><rect x="210" y="205" width="195.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 50.0 %</title></rect><text x="0" y="229">element_symbol</text><rect x="210" y="220" width="390.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 100.0 %</title></rect><text x="0" y="244">element_wertigkeit</text><rect x="210" y="235" width="43.3" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 11.1 %</title></rect><text x="0" y="259">element_zustand</text><rect x="210" y="250" width="351.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 90.0 %</title></rect><text x="0" y="274">formel_verbindung</text><rect x="210" y="265" width="273.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 70.0 %</title></rect><text x="0" y="289">nachweis</text><rect x="210" y="280" width="0.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 0.0 %</title></rect><text x="0" y="304">ordnungszahl_element</text><rect x="210" y="295" width="390.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 100.0 %</title></rect><text x="0" y="319">reaktion_gleichung</text><rect x="210" y="310" width="0.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 0.0 %</title></rect><text x="0" y="334">symbol_element</text><rect x="210" y="325" width="78.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 20.0 %</title></rect><text x="0" y="349">verbindung_bindung</text><rect x="210" y="340" width="0.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 0.0 %</title></rect><text x="0" y="364">verbindung_formel</text><rect x="210" y="355" width="273.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 70.0 %</title></rect><text x="0" y="379">verbindung_molare_masse</text><rect x="210" y="370" width="0.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 0.0 %</title></rect><text x="0" y="394">verbindung_saeure_base</text><rect x="210" y="385" width="0.0" height="8" rx="2" fill="var(--c0)"><title>chemie-nodemcu: 0.0 %</title></rect></svg>
+</main></body></html>

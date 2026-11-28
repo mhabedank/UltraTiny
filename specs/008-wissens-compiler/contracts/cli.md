@@ -43,6 +43,14 @@ uv run ut knowledge cases --topic ../topics/chemie --image ../models/chemie.utki
 Writes the golden query cases ([query.md](query.md#cases-file-golden-queries)) from the Python
 reference.
 
+## `ut knowledge query`
+
+```bash
+uv run ut knowledge query --image ../models/chemie.utki --query "familie< Halogenen"
+```
+
+Prints one answer through the Python reference, like `/wissen` on the board.
+
 ## `ut knowledge propose` / `accept` (optional, US4)
 
 ```bash
@@ -72,7 +80,7 @@ uv run python ../topics/chemie/prepare.py --check  # exit 1 if the committed fil
 
 | Command | Change |
 |---------|--------|
-| `ut pipeline` (hybrid configs) | builds the topic image named by the config's `topic` (`[knowledge] topic = "../topics/chemie"`) instead of `facts.utft`; `ut export --facts` takes the `.utki` and writes `"topic"` into the model meta (research R11) |
+| `ut pipeline` (hybrid configs) | builds the image of the config's topic (`[data] knowledge_topic`, default `"../topics/chemie"`) as `knowledge.utki` instead of `facts.utft`; `ut export --facts` takes the `.utki` and writes the image's `"topic"` into the model meta (research R11) |
 | `utiny-host` | `--facts` takes `.utki`; new `--kb-cases`, `--query` ([query.md](query.md#host-tool)) |
 | `tools/budget_report.py --facts` | accepts `.utki` (magic `UTKI`), same 58,982 B limit |
 | `make nodemcu-flash-facts FACTS=…` | checks the `UTKI` magic; default `FACTS ?= models/chemie.utki` |

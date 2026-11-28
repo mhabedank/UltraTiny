@@ -1,0 +1,163 @@
+{
+  "board": null,
+  "complete": true,
+  "env": {
+    "commit": "dd011ed0e495",
+    "date": "2026-11-28",
+    "host": "vm",
+    "tool": "bench 1"
+  },
+  "events": [],
+  "format": 1,
+  "items": [],
+  "kind": "image",
+  "knowledge": {
+    "file": "chemie.utki",
+    "sha256": "5ddb8271eba745d0a17df90193b5780d49f7c307b8aced2d028793ded8a48931",
+    "size": 23420
+  },
+  "kpis": {
+    "F1": {
+      "reason": "image-only result",
+      "status": "not_measured",
+      "value": null
+    },
+    "F2": {
+      "reason": "image-only result",
+      "status": "not_measured",
+      "value": null
+    },
+    "F3": {
+      "reason": "image-only result",
+      "status": "not_measured",
+      "value": null
+    },
+    "F4": {
+      "reason": "image-only result",
+      "status": "not_measured",
+      "value": null
+    },
+    "F5": {
+      "reason": "image-only result",
+      "status": "not_measured",
+      "value": null
+    },
+    "F6": {
+      "reason": "image-only result",
+      "status": "not_measured",
+      "value": null
+    },
+    "F7": {
+      "status": "measured",
+      "value": 3145
+    },
+    "R1": {
+      "reason": "image-only result",
+      "status": "not_measured",
+      "value": null
+    },
+    "R2": {
+      "reason": "image-only result",
+      "status": "not_measured",
+      "value": null
+    },
+    "R3": {
+      "status": "measured",
+      "value": 23420
+    },
+    "R4": {
+      "reason": "image-only result",
+      "status": "not_measured",
+      "value": null
+    },
+    "R5": {
+      "status": "measured",
+      "value": 7.45
+    },
+    "S1": {
+      "reason": "image-only result",
+      "status": "not_measured",
+      "value": null
+    },
+    "S2": {
+      "reason": "image-only result",
+      "status": "not_measured",
+      "value": null
+    },
+    "S3": {
+      "reason": "image-only result",
+      "status": "not_measured",
+      "value": null
+    },
+    "T1": {
+      "reason": "image-only result",
+      "status": "not_measured",
+      "value": null
+    },
+    "T2": {
+      "reason": "image-only result",
+      "status": "not_measured",
+      "value": null
+    },
+    "T3": {
+      "reason": "image-only result",
+      "status": "not_measured",
+      "value": null
+    }
+  },
+  "label": "chemie-008",
+  "model": null,
+  "overlap": {},
+  "suite": {
+    "files": {
+      "../../../training/data/eval/kurzarbeit.tsv": "cd2a36bfba2b0a267831dba497ad1f0197675a9d3ff39d6c86e87711bcf60aaa",
+      "facts.tsv": "b7accae0d05e9f3884eec895716245464965380412a8d27d9e5c3bad5bb80496",
+      "sets/offtopic.tsv": "ae48d2a704719c41b0c1efa78ea89c57b0173c59de0bd2acfd90d2898982932f",
+      "sets/s3.tsv": "a7b44b440895061198542e502326b0a6759fb97b46adfd4064b6eb422492e5af",
+      "sets/unknown.tsv": "911cae0761a5d11129ed97aa579c587da11f0ce229586cbeef9209e2f2ea3a49",
+      "sets/unseen.tsv": "82d67ffebba329d34b2b2d79ec77e1e03602bc47f9d93d4688c0c2cc55b6e6fb",
+      "text/s1.txt": "ee3cd90aebc50cc11da1207677f4e44da3572de16de4074b33bb4073a1414a61",
+      "text/s2.tsv": "8454ea3a470c3f3c245344bfe11ec939d8f5acc34aff2dec43899ec8334da91c"
+    },
+    "name": "chemie",
+    "s2_distances": [
+      16,
+      32,
+      64,
+      96,
+      128,
+      192,
+      256,
+      416
+    ],
+    "sets": {
+      "facts": "v1:b7accae0d05e",
+      "kurzarbeit": "v1:cd2a36bfba2b",
+      "offtopic": "v1:ae48d2a70471",
+      "s1": "v1:ee3cd90aebc5",
+      "s2": "v1:8454ea3a470c",
+      "s3": "v1:a7b44b440895",
+      "unknown": "v1:911cae0761a5",
+      "unseen": "v1:82d67ffebba3"
+    },
+    "thresholds": {
+      "F1": 3.0,
+      "F2": 0.5,
+      "F3": 3.0,
+      "F4": 3.0,
+      "F5": 3.0,
+      "F6": "1%",
+      "R1": "exact",
+      "R2": "exact",
+      "R3": "exact",
+      "R4": "exact",
+      "S1": 0.02,
+      "S2": "1 step",
+      "S3": 2,
+      "T1": "5%",
+      "T2": "5%",
+      "T3": "5%"
+    },
+    "version": 1
+  }
+}

@@ -23,7 +23,8 @@ Ein Projekt von [Martin Habedank](https://www.linkedin.com/in/martin-habedank/),
 | Modell `nodemcu` (Allgemeinwissen, im Repo) | 583 296 Parameter, 588 KB Flash, 35 KB RAM; Demo 100 %, ungesehene Formulierungen 70 % (PC-Referenz) |
 | Modell `chemie-nodemcu` (DGX Spark, nicht im Repo) | Demo 96 %, Chemie-Held-out 80,9 %; auf dem Board erkennbare Wissenslücken |
 | Klassischer ESP32 | Altbestand: baut in CI, läuft in QEMU; auf echter Hardware nie gemessen |
-| Nächster Schritt | [`specs/006-hybrid-chemielehrer/`](specs/006-hybrid-chemielehrer/): Chemielehrer mit Faktentabelle |
+| Wissens-Baukasten | [`specs/008-wissens-compiler/`](specs/008-wissens-compiler/): Themen als Daten, Wissens-Image (UTKI) statt Faktentabelle; Board-Messung offen |
+| Nächster Schritt | [`specs/ROADMAP.md`](specs/ROADMAP.md): 006 abschließen (Spark-Training), dann Spec 009 „Fragen verstehen“ |
 
 Messwerte und offene Board-Prüfungen: [`specs/005-nodemcu-port/measurements.md`](specs/005-nodemcu-port/measurements.md).
 
@@ -176,19 +177,33 @@ Auf der NodeMCU ist das Modell zu klein, um viele Fakten sicher zu behalten. Des
 
 - Bei Faktenfragen schreibt das Modell nur eine **Funktionsausgabe**: das Spezialzeichen `<fn>`,
   einen Buchstaben für den Fragetyp und einen Schlüssel. Aus „Welche Ordnungszahl hat Kupfer?“
-  wird `<fn>OCu`. Die Firmware sucht den Wert in einer geprüften **Faktentabelle** und druckt
+  wird `<fn>OCu`. Die Firmware sucht den Wert in einem geprüften **Wissens-Image** und druckt
   „Die Ordnungszahl von Kupfer ist 29.“ Das Modell erfindet keine Werte.
 - Bei Fragen in Gegenrichtung kopiert das Modell nur den Wert aus der Frage
   („Was ist N?“ → `<fn>sN`), die Firmware sucht das Objekt dazu.
 - Begrüßungen, Abweisungen und kurze Erklärungen (höchstens 60 Zeichen) schreibt das Modell selbst.
-- Die Faktentabelle (UTFT, rund 29 KB) liegt im Flash ab 0x100000, also außerhalb des
+- Das Wissens-Image (UTKI, rund 23 KB) liegt im Flash ab 0x100000, also außerhalb des
   eingeblendeten Megabytes, und hat eine eigene Prüfsumme.
 
+### Wissens-Baukasten (spec 008)
+
+Das Wissen ist ein **Thema aus Daten** ([`topics/`](topics/README.md), [`specs/008-wissens-compiler/`](specs/008-wissens-compiler/)):
+Schema (Klassen, Beziehungen, Regeln, Antwortvorlagen) und Fakten als Tripel mit Quelle. Der
+Compiler rechnet Rückrichtungen und einfache Regeln beim Bauen aus und schreibt das Wissens-Image;
+auf dem Board wird nur nachgeschlagen. Das Chemie-Image beantwortet 3.145 Fakten mit 7,45 Bytes
+pro Fakt (spec 006: 2.364 Fakten, 12,31 Bytes). Ein zweites Thema (Schachfiguren) läuft ohne
+Codeänderung. `/wissen` fragt das Image auf der Konsole direkt ab, ohne Modell:
+
+```text
+> /wissen familie< Halogenen
+Zu den Halogenen gehören: Fluor, Chlor, Brom, Iod und Astat.
+```
+
 ```bash
-cd training && uv run ut facts --config configs/chemie-hybrid.toml --out runs/facts   # Tabelle bauen + prüfen
+make knowledge                                                                      # alle Themen -> models/<thema>.utki
 make hybrid-smoke                                                                   # Mini-Pipeline auf der CPU
 make nodemcu-flash-model PORT=... NODEMCU_MODEL=models/chemie-hybrid.utny            # Modell
-make nodemcu-flash-facts PORT=... FACTS=models/chemie-hybrid.utft                    # Faktentabelle
+make nodemcu-flash-facts PORT=... FACTS=models/chemie.utki                           # Wissens-Image
 ```
 
 Training auf dem DGX Spark: [`training/SPARK.md`](training/SPARK.md), Abschnitt „Hybrid-Chemielehrer“.

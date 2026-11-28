@@ -125,7 +125,7 @@ Views are stored in schema order. Legacy letters are unique.
 | `0x01` | `{name}` |
 | `0x02` | `{key}` |
 | `0x03` | `{v}` (value, or list) |
-| `0x04` R | `{r:<relation>}`: single forward value of relation index R of the same object |
+| `0x04` R | `{r:<relation>}`: single forward value of the relation with index R − 1 of the same object (R = index + 1, so the byte is never NUL) |
 | `0x05` | `{n}` (number of items left out, decimal ASCII; only in `more`) |
 
 The **prefix** of a view is every template byte before the first slot byte (non-empty, checked by the

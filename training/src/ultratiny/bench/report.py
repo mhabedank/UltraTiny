@@ -349,7 +349,9 @@ def fmt(v: float | None, k: str) -> str:
         return "–"
     if k in ("S1",):
         return f"{v:.3f}"
-    if k in ("T2", "T3") or k.startswith("F") and k != "F6":
+    if k == "R5":
+        return f"{v:.2f}"
+    if k in ("T2", "T3") or k.startswith("F") and k not in ("F6", "F7"):
         return f"{v:.1f}"
     if abs(v - round(v)) < 1e-9:
         return f"{int(round(v)):,}".replace(",", ".")

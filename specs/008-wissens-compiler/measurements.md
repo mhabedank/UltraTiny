@@ -76,6 +76,33 @@ Examples (exact answers, competency questions):
 | `parity_tiny_v2` with `chemie.utki` (006 golden, printed answers) | 15 cases, 15 printed, 0 failed |
 | `tools/device_knowledge.py --exec utiny-host … --console` | 487 cases identical; lookup median 0.01 ms, max 0.08 ms (host) |
 
+## Second topic: chess pieces (T034–T037)
+
+| Item | Value |
+|------|-------|
+| Classes / objects / relations / views | 2 / 8 / 7 / 14 |
+| Facts | 37 explicit (`own`), 4 derived (`leichtfigur` 2, `schwerfigur` 2) |
+| Competency questions | 19 of 19 |
+| F7 / image / R5 | 69 / 1,744 B / 25.28 B (small topics pay the fixed header and texts) |
+| C = Python | 92 golden cases, normal and alignment-checked build |
+| Change set (commit `dd011ed`) | 7 files: `topics/schach/*`, `models/schach.utki`, `.build.json`, `_cases.tsv`; **0 lines** in compiler, image format, engine or firmware (SC-004) |
+| Topic check | host test: model meta `topic = schach` with the chemistry image → `Wissen: falsches Thema (Bild chemie, Modell schach)`, fact question → missing text, `Hi` → greeting |
+
+## Benchmark and demo (T042–T045)
+
+| Item | Result |
+|------|--------|
+| `bench.py image` on `chemie.utki` | F7 3,145, R3 23,420 B, R5 7.45 B (`bench/results/chemie-008_chemie_image_20261128.json`) |
+| Report against baseline and 006 | [`bench/results/008.md`](../../bench/results/008.md): F7 +781, R3 −5,680 B, R5 −4.86 B against `chemie-hybrid-utft1` |
+| `bench_export_facts.py --topic ../topics/chemie --types data/templates/hybrid.toml` | 2,364 rows; identical to the pinned `facts.tsv` except the 15 `element_profil` rows of elements without a category, which no image answers. The pinned file is kept (suite stays v1), so F6 remains comparable with the baseline |
+| Demo `bench/demo/008.tsv` on two host consoles | 13 items, 6 `/wissen` items answered from the image; a console without an image prints the missing text, a board without the command shows `—` |
+
+## Proposals (T039, T040)
+
+`ut knowledge propose` / `accept` with a fake LLM in `tests/test_knowledge_propose.py`: no fact file
+changes on `propose`; `accept` copies only `yes` rows with an allowed non-`llm:` source. The Spark
+round (T041 🖥️) is open.
+
 ## On the board (🔌 T025)
 
 | Item | Target | Measured |

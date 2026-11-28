@@ -1,5 +1,9 @@
 # Contract: Fact Table Format (UTFT v1)
 
+> **Superseded** by the knowledge image UTKI v1 ([specs/008-wissens-compiler/contracts/image-format.md](../../008-wissens-compiler/contracts/image-format.md)).
+> UTFT v1 was removed in spec 008 after every answer was frozen in `topics/chemie/compat/utft1_answers.tsv`
+> and reproduced byte for byte by the chemistry image.
+
 The fact table holds the verified facts and answer templates. It is written by
 `training/src/ultratiny/facttable.py`, read by `runtime/src/facts.c` and by the Python reference.
 Both MUST render identical bytes (research R11).

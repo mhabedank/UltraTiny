@@ -137,7 +137,7 @@ Board steps are marked 🔌, Spark steps 🖥️.
 
 ### Chess data (data only, own commit)
 
-- [ ] T037 [US3] Write topics/schach/topic.toml, topics/schach/schema.toml, topics/schach/objects.tsv and topics/schach/facts/figuren.tsv per `data-model.md` "Second topic: chess pieces" (≈ 30–36 facts, source `own`, rules `wert = 3 → Leichtfigur` and `wert between [5, 9] → Schwerfigur`, a competency question for every view); build models/schach.utki, models/schach.build.json and models/schach_cases.tsv. Commit only these files; check with `git diff --stat` that no line in training/src/ultratiny/knowledge/, runtime/, firmware-nodemcu/ or contracts/image-format.md changed (SC-004).
+- [X] T037 [US3] Write topics/schach/topic.toml, topics/schach/schema.toml, topics/schach/objects.tsv and topics/schach/facts/figuren.tsv per `data-model.md` "Second topic: chess pieces" (≈ 30–36 facts, source `own`, rules `wert = 3 → Leichtfigur` and `wert between [5, 9] → Schwerfigur`, a competency question for every view); build models/schach.utki, models/schach.build.json and models/schach_cases.tsv. Commit only these files; check with `git diff --stat` that no line in training/src/ultratiny/knowledge/, runtime/, firmware-nodemcu/ or contracts/image-format.md changed (SC-004).
 - [ ] T038 [US3] 🔌 Flash models/schach.utki, run tools/device_knowledge.py with models/schach_cases.tsv, then boot with a model whose meta names `chemie` and check the wrong-topic line, the missing text for a fact question and a greeting for `Hi`. Record in measurements.md.
 
 **Checkpoint**: chess passes on PC and board with zero code lines in its change set; a wrong topic is reported.
@@ -150,8 +150,8 @@ Board steps are marked 🔌, Spark steps 🖥️.
 
 **Independent Test**: quickstart §9.
 
-- [ ] T039 [P] [US4] Implement `ut knowledge propose` and `ut knowledge accept` in training/src/ultratiny/knowledge/propose.py and cli.py per contracts/cli.md and research R14 (`data-model.md` Fact proposal.subject/relation/value, Fact proposal.source, Fact proposal.reason, Fact proposal.accepted), using the Spark client of training/tools/shorten_llm.py; `propose` writes only topics/<id>/proposals/<date>.tsv, `accept` writes only topics/<id>/facts/accepted.tsv.
-- [ ] T040 [P] [US4] Tests in training/tests/test_knowledge_propose.py with a fake LLM client: no fact file changes on `propose`; `accept` copies only `yes` rows with an allowed non-`llm:` source and reports the rest.
+- [X] T039 [P] [US4] Implement `ut knowledge propose` and `ut knowledge accept` in training/src/ultratiny/knowledge/propose.py and cli.py per contracts/cli.md and research R14 (`data-model.md` Fact proposal.subject/relation/value, Fact proposal.source, Fact proposal.reason, Fact proposal.accepted), using the Spark client of training/tools/shorten_llm.py; `propose` writes only topics/<id>/proposals/<date>.tsv, `accept` writes only topics/<id>/facts/accepted.tsv.
+- [X] T040 [P] [US4] Tests in training/tests/test_knowledge_propose.py with a fake LLM client: no fact file changes on `propose`; `accept` copies only `yes` rows with an allowed non-`llm:` source and reports the rest.
 - [ ] T041 [US4] 🖥️ Run one proposal round for an existing chemistry gap on the Spark, review it with the user, and record the counts (proposed, accepted, rejected) in measurements.md.
 
 **Checkpoint**: proposals never change facts without a person's decision.
@@ -162,14 +162,14 @@ Board steps are marked 🔌, Spark steps 🖥️.
 
 **Purpose**: Measurement against baseline and 006 (FR-020), the demo (FR-021), documentation.
 
-- [ ] T042 [P] Add F7 and R5 to the KPI tables in training/src/ultratiny/bench/report.py (names, direction, source, threshold 0), board.py (`not_measured`) and the result format doc specs/007-benchmark-kpi-bericht/contracts/result-format.md (KPI table rows, "added by spec 008").
-- [ ] T043 [P] Add `--topic` to tools/bench_export_facts.py (rows from views with a legacy letter, research R13); compare its output with bench/suites/chemie/facts.tsv; if it differs beyond the reviewed changes, bump `version` in bench/suites/chemie/suite.toml, re-pin, and record the reason in measurements.md.
-- [ ] T044 Run `tools/bench.py image` on models/chemie.utki, write bench/results/chemie_chemie_image_<date>.json and the report bench/results/008.md and .html against the baseline and the 006 image result (quickstart §6).
-- [ ] T045 Write bench/demo/008.tsv (10–15 items: fact questions the 006 model understands, ≥ 3 reverse queries and ≥ 2 rule results as `/wissen` items) and let tools/bench_demo.py and training/src/ultratiny/bench/demo.py send `/wissen` items as commands (`—` on boards without it).
+- [X] T042 [P] Add F7 and R5 to the KPI tables in training/src/ultratiny/bench/report.py (names, direction, source, threshold 0), board.py (`not_measured`) and the result format doc specs/007-benchmark-kpi-bericht/contracts/result-format.md (KPI table rows, "added by spec 008").
+- [X] T043 [P] Add `--topic` to tools/bench_export_facts.py (rows from views with a legacy letter, research R13); compare its output with bench/suites/chemie/facts.tsv; if it differs beyond the reviewed changes, bump `version` in bench/suites/chemie/suite.toml, re-pin, and record the reason in measurements.md.
+- [X] T044 Run `tools/bench.py image` on models/chemie.utki, write bench/results/chemie_chemie_image_<date>.json and the report bench/results/008.md and .html against the baseline and the 006 image result (quickstart §6).
+- [X] T045 Write bench/demo/008.tsv (10–15 items: fact questions the 006 model understands, ≥ 3 reverse queries and ≥ 2 rule results as `/wissen` items) and let tools/bench_demo.py and training/src/ultratiny/bench/demo.py send `/wissen` items as commands (`—` on boards without it).
 - [ ] T046 🔌 Run the demo next to `chemie-nodemcu` (needs `chemie-hybrid` from spec 006 T044) and commit bench/results/demo_008.md; run tools/device_parity.py with the 006 golden cases and the 007 board benchmark with models/chemie.utki (first character ≤ 2 s, ≥ 5 chars/s).
 - [ ] T047 🔌 Erase the fact area (`esptool erase_region 0x100000 0x10000`), reboot and check `Wissen: fehlt`, the missing text for a fact question and model answers for greetings and explanations. Record in measurements.md.
-- [ ] T048 [P] Update the documentation: README.md (knowledge images, `make knowledge`, `/wissen`), training/README.md (`ut knowledge`, topic layout), topics/README.md (how to write a topic), DATA_LICENSES.md (`llm:` not allowed as a fact source), specs/006-hybrid-chemielehrer/contracts/fact-table-format.md (pointer: superseded by UTKI v1).
-- [ ] T049 Update specs/ROADMAP.md: step 3 status with F7, R5 and image size, KPI table rows F7 and R5, "Zweites Testthema" decided (chess), open points.
+- [X] T048 [P] Update the documentation: README.md (knowledge images, `make knowledge`, `/wissen`), training/README.md (`ut knowledge`, topic layout), topics/README.md (how to write a topic), DATA_LICENSES.md (`llm:` not allowed as a fact source), specs/006-hybrid-chemielehrer/contracts/fact-table-format.md (pointer: superseded by UTKI v1).
+- [X] T049 Update specs/ROADMAP.md: step 3 status with F7, R5 and image size, KPI table rows F7 and R5, "Zweites Testthema" decided (chess), open points.
 - [ ] T050 Run `make budget BOARD=nodemcu`, the full CTest suite (including checked builds) and pytest; confirm CI is green; walk through quickstart.md and tick the spec checklist.
 
 ---

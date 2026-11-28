@@ -11,7 +11,6 @@ firmware names a topic, a class or a relation. Entities and validation rules:
 id = "chemie"                     # [a-z][a-z0-9_]*, ≤ 15 B, equals the directory name
 schema_version = 1
 title = "Chemie Klasse 7–10"
-alphabet = "../../training/configs/chemie-hybrid.toml"   # model alphabet for keys and names
 object_files = ["objects.tsv"]
 fact_files = ["facts/generated/*.tsv", "facts/*.tsv"]    # globs, sorted, read in this order
 budget_bytes = 58982              # optional, default 58982
@@ -124,6 +123,9 @@ Rules:
 - `more` is required for views that can return more than one item (`card = many` forward, `reverse =
   many` reverse).
 - Names of classes, relations and views use `[a-z][a-z0-9_]*`; a reverse view name may end in `<`.
+
+Keys and names are checked against the model alphabet (`ultratiny.alphabet.DEFAULT_SYMBOLS`, the
+same for every model); values and templates may use any UTF-8.
 
 ## `objects.tsv`
 

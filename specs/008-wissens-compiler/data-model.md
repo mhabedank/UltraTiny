@@ -12,8 +12,7 @@ syntax is in [contracts/topic-format.md](contracts/topic-format.md), the binary 
 | `id` | string 1–15 B, `[a-z][a-z0-9_]*` | Unique in the repository; equals the directory name under `topics/`. Written into the image header and, through the training config, into the model meta (`topic`). |
 | `schema_version` | integer 1–65535 | Bumped by the author when classes, relations or views change meaning. In the image header. |
 | `title` | string | For reports only. |
-| `object_files`, `fact_files` | list of paths | Relative to the topic directory; read in the given order. |
-| `alphabet` | path to a training config | The model alphabet that keys and names are checked against (the chemistry topic uses `training/configs/chemie-hybrid.toml`). |
+| `object_files`, `fact_files` | list of paths | Relative to the topic directory; read in the given order. Keys and names are checked against the model alphabet (`ultratiny.alphabet.DEFAULT_SYMBOLS`). |
 | `budget_bytes` | integer | Default 58,982 (fact area − 10 %). The build stops above it. |
 | `compat` | optional paths | Oracle and change list (R10). |
 
