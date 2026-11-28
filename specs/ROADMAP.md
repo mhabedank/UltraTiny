@@ -157,6 +157,12 @@ Entscheidungen für 012 und 013 liefert.
   - Board: Mikrobenchmarks für zufällige 32-Byte-Flash-Zugriffe, int8 gegen 2-Bit-Kernel,
     Sigmoid-Tabelle.
   - Kompressions-Hybrid als Vorversuch: PPM/N-Gramm plus kleines RNN plus Mischer.
+  - Ternäre Gewichte (BitNet b1.58): minGRU mit 200K und 600K Parametern in int8 gegen ternär
+    bei gleichem Flash-Budget (ternär erlaubt etwa 4× so viele Parameter), Training mit
+    Quantisierung von Anfang an. Auf dem Board: Rechenroutine nur mit Addieren und Subtrahieren
+    gegen die heutige int8-Multiplikation, inklusive Entpacken der Bits. Erwartung laut Recherche
+    vorsichtig: bei 60K Parametern +5 % Fehlerwert (Transformer) bis +28 % (SSM), auf dem ESP32-S3
+    nur 1,71× schneller als Gleitkomma ([01 §3–4](../research/2026-11-architektur/01-performance-boost.md)).
 - **Demo:** Laborbericht mit Empfehlung; Mikrobenchmark-Firmware läuft auf dem Board.
 
 ### Schritt 7 · Spec 012: Neuer Kern auf dem Board
@@ -178,7 +184,7 @@ Entscheidungen für 012 und 013 liefert.
 ## Ideenspeicher (noch nicht eingeplant)
 
 Diese Punkte kommen erst in die Roadmap, wenn ein Schritt sie braucht oder ein Versuch sie stützt:
-2-Bit- oder ternäre Gewichte für einen größeren Kern; KV-Cache auf 2 Bit (nur falls der
+KV-Cache auf 2 Bit (nur falls der
 Transformer bleibt); HDC-Index für unscharfe Begriffssuche; Graph-Einbettungen zum Ergänzen
 fehlender Fakten; Tsetlin-Maschine als Vorlagen-Klassifikator; Logikgatter-Netze; frühes Abbrechen.
 
