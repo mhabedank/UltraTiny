@@ -103,12 +103,19 @@ Examples (exact answers, competency questions):
 changes on `propose`; `accept` copies only `yes` rows with an allowed non-`llm:` source. The Spark
 round (T041 🖥️) is open.
 
-## On the board (🔌 T025)
+## On the board (🔌 T025, T033)
+
+NodeMCU v2, firmware from `main` (merge of PR #15), `models/chemie.utki` flashed to 0x100000, model
+`nodemcu.utny` (no topic meta), 2026-11-28:
+
+`uv run python ../tools/device_knowledge.py --port /dev/cu.usbserial-0001 --cases ../models/chemie_cases.tsv`
 
 | Item | Target | Measured |
 |------|--------|----------|
-| Boot line / `/info` | `Wissen: OK v1, Thema chemie …` | |
-| `device_knowledge.py` cases | all identical | |
-| Lookup time, max | ≤ 50 ms (SC-005) | |
-| Firmware size | ≤ 360,448 B | (CI `firmware-nodemcu`) |
-| Free heap after boot | > 0, stable | |
+| Boot line / `/info` | `Wissen: OK v1, Thema chemie …` | `Wissen: OK v1, Thema chemie (Schema 1), 3145 Fakten, data 72b33b50, Thema nicht geprüft` |
+| `device_knowledge.py` cases (incl. 19 shortened lists) | all identical | **487 of 487 identical** (SC-001, FR-014) |
+| Lookup and rendering time | ≤ 50 ms (SC-005) | median **1.40 ms**, max **12.89 ms** |
+| Firmware size, static RAM | ≤ 360,448 B, ≤ 1 KB growth | CI `firmware-nodemcu` budget gate green (PR #16) |
+
+Still open on the board: chess image and wrong-topic check (T038), erased area (T047), demo next
+to `chemie-nodemcu` and 006 golden parity with `chemie-hybrid` (T046).
