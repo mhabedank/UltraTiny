@@ -200,6 +200,32 @@ static void test_fn_console(const char *dir, const char *models) {
     CHECK(strstr(f.out, "Kupfer") == NULL);
     CHECK(k.state != UT_ST_GENERATING);
 
+    /* topic check (specs/008 research R11): a model of another topic makes the image unusable for
+     * fact questions, model text keeps working; the same topic is accepted */
+    char saved_meta[sizeof m.meta_buf];
+    memcpy(saved_meta, m.meta_buf, sizeof saved_meta);
+    snprintf(m.meta_buf, sizeof m.meta_buf, "{\"name\": \"x\", \"topic\": \"schach\"}");
+    CHECK(ut_kb_open(&facts, facts_read, NULL, sizeof facts_area) == UT_KB_OK);
+    f.out_len = 0;
+    f.out[0] = 0;
+    ut_console_init(&k, &c, &m, need, &io, UT_OK);
+    ut_console_banner(&k);
+    CHECK(facts.status == UT_KB_WRONG_TOPIC);
+    CHECK(strstr(f.out, "Wissen: falsches Thema (Bild chemie, Modell schach)") != NULL);
+    feed(&k, &f, "Ordnungszahl Kupfer?\r");
+    CHECK(strstr(f.out, "Die Faktentabelle fehlt") != NULL);
+    feed(&k, &f, "Hi\r");
+    CHECK(strstr(f.out, "Hallo!") != NULL);
+    snprintf(m.meta_buf, sizeof m.meta_buf, "{\"name\": \"x\", \"topic\": \"chemie\"}");
+    CHECK(ut_kb_open(&facts, facts_read, NULL, sizeof facts_area) == UT_KB_OK);
+    ut_console_init(&k, &c, &m, need, &io, UT_OK);
+    CHECK(facts.status == UT_KB_OK);
+    feed(&k, &f, "/info\r");
+    CHECK(strstr(f.out, "Thema chemie (Schema ") != NULL);
+    feed(&k, &f, "Ordnungszahl Kupfer?\r");
+    CHECK(strstr(f.out, "Kupfer ist 29.") != NULL);
+    memcpy(m.meta_buf, saved_meta, sizeof saved_meta);
+
     /* missing table: model text still works, factual answers say the table is missing */
     io.kb = NULL;
     ut_console_init(&k, &c, &m, need, &io, UT_OK);

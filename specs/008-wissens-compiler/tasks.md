@@ -131,9 +131,9 @@ Board steps are marked 🔌, Spark steps 🖥️.
 
 ### Topic check (code, before the chess data)
 
-- [ ] T034 [US3] Write `"topic"` into the model meta from the config's `[knowledge] topic` in training/src/ultratiny/export.py and cli.py `cmd_export` (`data-model.md` Topic.id), research R11.
-- [ ] T035 [US3] Implement the topic check: runtime/src/console.c reads `topic` from the meta (via `meta_str`), firmware-nodemcu/src/main.cpp and runtime/host/utiny_host.c set `WRONG_TOPIC` on a mismatch (`data-model.md` Knowledge image status), print `Wissen: falsches Thema (Bild …, Modell …)` and answer fact questions with the missing text; `/info` adds `Thema nicht geprüft` for models without `topic`. Host test in runtime/tests/test_console_logic.c with a fixture model whose meta names another topic.
-- [ ] T036 [US3] Register topic-generic test hooks so a new topic needs no code: CMake loops over `models/*_cases.tsv` (runtime/CMakeLists.txt), CI loops over `topics/*/` for `check --image` (.github/workflows/ci.yml), pytest parametrises the competency check over `topics/*/` (training/tests/test_knowledge_topics.py).
+- [X] T034 [US3] Write `"topic"` into the model meta from the config's `[knowledge] topic` in training/src/ultratiny/export.py and cli.py `cmd_export` (`data-model.md` Topic.id), research R11.
+- [X] T035 [US3] Implement the topic check: runtime/src/console.c reads `topic` from the meta (via `meta_str`), firmware-nodemcu/src/main.cpp and runtime/host/utiny_host.c set `WRONG_TOPIC` on a mismatch (`data-model.md` Knowledge image status), print `Wissen: falsches Thema (Bild …, Modell …)` and answer fact questions with the missing text; `/info` adds `Thema nicht geprüft` for models without `topic`. Host test in runtime/tests/test_console_logic.c with a fixture model whose meta names another topic.
+- [X] T036 [US3] Register topic-generic test hooks so a new topic needs no code: CMake loops over `models/*_cases.tsv` (runtime/CMakeLists.txt), CI loops over `topics/*/` for `check --image` (.github/workflows/ci.yml), pytest parametrises the competency check over `topics/*/` (training/tests/test_knowledge_topics.py).
 
 ### Chess data (data only, own commit)
 
